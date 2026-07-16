@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator — Calculate % Free Online | SpeedCalculator.net</title>
+<meta name="description" content="Free percentage calculator online. Find what percent of a number is, percentage change, increase/decrease, difference & more. 6 calculator modes. Instant results with formulas shown.">
+<meta name="keywords" content="percentage calculator, percent calculator, how to calculate percentage, percentage change calculator, percentage increase calculator, what is 20 percent of, percentage difference calculator, find percentage of a number">
+<link rel="canonical" href="https://www.speedcalculator.net/percentage-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Percentage Calculator",
+  "url":"https://www.speedcalculator.net/percentage-calculator/",
+  "description":"Free percentage calculator — 6 modes: basic percent, percent of, reverse percent, change, difference, add/subtract",
+  "applicationCategory":"UtilityApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate a percentage of a number?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number by the percentage and divide by 100. Formula: Result = (Number × Percentage) ÷ 100. Example: 20% of 150 = (150 × 20) ÷ 100 = 30."}},
+    {"@type":"Question","name":"How do I calculate percentage increase?","acceptedAnswer":{"@type":"Answer","text":"Subtract the original value from the new value, divide by the original value, then multiply by 100. Formula: % Increase = ((New − Old) ÷ Old) × 100."}},
+    {"@type":"Question","name":"What is the difference between percentage change and percentage difference?","acceptedAnswer":{"@type":"Answer","text":"Percentage change compares a new value to an original value (showing growth or decline). Percentage difference compares two values without a reference direction, using their average as the base."}},
+    {"@type":"Question","name":"How do I find what percent one number is of another?","acceptedAnswer":{"@type":"Answer","text":"Divide the part by the whole and multiply by 100. Formula: % = (Part ÷ Whole) × 100. Example: 30 is what % of 150? (30 ÷ 150) × 100 = 20%."}},
+    {"@type":"Question","name":"Is this percentage calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — 100% free forever. No signup, no subscription. SpeedCalculator.net provides all tools completely free."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,0.12);--border2:rgba(59,130,246,0.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* ═══ HERO ═══ */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:start;}
+@media(max-width:820px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,4.5vw,62px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* ═══ CALC CARD ═══ */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);}
+.calc-head{padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.calc-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;}
+.calc-title span{color:var(--accent2);}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:18px 24px 24px;}
+
+/* TABS */
+.calc-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--bg3);border-radius:var(--radius);padding:4px;margin-bottom:18px;}
+.ctab{padding:8px 6px;border-radius:10px;border:none;background:transparent;color:var(--text3);font-family:'Barlow',sans-serif;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center;line-height:1.3;}
+.ctab.active{background:var(--accent);color:#fff;}
+.ctab:hover:not(.active){color:var(--text2);background:rgba(59,130,246,.08);}
+
+/* CALC MODES */
+.calc-mode{display:none;}
+.calc-mode.active{display:block;}
+
+/* INPUT ROWS */
+.inp-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.inp-label{font-size:12px;font-weight:600;color:var(--text3);white-space:nowrap;min-width:28px;}
+.inp-eq{font-size:16px;font-weight:700;color:var(--text3);padding:0 4px;}
+.num-wrap{display:flex;border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;flex:1;min-width:80px;}
+.num-wrap:focus-within{border-color:var(--accent);}
+.num-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 12px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.num-wrap input::placeholder{color:var(--text3);font-size:15px;font-weight:400;}
+.num-wrap .suf{padding:0 12px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent2);border-left:1px solid var(--border);}
+.inp-desc{font-size:12px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:rgba(59,130,246,.04);border-radius:6px;border-left:2px solid var(--accent);}
+
+/* RESULT */
+.calc-btn{width:100%;padding:13px 20px;background:var(--accent);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;line-height:1;}
+.calc-btn:hover{background:#2563eb;transform:translateY(-1px);}
+.result-panel{display:none;margin-top:14px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.09),rgba(96,165,250,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:18px;text-align:center;margin-bottom:10px;}
+.result-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.result-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,8vw,58px);font-weight:900;color:var(--accent2);line-height:1;letter-spacing:-2px;}
+.result-sub{font-size:13px;color:var(--text3);margin-top:5px;}
+.formula-show{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;color:var(--text2);font-family:'Barlow Condensed',sans-serif;font-size:14px;margin-top:8px;}
+.formula-show span{color:var(--accent2);font-weight:700;}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 14px;font-size:13px;color:#f87171;margin-top:10px;display:none;}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+@media(max-width:720px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color .2s;position:relative;overflow:hidden;}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s;}
+.step-card:hover::before{opacity:1;}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);margin-bottom:12px;}
+.step-card:hover{border-color:var(--border2);}
+
+.step-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;flex-shrink:0;}
+.step-icon svg{width:18px;height:18px;}
+.step-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.step-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* FORMULA CARDS */
+.formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:680px){.formula-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.formula-grid{grid-template-columns:1fr;}}
+.fc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.fc:hover{border-color:var(--border2);}
+.fc-num{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--accent2);margin-bottom:6px;}
+.fc-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.fc-formula{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--text3);background:var(--bg3);border-radius:5px;padding:6px 10px;margin-bottom:8px;line-height:1.5;}
+.fc-formula b{color:var(--accent2);}
+.fc-ex{font-size:11px;color:var(--text3);font-style:italic;}
+
+/* IMG BLOCK */
+.img-block{border-radius:var(--radius);background:var(--bg3);border:1px solid var(--border);min-height:175px;display:flex;align-items:center;justify-content:center;margin:24px 0;}
+.img-ph{display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px;text-align:center;}
+.img-ph svg{width:40px;height:40px;stroke:var(--text3);}
+.img-ph p{font-size:12px;color:var(--text3);line-height:1.5;}
+.img-cap{font-size:11px;color:var(--text3);text-align:center;margin-top:-16px;margin-bottom:20px;font-style:italic;}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:200px;}
+
+/* OTHER CALCS */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ BREADCRUMB ═══════════════════════ -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Percentage Calculator
+  </div>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Free · 6 Modes · Instant</div>
+        <h1>Percentage<em>Calculator</em></h1>
+        <p class="hero-sub">Find any percentage instantly — basic percent, percent of a number, reverse percentage, increase/decrease, difference, and more. Six powerful modes in one free tool.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">6 Calculator Modes</span>
+          <span class="badge p">Formula Shown</span>
+          <span class="badge">Instant Results</span>
+          <span class="badge g">No Signup</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-title">Percentage <span>Calculator</span></div>
+          <div class="live-pill">Formula Included</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- TABS ROW 1 -->
+          <div class="calc-tabs" style="margin-bottom:4px;">
+            <button class="ctab active" onclick="switchTab('basic',this)">What is X%<br>of Y?</button>
+            <button class="ctab" onclick="switchTab('whatpct',this)">X is what %<br>of Y?</button>
+            <button class="ctab" onclick="switchTab('reverse',this)">X is Y%<br>of what?</button>
+          </div>
+          <!-- TABS ROW 2 -->
+          <div class="calc-tabs">
+            <button class="ctab" onclick="switchTab('change',this)">%<br>Change</button>
+            <button class="ctab" onclick="switchTab('diff',this)">%<br>Difference</button>
+            <button class="ctab" onclick="switchTab('addpct',this)">Add/Sub<br>Percent</button>
+          </div>
+
+          <!-- MODE 1: What is X% of Y -->
+          <div class="calc-mode active" id="mode-basic">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">What is P% of a number?</strong> — e.g. What is 20% of 150?</div>
+            <div class="inp-row">
+              <span class="inp-label">What is</span>
+              <div class="num-wrap"><input type="number" id="b-pct" placeholder="20" step="any"><span class="suf">%</span></div>
+              <span class="inp-eq">of</span>
+              <div class="num-wrap"><input type="number" id="b-num" placeholder="150" step="any"></div>
+            </div>
+          </div>
+
+          <!-- MODE 2: X is what % of Y -->
+          <div class="calc-mode" id="mode-whatpct">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">X is what percent of Y?</strong> — e.g. 30 is what % of 150?</div>
+            <div class="inp-row">
+              <div class="num-wrap"><input type="number" id="wp-part" placeholder="30" step="any"></div>
+              <span class="inp-label" style="min-width:auto;">is what % of</span>
+              <div class="num-wrap"><input type="number" id="wp-whole" placeholder="150" step="any"></div>
+            </div>
+          </div>
+
+          <!-- MODE 3: Reverse — X is Y% of what -->
+          <div class="calc-mode" id="mode-reverse">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">X is Y% of what number?</strong> — e.g. 30 is 20% of what?</div>
+            <div class="inp-row">
+              <div class="num-wrap"><input type="number" id="rv-part" placeholder="30" step="any"></div>
+              <span class="inp-label" style="min-width:auto;">is</span>
+              <div class="num-wrap"><input type="number" id="rv-pct" placeholder="20" step="any"><span class="suf">%</span></div>
+              <span class="inp-label" style="min-width:auto;">of what?</span>
+            </div>
+          </div>
+
+          <!-- MODE 4: Percentage Change -->
+          <div class="calc-mode" id="mode-change">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">% increase or decrease</strong> from old to new value.</div>
+            <div class="inp-row">
+              <span class="inp-label">From</span>
+              <div class="num-wrap"><input type="number" id="ch-old" placeholder="80" step="any"></div>
+              <span class="inp-eq">to</span>
+              <div class="num-wrap"><input type="number" id="ch-new" placeholder="100" step="any"></div>
+            </div>
+          </div>
+
+          <!-- MODE 5: Percentage Difference -->
+          <div class="calc-mode" id="mode-diff">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">% difference</strong> between two values (no direction).</div>
+            <div class="inp-row">
+              <span class="inp-label">Value 1</span>
+              <div class="num-wrap"><input type="number" id="d-v1" placeholder="40" step="any"></div>
+              <span class="inp-eq">vs</span>
+              <div class="num-wrap"><input type="number" id="d-v2" placeholder="60" step="any"></div>
+            </div>
+          </div>
+
+          <!-- MODE 6: Add/Subtract Percent -->
+          <div class="calc-mode" id="mode-addpct">
+            <div class="inp-desc">Find: <strong style="color:var(--text)">Add or subtract a percent</strong> from a number — e.g. 200 + 15% = ?</div>
+            <div class="inp-row">
+              <div class="num-wrap"><input type="number" id="as-num" placeholder="200" step="any"></div>
+              <div style="display:flex;gap:6px;">
+                <button class="solve-pill active" id="add-btn" onclick="setAddMode('add')">+ Add</button>
+                <button class="solve-pill" id="sub-btn" onclick="setAddMode('sub')">− Subtract</button>
+              </div>
+              <div class="num-wrap" style="max-width:110px;"><input type="number" id="as-pct" placeholder="15" step="any"><span class="suf">%</span></div>
+            </div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please enter valid numbers to calculate.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;flex-shrink:0;"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div class="result-main">
+              <div class="result-lbl" id="r-lbl">Result</div>
+              <div class="result-val" id="r-val">—</div>
+              <div class="result-sub" id="r-sub"></div>
+            </div>
+            <div class="formula-show" id="r-formula"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">6-in-1</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Instant</div><div class="stat-lbl">Results</div></div>
+      <div class="stat-item"><div class="stat-val">Formula</div><div class="stat-lbl">Always Shown</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ HOW TO USE ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Step-by-Step Guide</div>
+    <h2 class="sec-title">How to Use the <span>Percentage Calculator</span></h2>
+    <p class="sec-sub">Six modes, one tool. Pick the mode that matches what you want to find and get your answer instantly — with the formula shown.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><rect x="3" y="2" width="12" height="14" rx="2"/><path d="M6 6h6M6 9h4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Choose a Mode</div>
+        <p class="step-p">Select from 6 modes: basic %, what %, reverse, change, difference, or add/subtract. Each solves a different type of percentage problem.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M4 9h10M9 4l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step-h">Enter Your Numbers</div>
+        <p class="step-p">Type in your values. The blue description bar tells you exactly what each field means so you always know what to enter.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step-h">Click Calculate</div>
+        <p class="step-p">Press Calculate and your answer appears instantly. The full formula with your numbers is shown below the result — so you can learn and verify.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 4h10v2H4zM4 8h8M4 12h6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Read the Formula</div>
+        <p class="step-p">Every result shows the formula used with your actual numbers plugged in — great for students, teachers, and anyone who wants to understand the math.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FORMULA REFERENCE ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Formula Reference</div>
+    <h2 class="sec-title">All 6 Percentage <span>Formulas</span></h2>
+    <p class="sec-sub">Every mode in our calculator uses one of these six standard percentage formulas. Save this page as a quick reference.</p>
+
+    <div style="border-radius:var(--radius);overflow:hidden;margin:24px 0 8px;position:relative;height:220px;">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop" 
+           alt="Percentage and math formula calculator with percentage sign on paper"
+           style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius);">
+      <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;border-radius:0 0 var(--radius) var(--radius);">
+        <span style="font-size:11px;color:rgba(255,255,255,.7);">Percentage formulas — used in tax, discounts, finance & more</span>
+      </div>
+    </div>
+
+    <div class="formula-grid">
+      <div class="fc">
+        <div class="fc-num">01</div>
+        <div class="fc-title">Basic Percentage</div>
+        <div class="fc-formula">Result = <b>(Number × %)</b> ÷ 100</div>
+        <div class="fc-ex">What is 20% of 150? → (150 × 20) ÷ 100 = <b>30</b></div>
+      </div>
+      <div class="fc">
+        <div class="fc-num">02</div>
+        <div class="fc-title">Find the Percent</div>
+        <div class="fc-formula">% = <b>(Part ÷ Whole)</b> × 100</div>
+        <div class="fc-ex">30 is what % of 150? → (30 ÷ 150) × 100 = <b>20%</b></div>
+      </div>
+      <div class="fc">
+        <div class="fc-num">03</div>
+        <div class="fc-title">Reverse Percent</div>
+        <div class="fc-formula">Whole = <b>Part ÷ (% ÷ 100)</b></div>
+        <div class="fc-ex">30 is 20% of what? → 30 ÷ 0.20 = <b>150</b></div>
+      </div>
+      <div class="fc">
+        <div class="fc-num">04</div>
+        <div class="fc-title">% Change</div>
+        <div class="fc-formula">% = <b>((New − Old) ÷ Old)</b> × 100</div>
+        <div class="fc-ex">80 → 100: ((100−80) ÷ 80) × 100 = <b>+25%</b></div>
+      </div>
+      <div class="fc">
+        <div class="fc-num">05</div>
+        <div class="fc-title">% Difference</div>
+        <div class="fc-formula">% = <b>|V1−V2| ÷ ((V1+V2)÷2)</b> × 100</div>
+        <div class="fc-ex">40 vs 60: |40−60| ÷ 50 × 100 = <b>40%</b></div>
+      </div>
+      <div class="fc">
+        <div class="fc-num">06</div>
+        <div class="fc-title">Add/Subtract %</div>
+        <div class="fc-formula">Result = <b>Number × (1 ± %÷100)</b></div>
+        <div class="fc-ex">200 + 15%: 200 × 1.15 = <b>230</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ USE CASES ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This Tool</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">Percentages appear in almost every area of life. Here are the most common everyday situations where our calculator helps.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M3 9h14M7 5l4-3 4 3M5 9v8M15 9v8M9 12h2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Shopping Discounts</div>
+        <p class="uc-p">Instantly find the final price after a 30%, 50%, or any % discount before you buy. No more mental math at the checkout.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M4 14l4-6 4 4 3-4 3 3" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="2"/></svg>
+        </div>
+        <div class="uc-h">Finance & Investments</div>
+        <p class="uc-p">Calculate returns, profit margins, interest growth, and portfolio changes — using percentage change and increase/decrease modes.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><path d="M10 2l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 17l-6.2 4.3 2.4-7.4L0 9.4h7.6z"/></svg>
+        </div>
+        <div class="uc-h">Grades & Test Scores</div>
+        <p class="uc-p">Find your exam percentage, calculate how much a test affects your overall grade, or see what score you need to pass.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><path d="M3 3h14v14H3zM3 9h14M9 3v14" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Tax Calculations</div>
+        <p class="uc-p">Add GST, VAT, or sales tax to a price. Calculate your tax bill as a percentage of income. Find tax-inclusive or exclusive prices.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><circle cx="10" cy="8" r="4"/><path d="M4 18c0-3 2.7-5 6-5s6 2 6 5"/></svg>
+        </div>
+        <div class="uc-h">Nutrition & Health</div>
+        <p class="uc-p">Find what % of daily calories comes from carbs or protein. Calculate body fat percentage or weight loss percentage.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+        </div>
+        <div class="uc-h">Fuel & Travel</div>
+        <p class="uc-p">Find the fuel cost increase percentage, calculate tips on restaurant bills, or compare price differences between two offers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ARTICLE ═══════════════════════ -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Percentage Calculator?</h2>
+  <p>A <strong>percentage calculator</strong> is a free online tool that helps you calculate percentages quickly and accurately — without needing to remember formulas or do manual math. Whether you are finding a discount at a shop, calculating a grade, figuring out tax, or tracking investment returns, a percentage calculator gives you the right answer in seconds.</p>
+  <p>Our percentage calculator offers <strong>six different calculation modes</strong> in one tool — making it the most versatile free percentage calculator available. Every result includes the formula with your actual numbers plugged in, so you always understand how the answer was reached.</p>
+
+  <div style="border-radius:var(--radius);overflow:hidden;margin:24px 0 8px;position:relative;height:220px;">
+    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=80&auto=format&fit=crop"
+         alt="Shopping sale tags showing percentage discounts — percentage calculator for shopping"
+         style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius);">
+    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;border-radius:0 0 var(--radius) var(--radius);">
+      <span style="font-size:11px;color:rgba(255,255,255,.7);">Calculate shopping discounts, tax, tips & more with our free percentage calculator</span>
+    </div>
+  </div>
+
+  <h2>How to Calculate a Percentage — Complete Guide</h2>
+
+  <h3>Type 1: What is X% of a Number?</h3>
+  <p>This is the most common percentage calculation — used for discounts, tips, tax, and more. The formula is:</p>
+  <p><span class="fi">Result = (Number × Percentage) ÷ 100</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — Shopping Discount</h4>
+    <p>A jacket costs Rs. 5,000 and is on 35% sale.<br>
+    Discount = (5,000 × 35) ÷ 100 = <strong>Rs. 1,750</strong><br>
+    Final price = 5,000 − 1,750 = <strong>Rs. 3,250</strong></p>
+  </div>
+
+  <h3>Type 2: X is What Percent of Y?</h3>
+  <p>Use this when you have a part and a whole and want to express their relationship as a percentage.</p>
+  <p><span class="fi">Percentage = (Part ÷ Whole) × 100</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — Exam Score</h4>
+    <p>You scored 72 out of 90 marks.<br>
+    Percentage = (72 ÷ 90) × 100 = <strong>80%</strong></p>
+  </div>
+
+  <h3>Type 3: Reverse Percentage — X is Y% of What?</h3>
+  <p>Use this when you know the result and the percentage but need to find the original whole number.</p>
+  <p><span class="fi">Whole = Part ÷ (Percentage ÷ 100)</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — Finding Original Price</h4>
+    <p>A product is on sale at Rs. 800 after a 20% discount. What was the original price?<br>
+    Original = 800 ÷ (1 − 0.20) = 800 ÷ 0.80 = <strong>Rs. 1,000</strong></p>
+  </div>
+
+  <h3>Type 4: Percentage Change (Increase or Decrease)</h3>
+  <p>This formula tells you by what percentage a value has gone up or down. Positive result = increase, negative = decrease.</p>
+  <p><span class="fi">% Change = ((New − Old) ÷ Old) × 100</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — Salary Raise</h4>
+    <p>Your salary went from Rs. 50,000 to Rs. 60,000.<br>
+    % Change = ((60,000 − 50,000) ÷ 50,000) × 100 = <strong>+20% increase</strong></p>
+  </div>
+
+  <h3>Type 5: Percentage Difference</h3>
+  <p>Unlike percentage change, this compares two values without a "direction" — it uses their average as the base. Useful when comparing two things of equal status (e.g. two products, two cities).</p>
+  <p><span class="fi">% Diff = (|V1 − V2| ÷ ((V1 + V2) ÷ 2)) × 100</span></p>
+
+  <h3>Type 6: Add or Subtract a Percentage</h3>
+  <p>Perfect for adding tax, applying a markup, or subtracting a discount from a number in one step.</p>
+  <p><span class="fi">Result = Number × (1 + % ÷ 100)</span> for adding</p>
+  <p><span class="fi">Result = Number × (1 − % ÷ 100)</span> for subtracting</p>
+
+  <div class="tip">
+    <p><strong>Pro Tip:</strong> To find the original price before a percentage was added (e.g. tax-inclusive price), use the Reverse Percent mode. Enter the final price as "Part" and the tax rate as "%". Our calculator finds the pre-tax amount instantly.</p>
+  </div>
+
+  <h2>Percentage vs. Percentage Points — What's the Difference?</h2>
+  <p>Many people confuse these two terms, but they mean very different things:</p>
+  <ul>
+    <li><strong>Percentage change</strong> — A relative change expressed as a percentage of the original. If inflation goes from 5% to 7%, that is a 40% increase in inflation.</li>
+    <li><strong>Percentage points</strong> — An absolute difference between two percentages. If inflation goes from 5% to 7%, that is a 2 percentage point increase.</li>
+  </ul>
+  <p>Our Percentage Change calculator tells you the relative change (%), while Percentage Difference gives you a neutral comparison between two values.</p>
+
+  <div style="border-radius:var(--radius);overflow:hidden;margin:24px 0 8px;position:relative;height:220px;">
+    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80&auto=format&fit=crop"
+         alt="Financial growth chart showing percentage increase in investment or salary"
+         style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius);">
+    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;border-radius:0 0 var(--radius) var(--radius);">
+      <span style="font-size:11px;color:rgba(255,255,255,.7);">Percentage change calculator — track salary raises, investment growth & price changes</span>
+    </div>
+  </div>
+
+  <h2>Common Percentage Conversions</h2>
+  <ul>
+    <li>10% of any number = divide by 10</li>
+    <li>25% of any number = divide by 4</li>
+    <li>50% of any number = divide by 2</li>
+    <li>75% of any number = multiply by 3, then divide by 4</li>
+    <li>1% of any number = divide by 100</li>
+    <li>To convert a decimal to %: multiply by 100 (e.g. 0.35 = 35%)</li>
+    <li>To convert a fraction to %: divide top by bottom, multiply by 100 (e.g. 3/4 = 75%)</li>
+  </ul>
+
+</div>
+</div>
+
+<!-- ═══════════════════════ FAQ ═══════════════════════ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Percentage Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How do I calculate a percentage of a number?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Multiply the number by the percentage and divide by 100. Formula: <strong>Result = (Number × %) ÷ 100</strong>. Example: 20% of 150 = (150 × 20) ÷ 100 = <strong>30</strong>. Use our "What is X% of Y?" mode for this.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How do I calculate percentage increase or decrease?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Formula: <strong>% Change = ((New − Old) ÷ Old) × 100</strong>. A positive result means an increase; a negative result means a decrease. Example: from 80 to 100 = ((100 − 80) ÷ 80) × 100 = <strong>+25% increase</strong>. Use our "% Change" mode.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is the difference between percentage change and percentage difference?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>Percentage change</strong> compares a new value to an original "starting" value and shows a directional result (increase or decrease). <strong>Percentage difference</strong> compares two values of equal status — it uses their average as the base and has no direction. Use change for before/after comparisons, and difference for comparing two independent values side-by-side.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How do I find the original price before a discount?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the <strong>Reverse Percent mode</strong>. Formula: <strong>Original = Sale Price ÷ (1 − Discount% ÷ 100)</strong>. Example: an item costs Rs. 750 after a 25% discount → Original = 750 ÷ 0.75 = <strong>Rs. 1,000</strong>. Our reverse calculator handles this automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Is this percentage calculator free?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — <strong>100% free forever</strong>. No signup, no account, no subscription, no ads blocking your results. SpeedCalculator.net provides all tools completely free to everyone, worldwide.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ OTHER CALCS ═══════════════════════ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><path d="M8 3v4l3 2" stroke-linecap="round"/><circle cx="8" cy="8" r="6"/></svg></div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, speed & time</div>
+      </a>
+      <a href="/grade-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><rect x="3" y="2" width="10" height="12" rx="1.5"/><path d="M5 5h6M5 8h4" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Grade Calculator</div>
+        <div class="oc-desc">Weighted average grades</div>
+      </a>
+      <a href="/gpa-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><path d="M2 12l5-8 4 5 2-3 3 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">GPA Calculator</div>
+        <div class="oc-desc">Grade point average</div>
+      </a>
+      <a href="/tip-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Tip Calculator</div>
+        <div class="oc-desc">Split bill & gratuity</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ JAVASCRIPT ═══════════════════════ -->
+<script>
+let activeTab = 'basic';
+let addMode = 'add';
+
+const solve_pill_style = `padding:6px 12px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;`;
+
+function switchTab(tab, btn) {
+  activeTab = tab;
+  document.querySelectorAll('.ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.calc-mode').forEach(m => m.classList.remove('active'));
+  document.getElementById('mode-' + tab).classList.add('active');
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display = 'none';
+}
+
+function setAddMode(m) {
+  addMode = m;
+  document.getElementById('add-btn').classList.toggle('solve-pill-active', m === 'add');
+  document.getElementById('sub-btn').classList.toggle('solve-pill-active', m === 'sub');
+  if(m === 'add'){
+    document.getElementById('add-btn').style.background='var(--accent)';
+    document.getElementById('add-btn').style.color='#fff';
+    document.getElementById('sub-btn').style.background='var(--bg3)';
+    document.getElementById('sub-btn').style.color='var(--text2)';
+  } else {
+    document.getElementById('sub-btn').style.background='var(--accent)';
+    document.getElementById('sub-btn').style.color='#fff';
+    document.getElementById('add-btn').style.background='var(--bg3)';
+    document.getElementById('add-btn').style.color='var(--text2)';
+  }
+}
+
+// Init add/sub pill styles
+document.addEventListener('DOMContentLoaded', () => {
+  const addBtn = document.getElementById('add-btn');
+  const subBtn = document.getElementById('sub-btn');
+  if(addBtn){
+    addBtn.style.cssText = `padding:8px 12px;border-radius:20px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;`;
+    subBtn.style.cssText = `padding:8px 12px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;`;
+  }
+});
+
+function fmt(n) {
+  if (isNaN(n) || !isFinite(n)) return '—';
+  if (Math.abs(n) >= 1e9) return (n / 1e9).toFixed(3) + 'B';
+  if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(3) + 'M';
+  const abs = Math.abs(n);
+  if (abs >= 1000) return n.toLocaleString('en', { maximumFractionDigits: 2 });
+  if (abs >= 10) return n.toFixed(2);
+  if (abs >= 1) return n.toFixed(4);
+  return n.toFixed(4);
+}
+
+function showResult(lbl, val, unit, sub, formula) {
+  const panel = document.getElementById('result-panel');
+  document.getElementById('r-lbl').textContent = lbl;
+  document.getElementById('r-val').textContent = val + (unit || '');
+  document.getElementById('r-sub').textContent = sub || '';
+  document.getElementById('r-formula').innerHTML = formula || '';
+  panel.classList.remove('show');
+  void panel.offsetWidth;
+  panel.classList.add('show');
+}
+
+function showErr() {
+  document.getElementById('err-msg').style.display = 'block';
+}
+
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+
+  if (activeTab === 'basic') {
+    const pct = parseFloat(document.getElementById('b-pct').value);
+    const num = parseFloat(document.getElementById('b-num').value);
+    if (isNaN(pct) || isNaN(num)) { showErr(); return; }
+    const res = (num * pct) / 100;
+    showResult(
+      `${fmt(pct)}% of ${fmt(num)}`,
+      fmt(res), '',
+      `${fmt(pct)}% of ${fmt(num)} equals ${fmt(res)}`,
+      `Formula: <span>(${fmt(num)} × ${fmt(pct)}) ÷ 100 = <b>${fmt(res)}</b></span>`
+    );
+  }
+
+  else if (activeTab === 'whatpct') {
+    const part = parseFloat(document.getElementById('wp-part').value);
+    const whole = parseFloat(document.getElementById('wp-whole').value);
+    if (isNaN(part) || isNaN(whole) || whole === 0) { showErr(); return; }
+    const res = (part / whole) * 100;
+    showResult(
+      `${fmt(part)} is what % of ${fmt(whole)}`,
+      fmt(res), '%',
+      `${fmt(part)} is ${fmt(res)}% of ${fmt(whole)}`,
+      `Formula: <span>(${fmt(part)} ÷ ${fmt(whole)}) × 100 = <b>${fmt(res)}%</b></span>`
+    );
+  }
+
+  else if (activeTab === 'reverse') {
+    const part = parseFloat(document.getElementById('rv-part').value);
+    const pct = parseFloat(document.getElementById('rv-pct').value);
+    if (isNaN(part) || isNaN(pct) || pct === 0) { showErr(); return; }
+    const res = part / (pct / 100);
+    showResult(
+      `${fmt(part)} is ${fmt(pct)}% of ?`,
+      fmt(res), '',
+      `${fmt(part)} is ${fmt(pct)}% of ${fmt(res)}`,
+      `Formula: <span>${fmt(part)} ÷ (${fmt(pct)} ÷ 100) = <b>${fmt(res)}</b></span>`
+    );
+  }
+
+  else if (activeTab === 'change') {
+    const oldV = parseFloat(document.getElementById('ch-old').value);
+    const newV = parseFloat(document.getElementById('ch-new').value);
+    if (isNaN(oldV) || isNaN(newV) || oldV === 0) { showErr(); return; }
+    const res = ((newV - oldV) / Math.abs(oldV)) * 100;
+    const direction = res >= 0 ? 'Increase' : 'Decrease';
+    const color = res >= 0 ? 'var(--green)' : 'var(--red)';
+    const panel = document.getElementById('result-panel');
+    document.getElementById('r-lbl').textContent = `% ${direction} from ${fmt(oldV)} to ${fmt(newV)}`;
+    document.getElementById('r-val').textContent = (res >= 0 ? '+' : '') + fmt(res) + '%';
+    document.getElementById('r-val').style.color = color;
+    document.getElementById('r-sub').textContent = `The value ${direction.toLowerCase()}d by ${Math.abs(res).toFixed(2)}%`;
+    document.getElementById('r-formula').innerHTML = `Formula: <span>((${fmt(newV)} − ${fmt(oldV)}) ÷ ${fmt(Math.abs(oldV))}) × 100 = <b>${res >= 0 ? '+' : ''}${fmt(res)}%</b></span>`;
+    panel.classList.remove('show'); void panel.offsetWidth; panel.classList.add('show');
+    return;
+  }
+
+  else if (activeTab === 'diff') {
+    const v1 = parseFloat(document.getElementById('d-v1').value);
+    const v2 = parseFloat(document.getElementById('d-v2').value);
+    if (isNaN(v1) || isNaN(v2) || (v1 + v2) === 0) { showErr(); return; }
+    const avg = (v1 + v2) / 2;
+    const res = (Math.abs(v1 - v2) / avg) * 100;
+    showResult(
+      `% Difference: ${fmt(v1)} vs ${fmt(v2)}`,
+      fmt(res), '%',
+      `The difference between ${fmt(v1)} and ${fmt(v2)} is ${fmt(res)}%`,
+      `Formula: <span>(|${fmt(v1)}−${fmt(v2)}| ÷ ((${fmt(v1)}+${fmt(v2)})÷2)) × 100 = <b>${fmt(res)}%</b></span>`
+    );
+  }
+
+  else if (activeTab === 'addpct') {
+    const num = parseFloat(document.getElementById('as-num').value);
+    const pct = parseFloat(document.getElementById('as-pct').value);
+    if (isNaN(num) || isNaN(pct)) { showErr(); return; }
+    const factor = addMode === 'add' ? 1 + pct / 100 : 1 - pct / 100;
+    const res = num * factor;
+    const op = addMode === 'add' ? '+' : '−';
+    const pctAmount = (num * pct) / 100;
+    showResult(
+      `${fmt(num)} ${op} ${fmt(pct)}%`,
+      fmt(res), '',
+      `${addMode === 'add' ? 'Added' : 'Subtracted'} ${fmt(pctAmount)} (${fmt(pct)}% of ${fmt(num)})`,
+      `Formula: <span>${fmt(num)} × (1 ${op} ${fmt(pct)}÷100) = ${fmt(num)} × ${factor.toFixed(4)} = <b>${fmt(res)}</b></span>`
+    );
+  }
+}
+
+function faq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

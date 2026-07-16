@@ -1,0 +1,95 @@
+# ============================================================
+#  SpeedCalculator.net — Apache Configuration
+# ============================================================
+
+# ── Directory index ──────────────────────────────────────────
+DirectoryIndex index.html
+
+# ── Disable directory listing ────────────────────────────────
+Options -Indexes
+
+# ── URL routing: serve index.html from subdirectories ────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS and WWW
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^ https://www.speedcalculator.net%{REQUEST_URI} [L,R=301]
+
+    # ── 301 Redirects: Relocated Category URLs ────────────────
+    RewriteRule ^time/age-calculator/?$ /age-calculator/ [R=301,L]
+    RewriteRule ^time/time-calculator/?$ /time-calculator/ [R=301,L]
+    RewriteRule ^time/travel-time-calculator/?$ /travel-time-calculator/ [R=301,L]
+    RewriteRule ^time/date-calculator/?$ /date-calculator/ [R=301,L]
+    RewriteRule ^time/hours-calculator/?$ /hours-calculator/ [R=301,L]
+    RewriteRule ^time/business-days-calculator/?$ /business-days-calculator/ [R=301,L]
+    RewriteRule ^education/percentage-calculator/?$ /percentage-calculator/ [R=301,L]
+    RewriteRule ^education/gpa-calculator/?$ /gpa-calculator/ [R=301,L]
+    RewriteRule ^education/grade-calculator/?$ /grade-calculator/ [R=301,L]
+    RewriteRule ^education/bmi-calculator/?$ /bmi-calculator/ [R=301,L]
+    RewriteRule ^education/loan-calculator/?$ /loan-calculator/ [R=301,L]
+    RewriteRule ^travel/fuel-cost-calculator/?$ /fuel-cost-calculator/ [R=301,L]
+    RewriteRule ^utility/tip-calculator/?$ /tip-calculator/ [R=301,L]
+    RewriteRule ^distance/distance-calculator/?$ /distance-calculator/ [R=301,L]
+    RewriteRule ^speed-calculator/?$ / [R=301,L]
+
+    # ── 301 Redirects: Discontinued Coming Soon Calculators ───
+    RewriteRule ^average-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^pace-calculator/?$ / [R=301,L]
+    RewriteRule ^travel/pace-calculator/?$ / [R=301,L]
+    RewriteRule ^top-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^wheel-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^typing-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^reading-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^internet-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^download-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^running-speed-calculator/?$ / [R=301,L]
+    RewriteRule ^mph-calculator/?$ / [R=301,L]
+    RewriteRule ^running-pace-calculator/?$ / [R=301,L]
+    RewriteRule ^acceleration-calculator/?$ / [R=301,L]
+    RewriteRule ^heart-rate-calculator/?$ / [R=301,L]
+
+    # If the request is exactly a file, serve it directly
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # If the request is a directory with an index.html, serve it
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_FILENAME}/index.html -f
+    RewriteRule ^(.*[^/])$ /$1/ [R=301,L]
+
+    # Remove trailing slash for files (optional)
+    # RewriteCond %{REQUEST_FILENAME} !-d
+    # RewriteRule ^(.*)/$ /$1 [R=301,L]
+</IfModule>
+
+# ── Custom error pages ───────────────────────────────────────
+ErrorDocument 404 /404.html
+ErrorDocument 403 /index.html
+
+# ── GZIP compression ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Browser caching ──────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html             "access plus 1 hour"
+    ExpiresByType text/css              "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/svg+xml         "access plus 1 month"
+    ExpiresByType image/png             "access plus 1 month"
+    ExpiresByType image/webp            "access plus 1 month"
+</IfModule>
+
+# ── Security headers ─────────────────────────────────────────
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

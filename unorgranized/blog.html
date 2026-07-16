@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Calculator Tips, Guides & Tutorials | SpeedCalculator.net</title>
+<meta name="description" content="Free calculator guides, tips, and tutorials on speed, distance, time, RPM, finance, health, and math calculators. Expert advice from SpeedCalculator.net.">
+<link rel="canonical" href="https://www.speedcalculator.net/blog/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero{padding:48px 0 40px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,7vw,80px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:18px;color:#60a5fa;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;max-width:560px;margin:0 auto 28px;line-height:1.75;}
+.hero-badges{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.hbadge{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* SEARCH BAR */
+.search-wrap{max-width:540px;margin:0 auto 52px;position:relative;}
+.search-wrap input{width:100%;padding:16px 56px 16px 20px;background:var(--bg2);border:2px solid var(--border2);border-radius:30px;font-family:'Barlow',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .2s;}
+.search-wrap input:focus{border-color:var(--accent);}
+.search-wrap input::placeholder{color:var(--text3);}
+.search-wrap button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:var(--accent);border:none;border-radius:22px;padding:9px 18px;cursor:pointer;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
+.search-wrap button:hover{background:var(--accent2);}
+
+/* CATEGORY FILTER */
+.cat-filter{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:44px;}
+.cat-btn{padding:7px 18px;background:var(--bg2);border:1px solid var(--border2);border-radius:20px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .18s;letter-spacing:.04em;text-transform:uppercase;}
+.cat-btn:hover{border-color:var(--accent2);color:var(--accent2);}
+.cat-btn.active{background:rgba(59,130,246,.13);border-color:var(--accent);color:var(--accent2);}
+
+/* FEATURED POST */
+.featured-wrap{margin-bottom:52px;}
+.featured-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.featured-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.featured-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 1fr;transition:all .25s;}
+@media(max-width:680px){.featured-card{grid-template-columns:1fr;}}
+.featured-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),transparent);}
+.featured-card:hover{border-color:rgba(59,130,246,.4);transform:translateY(-3px);box-shadow:0 12px 40px rgba(59,130,246,.12);}
+.featured-img{position:relative;overflow:hidden;min-height:260px;background:var(--bg3);}
+.featured-svg{width:100%;height:100%;display:block;}
+.featured-body{padding:32px;}
+.f-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;padding:4px 12px;border-radius:20px;border:1px solid;}
+.f-cat.speed{color:var(--accent2);border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.08);}
+.f-cat.health{color:var(--green);border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.08);}
+.f-cat.finance{color:var(--orange);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.08);}
+.f-cat.math{color:var(--purple);border-color:rgba(139,92,246,.3);background:rgba(139,92,246,.08);}
+.f-cat.travel{color:var(--teal);border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.08);}
+.featured-body h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;line-height:1.05;margin-bottom:12px;color:var(--text);}
+.featured-body h2 a{color:inherit;text-decoration:none;transition:color .2s;}
+.featured-body h2 a:hover{color:var(--accent2);}
+.featured-body p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:16px;}
+.post-meta{display:flex;align-items:center;gap:14px;font-size:11px;color:var(--text3);margin-bottom:16px;}
+.post-meta span{display:flex;align-items:center;gap:4px;}
+.read-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:10px 22px;border-radius:20px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.25);}
+.read-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(59,130,246,.35);}
+
+/* BLOG GRID */
+.blog-layout{display:grid;grid-template-columns:1fr 320px;gap:32px;margin-bottom:72px;}
+@media(max-width:900px){.blog-layout{grid-template-columns:1fr;}}
+
+.posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:620px){.posts-grid{grid-template-columns:1fr;}}
+
+/* POST CARD */
+.post-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .22s;display:flex;flex-direction:column;}
+.post-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 8px 28px rgba(59,130,246,.1);}
+.card-img{height:140px;overflow:hidden;position:relative;background:var(--bg3);}
+.card-img svg{width:100%;height:100%;display:block;}
+.card-body{padding:16px;flex:1;display:flex;flex-direction:column;}
+.card-cat{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:9px;border:1px solid;}
+.card-body h3{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;line-height:1.15;margin-bottom:7px;}
+.card-body h3 a{color:var(--text);text-decoration:none;transition:color .2s;}
+.card-body h3 a:hover{color:var(--accent2);}
+.card-body p{font-size:12.5px;color:var(--text2);line-height:1.7;flex:1;margin-bottom:12px;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border);}
+.card-date{font-size:10px;color:var(--text3);}
+.card-link{font-size:11px;font-weight:700;color:var(--accent2);text-decoration:none;letter-spacing:.04em;display:flex;align-items:center;gap:4px;transition:gap .15s;}
+.card-link:hover{gap:7px;}
+
+/* PAGINATION */
+.pagination{display:flex;gap:6px;justify-content:center;margin-top:28px;}
+.pg-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--text2);cursor:pointer;transition:all .15s;text-decoration:none;}
+.pg-btn:hover,.pg-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.pg-btn.disabled{opacity:.35;cursor:not-allowed;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:22px;}
+.sb-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sb-head{padding:14px 18px;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text);display:flex;align-items:center;gap:7px;}
+.sb-head em{color:var(--accent2);font-style:normal;}
+
+/* POPULAR POSTS */
+.pop-list{list-style:none;padding:12px 0;}
+.pop-item{display:flex;gap:12px;align-items:flex-start;padding:10px 18px;border-bottom:1px solid var(--border);transition:background .15s;text-decoration:none;}
+.pop-item:last-child{border:none;}
+.pop-item:hover{background:var(--bg3);}
+.pop-num{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--border2);line-height:1;min-width:24px;margin-top:2px;}
+.pop-item:hover .pop-num{color:var(--accent2);}
+.pop-title{font-size:12.5px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:3px;}
+.pop-meta{font-size:10px;color:var(--text3);}
+
+/* CATEGORIES SIDEBAR */
+.cat-list{padding:12px 0;}
+.cat-item{display:flex;align-items:center;justify-content:space-between;padding:9px 18px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
+.cat-item:last-child{border:none;}
+.cat-item:hover{background:var(--bg3);}
+.cat-item-name{font-size:13px;font-weight:600;color:var(--text2);display:flex;align-items:center;gap:8px;}
+.cat-item:hover .cat-item-name{color:var(--accent2);}
+.cat-count{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700;color:var(--text3);}
+
+/* NEWSLETTER */
+.nl-body{padding:18px;}
+.nl-body p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
+.nl-input{width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:13px;color:var(--text);outline:none;margin-bottom:8px;transition:border-color .2s;}
+.nl-input:focus{border-color:var(--accent);}
+.nl-input::placeholder{color:var(--text3);}
+.nl-btn{width:100%;padding:11px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;}
+.nl-btn:hover{opacity:.9;}
+
+/* TAGS CLOUD */
+.tags-body{padding:14px 18px;display:flex;flex-wrap:wrap;gap:6px;}
+.tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.tag:hover{border-color:var(--accent2);color:var(--accent2);}
+
+/* TOPIC STRIPS */
+.topic-section{margin-bottom:56px;}
+.topic-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.topic-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;color:var(--text);display:flex;align-items:center;gap:10px;}
+.topic-title span{color:var(--accent2);}
+.view-all{font-size:12px;font-weight:700;color:var(--accent2);text-decoration:none;letter-spacing:.06em;display:flex;align-items:center;gap:4px;transition:gap .15s;}
+.view-all:hover{gap:7px;}
+.topic-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:640px){.topic-strip{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.topic-strip{grid-template-columns:1fr;}}
+.mini-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.mini-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.mini-cat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
+.mini-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:4px;}
+.mini-date{font-size:10px;color:var(--text3);}
+
+/* SEC EYEBROW / TITLE */
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;background:linear-gradient(135deg,var(--accent2),#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+</style>
+</head>
+<body>
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep> Blog
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero">
+    <div class="eyebrow"><span class="dot"></span> Guides &middot; Tips &middot; Tutorials &middot; How-To</div>
+    <h1>Calculator Blog</h1>
+    <p class="hero-sub">Expert guides, step-by-step tutorials, and tips on speed, distance, finance, health, and math calculators. Learn how to calculate anything — faster.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; Free Guides</span>
+      <span class="hbadge b">Speed & Distance</span>
+      <span class="hbadge o">Finance Tips</span>
+      <span class="hbadge p">Health & Fitness</span>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-wrap">
+      <input type="text" id="search-inp" placeholder="Search articles, guides, tutorials..." oninput="filterPosts()">
+      <button onclick="filterPosts()">Search</button>
+    </div>
+
+    <!-- CATEGORY FILTER -->
+    <div class="cat-filter">
+      <button class="cat-btn active" onclick="filterCat('all',this)">All Posts</button>
+      <button class="cat-btn" onclick="filterCat('speed',this)">&#9889; Speed</button>
+      <button class="cat-btn" onclick="filterCat('distance',this)">&#128205; Distance</button>
+      <button class="cat-btn" onclick="filterCat('health',this)">&#10084; Health</button>
+      <button class="cat-btn" onclick="filterCat('finance',this)">&#128176; Finance</button>
+      <button class="cat-btn" onclick="filterCat('math',this)">&#9998; Math</button>
+      <button class="cat-btn" onclick="filterCat('travel',this)">&#128664; Travel</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<div class="container">
+  <div class="featured-wrap">
+    <div class="featured-label">&#11088; Featured Article</div>
+    <div class="featured-card">
+      <div class="featured-img">
+        <svg viewBox="0 0 540 300" xmlns="http://www.w3.org/2000/svg" class="featured-svg">
+          <defs>
+            <linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#111b2e"/></linearGradient>
+            <linearGradient id="fg2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#06b6d4" stop-opacity=".7"/></linearGradient>
+          </defs>
+          <rect width="540" height="300" fill="url(#fg1)"/>
+          <!-- Speedometer visual -->
+          <circle cx="270" cy="170" r="110" fill="none" stroke="rgba(59,130,246,.08)" stroke-width="22"/>
+          <circle cx="270" cy="170" r="110" fill="none" stroke="url(#fg2)" stroke-width="3" stroke-dasharray="345 345" stroke-dashoffset="172" stroke-linecap="round" transform="rotate(-225 270 170)"/>
+          <circle cx="270" cy="170" r="85" fill="none" stroke="rgba(59,130,246,.06)" stroke-width="1"/>
+          <circle cx="270" cy="170" r="12" fill="#3b82f6"/>
+          <!-- Needle -->
+          <line x1="270" y1="170" x2="200" y2="90" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+          <!-- Speed marks -->
+          <text x="270" y="215" font-family="Barlow Condensed,sans-serif" font-size="38" font-weight="900" fill="#60a5fa" text-anchor="middle">RPM</text>
+          <text x="270" y="245" font-family="Barlow Condensed,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">TO SPEED GUIDE</text>
+          <!-- Tick marks -->
+          <g stroke="rgba(96,165,250,.4)" stroke-width="1.5">
+            <line x1="175" y1="100" x2="183" y2="114"/>
+            <line x1="160" y1="140" x2="174" y2="146"/>
+            <line x1="163" y1="180" x2="177" y2="178"/>
+            <line x1="210" y1="80" x2="214" y2="95"/>
+            <line x1="250" y1="66" x2="251" y2="82"/>
+            <line x1="290" y1="66" x2="289" y2="82"/>
+            <line x1="330" y1="80" x2="326" y2="95"/>
+            <line x1="363" y1="100" x2="357" y2="114"/>
+            <line x1="380" y1="140" x2="366" y2="146"/>
+            <line x1="377" y1="180" x2="363" y2="178"/>
+          </g>
+          <!-- Corner accent -->
+          <rect x="0" y="0" width="540" height="3" fill="url(#fg2)"/>
+          <text x="30" y="40" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="rgba(96,165,250,.5)" letter-spacing="2">SPEEDCALCULATOR.NET</text>
+        </svg>
+      </div>
+      <div class="featured-body">
+        <div class="f-cat speed">&#9889; Speed Calculator</div>
+        <div class="post-meta">
+          <span>&#128197; May 20, 2026</span>
+          <span>&#9202; 8 min read</span>
+          <span>&#128065; 4.2k views</span>
+        </div>
+        <h2><a href="/blog/rpm-to-speed-calculator-guide/">How to Use the RPM to Speed Calculator — Complete Guide with Formula</a></h2>
+        <p>Learn the exact formula for converting engine RPM to vehicle speed in MPH or KM/H. Includes tire diameter, gear ratio, axle ratio, and worked examples for cars, bikes, and motorcycles.</p>
+        <a href="/blog/rpm-to-speed-calculator-guide/" class="read-btn">Read Article &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN BLOG LAYOUT -->
+<div class="container">
+<div class="blog-layout">
+
+  <!-- POSTS GRID -->
+  <div>
+    <div class="sec-eyebrow">Latest Articles</div>
+    <div class="posts-grid" id="posts-grid">
+
+      <!-- POST 1 -->
+      <div class="post-card" data-cat="speed">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <circle cx="170" cy="80" r="55" fill="none" stroke="rgba(59,130,246,.15)" stroke-width="18"/>
+            <circle cx="170" cy="80" r="55" fill="none" stroke="rgba(59,130,246,.7)" stroke-width="2" stroke-dasharray="173 173" stroke-dashoffset="86" stroke-linecap="round" transform="rotate(-225 170 80)"/>
+            <circle cx="170" cy="80" r="7" fill="#3b82f6"/>
+            <line x1="170" y1="80" x2="120" y2="40" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="170" y="105" font-family="Barlow Condensed,sans-serif" font-size="18" font-weight="900" fill="#60a5fa" text-anchor="middle">SPEED</text>
+            <rect x="0" y="0" width="340" height="2" fill="#3b82f6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat speed" style="color:var(--accent2);border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.07);">&#9889; Speed</span>
+          <h3><a href="/blog/average-speed-formula/">Average Speed Formula — How to Calculate Average Speed</a></h3>
+          <p>Master the average speed formula with real examples. Learn why average speed is not the mean of two speeds and how to calculate it correctly.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 18, 2026</span>
+            <a href="/blog/average-speed-formula/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 2 -->
+      <div class="post-card" data-cat="distance">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <circle cx="90" cy="70" r="12" fill="rgba(59,130,246,.3)" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="90" cy="70" r="5" fill="#60a5fa"/>
+            <circle cx="250" cy="70" r="12" fill="rgba(16,185,129,.3)" stroke="#10b981" stroke-width="2"/>
+            <circle cx="250" cy="70" r="5" fill="#10b981"/>
+            <line x1="102" y1="70" x2="238" y2="70" stroke="rgba(96,165,250,.4)" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <path d="M102 70 Q170 30 238 70" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 3"/>
+            <text x="170" y="100" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">d = 2R·arcsin(√(sin²(Δlat/2)+...))</text>
+            <text x="170" y="120" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">HAVERSINE FORMULA</text>
+            <rect x="0" y="0" width="340" height="2" fill="#06b6d4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat" style="color:var(--teal);border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.07);">&#128205; Distance</span>
+          <h3><a href="/blog/haversine-formula-explained/">Haversine Formula Explained — Calculate Distance Between Coordinates</a></h3>
+          <p>A clear explanation of the Haversine formula for calculating straight-line distance between two geographic coordinates using latitude and longitude.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 16, 2026</span>
+            <a href="/blog/haversine-formula-explained/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 3 -->
+      <div class="post-card" data-cat="finance">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <polyline points="40,110 90,85 140,95 190,55 240,65 290,30" fill="none" stroke="rgba(245,158,11,.5)" stroke-width="1.5"/>
+            <polyline points="40,110 90,85 140,95 190,55 240,65 290,30" fill="none" stroke="#f59e0b" stroke-width="2"/>
+            <circle cx="290" cy="30" r="5" fill="#f59e0b"/>
+            <circle cx="190" cy="55" r="4" fill="rgba(245,158,11,.6)"/>
+            <text x="170" y="128" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="rgba(245,158,11,.6)" text-anchor="middle">EMI · LOAN · MORTGAGE GUIDE</text>
+            <rect x="0" y="0" width="340" height="2" fill="#f59e0b"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat" style="color:var(--orange);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.07);">&#128176; Finance</span>
+          <h3><a href="/blog/emi-vs-loan-calculator/">EMI Calculator vs Loan Calculator — What's the Difference?</a></h3>
+          <p>Understand the difference between EMI and loan calculators. Learn which one to use for home loans, car loans, and personal loans.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 14, 2026</span>
+            <a href="/blog/emi-vs-loan-calculator/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 4 -->
+      <div class="post-card" data-cat="health">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <path d="M170 110 C170 110 100 75 100 50 a35 35 0 0 1 70 0 35 35 0 0 1 70 0 C240 75 170 110 170 110z" fill="rgba(16,185,129,.15)" stroke="#10b981" stroke-width="2"/>
+            <text x="170" y="125" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="rgba(16,185,129,.6)" text-anchor="middle">BMI · CALORIE · TDEE · HEART RATE</text>
+            <rect x="0" y="0" width="340" height="2" fill="#10b981"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat" style="color:var(--green);border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.07);">&#10084; Health</span>
+          <h3><a href="/blog/tdee-calculator-guide/">TDEE Calculator Guide — What Is TDEE and How to Use It</a></h3>
+          <p>Total Daily Energy Expenditure explained. Learn how TDEE differs from BMR, which formula is most accurate, and how to use TDEE for weight loss.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 12, 2026</span>
+            <a href="/blog/tdee-calculator-guide/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 5 -->
+      <div class="post-card" data-cat="travel">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <path d="M40 100 Q90 60 140 80 Q190 100 240 50 Q270 25 300 40" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="40" cy="100" r="5" fill="#3b82f6"/>
+            <circle cx="300" cy="40" r="5" fill="#10b981"/>
+            <text x="170" y="120" font-family="Barlow Condensed,sans-serif" font-size="11" fill="rgba(6,182,212,.6)" text-anchor="middle">TRAVEL · FUEL COST · DRIVING DISTANCE</text>
+            <rect x="0" y="0" width="340" height="2" fill="#06b6d4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat" style="color:var(--teal);border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.07);">&#128664; Travel</span>
+          <h3><a href="/blog/driving-distance-vs-straight-line/">Driving Distance vs Straight-Line Distance — What's the Difference?</a></h3>
+          <p>Why your GPS shows more km than the distance calculator. Learn the difference between crow-fly distance and road distance with real examples.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 10, 2026</span>
+            <a href="/blog/driving-distance-vs-straight-line/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POST 6 -->
+      <div class="post-card" data-cat="math">
+        <div class="card-img">
+          <svg viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="140" fill="#0b1220"/>
+            <text x="80" y="70" font-family="Barlow Condensed,sans-serif" font-size="28" font-weight="900" fill="rgba(139,92,246,.7)">%</text>
+            <text x="145" y="75" font-family="Barlow Condensed,sans-serif" font-size="36" font-weight="900" fill="rgba(139,92,246,.5)">+ − × ÷</text>
+            <text x="170" y="105" font-family="Barlow Condensed,sans-serif" font-size="13" fill="rgba(139,92,246,.5)" text-anchor="middle">PERCENTAGE · FRACTION · GRADE</text>
+            <rect x="0" y="0" width="340" height="2" fill="#8b5cf6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-cat" style="color:var(--purple);border-color:rgba(139,92,246,.3);background:rgba(139,92,246,.07);">&#9998; Math</span>
+          <h3><a href="/blog/percentage-calculator-guide/">Percentage Calculator — How to Calculate Percentage Increase & Decrease</a></h3>
+          <p>Step-by-step guide to percentage calculations. What percent of, percent change, and reverse percentage — all explained with examples.</p>
+          <div class="card-footer">
+            <span class="card-date">&#128197; May 8, 2026</span>
+            <a href="/blog/percentage-calculator-guide/" class="card-link">Read &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end posts-grid -->
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a class="pg-btn disabled">&#8592;</a>
+      <a class="pg-btn active">1</a>
+      <a class="pg-btn">2</a>
+      <a class="pg-btn">3</a>
+      <span class="pg-btn" style="border:none;background:transparent;color:var(--text3);">...</span>
+      <a class="pg-btn">8</a>
+      <a class="pg-btn">&#8594;</a>
+    </div>
+
+  </div><!-- end posts col -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- POPULAR POSTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128293; Popular <em>Articles</em></div>
+      <ul class="pop-list">
+        <a href="/blog/rpm-to-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">01</span>
+          <div><div class="pop-title">How to Use the RPM to Speed Calculator</div><div class="pop-meta">&#128197; May 20 &nbsp;·&nbsp; &#128065; 4.2k</div></div>
+        </a>
+        <a href="/blog/tdee-calculator-guide/" class="pop-item">
+          <span class="pop-num">02</span>
+          <div><div class="pop-title">TDEE Calculator Guide — What Is TDEE</div><div class="pop-meta">&#128197; May 12 &nbsp;·&nbsp; &#128065; 3.8k</div></div>
+        </a>
+        <a href="/blog/average-speed-formula/" class="pop-item">
+          <span class="pop-num">03</span>
+          <div><div class="pop-title">Average Speed Formula Explained</div><div class="pop-meta">&#128197; May 18 &nbsp;·&nbsp; &#128065; 3.1k</div></div>
+        </a>
+        <a href="/blog/emi-vs-loan-calculator/" class="pop-item">
+          <span class="pop-num">04</span>
+          <div><div class="pop-title">EMI vs Loan Calculator — Differences</div><div class="pop-meta">&#128197; May 14 &nbsp;·&nbsp; &#128065; 2.7k</div></div>
+        </a>
+        <a href="/blog/haversine-formula-explained/" class="pop-item">
+          <span class="pop-num">05</span>
+          <div><div class="pop-title">Haversine Formula Explained</div><div class="pop-meta">&#128197; May 16 &nbsp;·&nbsp; &#128065; 2.4k</div></div>
+        </a>
+      </ul>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="sb-card">
+      <div class="sb-head">&#128193; <em>Categories</em></div>
+      <div class="cat-list">
+        <a href="/blog/category/speed/" class="cat-item"><span class="cat-item-name" style="color:var(--accent2);">&#9889; Speed Calculators</span><span class="cat-count">12</span></a>
+        <a href="/blog/category/distance/" class="cat-item"><span class="cat-item-name" style="color:var(--teal);">&#128205; Distance</span><span class="cat-count">8</span></a>
+        <a href="/blog/category/health/" class="cat-item"><span class="cat-item-name" style="color:var(--green);">&#10084; Health & Fitness</span><span class="cat-count">15</span></a>
+        <a href="/blog/category/finance/" class="cat-item"><span class="cat-item-name" style="color:var(--orange);">&#128176; Finance</span><span class="cat-count">11</span></a>
+        <a href="/blog/category/travel/" class="cat-item"><span class="cat-item-name" style="color:var(--teal);">&#128664; Travel</span><span class="cat-count">7</span></a>
+        <a href="/blog/category/math/" class="cat-item"><span class="cat-item-name" style="color:var(--purple);">&#9998; Math & General</span><span class="cat-count">9</span></a>
+        <a href="/blog/category/tutorials/" class="cat-item"><span class="cat-item-name">&#127891; Tutorials</span><span class="cat-count">6</span></a>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="sb-card">
+      <div class="sb-head">&#9993; <em>Newsletter</em></div>
+      <div class="nl-body">
+        <p>Get new calculator guides and tutorials delivered to your inbox. No spam, unsubscribe anytime.</p>
+        <input type="email" class="nl-input" placeholder="your@email.com">
+        <button class="nl-btn">Subscribe Free</button>
+      </div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="sb-card">
+      <div class="sb-head">&#127991; Popular <em>Tags</em></div>
+      <div class="tags-body">
+        <a href="/blog/tag/speed-calculator/" class="tag">speed calculator</a>
+        <a href="/blog/tag/rpm/" class="tag">RPM</a>
+        <a href="/blog/tag/distance/" class="tag">distance</a>
+        <a href="/blog/tag/bmi/" class="tag">BMI</a>
+        <a href="/blog/tag/tdee/" class="tag">TDEE</a>
+        <a href="/blog/tag/loan/" class="tag">loan</a>
+        <a href="/blog/tag/emi/" class="tag">EMI</a>
+        <a href="/blog/tag/gear-ratio/" class="tag">gear ratio</a>
+        <a href="/blog/tag/percentage/" class="tag">percentage</a>
+        <a href="/blog/tag/haversine/" class="tag">haversine</a>
+        <a href="/blog/tag/travel-time/" class="tag">travel time</a>
+        <a href="/blog/tag/calorie/" class="tag">calorie</a>
+        <a href="/blog/tag/heart-rate/" class="tag">heart rate</a>
+        <a href="/blog/tag/mph/" class="tag">mph to km/h</a>
+        <a href="/blog/tag/formula/" class="tag">formula</a>
+      </div>
+    </div>
+
+  </div><!-- end sidebar -->
+</div><!-- end blog-layout -->
+</div><!-- end container -->
+
+<!-- TOPIC SECTIONS -->
+<div class="container">
+
+  <!-- SPEED ARTICLES -->
+  <div class="topic-section">
+    <div class="topic-header">
+      <div class="topic-title">&#9889; <span>Speed</span> Calculator Guides</div>
+      <a href="/blog/category/speed/" class="view-all">View All &#8594;</a>
+    </div>
+    <div class="topic-strip">
+      <a href="/blog/mph-to-kmh-conversion/" class="mini-card"><div class="mini-cat" style="color:var(--accent2);">Speed</div><div class="mini-title">MPH to KM/H — Complete Conversion Guide</div><div class="mini-date">May 5, 2026</div></a>
+      <a href="/blog/gear-ratio-explained/" class="mini-card"><div class="mini-cat" style="color:var(--accent2);">Speed</div><div class="mini-title">Gear Ratio Explained — How It Affects Vehicle Speed</div><div class="mini-date">May 3, 2026</div></a>
+      <a href="/blog/tire-size-speed-effect/" class="mini-card"><div class="mini-cat" style="color:var(--accent2);">Speed</div><div class="mini-title">How Tire Size Affects Speed at Same RPM</div><div class="mini-date">Apr 28, 2026</div></a>
+    </div>
+  </div>
+
+  <!-- HEALTH ARTICLES -->
+  <div class="topic-section">
+    <div class="topic-header">
+      <div class="topic-title">&#10084; <span>Health</span> Calculator Guides</div>
+      <a href="/blog/category/health/" class="view-all">View All &#8594;</a>
+    </div>
+    <div class="topic-strip">
+      <a href="/blog/bmi-calculator-guide/" class="mini-card"><div class="mini-cat" style="color:var(--green);">Health</div><div class="mini-title">BMI Calculator Guide — What Your BMI Means</div><div class="mini-date">Apr 25, 2026</div></a>
+      <a href="/blog/water-intake-calculator-guide/" class="mini-card"><div class="mini-cat" style="color:var(--green);">Health</div><div class="mini-title">How Much Water Should You Drink Daily?</div><div class="mini-date">Apr 22, 2026</div></a>
+      <a href="/blog/heart-rate-zones/" class="mini-card"><div class="mini-cat" style="color:var(--green);">Health</div><div class="mini-title">Heart Rate Zones — Zone 2 Training Explained</div><div class="mini-date">Apr 18, 2026</div></a>
+    </div>
+  </div>
+
+  <!-- FINANCE ARTICLES -->
+  <div class="topic-section" style="margin-bottom:72px;">
+    <div class="topic-header">
+      <div class="topic-title">&#128176; <span>Finance</span> Calculator Guides</div>
+      <a href="/blog/category/finance/" class="view-all">View All &#8594;</a>
+    </div>
+    <div class="topic-strip">
+      <a href="/blog/sip-calculator-guide/" class="mini-card"><div class="mini-cat" style="color:var(--orange);">Finance</div><div class="mini-title">SIP Calculator Guide — How SIP Returns Are Calculated</div><div class="mini-date">Apr 15, 2026</div></a>
+      <a href="/blog/mortgage-vs-loan/" class="mini-card"><div class="mini-cat" style="color:var(--orange);">Finance</div><div class="mini-title">Mortgage Calculator vs Loan Calculator — Key Differences</div><div class="mini-date">Apr 10, 2026</div></a>
+      <a href="/blog/gst-calculator-guide/" class="mini-card"><div class="mini-cat" style="color:var(--orange);">Finance</div><div class="mini-title">How to Use the GST Calculator — With Examples</div><div class="mini-date">Apr 6, 2026</div></a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Category filter
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Search filter
+function filterPosts() {
+  var q = document.getElementById('search-inp').value.toLowerCase();
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    var text = card.textContent.toLowerCase();
+    card.style.display = text.includes(q) ? 'flex' : 'none';
+  });
+}
+
+// Enter key search
+document.getElementById('search-inp').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') filterPosts();
+});
+</script>
+</body>
+</html>

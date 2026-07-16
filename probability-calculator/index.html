@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Probability Calculator — Dice, Coin, Binomial, Z-Score, Implied & More | SpeedCalculator.net</title>
+<meta name="description" content="Free probability calculator. Calculate single, multiple & 3-event probability, dice probability, coin flip, binomial, normal distribution, z-score, implied probability, odds to probability, poker, pregnancy, and more. Step-by-step formulas.">
+<meta name="keywords" content="probability calculator, dice probability calculator, conditional probability calculator, binomial probability calculator, implied probability calculator, normal distribution probability calculator, z score probability calculator, probability calculator multiple events, probability calculator 3 events, theoretical probability calculator, odds to probability calculator, dice roll probability calculator, coin flip probability calculator, poker probability calculator, pregnancy probability calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/probability-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Probability Calculator","url":"https://www.speedcalculator.net/probability-calculator/","description":"Free probability calculator — single, multiple events, dice, coin, binomial, normal distribution, z-score, implied, poker, pregnancy probability with step-by-step formulas","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a probability calculator?","acceptedAnswer":{"@type":"Answer","text":"A probability calculator is a tool that computes the likelihood of one or more events occurring. It applies mathematical formulas — such as the basic probability formula (P = favorable outcomes / total outcomes), binomial formula, normal distribution, and Bayes theorem — to give you results as a decimal, percentage, and fraction. Our free online probability calculator covers single events, multiple events, dice rolls, coin flips, conditional probability, binomial distribution, z-score probability, implied probability from odds, and specialty calculators for poker, pregnancy, and more."}},
+{"@type":"Question","name":"How to use a probability calculator?","acceptedAnswer":{"@type":"Answer","text":"To use a probability calculator: 1) Select the mode that matches your question (single event, multiple events, binomial, dice, coin flip, etc.). 2) Enter the known values — favorable outcomes, total outcomes, probability values, or dice/coin parameters. 3) Click Calculate. The calculator returns the probability as a fraction, decimal, and percentage with step-by-step formula working. For z-score probability, enter the z-score and choose upper or lower tail. For binomial, enter n (trials), k (successes), and p (probability per trial)."}},
+{"@type":"Question","name":"How to calculate probability on a calculator?","acceptedAnswer":{"@type":"Answer","text":"To calculate probability: divide the number of favorable outcomes by the total number of possible outcomes. P = favorable / total. Example: probability of rolling a 4 on a die = 1/6 = 0.1667 = 16.67%. For multiple events: use P(A and B) = P(A) x P(B) for independent events. For binomial: P(X=k) = C(n,k) x p^k x (1-p)^(n-k). Our calculator does all this automatically with step-by-step working."}},
+{"@type":"Question","name":"How to find probability on a calculator?","acceptedAnswer":{"@type":"Answer","text":"Find probability by selecting the right calculator mode: For basic probability, use Single Event and enter outcomes. For repeated experiments, use Binomial. For normal distributions, use Z-Score mode and enter your z-value. For sports betting, use Implied Probability and enter the odds format. For dice, use the Dice Calculator. For coin flips, use Coin Flip mode. Each mode shows the formula and step-by-step solution so you learn how the probability was found."}},
+{"@type":"Question","name":"How to solve probability on a calculator?","acceptedAnswer":{"@type":"Answer","text":"Solve probability problems in 3 steps: 1) Identify the type — is it a single event, two events (AND/OR), conditional (given that), binomial (repeated trials), or normal distribution? 2) Enter the values into the matching mode of our calculator. 3) Read the result — fraction, decimal, percentage, and step-by-step explanation are all shown. For 3-event probability, use our Multiple Events mode and add a third event. For z-score probability, the calculator uses the standard normal distribution table automatically."}}
+]}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.42fr;gap:40px;align-items:start;animation:fadeInUp .5s ease both;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:20px;max-width:420px;}
+.badges{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:600;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.badge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.badge.pk{border-color:rgba(236,72,153,.3);color:var(--pink);}
+
+/* TAG CLOUD */
+.tag-cloud{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;}
+.tag{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;transition:all .18s;}
+.tag:hover{border-color:var(--accent);color:var(--accent2);background:rgba(59,130,246,.08);}
+
+/* CALC CARD */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),var(--pink),var(--teal),transparent);}
+.calc-head{padding:13px 17px 11px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:7px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:26px;height:26px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 10px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:12px 16px 17px;}
+
+/* CAT TABS — 3 rows of modes */
+.cat-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:4px;}
+.cat-tab{border:none;border-radius:7px;background:transparent;color:var(--text3);font-family:'Barlow',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;cursor:pointer;transition:all .18s;padding:7px 3px;text-align:center;line-height:1.3;}
+.cat-tab.active{background:var(--accent);color:#fff;}
+.cat-tab:hover:not(.active){color:var(--text2);}
+.cat-tabs-row2{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--bg3);border-radius:10px;padding:3px;margin-bottom:12px;}
+
+/* PANELS */
+.mode-panel{display:none;}
+.mode-panel.show{display:block;}
+
+/* FIELDS */
+.inp-desc{font-size:11px;color:var(--text2);margin-bottom:9px;padding:7px 10px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;gap:6px;line-height:1.5;}
+.inp-desc::before{content:'i';color:var(--accent2);flex-shrink:0;font-size:11px;font-style:italic;font-weight:900;}
+.frow{display:grid;gap:7px;margin-bottom:8px;}
+.frow.c1{grid-template-columns:1fr;}
+.frow.c2{grid-template-columns:1fr 1fr;}
+.frow.c3{grid-template-columns:1fr 1fr 1fr;}
+.frow.c4{grid-template-columns:1fr 1fr 1fr 1fr;}
+@media(max-width:400px){.frow.c3,.frow.c4{grid-template-columns:1fr 1fr;} .frow.c2{grid-template-columns:1fr;}}
+.fgrp label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;display:block;}
+.finp{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .18s;}
+.finp:focus-within{border-color:var(--accent);}
+.finp input{flex:1;background:transparent;border:none;outline:none;padding:9px 7px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);min-width:0;width:100%;text-align:center;}
+.finp input::placeholder{color:var(--text3);font-size:13px;font-weight:400;}
+.finp .sfx{padding:0 8px;display:flex;align-items:center;font-size:10px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);white-space:nowrap;}
+.fsub{font-size:9.5px;color:var(--text3);margin-top:2px;text-align:center;line-height:1.4;}
+.fselect{background:var(--bg3);border:2px solid var(--border2);border-radius:var(--radius-sm);padding:9px 8px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;outline:none;width:100%;transition:border-color .18s;}
+.fselect:focus{border-color:var(--accent);}
+
+/* RADIO CHIPS */
+.radio-row{display:flex;gap:5px;margin-bottom:9px;flex-wrap:wrap;}
+.rchip{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:10px;font-weight:700;color:var(--text2);transition:all .18s;user-select:none;letter-spacing:.02em;text-transform:uppercase;}
+.rchip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.rchip input{display:none;}
+
+/* LIVE VISUAL BAR */
+.prob-visual{display:flex;align-items:center;gap:10px;margin-bottom:11px;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);}
+.pv-bar-wrap{flex:1;height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;}
+.pv-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--teal));border-radius:4px;transition:width .4s ease;width:0%;}
+.pv-pct{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;color:var(--accent2);min-width:52px;text-align:right;}
+.pv-odds{font-size:10px;color:var(--text3);min-width:55px;}
+
+/* DICE VISUAL */
+.dice-row{display:flex;gap:6px;margin-bottom:9px;flex-wrap:wrap;align-items:center;}
+.die-btn{width:38px;height:38px;background:var(--bg3);border:1.5px solid var(--border2);border-radius:7px;display:grid;place-items:center;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:var(--text2);cursor:pointer;transition:all .15s;user-select:none;}
+.die-btn:hover{border-color:var(--accent2);color:var(--accent2);}
+.die-btn.active{background:rgba(59,130,246,.15);border-color:var(--accent);color:var(--accent2);}
+.die-label{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;}
+
+/* COIN */
+.coin-row{display:flex;gap:8px;margin-bottom:9px;}
+.coin-btn{flex:1;padding:8px;background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--radius-sm);font-size:11px;font-weight:700;color:var(--text2);cursor:pointer;transition:all .15s;text-align:center;}
+.coin-btn.active{background:rgba(59,130,246,.12);border-color:var(--accent);color:var(--accent2);}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+
+/* RESULT */
+.result-panel{display:none;margin-top:10px;}
+.result-panel.show{display:block;animation:fadeUp .3s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:14px;margin-bottom:8px;position:relative;overflow:hidden;}
+.result-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--purple),var(--pink));}
+.r-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;}
+.r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:0;}
+@media(max-width:360px){.r-grid{grid-template-columns:1fr 1fr;}}
+.r-cell{text-align:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 5px;}
+.r-cell-lbl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;}
+.r-cell-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,4vw,22px);font-weight:900;line-height:1.1;}
+.c-blue{color:var(--accent2);} .c-green{color:var(--green);} .c-purple{color:#c4b5fd);}
+/* prob meter */
+.prob-meter{margin:10px 0 3px;}
+.pm-label{display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-bottom:4px;}
+.pm-track{height:11px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden;}
+.pm-fill{height:100%;border-radius:6px;transition:width .5s cubic-bezier(.4,0,.2,1);}
+.pm-markers{display:flex;justify-content:space-between;font-size:8px;color:var(--text3);margin-top:3px;}
+.r-extra{margin-top:7px;padding:7px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:11px;color:var(--text2);line-height:1.6;}
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;}
+.steps-hd{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.step-r{display:flex;gap:6px;padding:4px 0;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2);line-height:1.6;}
+.step-r:last-child{border:none;padding-bottom:0;}
+.sn{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);min-width:18px;flex-shrink:0;}
+.sm{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--text);font-weight:600;display:block;}
+.snote{font-size:10px;color:var(--text3);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:7px 11px;font-size:12px;color:#f87171;margin-bottom:8px;display:none;}
+
+/* DUAL RESULT */
+.dual-result{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+.dr-cell{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px;text-align:center;}
+.dr-lbl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;}
+.dr-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(16px,4vw,22px);font-weight:900;}
+.dr-sub{font-size:10px;color:var(--text3);margin-top:2px;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.75;}
+
+/* MODES REFERENCE GRID */
+.modes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:720px){.modes-grid{grid-template-columns:repeat(2,1fr);}}
+.mc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:17px;transition:all .2s;cursor:pointer;}
+.mc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.mc-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.mc-ico svg{width:18px;height:18px;}
+.mc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.mc-f{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--accent2);background:var(--bg3);border-radius:4px;padding:3px 8px;display:inline-block;margin-bottom:8px;}
+.mc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 10px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.86));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color .2s;}
+.uc:hover{border-color:var(--border2);}
+.uc-ico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-ico svg{width:18px;height:18px;}
+.uc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;}
+.uc-p{font-size:12.5px;color:var(--text2);line-height:1.7;}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;padding-top:4px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:28px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.warn{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.warn p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.warn strong{color:var(--orange);}
+.ex{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.ex h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.ex p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.prob-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.5px;}
+.prob-table th{background:var(--bg3);color:var(--accent2);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:10px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.prob-table td{padding:10px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.prob-table tr:last-child td{border:none;}
+.prob-table td strong{color:var(--text);}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:360px;}
+
+/* RELATED */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.oc-ico svg{width:15px;height:15px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Probability Calculator
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section>
+  <div class="container">
+    <div class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> 11 Modes &middot; Steps &middot; Formulas</div>
+        <h1>Probability<em>Calculator</em></h1>
+        <p class="hero-sub">Free probability calculator for every type of question. Single event, multiple events, 3 events, dice, coin flip, binomial, normal distribution, z-score, implied probability, odds, poker, and pregnancy probability. Step-by-step formulas included.</p>
+        <div class="badges">
+          <span class="badge g">&#10003; 100% Free</span>
+          <span class="badge b">11 Modes</span>
+          <span class="badge p">Binomial + Z-Score</span>
+          <span class="badge o">Implied + Odds</span>
+          <span class="badge pk">Poker + Pregnancy</span>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag" onclick="jumpMode('single')">Single Event</span>
+          <span class="tag" onclick="jumpMode('multi3')">3 Events</span>
+          <span class="tag" onclick="jumpMode('dice')">Dice Roll</span>
+          <span class="tag" onclick="jumpMode('coin')">Coin Flip</span>
+          <span class="tag" onclick="jumpMode('binomial')">Binomial</span>
+          <span class="tag" onclick="jumpMode('normal')">Z-Score</span>
+          <span class="tag" onclick="jumpMode('implied')">Implied / Odds</span>
+          <span class="tag" onclick="jumpMode('conditional')">Conditional</span>
+          <span class="tag" onclick="jumpMode('poker')">Poker</span>
+          <span class="tag" onclick="jumpMode('pregnancy')">Pregnancy</span>
+          <span class="tag" onclick="jumpMode('complement')">Complement</span>
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="ht-icon">
+              <svg width="13" height="13" fill="none" viewBox="0 0 13 13" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="5.5"/><path d="M6.5 4v2.5l2 2" stroke-linecap="round"/></svg>
+            </div>
+            Probability <em>Calculator</em>
+          </div>
+          <div class="live-pill">&#10022; Steps + Formula</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- ROW 1: Core modes -->
+          <div class="cat-tabs">
+            <button class="cat-tab active" id="tab-single"      onclick="sw('single',this)">Single Event</button>
+            <button class="cat-tab"         id="tab-multi3"     onclick="sw('multi3',this)">2 / 3 Events</button>
+            <button class="cat-tab"         id="tab-conditional" onclick="sw('conditional',this)">Conditional</button>
+          </div>
+          <!-- ROW 2: Specialty modes -->
+          <div class="cat-tabs-row2">
+            <button class="cat-tab" id="tab-dice"      onclick="sw('dice',this)">Dice Roll</button>
+            <button class="cat-tab" id="tab-coin"      onclick="sw('coin',this)">Coin Flip</button>
+            <button class="cat-tab" id="tab-binomial"  onclick="sw('binomial',this)">Binomial</button>
+            <button class="cat-tab" id="tab-normal"    onclick="sw('normal',this)">Z-Score</button>
+          </div>
+          <!-- ROW 3: Special calcs -->
+          <div class="cat-tabs" style="margin-bottom:12px;">
+            <button class="cat-tab" id="tab-implied"    onclick="sw('implied',this)">Implied / Odds</button>
+            <button class="cat-tab" id="tab-poker"      onclick="sw('poker',this)">Poker</button>
+            <button class="cat-tab" id="tab-pregnancy"  onclick="sw('pregnancy',this)">Pregnancy</button>
+          </div>
+          <!-- Complement small link -->
+          <div style="text-align:right;margin-bottom:10px;margin-top:-8px;">
+            <span onclick="sw('complement',null)" style="font-size:10px;font-weight:700;color:var(--text3);cursor:pointer;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;">+ Complement Rule</span>
+          </div>
+
+          <!-- ══ PANEL: SINGLE EVENT ══ -->
+          <div class="mode-panel show" id="panel-single">
+            <div class="inp-desc">Basic probability: enter favorable outcomes and total outcomes — or switch to decimal/percent input.</div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setST('fraction',this)"><input type="radio" name="sit"> Outcomes</label>
+              <label class="rchip"    onclick="setST('decimal',this)"><input type="radio" name="sit"> Decimal</label>
+              <label class="rchip"    onclick="setST('percent',this)"><input type="radio" name="sit"> Percentage</label>
+            </div>
+            <div id="sf-wrap">
+              <div class="frow c2">
+                <div class="fgrp"><label>Favorable Outcomes</label><div class="finp"><input type="number" id="sf-n" placeholder="3" min="0" step="1"></div><div class="fsub">e.g. 3 out of 6 sides</div></div>
+                <div class="fgrp"><label>Total Outcomes</label><div class="finp"><input type="number" id="sf-d" placeholder="6" min="1" step="1"></div><div class="fsub">e.g. 6-sided die</div></div>
+              </div>
+            </div>
+            <div id="sd-wrap" style="display:none;"><div class="frow c1"><div class="fgrp"><label>Probability (decimal 0–1)</label><div class="finp"><input type="number" id="sd-v" placeholder="0.75" min="0" max="1" step="0.001"></div></div></div></div>
+            <div id="sp-wrap" style="display:none;"><div class="frow c1"><div class="fgrp"><label>Probability (%)</label><div class="finp"><input type="number" id="sp-v" placeholder="75" min="0" max="100" step="0.01"><div class="sfx">%</div></div></div></div></div>
+            <div class="prob-visual" id="sv-vis" style="display:none;">
+              <div class="pv-bar-wrap"><div class="pv-bar" id="sv-bar"></div></div>
+              <div class="pv-pct" id="sv-pct">—</div>
+              <div class="pv-odds" id="sv-odds"></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: 2 / 3 EVENTS ══ -->
+          <div class="mode-panel" id="panel-multi3">
+            <div class="inp-desc">Enter probability for each event as a decimal (0–1). Choose 2 or 3 events. Calculates P(all), P(at least one), P(none).</div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setEvN(2,this)"><input type="radio" name="evn"> 2 Events</label>
+              <label class="rchip"    onclick="setEvN(3,this)"><input type="radio" name="evn"> 3 Events</label>
+            </div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setEvRel('ind',this)"><input type="radio" name="evr"> Independent</label>
+              <label class="rchip"    onclick="setEvRel('mut',this)"><input type="radio" name="evr"> Mutually Exclusive</label>
+            </div>
+            <div class="frow c2" id="ev2-row">
+              <div class="fgrp"><label>P(A)</label><div class="finp"><input type="number" id="ev-a" placeholder="0.5" min="0" max="1" step="0.01"></div><div class="fsub">e.g. 0.5 = 50%</div></div>
+              <div class="fgrp"><label>P(B)</label><div class="finp"><input type="number" id="ev-b" placeholder="0.3" min="0" max="1" step="0.01"></div><div class="fsub">e.g. 0.3 = 30%</div></div>
+            </div>
+            <div class="frow c1" id="ev3-row" style="display:none;">
+              <div class="fgrp"><label>P(C) — Third Event</label><div class="finp"><input type="number" id="ev-c" placeholder="0.2" min="0" max="1" step="0.01"></div><div class="fsub">e.g. 0.2 = 20%</div></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: CONDITIONAL ══ -->
+          <div class="mode-panel" id="panel-conditional">
+            <div class="inp-desc">P(A|B) = probability of A given B happened. Enter the joint probability P(A and B) and P(B).</div>
+            <div class="frow c2">
+              <div class="fgrp"><label>P(A and B)</label><div class="finp"><input type="number" id="ca-v" placeholder="0.12" min="0" max="1" step="0.01"></div><div class="fsub">joint probability</div></div>
+              <div class="fgrp"><label>P(B)</label><div class="finp"><input type="number" id="cb-v" placeholder="0.3" min="0" max="1" step="0.01"></div><div class="fsub">given event probability</div></div>
+            </div>
+            <div class="frow c1">
+              <div class="fgrp"><label>P(A) — optional for Bayes</label><div class="finp"><input type="number" id="cpa-v" placeholder="0.4" min="0" max="1" step="0.01"></div></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: DICE ══ -->
+          <div class="mode-panel" id="panel-dice">
+            <div class="inp-desc">Dice roll probability calculator. Choose die type, number of dice, and the target outcome.</div>
+            <div class="frow c2">
+              <div class="fgrp"><label>Number of Dice</label><div class="finp"><input type="number" id="dc-num" placeholder="2" min="1" max="10" step="1"></div></div>
+              <div class="fgrp"><label>Die Type</label><select class="fselect" id="dc-type"><option value="4">D4 (4-sided)</option><option value="6" selected>D6 (6-sided)</option><option value="8">D8 (8-sided)</option><option value="10">D10 (10-sided)</option><option value="12">D12 (12-sided)</option><option value="20">D20 (20-sided)</option><option value="100">D100 (percentile)</option></select></div>
+            </div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setDiceMode('exact',this)"><input type="radio" name="dm"> Exact value</label>
+              <label class="rchip"    onclick="setDiceMode('atleast',this)"><input type="radio" name="dm"> At least</label>
+              <label class="rchip"    onclick="setDiceMode('atmost',this)"><input type="radio" name="dm"> At most</label>
+              <label class="rchip"    onclick="setDiceMode('sum',this)"><input type="radio" name="dm"> Exact sum</label>
+            </div>
+            <div class="frow c1">
+              <div class="fgrp"><label id="dice-val-label">Target Value (1–6)</label><div class="finp"><input type="number" id="dc-val" placeholder="6" min="1" step="1"></div></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: COIN ══ -->
+          <div class="mode-panel" id="panel-coin">
+            <div class="inp-desc">Coin flip probability calculator. Exact, at least, or at most heads in n flips. Also calculates the probability of getting heads or tails k times in a row.</div>
+            <div class="frow c2">
+              <div class="fgrp"><label>Number of Flips (n)</label><div class="finp"><input type="number" id="cn-v" placeholder="5" min="1" max="100" step="1"></div></div>
+              <div class="fgrp"><label>Target Heads (k)</label><div class="finp"><input type="number" id="ck-v" placeholder="3" min="0" step="1"></div></div>
+            </div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setCoinMode('exact',this)"><input type="radio" name="cm"> Exactly k heads</label>
+              <label class="rchip"    onclick="setCoinMode('atleast',this)"><input type="radio" name="cm"> At least k heads</label>
+              <label class="rchip"    onclick="setCoinMode('atmost',this)"><input type="radio" name="cm"> At most k heads</label>
+              <label class="rchip"    onclick="setCoinMode('streak',this)"><input type="radio" name="cm"> k heads in a row</label>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: BINOMIAL ══ -->
+          <div class="mode-panel" id="panel-binomial">
+            <div class="inp-desc">Binomial distribution probability: n trials, k successes, p = probability per trial.</div>
+            <div class="frow c3">
+              <div class="fgrp"><label>Trials (n)</label><div class="finp"><input type="number" id="bn-v" placeholder="10" min="1" max="1000" step="1"></div><div class="fsub">total trials</div></div>
+              <div class="fgrp"><label>Successes (k)</label><div class="finp"><input type="number" id="bk-v" placeholder="3" min="0" step="1"></div><div class="fsub">desired count</div></div>
+              <div class="fgrp"><label>P(success)</label><div class="finp"><input type="number" id="bp-v" placeholder="0.5" min="0" max="1" step="0.01"></div><div class="fsub">per trial</div></div>
+            </div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setBT('exact',this)"><input type="radio" name="bt"> Exactly k</label>
+              <label class="rchip"    onclick="setBT('atmost',this)"><input type="radio" name="bt"> At most k</label>
+              <label class="rchip"    onclick="setBT('atleast',this)"><input type="radio" name="bt"> At least k</label>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: NORMAL / Z-SCORE ══ -->
+          <div class="mode-panel" id="panel-normal">
+            <div class="inp-desc">Z-score probability calculator using the standard normal distribution. Find the area under the bell curve for any z-score.</div>
+            <div class="frow c2">
+              <div class="fgrp"><label>Z-Score</label><div class="finp"><input type="number" id="z-v" placeholder="1.96" step="0.001"></div><div class="fsub">standard deviations from mean</div></div>
+              <div class="fgrp"><label>Tail</label><select class="fselect" id="z-tail"><option value="left">Left tail P(X &lt; z)</option><option value="right">Right tail P(X &gt; z)</option><option value="two">Two-tailed P(|X| &gt; z)</option><option value="between">Between ±z</option></select></div>
+            </div>
+            <div class="frow c2">
+              <div class="fgrp"><label>Mean (&#956;) — optional</label><div class="finp"><input type="number" id="z-mean" placeholder="0" step="0.01"></div></div>
+              <div class="fgrp"><label>Std Dev (&#963;) — optional</label><div class="finp"><input type="number" id="z-sd" placeholder="1" step="0.01"></div></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: IMPLIED / ODDS ══ -->
+          <div class="mode-panel" id="panel-implied">
+            <div class="inp-desc">Convert betting odds to implied probability. Used in sports betting, poker, and finance. Choose your odds format.</div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setOddsType('american',this)"><input type="radio" name="ot"> American (+/-)</label>
+              <label class="rchip"    onclick="setOddsType('decimal',this)"><input type="radio" name="ot"> Decimal</label>
+              <label class="rchip"    onclick="setOddsType('fractional',this)"><input type="radio" name="ot"> Fractional</label>
+              <label class="rchip"    onclick="setOddsType('prob2odds',this)"><input type="radio" name="ot"> Prob to Odds</label>
+            </div>
+            <div id="odds-american"><div class="frow c1"><div class="fgrp"><label>American Odds (e.g. +150 or -110)</label><div class="finp"><input type="number" id="oa-v" placeholder="-110" step="1"></div></div></div></div>
+            <div id="odds-decimal" style="display:none;"><div class="frow c1"><div class="fgrp"><label>Decimal Odds (e.g. 2.50)</label><div class="finp"><input type="number" id="od-v" placeholder="2.50" min="1" step="0.01"></div></div></div></div>
+            <div id="odds-fractional" style="display:none;">
+              <div class="frow c2">
+                <div class="fgrp"><label>Numerator</label><div class="finp"><input type="number" id="of-n" placeholder="3" min="0" step="1"></div></div>
+                <div class="fgrp"><label>Denominator</label><div class="finp"><input type="number" id="of-d" placeholder="2" min="1" step="1"></div></div>
+              </div>
+            </div>
+            <div id="odds-prob2odds" style="display:none;"><div class="frow c1"><div class="fgrp"><label>Probability (decimal 0–1)</label><div class="finp"><input type="number" id="op-v" placeholder="0.55" min="0" max="1" step="0.001"></div></div></div></div>
+          </div>
+
+          <!-- ══ PANEL: POKER ══ -->
+          <div class="mode-panel" id="panel-poker">
+            <div class="inp-desc">Poker probability calculator. Select your hand or scenario to get the probability in a standard 52-card deck.</div>
+            <div class="frow c1">
+              <div class="fgrp"><label>Poker Hand / Scenario</label>
+                <select class="fselect" id="pk-hand">
+                  <optgroup label="Pre-flop starting hands">
+                    <option value="pocket_pair">Pocket pair (any)</option>
+                    <option value="specific_pair">Specific pocket pair (e.g. AA)</option>
+                    <option value="suited_connectors">Suited connectors</option>
+                    <option value="AK">Ace-King (AK suited or offsuit)</option>
+                    <option value="AKs">Ace-King suited (AKs)</option>
+                  </optgroup>
+                  <optgroup label="5-card hand probabilities">
+                    <option value="royal_flush">Royal Flush</option>
+                    <option value="straight_flush">Straight Flush</option>
+                    <option value="four_of_a_kind">Four of a Kind</option>
+                    <option value="full_house">Full House</option>
+                    <option value="flush">Flush</option>
+                    <option value="straight">Straight</option>
+                    <option value="three_of_a_kind">Three of a Kind</option>
+                    <option value="two_pair">Two Pair</option>
+                    <option value="one_pair">One Pair</option>
+                    <option value="high_card">High Card (no hand)</option>
+                  </optgroup>
+                  <optgroup label="Drawing odds">
+                    <option value="flush_draw">Flush draw hitting on next card</option>
+                    <option value="open_straight">Open-ended straight draw hitting</option>
+                    <option value="gutshot">Gutshot straight draw hitting</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: PREGNANCY / MEDICAL ══ -->
+          <div class="mode-panel" id="panel-pregnancy">
+            <div class="inp-desc">Pregnancy probability calculator — conception, miscarriage risk, and labor probability based on gestational week. These are statistical estimates based on population data, not medical advice.</div>
+            <div class="radio-row">
+              <label class="rchip on" onclick="setPregType('conception',this)"><input type="radio" name="preg"> Conception</label>
+              <label class="rchip"    onclick="setPregType('miscarriage',this)"><input type="radio" name="preg"> Miscarriage Risk</label>
+              <label class="rchip"    onclick="setPregType('labor',this)"><input type="radio" name="preg"> Labor by Week</label>
+            </div>
+            <div id="preg-conception">
+              <div class="frow c2">
+                <div class="fgrp"><label>Age</label><div class="finp"><input type="number" id="preg-age" placeholder="30" min="18" max="50" step="1"></div></div>
+                <div class="fgrp"><label>Cycle Length (days)</label><div class="finp"><input type="number" id="preg-cycle" placeholder="28" min="21" max="40" step="1"></div></div>
+              </div>
+            </div>
+            <div id="preg-miscarriage" style="display:none;">
+              <div class="frow c1"><div class="fgrp"><label>Gestational Week</label><div class="finp"><input type="number" id="preg-week-m" placeholder="8" min="5" max="20" step="1"></div><div class="fsub">weeks 5–20</div></div></div>
+            </div>
+            <div id="preg-labor" style="display:none;">
+              <div class="frow c1"><div class="fgrp"><label>Current Gestational Week</label><div class="finp"><input type="number" id="preg-week-l" placeholder="37" min="35" max="42" step="1"></div><div class="fsub">weeks 35–42</div></div></div>
+            </div>
+          </div>
+
+          <!-- ══ PANEL: COMPLEMENT ══ -->
+          <div class="mode-panel" id="panel-complement">
+            <div class="inp-desc">Complement rule: P(not A) = 1 - P(A). Also calculates "at least once" in n trials.</div>
+            <div class="frow c2">
+              <div class="fgrp"><label>P(A)</label><div class="finp"><input type="number" id="comp-p" placeholder="0.3" min="0" max="1" step="0.01"></div></div>
+              <div class="fgrp"><label>Trials n (optional)</label><div class="finp"><input type="number" id="comp-n" placeholder="5" min="1" step="1"></div></div>
+            </div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please check inputs — values must be valid for the selected mode.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6.5"/><path d="M5.5 8l2 2 3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Probability
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">11</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Output Formats</div></div>
+      <div class="stat-item"><div class="stat-val">Steps</div><div class="stat-lbl">Always Shown</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MODES REFERENCE ════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">11 Calculator Modes</div>
+    <h2 class="sec-title">Every Type of <span>Probability</span> Covered</h2>
+    <p class="sec-sub">Click any mode card to jump to that calculator. Each mode uses the correct formula for that type of probability problem.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=900&q=80&auto=format&fit=crop"
+           alt="Probability calculator — dice probability, coin flip, binomial, normal distribution, z-score, conditional, poker probability">
+      <div class="img-overlay"><span>Probability calculator covering dice rolls, coin flips, binomial distribution, z-score, conditional probability, implied odds, and more</span></div>
+    </div>
+
+    <div class="modes-grid">
+      <div class="mc" onclick="jumpMode('single')">
+        <div class="mc-ico" style="background:rgba(59,130,246,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#3b82f6" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="6.5"/><path d="M8.5 5.5v3l2 2" stroke-linecap="round"/></svg></div>
+        <div class="mc-h">Theoretical Probability</div>
+        <div class="mc-f">P = favorable / total</div>
+        <p class="mc-p">Basic probability for any single event with known outcomes.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('multi3')">
+        <div class="mc-ico" style="background:rgba(139,92,246,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#8b5cf6" stroke-width="1.5"><circle cx="6" cy="8.5" r="4"/><circle cx="11" cy="8.5" r="4"/></svg></div>
+        <div class="mc-h">Multiple Events (2 or 3)</div>
+        <div class="mc-f">P(A and B and C)</div>
+        <p class="mc-p">AND, OR, and ALL probability for 2 or 3 simultaneous events.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('dice')">
+        <div class="mc-ico" style="background:rgba(245,158,11,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#f59e0b" stroke-width="1.5"><rect x="2" y="2" width="13" height="13" rx="2"/><circle cx="5" cy="5" r="1" fill="#f59e0b"/><circle cx="12" cy="12" r="1" fill="#f59e0b"/></svg></div>
+        <div class="mc-h">Dice Roll Probability</div>
+        <div class="mc-f">D4 / D6 / D8 / D20</div>
+        <p class="mc-p">Any dice type, number of dice, exact value, at least, at most, or exact sum.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('coin')">
+        <div class="mc-ico" style="background:rgba(16,185,129,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#10b981" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="6.5"/><path d="M8.5 5.5v6M6 8.5h5" stroke-linecap="round"/></svg></div>
+        <div class="mc-h">Coin Flip Probability</div>
+        <div class="mc-f">P = C(n,k) × 0.5^n</div>
+        <p class="mc-p">Exactly k, at least k, at most k heads, or k heads in a row.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('binomial')">
+        <div class="mc-ico" style="background:rgba(6,182,212,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#06b6d4" stroke-width="1.5"><rect x="2" y="11" width="3" height="4" rx="1"/><rect x="7" y="7" width="3" height="8" rx="1"/><rect x="12" y="3" width="3" height="12" rx="1"/></svg></div>
+        <div class="mc-h">Binomial Distribution</div>
+        <div class="mc-f">C(n,k)·p^k·(1-p)^(n-k)</div>
+        <p class="mc-p">Exactly, at most, or at least k successes in n independent trials.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('normal')">
+        <div class="mc-ico" style="background:rgba(52,211,153,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#34d399" stroke-width="1.5"><path d="M2 14 Q4 2 8.5 2 Q13 2 15 14" stroke-linecap="round"/></svg></div>
+        <div class="mc-h">Z-Score / Normal Distribution</div>
+        <div class="mc-f">P(X &lt; z) = Φ(z)</div>
+        <p class="mc-p">Left tail, right tail, two-tailed, and between ±z probability.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('implied')">
+        <div class="mc-ico" style="background:rgba(236,72,153,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#ec4899" stroke-width="1.5"><path d="M2 15L7 5l4 6 3-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="mc-h">Implied / Odds to Probability</div>
+        <div class="mc-f">American / Decimal / Fractional</div>
+        <p class="mc-p">Convert betting odds to probability and probability to odds. Sports, poker, finance.</p>
+      </div>
+      <div class="mc" onclick="jumpMode('conditional')">
+        <div class="mc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 17 17" stroke="#60a5fa" stroke-width="1.5"><path d="M3 14V7a5.5 5.5 0 0111 0v7M3 14h11" stroke-linecap="round"/></svg></div>
+        <div class="mc-h">Conditional Probability</div>
+        <div class="mc-f">P(A|B) = P(A∩B)/P(B)</div>
+        <p class="mc-p">Probability of A given B already occurred. Includes Bayes' theorem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ USE CASES ════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Real-World Applications</div>
+    <h2 class="sec-title">Where <span>Probability</span> Is Used</h2>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(245,158,11,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#f59e0b" stroke-width="1.5"><rect x="2" y="2" width="13" height="13" rx="2"/><circle cx="5" cy="5" r="1" fill="#f59e0b"/><circle cx="12" cy="12" r="1" fill="#f59e0b"/></svg></div>
+        <div class="uc-h">Games and Gambling</div>
+        <p class="uc-p">Dice roll probability, card game odds, coin flip outcomes, and poker probability help you understand the actual math behind games of chance.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(236,72,153,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#ec4899" stroke-width="1.5"><path d="M8.5 2C5.5 2 3 4.5 3 7.5c0 4 5.5 7.5 5.5 7.5s5.5-3.5 5.5-7.5c0-3-2.5-5.5-5.5-5.5z"/></svg></div>
+        <div class="uc-h">Sports Betting and Finance</div>
+        <p class="uc-p">Convert American, decimal, and fractional betting odds to implied probability. Identify edges when the true probability exceeds the bookmaker's implied probability.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(16,185,129,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#10b981" stroke-width="1.5"><path d="M2 15L8.5 2 15 15H2z" stroke-linejoin="round"/></svg></div>
+        <div class="uc-h">Statistics and Science</div>
+        <p class="uc-p">Z-score probability and normal distribution are essential for hypothesis testing, quality control (Six Sigma), and interpreting research data.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(59,130,246,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#3b82f6" stroke-width="1.5"><rect x="3" y="3" width="11" height="11" rx="2"/><path d="M6 8.5h5M8.5 6v5" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Medicine and Healthcare</div>
+        <p class="uc-p">The miscarriage probability calculator, labor probability calculator, and conception probability tool help patients understand statistical risk — always alongside professional medical advice.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(139,92,246,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#8b5cf6" stroke-width="1.5"><path d="M2 12L5 5l4 5 3-7 3 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="uc-h">Education and Homework</div>
+        <p class="uc-p">Our step-by-step probability solutions show the formula, substitution, and answer clearly — perfect for statistics homework, exam preparation, and learning probability theory.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(6,182,212,.12);"><svg fill="none" viewBox="0 0 17 17" stroke="#06b6d4" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="6.5"/><path d="M8.5 5v3.5l3 1.5" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Insurance and Risk</div>
+        <p class="uc-p">Binomial and conditional probability underpin insurance pricing, actuarial science, and risk assessment. Calculate probabilities for rare events across multiple trials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ARTICLE ════ -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Probability Calculator?</h2>
+  <p>A <strong>probability calculator</strong> is a free online tool that computes the likelihood of one or more events occurring. Our calculator covers 11 modes — single event <strong>theoretical probability</strong>, multiple events (2 or 3), <strong>conditional probability</strong>, <strong>binomial probability</strong>, <strong>normal distribution and z-score probability</strong>, <strong>implied probability from betting odds</strong>, <strong>dice roll probability</strong>, <strong>coin flip probability</strong>, <strong>poker hand probability</strong>, and <strong>pregnancy probability</strong> including miscarriage probability calculator and labor probability by week. Every result shows the formula used and step-by-step working so you understand exactly how the probability was calculated.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80&auto=format&fit=crop"
+         alt="Probability calculator — playing cards, poker probability, dice probability, coin flip probability">
+    <div class="img-overlay"><span>Probability calculator — poker hands, card games, dice rolls, coin flips, and sports betting odds</span></div>
+  </div>
+
+  <h2>How to Use a Probability Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Identify your probability type</strong><span>Is it a single event (rolling a die), multiple events (two dice), conditional (given some information), binomial (repeated trials), or a special case like z-score, dice, coin, poker, or pregnancy probability?</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Select the matching mode</strong><span>Click the correct tab at the top of the calculator. Each mode shows a description and the right input fields for that probability type.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter your values</strong><span>Type in the numbers — favorable outcomes, total outcomes, probability per trial, z-score, betting odds, gestational week, or other relevant values. All fields are labeled clearly.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Click Calculate and read results</strong><span>Get probability as fraction, decimal, and percentage instantly. The probability meter shows where your result sits on the 0–1 scale, and the step-by-step section explains the full working.</span></div></div>
+  </div>
+
+  <h2>How to Calculate Probability on a Calculator</h2>
+  <p>The basic formula for <strong>theoretical probability</strong> is: <span class="fi">P = favorable outcomes / total outcomes</span>. This is used when all outcomes are equally likely. For more complex situations, different formulas apply.</p>
+  <table class="prob-table">
+    <tr><th>Problem Type</th><th>Formula</th><th>Example</th></tr>
+    <tr><td><strong>Single event</strong></td><td>P = F / T</td><td>Rolling a 6: 1/6 = 16.7%</td></tr>
+    <tr><td><strong>A and B (independent)</strong></td><td>P(A) × P(B)</td><td>Two heads: 0.5 × 0.5 = 25%</td></tr>
+    <tr><td><strong>A or B</strong></td><td>P(A) + P(B) - P(A and B)</td><td>King or heart: 30.8%</td></tr>
+    <tr><td><strong>3 events all occurring</strong></td><td>P(A) × P(B) × P(C)</td><td>Three sixes: (1/6)³ = 0.46%</td></tr>
+    <tr><td><strong>Conditional P(A|B)</strong></td><td>P(A and B) / P(B)</td><td>King given face card: 33.3%</td></tr>
+    <tr><td><strong>Binomial</strong></td><td>C(n,k) × p^k × (1-p)^(n-k)</td><td>3 heads in 5 flips: 31.25%</td></tr>
+    <tr><td><strong>Complement</strong></td><td>1 - P(A)</td><td>Not rolling a 6: 1 - 1/6 = 83.3%</td></tr>
+  </table>
+
+  <h2>Dice Probability Calculator</h2>
+  <p>Our <strong>dice roll probability calculator</strong> supports D4, D6, D8, D10, D12, D20, and D100 dice with up to 10 dice. For a single die with n sides, the probability of rolling any specific number is 1/n. For multiple dice, the exact sum probability is calculated by counting all combinations that add up to the target value.</p>
+  <div class="ex">
+    <h4>Dice probability examples</h4>
+    <p>P(rolling at least 5 on D6) = 2/6 = 33.3% &nbsp;&bull;&nbsp; P(sum = 7 with 2D6) = 6/36 = 16.7% &nbsp;&bull;&nbsp; P(rolling a 20 on D20) = 1/20 = 5%</p>
+  </div>
+
+  <h2>Coin Flip Probability Calculator</h2>
+  <p>The <strong>coin flip probability calculator</strong> uses the binomial formula with p = 0.5. For exactly k heads in n flips: <span class="fi">P = C(n,k) × 0.5^n</span>. For a streak of k heads in a row: P = (0.5)^k. The law of large numbers ensures that over many flips, the observed ratio approaches 50%.</p>
+  <div class="ex">
+    <h4>Coin flip probability examples</h4>
+    <p>Exactly 5 heads in 10 flips: 24.6% &nbsp;&bull;&nbsp; At least 7 heads in 10 flips: 17.2% &nbsp;&bull;&nbsp; 5 heads in a row: (0.5)^5 = 3.125%</p>
+  </div>
+
+  <h2>Binomial Probability Calculator</h2>
+  <p>The <strong>binomial distribution probability calculator</strong> handles any repeated experiment with two outcomes (success/failure). Enter n (trials), k (successes), and p (probability per trial). Choose exactly k, at most k, or at least k successes.</p>
+  <div class="ex">
+    <h4>Binomial example — product quality</h4>
+    <p>A factory has 5% defect rate. What is the probability of finding exactly 2 defects in a batch of 20? n=20, k=2, p=0.05 → P = C(20,2) × 0.05² × 0.95¹⁸ = <strong>189 × 0.0025 × 0.3972 = 18.79%</strong></p>
+  </div>
+
+  <h2>Normal Distribution and Z-Score Probability Calculator</h2>
+  <p>The <strong>z-score probability calculator</strong> (also called the <strong>normal distribution probability calculator</strong>) finds the area under the standard normal curve. A z-score tells you how many standard deviations from the mean a value lies. Enter your z-score and choose left tail P(X &lt; z), right tail P(X &gt; z), two-tailed P(|X| &gt; z), or the area between ±z.</p>
+  <div class="ex">
+    <h4>Z-score examples</h4>
+    <p>z = 1.96: Left tail = 97.5%, Right tail = 2.5% (used for 95% confidence intervals) &nbsp;&bull;&nbsp; z = 2.576: Right tail = 0.5% (used for 99% CI) &nbsp;&bull;&nbsp; z = 0: Left tail = 50% (median equals mean)</p>
+  </div>
+
+  <h2>Implied Probability and Odds to Probability Calculator</h2>
+  <p>The <strong>implied probability calculator</strong> converts betting odds into the probability that the bookmaker is pricing into each outcome. This is essential for <strong>value betting</strong> — when your calculated probability exceeds the implied probability, there may be a positive expected value.</p>
+  <table class="prob-table">
+    <tr><th>Odds Format</th><th>Example</th><th>Formula</th><th>Implied Prob</th></tr>
+    <tr><td><strong>American (favorite)</strong></td><td>-110</td><td>110 / (110+100)</td><td>52.38%</td></tr>
+    <tr><td><strong>American (underdog)</strong></td><td>+150</td><td>100 / (150+100)</td><td>40.00%</td></tr>
+    <tr><td><strong>Decimal</strong></td><td>2.50</td><td>1 / 2.50</td><td>40.00%</td></tr>
+    <tr><td><strong>Fractional</strong></td><td>3/2</td><td>2 / (3+2)</td><td>40.00%</td></tr>
+  </table>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+         alt="Probability calculator for statistics, normal distribution, z-score, binomial distribution, and medical probability">
+    <div class="img-overlay"><span>Probability calculator for statistics, medicine, sports betting, science, and everyday decisions</span></div>
+  </div>
+
+  <h2>Poker Probability Calculator</h2>
+  <p>Our <strong>poker probability calculator</strong> shows the exact probability of being dealt each poker hand from a standard 52-card deck. The total number of 5-card hands is C(52,5) = 2,598,960. Probabilities range from the royal flush (1 in 649,740) to a high card hand (50.12%). Pre-flop probabilities are also included for pocket pairs, suited connectors, and specific starting hands like AK.</p>
+
+  <h2>Pregnancy Probability Calculator</h2>
+  <p>Our <strong>pregnancy probability calculator</strong> provides three statistical measures based on published population data:</p>
+  <ul>
+    <li><strong>Conception probability:</strong> Estimated chance of conceiving per cycle, adjusted for age. Fertility declines progressively after 30 and more significantly after 35.</li>
+    <li><strong>Miscarriage probability:</strong> The risk of pregnancy loss by gestational week. Risk is highest in weeks 5–6 and decreases significantly after week 10 when a heartbeat is detected.</li>
+    <li><strong>Labor probability by week:</strong> The probability of spontaneous labor occurring at or before a given gestational week. Most term pregnancies deliver between weeks 39–41.</li>
+  </ul>
+  <div class="warn"><p><strong>Important:</strong> Pregnancy probability data is based on population averages and published research. These figures are for educational and informational purposes only. Always consult your OB-GYN, midwife, or healthcare provider for personalized medical advice and risk assessment.</p></div>
+
+  <h2>Probability Calculator for 3 Events</h2>
+  <p>Our <strong>probability calculator for 3 events</strong> calculates all three events occurring simultaneously (A AND B AND C), at least one occurring (A OR B OR C), and none occurring. For independent events: <span class="fi">P(A and B and C) = P(A) × P(B) × P(C)</span>. For "at least one": P(at least one) = 1 – P(none) = 1 – (1-P(A)) × (1-P(B)) × (1-P(C)).</p>
+  <div class="ex">
+    <h4>3-event example</h4>
+    <p>P(A)=0.5, P(B)=0.3, P(C)=0.4 → P(all three) = 0.5 × 0.3 × 0.4 = <strong>6%</strong> &nbsp;&bull;&nbsp; P(at least one) = 1 – 0.5 × 0.7 × 0.6 = 1 – 0.21 = <strong>79%</strong></p>
+  </div>
+
+  <div class="tip">
+    <p><strong>How to find probability on a calculator:</strong> Match your question to the right mode. For equally-likely outcomes use Single Event. For two events use AND/OR mode. For given information use Conditional. For repeated trials use Binomial. For bell curve statistics use Z-Score. For betting lines use Implied Odds. The calculator shows you the formula and every step of the calculation.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- ════ FAQ ════ -->
+<section class="section" id="faq" style="padding-bottom:50px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Probability Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is a probability calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A <strong>probability calculator</strong> is a free online tool that computes how likely an event is to occur using mathematical formulas. Our calculator handles 11 types of probability — from basic single event calculations to advanced binomial distribution, normal distribution, z-score probability, implied probability from odds, dice rolls, coin flips, poker hands, and pregnancy statistics. All results are shown as a fraction, decimal, and percentage with full step-by-step formula working.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to use a probability calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>To use a probability calculator: (1) Choose the mode that matches your problem — Single Event for basic questions, Multiple Events for 2 or 3 events, Binomial for repeated trials, Z-Score for normal distribution problems, Dice for dice rolls, Coin for coin flips, Implied for betting odds, Poker for card hands, or Pregnancy for medical probability. (2) Enter the values in the labeled fields. (3) Click Calculate Probability. The result shows as fraction, decimal, and percentage with the formula explained step by step.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to calculate probability on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>To calculate probability: divide favorable outcomes by total outcomes. <strong>P = favorable / total</strong>. Example: probability of drawing a red card from a deck = 26/52 = 0.5 = 50%. For two independent events: multiply their probabilities. For binomial probability: use C(n,k) × p^k × (1-p)^(n-k). For z-score probability: look up the area under the normal curve for your z-value. Our calculator performs all these calculations automatically — just enter the numbers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to find probability on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Find probability by matching the question type to the correct calculator mode. For equally likely outcomes (dice, cards, spinners): use Single Event mode with favorable outcomes and total outcomes. For repeated experiments: use Binomial mode. For bell curve statistics: use Z-Score mode. For sports betting lines: use Implied Odds. For three simultaneous events: use the 3 Events mode. Each mode shows clearly labeled input fields and returns probability in all three formats automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to solve probability on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Solve any probability problem in 3 steps: (1) Identify the type — single event, multiple events, conditional, binomial, or special (z-score, dice, coin, poker, pregnancy). (2) Select the matching mode in our calculator and enter your values. (3) Read the result — fraction, decimal, percentage, and the step-by-step solution are all displayed so you can learn and verify the method. For 3-event probability, use the Multiple Events tab and switch to "3 Events." For normal distribution, use Z-Score mode.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the dice roll probability for rolling a specific number?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>For a fair die with n sides, the probability of rolling any specific value is <strong>1/n</strong>. A D6 die: P(rolling 4) = 1/6 = 16.7%. A D20: P(natural 20) = 1/20 = 5%. For multiple dice, use our Dice Roll calculator to select die type, number of dice, and target value — it calculates exact, at-least, at-most, and exact-sum probabilities. Rolling at least 5 on a D6 = 2/6 = 33.3%. Rolling a sum of 7 with 2D6 = 6/36 = 16.7%.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is implied probability in sports betting?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>Implied probability</strong> is the likelihood of an outcome as expressed by betting odds. For American odds of -110: implied probability = 110 / (110+100) = 52.38%. For +150: implied probability = 100 / (150+100) = 40%. For decimal odds of 2.50: implied probability = 1/2.50 = 40%. Bookmakers build in a margin (the "vig" or "juice"), so the implied probabilities of all outcomes in a market add up to more than 100%. Use our Implied Odds calculator to convert any odds format instantly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the miscarriage probability by week?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Miscarriage probability decreases significantly as pregnancy progresses. Before 6 weeks: approximately 22–27%. Weeks 6–7 (heartbeat detected): ~10–15%. Weeks 8–9: ~5–7%. Weeks 10–11: ~3–4%. After week 12: ~1–2%. These statistics are based on population-level research and vary based on age, medical history, and individual factors. Use our Pregnancy calculator for week-by-week estimates. Always consult your OB-GYN or midwife for personal medical guidance — these numbers are for information only.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:50px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 14 14" stroke="#3b82f6" stroke-width="1.4"><circle cx="4" cy="4" r="2"/><circle cx="10" cy="10" r="2"/><path d="M11 3L3 11" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">6 percentage modes</div>
+      </a>
+      <a href="/average-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 14 14" stroke="#10b981" stroke-width="1.4"><path d="M2 7h10M3 4h8M4 10h6" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Average Calculator</div>
+        <div class="oc-desc">Mean, median, mode</div>
+      </a>
+      <a href="/fraction-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 14 14" stroke="#f59e0b" stroke-width="1.4"><path d="M7 2v10M3 7h8" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Fraction Calculator</div>
+        <div class="oc-desc">Add, subtract, multiply</div>
+      </a>
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 14 14" stroke="#8b5cf6" stroke-width="1.4"><rect x="1" y="1" width="12" height="12" rx="2"/><path d="M4 4h6M4 7h4M4 10h2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">sin, cos, log and more</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ JS ════ -->
+<script>
+var activeMode='single', singleType='fraction', evCount=2, evRel='ind';
+var binomType='exact', diceMode='exact', coinMode='exact', oddsType='american', pregType='conception';
+
+/* ── MODE SWITCH ── */
+function sw(mode, btn){
+  activeMode=mode;
+  document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('.mode-panel').forEach(function(p){p.classList.remove('show');});
+  var panel=document.getElementById('panel-'+mode);
+  if(panel) panel.classList.add('show');
+  resetResult();
+}
+function jumpMode(mode){
+  var btn=document.getElementById('tab-'+mode);
+  sw(mode,btn);
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ── SETTERS ── */
+function setST(t,el){ singleType=t; tog('#single-input-type',el); document.getElementById('sf-wrap').style.display=t==='fraction'?'block':'none'; document.getElementById('sd-wrap').style.display=t==='decimal'?'block':'none'; document.getElementById('sp-wrap').style.display=t==='percent'?'block':'none'; }
+function setEvN(n,el){ evCount=n; tog('.radio-row:first-child+.radio-row+.radio-row',el); document.getElementById('ev3-row').style.display=n===3?'block':'none'; }
+function setEvRel(r,el){ evRel=r; tog(null,el,'[name=evr]'); }
+function setBT(t,el){ binomType=t; tog(null,el,'[name=bt]'); }
+function setDiceMode(m,el){ diceMode=m; tog(null,el,'[name=dm]'); updateDiceLabel(); }
+function setCoinMode(m,el){ coinMode=m; tog(null,el,'[name=cm]'); }
+function setOddsType(t,el){
+  oddsType=t; tog(null,el,'[name=ot]');
+  ['american','decimal','fractional','prob2odds'].forEach(function(s){document.getElementById('odds-'+s).style.display=s===t?'block':'none';});
+}
+function setPregType(t,el){ pregType=t; tog(null,el,'[name=preg]'); ['conception','miscarriage','labor'].forEach(function(s){document.getElementById('preg-'+s).style.display=s===t?'block':'none';}); }
+
+function tog(sel,el,fallback){
+  var siblings;
+  if(fallback){ siblings=document.querySelectorAll(fallback); }
+  else if(sel){ siblings=document.querySelectorAll(sel+' .rchip'); }
+  else{ siblings=el.closest('.radio-row').querySelectorAll('.rchip'); }
+  siblings.forEach(function(c){c.classList.remove('on');}); el.classList.add('on');
+}
+function updateDiceLabel(){
+  var lbl=document.getElementById('dice-val-label');
+  var sides=parseInt(document.getElementById('dc-type')?document.getElementById('dc-type').value:6)||6;
+  var n=parseInt(document.getElementById('dc-num')?document.getElementById('dc-num').value:1)||1;
+  if(diceMode==='sum') lbl.textContent='Target Sum ('+n+' dice)';
+  else lbl.textContent='Target Value (1–'+sides+')';
+}
+
+/* ── MATH ── */
+function fmt(n,dp){ dp=dp==null?6:dp; if(isNaN(n)||!isFinite(n))return'--'; return parseFloat(n.toFixed(dp)).toString(); }
+function pct(n){ return fmt(n*100,4)+'%'; }
+function dec(n){ return fmt(n,6); }
+function gcd(a,b){ a=Math.abs(Math.round(a)); b=Math.abs(Math.round(b)); while(b){var t=b;b=a%b;a=t;} return a||1; }
+function toFrac(p){
+  if(p===0)return'0/1'; if(p===1)return'1/1';
+  var best_n=0,best_d=1,minErr=1;
+  for(var d=1;d<=10000;d++){var n=Math.round(p*d);var err=Math.abs(p-n/d);if(err<minErr){minErr=err;best_n=n;best_d=d;}if(err<1e-9)break;}
+  var g=gcd(best_n,best_d); return (best_n/g)+'/'+(best_d/g);
+}
+function oddsStr(p){ if(p<=0)return'impossible'; if(p>=1)return'certain'; return fmt(p/(1-p),3)+' to 1'; }
+function combination(n,k){ if(k>n||k<0)return 0; if(k===0||k===n)return 1; k=Math.min(k,n-k); var r=1; for(var i=0;i<k;i++){r=r*(n-i)/(i+1);} return Math.round(r); }
+function binomP(n,k,p){ return combination(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k); }
+function binomCum(n,k,p,dir){ var s=0; var lo=dir==='up'?0:k, hi=dir==='up'?k:n; for(var i=lo;i<=hi;i++)s+=binomP(n,i,p); return s; }
+
+/* Z-score CDF using Horner approximation */
+function normCDF(z){
+  var t=1/(1+0.2316419*Math.abs(z));
+  var poly=t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));
+  var p=1-0.3989422803*Math.exp(-0.5*z*z)*poly;
+  return z>=0?p:1-p;
+}
+
+/* POKER HANDS */
+var POKER_HANDS={
+  royal_flush:{name:'Royal Flush',combos:4,total:2598960,desc:'A, K, Q, J, 10 all of same suit — the best possible hand'},
+  straight_flush:{name:'Straight Flush',combos:36,total:2598960,desc:'Five consecutive cards of same suit (excludes royal flush)'},
+  four_of_a_kind:{name:'Four of a Kind',combos:624,total:2598960,desc:'Four cards of same rank'},
+  full_house:{name:'Full House',combos:3744,total:2598960,desc:'Three of a kind plus a pair'},
+  flush:{name:'Flush',combos:5108,total:2598960,desc:'Five cards of same suit (not consecutive)'},
+  straight:{name:'Straight',combos:10200,total:2598960,desc:'Five consecutive cards of different suits'},
+  three_of_a_kind:{name:'Three of a Kind',combos:54912,total:2598960,desc:'Three cards of same rank'},
+  two_pair:{name:'Two Pair',combos:123552,total:2598960,desc:'Two different pairs'},
+  one_pair:{name:'One Pair',combos:1098240,total:2598960,desc:'One pair of same rank'},
+  high_card:{name:'High Card',combos:1302540,total:2598960,desc:'No combination — only highest card counts'},
+  pocket_pair:{name:'Pocket Pair (any)',combos:78,total:1326,desc:'Two hole cards of same rank (AA, KK, 22, etc.)'},
+  specific_pair:{name:'Specific Pocket Pair (e.g. AA)',combos:6,total:1326,desc:'Specific pair (e.g. Ace-Ace): C(4,2)=6 combinations'},
+  suited_connectors:{name:'Suited Connectors',combos:52,total:1326,desc:'Two consecutive cards of same suit (e.g. 8h-9h)'},
+  AK:{name:'Ace-King (AK)',combos:16,total:1326,desc:'Any Ace-King combination, suited or offsuit'},
+  AKs:{name:'Ace-King Suited (AKs)',combos:4,total:1326,desc:'Ace-King of same suit: only 4 combinations'},
+  flush_draw:{name:'Flush Draw Hitting',combos:9,total:47,desc:'9 remaining cards of your suit / 47 unseen cards after the flop'},
+  open_straight:{name:'Open-Ended Straight Draw',combos:8,total:47,desc:'8 cards complete the straight / 47 unseen on flop'},
+  gutshot:{name:'Gutshot Straight Draw',combos:4,total:47,desc:'4 cards complete the inside straight / 47 unseen'}
+};
+
+/* PREGNANCY DATA */
+var PREG_DATA={
+  miscarriage:{5:25,6:22,7:15,8:9,9:6,10:4,11:3,12:2,13:2,14:1,15:1,16:1,17:1,18:1,19:1,20:1},
+  labor:{35:5,36:12,37:22,38:35,39:52,40:68,41:82,42:95}
+};
+
+/* ── RESULT BUILDER ── */
+function buildStd(p, label, steps, extra){
+  var frac=toFrac(p), d=dec(p), pc=pct(p);
+  var fillPct=Math.min(100,Math.max(0,p*100));
+  var col=p<0.1?'#ef4444':p<0.3?'#f59e0b':p<0.7?'#3b82f6':'#10b981';
+  var stepsH=steps.map(function(s,i){
+    return '<div class="step-r"><span class="sn">'+(i+1)+'.</span><div><span class="sm">'+s.m+'</span>'+(s.n?'<span class="snote">'+s.n+'</span>':'')+'</div></div>';
+  }).join('');
+  return '<div class="result-main">'
+    +'<div class="r-label">'+label+'</div>'
+    +'<div class="r-grid">'
+    +'<div class="r-cell"><div class="r-cell-lbl">Fraction</div><div class="r-cell-val c-blue">'+frac+'</div></div>'
+    +'<div class="r-cell"><div class="r-cell-lbl">Decimal</div><div class="r-cell-val c-green">'+d+'</div></div>'
+    +'<div class="r-cell"><div class="r-cell-lbl">Percentage</div><div class="r-cell-val c-purple" style="color:#c4b5fd;">'+pc+'</div></div>'
+    +'</div>'
+    +'<div class="prob-meter"><div class="pm-label"><span>Impossible (0)</span><span>Certain (1)</span></div>'
+    +'<div class="pm-track"><div class="pm-fill" id="pm-fill" style="width:'+fillPct+'%;background:linear-gradient(90deg,'+col+','+col+'bb);"></div></div>'
+    +'<div class="pm-markers"><span>0</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>'
+    +(extra?'<div class="r-extra">'+extra+'</div>':'')
+    +'</div>'
+    +'<div class="steps-box"><div class="steps-hd">Step-by-Step Working</div>'+stepsH+'</div>';
+}
+
+function buildDual(vals, label, steps){
+  var stepsH=steps.map(function(s,i){
+    return '<div class="step-r"><span class="sn">'+(i+1)+'.</span><div><span class="sm">'+s.m+'</span>'+(s.n?'<span class="snote">'+s.n+'</span>':'')+'</div></div>';
+  }).join('');
+  var cells=vals.map(function(v){
+    return '<div class="dr-cell"><div class="dr-lbl">'+v.l+'</div><div class="dr-val" style="color:'+v.col+';">'+pct(v.p)+'</div><div class="dr-sub">'+dec(v.p)+'</div></div>';
+  }).join('');
+  return '<div class="result-main"><div class="r-label">'+label+'</div>'
+    +'<div style="display:grid;grid-template-columns:repeat('+vals.length+',1fr);gap:7px;">'+cells+'</div></div>'
+    +'<div class="steps-box"><div class="steps-hd">Step-by-Step Working</div>'+stepsH+'</div>';
+}
+
+/* ── CALCULATE ── */
+function resetResult(){ document.getElementById('result-panel').classList.remove('show'); document.getElementById('err-msg').style.display='none'; }
+function showErr(m){ var e=document.getElementById('err-msg'); e.textContent=m||'Please check inputs.'; e.style.display='block'; }
+function gv(id){ return parseFloat(document.getElementById(id)?document.getElementById(id).value:''); }
+function gi(id){ return parseInt(document.getElementById(id)?document.getElementById(id).value:''); }
+
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  var html='';
+
+  /* ── SINGLE ── */
+  if(activeMode==='single'){
+    var p;
+    if(singleType==='fraction'){
+      var n=gv('sf-n'), d=gv('sf-d');
+      if(isNaN(n)||isNaN(d)||d<=0||n<0||n>d){showErr('Favorable outcomes must be 0 to total outcomes.');return;}
+      p=n/d;
+      html=buildStd(p,'Theoretical Probability — Single Event',[
+        {m:'P = favorable / total outcomes',n:'Theoretical probability formula'},
+        {m:'P = '+n+' / '+d+'   →   '+dec(p),n:'Substitute values'},
+        {m:'P = '+pct(p)+' = '+toFrac(p),n:'Result in all formats'}
+      ],'Complement P(not A) = '+pct(1-p)+' &nbsp;|&nbsp; Odds: '+oddsStr(p));
+    } else if(singleType==='decimal'){
+      p=gv('sd-v');
+      if(isNaN(p)||p<0||p>1){showErr('Decimal must be 0 to 1.');return;}
+      html=buildStd(p,'Probability (Decimal Input)',[{m:'P = '+dec(p),n:'Input decimal'},{m:'Percentage: '+pct(p)},{m:'Fraction ≈ '+toFrac(p)},{m:'Complement: 1 − '+dec(p)+' = '+pct(1-p),n:'P(event does NOT occur)'}]);
+    } else {
+      var pp=gv('sp-v');
+      if(isNaN(pp)||pp<0||pp>100){showErr('Percentage must be 0 to 100.');return;}
+      p=pp/100;
+      html=buildStd(p,'Probability (Percentage Input)',[{m:'P = '+pp+'% / 100 = '+dec(p),n:'Convert to decimal'},{m:'Fraction ≈ '+toFrac(p)},{m:'Complement: '+pct(1-p),n:'Probability of NOT occurring'}]);
+    }
+  }
+
+  /* ── MULTI 2/3 EVENTS ── */
+  else if(activeMode==='multi3'){
+    var pA=gv('ev-a'), pB=gv('ev-b'), pC=evCount===3?gv('ev-c'):0;
+    if(isNaN(pA)||pA<0||pA>1||isNaN(pB)||pB<0||pB>1){showErr('P(A) and P(B) must be 0–1.');return;}
+    if(evCount===3&&(isNaN(pC)||pC<0||pC>1)){showErr('P(C) must be 0–1.');return;}
+    var and_p, or_p, none_p, steps=[];
+    if(evRel==='ind'){
+      and_p=evCount===3?pA*pB*pC:pA*pB;
+      none_p=evCount===3?(1-pA)*(1-pB)*(1-pC):(1-pA)*(1-pB);
+      or_p=1-none_p;
+      steps=[
+        {m:'Events are INDEPENDENT — outcomes do not affect each other',n:'Multiplication rule applies'},
+        {m:'P(A and B'+(evCount===3?' and C':'')+') = P(A) × P(B)'+(evCount===3?' × P(C)':''),n:'All events occur together'},
+        {m:'= '+dec(pA)+' × '+dec(pB)+(evCount===3?' × '+dec(pC):'')+' = '+dec(and_p)},
+        {m:'P(none) = (1-P(A)) × (1-P(B))'+(evCount===3?' × (1-P(C))':'')},
+        {m:'= '+dec(1-pA)+' × '+dec(1-pB)+(evCount===3?' × '+dec(1-pC):'')+' = '+dec(none_p)},
+        {m:'P(at least one) = 1 − P(none) = 1 − '+dec(none_p)+' = '+dec(or_p),n:'OR probability'}
+      ];
+    } else {
+      if(pA+pB+(evCount===3?pC:0)>1){showErr('Mutually exclusive: P(A)+P(B)'+(evCount===3?'+P(C)':'')+' cannot exceed 1.');return;}
+      and_p=0; or_p=evCount===3?pA+pB+pC:pA+pB; none_p=1-or_p;
+      steps=[
+        {m:'Events are MUTUALLY EXCLUSIVE — cannot happen simultaneously',n:'P(A and B) = 0'},
+        {m:'P(A or B'+(evCount===3?' or C':'')+') = P(A) + P(B)'+(evCount===3?'+P(C)':''),n:'Addition rule, no overlap'},
+        {m:'= '+dec(pA)+' + '+dec(pB)+(evCount===3?' + '+dec(pC):'')+' = '+dec(or_p)},
+        {m:'P(none) = 1 − P(at least one) = '+dec(none_p)}
+      ];
+    }
+    html=buildDual([
+      {l:'P(All Events)',p:and_p,col:'var(--teal)'},
+      {l:'P(At Least One)',p:or_p,col:'var(--purple)'},
+      {l:'P(None)',p:none_p,col:'var(--text3)'}
+    ],(evCount===3?'Probability — 3 Events':'Probability — 2 Events'),steps);
+  }
+
+  /* ── CONDITIONAL ── */
+  else if(activeMode==='conditional'){
+    var pAB=gv('ca-v'), pBc=gv('cb-v'), pAo=gv('cpa-v');
+    if(isNaN(pAB)||pAB<0||pAB>1||isNaN(pBc)||pBc<=0||pBc>1){showErr('Check inputs: P(A and B) must be 0–1, P(B) must be > 0.');return;}
+    if(pAB>pBc){showErr('P(A and B) cannot exceed P(B).');return;}
+    var pAB_=pAB, pBcond=pBc;
+    var result=pAB_/pBcond;
+    var steps=[
+      {m:'P(A|B) = P(A and B) / P(B)',n:'Conditional probability formula — restricts sample space to B'},
+      {m:'P(A|B) = '+dec(pAB_)+' / '+dec(pBcond)},
+      {m:'P(A|B) = '+dec(result)+' = '+pct(result),n:"Probability of A given B has occurred"}
+    ];
+    var extra='P(B|A) requires P(A) — enter it in the optional field above for Bayes\' theorem';
+    if(!isNaN(pAo)&&pAo>0&&pAo<=1){
+      var pBgA=pAB_/pAo;
+      var bayesCheck=(pBgA*pAo)/pBcond;
+      steps.push({m:"Bayes' Theorem: P(A|B) = P(B|A)×P(A) / P(B)",n:'Cross-check via Bayes'});
+      steps.push({m:'P(B|A) = P(A∩B)/P(A) = '+dec(pAB_)+'/'+dec(pAo)+' = '+dec(pBgA)});
+      steps.push({m:'P(A|B) via Bayes = '+dec(pBgA)+' × '+dec(pAo)+' / '+dec(pBcond)+' = '+dec(bayesCheck),n:'Should match conditional result above'});
+      extra='P(B|A) = '+pct(pBgA)+' &nbsp;|&nbsp; Bayes verification: '+pct(bayesCheck);
+    }
+    html=buildStd(result,'Conditional Probability P(A|B)',steps,extra);
+  }
+
+  /* ── DICE ── */
+  else if(activeMode==='dice'){
+    var numDice=gi('dc-num'), sides=parseInt(document.getElementById('dc-type').value), target=gv('dc-val');
+    if(isNaN(numDice)||numDice<1||isNaN(target)||target<1){showErr('Enter valid number of dice and target value.');return;}
+    var p,steps=[];
+    if(diceMode==='exact'&&numDice===1){
+      if(target>sides){showErr('Target value cannot exceed die sides ('+sides+').');return;}
+      p=1/sides;
+      steps=[{m:'P = 1 / sides = 1 / '+sides,n:'Probability of exact value on a fair '+sides+'-sided die'},{m:'P = '+dec(p)+' = '+pct(p)}];
+    } else if(diceMode==='atleast'&&numDice===1){
+      if(target>sides){p=0;}else{p=(sides-target+1)/sides;}
+      steps=[{m:'Favorable values: '+target+' to '+sides+' → '+(sides-target+1)+' outcomes'},{m:'P(≥'+target+') = '+(sides-target+1)+'/'+sides+' = '+dec(p)+' = '+pct(p)}];
+    } else if(diceMode==='atmost'&&numDice===1){
+      if(target<1){p=0;}else{p=Math.min(target,sides)/sides;}
+      steps=[{m:'Favorable values: 1 to '+Math.min(target,sides)+' → '+Math.min(target,sides)+' outcomes'},{m:'P(≤'+target+') = '+Math.min(target,sides)+'/'+sides+' = '+dec(p)+' = '+pct(p)}];
+    } else {
+      /* multi dice or sum — use binomial for exact value across n dice */
+      if(diceMode==='sum'){
+        /* Sum distribution via convolution */
+        var minSum=numDice, maxSum=numDice*sides;
+        if(target<minSum||target>maxSum){showErr('Sum '+target+' is impossible with '+numDice+'×D'+sides+'. Range: '+minSum+'–'+maxSum+'.');return;}
+        /* Count ways using stars and bars recursion */
+        function countSums(dice,s,faceMin,faceMax){
+          if(dice===0)return s===0?1:0;
+          var total=0;
+          for(var f=faceMin;f<=faceMax&&f<=s;f++) total+=countSums(dice-1,s-f,faceMin,faceMax);
+          return total;
+        }
+        var ways=countSums(numDice,target,1,sides);
+        var totalOutcomes=Math.pow(sides,numDice);
+        p=ways/totalOutcomes;
+        steps=[{m:'Total outcomes: '+sides+'^'+numDice+' = '+totalOutcomes},{m:'Ways to sum to '+target+': '+ways+' combinations'},{m:'P(sum='+target+') = '+ways+' / '+totalOutcomes+' = '+dec(p)+' = '+pct(p)}];
+      } else {
+        p=Math.pow(1/sides,numDice);
+        steps=[{m:'P(exact value on each die) = 1/'+sides+' per die'},{m:'P(all '+numDice+' show '+target+') = (1/'+sides+')^'+numDice+' = '+dec(p)},{m:'P = '+pct(p)}];
+      }
+    }
+    html=buildStd(p,'Dice Roll Probability ('+numDice+'×D'+sides+')',steps,'Complement P(not this result) = '+pct(1-p));
+  }
+
+  /* ── COIN FLIP ── */
+  else if(activeMode==='coin'){
+    var n=gi('cn-v'), k=gi('ck-v');
+    if(isNaN(n)||n<1||isNaN(k)||k<0||k>n){showErr('n must be ≥ 1 and k must be 0 to n.');return;}
+    var p, steps=[];
+    if(coinMode==='exact'){
+      p=binomP(n,k,0.5);
+      steps=[{m:'P(exactly '+k+' heads in '+n+' flips) = C('+n+','+k+') × 0.5^'+n,n:'Binomial with p=0.5 for fair coin'},{m:'C('+n+','+k+') = '+combination(n,k)},{m:'P = '+combination(n,k)+' × '+dec(Math.pow(0.5,n))+' = '+dec(p)+' = '+pct(p)}];
+    } else if(coinMode==='atleast'){
+      p=binomCum(n,k,0.5,'down');
+      steps=[{m:'P(at least '+k+' heads) = 1 − P(at most '+(k-1)+' heads)',n:'Complement of lower cumulative'},{m:'= Sum of P(X='+k+') to P(X='+n+')'},{m:'P(X ≥ '+k+') = '+dec(p)+' = '+pct(p)}];
+    } else if(coinMode==='atmost'){
+      p=binomCum(n,k,0.5,'up');
+      steps=[{m:'P(at most '+k+' heads) = P(X=0) + P(X=1) + ... + P(X='+k+')',n:'Cumulative binomial'},{m:'= '+dec(p)+' = '+pct(p)}];
+    } else {
+      /* streak */
+      p=Math.pow(0.5,k);
+      steps=[{m:'P('+k+' heads in a row) = 0.5^'+k,n:'Independent flips each with P=0.5'},{m:'= '+dec(p)+' = '+pct(p)}];
+    }
+    html=buildStd(p,'Coin Flip Probability (n='+n+', k='+k+')',steps,'Expected heads = '+fmt(n*0.5,2)+' &nbsp;|&nbsp; Complement = '+pct(1-p));
+  }
+
+  /* ── BINOMIAL ── */
+  else if(activeMode==='binomial'){
+    var n=gi('bn-v'), k=gi('bk-v'), p=gv('bp-v');
+    if(isNaN(n)||n<1||isNaN(k)||k<0||k>n||isNaN(p)||p<0||p>1){showErr('Check: n≥1, 0≤k≤n, 0≤p≤1.');return;}
+    var Cnk=combination(n,k), pk=Math.pow(p,k), qnk=Math.pow(1-p,n-k);
+    var result, steps=[];
+    if(binomType==='exact'){
+      result=binomP(n,k,p);
+      steps=[{m:'P(X=k) = C(n,k) × p^k × (1−p)^(n−k)',n:'Binomial probability formula'},{m:'n='+n+', k='+k+', p='+dec(p)},{m:'C('+n+','+k+') = '+Cnk},{m:'p^k = '+dec(p)+'^'+k+' = '+dec(pk)},{m:'(1−p)^(n−k) = '+dec(1-p)+'^'+(n-k)+' = '+dec(qnk)},{m:'P(X='+k+') = '+Cnk+' × '+dec(pk)+' × '+dec(qnk)+' = '+dec(result)+'   →   '+pct(result)}];
+    } else if(binomType==='atmost'){
+      result=binomCum(n,k,p,'up');
+      steps=[{m:'P(X ≤ '+k+') = Σ P(X=i) for i = 0 to '+k,n:'Cumulative binomial (lower tail)'},{m:'n='+n+', p='+dec(p)+', summing from 0 to '+k},{m:'P(X ≤ '+k+') = '+dec(result)+' = '+pct(result)}];
+    } else {
+      result=binomCum(n,k,p,'down');
+      steps=[{m:'P(X ≥ '+k+') = 1 − P(X ≤ '+(k-1)+')',n:'Upper tail via complement'},{m:'n='+n+', p='+dec(p)+', summing from '+k+' to '+n},{m:'P(X ≥ '+k+') = '+dec(result)+' = '+pct(result)}];
+    }
+    var mean=n*p, sd=Math.sqrt(n*p*(1-p));
+    html=buildStd(result,'Binomial Distribution Probability',steps,'Mean (expected successes): '+fmt(mean,3)+' &nbsp;|&nbsp; Std Dev: '+fmt(sd,3)+' &nbsp;|&nbsp; Complement: '+pct(1-result));
+  }
+
+  /* ── Z-SCORE / NORMAL ── */
+  else if(activeMode==='normal'){
+    var z=gv('z-v'), tail=document.getElementById('z-tail').value;
+    var mu=gv('z-mean'), sigma=gv('z-sd');
+    if(isNaN(z)){showErr('Enter a valid z-score.');return;}
+    if(!isNaN(mu)&&!isNaN(sigma)&&sigma>0&&(mu!==0||sigma!==1)){
+      var rawVal=z; z=(rawVal-mu)/sigma;
+    }
+    var p, steps=[{m:'Z-score = '+fmt(z,4)+' standard deviations from mean',n:'Normal distribution probability calculator'}];
+    if(tail==='left'){ p=normCDF(z); steps.push({m:'Left tail: P(X < z) = Φ('+fmt(z,4)+') = '+dec(p)+'   →   '+pct(p),n:'Area to the left of z on normal curve'}); }
+    else if(tail==='right'){ p=1-normCDF(z); steps.push({m:'Right tail: P(X > z) = 1 − Φ('+fmt(z,4)+') = '+dec(p)+'   →   '+pct(p),n:'Area to the right of z'}); }
+    else if(tail==='two'){ p=2*(1-normCDF(Math.abs(z))); steps.push({m:'Two-tailed: P(|X| > '+fmt(Math.abs(z),4)+') = 2 × (1 − Φ(|z|)) = '+dec(p)+'   →   '+pct(p),n:'Used for two-tailed hypothesis tests'}); }
+    else { p=2*normCDF(Math.abs(z))-1; steps.push({m:'Between ±'+fmt(Math.abs(z),4)+': P = 2×Φ(|z|) − 1 = '+dec(p)+'   →   '+pct(p),n:'Area between −z and +z (central region)'}); }
+    steps.push({m:'Common z-score reference: z=1.645 → 95%, z=1.960 → 97.5%, z=2.576 → 99.5%'});
+    html=buildStd(p,'Z-Score Probability — Normal Distribution',steps,'Complement (other tail): '+pct(1-p));
+  }
+
+  /* ── IMPLIED / ODDS ── */
+  else if(activeMode==='implied'){
+    var p, extra='', steps=[];
+    if(oddsType==='american'){
+      var o=gv('oa-v');
+      if(isNaN(o)){showErr('Enter valid American odds (e.g. -110 or +150).');return;}
+      if(o<0){ p=Math.abs(o)/(Math.abs(o)+100); steps=[{m:'Favorite odds: '+o},{m:'Implied P = |odds| / (|odds| + 100) = '+Math.abs(o)+' / '+(Math.abs(o)+100)},{m:'= '+dec(p)+' = '+pct(p),n:'Implied probability from American odds'}]; }
+      else { p=100/(o+100); steps=[{m:'Underdog odds: +'+o},{m:'Implied P = 100 / (odds + 100) = 100 / '+(o+100)},{m:'= '+dec(p)+' = '+pct(p),n:'Implied probability from American odds'}]; }
+      extra='Decimal odds equiv: '+fmt(o>0?(o/100+1):(1+100/Math.abs(o)),3)+' &nbsp;|&nbsp; Vig margin included in bookmaker lines';
+    } else if(oddsType==='decimal'){
+      var d=gv('od-v');
+      if(isNaN(d)||d<1){showErr('Decimal odds must be ≥ 1.');return;}
+      p=1/d; steps=[{m:'Decimal odds: '+d},{m:'Implied P = 1 / decimal odds = 1 / '+d},{m:'= '+dec(p)+' = '+pct(p),n:'Implied probability from decimal odds'}];
+      extra='American odds equiv: '+(p>0.5?fmt(-(p/(1-p))*100,0):'+'+fmt(((1-p)/p)*100,0));
+    } else if(oddsType==='fractional'){
+      var fn=gv('of-n'), fd=gv('of-d');
+      if(isNaN(fn)||isNaN(fd)||fd<=0){showErr('Enter valid fractional odds numerator and denominator.');return;}
+      p=fd/(fn+fd); steps=[{m:'Fractional odds: '+fn+'/'+fd},{m:'Implied P = denominator / (numerator + denominator)'},{m:'= '+fd+' / '+(fn+fd)+' = '+dec(p)+' = '+pct(p)}];
+      extra='Decimal odds equiv: '+fmt((fn/fd)+1,3);
+    } else {
+      var prob=gv('op-v');
+      if(isNaN(prob)||prob<=0||prob>=1){showErr('Probability must be > 0 and < 1.');return;}
+      p=prob;
+      var american=p>0.5?fmt(-(p/(1-p))*100,0):'+'+fmt(((1-p)/p)*100,0);
+      var decimal=fmt(1/p,3), frac=toFrac(1/p-1)+'/1';
+      steps=[{m:'Probability: '+pct(p)},{m:'American odds: '+american},{m:'Decimal odds: '+decimal},{m:'Fractional odds: '+toFrac((1-p)/p)}];
+      extra='American: '+american+' &nbsp;|&nbsp; Decimal: '+decimal+' &nbsp;|&nbsp; Fractional: '+toFrac((1-p)/p);
+    }
+    html=buildStd(p,'Implied Probability / Odds Converter',steps,extra);
+  }
+
+  /* ── POKER ── */
+  else if(activeMode==='poker'){
+    var hand=document.getElementById('pk-hand').value;
+    var h=POKER_HANDS[hand];
+    if(!h){showErr('Select a valid poker hand.');return;}
+    var p=h.combos/h.total;
+    html=buildStd(p,'Poker Probability — '+h.name,[
+      {m:'Total '+h.total+'-card combinations from 52-card deck'+(h.total===2598960?' = C(52,5)':' = C(52,2) pre-flop starts'),n:'Standard poker probability basis'},
+      {m:'Number of '+h.name+' combinations: '+h.combos,n:h.desc},
+      {m:'P('+h.name+') = '+h.combos+' / '+h.total+' = '+dec(p)+' = '+pct(p)}
+    ],'Odds against: 1 in '+fmt(1/p,0)+' hands &nbsp;|&nbsp; Odds ratio: '+oddsStr(1-p)+' against');
+  }
+
+  /* ── PREGNANCY ── */
+  else if(activeMode==='pregnancy'){
+    var p, steps=[], extra='';
+    if(pregType==='conception'){
+      var age=gi('preg-age');
+      if(isNaN(age)||age<18||age>50){showErr('Enter age between 18 and 50.');return;}
+      var basePct=age<25?25:age<30?22:age<32?20:age<34?17:age<36?14:age<38?10:age<40?7:age<42?4:age<44?2:1;
+      p=basePct/100;
+      steps=[{m:'Per-cycle conception probability is based on age and ovarian reserve research'},{m:'Age '+age+': estimated per-cycle probability = '+basePct+'%',n:'Based on published fertility research (Dunson et al., NICHD)'},{m:'P(conception this cycle) = '+pct(p)}];
+      extra='Annual probability (12 cycles): '+pct(1-Math.pow(1-p,12))+' &nbsp;|&nbsp; Always consult a reproductive specialist for personalized assessment';
+    } else if(pregType==='miscarriage'){
+      var wk=gi('preg-week-m');
+      if(isNaN(wk)||wk<5||wk>20){showErr('Enter gestational week 5 to 20.');return;}
+      var riskPct=PREG_DATA.miscarriage[wk]||1;
+      p=riskPct/100;
+      steps=[{m:'Miscarriage risk decreases significantly as pregnancy progresses'},{m:'Gestational week '+wk+': estimated miscarriage risk = '+riskPct+'%',n:'Based on population studies (Tommy\'s, ACOG data)'},{m:'After week 12, risk drops below 2% for uncomplicated pregnancies'}];
+      extra='Risk at week '+wk+': '+pct(p)+' &nbsp;|&nbsp; This is a population average — individual risk varies significantly &nbsp;|&nbsp; Consult your OB-GYN';
+    } else {
+      var wk=gi('preg-week-l');
+      if(isNaN(wk)||wk<35||wk>42){showErr('Enter gestational week 35 to 42.');return;}
+      var laborPct=PREG_DATA.labor[wk]||50;
+      p=laborPct/100;
+      steps=[{m:'Labor probability by gestational week is based on birth statistics'},{m:'By week '+wk+': cumulative probability of having delivered = '+laborPct+'%',n:'Based on U.S. birth data (CDC/NCHS)'},{m:'Most spontaneous labors occur between weeks 39–41'}];
+      extra='Probability of labor by week '+wk+': '+pct(p)+' &nbsp;|&nbsp; Individual timing varies — discuss with your healthcare provider';
+    }
+    html=buildStd(p,'Pregnancy Probability — '+(pregType==='conception'?'Conception':pregType==='miscarriage'?'Miscarriage Risk':'Labor by Week'),steps,'<span style="color:var(--orange);">Medical note: These are population-level statistical estimates for educational purposes only. Not a substitute for professional medical advice.</span>');
+  }
+
+  /* ── COMPLEMENT ── */
+  else if(activeMode==='complement'){
+    var pA=gv('comp-p'), n=gi('comp-n');
+    if(isNaN(pA)||pA<0||pA>1){showErr('P(A) must be between 0 and 1.');return;}
+    var notA=1-pA;
+    var steps=[{m:'P(not A) = 1 − P(A)',n:'Complement rule — one of the most useful probability tools'},{m:'P(not A) = 1 − '+dec(pA)+' = '+dec(notA)+' = '+pct(notA)}];
+    var extra='';
+    if(!isNaN(n)&&n>=1){
+      var pNone=Math.pow(notA,n);
+      var pAtLeast=1-pNone;
+      steps.push({m:'P(A never in '+n+' trials) = (1−P(A))^'+n+' = '+dec(notA)+'^'+n+' = '+dec(pNone),n:'Probability of zero occurrences in '+n+' trials'});
+      steps.push({m:'P(at least one A in '+n+' trials) = 1 − '+dec(pNone)+' = '+dec(pAtLeast)+' = '+pct(pAtLeast),n:'Use complement of "none" for at-least-once problems'});
+      extra='P(at least once in '+n+' trials) = '+pct(pAtLeast);
+    }
+    html=buildStd(notA,'Complement Rule — P(not A)',steps,extra);
+  }
+
+  document.getElementById('result-content').innerHTML=html;
+  var panel=document.getElementById('result-panel');
+  panel.classList.remove('show'); void panel.offsetWidth; panel.classList.add('show');
+}
+
+/* ── LIVE SINGLE VISUAL ── */
+function liveUpdate(){
+  var p=NaN;
+  if(activeMode!=='single') return;
+  if(singleType==='fraction'){ var n=gv('sf-n'),d=gv('sf-d'); if(!isNaN(n)&&!isNaN(d)&&d>0)p=n/d; }
+  else if(singleType==='decimal'){ p=gv('sd-v'); }
+  else { var v=gv('sp-v'); if(!isNaN(v))p=v/100; }
+  var vis=document.getElementById('sv-vis');
+  if(!isNaN(p)&&p>=0&&p<=1){
+    vis.style.display='flex';
+    document.getElementById('sv-bar').style.width=(p*100)+'%';
+    document.getElementById('sv-pct').textContent=fmt(p*100,2)+'%';
+    document.getElementById('sv-odds').textContent=oddsStr(p);
+  } else { vis.style.display='none'; }
+}
+
+/* ── FAQ ── */
+function faqT(el){ var it=el.parentElement,was=it.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');}); if(!was)it.classList.add('open'); }
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded',function(){
+  ['sf-n','sf-d','sd-v','sp-v'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',liveUpdate);});
+  document.querySelectorAll('input[type=number]').forEach(function(inp){inp.addEventListener('keydown',function(e){if(e.key==='Enter')calculate();});});
+  var dcType=document.getElementById('dc-type');
+  if(dcType)dcType.addEventListener('change',updateDiceLabel);
+  var dcNum=document.getElementById('dc-num');
+  if(dcNum)dcNum.addEventListener('input',updateDiceLabel);
+});
+</script>
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>What is Velocity? Physics Definition, Formula & Examples | SpeedCalculator.net</title>
+<meta name="description" content="Do you know the difference between speed and velocity? Learn the physics definition of velocity, why direction matters, and try our free velocity calculator!">
+<link rel="canonical" href="https://www.speedcalculator.net/blog/what-is-velocity/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 4px;color:var(--text3);}
+
+/* LAYOUT */
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:36px;padding:32px 0 72px;}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;}}
+
+/* ── ARTICLE ── */
+.article-col{}
+
+/* HERO BANNER */
+.post-hero{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;margin-bottom:32px;position:relative;}
+.post-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),transparent);}
+.hero-img{width:100%;display:block;}
+.hero-img svg{display:block;width:100%;}
+.post-hero-body{padding:28px 32px 32px;}
+@media(max-width:560px){.post-hero-body{padding:20px 18px 24px;}}
+
+.post-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid rgba(59,130,246,.3);background:rgba(59,130,246,.08);color:var(--accent2);margin-bottom:14px;}
+.post-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.02;letter-spacing:-.5px;text-transform:uppercase;color:#60a5fa;margin-bottom:16px;}
+.post-excerpt{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:20px;max-width:680px;}
+
+/* META ROW */
+.post-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:32px;}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);}
+.meta-item strong{color:var(--text2);font-weight:600;}
+.author-chip{display:flex;align-items:center;gap:8px;}
+.author-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:#fff;}
+.share-row{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.share-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.share-btn{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid var(--border);}
+.share-btn:hover{border-color:var(--accent2);background:rgba(59,130,246,.1);}
+
+/* CONTENT */
+.post-content{font-size:15px;color:var(--text2);line-height:1.9;}
+.post-content h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.3px;color:var(--text);margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.post-content h2::before{content:'';width:4px;height:24px;background:linear-gradient(180deg,var(--accent),var(--teal));border-radius:2px;flex-shrink:0;}
+.post-content h3{font-size:17px;font-weight:700;color:var(--accent2);margin:28px 0 10px;}
+.post-content p{margin-bottom:18px;}
+.post-content strong{color:var(--text);font-weight:600;}
+.post-content a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);transition:border-color .2s;}
+.post-content a:hover{border-color:var(--accent2);}
+.post-content ul,.post-content ol{margin:0 0 18px 22px;}
+.post-content li{margin-bottom:7px;line-height:1.75;}
+.post-content li::marker{color:var(--accent2);}
+
+/* FORMULA BOX */
+.formula-box{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:18px 20px;margin:20px 0;}
+.formula-box .f-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.formula-box .f-eq{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.4;}
+.formula-box .f-note{font-size:12px;color:var(--text3);margin-top:7px;line-height:1.6;}
+
+/* EXAMPLE BOX */
+.example-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;margin:20px 0;}
+.ex-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.ex-step{display:flex;gap:12px;margin-bottom:10px;font-size:14px;}
+.ex-step:last-child{margin-bottom:0;}
+.ex-num{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px;}
+.ex-text{color:var(--text2);line-height:1.65;}
+.ex-text strong{color:var(--accent2);}
+
+/* TIP BOX */
+.tip-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.tip-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.tip-text strong{color:var(--green);}
+
+/* WARNING BOX */
+.warn-box{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.warn-ico{font-size:18px;flex-shrink:0;}
+.warn-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.warn-text strong{color:var(--orange);}
+
+/* INLINE IMAGE */
+.post-img{border-radius:var(--radius);overflow:hidden;margin:24px 0;border:1px solid var(--border2);}
+.post-img img{display:block;width:100%;height:auto;}
+.post-img figcaption{padding:10px 16px;font-size:11.5px;color:var(--text3);line-height:1.5;background:var(--bg2);border-top:1px solid var(--border);}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border);margin:20px 0;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--bg3);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;}
+td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);font-size:13.5px;}
+tr:last-child td{border:none;}
+td:first-child{font-weight:600;color:var(--text);}
+tr:hover td{background:rgba(59,130,246,.03);}
+
+/* PROGRESS / TOC */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));z-index:999;transition:width .1s;}
+
+/* TAGS */
+.post-tags{display:flex;flex-wrap:wrap;gap:7px;margin:32px 0;}
+.post-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.post-tag:hover{border-color:var(--accent2);color:var(--accent2);}
+
+/* AUTHOR BOX */
+.author-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:18px;align-items:flex-start;margin:36px 0;}
+@media(max-width:480px){.author-box{flex-direction:column;align-items:center;text-align:center;}}
+.author-av-lg{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;flex-shrink:0;}
+.author-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.author-role{font-size:11px;color:var(--accent2);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.author-bio{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* RELATED POSTS */
+.related-section{margin:36px 0;}
+.rel-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:18px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.rel-title span{color:var(--accent2);}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:560px){.rel-grid{grid-template-columns:1fr;}}
+.rel-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.rel-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.rel-cat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
+.rel-title-sm{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:5px;}
+.rel-date{font-size:10px;color:var(--text3);}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+.sb-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sb-head{padding:14px 18px;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text);display:flex;align-items:center;gap:7px;}
+.sb-head em{color:var(--accent2);font-style:normal;}
+
+/* TOC */
+.toc-list{padding:12px 0;list-style:none;}
+.toc-item{border-bottom:1px solid var(--border);}
+.toc-item:last-child{border:none;}
+.toc-link{display:block;padding:9px 18px;font-size:12.5px;color:var(--text3);text-decoration:none;transition:all .15s;line-height:1.4;}
+.toc-link:hover,.toc-link.active{background:var(--bg3);color:var(--accent2);border-left:2px solid var(--accent);}
+
+/* CALC CTA */
+.calc-cta{padding:18px;}
+.calc-cta p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
+.cta-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:12px 18px;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.25);}
+.cta-btn:hover{opacity:.9;transform:translateY(-1px);}
+
+/* POPULAR POSTS SB */
+.pop-list{list-style:none;padding:8px 0;}
+.pop-item{display:flex;gap:10px;align-items:flex-start;padding:9px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
+.pop-item:last-child{border:none;}
+.pop-item:hover{background:var(--bg3);}
+.pop-num{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--border2);line-height:1;min-width:22px;}
+.pop-item:hover .pop-num{color:var(--accent2);}
+.pop-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:2px;}
+.pop-meta-sm{font-size:10px;color:var(--text3);}
+
+/* TAGS SB */
+.tags-body{padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px;}
+.tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.tag:hover{border-color:var(--accent2);color:var(--accent2);}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- READING PROGRESS BAR -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/blog/">Blog</a><sep>&#8250;</sep>
+    <a href="/blog/category/speed/">Speed</a><sep>&#8250;</sep>
+    What Is Velocity?
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+<div class="post-layout">
+
+  <!-- ═══ ARTICLE COLUMN ═══ -->
+  <article class="article-col">
+
+    <!-- HERO BANNER -->
+    <div class="post-hero">
+      <div class="hero-img">
+        <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#05080f"/><stop offset="100%" stop-color="#0b1220"/></linearGradient>
+            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".15"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="860" height="320" fill="url(#bg-grad)"/>
+          <pattern id="pg" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(59,130,246,.04)" stroke-width="1"/></pattern>
+          <rect width="860" height="320" fill="url(#pg)"/>
+          
+          <!-- Visual Glow -->
+          <circle cx="210" cy="160" r="150" fill="url(#glow)"/>
+          
+          <!-- Distance (curve) vs Displacement (vector) vector illustration -->
+          <path d="M80 200 Q 130 90 200 170 T 320 140" fill="none" stroke="rgba(245,158,11,.3)" stroke-width="3" stroke-dasharray="6 4"/>
+          <line x1="80" y1="200" x2="320" y2="140" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="312,132 325,138 316,149" fill="#8b5cf6"/>
+          
+          <circle cx="80" cy="200" r="7" fill="#3b82f6"/>
+          <circle cx="320" cy="140" r="7" fill="#10b981"/>
+          
+          <text x="80" y="222" font-family="Barlow" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">START</text>
+          <text x="320" y="118" font-family="Barlow" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">FINISH</text>
+          
+          <text x="135" y="115" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="800" fill="#f59e0b" letter-spacing="1">Distance (Scalar path)</text>
+          <text x="210" y="195" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="800" fill="#8b5cf6" letter-spacing="1">Displacement (Vector)</text>
+          
+          <!-- Formula info panel on the right -->
+          <rect x="390" y="55" width="430" height="210" rx="14" fill="rgba(11,18,32,.75)" stroke="rgba(59,130,246,.15)" stroke-width="1.5"/>
+          <text x="415" y="90" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#4a6080" letter-spacing="2">PHYSICS VELOCITY FORMULA</text>
+          <text x="415" y="132" font-family="Barlow Condensed,sans-serif" font-size="24" font-weight="900" fill="#60a5fa">Velocity =</text>
+          <text x="415" y="166" font-family="Barlow Condensed,sans-serif" font-size="20" font-weight="800" fill="#f0f4ff">Displacement &divide; Time</text>
+          <line x1="415" y1="182" x2="795" y2="182" stroke="rgba(96,165,250,.3)" stroke-width="1.5"/>
+          
+          <text x="415" y="210" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Vector quantity (includes both magnitude and direction)</text>
+          <text x="415" y="232" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Can be positive, negative, or zero based on motion</text>
+          <text x="415" y="252" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Differs from speed due to straight-line net displacement</text>
+        </svg>
+      </div>
+      <div class="post-hero-body">
+        <div class="post-cat">&#9889; Speed Calculator</div>
+        <h1 class="post-title">What Is Velocity? The Definition, Formula, and Meaning in Physics</h1>
+        <p class="post-excerpt">Do you know the difference between speed and velocity? Learn the physics definition of velocity, why direction matters, and try our free velocity calculator!</p>
+        <!-- META -->
+        <div class="post-meta">
+          <div class="meta-item author-chip">
+            <div class="author-av">SC</div>
+            <strong>SpeedCalc Team</strong>
+          </div>
+          <div class="meta-item">&#128197; <strong>July 16, 2026</strong></div>
+          <div class="meta-item">&#9202; <strong>5 min</strong> read</div>
+          <div class="meta-item">&#128065; <strong>940</strong> views</div>
+          <div class="meta-item">&#128172; <strong>0</strong> comments</div>
+          <div class="share-row">
+            <span class="share-lbl">Share:</span>
+            <a class="share-btn" href="#" title="Twitter/X">&#120143;</a>
+            <a class="share-btn" href="#" title="Facebook">f</a>
+            <a class="share-btn" href="#" title="LinkedIn">in</a>
+            <a class="share-btn" href="#" title="Copy link">&#128279;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ POST CONTENT ═══ -->
+    <div class="post-content">
+
+      <p>Look in any physics book, and you'll see speed and velocity right next to one another. They appear to be twin siblings. They have the same units too. However, do not confuse them; otherwise, you might get test questions wrong. The one little thing that makes all the difference: direction. This page explains the physics definition of velocity, why direction matters, and how to use velocity correctly.</p>
+
+      <h2 id="definition">Define the Velocity: The Short Version</h2>
+      <p>The simple explanation is that velocity is the rate at which an object changes its position in a given direction. Here is the formula:</p>
+
+      <div class="formula-box">
+        <div class="f-label">Formula for Velocity</div>
+        <div class="f-eq">Velocity = Displacement &divide; Time</div>
+        <div class="f-note">Where <strong>Displacement</strong> is the shortest straight-line distance from the start to the end point including its direction, and <strong>Time</strong> is the duration of the movement.</div>
+      </div>
+
+      <p>Notice the term "displacement", not "distance". This swap is the reason velocity is different from speed. It's an aspect worth pausing on.</p>
+      
+      <div class="tip-box">
+        <div class="tip-ico">&#128663;</div>
+        <div class="tip-text"><strong>Calculate Instantly:</strong> Want to calculate this instantly? Try our free <a href="/">Velocity Calculator</a> to find velocity, displacement, or time in seconds.</div>
+      </div>
+
+      <h2 id="displacement-vs-distance">Displacement vs. Distance: The Key to Understanding Velocity</h2>
+      <p>Distance is the total length moved, regardless of the direction you turned. Displacement is different. It is the straight-line distance between the starting point and the ending point, and it includes direction.</p>
+      <p>Imagine a person who runs around a 400 m track and comes back to the starting point. The length of the track is 400 m. The displacement is zero. Why? The runner ended up back at the starting point. Speed would count that lap as true movement. In velocity terms, it's a net result of nothing, since there is no change in overall position.</p>
+      <p>For this reason, velocity in physics is always linked to displacement. Swap in distance instead, and the formula just becomes speed.</p>
+
+      <h2 id="in-practice">Velocity: What Does It Mean in Practice</h2>
+      <p>Velocity is a simple term that gives you two pieces of information: the speed of an object, and the direction it's travelling in. Two cars are traveling east at 60 miles per hour and west at 60 miles per hour. The speed of both cars is the same. However, they do not have the same velocity. The direction is reversed, and the velocity changes, even if all other numbers on the dashboard remain the same.</p>
+      <p>This is the reason why velocity is a vector quantity. A vector always has a magnitude (size) and a direction. Speed works differently. It's a scalar. Only size is associated with it, not direction.</p>
+
+      <h2 id="negative-velocity">Why Velocity Can Be Negative</h2>
+      <p>In velocity, the sign in front of the number does have meaning because direction is part of velocity. A car moving forward could have a velocity of 20 m/s. The same car, moving backwards at the same speed, would have a velocity of -20 m/s. The number stayed constant in size. However, the sign changed to indicate the direction.</p>
+      <p>This doesn't happen with speed. The speed for both cases above would be the same: 20 meters per second, with no sign attached. This is often the easiest way to tell speed and velocity apart on a test.</p>
+
+      <h2 id="units">Units Used for Velocity</h2>
+      <p>Both velocity and speed measure motion over time, so they're expressed in the same units. The difference shows up in the direction label. When a direction is needed, velocity is written alongside it:</p>
+      <ul>
+        <li><strong>Meters per second (m/s)</strong> — the standard SI unit in physics (e.g. "10 m/s north")</li>
+        <li><strong>Kilometers per hour (km/h)</strong> — used commonly for road travel</li>
+        <li><strong>Miles per hour (mph)</strong> — standard in the United States and UK</li>
+        <li><strong>Feet per second (ft/s)</strong> — used in sports and engineering</li>
+      </ul>
+      <p>A velocity value by itself does not fully describe the situation unless it's accompanied by a direction. That is what makes it different from speed, which needs no direction tag.</p>
+
+      <h2 id="vector-nature">Why the Vector Nature of Velocity Matters</h2>
+      <p>Although the term velocity is often treated as a simple glossary word, it is a vector quantity, and that changes the math. Vectors are added and subtracted based on both direction and magnitude. If two vectors travel in the same direction, they add together in a straight line. Opposite velocities can cancel each other out, partly or completely.</p>
+      <p>This is why a plane flying at 500 mph into a 50 mph headwind is not moving at 500 mph relative to the ground. The wind's velocity is opposite in direction to the plane's velocity, so the two numbers reduce to a smaller one (450 mph). This wouldn't be possible with speed alone — there's no direction to subtract.</p>
+
+      <h2 id="real-examples">Real Examples of Velocity</h2>
+      <ul>
+        <li><strong>A plane flying north:</strong> A northward-flying airplane at 500 mph has a well-defined velocity. If it turns south mid-flight, the velocity changes even if the speed stays the same.</li>
+        <li><strong>A ball thrown straight up:</strong> As the ball rises, its velocity is positive, since it's moving upward. It slows to a momentary stop at the top, then the velocity turns negative as it falls back down. Its speed, meanwhile, steadily increases on the way down.</li>
+        <li><strong>A car on a circular track:</strong> A car moving at a constant 50 mph around a curve has constant speed but constantly changing velocity, because the direction keeps changing throughout the curve. This is one of the clearest examples of speed and velocity fully diverging.</li>
+        <li><strong>Walking to a store and back:</strong> If you walk 500 m to a shop and 500 m back home, you've covered a total distance of 1000 m. Your average velocity for the trip is zero, since you ended up back where you started. Your average speed, however, is a positive number based on total distance covered.</li>
+      </ul>
+
+      <h2 id="instantaneous-vs-average">Instantaneous Velocity vs. Average Velocity</h2>
+      <p>Like speed, velocity comes in two flavors depending on the time frame you're considering.</p>
+      <p><strong>Instantaneous velocity</strong> is the speed and direction at one specific point in time — think of a speedometer reading and a compass direction at that exact moment.</p>
+      <p><strong>Average velocity</strong> considers the whole trip: total displacement divided by total time. Average velocity can be zero even after hours of travel.</p>
+      <p>The difference matters most when direction changes are involved, such as a bouncing ball or a car making a U-turn. In those cases, the average and instantaneous values can look very different.</p>
+
+      <h2 id="differs-from-speed">How This Differs From Speed</h2>
+      <p>It's a point worth repeating, since many students stay fuzzy on it: when you ask "how fast," speed answers with just a number. Velocity answers "how fast, and which way." Every formula, sign convention, and real-world example of velocity traces back to that one extra layer of information. Leave out the direction, and you're just relabeling how fast something is moving.</p>
+
+      <h2 id="quick-recap">Quick Recap: Velocity in One Glance</h2>
+      <ul>
+        <li>Velocity is a measure of speed and direction.</li>
+        <li>Displacement is the straight-line distance, not total distance.</li>
+        <li>Velocity is a vector quantity while speed is a scalar quantity.</li>
+        <li>The sign of velocity can be positive, negative, or zero, depending on direction.</li>
+        <li>Average velocity can be zero even if average speed is large.</li>
+      </ul>
+      <p>Keep these 5 points close by, and the definition of velocity in physics will stay clear, no matter how the question disguises it.</p>
+
+      <!-- TAGS -->
+      <div class="post-tags">
+        <a href="/blog/tag/speed/" class="post-tag">speed</a>
+        <a href="/blog/tag/velocity/" class="post-tag">velocity</a>
+        <a href="/blog/tag/physics/" class="post-tag">physics</a>
+        <a href="/blog/tag/vector-nature/" class="post-tag">vector &amp; scalar</a>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box">
+        <div class="author-av-lg">SC</div>
+        <div>
+          <div class="author-name">SpeedCalc Editorial Team</div>
+          <div class="author-role">Calculator Experts &amp; Technical Writers</div>
+          <div class="author-bio">The SpeedCalculator.net team creates accurate, easy-to-understand guides on speed, distance, time, RPM, finance, and health calculators. All formulas are verified against engineering references and real-world test data.</div>
+        </div>
+      </div>
+
+      <!-- RELATED POSTS -->
+      <div class="related-section">
+        <div class="rel-title">Related <span>Articles</span></div>
+        <div class="rel-grid">
+          <a href="/blog/what-is-speed-in-physics/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">What Is Speed in Physics? The Scientific Definition, Explained Simply</div>
+            <div class="rel-date">&#128197; Jul 14, 2026</div>
+          </a>
+          <a href="/blog/average-speed-formula/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">Average Speed Formula — How to Calculate Average Speed</div>
+            <div class="rel-date">&#128197; May 18, 2026</div>
+          </a>
+          <a href="/blog/rpm-to-speed-calculator-guide/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">How to Use the RPM to Speed Calculator — Complete Guide</div>
+            <div class="rel-date">&#128197; May 20, 2026</div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end post-content -->
+  </article>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128203; Table of <em>Contents</em></div>
+      <ul class="toc-list" id="toc">
+        <li class="toc-item"><a href="#definition" class="toc-link active">Velocity Definition</a></li>
+        <li class="toc-item"><a href="#displacement-vs-distance" class="toc-link">Displacement vs. Distance</a></li>
+        <li class="toc-item"><a href="#in-practice" class="toc-link">Velocity in Practice</a></li>
+        <li class="toc-item"><a href="#negative-velocity" class="toc-link">Negative Velocity</a></li>
+        <li class="toc-item"><a href="#units" class="toc-link">Units of Velocity</a></li>
+        <li class="toc-item"><a href="#vector-nature" class="toc-link">Why Vector Nature Matters</a></li>
+        <li class="toc-item"><a href="#real-examples" class="toc-link">Real Velocity Examples</a></li>
+        <li class="toc-item"><a href="#instantaneous-vs-average" class="toc-link">Instantaneous vs. Average</a></li>
+        <li class="toc-item"><a href="#differs-from-speed" class="toc-link">Difference from Speed</a></li>
+        <li class="toc-item"><a href="#quick-recap" class="toc-link">Quick Recap</a></li>
+      </ul>
+    </div>
+
+    <!-- CALCULATOR CTA -->
+    <div class="sb-card">
+      <div class="sb-head">&#9881; Try the <em>Calculator</em></div>
+      <div class="calc-cta">
+        <p>Use our free Speed and Velocity Calculator to solve motion math instantly in any unit system.</p>
+        <a href="/" class="cta-btn">Open Calculator &#8594;</a>
+      </div>
+    </div>
+
+    <!-- POPULAR POSTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128293; Popular <em>Articles</em></div>
+      <ul class="pop-list">
+        <a href="/blog/rpm-to-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">01</span>
+          <div><div class="pop-title">How to Use the RPM to Speed Calculator</div><div class="pop-meta-sm">&#128197; May 20 &nbsp;·&nbsp; &#128065; 4.2k</div></div>
+        </a>
+        <a href="/blog/audiobook-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">02</span>
+          <div><div class="pop-title">Audiobook Speed Calculator Savings Guide</div><div class="pop-meta-sm">&#128197; Jul 14 &nbsp;·&nbsp; &#128065; 1.2k</div></div>
+        </a>
+        <a href="/blog/what-is-speed-in-physics/" class="pop-item">
+          <span class="pop-num">03</span>
+          <div><div class="pop-title">What Is Speed in Physics Explained</div><div class="pop-meta-sm">&#128197; Jul 14 &nbsp;·&nbsp; &#128065; 850</div></div>
+        </a>
+        <a href="/blog/average-speed-formula/" class="pop-item">
+          <span class="pop-num">04</span>
+          <div><div class="pop-title">Average Speed Formula Explained</div><div class="pop-meta-sm">&#128197; May 18 &nbsp;·&nbsp; &#128065; 3.1k</div></div>
+        </a>
+      </ul>
+    </div>
+
+    <!-- TAGS -->
+    <div class="sb-card">
+      <div class="sb-head">&#127991; Popular <em>Tags</em></div>
+      <div class="tags-body">
+        <a href="/blog/tag/speed/" class="tag">speed</a>
+        <a href="/blog/tag/velocity/" class="tag">velocity</a>
+        <a href="/blog/tag/formula/" class="tag">formula</a>
+        <a href="/blog/tag/physics/" class="tag">physics</a>
+        <a href="/blog/tag/distance/" class="tag">distance</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</div>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var winH = document.documentElement.scrollHeight - window.innerHeight;
+  var pct  = (window.scrollY / winH) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+// Active TOC highlight on scroll
+var sections = document.querySelectorAll('h2[id]');
+var tocLinks = document.querySelectorAll('.toc-link');
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(function(l) {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+  });
+});
+
+// Copy link share button
+document.querySelectorAll('.share-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    if (this.title === 'Copy link') {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = '✓';
+        setTimeout(function(){ btn.textContent = '🔗'; }, 2000);
+      });
+    }
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../../js/shared.js"></script>
+</body>
+</html>

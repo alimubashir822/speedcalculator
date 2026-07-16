@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume Calculator — Cylinder, Sphere, Cone, Tank, Pool, Pipe & More | SpeedCalculator.net</title>
+<meta name="description" content="Free volume calculator for any shape or container. Cylinder, cone, sphere, pyramid, triangular prism, tank, pool, pipe, aquarium, pond, concrete, and medical volume calculations. Step-by-step formulas included.">
+<meta name="keywords" content="volume calculator, cylinder volume calculator, cone volume calculator, sphere volume calculator, pyramid volume calculator, triangular prism volume calculator, tank volume calculator, pipe volume calculator, pool volume calculator, aquarium volume calculator, pond volume calculator, water volume calculator, liquid volume calculator, concrete volume calculator, prostate volume calculator, bladder volume calculator, tidal volume calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/volume-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Volume Calculator","url":"https://www.speedcalculator.net/volume-calculator/",
+  "description":"Free volume calculator — cylinder, sphere, cone, tank, pool, pipe, aquarium, pond, concrete, and medical volume with formulas and step-by-step solutions",
+  "applicationCategory":"UtilityApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How to calculate volume of a cylinder?","acceptedAnswer":{"@type":"Answer","text":"Volume of a cylinder = pi x r2 x h. Example: r=3, h=10 gives V=282.74 cubic units. Use this for pipe volume, tank volume, and pool volume calculators too."}},
+    {"@type":"Question","name":"How to calculate the volume of a cone?","acceptedAnswer":{"@type":"Answer","text":"V = (1/3) x pi x r2 x h. A cone holds 1/3 the volume of a cylinder with the same base and height. Example: r=5, h=12 gives V=314.16 cubic units."}},
+    {"@type":"Question","name":"How do I calculate pool volume in gallons?","acceptedAnswer":{"@type":"Answer","text":"For a rectangular pool: V = L x W x D (in feet), then multiply by 7.481 to get US gallons. For a circular pool use the cylinder formula: V = pi x r2 x depth, then multiply by 7.481. Example: 20ft x 10ft x 5ft pool = 1000 ft3 = 7481 gallons."}},
+    {"@type":"Question","name":"How to calculate pipe volume?","acceptedAnswer":{"@type":"Answer","text":"Pipe volume = pi x r2 x length, where r is the inner radius. For a pipe with 2-inch inner diameter (r=1 inch) and 10 feet long: V = pi x 1 x 120 inches = 376.99 cubic inches = 1.63 gallons."}},
+    {"@type":"Question","name":"What is tidal volume and how is it calculated?","acceptedAnswer":{"@type":"Answer","text":"Tidal volume is the amount of air inhaled or exhaled in one normal breath. Average adult tidal volume is 500 mL (0.5 litres). It is estimated as approximately 7 mL per kg of ideal body weight. Our medical volume section provides the standard reference values."}},
+    {"@type":"Question","name":"How to calculate prostate volume?","acceptedAnswer":{"@type":"Answer","text":"Prostate volume is calculated using transrectal ultrasound (TRUS) with the prolate ellipsoid formula: V = 0.52 x length x width x height. A normal prostate volume is 20-30 mL. Values above 30 mL may indicate benign prostatic hyperplasia (BPH)."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .15s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;animation:fadeInUp .5s ease both;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,4vw,52px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:20px;max-width:420px;}
+.badges{display:flex;gap:7px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.badge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+
+/* CALC CARD */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--lime),var(--purple),transparent);}
+.calc-head{padding:14px 18px 12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:7px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:26px;height:26px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 11px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:13px 18px 18px;}
+
+/* CAT TABS */
+.cat-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--bg3);border-radius:10px;padding:4px;margin-bottom:12px;}
+.cat-tab{border:none;border-radius:7px;background:transparent;color:var(--text3);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:all .2s;padding:7px 4px;text-align:center;line-height:1.3;}
+.cat-tab.active{background:var(--accent);color:#fff;}
+.cat-tab:hover:not(.active){color:var(--text2);}
+
+/* SHAPE GRID */
+.shape-grid{display:grid;gap:5px;margin-bottom:12px;}
+.shape-grid.g4{grid-template-columns:repeat(4,1fr);}
+.shape-grid.g3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:360px){.shape-grid.g4,.shape-grid.g3{grid-template-columns:repeat(2,1fr);}}
+.shape-btn{border:1px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);cursor:pointer;transition:all .18s;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.shape-btn:hover{border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.05);}
+.shape-btn.active{border-color:var(--accent);background:rgba(59,130,246,.12);}
+.shape-btn.active .s-name{color:var(--accent2);}
+.s-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;}
+.s-icon svg{width:28px;height:28px;}
+.s-name{font-size:8.5px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--text3);text-align:center;transition:color .18s;line-height:1.3;}
+
+/* UNIT ROW */
+.unit-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.unit-lbl{font-size:11px;font-weight:700;color:var(--text3);white-space:nowrap;}
+.unit-sel{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:5px 9px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;outline:none;}
+.unit-sel:focus{border-color:var(--accent);}
+.unit-note{font-size:10px;color:var(--text3);}
+
+/* PREVIEW */
+.shape-preview{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px;margin-bottom:9px;display:flex;align-items:center;justify-content:center;min-height:78px;}
+
+/* FIELDS */
+.inp-desc{font-size:11px;color:var(--text2);margin-bottom:8px;padding:7px 10px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;gap:6px;line-height:1.5;}
+.inp-desc::before{content:'i';color:var(--accent2);flex-shrink:0;font-size:11px;font-style:italic;font-weight:900;}
+.frow{display:grid;gap:7px;margin-bottom:7px;}
+.frow.c1{grid-template-columns:1fr;}
+.frow.c2{grid-template-columns:1fr 1fr;}
+.frow.c3{grid-template-columns:1fr 1fr 1fr;}
+@media(max-width:360px){.frow.c3{grid-template-columns:1fr 1fr;}}
+.fgrp label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;display:block;}
+.finp{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .18s;}
+.finp:focus-within{border-color:var(--accent);}
+.finp input{flex:1;background:transparent;border:none;outline:none;padding:9px 7px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);min-width:0;width:100%;text-align:center;}
+.finp input::placeholder{color:var(--text3);font-size:13px;font-weight:400;}
+
+/* SPECIAL FIELD — radio chips */
+.radio-row{display:flex;gap:6px;margin-bottom:9px;flex-wrap:wrap;}
+.rchip{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 11px;cursor:pointer;font-size:11px;font-weight:600;color:var(--text2);transition:all .18s;user-select:none;}
+.rchip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.rchip input{display:none;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+
+/* RESULT */
+.result-panel{display:none;margin-top:11px;}
+.result-panel.show{display:block;animation:fadeUp .3s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(6,182,212,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:15px;text-align:center;margin-bottom:8px;position:relative;overflow:hidden;}
+.result-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--teal),var(--lime));}
+.r-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:2px;}
+.r-big{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,7vw,46px);font-weight:900;color:var(--teal);line-height:1;letter-spacing:-1px;}
+.r-unit{font-size:12px;color:var(--accent2);font-weight:600;margin-top:2px;}
+.r-extra{font-size:11px;color:var(--text3);margin-top:4px;}
+.r-chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.r-chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--text2);}
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;}
+.steps-hd{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.step-r{display:flex;gap:6px;padding:4px 0;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2);line-height:1.6;}
+.step-r:last-child{border:none;padding-bottom:0;}
+.sn{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);min-width:18px;flex-shrink:0;}
+.sm{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--text);font-weight:600;display:block;}
+.snote{font-size:10px;color:var(--text3);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:8px 12px;font-size:13px;color:#f87171;margin-bottom:8px;display:none;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:34px 0;}
+.stat-item{background:var(--bg2);padding:13px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* FORMULA GRID */
+.fml-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px;}
+@media(max-width:720px){.fml-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:380px){.fml-grid{grid-template-columns:1fr;}}
+.fc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;transition:all .2s;cursor:pointer;text-align:left;}
+.fc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.fc-icon{width:34px;height:34px;display:flex;align-items:center;justify-content:center;margin-bottom:7px;}
+.fc-icon svg{width:28px;height:28px;}
+.fc-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.fc-formula{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--accent2);background:var(--bg3);border-radius:4px;padding:4px 7px;line-height:1.5;}
+
+/* USE CASES GRID */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;}
+@media(max-width:680px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:border-color .2s;}
+.uc:hover{border-color:var(--border2);}
+.uc-ico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:9px;}
+.uc-ico svg{width:18px;height:18px;}
+.uc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG BLOCKS */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:210px;margin:22px 0 6px;}
+.img-block.tall{height:260px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.86));padding:13px 17px;}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* KEYWORD TAG CLOUD */
+.tag-cloud{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px;}
+.tag{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .18s;}
+.tag:hover{border-color:var(--accent);color:var(--accent2);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:34px;margin-top:50px;margin-bottom:50px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 9px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:16px 0 6px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:11px;}
+.article ul,.article ol{margin:0 0 13px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:1px 9px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:12px 15px;margin:12px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;line-height:1.65;}
+.tip strong{color:var(--green);}
+.ex{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:14px;margin:12px 0;}
+.ex h4{font-size:12px;font-weight:700;color:var(--accent2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
+.ex p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+.warn{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:12px 15px;margin:12px 0;}
+.warn p{color:var(--text2);font-size:13px;margin:0;line-height:1.65;}
+.warn strong{color:var(--orange);}
+.ref-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+.ref-table th{background:var(--bg3);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;text-align:left;border-bottom:1px solid var(--border2);}
+.ref-table td{padding:8px 12px;color:var(--text2);border-bottom:1px solid var(--border);}
+.ref-table tr:last-child td{border-bottom:none;}
+.ref-table td strong{color:var(--text);}
+
+/* HOW-TO STEPS */
+.how-steps{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.how-step{display:flex;gap:13px;align-items:flex-start;}
+.how-num{width:30px;height:30px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;color:var(--accent2);flex-shrink:0;}
+.how-txt strong{display:block;font-size:14px;color:var(--text);margin-bottom:2px;}
+.how-txt span{font-size:13px;color:var(--text2);}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:7px;margin-top:18px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:15px 18px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:17px;height:17px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:15px;}
+.faq-item.open .faq-a{max-height:280px;}
+
+/* RELATED */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:13px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:7px;}
+.oc-ico svg{width:15px;height:15px;}
+.oc-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+/* SECTION LABELS */
+.section-label{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:4px 11px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Volume Calculator
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> 10 Shapes &middot; Containers &middot; Medical</div>
+        <h1>Volume<em>Calculator</em></h1>
+        <p class="hero-sub">Free online volume calculator for any shape or container. Cylinder, cone, sphere, pyramid, triangular prism, tank, pipe, pool, aquarium, pond, concrete, and medical volumes. Full formula and steps every time.</p>
+        <div class="badges">
+          <span class="badge g">&#10003; 100% Free</span>
+          <span class="badge b">10+ Shapes</span>
+          <span class="badge p">Medical Volume</span>
+          <span class="badge o">Pool &amp; Tank</span>
+          <span class="badge">Gallons + Litres</span>
+        </div>
+
+        <div class="tag-cloud" style="margin-top:20px;">
+          <span class="tag" onclick="jumpTo('cylinder')">Cylinder</span>
+          <span class="tag" onclick="jumpTo('cone')">Cone</span>
+          <span class="tag" onclick="jumpTo('sphere')">Sphere</span>
+          <span class="tag" onclick="jumpTo('triprism')">Triangular Prism</span>
+          <span class="tag" onclick="jumpTo('pool')">Pool</span>
+          <span class="tag" onclick="jumpTo('tank')">Tank</span>
+          <span class="tag" onclick="jumpTo('pipe')">Pipe</span>
+          <span class="tag" onclick="jumpTo('aquarium')">Aquarium</span>
+          <span class="tag" onclick="jumpTo('concrete')">Concrete</span>
+          <span class="tag" onclick="switchCat('medical',null)">Medical</span>
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="ht-icon">
+              <svg width="13" height="13" fill="none" viewBox="0 0 13 13" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="11" height="11" rx="2"/><path d="M1 5h11" stroke-linecap="round"/></svg>
+            </div>
+            Volume <em>Calculator</em>
+          </div>
+          <div class="live-pill">&#10022; Formula + Steps</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- CATEGORY TABS -->
+          <div class="cat-tabs">
+            <button class="cat-tab active" id="tab-shapes" onclick="switchCat('shapes',this)">Shapes</button>
+            <button class="cat-tab" id="tab-containers" onclick="switchCat('containers',this)">Containers</button>
+            <button class="cat-tab" id="tab-medical" onclick="switchCat('medical',this)">Medical</button>
+          </div>
+
+          <!-- SHAPES PANEL -->
+          <div id="panel-shapes">
+            <div class="shape-grid g4" id="grid-shapes"></div>
+            <div class="unit-row">
+              <span class="unit-lbl">Unit:</span>
+              <select class="unit-sel" id="unit-shapes">
+                <option value="cm">Centimeters</option>
+                <option value="m">Meters</option>
+                <option value="mm">Millimeters</option>
+                <option value="ft" selected>Feet</option>
+                <option value="in">Inches</option>
+                <option value="yd">Yards</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CONTAINERS PANEL -->
+          <div id="panel-containers" style="display:none;">
+            <div class="shape-grid g3" id="grid-containers"></div>
+            <div class="unit-row">
+              <span class="unit-lbl">Unit:</span>
+              <select class="unit-sel" id="unit-containers">
+                <option value="ft" selected>Feet</option>
+                <option value="m">Meters</option>
+                <option value="in">Inches</option>
+                <option value="cm">Centimeters</option>
+                <option value="yd">Yards</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- MEDICAL PANEL -->
+          <div id="panel-medical" style="display:none;">
+            <div class="shape-grid g3" id="grid-medical"></div>
+          </div>
+
+          <!-- PREVIEW + FIELDS (shared) -->
+          <div class="shape-preview" id="shape-preview"></div>
+          <div id="fields-area"></div>
+
+          <div class="err-msg" id="err-msg">Please enter valid positive values in all fields.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="8" cy="8" r="6"/><path d="M5.5 8l2 2 3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Volume
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">10+</div><div class="stat-lbl">Shapes &amp; Containers</div></div>
+      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Medical Calcs</div></div>
+      <div class="stat-item"><div class="stat-val">Gal+L</div><div class="stat-lbl">Auto Conversion</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FORMULA REFERENCE ════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Formula Reference</div>
+    <h2 class="sec-title">Volume <span>Formulas</span> — All Shapes</h2>
+    <p class="sec-sub">Click any shape to open that calculator with pre-loaded fields. Covers cylinder, cone, sphere, pyramid, triangular prism, and more.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format&fit=crop"
+           alt="Volume calculator formulas — cylinder, cone, sphere, pyramid, triangular prism, tank, pool">
+      <div class="img-overlay"><span>Volume formulas for 3D shapes — cylinder, cone, sphere, pyramid, triangular prism, tank, pipe, and pool</span></div>
+    </div>
+
+    <div class="fml-grid" id="fml-grid"></div>
+  </div>
+</section>
+
+<!-- ════ USE CASES ════ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Real-World Uses</div>
+    <h2 class="sec-title">What Can You <span>Calculate?</span></h2>
+    <p class="sec-sub">Our volume calculator covers construction, engineering, aquatics, plumbing, cooking, farming, and medical applications.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(6,182,212,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#06b6d4" stroke-width="1.5"><rect x="2" y="8" width="14" height="9" rx="1.5"/><path d="M5 8V6a4 4 0 018 0v2" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Pool Volume Calculator</div>
+        <p class="uc-p">Find how many gallons your swimming pool holds. Rectangular pool uses box formula; circular pool uses cylinder volume calculator. Results in gallons and litres.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(59,130,246,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.5"><ellipse cx="9" cy="6" rx="7" ry="4"/><path d="M2 6v6c0 2.2 3.1 4 7 4s7-1.8 7-4V6" /></svg></div>
+        <div class="uc-h">Tank Volume Calculator</div>
+        <p class="uc-p">Calculate liquid volume in horizontal or vertical cylindrical tanks, rectangular tanks, or oval tanks. Used for fuel, water, septic, and chemical storage tanks.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(16,185,129,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.5"><circle cx="9" cy="9" r="7"/><circle cx="9" cy="9" r="3"/><line x1="9" y1="2" x2="9" y2="6" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Pipe Volume Calculator</div>
+        <p class="uc-p">Calculate how much liquid a pipe holds using inner diameter and length. Essential for plumbing, hydraulics, and calculating water volume in pipeline systems.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(245,158,11,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.5"><rect x="2" y="2" width="14" height="14" rx="2"/><path d="M6 9h6M9 6v6" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Concrete Volume Calculator</div>
+        <p class="uc-p">Calculate cubic yards or cubic meters of concrete needed for slabs, columns, footings, and walls. Rectangular prism formula for slabs; cylinder formula for round columns.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(139,92,246,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.5"><path d="M3 15V6a6 6 0 0112 0v9M3 15h12" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="uc-h">Aquarium Volume Calculator</div>
+        <p class="uc-p">Find the volume of your fish tank in gallons or litres to buy the right filter, heater, and determine fish capacity. Use the rectangular box or cylinder formula.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-ico" style="background:rgba(236,72,153,.12);"><svg fill="none" viewBox="0 0 18 18" stroke="#ec4899" stroke-width="1.5"><path d="M9 2a7 7 0 100 14A7 7 0 009 2z"/><path d="M6 11c0-1.7 1.3-3 3-3s3 1.3 3 3" stroke-linecap="round"/></svg></div>
+        <div class="uc-h">Medical Volume Calculator</div>
+        <p class="uc-p">Calculate prostate volume using the ellipsoid formula, bladder volume, and tidal volume reference values. Used by clinicians for diagnosis and dosage calculations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ARTICLE ════ -->
+<div class="container">
+<div class="article">
+
+  <h2>Complete Volume Calculator Guide</h2>
+  <p>This <strong>volume calculator</strong> covers every type of volume calculation you will ever need — from basic geometric shapes like <strong>cylinders, cones, spheres, pyramids, and triangular prisms</strong> to practical container volumes for <strong>pools, tanks, pipes, aquariums, ponds</strong>, and specialty calculations including <strong>concrete volume</strong> and medical volumes for <strong>prostate, bladder, and tidal volume</strong>. Every result shows the formula with your values substituted in, step-by-step working, and automatic conversions to litres, US gallons, and other common units.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+         alt="Volume calculator uses — swimming pool volume, tank volume, pipe volume, concrete volume calculator">
+    <div class="img-overlay"><span>Volume calculator — pool, tank, pipe, aquarium, pond, concrete, and medical applications</span></div>
+  </div>
+
+  <h2>How to Use This Volume Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Choose a category</strong><span>Click Shapes for geometry (cylinder, cone, sphere, pyramid, triangular prism), Containers for practical volume (pool, tank, pipe, aquarium, pond, concrete), or Medical for clinical volume calculations.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Select your shape or container</strong><span>Click on the matching button. A labeled diagram appears showing exactly which dimensions to measure and enter.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Pick your unit</strong><span>Choose feet, meters, inches, centimeters, or yards. The result appears in cubic units of your choice with automatic gallons and litres conversions.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Enter dimensions and calculate</strong><span>Type in the values and click Calculate Volume. You get the formula, step-by-step substitution, the final answer, and conversion chips in one clear result.</span></div></div>
+  </div>
+
+  <h2>Cylinder Volume Calculator</h2>
+  <p>The <strong>cylinder volume calculator</strong> uses the formula <span class="fi">V = pi x r2 x h</span>. This is the most commonly used volume formula because cylinders appear everywhere — water tanks, pipes, cans, wells, columns, and pools. If you know the diameter instead of the radius, divide by 2 first.</p>
+  <div class="ex">
+    <h4>Example — Water storage tank</h4>
+    <p>Tank with diameter 6 ft and height 8 ft: r = 3 ft, V = pi x 9 x 8 = <strong>226.19 ft3 = 1,691.6 gallons = 6,404 litres</strong></p>
+  </div>
+
+  <h2>Cone Volume Calculator</h2>
+  <p>The <strong>cone volume calculator</strong> uses <span class="fi">V = (1/3) x pi x r2 x h</span>. A cone always holds exactly one-third the volume of a cylinder with the same base radius and height. Use this for grain silos, hoppers, traffic cones, and ice cream cone volumes.</p>
+
+  <h2>Sphere Volume Calculator</h2>
+  <p>The <strong>sphere volume calculator</strong> uses <span class="fi">V = (4/3) x pi x r3</span>. Volume increases with the cube of the radius — so doubling the radius increases volume by 8 times. Common applications include balls, globes, spherical tanks, and gas storage spheres.</p>
+
+  <h2>Triangular Prism Volume Calculator</h2>
+  <p>A <strong>triangular prism volume calculator</strong> uses <span class="fi">V = (1/2) x base x height x length</span>. Enter the base and height of the triangular cross-section, then the length (depth) of the prism. Used for roof volumes, Toblerone-shaped packaging, and drainage channels with triangular cross-sections.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&auto=format&fit=crop"
+         alt="Concrete volume calculator, pool volume calculator, tank volume calculator for construction">
+    <div class="img-overlay"><span>Concrete volume calculator — calculate cubic yards or cubic meters for slabs, columns, footings, and walls</span></div>
+  </div>
+
+  <h2>Pool Volume Calculator</h2>
+  <p>To use our <strong>pool volume calculator</strong>, identify your pool shape first. A rectangular pool uses the box formula: <span class="fi">V = L x W x D</span>. A round (circular) pool uses the cylinder formula: <span class="fi">V = pi x r2 x depth</span>. All results automatically convert to US gallons so you can calculate chlorine and chemical dosages correctly.</p>
+  <div class="ex">
+    <h4>Example — Rectangular swimming pool</h4>
+    <p>Pool 30 ft x 15 ft x 5 ft deep: V = 30 x 15 x 5 = 2,250 ft3 = <strong>16,832 US gallons = 63,706 litres</strong></p>
+  </div>
+
+  <h2>Tank Volume Calculator</h2>
+  <p>Our <strong>tank volume calculator</strong> handles both cylindrical tanks (vertical and horizontal) and rectangular tanks. For a horizontal cylindrical tank, the formula depends on the fill level, which our calculator handles automatically. Tank volumes are used for fuel oil, water storage, chemical processing, and septic systems.</p>
+
+  <h2>Pipe Volume Calculator</h2>
+  <p>The <strong>pipe volume calculator</strong> uses the same cylinder formula but applies it to the inner diameter: <span class="fi">V = pi x (inner radius)2 x length</span>. Important: always use the <strong>inner diameter</strong>, not the outer diameter, for liquid volume calculations. This is essential for plumbing, irrigation design, and fire suppression system calculations.</p>
+  <div class="ex">
+    <h4>Example — Irrigation pipe</h4>
+    <p>Pipe with 4-inch inner diameter and 100 ft long: r = 2 in = 0.1667 ft, V = pi x 0.02778 x 100 = <strong>8.73 ft3 = 65.3 gallons of water</strong></p>
+  </div>
+
+  <h2>Aquarium Volume Calculator</h2>
+  <p>To find your <strong>aquarium volume</strong>, use the rectangular box formula for standard fish tanks: <span class="fi">V = L x W x H</span>. For a cylindrical aquarium, use the cylinder formula. A standard 40-gallon tank is approximately 36 x 18 x 16 inches. Knowing exact volume helps determine the correct filter flow rate, heater wattage, and safe fish stocking levels.</p>
+
+  <h2>Pond Volume Calculator</h2>
+  <p>Pond volume depends on the pond shape. A rectangular pond uses <span class="fi">V = L x W x average depth</span>. An oval or kidney-shaped pond can be approximated using the ellipsoid or cylinder formula with average dimensions. Pond volume is critical for calculating fish stocking density, water treatment dosages, and pump sizing for circulation and aeration.</p>
+
+  <h2>Water and Liquid Volume Calculator</h2>
+  <p>Any container volume can be converted to a <strong>water volume</strong> or <strong>liquid volume</strong> automatically using our conversion chips. Key conversions: 1 ft3 = 7.481 US gallons = 28.317 litres. 1 m3 = 1,000 litres = 264.2 US gallons. 1 US gallon = 3.785 litres = 231 in3.</p>
+
+  <h2>Concrete Volume Calculator</h2>
+  <p>Our <strong>concrete volume calculator</strong> uses the rectangular prism formula for slabs and the cylinder formula for round columns. Results are shown in cubic feet and automatically converted to cubic yards (divide ft3 by 27) since ready-mix concrete is sold by the cubic yard in the US.</p>
+  <div class="ex">
+    <h4>Example — Driveway slab</h4>
+    <p>Driveway 20 ft x 10 ft x 0.33 ft (4 inches) thick: V = 66 ft3 = <strong>2.44 cubic yards</strong>. Order at least 2.7 yards to include 10% waste.</p>
+  </div>
+
+  <h2>Medical Volume Calculators</h2>
+
+  <h3>Prostate Volume Calculator</h3>
+  <p>The <strong>prostate volume calculator</strong> uses the prolate ellipsoid formula: <span class="fi">V = 0.52 x length x width x height</span> (all dimensions in centimeters, result in mL). Measurements are obtained from transrectal ultrasound (TRUS) or MRI. Normal prostate volume is 20–30 mL. Values above 30 mL may indicate benign prostatic hyperplasia (BPH).</p>
+  <table class="ref-table">
+    <tr><th>Volume Range</th><th>Interpretation</th><th>PSA Density Context</th></tr>
+    <tr><td><strong>Less than 20 mL</strong></td><td>Small/normal prostate</td><td>Normal range</td></tr>
+    <tr><td><strong>20–30 mL</strong></td><td>Normal adult prostate</td><td>Expected for age 40–60</td></tr>
+    <tr><td><strong>30–50 mL</strong></td><td>Mildly enlarged</td><td>May cause mild BPH symptoms</td></tr>
+    <tr><td><strong>Greater than 50 mL</strong></td><td>Significantly enlarged</td><td>Likely BPH, may affect treatment choice</td></tr>
+  </table>
+  <div class="warn"><p><strong>Note:</strong> Prostate volume results are for reference only. Always consult a qualified urologist for clinical interpretation and treatment decisions.</p></div>
+
+  <h3>Bladder Volume Calculator</h3>
+  <p>The <strong>bladder volume calculator</strong> uses the ellipsoid formula: <span class="fi">V = 0.52 x length x width x height</span> (from ultrasound measurements in cm, result in mL). Normal bladder capacity is 300–500 mL. Post-void residual (PVR) volume above 100 mL may indicate urinary retention. Maximum cystometric capacity averages 400–600 mL in adults.</p>
+  <table class="ref-table">
+    <tr><th>Bladder Volume</th><th>Clinical Significance</th></tr>
+    <tr><td><strong>0–50 mL PVR</strong></td><td>Normal post-void residual</td></tr>
+    <tr><td><strong>50–100 mL PVR</strong></td><td>Borderline — may need monitoring</td></tr>
+    <tr><td><strong>100–200 mL PVR</strong></td><td>Clinically significant retention</td></tr>
+    <tr><td><strong>Greater than 200 mL PVR</strong></td><td>High residual — requires clinical evaluation</td></tr>
+    <tr><td><strong>300–500 mL full</strong></td><td>Normal functional capacity</td></tr>
+  </table>
+
+  <h3>Tidal Volume Calculator</h3>
+  <p><strong>Tidal volume</strong> is the amount of air moved in or out of the lungs during each normal, relaxed breath. It is calculated using the formula: <span class="fi">Tidal Volume = 6–8 mL x Ideal Body Weight (kg)</span>. Average adult tidal volume is approximately 500 mL (0.5 litres) at rest. This value is critical for setting mechanical ventilator parameters.</p>
+  <table class="ref-table">
+    <tr><th>Population</th><th>Normal Tidal Volume</th><th>Notes</th></tr>
+    <tr><td><strong>Adult male</strong></td><td>500–600 mL</td><td>6–8 mL/kg ideal body weight</td></tr>
+    <tr><td><strong>Adult female</strong></td><td>400–500 mL</td><td>6–8 mL/kg ideal body weight</td></tr>
+    <tr><td><strong>Child (5 years)</strong></td><td>150–200 mL</td><td>~7 mL/kg body weight</td></tr>
+    <tr><td><strong>Infant</strong></td><td>15–25 mL</td><td>6–8 mL/kg body weight</td></tr>
+    <tr><td><strong>Ventilated patient</strong></td><td>6 mL/kg IBW</td><td>ARDSnet lung-protective strategy</td></tr>
+  </table>
+  <div class="warn"><p><strong>Medical Disclaimer:</strong> Tidal volume, prostate volume, and bladder volume calculators are for educational and reference purposes only. They do not replace professional clinical assessment, imaging interpretation, or medical advice from a qualified healthcare provider.</p></div>
+
+  <div class="tip">
+    <p><strong>Volume Unit Conversions:</strong> 1 m3 = 1,000 litres = 264.2 US gallons. 1 ft3 = 7.481 gallons = 28.317 litres. 1 UK gallon = 4.546 litres. 1 US gallon = 3.785 litres = 231 in3. 1 cm3 = 1 mL. 1 litre = 1,000 mL = 61.02 in3. Our calculator shows all relevant conversions automatically after each calculation.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- ════ FAQ ════ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Volume Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I calculate the volume of a cylinder?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the <strong>cylinder volume formula: V = pi x r2 x h</strong> where r is the radius (half the diameter) and h is the height or length. Example: a cylinder with diameter 6 ft and height 8 ft has r = 3 ft, so V = pi x 9 x 8 = 226.19 ft3 = 1,692 gallons. This same formula works for pipe volume, tank volume, and circular pool volume.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I calculate pool volume in gallons?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>For a rectangular pool: <strong>Volume (ft3) = Length x Width x Average Depth</strong>, then multiply by 7.481 for US gallons. For a round pool: V = pi x r2 x depth x 7.481. Example: a 25 ft x 12 ft x 5 ft pool = 1,500 ft3 = <strong>11,221 gallons</strong>. Select Pool in our Containers tab for an instant result with gallons and litres shown automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to calculate pipe volume?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Pipe volume = <strong>pi x (inner radius)2 x length</strong>. Always use the inner (bore) diameter, not the outside diameter. For a 3-inch inner diameter pipe, 50 feet long: r = 1.5 in = 0.125 ft, V = pi x 0.015625 x 50 = 2.45 ft3 = <strong>18.34 gallons</strong>. Use the Pipe option in our Containers tab for step-by-step working.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How to calculate concrete volume in cubic yards?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Calculate volume in cubic feet first (L x W x D in feet), then divide by 27 to convert to cubic yards. Example: a driveway 20 ft x 10 ft x 4 inches thick (0.333 ft): V = 66.7 ft3 / 27 = <strong>2.47 cubic yards</strong>. Always add 10% extra for waste and spillage, so order 2.7 yards. Our calculator converts to cubic yards automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is prostate volume and how is it calculated?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Prostate volume is calculated from ultrasound or MRI measurements using the prolate ellipsoid formula: <strong>V = 0.52 x length x width x height</strong> (in cm, result in mL). A normal prostate is 20–30 mL. Above 30 mL may indicate benign prostatic hyperplasia (BPH). Prostate volume also factors into PSA density calculations, which help distinguish BPH from prostate cancer. Always have results interpreted by a urologist.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is tidal volume and what is the normal range?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Tidal volume is the volume of air moved per breath during normal, relaxed breathing. Normal adult tidal volume is approximately <strong>500 mL (0.5 litres)</strong>. It is estimated as 6–8 mL per kg of ideal body weight. For mechanically ventilated patients, the ARDSnet protocol recommends 6 mL/kg of predicted body weight to protect lung tissue. Tidal volume is measured during pulmonary function testing or spirometry.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/area-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><rect x="1.5" y="1.5" width="12" height="12" rx="1.5"/><path d="M4.5 7.5h6M7.5 4.5v6" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Area Calculator</div>
+        <div class="oc-desc">2D area + 3D surface</div>
+      </a>
+      <a href="/triangle-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><path d="M2 13L7.5 2l5.5 11H2z" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Triangle Calculator</div>
+        <div class="oc-desc">SSS, SAS, ASA modes</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><circle cx="4.5" cy="4.5" r="2"/><circle cx="10.5" cy="10.5" r="2"/><path d="M12 3L3 12" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">6 percentage modes</div>
+      </a>
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><rect x="1.5" y="1.5" width="12" height="12" rx="1.5"/><path d="M4 4.5h7M4 7.5h5M4 10.5h3" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">sin, cos, log and more</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ JAVASCRIPT ════ -->
+<script>
+var PI = Math.PI;
+var activeCat = 'shapes';
+var activeShapeKey = 'cylinder';
+var activeContainerKey = 'pool';
+var activeMedicalKey = 'prostate';
+
+/* unit to m3 */
+var U2M3 = {cm:1e-6, m:1, mm:1e-9, ft:0.0283168, in:1.6387e-5, yd:0.764555};
+
+function fmt(n, dp) {
+  dp = dp == null ? 4 : dp;
+  if (isNaN(n) || !isFinite(n)) return '--';
+  return parseFloat(n.toFixed(dp)).toString();
+}
+
+/* ════ SHAPES ════ */
+var SHAPES = {
+  cylinder: {
+    name:'Cylinder', cat:'shapes',
+    svgBtn:'<ellipse cx="14" cy="7" rx="10" ry="3.5" stroke="#10b981" stroke-width="1.7"/><ellipse cx="14" cy="21" rx="10" ry="3.5" stroke="#10b981" stroke-width="1.7"/><line x1="4" y1="7" x2="4" y2="21" stroke="#10b981" stroke-width="1.7"/><line x1="24" y1="7" x2="24" y2="21" stroke="#10b981" stroke-width="1.7"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><ellipse cx="100" cy="18" rx="68" ry="14" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.07)"/><ellipse cx="100" cy="74" rx="68" ry="14" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.04)"/><line x1="32" y1="18" x2="32" y2="74" stroke="#10b981" stroke-width="2"/><line x1="168" y1="18" x2="168" y2="74" stroke="#10b981" stroke-width="2"/><line x1="100" y1="18" x2="168" y2="18" stroke="#6ee7b7" stroke-width="1.5" stroke-dasharray="3 2"/><text x="132" y="13" font-family="Barlow Condensed" font-size="12" fill="#6ee7b7" font-weight="700">r</text><text x="172" y="49" font-family="Barlow Condensed" font-size="12" fill="#6ee7b7" font-weight="700">h</text><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = pi x r2 x h</text></svg>',
+    desc:'Enter radius and height. Diameter known? Divide by 2 for radius.',
+    fields:[{id:'r',label:'Radius (r)',ph:'3'},{id:'h',label:'Height (h)',ph:'10'}], cols:'c2',
+    calc:function(v){var r=v.r,h=v.h,V=PI*r*r*h;return{V:V,extra:'Surface area: '+fmt(2*PI*r*r+2*PI*r*h,3)+' sq units',steps:[{m:'V = pi x r2 x h',n:'Cylinder volume formula'},{m:'V = pi x '+r+'2 x '+h+' = pi x '+fmt(r*r,3)+' x '+h,n:'Substitute values'},{m:'V = '+fmt(V,4),n:'Final volume'}]};}
+  },
+  cone: {
+    name:'Cone', cat:'shapes',
+    svgBtn:'<ellipse cx="14" cy="23" rx="10" ry="3.5" stroke="#f59e0b" stroke-width="1.7"/><line x1="4" y1="23" x2="14" y2="4" stroke="#f59e0b" stroke-width="1.7"/><line x1="24" y1="23" x2="14" y2="4" stroke="#f59e0b" stroke-width="1.7"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><ellipse cx="100" cy="76" rx="68" ry="12" stroke="#f59e0b" stroke-width="2" fill="rgba(245,158,11,.07)"/><line x1="32" y1="76" x2="100" y2="8" stroke="#f59e0b" stroke-width="2"/><line x1="168" y1="76" x2="100" y2="8" stroke="#f59e0b" stroke-width="2"/><line x1="100" y1="76" x2="168" y2="76" stroke="#fcd34d" stroke-width="1.5" stroke-dasharray="3 2"/><line x1="100" y1="8" x2="100" y2="76" stroke="#fcd34d" stroke-width="1.2" stroke-dasharray="3 2"/><text x="132" y="73" font-family="Barlow Condensed" font-size="12" fill="#fcd34d" font-weight="700">r</text><text x="104" y="45" font-family="Barlow Condensed" font-size="12" fill="#fcd34d" font-weight="700">h</text><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = (1/3) x pi x r2 x h</text></svg>',
+    desc:'Enter base radius and vertical height (apex to center of base, not slant).',
+    fields:[{id:'r',label:'Radius (r)',ph:'4'},{id:'h',label:'Height (h)',ph:'9'}], cols:'c2',
+    calc:function(v){var r=v.r,h=v.h,V=(1/3)*PI*r*r*h;return{V:V,steps:[{m:'V = (1/3) x pi x r2 x h',n:'Cone = 1/3 of cylinder with same base'},{m:'V = (1/3) x pi x '+r+'2 x '+h+' = (1/3) x pi x '+fmt(r*r*h,3)},{m:'V = '+fmt(V,4),n:'Final volume'}]};}
+  },
+  sphere: {
+    name:'Sphere', cat:'shapes',
+    svgBtn:'<circle cx="14" cy="14" r="11" stroke="#3b82f6" stroke-width="1.7"/><ellipse cx="14" cy="14" rx="11" ry="4.5" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="3 2"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><circle cx="100" cy="45" r="40" stroke="#3b82f6" stroke-width="2" fill="rgba(59,130,246,.07)"/><ellipse cx="100" cy="45" rx="40" ry="15" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="3 2"/><line x1="100" y1="45" x2="140" y2="45" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3 2"/><text x="118" y="41" font-family="Barlow Condensed" font-size="12" fill="#60a5fa" font-weight="700">r</text><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = (4/3) x pi x r3</text></svg>',
+    desc:'Enter radius. Diameter known? r = diameter divided by 2.',
+    fields:[{id:'r',label:'Radius (r)',ph:'5'}], cols:'c1',
+    calc:function(v){var r=v.r,V=(4/3)*PI*r*r*r;return{V:V,extra:'Surface area: '+fmt(4*PI*r*r,3)+' sq units',steps:[{m:'V = (4/3) x pi x r3',n:'Sphere volume formula'},{m:'V = (4/3) x pi x '+r+'3 = (4/3) x pi x '+fmt(r*r*r,3),n:'Cube the radius'},{m:'V = '+fmt(V,4),n:'Doubling radius gives 8x volume'}]};}
+  },
+  pyramid: {
+    name:'Pyramid', cat:'shapes',
+    svgBtn:'<polygon points="14,2 26,26 2,26" stroke="#ec4899" stroke-width="1.7" fill="none" stroke-linejoin="round"/><line x1="2" y1="26" x2="10" y2="17" stroke="#ec4899" stroke-width="1.3" stroke-dasharray="2 2"/><line x1="26" y1="26" x2="10" y2="17" stroke="#ec4899" stroke-width="1.3"/><line x1="10" y1="17" x2="14" y2="2" stroke="#ec4899" stroke-width="1.3"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><polygon points="100,6 178,80 22,80" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.07)" stroke-linejoin="round"/><line x1="100" y1="6" x2="100" y2="80" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="3 2"/><text x="104" y="46" font-family="Barlow Condensed" font-size="12" fill="#f9a8d4" font-weight="700">h</text><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = (1/3) x b2 x h</text></svg>',
+    desc:'Square pyramid. Enter base side length and vertical height.',
+    fields:[{id:'b',label:'Base side (b)',ph:'6'},{id:'h',label:'Height (h)',ph:'8'}], cols:'c2',
+    calc:function(v){var b=v.b,h=v.h,V=(1/3)*b*b*h;return{V:V,steps:[{m:'V = (1/3) x b2 x h',n:'Square pyramid — same as 1/3 of prism'},{m:'V = (1/3) x '+b+'2 x '+h+' = (1/3) x '+fmt(b*b,2)+' x '+h},{m:'V = (1/3) x '+fmt(b*b*h,3)+' = '+fmt(V,4)}]};}
+  },
+  triprism: {
+    name:'Tri Prism', cat:'shapes',
+    svgBtn:'<polygon points="14,3 24,24 4,24" stroke="#8b5cf6" stroke-width="1.7" fill="none" stroke-linejoin="round"/><line x1="4" y1="24" x2="4" y2="14" stroke="#8b5cf6" stroke-width="1.3" stroke-dasharray="2 2"/><line x1="14" y1="3" x2="8" y2="14" stroke="#8b5cf6" stroke-width="1.3"/><line x1="8" y1="14" x2="4" y2="14" stroke="#8b5cf6" stroke-width="1.3"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><polygon points="60,8 120,8 150,78 30,78" stroke="#8b5cf6" stroke-width="2" fill="rgba(139,92,246,.07)" stroke-linejoin="round"/><line x1="120" y1="8" x2="165" y2="44" stroke="#8b5cf6" stroke-width="2"/><line x1="150" y1="78" x2="165" y2="44" stroke="#8b5cf6" stroke-width="2"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = (1/2) x b x h x L</text></svg>',
+    desc:'Triangular cross-section prism. Enter triangle base, triangle height, and prism length.',
+    fields:[{id:'b',label:'Tri base (b)',ph:'6'},{id:'h',label:'Tri height (h)',ph:'4'},{id:'l',label:'Length (L)',ph:'10'}], cols:'c3',
+    calc:function(v){var b=v.b,h=v.h,l=v.l,V=0.5*b*h*l;return{V:V,steps:[{m:'V = (1/2) x base x height x length',n:'Triangular prism volume'},{m:'V = (1/2) x '+b+' x '+h+' x '+l+' = (1/2) x '+fmt(b*h*l,3)},{m:'V = '+fmt(V,4),n:'Final volume'}]};}
+  },
+  cube: {
+    name:'Cube', cat:'shapes',
+    svgBtn:'<rect x="4" y="11" width="16" height="14" rx="1" stroke="#a78bfa" stroke-width="1.7"/><path d="M4 11l7-8h16l-7 8" stroke="#a78bfa" stroke-width="1.5" stroke-linejoin="round"/><line x1="20" y1="3" x2="20" y2="25" stroke="#a78bfa" stroke-width="1.5"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><rect x="24" y="32" width="96" height="52" rx="1" stroke="#a78bfa" stroke-width="2" fill="rgba(167,139,250,.07)"/><path d="M24 32l30-26h96l-30 26" stroke="#a78bfa" stroke-width="2" stroke-linejoin="round"/><line x1="120" y1="6" x2="120" y2="84" stroke="#a78bfa" stroke-width="2"/><text x="90" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = s3</text></svg>',
+    desc:'All 6 sides are equal. Enter one side length.',
+    fields:[{id:'s',label:'Side (s)',ph:'5'}], cols:'c1',
+    calc:function(v){var s=v.s,V=s*s*s;return{V:V,extra:'Surface area: '+fmt(6*s*s,3)+' sq units',steps:[{m:'V = s3 = s x s x s',n:'Cube — all sides equal'},{m:'V = '+s+' x '+s+' x '+s+' = '+fmt(V,4)}]};}
+  }
+};
+
+/* ════ CONTAINERS ════ */
+var CONTAINERS = {
+  pool: {
+    name:'Pool', cat:'containers',
+    svgBtn:'<rect x="3" y="10" width="22" height="14" rx="2" stroke="#06b6d4" stroke-width="1.7" fill="none"/><path d="M3 17c4-3 8 3 12 0s8-3 12 0" stroke="#06b6d4" stroke-width="1.2" stroke-linecap="round"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><rect x="15" y="12" width="170" height="62" rx="4" stroke="#06b6d4" stroke-width="2" fill="rgba(6,182,212,.07)"/><path d="M15 38c18-8 35 8 56 0s36-8 56 0 36 8 57 0" stroke="#67e8f9" stroke-width="1.5" stroke-linecap="round" fill="none"/><text x="100" y="86" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = L x W x Depth (rectangular)</text></svg>',
+    desc:'Pool volume calculator. For rectangular pools: L x W x Depth. Result shown in gallons and litres.',
+    fields:[{id:'l',label:'Length (ft)',ph:'30'},{id:'w',label:'Width (ft)',ph:'15'},{id:'d',label:'Depth (ft)',ph:'5'}], cols:'c3',
+    forceUnit:'ft',
+    calc:function(v){var l=v.l,w=v.w,d=v.d,V=l*w*d;return{V:V,extra:'Pool: '+fmt(l)+'x'+fmt(w)+'x'+fmt(d)+' ft',steps:[{m:'Pool volume = Length x Width x Depth',n:'Rectangular pool volume calculator'},{m:'V = '+l+' x '+w+' x '+d+' = '+fmt(V,2)+' ft3'},{m:fmt(V*7.481,0)+' gallons | '+fmt(V*28.317,0)+' litres',n:'Water volume result'}]};}
+  },
+  tank: {
+    name:'Tank', cat:'containers',
+    svgBtn:'<ellipse cx="14" cy="8" rx="10" ry="4" stroke="#3b82f6" stroke-width="1.7"/><ellipse cx="14" cy="20" rx="10" ry="4" stroke="#3b82f6" stroke-width="1.7"/><line x1="4" y1="8" x2="4" y2="20" stroke="#3b82f6" stroke-width="1.7"/><line x1="24" y1="8" x2="24" y2="20" stroke="#3b82f6" stroke-width="1.7"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><ellipse cx="100" cy="18" rx="65" ry="14" stroke="#3b82f6" stroke-width="2" fill="rgba(59,130,246,.08)"/><ellipse cx="100" cy="72" rx="65" ry="14" stroke="#3b82f6" stroke-width="2" fill="rgba(59,130,246,.04)"/><line x1="35" y1="18" x2="35" y2="72" stroke="#3b82f6" stroke-width="2"/><line x1="165" y1="18" x2="165" y2="72" stroke="#3b82f6" stroke-width="2"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = pi x r2 x h (cylindrical tank)</text></svg>',
+    desc:'Cylindrical tank volume calculator. Enter inner radius and height. Used for fuel, water, and chemical tanks.',
+    fields:[{id:'r',label:'Radius (r)',ph:'4'},{id:'h',label:'Height (h)',ph:'8'}], cols:'c2',
+    calc:function(v){var r=v.r,h=v.h,V=PI*r*r*h;return{V:V,steps:[{m:'Tank volume = pi x r2 x h',n:'Cylindrical tank volume calculator'},{m:'V = pi x '+r+'2 x '+h+' = pi x '+fmt(r*r,3)+' x '+h},{m:'V = '+fmt(V,4)+' cubic units',n:'See gallons and litres in result chips'}]};}
+  },
+  pipe: {
+    name:'Pipe', cat:'containers',
+    svgBtn:'<circle cx="14" cy="14" r="10" stroke="#10b981" stroke-width="1.7"/><circle cx="14" cy="14" r="5" stroke="#10b981" stroke-width="1.4" stroke-dasharray="2 2"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><rect x="15" y="28" width="170" height="34" rx="17" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.06)"/><rect x="30" y="35" width="140" height="20" rx="10" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 2" fill="rgba(16,185,129,.03)"/><text x="100" y="86" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = pi x (inner r)2 x length</text></svg>',
+    desc:'Pipe volume calculator. Use inner diameter (bore) not outer diameter. Enter inner diameter and pipe length.',
+    fields:[{id:'d',label:'Inner Diameter',ph:'4'},{id:'l',label:'Length',ph:'100'}], cols:'c2',
+    calc:function(v){var r=v.d/2,l=v.l,V=PI*r*r*l;return{V:V,steps:[{m:'Pipe volume = pi x (inner radius)2 x length',n:'Pipe volume calculator — use inner diameter'},{m:'Inner radius = '+v.d+' / 2 = '+fmt(r,4)},{m:'V = pi x '+fmt(r,3)+'2 x '+l+' = '+fmt(V,4),n:'Liquid volume inside pipe'}]};}
+  },
+  aquarium: {
+    name:'Aquarium', cat:'containers',
+    svgBtn:'<rect x="3" y="7" width="22" height="17" rx="1.5" stroke="#a78bfa" stroke-width="1.7"/><line x1="3" y1="18" x2="25" y2="18" stroke="#a78bfa" stroke-width="1.2" stroke-dasharray="2 2"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><rect x="18" y="8" width="164" height="68" rx="3" stroke="#a78bfa" stroke-width="2" fill="rgba(167,139,250,.06)"/><line x1="18" y1="52" x2="182" y2="52" stroke="#c4b5fd" stroke-width="1.2" stroke-dasharray="3 2"/><text x="100" y="86" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = L x W x H (aquarium volume)</text></svg>',
+    desc:'Aquarium volume calculator. Enter length, width, and water height. Result in gallons helps with fish stocking and filter sizing.',
+    fields:[{id:'l',label:'Length',ph:'36'},{id:'w',label:'Width',ph:'18'},{id:'h',label:'Height',ph:'16'}], cols:'c3',
+    calc:function(v){var l=v.l,w=v.w,h=v.h,V=l*w*h;return{V:V,steps:[{m:'Aquarium volume = L x W x H',n:'Aquarium volume calculator'},{m:'V = '+l+' x '+w+' x '+h+' = '+fmt(V,2)+' cubic units'},{m:'Check result chips for gallons and litres',n:'1 US gallon = 231 cubic inches'}]};}
+  },
+  pond: {
+    name:'Pond', cat:'containers',
+    svgBtn:'<ellipse cx="14" cy="16" rx="11" ry="7" stroke="#34d399" stroke-width="1.7"/><path d="M5 18 Q10 14 14 18 Q18 22 23 18" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" fill="none"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><ellipse cx="100" cy="45" rx="85" ry="35" stroke="#34d399" stroke-width="2" fill="rgba(52,211,153,.06)"/><ellipse cx="100" cy="45" rx="85" ry="14" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 2"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">Pond: L x W x Avg Depth x 0.45</text></svg>',
+    desc:'Pond volume calculator. Irregular ponds: multiply L x W x avg depth x 0.45 (shape factor for oval ponds).',
+    fields:[{id:'l',label:'Length',ph:'40'},{id:'w',label:'Width',ph:'25'},{id:'d',label:'Avg Depth',ph:'4'}], cols:'c3',
+    forceUnit:'ft',
+    calc:function(v){var l=v.l,w=v.w,d=v.d,V=l*w*d*0.45;return{V:V,extra:'Rectangular pond: '+fmt(l*w*d,1)+' ft3 (no shape factor)',steps:[{m:'Oval/natural pond volume = L x W x Avg Depth x 0.45',n:'Pond volume calculator — 0.45 is average shape factor'},{m:'V = '+l+' x '+w+' x '+d+' x 0.45 = '+fmt(V,2)+' ft3'},{m:fmt(V*7.481,0)+' gallons | '+fmt(V*28.317,0)+' litres',n:'Water volume in pond'}]};}
+  },
+  concrete: {
+    name:'Concrete', cat:'containers',
+    svgBtn:'<rect x="3" y="14" width="22" height="10" rx="1" stroke="#f59e0b" stroke-width="1.7"/><path d="M3 14l5-9h22l-5 9" stroke="#f59e0b" stroke-width="1.5" stroke-linejoin="round"/><line x1="25" y1="5" x2="25" y2="24" stroke="#f59e0b" stroke-width="1.5"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><rect x="15" y="42" width="170" height="30" rx="2" stroke="#f59e0b" stroke-width="2" fill="rgba(245,158,11,.07)"/><text x="100" y="34" font-family="Barlow Condensed" font-size="12" fill="#fcd34d" font-weight="700" text-anchor="middle">CONCRETE SLAB</text><text x="100" y="86" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = L x W x Thickness (in feet)</text></svg>',
+    desc:'Concrete volume calculator. All dimensions in feet. Result in ft3 and cubic yards (divide by 27).',
+    fields:[{id:'l',label:'Length (ft)',ph:'20'},{id:'w',label:'Width (ft)',ph:'10'},{id:'t',label:'Thickness (ft)',ph:'0.33'}], cols:'c3',
+    forceUnit:'ft',
+    calc:function(v){var l=v.l,w=v.w,t=v.t,V=l*w*t,yards=V/27;return{V:V,extra:'Cubic yards: '+fmt(yards,3)+' yd3 (add 10% for waste = '+fmt(yards*1.1,3)+' yd3)',steps:[{m:'Concrete volume = Length x Width x Thickness',n:'Concrete volume calculator'},{m:'V = '+l+' x '+w+' x '+t+' = '+fmt(V,3)+' ft3'},{m:'Cubic yards = '+fmt(V,2)+' / 27 = '+fmt(yards,3)+' yd3',n:'Ready-mix concrete sold by cubic yard in the US'}]};}
+  }
+};
+
+/* ════ MEDICAL ════ */
+var MEDICAL = {
+  prostate: {
+    name:'Prostate', cat:'medical',
+    svgBtn:'<ellipse cx="14" cy="14" rx="10" ry="7" stroke="#ec4899" stroke-width="1.7"/><line x1="14" y1="7" x2="14" y2="21" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="2 2"/><line x1="4" y1="14" x2="24" y2="14" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="2 2"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><ellipse cx="100" cy="45" rx="72" ry="32" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.07)"/><line x1="100" y1="13" x2="100" y2="77" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="3 2"/><line x1="28" y1="45" x2="172" y2="45" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="3 2"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = 0.52 x L x W x H (cm, result in mL)</text></svg>',
+    desc:'Prostate volume calculator. Enter TRUS/MRI measurements in cm. Result in mL. Normal = 20–30 mL.',
+    fields:[{id:'l',label:'Length (cm)',ph:'4.5'},{id:'w',label:'Width (cm)',ph:'3.5'},{id:'h',label:'Height (cm)',ph:'3.2'}], cols:'c3',
+    calc:function(v){var l=v.l,w=v.w,h=v.h,V=0.52*l*w*h;var interp=V<20?'Below normal range':V<=30?'Normal prostate volume':V<=50?'Mildly enlarged (BPH possible)':'Significantly enlarged — consult urologist';return{V:V,overrideUnit:'mL',extra:interp,steps:[{m:'Prostate volume = 0.52 x L x W x H',n:'Prolate ellipsoid formula (from TRUS measurements)'},{m:'V = 0.52 x '+l+' x '+w+' x '+h+' = 0.52 x '+fmt(l*w*h,3)},{m:'V = '+fmt(V,2)+' mL',n:'Normal range: 20–30 mL. >30 mL may indicate BPH'}]};}
+  },
+  bladder: {
+    name:'Bladder', cat:'medical',
+    svgBtn:'<path d="M14 4a10 10 0 018 9.5c0 5-3.6 10-8 10s-8-5-8-10A10 10 0 0114 4z" stroke="#8b5cf6" stroke-width="1.7" fill="none"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><path d="M100 10 C60 10 28 30 28 60 C28 78 55 85 100 85 C145 85 172 78 172 60 C172 30 140 10 100 10 Z" stroke="#8b5cf6" stroke-width="2" fill="rgba(139,92,246,.07)"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">V = 0.52 x L x W x H (cm, result in mL)</text></svg>',
+    desc:'Bladder volume calculator. Enter ultrasound measurements in cm. Normal full capacity 300–500 mL. Post-void residual (PVR) above 100 mL is significant.',
+    fields:[{id:'l',label:'Length (cm)',ph:'12'},{id:'w',label:'Width (cm)',ph:'8'},{id:'h',label:'Height (cm)',ph:'7'}], cols:'c3',
+    calc:function(v){var l=v.l,w=v.w,h=v.h,V=0.52*l*w*h;var interp=V<100?'Low/empty bladder':V<=300?'Moderate fill — normal range':V<=500?'Normal full capacity':V<=700?'Overdistended — urge to void':'Very large — potential retention';return{V:V,overrideUnit:'mL',extra:interp,steps:[{m:'Bladder volume = 0.52 x L x W x H',n:'Ellipsoid formula from ultrasound measurements'},{m:'V = 0.52 x '+l+' x '+w+' x '+h+' = 0.52 x '+fmt(l*w*h,3)},{m:'V = '+fmt(V,2)+' mL',n:'Normal full capacity: 300–500 mL. PVR >100 mL is clinically significant'}]};}
+  },
+  tidal: {
+    name:'Tidal Vol.', cat:'medical',
+    svgBtn:'<path d="M4 18 Q6 10 9 14 Q11 18 13 12 Q15 6 17 14 Q19 22 22 10 Q24 2 26 14" stroke="#10b981" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+    preview:'<svg viewBox="0 0 200 90" width="200" height="90" fill="none"><path d="M10 60 Q20 30 35 50 Q50 70 65 38 Q80 6 95 50 Q110 94 125 38 Q140 -10 155 50 Q165 78 180 40" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="100" y="88" font-family="Barlow Condensed" font-size="10" fill="#94a3b8" text-anchor="middle">Tidal Volume = 6–8 mL x IBW (kg)</text></svg>',
+    desc:'Tidal volume calculator. Enter ideal body weight in kg. Normal = ~500 mL. Ventilator setting: 6 mL/kg IBW (ARDSnet).',
+    fields:[{id:'ibw',label:'Ideal Body Wt (kg)',ph:'70'}], cols:'c1',
+    calc:function(v){var ibw=v.ibw,Vlow=6*ibw,Vhigh=8*ibw,Vmid=7*ibw;return{V:Vmid,overrideUnit:'mL',extra:'Range: '+fmt(Vlow,0)+' mL (6mL/kg) to '+fmt(Vhigh,0)+' mL (8mL/kg)',steps:[{m:'Tidal volume = 6–8 mL x ideal body weight (kg)',n:'Tidal volume calculator — normal breathing estimate'},{m:'Low (6mL/kg): 6 x '+ibw+' = '+fmt(Vlow,0)+' mL | ARDSnet ventilator protocol'},{m:'Mid (7mL/kg): '+fmt(Vmid,0)+' mL | High (8mL/kg): '+fmt(Vhigh,0)+' mL',n:'Average adult at rest: ~500 mL. Adjust for clinical context'}]};}
+  }
+};
+
+/* all together */
+function getAllShapes(){ return Object.assign({}, SHAPES, CONTAINERS, MEDICAL); }
+
+function getActiveKey() {
+  if(activeCat==='shapes') return activeShapeKey;
+  if(activeCat==='containers') return activeContainerKey;
+  return activeMedicalKey;
+}
+
+/* ════ BUILD ════ */
+function buildAll() {
+  buildGroup('grid-shapes', SHAPES, activeShapeKey);
+  buildGroup('grid-containers', CONTAINERS, activeContainerKey);
+  buildGroup('grid-medical', MEDICAL, activeMedicalKey);
+  buildFormulaGrid();
+  renderShape();
+}
+
+function buildGroup(gridId, map, activeKey) {
+  var html = '';
+  Object.keys(map).forEach(function(k){
+    var s = map[k];
+    html += '<button class="shape-btn'+(k===activeKey?' active':'')+'" data-key="'+k+'" onclick="selShape(\''+k+'\',this)">'
+      +'<div class="s-icon"><svg viewBox="0 0 28 28" fill="none">'+s.svgBtn+'</svg></div>'
+      +'<div class="s-name">'+s.name+'</div></button>';
+  });
+  document.getElementById(gridId).innerHTML = html;
+}
+
+function buildFormulaGrid() {
+  var allKeys = Object.keys(SHAPES).concat(Object.keys(CONTAINERS));
+  var html = '';
+  allKeys.forEach(function(k){
+    var s = getAllShapes()[k];
+    if(!s) return;
+    html += '<div class="fc" onclick="jumpTo(\''+k+'\')">'+
+      '<div class="fc-icon"><svg viewBox="0 0 28 28" fill="none">'+s.svgBtn+'</svg></div>'+
+      '<div class="fc-name">'+s.name+' Volume</div>'+
+      '<div class="fc-formula">'+getFormula(k)+'</div></div>';
+  });
+  document.getElementById('fml-grid').innerHTML = html;
+}
+
+var FORMULAS = {
+  cylinder:'V = pi x r2 x h', cone:'V = (1/3) x pi x r2 x h', sphere:'V = (4/3) x pi x r3',
+  pyramid:'V = (1/3) x b2 x h', triprism:'V = (1/2) x b x h x L', cube:'V = s3',
+  pool:'V = L x W x Depth', tank:'V = pi x r2 x h', pipe:'V = pi x r2 x L',
+  aquarium:'V = L x W x H', pond:'V = L x W x D x 0.45', concrete:'V = L x W x T'
+};
+function getFormula(k){ return FORMULAS[k]||''; }
+
+/* ════ SELECT ════ */
+function selShape(k, btn) {
+  if(activeCat==='shapes') activeShapeKey = k;
+  else if(activeCat==='containers') activeContainerKey = k;
+  else activeMedicalKey = k;
+
+  var panel = document.getElementById('panel-'+activeCat);
+  if(panel){ panel.querySelectorAll('.shape-btn').forEach(function(b){b.classList.remove('active');});}
+  if(btn) btn.classList.add('active');
+  renderShape();
+  resetResult();
+}
+
+function switchCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active');});
+  if(btn) btn.classList.add('active');
+  else { var t=document.getElementById('tab-'+cat); if(t)t.classList.add('active'); }
+  ['shapes','containers','medical'].forEach(function(c){
+    var p=document.getElementById('panel-'+c);
+    if(p) p.style.display = c===cat?'block':'none';
+  });
+  renderShape();
+  resetResult();
+}
+
+function renderShape() {
+  var key = getActiveKey();
+  var all = getAllShapes();
+  var s = all[key];
+  if(!s) return;
+  document.getElementById('shape-preview').innerHTML = s.preview;
+  var fi='';
+  s.fields.forEach(function(f){
+    fi+='<div class="fgrp"><label for="inp-'+f.id+'">'+f.label+'</label>'
+      +'<div class="finp"><input type="number" id="inp-'+f.id+'" placeholder="'+f.ph+'" min="0" step="any"></div></div>';
+  });
+  document.getElementById('fields-area').innerHTML='<div class="inp-desc">'+s.desc+'</div>'
+    +'<div class="frow '+s.cols+'">'+fi+'</div>';
+}
+
+function resetResult(){
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display='none';
+}
+
+function jumpTo(k) {
+  var all = getAllShapes();
+  var s = all[k];
+  if(!s) return;
+  var cat = s.cat || 'shapes';
+  if(cat==='shapes'){ activeCat='shapes'; activeShapeKey=k; }
+  else if(cat==='containers'){ activeCat='containers'; activeContainerKey=k; }
+  else{ activeCat='medical'; activeMedicalKey=k; }
+  var tabBtn=document.getElementById('tab-'+cat);
+  switchCat(cat, tabBtn);
+  ['shapes','containers','medical'].forEach(function(c){
+    var grid=document.getElementById('grid-'+c);
+    if(!grid) return;
+    grid.querySelectorAll('.shape-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-key')===k);
+    });
+  });
+  renderShape();
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ════ CALCULATE ════ */
+function getConversions(V, unit, overrideUnit) {
+  if(overrideUnit) return [];
+  var m3 = V * (U2M3[unit]||1);
+  var chips = [];
+  var litres=m3*1000, gal=m3*264.172, ft3=m3/0.0283168, cm3=m3*1e6;
+  if(unit!=='cm'&&cm3<1e9) chips.push(fmt(cm3,2)+' cm3');
+  chips.push(fmt(litres,3)+' litres');
+  chips.push(fmt(gal,3)+' gal (US)');
+  if(unit!=='ft') chips.push(fmt(ft3,3)+' ft3');
+  if(unit!=='yd') chips.push(fmt(m3,4)+' m3');
+  return chips;
+}
+
+function calculate() {
+  document.getElementById('err-msg').style.display='none';
+  var key = getActiveKey();
+  var s = getAllShapes()[key];
+  var vals={}, valid=true;
+  s.fields.forEach(function(f){
+    var el=document.getElementById('inp-'+f.id);
+    var v=parseFloat(el.value);
+    if(isNaN(v)||v<=0) valid=false;
+    vals[f.id]=v;
+  });
+  if(!valid){document.getElementById('err-msg').style.display='block';return;}
+  var res=s.calc(vals);
+  if(!res){document.getElementById('err-msg').style.display='block';return;}
+
+  var unitEl = document.getElementById('unit-'+(activeCat==='containers'?'containers':'shapes'));
+  var unit = (unitEl?unitEl.value:'ft');
+  var ul = res.overrideUnit || (unit+'3');
+  var chips = getConversions(res.V, unit, res.overrideUnit);
+
+  var stepsHtml='';
+  res.steps.forEach(function(st,i){
+    stepsHtml+='<div class="step-r"><span class="sn">'+(i+1)+'.</span>'
+      +'<div><span class="sm">'+st.m+'</span>'+(st.n?'<span class="snote">'+st.n+'</span>':'')+'</div></div>';
+  });
+
+  document.getElementById('result-content').innerHTML=
+    '<div class="result-main">'
+    +'<div class="r-lbl">Volume</div>'
+    +'<div class="r-big">'+fmt(res.V,4)+'</div>'
+    +'<div class="r-unit">'+ul+'</div>'
+    +(res.extra?'<div class="r-extra">'+res.extra+'</div>':'')
+    +(chips.length?'<div class="r-chips">'+chips.map(function(c){return'<span class="r-chip">'+c+'</span>';}).join('')+'</div>':'')
+    +'</div>'
+    +'<div class="steps-box"><div class="steps-hd">Step-by-Step Working</div>'+stepsHtml+'</div>';
+
+  var p=document.getElementById('result-panel');
+  p.classList.remove('show'); void p.offsetWidth; p.classList.add('show');
+}
+
+function faqT(el){
+  var item=el.parentElement, was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was) item.classList.add('open');
+}
+
+buildAll();
+</script>
+</body>
+</html>

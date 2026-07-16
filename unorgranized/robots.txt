@@ -1,0 +1,84 @@
+# ================================================
+# robots.txt — SpeedCalculator.net
+# Generated: 2026-05-22
+# ================================================
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Block admin, private, and system directories
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+
+# Block search, filter, and duplicate content URLs
+Disallow: /?s=
+Disallow: /search/
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*ref=
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*?*sessionid=
+Disallow: /*?*PHPSESSID=
+Disallow: /*?*print=
+Disallow: /page/*?*
+
+# Block feed and comment URLs (reduce duplicate crawling)
+Disallow: /feed/
+Disallow: /comments/feed/
+Disallow: /*/feed/
+Disallow: /trackback/
+
+# ── Google Bot Specific ──
+User-agent: Googlebot
+Allow: /
+Allow: /blog/
+Allow: /distance/
+Allow: /time/
+Allow: /travel/
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# ── Bing Bot Specific ──
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# ── Google Image Bot ──
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# ── Block Bad / Scraper Bots ──
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# ── Sitemap Location ──
+Sitemap: https://www.speedcalculator.net/sitemap.xml

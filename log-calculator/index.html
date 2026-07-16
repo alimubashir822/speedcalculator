@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Log Calculator — Logarithm, Natural Log, Inverse Log Free Online | SpeedCalculator.net</title>
+<meta name="description" content="Free log calculator online. Calculate log base 10, natural log (ln), log any base, inverse log, and negative log — with step-by-step solutions. Instant results for students and professionals.">
+<meta name="keywords" content="log calculator, log calculator online, online log calculator, natural log calculator, log calculator base 10, log calculator base 2, log calculator with base, inverse log calculator, negative log calculator, calculate logarithm online, log calculator with steps">
+<link rel="canonical" href="https://www.speedcalculator.net/log-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Log Calculator",
+  "url":"https://www.speedcalculator.net/log-calculator/",
+  "description":"Free log calculator — log base 10, natural log, custom base, inverse log, log equations with steps",
+  "applicationCategory":"EducationApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is log on a calculator?","acceptedAnswer":{"@type":"Answer","text":"LOG on a calculator computes the base-10 logarithm (log₁₀). It answers: 'What power do I raise 10 to, to get this number?' For example, log(1000) = 3 because 10³ = 1000. The LN button gives the natural logarithm (base e ≈ 2.718)."}},
+    {"@type":"Question","name":"How to do log on a calculator?","acceptedAnswer":{"@type":"Answer","text":"On our online log calculator, enter the number in the value field and click Calculate. For log base 10, use the Log₁₀ tab. For natural log, use the ln tab. For any custom base, use the Custom Base tab and enter your base."}},
+    {"@type":"Question","name":"How to do inverse log on a calculator?","acceptedAnswer":{"@type":"Answer","text":"Inverse log (antilog) reverses a logarithm. If log₁₀(x) = 3, then antilog(3) = 10³ = 1000. Use our Inverse Log tab, enter the log value, and click Calculate. On a physical calculator, press 10^x (Shift + LOG) for base-10 antilog, or e^x (Shift + LN) for natural antilog."}},
+    {"@type":"Question","name":"How to type log base in a calculator?","acceptedAnswer":{"@type":"Answer","text":"In our calculator, select the Custom Base tab, enter the number in the Value field and your desired base in the Base field, then click Calculate. Example: log₂(8) → Value=8, Base=2 → Result=3. On a physical calculator, use the logₐ(b) function or the change of base formula: log_b(x) = ln(x)/ln(b)."}},
+    {"@type":"Question","name":"What does log mean on a calculator?","acceptedAnswer":{"@type":"Answer","text":"LOG means logarithm base 10 (common logarithm). It answers: 'To what power must 10 be raised to get this number?' LN means natural logarithm (base e). Both are inverse functions of exponentiation — they undo raising a number to a power."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--pink:#ec4899;--red:#ef4444;--teal:#06b6d4;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,0.12);--border2:rgba(59,130,246,0.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start;}
+@media(max-width:820px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4.5vw,60px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* ═══ CALC CARD ═══ */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),var(--purple),transparent);}
+
+/* CALC HEAD */
+.calc-head{padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle span{color:var(--accent2);}
+.calc-htitle-icon{width:28px;height:28px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.calc-htitle-icon svg{width:14px;height:14px;stroke:var(--accent2);}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:18px 22px 22px;}
+
+/* ═══ MODE SELECTOR ═══ */
+.mode-selector{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.mode-row.r2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:400px){.mode-row{grid-template-columns:1fr 1fr;}.mode-row.r2{grid-template-columns:1fr;}}
+
+.ctab{border:1px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);color:var(--text3);font-family:'Barlow',sans-serif;cursor:pointer;transition:all .2s;text-align:left;padding:11px 13px;display:flex;align-items:center;gap:10px;position:relative;overflow:hidden;}
+.ctab:hover{border-color:rgba(59,130,246,.3);color:var(--text2);}
+.ctab:hover .ctab-icon{opacity:.8;}
+.ctab.active{border-color:var(--accent);background:rgba(59,130,246,.1);color:var(--text);}
+.ctab.active .ctab-label{color:var(--accent2);}
+.ctab.active .ctab-icon{background:var(--accent);color:#fff;border-color:var(--accent);}
+.ctab-icon{width:32px;height:32px;border-radius:7px;border:1px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--text3);transition:all .2s;line-height:1;}
+.ctab-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.ctab-label{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);transition:color .2s;white-space:nowrap;}
+.ctab-formula{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text3);letter-spacing:.02em;}
+
+/* ═══ INPUT DESCRIPTION ═══ */
+.inp-desc{font-size:12px;color:var(--text2);margin-bottom:14px;padding:10px 13px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.inp-desc::before{content:'ℹ';font-size:13px;color:var(--accent2);flex-shrink:0;margin-top:1px;}
+
+/* ═══ LOG VISUAL DISPLAY ═══ */
+.log-visual{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 0 14px;flex-wrap:wrap;}
+.log-fn-wrap{display:flex;align-items:baseline;position:relative;}
+.log-fn-text{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:var(--accent2);letter-spacing:-.5px;}
+.log-base-sub{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--purple);position:relative;top:6px;margin-left:2px;}
+.log-paren{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:300;color:var(--text3);}
+.log-eq{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--text3);}
+.log-result-preview{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--accent2);}
+
+/* ═══ FIELD GROUPS ═══ */
+.fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+@media(max-width:400px){.fields-grid{grid-template-columns:1fr;}}
+.fields-grid.single{grid-template-columns:1fr;}
+.fgrp{}
+.flbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;display:flex;align-items:center;gap:5px;}
+.flbl span{color:var(--accent2);}
+.finp-wrap{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.finp-wrap:focus-within{border-color:var(--accent);}
+.finp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:12px 14px;font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.finp-wrap input::placeholder{color:var(--text3);font-size:16px;font-weight:400;}
+.finp-wrap .sfx{padding:0 12px;display:flex;align-items:center;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);white-space:nowrap;}
+
+/* EQUATION ROW */
+.eq-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;flex-wrap:wrap;}
+.eq-part{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text2);}
+.eq-inp{background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:6px;outline:none;padding:6px 10px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--accent2);text-align:center;width:70px;transition:border-color .2s;}
+.eq-inp:focus{border-color:var(--accent);}
+.eq-inp::placeholder{color:var(--text3);font-size:13px;}
+.eq-sub{font-size:12px;color:var(--text3);position:relative;top:4px;}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:15px 20px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;line-height:1;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+.calc-btn:active{transform:translateY(0);}
+.calc-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+/* RESULT */
+.result-panel{display:none;margin-top:14px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(96,165,250,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:20px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;}
+.result-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--purple));}
+.result-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.result-expr{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--text3);margin-bottom:6px;}
+.result-big{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,9vw,60px);font-weight:900;color:var(--accent2);line-height:1;letter-spacing:-2px;word-break:break-all;}
+.result-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px;}
+.chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--text2);}
+.chip b{color:var(--text);}
+
+/* STEPS BOX */
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-top:10px;}
+.steps-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.step-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);line-height:1.65;}
+.step-row:last-child{border:none;}
+.step-n{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);min-width:22px;}
+.step-math{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--text);font-weight:600;}
+
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 14px;font-size:13px;color:#f87171;margin-top:10px;display:none;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* STEPS GUIDE */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+@media(max-width:720px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:border-color .2s;}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s;}
+.step-card:hover{border-color:var(--border2);}
+.step-card:hover::before{opacity:1;}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);flex-shrink:0;}
+.step-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-icon svg{width:18px;height:18px;}
+.step-h{font-size:14px;font-weight:700;color:var(--text);margin:10px 0 4px;}
+.step-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* LOG RULES */
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;}
+@media(max-width:700px){.rules-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:380px){.rules-grid{grid-template-columns:1fr;}}
+.rc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.rc:hover{border-color:var(--border2);}
+.rc-num{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--accent2);margin-bottom:4px;}
+.rc-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.rc-rule{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--accent2);background:var(--bg3);border-radius:5px;padding:6px 10px;margin-bottom:6px;line-height:1.6;}
+.rc-ex{font-size:11px;color:var(--text3);font-style:italic;}
+
+/* REF TABLE */
+.ref-table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin-top:28px;}
+table.ref{width:100%;border-collapse:collapse;}
+table.ref thead tr{background:var(--bg3);}
+table.ref th{padding:11px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);text-align:left;}
+table.ref td{padding:10px 14px;font-size:13px;color:var(--text2);border-top:1px solid var(--border);}
+table.ref tr:hover td{background:rgba(59,130,246,.03);}
+.td-expr{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
+.td-val{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--accent2);}
+.td-note{font-size:11px;color:var(--text3);}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 8px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:260px;}
+
+/* OTHER CALCS */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Log Calculator
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Free · 5 Modes · Steps Shown</div>
+        <h1>Log<em>Calculator</em></h1>
+        <p class="hero-sub">Calculate log base 10, natural log (ln), logarithm with any custom base, inverse log (antilog), and negative log — all with full step-by-step solutions. Free, instant, no signup.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">Log₁₀ & ln</span>
+          <span class="badge p">Custom Base</span>
+          <span class="badge">Inverse Log</span>
+          <span class="badge g">Step-by-Step</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="calc-htitle-icon">
+              <svg fill="none" viewBox="0 0 14 14"><path d="M2 11L6 3l3 5 2-3 2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Log <span>Calculator</span>
+          </div>
+          <div class="live-pill">✦ Steps Included</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- MODE SELECTOR -->
+          <div class="mode-selector">
+            <div class="mode-row">
+              <button class="ctab active" onclick="switchTab('log10',this)">
+                <div class="ctab-icon" style="font-size:12px;">log</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Log Base 10</span>
+                  <span class="ctab-formula">log₁₀(x)</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('ln',this)">
+                <div class="ctab-icon" style="font-size:13px;">ln</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Natural Log</span>
+                  <span class="ctab-formula">logₑ(x)</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('custom',this)">
+                <div class="ctab-icon" style="font-size:11px;">logₙ</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Custom Base</span>
+                  <span class="ctab-formula">log_b(x)</span>
+                </div>
+              </button>
+            </div>
+            <div class="mode-row r2">
+              <button class="ctab" onclick="switchTab('inv',this)">
+                <div class="ctab-icon" style="font-size:11px;">10ˣ</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Inverse Log</span>
+                  <span class="ctab-formula">antilog(x)</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('eq',this)">
+                <div class="ctab-icon" style="font-size:11px;">a=b</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Log Equation</span>
+                  <span class="ctab-formula">log_b(x)=y</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- ══ MODE 1: Log Base 10 ══ -->
+          <div id="mode-log10">
+            <div class="inp-desc">Enter any positive number to calculate its base-10 logarithm (common log).</div>
+            <div class="fields-grid single">
+              <div class="fgrp">
+                <div class="flbl">Value <span>(x)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="l10-val" placeholder="1000" min="0" step="any">
+                  <span class="sfx">x &gt; 0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 2: Natural Log ══ -->
+          <div id="mode-ln" style="display:none;">
+            <div class="inp-desc">Calculate the natural logarithm (base e ≈ 2.71828) of any positive number.</div>
+            <div class="fields-grid single">
+              <div class="fgrp">
+                <div class="flbl">Value <span>(x)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="ln-val" placeholder="e" min="0" step="any">
+                  <span class="sfx">x &gt; 0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 3: Custom Base ══ -->
+          <div id="mode-custom" style="display:none;">
+            <div class="inp-desc">Calculate logarithm with any base: log_b(x). Enter the number and the base separately.</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <div class="flbl">Value <span>(x)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="cu-val" placeholder="8" min="0" step="any">
+                </div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl">Base <span>(b)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="cu-base" placeholder="2" min="0" step="any">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 4: Inverse Log ══ -->
+          <div id="mode-inv" style="display:none;">
+            <div class="inp-desc">Reverse a logarithm: find the number whose log is x. Choose base (10 or e) and enter the log value.</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <div class="flbl">Log Value <span>(y)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="inv-val" placeholder="3" step="any">
+                </div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl">Base <span>(b)</span></div>
+                <div class="finp-wrap">
+                  <input type="number" id="inv-base" placeholder="10" min="0" step="any">
+                  <span class="sfx">default 10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 5: Log Equation ══ -->
+          <div id="mode-eq" style="display:none;">
+            <div class="inp-desc">Solve a log equation: given any two of (base, x, y), find the missing third value.</div>
+            <div style="margin-bottom:10px;">
+              <div class="flbl" style="margin-bottom:8px;">Solve for:</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;" id="eq-solve-pills">
+                <button class="ctab active" style="padding:7px 14px;flex:1;min-width:80px;" onclick="setEqSolve('x',this)">
+                  <div class="ctab-text"><span class="ctab-label">Find x</span><span class="ctab-formula">log_b(x)=y</span></div>
+                </button>
+                <button class="ctab" style="padding:7px 14px;flex:1;min-width:80px;" onclick="setEqSolve('b',this)">
+                  <div class="ctab-text"><span class="ctab-label">Find base</span><span class="ctab-formula">log_b(x)=y</span></div>
+                </button>
+                <button class="ctab" style="padding:7px 14px;flex:1;min-width:80px;" onclick="setEqSolve('y',this)">
+                  <div class="ctab-text"><span class="ctab-label">Find y</span><span class="ctab-formula">log_b(x)=y</span></div>
+                </button>
+              </div>
+            </div>
+            <div class="fields-grid" id="eq-fields">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please enter a valid positive number. Logarithm is only defined for x &gt; 0.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Log
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">5-in-1</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">log/ln</div><div class="stat-lbl">Base 10 & Natural</div></div>
+      <div class="stat-item"><div class="stat-val">Steps</div><div class="stat-lbl">Always Shown</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Step-by-Step Guide</div>
+    <h2 class="sec-title">How to Use the <span>Log Calculator</span></h2>
+    <p class="sec-sub">Five modes cover every logarithm problem. Pick the mode that matches your question, enter the values, and get a complete solution with all working steps.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">01</div>
+          <div class="step-icon" style="background:rgba(59,130,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><rect x="3" y="2" width="12" height="14" rx="2"/><path d="M6 6h6M6 9h4" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Select Your Mode</div>
+        <p class="step-p">Choose Log₁₀ for common log, ln for natural log, Custom Base for any base, Inverse Log for antilog, or Log Equation to solve for any unknown.</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">02</div>
+          <div class="step-icon" style="background:rgba(16,185,129,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M4 9h10M9 4l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Enter Your Number</div>
+        <p class="step-p">Type a positive number in the Value field. For Custom Base, also enter the base. Logarithm is only defined for positive numbers (x &gt; 0).</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">03</div>
+          <div class="step-icon" style="background:rgba(245,158,11,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Click Calculate</div>
+        <p class="step-p">Press Calculate Log for instant results — shown with the full expression, decimal value, and alternative forms (e.g. log₁₀ and ln both shown).</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">04</div>
+          <div class="step-icon" style="background:rgba(139,92,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 4h10v2H4zM4 8h8M4 12h6" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Read the Steps</div>
+        <p class="step-p">Every result shows the change-of-base formula, verification step, and what the answer means — so you learn the method, not just copy the number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOG RULES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Formula Reference</div>
+    <h2 class="sec-title">Laws of <span>Logarithms</span></h2>
+    <p class="sec-sub">All logarithm simplification uses these core rules. Memorise them and you can simplify any log expression — with or without a calculator.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format&fit=crop"
+           alt="Logarithm rules and laws of logarithms written on blackboard — log calculator reference">
+      <div class="img-overlay">
+        <span>Laws of logarithms — the 8 core rules used to simplify and solve any log expression</span>
+      </div>
+    </div>
+
+    <div class="rules-grid">
+      <div class="rc">
+        <div class="rc-num">01</div>
+        <div class="rc-title">Product Rule</div>
+        <div class="rc-rule">log_b(x·y) = log_b(x) + log_b(y)</div>
+        <div class="rc-ex">log(2×5) = log(2) + log(5) = log(10) = 1</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">02</div>
+        <div class="rc-title">Quotient Rule</div>
+        <div class="rc-rule">log_b(x/y) = log_b(x) − log_b(y)</div>
+        <div class="rc-ex">log(100/10) = log(100) − log(10) = 2−1 = 1</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">03</div>
+        <div class="rc-title">Power Rule</div>
+        <div class="rc-rule">log_b(xⁿ) = n × log_b(x)</div>
+        <div class="rc-ex">log(10³) = 3 × log(10) = 3</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">04</div>
+        <div class="rc-title">Change of Base</div>
+        <div class="rc-rule">log_b(x) = ln(x) / ln(b) = log(x)/log(b)</div>
+        <div class="rc-ex">log₂(8) = ln(8)/ln(2) = 2.079/0.693 = 3</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">05</div>
+        <div class="rc-title">Log of 1</div>
+        <div class="rc-rule">log_b(1) = 0 (for any base)</div>
+        <div class="rc-ex">log(1) = 0 | ln(1) = 0 | log₂(1) = 0</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">06</div>
+        <div class="rc-title">Log of Base</div>
+        <div class="rc-rule">log_b(b) = 1</div>
+        <div class="rc-ex">log(10) = 1 | ln(e) = 1 | log₂(2) = 1</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">07</div>
+        <div class="rc-title">Inverse Rule</div>
+        <div class="rc-rule">b^(log_b(x)) = x | log_b(bⁿ) = n</div>
+        <div class="rc-ex">10^log(5) = 5 | log(10³) = 3</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">08</div>
+        <div class="rc-title">Negative Log</div>
+        <div class="rc-rule">log_b(1/x) = −log_b(x)</div>
+        <div class="rc-ex">log(0.001) = log(10⁻³) = −3</div>
+      </div>
+      <div class="rc">
+        <div class="rc-num">09</div>
+        <div class="rc-title">Reciprocal Base</div>
+        <div class="rc-rule">log_b(x) = 1 / log_x(b)</div>
+        <div class="rc-ex">log₂(8) = 1/log₈(2) = 3</div>
+      </div>
+    </div>
+
+    <!-- LOG REFERENCE TABLE -->
+    <div style="margin-top:36px;">
+      <div class="sec-eyebrow">Quick Reference</div>
+      <h3 class="sec-title" style="font-size:clamp(22px,3vw,32px);">Common <span>Log Values</span></h3>
+      <div class="ref-table-wrap">
+        <table class="ref">
+          <thead><tr><th>Expression</th><th>log₁₀ value</th><th>ln value</th><th>Notes</th></tr></thead>
+          <tbody id="log-ref-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This Tool</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">Logarithms are everywhere — from measuring earthquakes to calculating decibels, pH, and compound interest. Here's where our free log calculator helps most.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M10 2L2 7l8 5 8-5-8-5zM2 17l8-5 8 5"/></svg>
+        </div>
+        <div class="uc-h">Students & Algebra</div>
+        <p class="uc-p">Solve logarithm equations, verify homework answers, and learn the change-of-base formula with step-by-step working shown for every calculation.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M4 14l4-8 4 5 3-3 3 6" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="2"/></svg>
+        </div>
+        <div class="uc-h">Finance — Compound Interest</div>
+        <p class="uc-p">Find how long an investment takes to double using log: n = log(2)/log(1+r). For 8% interest: n = log(2)/log(1.08) ≈ 9 years (Rule of 72).</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2z"/><path d="M10 6v4l3 3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Physics — Decibels (dB)</div>
+        <p class="uc-p">Sound intensity in decibels uses log: dB = 10 × log₁₀(I/I₀). A sound 10× louder = +10 dB. 100× louder = +20 dB. Our log calculator makes dB calculations instant.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/></svg>
+        </div>
+        <div class="uc-h">Chemistry — pH Scale</div>
+        <p class="uc-p">pH = −log₁₀[H⁺]. A hydrogen ion concentration of 0.001 mol/L: pH = −log(0.001) = −(−3) = 3 (strongly acidic). Use our negative log mode directly.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><circle cx="10" cy="10" r="8"/><path d="M6 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Earthquakes — Richter Scale</div>
+        <p class="uc-p">The Richter scale uses log₁₀. A magnitude 7 earthquake is 10× stronger than magnitude 6 and 100× stronger than magnitude 5. Each step = 10× more energy.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><rect x="2" y="2" width="16" height="16" rx="2"/><path d="M7 7h6M7 10h4M7 13h2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Computer Science</div>
+        <p class="uc-p">Algorithm complexity uses log₂ — binary search runs in O(log₂ n). For 1 million items: log₂(1,000,000) ≈ 20 comparisons max. Our log base 2 calculator is perfect for this.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Log Calculator?</h2>
+  <p>A <strong>log calculator</strong> is a free online tool that computes logarithms of any base — instantly and with step-by-step solutions. While a basic calculator only has LOG (base 10) and LN (natural log) buttons, our <strong>online log calculator</strong> goes much further: it calculates log with any custom base using the change-of-base formula, computes the inverse log (antilog), handles negative logs, and even solves log equations where you provide two values and find the third.</p>
+
+  <h2>What Does Log Mean on a Calculator?</h2>
+  <h3>LOG Button = Log Base 10 (Common Logarithm)</h3>
+  <p>The <strong>LOG</strong> button on a calculator computes the base-10 logarithm. It answers: <em>"To what power must I raise 10 to get this number?"</em></p>
+  <p><span class="fi">log₁₀(x) = y means 10^y = x</span></p>
+  <div class="ex-box">
+    <h4>📘 Examples — What is log on a calculator?</h4>
+    <p>
+      log(10) = 1 &nbsp;→&nbsp; because 10¹ = 10<br>
+      log(100) = 2 &nbsp;→&nbsp; because 10² = 100<br>
+      log(1000) = 3 &nbsp;→&nbsp; because 10³ = 1000<br>
+      log(0.1) = −1 &nbsp;→&nbsp; because 10⁻¹ = 0.1<br>
+      log(50) ≈ 1.699 &nbsp;→&nbsp; because 10^1.699 ≈ 50
+    </p>
+  </div>
+
+  <h3>LN Button = Natural Logarithm (Base e)</h3>
+  <p>The <strong>LN</strong> button computes the natural logarithm — logarithm with base e (Euler's number ≈ 2.71828). It answers: <em>"To what power must I raise e to get this number?"</em></p>
+  <p><span class="fi">ln(x) = y means eʸ = x</span></p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+         alt="Log calculator online — calculate logarithm base 10 and natural log with step-by-step solutions">
+    <div class="img-overlay">
+      <span>Online log calculator — compute log₁₀, ln, custom base, inverse log instantly with steps</span>
+    </div>
+  </div>
+
+  <h2>How to Use Log on a Calculator — All Methods</h2>
+  <h3>Method 1: Log Base 10</h3>
+  <p>Select the <strong>Log₁₀</strong> tab, enter your number (x), and click Calculate. The result is log₁₀(x).</p>
+
+  <h3>Method 2: Natural Log</h3>
+  <p>Select the <strong>ln</strong> tab, enter your number, and click Calculate. Returns logₑ(x) = ln(x).</p>
+
+  <h3>Method 3: Log with Any Base (Change of Base Formula)</h3>
+  <p>Select <strong>Custom Base</strong>, enter the value and base. The calculator uses the change-of-base formula:</p>
+  <p><span class="fi">log_b(x) = log(x) / log(b) = ln(x) / ln(b)</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — How to type log base 2 in a calculator</h4>
+    <p>
+      log₂(32) = log(32)/log(2) = 1.5051/0.3010 = <strong>5</strong><br>
+      Verify: 2⁵ = 32 ✓<br><br>
+      log₃(81) = log(81)/log(3) = 1.9084/0.4771 = <strong>4</strong><br>
+      Verify: 3⁴ = 81 ✓
+    </p>
+  </div>
+
+  <h3>Method 4: How to Do Inverse Log on a Calculator</h3>
+  <p>The <strong>inverse log</strong> (antilog) reverses a logarithm. If log₁₀(x) = y, then antilog(y) = 10^y.</p>
+  <p><span class="fi">antilog₁₀(y) = 10^y</span></p>
+  <p>Select the <strong>Inverse Log</strong> tab, enter the log value and base. The calculator computes b^y.</p>
+  <div class="ex-box">
+    <h4>📘 Example — Inverse Log</h4>
+    <p>
+      antilog(3) base 10 = 10³ = <strong>1000</strong><br>
+      antilog(0.699) base 10 = 10^0.699 ≈ <strong>5</strong><br>
+      antilog(2) base e = e² ≈ <strong>7.389</strong>
+    </p>
+  </div>
+
+  <div class="tip">
+    <p><strong>How to change log base on a calculator:</strong> On physical calculators, use the change-of-base formula: log_b(x) = LOG(x) ÷ LOG(b). On our online log calculator, simply select the Custom Base tab — it applies the change-of-base formula automatically and shows you the working.</p>
+  </div>
+
+  <h2>Negative Log Calculator — How It Works</h2>
+  <p>A <strong>negative log</strong> simply means the logarithm of a number between 0 and 1. For example:</p>
+  <ul>
+    <li>log(0.1) = log(10⁻¹) = <strong>−1</strong></li>
+    <li>log(0.01) = log(10⁻²) = <strong>−2</strong></li>
+    <li>log(0.001) = log(10⁻³) = <strong>−3</strong></li>
+  </ul>
+  <p>In chemistry, pH = −log[H⁺] — so a negative log gives a positive pH value. Enter any number between 0 and 1 in our Log Base 10 mode to get a negative log result automatically.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900&q=80&auto=format&fit=crop"
+         alt="Logarithm uses in chemistry pH scale, decibels, and Richter scale calculations">
+    <div class="img-overlay">
+      <span>Logarithms in real life — pH, decibels, Richter scale, compound interest, and algorithm complexity</span>
+    </div>
+  </div>
+
+  <h2>Log Base 2 — Used in Computer Science</h2>
+  <p>Log base 2 (binary logarithm) is fundamental in computer science and information theory. It answers: <em>"How many times must I double 1 to reach this number?"</em></p>
+  <ul>
+    <li>log₂(2) = 1 — 1 bit can represent 2 values</li>
+    <li>log₂(8) = 3 — 3 bits for 8 values (0–7)</li>
+    <li>log₂(256) = 8 — 8 bits for 256 values (one byte)</li>
+    <li>log₂(1,048,576) = 20 — 20 bits for ~1 million values</li>
+  </ul>
+  <p>Use our <strong>Custom Base</strong> mode with base = 2 for any binary logarithm calculation.</p>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Log Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is log on a calculator — what does LOG mean?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>LOG button</strong> on a calculator computes the base-10 logarithm (common logarithm). It tells you: "To what power must 10 be raised to get this number?" For example, LOG(1000) = 3 because 10³ = 1000. The <strong>LN button</strong> computes the natural logarithm (base e ≈ 2.718). Both are inverse functions of exponentials.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to do log on a calculator — step by step?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>On our online log calculator: select the <strong>Log₁₀</strong> tab, enter your number, and click Calculate. On a physical scientific calculator: type the number, then press the LOG button. For natural log, press LN instead. For custom bases, use our Custom Base tab (applies change-of-base formula automatically: log_b(x) = LOG(x) ÷ LOG(b)).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to type log base in a calculator / how to enter log base?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>In our calculator, select <strong>Custom Base</strong>, enter the value in the first field and the base in the second field, then click Calculate. Example: log₂(8) → Value=8, Base=2 → Result=3. On a physical calculator, either use the logₐ(b) function if available, or apply the change-of-base formula manually: LOG(8) ÷ LOG(2) = 0.903 ÷ 0.301 = 3.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to do inverse log on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use our <strong>Inverse Log</strong> tab — enter the log value and base, click Calculate. The antilog formula is: antilog_b(y) = b^y. For base 10: antilog(3) = 10³ = 1000. On a physical calculator, press <strong>Shift + LOG</strong> (which activates 10ˣ) for base-10 antilog, or <strong>Shift + LN</strong> for natural antilog (eˣ). Enter your value then press =.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to change log base on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the <strong>change-of-base formula</strong>: log_b(x) = LOG(x) ÷ LOG(b). On our calculator, this is done automatically in the Custom Base tab. On a physical calculator: for log₂(32), press LOG(32) ÷ LOG(2) = 1.505 ÷ 0.301 = 5. Alternatively, use ln(32) ÷ ln(2) for the same result.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is the difference between log and ln?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>log</strong> (LOG on calculator) = base-10 logarithm. Most used in everyday life and engineering. log(10) = 1, log(100) = 2. <strong>ln</strong> (LN on calculator) = natural logarithm, base e ≈ 2.718. Used in calculus, physics, and exponential growth/decay. ln(e) = 1, ln(e²) = 2. They are related by: ln(x) = log(x) × ln(10) ≈ log(x) × 2.3026.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CALCS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/exponent-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><path d="M2 11L6 3l3 5 2-3 2 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Exponent Calculator</div>
+        <div class="oc-desc">Powers & negative exponents</div>
+      </a>
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h4M5 11h2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">Full math functions</div>
+      </a>
+      <a href="/square-root-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><path d="M2 10l3-6 2 4 2-2 5 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Square Root Calc</div>
+        <div class="oc-desc">√x and radical form</div>
+      </a>
+      <a href="/fraction-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><path d="M8 2v12" stroke-linecap="round"/><circle cx="8" cy="4.5" r="1.5" fill="#8b5cf6"/><circle cx="8" cy="11.5" r="1.5" fill="#8b5cf6"/></svg></div>
+        <div class="oc-name">Fraction Calculator</div>
+        <div class="oc-desc">Simplify & convert</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+const E = Math.E, LN10 = Math.LN10;
+let activeTab = 'log10';
+let eqSolve = 'x';
+
+function fmt(n, dp=8) {
+  if (isNaN(n)||!isFinite(n)) return '—';
+  return parseFloat(n.toFixed(dp)).toString();
+}
+
+// ═══ TAB SWITCH ═══
+function switchTab(tab, btn) {
+  activeTab = tab;
+  document.querySelectorAll('.ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['log10','ln','custom','inv','eq'].forEach(t => {
+    const el = document.getElementById('mode-'+t);
+    if(el) el.style.display = t===tab ? 'block' : 'none';
+  });
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display = 'none';
+}
+
+// ═══ EQUATION SOLVE ═══
+function setEqSolve(solve, btn) {
+  eqSolve = solve;
+  document.querySelectorAll('#eq-solve-pills .ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderEqFields();
+}
+
+function renderEqFields() {
+  const fields = document.getElementById('eq-fields');
+  const show = { x: ['base','y'], b: ['val','y'], y: ['base','val'] };
+  const labels = { base:'Base (b)', val:'Number (x)', y:'Result (y)' };
+  const placeholders = { base:'2', val:'8', y:'3' };
+  const ids = { base:'eq-base', val:'eq-val', y:'eq-y' };
+
+  fields.innerHTML = show[eqSolve].map(f => `
+    <div class="fgrp">
+      <div class="flbl">${labels[f]}</div>
+      <div class="finp-wrap">
+        <input type="number" id="${ids[f]}" placeholder="${placeholders[f]}" step="any" min="${f==='base'?'0.001':''}">
+      </div>
+    </div>`).join('');
+}
+
+// ═══ SHOW RESULT ═══
+function showResult(lbl, expr, val, chips, steps) {
+  const rc = document.getElementById('result-content');
+  const chipsHTML = chips&&chips.length
+    ? `<div class="result-chips">${chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>` : '';
+  const stepsHTML = steps&&steps.length
+    ? `<div class="steps-box">
+         <div class="steps-title"><svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.4"><path d="M2 4h10M2 7h7M2 10h5" stroke-linecap="round"/></svg> Step-by-Step Solution</div>
+         ${steps.map((s,i)=>`<div class="step-row"><span class="step-n">${i+1}.</span><div><div class="step-math">${s.math}</div><div>${s.note}</div></div></div>`).join('')}
+       </div>` : '';
+
+  rc.innerHTML = `
+    <div class="result-main">
+      <div class="result-lbl">${lbl}</div>
+      <div class="result-expr">${expr}</div>
+      <div class="result-big">${val}</div>
+      ${chipsHTML}
+    </div>
+    ${stepsHTML}`;
+
+  const p = document.getElementById('result-panel');
+  p.classList.remove('show'); void p.offsetWidth; p.classList.add('show');
+}
+
+function showErr(msg) {
+  const el = document.getElementById('err-msg');
+  el.textContent = msg || 'Please enter a valid positive number.';
+  el.style.display = 'block';
+}
+
+// ═══ MAIN CALCULATE ═══
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+  if(activeTab==='log10') calcLog10();
+  else if(activeTab==='ln') calcLn();
+  else if(activeTab==='custom') calcCustom();
+  else if(activeTab==='inv') calcInv();
+  else if(activeTab==='eq') calcEq();
+}
+
+// ── Log Base 10 ──
+function calcLog10() {
+  const x = parseFloat(document.getElementById('l10-val').value);
+  if(isNaN(x)||x<=0) { showErr('Please enter a positive number (x > 0).'); return; }
+
+  const result = Math.log10(x);
+  const isNeg = result < 0;
+  const steps = [
+    {math:`log₁₀(${x})`, note:'Find the base-10 logarithm'},
+    {math:`= ln(${x}) / ln(10)`, note:'Using change-of-base formula'},
+    {math:`= ${fmt(Math.log(x))} / ${fmt(Math.log(10))}`, note:'Compute ln values'},
+    {math:`= ${fmt(result)}`, note:'Final result'},
+    {math:`Verify: 10^${fmt(result)} ≈ ${fmt(Math.pow(10,result))}`, note:'Check by raising 10 to the result'},
+  ];
+  showResult('Log Base 10', `log₁₀(${x}) =`, fmt(result), [
+    `ln(${x}) = ${fmt(Math.log(x))}`,
+    `10^${fmt(result)} ≈ ${fmt(Math.pow(10,result))}`,
+    isNeg ? '← Negative log (x < 1)' : `Integer? ${Number.isInteger(result)?'Yes ✓':'No'}`,
+  ], steps);
+}
+
+// ── Natural Log ──
+function calcLn() {
+  const x = parseFloat(document.getElementById('ln-val').value);
+  if(isNaN(x)||x<=0) { showErr('Please enter a positive number (x > 0).'); return; }
+
+  const result = Math.log(x);
+  const steps = [
+    {math:`ln(${x})`, note:'Find the natural logarithm (base e)'},
+    {math:`e ≈ 2.71828182845...`, note:"Euler's number — the natural base"},
+    {math:`ln(${x}) = log_e(${x})`, note:'Natural log = log base e'},
+    {math:`= ${fmt(result)}`, note:'Final result'},
+    {math:`Verify: e^${fmt(result)} ≈ ${fmt(Math.exp(result))}`, note:'Check by raising e to the result'},
+  ];
+  showResult('Natural Log (ln)', `ln(${x}) =`, fmt(result), [
+    `log₁₀(${x}) = ${fmt(Math.log10(x))}`,
+    `e^${fmt(result)} ≈ ${fmt(Math.exp(result))}`,
+    `Relationship: ln(x) = log(x) × ${fmt(LN10)}`,
+  ], steps);
+}
+
+// ── Custom Base ──
+function calcCustom() {
+  const x = parseFloat(document.getElementById('cu-val').value);
+  const b = parseFloat(document.getElementById('cu-base').value);
+  if(isNaN(x)||x<=0) { showErr('Value (x) must be positive (x > 0).'); return; }
+  if(isNaN(b)||b<=0||b===1) { showErr('Base must be positive and not equal to 1.'); return; }
+
+  const result = Math.log(x)/Math.log(b);
+  const steps = [
+    {math:`log_${b}(${x})`, note:'Logarithm of x with custom base'},
+    {math:`= ln(${x}) / ln(${b})`, note:'Apply change-of-base formula'},
+    {math:`= ${fmt(Math.log(x))} / ${fmt(Math.log(b))}`, note:'Calculate ln values'},
+    {math:`= ${fmt(result)}`, note:'Final result'},
+    {math:`Verify: ${b}^${fmt(result)} ≈ ${fmt(Math.pow(b,result))}`, note:`Raise base ${b} to the result`},
+  ];
+  showResult(`Log Base ${b}`, `log_${b}(${x}) =`, fmt(result), [
+    `log₁₀(${x}) = ${fmt(Math.log10(x))}`,
+    `ln(${x}) = ${fmt(Math.log(x))}`,
+    `${b}^${fmt(result)} ≈ ${fmt(Math.pow(b,result))}`,
+  ], steps);
+}
+
+// ── Inverse Log ──
+function calcInv() {
+  const y = parseFloat(document.getElementById('inv-val').value);
+  const b = parseFloat(document.getElementById('inv-base').value)||10;
+  if(isNaN(y)) { showErr('Please enter a valid log value.'); return; }
+  if(isNaN(b)||b<=0||b===1) { showErr('Base must be positive and not equal to 1.'); return; }
+
+  const result = Math.pow(b, y);
+  const steps = [
+    {math:`antilog_${b}(${y})`, note:'Inverse log (antilog) — reverse a logarithm'},
+    {math:`= ${b}^${y}`, note:`Raise base ${b} to the power of the log value`},
+    {math:`= ${fmt(result)}`, note:'Final result'},
+    {math:`Verify: log_${b}(${fmt(result)}) = ${fmt(Math.log(result)/Math.log(b))}`, note:'Check by taking log of the result'},
+  ];
+  showResult(`Inverse Log (Antilog)`, `antilog_${b}(${y}) = ${b}^${y} =`, fmt(result), [
+    `log_${b}(${fmt(result)}) ≈ ${fmt(y)}`,
+    `b=${b}, y=${y}`,
+    `Result = ${b}^${y}`,
+  ], steps);
+}
+
+// ── Log Equation ──
+function calcEq() {
+  const bEl = document.getElementById('eq-base');
+  const vEl = document.getElementById('eq-val');
+  const yEl = document.getElementById('eq-y');
+
+  if(eqSolve==='x') {
+    const b = parseFloat(bEl?.value);
+    const y = parseFloat(yEl?.value);
+    if(isNaN(b)||isNaN(y)||b<=0||b===1) { showErr('Enter valid base (>0, ≠1) and result y.'); return; }
+    const x = Math.pow(b,y);
+    const steps=[
+      {math:`log_${b}(x) = ${y}`, note:'Given equation'},
+      {math:`x = ${b}^${y}`, note:'Apply inverse: if log_b(x)=y then x=b^y'},
+      {math:`x = ${fmt(x)}`, note:'Calculate result'},
+    ];
+    showResult('Solving for x', `log_${b}(x) = ${y} → x =`, fmt(x), [`${b}^${y} = ${fmt(x)}`], steps);
+  } else if(eqSolve==='b') {
+    const x = parseFloat(vEl?.value);
+    const y = parseFloat(yEl?.value);
+    if(isNaN(x)||isNaN(y)||x<=0||y===0) { showErr('Enter valid x (>0) and result y (≠0).'); return; }
+    const b = Math.pow(x, 1/y);
+    const steps=[
+      {math:`log_b(${x}) = ${y}`, note:'Given equation'},
+      {math:`b^${y} = ${x}`, note:'Convert to exponential form'},
+      {math:`b = ${x}^(1/${y}) = ${fmt(b)}`, note:'Take the (1/y)th root of x'},
+    ];
+    showResult('Solving for base b', `log_b(${x}) = ${y} → b =`, fmt(b), [`${fmt(b)}^${y} ≈ ${fmt(Math.pow(b,y))}`], steps);
+  } else {
+    const b = parseFloat(bEl?.value);
+    const x = parseFloat(vEl?.value);
+    if(isNaN(b)||isNaN(x)||b<=0||b===1||x<=0) { showErr('Enter valid base and value (both >0, base ≠1).'); return; }
+    const y = Math.log(x)/Math.log(b);
+    const steps=[
+      {math:`log_${b}(${x}) = ?`, note:'Find the result y'},
+      {math:`y = ln(${x})/ln(${b})`, note:'Change-of-base formula'},
+      {math:`y = ${fmt(Math.log(x))}/${fmt(Math.log(b))} = ${fmt(y)}`, note:'Calculate'},
+    ];
+    showResult('Solving for y', `log_${b}(${x}) = y → y =`, fmt(y), [`${b}^${fmt(y)} ≈ ${fmt(Math.pow(b,y))}`], steps);
+  }
+}
+
+function faq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// ═══ BUILD REFERENCE TABLE ═══
+function buildRefTable() {
+  const entries = [
+    [0.001, '−3', `ln(0.001)≈${fmt(Math.log(0.001),3)}`, '10⁻³ = 0.001'],
+    [0.01, '−2', `ln(0.01)≈${fmt(Math.log(0.01),3)}`, '10⁻² = 0.01'],
+    [0.1, '−1', `ln(0.1)≈${fmt(Math.log(0.1),3)}`, '10⁻¹ = 0.1'],
+    [1, '0', '0', 'log(1)=0 always'],
+    [2, `${fmt(Math.log10(2),4)}`, `${fmt(Math.log(2),4)}`, 'log(2)≈0.301'],
+    [Math.E, `${fmt(Math.log10(Math.E),4)}`, '1.0000', 'ln(e)=1'],
+    [10, '1', `${fmt(Math.log(10),4)}`, '10¹=10'],
+    [100, '2', `${fmt(Math.log(100),4)}`, '10²=100'],
+    [1000, '3', `${fmt(Math.log(1000),4)}`, '10³=1000'],
+    [1000000, '6', `${fmt(Math.log(1e6),4)}`, '10⁶=1,000,000'],
+  ];
+  document.getElementById('log-ref-body').innerHTML = entries.map(([x,log10,ln,note])=>`
+    <tr>
+      <td class="td-expr">log(${x<=0.01?x.toExponential():x})</td>
+      <td class="td-val">${log10}</td>
+      <td class="td-val">${ln}</td>
+      <td class="td-note">${note}</td>
+    </tr>`).join('');
+}
+
+// INIT
+renderEqFields();
+buildRefTable();
+</script>
+
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

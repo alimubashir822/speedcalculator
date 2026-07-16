@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator — Simple, Daily, Monthly & Loan | SpeedCalculator.net</title>
+<meta name="description" content="Free compound interest calculator online. Calculate compound interest, simple interest, savings growth, CD interest, credit card interest, car loan interest, and mortgage interest. Daily, monthly, and yearly compounding with year-by-year breakdown table.">
+<meta name="keywords" content="compound interest calculator, interest calculator, compounding interest calculator, simple interest calculator, credit card interest calculator, loan interest calculator, cd interest calculator, mortgage interest calculator, savings account interest calculator, savings interest calculator, daily compound interest calculator, nerdwallet compound interest calculator, interest calculator savings, monthly interest calculator, car interest calculator, daily interest calculator, car loan interest calculator, interest calculator loan, monthly compound interest calculator, compund interest calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/interest-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Compound Interest Calculator",
+  "alternateName":["Interest Calculator","Simple Interest Calculator","Compounding Interest Calculator","Daily Compound Interest Calculator","Monthly Interest Calculator","Savings Interest Calculator","CD Interest Calculator","Credit Card Interest Calculator","Loan Interest Calculator","Mortgage Interest Calculator","Car Loan Interest Calculator","Savings Account Interest Calculator"],
+  "url":"https://www.speedcalculator.net/interest-calculator/",
+  "description":"Free compound interest calculator — calculate compound and simple interest for savings, CDs, loans, credit cards, mortgages, and car loans. Daily, monthly, quarterly, and yearly compounding with full amortization table.",
+  "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Compound interest calculator","Simple interest calculator","Daily compound interest calculator","Monthly interest calculator","Savings account interest calculator","CD interest calculator","Credit card interest calculator","Loan interest calculator","Car loan interest calculator","Mortgage interest calculator","Year-by-year breakdown table","Multiple compounding frequencies","Interest rate vs time comparison"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Compound Interest Calculator",
+  "description":"Calculate compound interest, simple interest, and loan interest using our free online interest calculator",
+  "totalTime":"PT1M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Select Calculator Type","text":"Choose your calculation goal: Compound Interest (savings/investments), Simple Interest (short-term loans), Loan Interest (monthly payment + total interest), Credit Card Interest, CD Interest, or Savings Account. Each mode loads the right inputs."},
+    {"@type":"HowToStep","position":2,"name":"Enter Principal Amount","text":"Enter the starting amount — your initial deposit, loan balance, CD amount, or credit card balance. This is the amount interest is calculated on."},
+    {"@type":"HowToStep","position":3,"name":"Enter Interest Rate and Period","text":"Enter the annual interest rate (APR or APY) and the time period. For loans, enter the loan term in months or years. For savings, enter how long you plan to keep the money invested."},
+    {"@type":"HowToStep","position":4,"name":"Select Compounding Frequency","text":"Choose how often interest compounds: Daily (365), Monthly (12), Quarterly (4), Semi-annually (2), or Annually (1). More frequent compounding = slightly more interest earned or owed."},
+    {"@type":"HowToStep","position":5,"name":"Review Results and Year-by-Year Table","text":"See total interest earned/owed, final balance, effective APY, and the year-by-year (or month-by-month) breakdown showing exactly how your money grows or what you owe each period."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is the compound interest formula?","acceptedAnswer":{"@type":"Answer","text":"Compound Interest Formula: A = P(1 + r/n)^(nt). Where A = final amount, P = principal, r = annual interest rate (decimal), n = compounding frequency per year, t = time in years. Compound interest earned = A - P. Example: $10,000 at 5% compounded monthly for 5 years: A = $10,000 × (1 + 0.05/12)^(12×5) = $12,833.59. Interest earned = $2,833.59."}},
+    {"@type":"Question","name":"What is the difference between compound and simple interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest = Principal × Rate × Time. It's calculated only on the original principal — no interest on interest. Compound interest calculates interest on the principal PLUS previously earned interest — this is why it grows exponentially. On $10,000 at 5% for 10 years: Simple interest = $5,000 total. Compound interest (monthly) = $6,470 total — 29% more. The longer the period, the bigger the difference."}},
+    {"@type":"Question","name":"How does the credit card interest calculator work?","acceptedAnswer":{"@type":"Answer","text":"Credit card interest is calculated daily: Daily Rate = APR ÷ 365. Daily Interest = Balance × Daily Rate. Monthly interest = Balance × (APR ÷ 12). Example: $5,000 balance at 24% APR: Monthly interest = $5,000 × (24/12/100) = $100/month. If you only pay the minimum, most payment goes to interest, not principal — our credit card interest calculator shows the true cost of carrying a balance."}},
+    {"@type":"Question","name":"How do I calculate CD (Certificate of Deposit) interest?","acceptedAnswer":{"@type":"Answer","text":"CD interest uses the compound interest formula with a fixed rate and term. Example: $25,000 CD at 5.0% APY for 2 years, compounded daily: A = $25,000 × (1 + 0.05/365)^(365×2) = $27,628. Interest earned = $2,628. APY is the effective annual yield accounting for compounding — always use APY for CDs, not APR. Our CD interest calculator automatically shows APY and total interest earned."}},
+    {"@type":"Question","name":"What is the daily compound interest formula?","acceptedAnswer":{"@type":"Answer","text":"Daily compound interest formula: A = P × (1 + r/365)^(365×t). This is the most precise formula used by banks for savings accounts and credit cards. For a $1,000 deposit at 4% daily compounding for 1 year: A = $1,000 × (1 + 0.04/365)^365 = $1,040.81. Compare to annual compounding: $1,040.00. The daily compound interest calculator shows this small but meaningful difference over long periods."}},
+    {"@type":"Question","name":"How does the loan interest calculator work?","acceptedAnswer":{"@type":"Answer","text":"Loan interest calculator formula: Monthly Payment = P × r(1+r)^n / ((1+r)^n - 1). Where P = loan amount, r = monthly rate (APR/12/100), n = total months. Total interest = (Monthly Payment × n) - P. Example: $20,000 car loan at 6% for 60 months: Monthly payment = $386.66. Total paid = $23,199. Total interest = $3,199. Our loan interest calculator, car loan interest calculator, and mortgage interest calculator all use this formula with full amortization tables."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,6vw,68px);font-weight:900;line-height:1.05;letter-spacing:0px;text-transform:uppercase;margin-bottom:22px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;margin-top:4px;letter-spacing:1px;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALC CARD */
+.calc-section{padding:0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),var(--orange),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* MODE PILLS */
+.mode-row{display:flex;gap:5px;flex-wrap:wrap;padding:14px 28px 0;}
+.m-pill{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.m-pill:hover{border-color:rgba(59,130,246,.4);}
+.m-pill.on{border-color:var(--accent);background:rgba(59,130,246,.13);color:var(--accent2);}
+
+.calc-body{padding:18px 28px 28px;}
+.calc-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUTS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:2px 9px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 11px;font-size:15px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);}
+.inp-suf{padding:0 11px;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:10px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.sel-wrap{position:relative;margin-bottom:5px;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;z-index:1;}
+.sel-wrap select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;padding:12px 40px 12px 14px;background:var(--bg3);color:#f0f4ff;border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;color:#f0f4ff;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.18);}
+.sl::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+
+/* ADDITIONAL CONTRIBUTION toggle */
+.add-contrib{display:flex;align-items:center;gap:9px;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;margin-bottom:9px;}
+.sw{width:34px;height:19px;background:var(--bg);border:1px solid var(--border2);border-radius:10px;position:relative;flex-shrink:0;transition:background .2s;}
+.sw.on{background:var(--green);border-color:var(--green);}
+.sw-k{position:absolute;top:3px;left:3px;width:11px;height:11px;border-radius:50%;background:#fff;transition:left .2s;}
+.sw.on .sw-k{left:18px;}
+.tog-lbl{font-size:12px;font-weight:600;color:var(--text2);}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:12px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:260px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* INTEREST HERO */
+.int-hero{background:linear-gradient(135deg,rgba(59,130,246,.13),rgba(16,185,129,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:20px;margin-bottom:10px;position:relative;overflow:hidden;text-align:center;}
+.int-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--teal),var(--green));}
+.ih-badge{display:inline-block;background:rgba(59,130,246,.15);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ih-amount{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,9vw,56px);font-weight:900;color:var(--green);line-height:1;letter-spacing:-2px;}
+.ih-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-top:4px;}
+.ih-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.ihc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;}
+.ihc.g{color:var(--green);border-color:rgba(16,185,129,.3);}
+.ihc.b{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+.ihc.o{color:var(--orange);border-color:rgba(245,158,11,.3);}
+.ihc.r{color:var(--red);border-color:rgba(239,68,68,.3);}
+
+/* METRICS */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,3.5vw,21px);font-weight:900;line-height:1;}
+.m-val.green{color:var(--green);}
+.m-val.orange{color:var(--orange);}
+.m-val.blue{color:var(--accent2);}
+.m-val.teal{color:var(--teal);}
+.m-val.red{color:var(--red);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+
+/* DONUT */
+.donut-row{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:16px;margin-bottom:10px;}
+.donut-wrap{position:relative;width:92px;height:92px;flex-shrink:0;}
+.donut-svg{width:92px;height:92px;transform:rotate(-90deg);}
+.d-bg{fill:none;stroke:rgba(255,255,255,.05);stroke-width:13;}
+.d-principal{fill:none;stroke:var(--accent);stroke-width:13;stroke-linecap:butt;transition:stroke-dasharray .7s;}
+.d-interest{fill:none;stroke:var(--green);stroke-width:13;stroke-linecap:butt;transition:stroke-dasharray .7s,stroke-dashoffset .7s;}
+.d-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.dc-pct{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;color:var(--text);line-height:1;}
+.dc-lbl{font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
+.legend{flex:1;display:flex;flex-direction:column;gap:7px;}
+.leg{display:flex;align-items:center;gap:7px;}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.leg-lbl{font-size:11px;color:var(--text2);flex:1;}
+.leg-val{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
+
+/* TABLE */
+.tbl-box{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.tbl-hd{padding:9px 14px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.tbl-ttl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.tbl-scroll{max-height:210px;overflow-y:auto;}
+.tbl{width:100%;border-collapse:collapse;font-size:11px;}
+.tbl th{background:var(--bg);color:var(--text3);font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 10px;text-align:left;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1;}
+.tbl td{padding:6.5px 10px;color:var(--text2);border-bottom:1px solid rgba(59,130,246,.05);}
+.tbl td:last-child{text-align:right;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--teal);}
+.tbl tr:hover td{background:rgba(59,130,246,.04);}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* USE CASE CARDS */
+.uc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.uc-grid{grid-template-columns:repeat(2,1fr);}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;cursor:pointer;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-ico{font-size:24px;margin-bottom:10px;}
+.uc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--accent2);background:rgba(59,130,246,.08);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:7px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* SVG IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.bad{color:var(--red);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.warnb{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.warnb p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.warnb strong{color:var(--red);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:380px;}
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Interest Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Compound &middot; Simple &middot; Savings &middot; CD &middot; Loan &middot; Credit Card &middot; Mortgage</div>
+    <h1 class="hero-h1">Interest<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>compound interest calculator</strong> — calculate compound and simple interest for savings, CDs, loans, credit cards, mortgages, and car loans. Daily, monthly, quarterly, and yearly compounding with a full year-by-year breakdown table. More complete than the NerdWallet compound interest calculator.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">Compound &amp; Simple</span>
+      <span class="hbadge p">Loans &amp; Savings</span>
+      <span class="hbadge o">Daily Compounding</span>
+      <span class="hbadge t">Amortization Table</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 11l2.5-5.5 2.5 3.5 2-3.5 2.5 4.5"/><circle cx="11" cy="3" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          Interest <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Instant Results</div>
+      </div>
+
+      <!-- MODE PILLS -->
+      <div class="mode-row">
+        <span class="m-pill on" data-mode="compound"  onclick="setMode('compound',this)">&#128200; Compound Interest</span>
+        <span class="m-pill"    data-mode="simple"    onclick="setMode('simple',this)">&#128083; Simple Interest</span>
+        <span class="m-pill"    data-mode="loan"      onclick="setMode('loan',this)">&#127968; Loan / Mortgage</span>
+        <span class="m-pill"    data-mode="cc"        onclick="setMode('cc',this)">&#128179; Credit Card</span>
+        <span class="m-pill"    data-mode="cd"        onclick="setMode('cd',this)">&#127974; CD / Fixed Deposit</span>
+        <span class="m-pill"    data-mode="savings"   onclick="setMode('savings',this)">&#128176; Savings Account</span>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="sec-lbl" id="inp-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="9" height="9" rx="1.5"/><path d="M3.5 5.5h4M3.5 3.5h2" stroke-linecap="round"/></svg>
+              Compound Interest Details
+            </div>
+            <div id="dynamic-inputs"></div>
+            <div class="err-msg" id="err-msg">Please enter valid positive values.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Interest
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+            <div class="r-placeholder" id="r-placeholder">
+              <div style="font-size:46px;">&#128181;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.8;">Select calculator type,<br>enter your details, then click<br><strong style="color:var(--accent2);">Calculate Interest</strong><br>for complete breakdown.</div>
+            </div>
+            <div class="results-block" id="results-block">
+
+              <!-- INTEREST HERO -->
+              <div class="int-hero">
+                <div class="ih-badge" id="ih-badge">Interest Earned</div>
+                <div class="ih-amount" id="ih-amount">$0.00</div>
+                <div class="ih-lbl" id="ih-lbl">Total Interest</div>
+                <div class="ih-chips">
+                  <span class="ihc b" id="chip-principal">Principal: —</span>
+                  <span class="ihc g" id="chip-total">Total: —</span>
+                  <span class="ihc o" id="chip-apy">APY: —</span>
+                </div>
+              </div>
+
+              <!-- METRICS 2×2 -->
+              <div class="metrics-grid">
+                <div class="metric">
+                  <div class="m-lbl" id="m1-lbl">Total Interest</div>
+                  <div class="m-val green" id="r-interest">—</div>
+                  <div class="m-sub" id="m1-sub">earned / paid</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl" id="m2-lbl">Final Balance</div>
+                  <div class="m-val blue" id="r-balance">—</div>
+                  <div class="m-sub" id="m2-sub">at maturity</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl" id="m3-lbl">Effective APY</div>
+                  <div class="m-val teal" id="r-apy">—</div>
+                  <div class="m-sub">annual yield</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl" id="m4-lbl">Monthly Interest</div>
+                  <div class="m-val orange" id="r-monthly">—</div>
+                  <div class="m-sub" id="m4-sub">per month avg</div>
+                </div>
+              </div>
+
+              <!-- DONUT -->
+              <div class="donut-row">
+                <div class="donut-wrap">
+                  <svg class="donut-svg" viewBox="0 0 92 92">
+                    <circle class="d-bg" cx="46" cy="46" r="33"/>
+                    <circle class="d-principal" id="d-p" cx="46" cy="46" r="33" stroke-dasharray="0 207"/>
+                    <circle class="d-interest" id="d-i" cx="46" cy="46" r="33" stroke-dasharray="0 207" stroke-dashoffset="0"/>
+                  </svg>
+                  <div class="d-center">
+                    <div class="dc-pct" id="d-pct">—</div>
+                    <div class="dc-lbl">principal</div>
+                  </div>
+                </div>
+                <div class="legend">
+                  <div class="leg"><div class="leg-dot" style="background:var(--accent);"></div><span class="leg-lbl" id="lg1-lbl">Principal</span><span class="leg-val" id="lg-p">—</span></div>
+                  <div class="leg"><div class="leg-dot" style="background:var(--green);"></div><span class="leg-lbl" id="lg2-lbl">Interest</span><span class="leg-val" id="lg-i">—</span></div>
+                  <div style="border-top:1px solid var(--border);margin:4px 0;"></div>
+                  <div class="leg"><div class="leg-dot" style="background:var(--teal);"></div><span class="leg-lbl">Total</span><span class="leg-val" id="lg-t">—</span></div>
+                </div>
+              </div>
+
+              <!-- YEAR TABLE -->
+              <div class="tbl-box">
+                <div class="tbl-hd"><div class="tbl-ttl" id="tbl-ttl">Year-by-Year Breakdown</div></div>
+                <div class="tbl-scroll">
+                  <table class="tbl">
+                    <thead><tr id="tbl-head"></tr></thead>
+                    <tbody id="tbl-body"></tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Daily</div><div class="stat-lbl">Compounding</div></div>
+      <div class="stat-item"><div class="stat-val">Amort.</div><div class="stat-lbl">Table Included</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Interest Calculator for Every Situation</div>
+    <h2 class="sec-title">Free <span>Interest Calculator</span> — 6 Modes</h2>
+    <p class="sec-sub">Our free <strong>compound interest calculator</strong> covers every financial scenario — from savings growth to loan costs. Click any card to load that mode.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".9"/><stop offset="100%" stop-color="#0e7490" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ef4444" stop-opacity=".9"/><stop offset="100%" stop-color="#991b1b" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/><rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="24" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">COMPOUND INTEREST CALCULATOR — $10,000 AT 5% OVER TIME (VARIOUS COMPOUNDING)</text>
+        <line x1="48" y1="182" x2="862" y2="182" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- Bars: Annual, Quarterly, Monthly, Daily @ 5yr, 10yr, 20yr -->
+        <rect x="55" y="130" width="65" height="52" rx="4" fill="url(#gB)" opacity=".7"/>
+        <text x="87" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle">$12,763</text>
+        <text x="87" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">5yr Annual</text>
+
+        <rect x="135" y="127" width="65" height="55" rx="4" fill="url(#gT)"/>
+        <text x="167" y="121" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#67e8f9" text-anchor="middle">$12,820</text>
+        <text x="167" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">5yr Monthly</text>
+
+        <rect x="215" y="125" width="65" height="57" rx="4" fill="url(#gG)"/>
+        <text x="247" y="119" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle">$12,840</text>
+        <text x="247" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">5yr Daily</text>
+
+        <rect x="340" y="92" width="65" height="90" rx="4" fill="url(#gB)" opacity=".8"/>
+        <text x="372" y="86" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#93c5fd" text-anchor="middle">$16,289</text>
+        <text x="372" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">10yr Annual</text>
+
+        <rect x="420" y="88" width="65" height="94" rx="4" fill="url(#gT)"/>
+        <text x="452" y="82" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#67e8f9" text-anchor="middle">$16,470</text>
+        <text x="452" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">10yr Monthly</text>
+
+        <rect x="500" y="84" width="65" height="98" rx="4" fill="url(#gG)"/>
+        <text x="532" y="78" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle">$16,487</text>
+        <text x="532" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">10yr Daily</text>
+
+        <rect x="630" y="32" width="65" height="150" rx="4" fill="url(#gB)" opacity=".9"/>
+        <text x="662" y="26" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#bfdbfe" text-anchor="middle">$26,533</text>
+        <text x="662" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">20yr Annual</text>
+
+        <rect x="710" y="22" width="65" height="160" rx="4" fill="url(#gT)"/>
+        <text x="742" y="16" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#67e8f9" text-anchor="middle">$27,126</text>
+        <text x="742" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">20yr Monthly</text>
+
+        <rect x="790" y="18" width="65" height="164" rx="4" fill="url(#gG)"/>
+        <text x="822" y="12" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#34d399" text-anchor="middle">$27,183</text>
+        <text x="822" y="196" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">20yr Daily</text>
+      </svg>
+      <div class="img-overlay"><span>Compound interest calculator — $10,000 at 5%: Daily compounding beats annual by $650 over 20 years. Monthly compound interest calculator vs annual shows $593 extra on same principal.</span></div>
+    </div>
+
+    <div class="uc-grid">
+      <div class="uc" onclick="loadMode('compound')">
+        <div class="uc-ico">&#128200;</div>
+        <div class="uc-h">Compound Interest Calculator</div>
+        <div class="uc-tag">Savings &amp; Investments</div>
+        <p class="uc-p">Our <strong>compounding interest calculator</strong> shows how interest compounds on interest over time. The most powerful concept in personal finance — use daily, monthly, quarterly, or annual frequency.</p>
+      </div>
+      <div class="uc" onclick="loadMode('savings')">
+        <div class="uc-ico">&#128176;</div>
+        <div class="uc-h">Savings Account Interest Calculator</div>
+        <div class="uc-tag">HYSA &amp; Bank Savings</div>
+        <p class="uc-p">Calculate how much interest your savings account will earn. Works as an <strong>interest calculator savings</strong> and <strong>savings interest calculator</strong> — includes monthly deposits.</p>
+      </div>
+      <div class="uc" onclick="loadMode('cd')">
+        <div class="uc-ico">&#127974;</div>
+        <div class="uc-h">CD Interest Calculator</div>
+        <div class="uc-tag">Certificate of Deposit</div>
+        <p class="uc-p">Calculate APY, maturity amount, and interest earned on CDs. Our <strong>CD interest calculator</strong> shows effective yield and exact payout at term end.</p>
+      </div>
+      <div class="uc" onclick="loadMode('loan')">
+        <div class="uc-ico">&#127968;</div>
+        <div class="uc-h">Loan Interest Calculator</div>
+        <div class="uc-tag">Mortgage &amp; Car Loans</div>
+        <p class="uc-p">Our <strong>loan interest calculator</strong>, <strong>mortgage interest calculator</strong>, and <strong>car loan interest calculator</strong> all use the same amortization formula — with full payment table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Interest Calculator — Complete Guide</h2>
+  <p>Our free <strong>interest calculator</strong> is more complete than calculator.net, the investor.gov compound interest calculator, and the Elementor interest calculator — because it covers 6 different modes in one tool: <strong>compound interest calculator</strong>, <strong>simple interest calculator</strong>, <strong>loan interest calculator</strong>, <strong>credit card interest calculator</strong>, <strong>CD interest calculator</strong>, and <strong>savings account interest calculator</strong>. Each mode provides the right formula, the right inputs, and a full year-by-year breakdown. Our <strong>compounding interest calculator</strong> also supports daily, monthly, quarterly, semi-annual, and annual compounding — matching the precision of the NerdWallet compound interest calculator.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/><rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">SIMPLE VS COMPOUND INTEREST CALCULATOR — $10,000 AT 8% OVER 20 YEARS</text>
+      <line x1="52" y1="170" x2="875" y2="170" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <line x1="52" y1="10" x2="52" y2="170" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <!-- Simple interest line (linear) -->
+      <path d="M55,165 L870,36" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-dasharray="7 3" stroke-linecap="round"/>
+      <!-- Compound interest curve -->
+      <path d="M55,165 Q200,156 350,136 Q500,110 650,72 Q770,42 870,18" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M55,165 Q200,156 350,136 Q500,110 650,72 Q770,42 870,18 L870,36 L55,165 Z" fill="#10b981" opacity=".06"/>
+      <!-- Year labels -->
+      <text x="58" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Year 0</text>
+      <text x="290" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Year 5</text>
+      <text x="462" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Year 10</text>
+      <text x="660" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Year 15</text>
+      <text x="865" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="end">Year 20</text>
+      <!-- End labels -->
+      <rect x="680" y="20" width="180" height="24" rx="5" fill="rgba(11,18,32,.92)" stroke="rgba(16,185,129,.3)" stroke-width="1"/>
+      <text x="770" y="36" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Compound: $49,268</text>
+      <rect x="680" y="46" width="180" height="24" rx="5" fill="rgba(11,18,32,.92)" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+      <text x="770" y="62" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#60a5fa" text-anchor="middle">Simple: $26,000</text>
+      <!-- Legend -->
+      <line x1="58" y1="14" x2="90" y2="14" stroke="#10b981" stroke-width="2"/><text x="95" y="18" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981">Compound Interest (monthly)</text>
+      <line x1="280" y1="14" x2="312" y2="14" stroke="#60a5fa" stroke-width="2" stroke-dasharray="7 3"/><text x="317" y="18" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#60a5fa">Simple Interest</text>
+    </svg>
+    <div class="img-overlay"><span>Simple vs compound interest calculator — $10,000 at 8%: Simple interest grows linearly to $26,000 after 20 years. Compound interest (monthly) grows exponentially to $49,268 — nearly double!</span></div>
+  </div>
+
+  <h2>How to Use the Interest Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Select your calculator type</strong><span>Click the mode that matches your goal: Compound Interest for savings/investments, Simple Interest for short-term loans, Loan/Mortgage for amortized loans, Credit Card for balance interest cost, CD for certificates of deposit, or Savings Account for HYSA/bank account growth.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Enter principal amount</strong><span>For savings: your starting deposit. For loans and credit cards: your outstanding balance. For CDs: the deposit amount. For mortgages: the loan amount after down payment. This is the base on which interest is calculated.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter interest rate and time period</strong><span>Enter the annual interest rate (APR for loans, APY for savings). Enter time in years or months. For the <strong>daily compound interest calculator</strong>, our tool automatically converts to daily periods.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Select compounding frequency</strong><span>Daily (365 times/year) is most common for savings accounts and credit cards. Monthly (12) is common for mortgages and car loans. CDs often compound daily. Annual compounding is simpler but yields slightly less. Our <strong>daily compound interest calculator</strong> and <strong>monthly compound interest calculator</strong> both show the difference.</span></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-txt"><strong>Review results and breakdown table</strong><span>See total interest earned/paid, final balance, effective APY, average monthly interest, the principal vs interest donut chart, and the complete year-by-year (or month-by-month) breakdown table showing exactly how your balance grows each period.</span></div></div>
+  </div>
+
+  <h2>Compound Interest Calculator Formula</h2>
+  <p>The <strong>compound interest calculator</strong> uses: <span class="fi">A = P(1 + r/n)^(nt)</span>. Where A = final amount, P = principal, r = annual rate (decimal), n = compounding frequency per year, t = time in years. Interest earned = A − P.</p>
+  <div class="exb">
+    <h4>Compound Interest Calculator — Worked Example</h4>
+    <p>$10,000 at 6% for 10 years, compounded monthly:<br>
+    n = 12 · r = 0.06 · t = 10<br>
+    A = $10,000 × (1 + 0.06/12)^(12×10)<br>
+    A = $10,000 × (1.005)^120 = $10,000 × 1.8194<br>
+    <strong>A = $18,194 · Interest Earned = $8,194</strong><br>
+    Compare: Simple interest on same = $10,000 × 6% × 10 = <strong>$6,000 only</strong> — compound earns $2,194 more!</p>
+  </div>
+
+  <h2>Simple Interest Calculator vs Compound Interest</h2>
+  <p>The <strong>simple interest calculator</strong> formula: <span class="fi">I = P × r × t</span>. Simple interest is calculated only on the original principal — no interest on interest. It grows linearly. The <strong>compound interest calculator</strong> calculates interest on principal PLUS accumulated interest — it grows exponentially. For borrowers: simple interest loans (some car loans) cost less than compound interest loans. For savers: compound interest savings accounts grow faster than simple interest accounts. Always prefer compound interest when saving; prefer simple interest when borrowing.</p>
+
+  <h2>Credit Card Interest Calculator — True Cost of Debt</h2>
+  <p>The <strong>credit card interest calculator</strong> reveals why credit card debt is so dangerous. Credit cards use daily compounding (n=365) with very high APRs (typically 20–29%). Monthly interest = Balance × APR/12. On a $5,000 balance at 24% APR: monthly interest = $100. If you only pay the $25 minimum, almost all of it goes to interest and fees — your balance barely moves. Use our <strong>credit card interest calculator</strong> mode to see exactly how much your balance costs each month and how long it takes to pay off at different payment levels.</p>
+
+  <div class="warnb">
+    <p><strong>Credit card warning:</strong> A $5,000 balance at 24% APR paying only the minimum takes <em>over 20 years</em> to pay off and costs more than $7,000 in interest alone — paying back nearly $12,000 total on a $5,000 balance. Our <strong>credit card interest calculator</strong> shows this total cost so you can make an informed decision about debt payoff strategy.</p>
+  </div>
+
+  <h2>Loan Interest Calculator — Car Loan, Mortgage, Personal Loan</h2>
+  <p>Our <strong>loan interest calculator</strong> uses the amortization formula: <span class="fi">PMT = P × r(1+r)^n / ((1+r)^n − 1)</span>. This works for any installment loan — use it as a <strong>car interest calculator</strong> / <strong>car loan interest calculator</strong>, <strong>mortgage interest calculator</strong>, or personal loan interest calculator. Total interest = (Monthly Payment × Total Months) − Principal. The amortization table shows how much of each payment goes to principal vs interest — early payments are mostly interest, later payments mostly principal.</p>
+
+  <table class="data-table">
+    <tr><th>Loan Type</th><th>Example Amount</th><th>Rate</th><th>Term</th><th>Monthly Payment</th><th>Total Interest</th></tr>
+    <tr><td><strong>Car Loan</strong></td><td>$25,000</td><td>7%</td><td>60 mo</td><td class="good">$495</td><td>$4,702</td></tr>
+    <tr><td><strong>Mortgage</strong></td><td>$350,000</td><td>7%</td><td>30 yr</td><td>$2,329</td><td class="bad">$488,560</td></tr>
+    <tr><td><strong>Personal Loan</strong></td><td>$15,000</td><td>12%</td><td>48 mo</td><td>$394</td><td>$3,922</td></tr>
+    <tr><td><strong>Student Loan</strong></td><td>$40,000</td><td>6%</td><td>120 mo</td><td>$444</td><td>$13,280</td></tr>
+  </table>
+
+  <h2>CD Interest Calculator and Savings Account Interest Calculator</h2>
+  <p>CDs (Certificates of Deposit) and high-yield savings accounts (HYSA) use compound interest to grow your money. Our <strong>CD interest calculator</strong> shows the exact payout at maturity based on deposit amount, APY, and term length. Current 1-year CD rates (2024) range from 4.5–5.5% APY. Our <strong>savings account interest calculator</strong> / <strong>savings interest calculator</strong> adds monthly deposits to model ongoing savings growth — essential for emergency fund planning and short-term goals.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/><rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">SAVINGS INTEREST CALCULATOR — $500/MONTH + $5,000 INITIAL AT 5% APY (DAILY COMPOUND)</text>
+      <line x1="42" y1="155" x2="870" y2="155" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+      <rect x="50" y="123" width="80" height="32" rx="5" fill="#3b82f6" opacity=".75"/>
+      <text x="90" y="117" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle">$12.4K</text>
+      <text x="90" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Year 1</text>
+      <rect x="195" y="100" width="80" height="55" rx="5" fill="#3b82f6" opacity=".8"/>
+      <text x="235" y="94" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#93c5fd" text-anchor="middle">$19.8K</text>
+      <text x="235" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Year 2</text>
+      <rect x="340" y="75" width="80" height="80" rx="5" fill="#10b981" opacity=".8"/>
+      <text x="380" y="69" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle">$27.8K</text>
+      <text x="380" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Year 3</text>
+      <rect x="485" y="48" width="80" height="107" rx="5" fill="#10b981" opacity=".85"/>
+      <text x="525" y="42" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#34d399" text-anchor="middle">$36.6K</text>
+      <text x="525" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Year 4</text>
+      <rect x="630" y="20" width="80" height="135" rx="5" fill="#10b981" opacity=".9"/>
+      <text x="670" y="14" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#6ee7b7" text-anchor="middle">$46.1K</text>
+      <text x="670" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Year 5</text>
+      <!-- Info box -->
+      <rect x="762" y="20" width="118" height="65" rx="8" fill="rgba(11,18,32,.95)" stroke="rgba(59,130,246,.3)" stroke-width="1.5"/>
+      <text x="821" y="40" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="900" fill="#60a5fa" text-anchor="middle">5yr total:</text>
+      <text x="821" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle">$46,100</text>
+      <text x="821" y="73" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Invested: $35K</text>
+    </svg>
+    <div class="img-overlay"><span>Savings account interest calculator — $5,000 initial + $500/month at 5% APY daily compound: Year 1 $12.4K · Year 3 $27.8K · Year 5 $46.1K (vs $35K invested — $11.1K interest earned)</span></div>
+  </div>
+
+  <h2>Daily Compound Interest Calculator — How Daily Compounding Works</h2>
+  <p>The <strong>daily compound interest calculator</strong> uses n=365 in the compound formula. Most US savings accounts and credit cards compound daily, even if they pay interest monthly. The difference between daily and monthly compounding is small on a single year but meaningful over decades. For a $100,000 savings account at 5% for 20 years: monthly compounding = $271,264; daily compounding = $271,828 — a $564 difference. Our <strong>daily interest calculator</strong> and <strong>monthly interest calculator</strong> modes let you compare these side-by-side.</p>
+
+  <h2>Monthly Compound Interest Calculator vs Annual</h2>
+  <p>The <strong>monthly compound interest calculator</strong> shows why banks advertise APY (Annual Percentage Yield) rather than APR. APY accounts for monthly compounding's boost. Relationship: <span class="fi">APY = (1 + APR/12)^12 − 1</span>. At 5% APR compounded monthly: APY = (1 + 0.05/12)^12 − 1 = 5.116%. That 0.116% difference adds up significantly on large balances over long periods.</p>
+
+  <div class="tip">
+    <p><strong>Rule of 72 for compound interest:</strong> Divide 72 by your interest rate to estimate how long it takes your money to double. At 5% (daily compound): 72 ÷ 5 = <strong>14.4 years to double</strong>. At 8%: 72 ÷ 8 = <strong>9 years</strong>. At 10%: 72 ÷ 10 = <strong>7.2 years</strong>. This works for any compounding frequency. Use our <strong>compounding interest calculator</strong> to verify the exact doubling time for any rate.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Interest Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Questions covering compound interest formula, simple vs compound, credit card interest, CD calculator, loan interest, savings account, daily compounding, and more.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the compound interest formula?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>compound interest formula</strong>: <strong>A = P(1 + r/n)^(nt)</strong>. Where A = final amount, P = principal (starting amount), r = annual interest rate as decimal (5% = 0.05), n = number of times interest compounds per year (daily=365, monthly=12, quarterly=4, annually=1), t = time in years. Interest = A − P. Example: $5,000 at 6% compounded monthly for 3 years: A = $5,000 × (1 + 0.06/12)^(12×3) = $5,000 × 1.1967 = <strong>$5,983.40</strong>. Interest earned = $983.40. Use our <strong>compounding interest calculator</strong> to compute any scenario instantly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the difference between compound and simple interest?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>Simple interest</strong> formula: I = P × r × t. Calculated only on original principal — grows linearly. <strong>Compound interest</strong>: interest is earned on principal PLUS previously accumulated interest — grows exponentially. Example comparison ($10,000 at 8% for 20 years): Simple interest: $10,000 + ($10,000 × 8% × 20) = <strong>$26,000</strong>. Compound (monthly): $10,000 × (1 + 0.08/12)^240 = <strong>$49,268</strong> — nearly double! Our <strong>simple interest calculator</strong> and <strong>compound interest calculator</strong> show both results so you can see the difference on your specific numbers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does the credit card interest calculator work?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Credit cards use daily compounding. Daily periodic rate = APR ÷ 365. Average daily balance × daily rate × days in billing cycle = monthly interest charge. Example: $3,000 balance at 21% APR: Monthly interest = $3,000 × (21% ÷ 12) = <strong>$52.50/month</strong>. If you pay only the minimum (~$60), only $7.50 reduces the principal. At this rate it takes years and thousands in interest to pay off. Our <strong>credit card interest calculator</strong> mode shows total interest paid over different payoff timelines and minimum-vs-fixed-payment comparisons.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I calculate CD interest?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>CDs use the compound interest formula with a fixed rate and term. Most CDs compound daily. Our <strong>CD interest calculator</strong>: enter your deposit amount, APY (annual percentage yield), and term. Example: $20,000 CD at 5.0% APY for 18 months: A = $20,000 × (1 + 0.05/365)^(365×1.5) = $20,000 × 1.0779 = <strong>$21,557</strong>. Interest earned = $1,557. Always use APY (not APR) for CDs — APY accounts for compounding, giving you the true annual return. Select "CD / Fixed Deposit" mode in our <strong>interest calculator</strong> above.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I use the car loan interest calculator or mortgage interest calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>car loan interest calculator</strong>, <strong>car interest calculator</strong>, and <strong>mortgage interest calculator</strong> all use the loan amortization formula: Monthly Payment = P × r(1+r)^n ÷ ((1+r)^n − 1). Example car loan: $30,000 at 7% for 60 months: Monthly = $594. Total paid = $35,640. Total interest = <strong>$5,640</strong>. Mortgage example: $400,000 at 7% for 30 years: Monthly = $2,661. Total paid = $958,000. Interest = <strong>$558,000</strong>. Use "Loan / Mortgage" mode in our <strong>loan interest calculator</strong> and see the full amortization table showing principal vs interest breakdown for every payment.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the daily compound interest calculator formula?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>daily compound interest calculator</strong> formula: A = P × (1 + r/365)^(365×t). This is the most precise compounding — used by banks for savings accounts, HYSAs, and credit cards. Example: $50,000 at 4.5% daily compound for 5 years: A = $50,000 × (1 + 0.045/365)^(365×5) = $50,000 × 1.2523 = <strong>$62,615</strong>. Interest = $12,615. Vs annual compounding: $62,312 — daily earns $303 more over 5 years. Our <strong>daily interest calculator</strong> and <strong>daily compound interest calculator</strong> show the exact difference for any scenario.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/investment-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><path d="M2 11l3-5 3 3.5 2-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Investment Calculator</div>
+        <div class="oc-desc">401k, S&amp;P 500, monthly growth</div>
+      </a>
+      <a href="/loan-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><rect x="1" y="1" width="13" height="13" rx="2"/><path d="M4 7h7M4 4.5h4" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Loan Calculator</div>
+        <div class="oc-desc">Monthly payment breakdown</div>
+      </a>
+      <a href="/mortgage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><path d="M7.5 1L2 5v9h4V9h3v5h4V5z" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Mortgage Calculator</div>
+        <div class="oc-desc">PITI with taxes and insurance</div>
+      </a>
+      <a href="/discount-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><path d="M2 12L12 2M5 2.5h-3v3M9 11.5h3v-3" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Discount Calculator</div>
+        <div class="oc-desc">% off, double, triple discounts</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var mode = 'compound';
+
+/* INPUT TEMPLATES */
+var INPUTS = {
+  compound: {
+    lbl: 'Compound Interest Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Principal Amount</span><span class="inp-bdg" id="bdg-p">$10,000</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="100" value="10000" placeholder="10,000"></div>
+        <input type="range" class="sl" id="sl-p" min="0" max="500000" step="1000" value="10000">
+        <div class="sl-row"><span>$0</span><span>$500K</span></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Annual Interest Rate</span><span class="inp-bdg" id="bdg-r">5%</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="50" step="0.1" value="5" placeholder="5"><span class="inp-suf">% p.a.</span></div>
+        <input type="range" class="sl" id="sl-r" min="0" max="25" step="0.1" value="5">
+        <div class="sl-row"><span>0%</span><span>25%</span></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Investment Period</span><span class="inp-bdg" id="bdg-t">10 years</span></div>
+        <div class="inp-wrap"><input type="number" id="f-t" min="0.1" max="50" step="0.5" value="10" placeholder="10"><span class="inp-suf">years</span></div>
+        <input type="range" class="sl" id="sl-t" min="1" max="40" step="1" value="10">
+        <div class="sl-row"><span>1 yr</span><span>40 yrs</span></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Compounding Frequency</span></div>
+        <div class="sel-wrap"><select id="f-n"><option value="365">Daily (365/yr)</option><option value="12" selected>Monthly (12/yr)</option><option value="4">Quarterly (4/yr)</option><option value="2">Semi-Annual (2/yr)</option><option value="1">Annual (1/yr)</option></select></div></div>
+      <div class="add-contrib" onclick="toggleContrib()"><div class="sw" id="sw-c"><div class="sw-k"></div></div><span class="tog-lbl">Add Monthly Contributions</span></div>
+      <div id="contrib-field" style="display:none;">
+        <div class="inp-grp" style="margin-bottom:0;"><div class="inp-top"><span class="inp-lbl">Monthly Contribution</span><span class="inp-bdg" id="bdg-c">$200</span></div>
+          <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-c" min="0" step="50" value="200" placeholder="200"></div></div></div>`
+  },
+  simple: {
+    lbl: 'Simple Interest Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Principal Amount</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="100" value="10000" placeholder="10,000"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Annual Interest Rate</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="100" step="0.1" value="5" placeholder="5"><span class="inp-suf">% p.a.</span></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Time Period</span></div>
+        <div class="grid2">
+          <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="f-t" min="0" step="1" value="5" placeholder="5"><span class="inp-suf">years</span></div>
+          <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="f-mo" min="0" max="11" step="1" value="0" placeholder="0"><span class="inp-suf">months</span></div>
+        </div></div>
+      <div class="inp-note">Simple Interest = Principal × Rate × Time. No compounding — interest calculated only on original principal.</div>`
+  },
+  loan: {
+    lbl: 'Loan / Mortgage / Car Loan Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Loan Amount</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="1000" value="300000" placeholder="300,000"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Annual Interest Rate (APR)</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="30" step="0.1" value="7" placeholder="7"><span class="inp-suf">% APR</span></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Loan Term</span></div>
+        <div class="sel-wrap"><select id="f-term">
+          <option value="360">30 years (360 months) — Mortgage</option>
+          <option value="180">15 years (180 months) — Mortgage</option>
+          <option value="84">7 years (84 months) — Auto/Personal</option>
+          <option value="72">6 years (72 months) — Auto</option>
+          <option value="60" selected>5 years (60 months) — Auto/Personal</option>
+          <option value="48">4 years (48 months) — Auto/Personal</option>
+          <option value="36">3 years (36 months) — Personal</option>
+          <option value="24">2 years (24 months) — Personal</option>
+          <option value="12">1 year (12 months)</option>
+        </select></div></div>
+      <div class="inp-note">Monthly payment = Principal × r(1+r)^n / ((1+r)^n-1). Amortization table shows exact principal vs interest split each month.</div>`
+  },
+  cc: {
+    lbl: 'Credit Card Interest Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Credit Card Balance</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="100" value="5000" placeholder="5,000"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Credit Card APR</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="60" step="0.1" value="22" placeholder="22"><span class="inp-suf">% APR</span></div>
+        <div class="inp-note">Average US credit card APR: 20–24%. Enter your card's exact rate from your statement.</div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Monthly Payment</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-pay" min="0" step="25" value="200" placeholder="200"></div>
+        <div class="inp-note">Minimum payment: usually 1–3% of balance or $25, whichever is higher</div></div>`
+  },
+  cd: {
+    lbl: 'CD / Fixed Deposit Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">CD Deposit Amount</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="500" value="25000" placeholder="25,000"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">CD APY (Annual Percentage Yield)</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="20" step="0.05" value="5.00" placeholder="5.00"><span class="inp-suf">% APY</span></div>
+        <div class="inp-note">Use APY (not APR) for CDs — APY already accounts for compounding frequency</div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">CD Term</span></div>
+        <div class="sel-wrap"><select id="f-term">
+          <option value="3">3 months</option><option value="6">6 months</option>
+          <option value="12" selected>12 months (1 year)</option><option value="18">18 months</option>
+          <option value="24">24 months (2 years)</option><option value="36">36 months (3 years)</option>
+          <option value="48">48 months (4 years)</option><option value="60">60 months (5 years)</option>
+        </select></div></div>`
+  },
+  savings: {
+    lbl: 'Savings Account Interest Details',
+    html: `
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Initial Deposit</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="100" value="5000" placeholder="5,000"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Savings Account APY</span></div>
+        <div class="inp-wrap"><input type="number" id="f-r" min="0" max="20" step="0.05" value="4.50" placeholder="4.50"><span class="inp-suf">% APY</span></div>
+        <div class="inp-note">HYSA rates 2024: 4.5–5.5% APY. Regular banks: 0.01–0.5%</div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Monthly Deposit</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-c" min="0" step="50" value="500" placeholder="500"></div></div>
+      <div class="inp-grp"><div class="inp-top"><span class="inp-lbl">Savings Period</span></div>
+        <div class="inp-wrap"><input type="number" id="f-t" min="1" max="30" step="1" value="5" placeholder="5"><span class="inp-suf">years</span></div></div>`
+  }
+};
+
+var contribOn = false;
+
+function setMode(m, el) {
+  mode = m;
+  document.querySelectorAll('.m-pill').forEach(function(p){p.classList.remove('on');});
+  if(el) el.classList.add('on');
+  document.getElementById('dynamic-inputs').innerHTML = INPUTS[m].html;
+  document.getElementById('inp-lbl').lastChild.textContent = ' ' + INPUTS[m].lbl;
+  contribOn = false;
+  resetResult();
+  bindSliders();
+}
+
+function loadMode(m) {
+  var pill = document.querySelector('.m-pill[data-mode="'+m+'"]');
+  if(pill) setMode(m, pill);
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function toggleContrib() {
+  contribOn = !contribOn;
+  var sw = document.getElementById('sw-c'); var fld = document.getElementById('contrib-field');
+  if(!sw || !fld) return;
+  contribOn ? (sw.classList.add('on'), fld.style.display='block') : (sw.classList.remove('on'), fld.style.display='none');
+}
+
+function bindSliders() {
+  function bs(inpId, slId, bdgId, prefix, suffix) {
+    var inp=document.getElementById(inpId), sl=document.getElementById(slId), bdg=document.getElementById(bdgId);
+    if(!inp) return;
+    function fmt(v){ v=parseFloat(v)||0; if(prefix==='$'&&v>=1000) return '$'+(v>=1000000?(v/1000000).toFixed(1)+'M':(v/1000).toFixed(0)+'K'); return (prefix||'')+v+(suffix||''); }
+    if(sl) sl.addEventListener('input',function(){ inp.value=this.value; if(bdg) bdg.textContent=fmt(this.value); });
+    inp.addEventListener('input',function(){ if(sl) sl.value=Math.min(parseFloat(this.value)||0,parseFloat(sl.max||9999)); if(bdg) bdg.textContent=fmt(this.value); });
+  }
+  bs('f-p','sl-p','bdg-p','$','');
+  bs('f-r','sl-r','bdg-r','','%');
+  bs('f-t','sl-t','bdg-t','',' years');
+  bs('f-c',null,'bdg-c','$','');
+}
+
+function resetResult() {
+  document.getElementById('results-block').style.display='none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display='flex';
+  document.getElementById('err-msg').style.display='none';
+}
+
+function gv(id){ var el=document.getElementById(id); return el?parseFloat(el.value)||0:0; }
+function gs(id){ var el=document.getElementById(id); return el?el.value:''; }
+function fmtUSD(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtShort(n){ if(Math.abs(n)>=1000000) return '$'+(n/1000000).toFixed(2)+'M'; if(Math.abs(n)>=1000) return '$'+(n/1000).toFixed(1)+'K'; return fmtUSD(n); }
+
+function calculate() {
+  document.getElementById('err-msg').style.display='none';
+  var P=gv('f-p'), r=gv('f-r'), yearData=[], interest=0, finalBal=0, monthlyAvg=0, apy=0;
+  var principalLabel='Principal', interestLabel='Interest Earned', balLabel='Final Balance', monthLabel='Monthly Interest';
+  var positive=true;
+  var tblHead='', tblRows=[];
+
+  try {
+    if(mode==='compound') {
+      var t=gv('f-t'), n=parseInt(gs('f-n'))||12, contrib=contribOn?gv('f-c'):0;
+      if(!P&&!contrib||!r||!t) throw '';
+      var rPeriod=r/100/n;
+      var balance=P;
+      for(var yr=1;yr<=t;yr++){
+        for(var p=0;p<n;p++){ balance=balance*(1+rPeriod)+(contrib*12/n); }
+        var totalContrib=P+contrib*12*yr;
+        yearData.push({yr:yr,invested:totalContrib,interest:Math.max(0,balance-totalContrib),total:balance});
+      }
+      finalBal=balance; var totalContrib=P+contrib*12*t;
+      interest=Math.max(0,finalBal-totalContrib);
+      apy=(Math.pow(1+r/100/n,n)-1)*100;
+      monthlyAvg=interest/(t*12);
+      tblHead='<th>Year</th><th>Invested</th><th>Interest</th><th>Balance</th>';
+      yearData.forEach(function(d){ tblRows.push('<td>Yr '+d.yr+'</td><td>'+fmtShort(d.invested)+'</td><td style="color:var(--green);">+'+fmtShort(d.interest)+'</td><td>'+fmtShort(d.total)+'</td>'); });
+
+    } else if(mode==='simple') {
+      var t=gv('f-t')+gv('f-mo')/12;
+      if(!P||!r||!t) throw '';
+      interest=P*r/100*t; finalBal=P+interest; apy=r; monthlyAvg=interest/(t*12||1);
+      for(var yr=1;yr<=Math.ceil(t);yr++){ var i=P*r/100*Math.min(yr,t); yearData.push({yr:yr,interest:i,total:P+i}); }
+      tblHead='<th>Year</th><th>Principal</th><th>Interest</th><th>Balance</th>';
+      yearData.forEach(function(d){ tblRows.push('<td>Yr '+d.yr+'</td><td>'+fmtShort(P)+'</td><td style="color:var(--green);">+'+fmtShort(d.interest)+'</td><td>'+fmtShort(d.total)+'</td>'); });
+      interestLabel='Interest Earned'; balLabel='Final Amount';
+
+    } else if(mode==='loan') {
+      var rM=r/100/12, n=parseInt(gs('f-term'))||60;
+      if(!P||!r) throw '';
+      var pmt = rM>0 ? P*rM*Math.pow(1+rM,n)/(Math.pow(1+rM,n)-1) : P/n;
+      var totalPaid=pmt*n; interest=totalPaid-P; apy=r; monthlyAvg=interest/n;
+      finalBal=totalPaid; positive=false;
+      var bal=P;
+      for(var mo=1;mo<=n;mo++){
+        var intPart=bal*rM, prinPart=pmt-intPart; bal=Math.max(0,bal-prinPart);
+        if(mo%12===0||mo===n){ tblRows.push('<td>Yr '+(Math.ceil(mo/12))+'</td><td>'+fmtShort(pmt*Math.min(12,mo))+'</td><td style="color:var(--red);">−'+fmtShort(intPart*Math.min(12,n-mo+1))+'</td><td>'+fmtShort(Math.max(0,bal))+'</td>'); }
+      }
+      tblHead='<th>Year</th><th>Payments</th><th>Interest</th><th>Remaining</th>';
+      principalLabel='Loan Amount'; interestLabel='Total Interest Paid'; balLabel='Total Paid'; monthLabel='Monthly Payment';
+      document.getElementById('r-monthly').className='m-val red'; document.getElementById('m4-lbl').textContent='Monthly Payment';
+      document.getElementById('r-balance').className='m-val orange'; document.getElementById('m2-lbl').textContent='Total Paid';
+
+    } else if(mode==='cc') {
+      var pay=gv('f-pay'); var rM=r/100/12;
+      if(!P||!r||pay<=0) throw '';
+      var bal=P, totalInterest=0, months=0;
+      while(bal>0&&months<600){
+        var intCharge=bal*rM; totalInterest+=intCharge;
+        bal=bal+intCharge-pay; if(bal<0)bal=0; months++;
+        if(months%12===0||bal===0){ tblRows.push('<td>Yr '+(Math.floor(months/12)||1)+'</td><td>'+fmtShort(pay*Math.min(12,months))+'</td><td style="color:var(--red);">−'+fmtShort(intCharge)+'</td><td>'+fmtShort(bal)+'</td>'); if(bal===0)break; }
+      }
+      interest=totalInterest; finalBal=P+totalInterest; apy=r; monthlyAvg=P*rM;
+      positive=false; tblHead='<th>Year</th><th>Paid</th><th>Monthly Interest</th><th>Balance</th>';
+      principalLabel='CC Balance'; interestLabel='Total Interest Paid'; balLabel='Total Paid'; monthLabel='Monthly Interest';
+      if(months>=600){ tblRows=[]; tblRows.push('<td colspan="4" style="color:var(--orange);text-align:center;">Payment too low — increase monthly payment to clear balance</td>'); }
+
+    } else if(mode==='cd') {
+      var months=parseInt(gs('f-term'))||12, yrs=months/12;
+      if(!P||!r) throw '';
+      var A=P*Math.pow(1+r/100/365,365*yrs);
+      interest=A-P; finalBal=A; apy=r; monthlyAvg=interest/months;
+      tblHead='<th>Month</th><th>Principal</th><th>Interest</th><th>Balance</th>';
+      for(var mo=1;mo<=months;mo++){
+        var bal2=P*Math.pow(1+r/100/365,365*(mo/12));
+        tblRows.push('<td>Mo '+mo+'</td><td>'+fmtShort(P)+'</td><td style="color:var(--green);">+'+fmtShort(bal2-P)+'</td><td>'+fmtShort(bal2)+'</td>');
+      }
+      principalLabel='CD Deposit'; interestLabel='Interest Earned'; balLabel='Maturity Amount';
+
+    } else if(mode==='savings') {
+      var t=gv('f-t'), contrib=gv('f-c'), rM=r/100/12;
+      if(!r||!t) throw '';
+      var balance=P;
+      for(var yr=1;yr<=t;yr++){
+        for(var mo=0;mo<12;mo++){ balance=balance*(1+rM)+contrib; }
+        var totalContrib=P+contrib*12*yr;
+        yearData.push({yr:yr,invested:totalContrib,interest:Math.max(0,balance-totalContrib),total:balance});
+      }
+      finalBal=balance; var totalContrib2=P+contrib*12*t;
+      interest=Math.max(0,finalBal-totalContrib2); apy=r; monthlyAvg=interest/(t*12||1);
+      tblHead='<th>Year</th><th>Deposited</th><th>Interest</th><th>Balance</th>';
+      yearData.forEach(function(d){ tblRows.push('<td>Yr '+d.yr+'</td><td>'+fmtShort(d.invested)+'</td><td style="color:var(--green);">+'+fmtShort(d.interest)+'</td><td>'+fmtShort(d.total)+'</td>'); });
+      principalLabel='Total Deposited'; interestLabel='Interest Earned';
+    }
+  } catch(e){
+    document.getElementById('err-msg').style.display='block'; return;
+  }
+
+  /* UPDATE UI */
+  document.getElementById('ih-badge').textContent = positive?'Interest Earned':'Total Interest Cost';
+  document.getElementById('ih-amount').textContent = fmtShort(interest);
+  document.getElementById('ih-amount').style.color = positive?'var(--green)':'var(--red)';
+  document.getElementById('ih-lbl').textContent = positive?'Compound Interest Earned':'Interest You Pay';
+  document.getElementById('chip-principal').textContent = principalLabel+': '+fmtShort(P);
+  document.getElementById('chip-total').textContent = balLabel+': '+fmtShort(finalBal);
+  document.getElementById('chip-apy').textContent = 'APY: '+apy.toFixed(2)+'%';
+  document.getElementById('r-interest').textContent = fmtShort(interest);
+  document.getElementById('r-interest').className = 'm-val '+(positive?'green':'red');
+  document.getElementById('r-balance').textContent = fmtShort(finalBal);
+  document.getElementById('r-apy').textContent = apy.toFixed(2)+'%';
+  document.getElementById('r-monthly').textContent = fmtShort(monthlyAvg);
+  document.getElementById('m1-lbl').textContent = interestLabel;
+  document.getElementById('m2-lbl').textContent = balLabel;
+  document.getElementById('m4-lbl').textContent = monthLabel;
+
+  /* DONUT */
+  var C=2*Math.PI*33;
+  var pRat=finalBal>0?Math.min(P/finalBal,0.99):0.5, iRat=1-pRat;
+  document.getElementById('d-p').setAttribute('stroke-dasharray',(C*pRat)+' '+C);
+  document.getElementById('d-i').setAttribute('stroke-dasharray',(C*iRat)+' '+C);
+  document.getElementById('d-i').setAttribute('stroke-dashoffset',-(C*pRat));
+  document.getElementById('d-pct').textContent=Math.round(pRat*100)+'%';
+  document.getElementById('lg-p').textContent=fmtShort(P);
+  document.getElementById('lg-i').textContent=fmtShort(interest);
+  document.getElementById('lg-t').textContent=fmtShort(finalBal);
+  document.getElementById('lg1-lbl').textContent=principalLabel;
+  document.getElementById('lg2-lbl').textContent=interestLabel;
+
+  /* TABLE */
+  document.getElementById('tbl-head').innerHTML=tblHead;
+  var tbody=document.getElementById('tbl-body'); tbody.innerHTML='';
+  tblRows.forEach(function(r){ var tr=document.createElement('tr'); tr.innerHTML=r; tbody.appendChild(tr); });
+
+  /* SHOW */
+  document.getElementById('r-placeholder').style.display='none';
+  var rb=document.getElementById('results-block');
+  rb.style.display='block'; rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+function faqT(el){
+  var item=el.parentElement, was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was) item.classList.add('open');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  setMode('compound', document.querySelector('.m-pill[data-mode="compound"]'));
+  document.addEventListener('keydown',function(e){ if(e.key==='Enter') calculate(); });
+});
+</script>
+</body>
+</html>

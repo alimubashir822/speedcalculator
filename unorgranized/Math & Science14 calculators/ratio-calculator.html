@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratio Calculator — Simplify, Solve & Compare Ratios Free Online | SpeedCalculator.net</title>
+<meta name="description" content="Free ratio calculator online. Simplify ratios, solve proportions, calculate debt-to-income ratio, aspect ratio, scale ratio, and more. Step-by-step solutions shown instantly.">
+<meta name="keywords" content="ratio calculator, debt to income ratio calculator, aspect ratio calculator, debt-to-income ratio calculator, ratio simplifier, proportion calculator, scale ratio calculator, golden ratio calculator, gear ratio calculator, dti ratio calculator, cholesterol ratio calculator, power to weight ratio calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/ratio-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Ratio Calculator",
+  "url":"https://www.speedcalculator.net/ratio-calculator/",
+  "description":"Free ratio calculator — simplify ratios, solve proportions, debt-to-income, aspect ratio, scale ratio",
+  "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a debt-to-income ratio?","acceptedAnswer":{"@type":"Answer","text":"The debt-to-income (DTI) ratio is your total monthly debt payments divided by your gross monthly income, expressed as a percentage. Formula: DTI = (Total Monthly Debt ÷ Gross Monthly Income) × 100. It measures how much of your income goes toward debt payments each month."}},
+    {"@type":"Question","name":"How to calculate debt to income ratio?","acceptedAnswer":{"@type":"Answer","text":"Add up all your monthly debt payments (mortgage/rent, car loans, student loans, credit cards, etc.) and divide by your gross monthly income (before tax). Multiply by 100 for the percentage. Example: $2,000 debt / $6,000 income × 100 = 33.3% DTI."}},
+    {"@type":"Question","name":"What is a good debt to income ratio?","acceptedAnswer":{"@type":"Answer","text":"A DTI below 36% is generally considered good by lenders. Below 20% is excellent. 36-49% is manageable but may limit loan options. 50% or above is high risk and most lenders will not approve mortgages at this level. For FHA loans, the maximum is typically 43%."}},
+    {"@type":"Question","name":"How to simplify a ratio?","acceptedAnswer":{"@type":"Answer","text":"Divide both parts of the ratio by their Greatest Common Divisor (GCD). For example, 12:8 → GCD(12,8)=4 → 12÷4 : 8÷4 = 3:2. Our ratio simplifier does this automatically and shows the full working."}},
+    {"@type":"Question","name":"How to solve a proportion (missing value in ratio)?","acceptedAnswer":{"@type":"Answer","text":"Use cross-multiplication. If A:B = C:D and D is missing: D = (B × C) / A. Example: 3:4 = 9:? → ? = (4 × 9) / 3 = 12. Our proportion solver handles all four missing value positions automatically."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--pink:#ec4899;--red:#ef4444;--teal:#06b6d4;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,0.12);--border2:rgba(59,130,246,0.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:start;}
+@media(max-width:860px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,4.5vw,60px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* CALC CARD */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),var(--purple),transparent);}
+.calc-head{padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle span{color:var(--accent2);}
+.calc-htitle-icon{width:28px;height:28px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.calc-htitle-icon svg{width:14px;height:14px;stroke:var(--accent2);}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:18px 22px 22px;}
+
+/* MODE SELECTOR */
+.mode-selector{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.mode-row.r2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:400px){.mode-row{grid-template-columns:1fr 1fr;}.mode-row.r2{grid-template-columns:1fr;}}
+.ctab{border:1px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);color:var(--text3);font-family:'Barlow',sans-serif;cursor:pointer;transition:all .2s;text-align:left;padding:10px 12px;display:flex;align-items:center;gap:9px;}
+.ctab:hover{border-color:rgba(59,130,246,.3);color:var(--text2);}
+.ctab.active{border-color:var(--accent);background:rgba(59,130,246,.1);color:var(--text);}
+.ctab.active .ctab-label{color:var(--accent2);}
+.ctab.active .ctab-icon{background:var(--accent);color:#fff;border-color:var(--accent);}
+.ctab-icon{width:32px;height:32px;border-radius:7px;border:1px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;color:var(--text3);transition:all .2s;line-height:1;text-align:center;}
+.ctab-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.ctab-label{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);transition:color .2s;white-space:nowrap;}
+.ctab-formula{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--text3);letter-spacing:.02em;}
+
+/* INP DESC */
+.inp-desc{font-size:12px;color:var(--text2);margin-bottom:14px;padding:10px 13px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.inp-desc::before{content:'ℹ';font-size:13px;color:var(--accent2);flex-shrink:0;margin-top:1px;}
+
+/* RATIO VISUAL */
+.ratio-visual{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 0 16px;flex-wrap:wrap;}
+.rv-part{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.rv-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.rv-inp{background:var(--bg3);border:2px solid var(--border2);border-radius:var(--radius-sm);outline:none;padding:12px 10px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:var(--text);text-align:center;width:90px;transition:border-color .2s;}
+.rv-inp:focus{border-color:var(--accent);}
+.rv-inp::placeholder{color:var(--text3);font-size:18px;}
+.rv-inp.missing{border-color:rgba(245,158,11,.5);color:var(--orange);}
+.rv-colon{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--text3);margin-top:20px;}
+.rv-eq{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--text3);margin-top:20px;}
+
+/* FIELDS */
+.fields-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.fields-grid.f1{grid-template-columns:1fr;}
+.fields-grid.f3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:380px){.fields-grid{grid-template-columns:1fr;}}
+.fgrp{}
+.flbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;display:block;}
+.flbl b{color:var(--accent2);}
+.finp-wrap{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.finp-wrap:focus-within{border-color:var(--accent);}
+.finp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 12px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.finp-wrap input::placeholder{color:var(--text3);font-size:15px;font-weight:400;}
+.finp-wrap .sfx{padding:0 11px;display:flex;align-items:center;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);white-space:nowrap;}
+
+/* MISSING TOGGLE */
+.missing-toggle{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+.mt-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;}
+.mt-btn.active{border-color:var(--orange);background:rgba(245,158,11,.1);color:var(--orange);}
+
+/* DTI DEBT ROWS */
+.debt-rows{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+.debt-row{display:flex;align-items:center;gap:8px;}
+.debt-row input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-sm);outline:none;padding:9px 12px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:var(--text);transition:border-color .2s;}
+.debt-row input:focus{border-color:var(--accent);}
+.debt-row input::placeholder{color:var(--text3);font-size:13px;}
+.debt-lbl{font-size:11px;color:var(--text2);min-width:100px;}
+.add-debt-btn{display:flex;align-items:center;gap:6px;background:rgba(59,130,246,.07);border:1px dashed var(--border2);border-radius:var(--radius-sm);padding:7px 14px;font-size:12px;font-weight:600;color:var(--accent2);cursor:pointer;transition:all .2s;margin-bottom:12px;}
+.add-debt-btn:hover{background:rgba(59,130,246,.14);}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:15px 20px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;line-height:1;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+.calc-btn:active{transform:translateY(0);}
+.calc-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+/* RESULT */
+.result-panel{display:none;margin-top:14px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(96,165,250,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:18px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden;}
+.result-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--purple));}
+.result-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.result-big{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,7vw,56px);font-weight:900;color:var(--accent2);line-height:1;letter-spacing:-1px;word-break:break-all;}
+.result-sub{font-size:13px;color:var(--text3);margin-top:7px;line-height:1.5;}
+.dti-bar{height:10px;border-radius:5px;background:var(--bg3);border:1px solid var(--border);overflow:hidden;margin:10px 0 6px;}
+.dti-fill{height:100%;border-radius:5px;transition:width .4s ease;}
+.dti-zone{font-size:12px;font-weight:700;margin-top:2px;}
+
+/* CHIPS ROW */
+.chips-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+.chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 13px;font-size:12px;font-weight:600;color:var(--text2);}
+.chip b{color:var(--text);}
+
+/* STEPS */
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-top:10px;}
+.steps-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.step-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);line-height:1.65;}
+.step-row:last-child{border:none;}
+.step-n{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);min-width:22px;}
+.step-math{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--text);font-weight:600;}
+
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 14px;font-size:13px;color:#f87171;margin-top:10px;display:none;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* STEPS GUIDE */
+.steps-guide{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+@media(max-width:720px){.steps-guide{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-guide{grid-template-columns:1fr;}}
+.sg-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:border-color .2s;}
+.sg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s;}
+.sg-card:hover{border-color:var(--border2);}
+.sg-card:hover::before{opacity:1;}
+.sg-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);flex-shrink:0;}
+.sg-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sg-icon svg{width:18px;height:18px;}
+.sg-h{font-size:14px;font-weight:700;color:var(--text);margin:10px 0 4px;}
+.sg-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* DTI GUIDE */
+.dti-guide{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px;}
+@media(max-width:640px){.dti-guide{grid-template-columns:1fr 1fr;}}
+.dti-zone-card{border-radius:var(--radius-sm);padding:16px;text-align:center;border:1px solid var(--border);}
+.dti-zone-pct{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;margin-bottom:4px;}
+.dti-zone-lbl{font-size:12px;font-weight:700;margin-bottom:4px;}
+.dti-zone-desc{font-size:11px;color:var(--text3);line-height:1.5;}
+
+/* RATIO TYPES GRID */
+.rt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px;}
+@media(max-width:640px){.rt-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:380px){.rt-grid{grid-template-columns:1fr;}}
+.rtc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.rtc:hover{border-color:var(--border2);}
+.rtc-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.rtc-icon svg{width:18px;height:18px;}
+.rtc-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.rtc-formula{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--accent2);background:var(--bg3);border-radius:4px;padding:4px 8px;display:inline-block;margin-bottom:6px;}
+.rtc-p{font-size:11px;color:var(--text3);line-height:1.5;}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 8px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:260px;}
+
+/* OTHER CALCS */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Ratio Calculator
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Free · 5 Modes · Steps Shown</div>
+        <h1>Ratio<em>Calculator</em></h1>
+        <p class="hero-sub">Simplify ratios, solve proportions, find missing values, calculate debt-to-income ratio, aspect ratio, and scale ratio — all with step-by-step solutions. Free, instant, no signup.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">Simplify Ratio</span>
+          <span class="badge p">Proportion Solver</span>
+          <span class="badge">DTI Ratio</span>
+          <span class="badge g">Aspect Ratio</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="calc-htitle-icon">
+              <svg fill="none" viewBox="0 0 14 14"><path d="M2 4h10M2 10h10M4 2v10M10 2v10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/><path d="M2 7h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            Ratio <span>Calculator</span>
+          </div>
+          <div class="live-pill">✦ Steps Included</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- MODE SELECTOR -->
+          <div class="mode-selector">
+            <div class="mode-row">
+              <button class="ctab active" onclick="switchTab('simplify',this)">
+                <div class="ctab-icon" style="font-size:11px;">a:b</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Simplify</span>
+                  <span class="ctab-formula">Reduce a:b</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('proportion',this)">
+                <div class="ctab-icon" style="font-size:10px;">a/b=c/d</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Proportion</span>
+                  <span class="ctab-formula">Find missing</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('dti',this)">
+                <div class="ctab-icon" style="font-size:10px;">DTI</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Debt-Income</span>
+                  <span class="ctab-formula">DTI ratio %</span>
+                </div>
+              </button>
+            </div>
+            <div class="mode-row r2">
+              <button class="ctab" onclick="switchTab('aspect',this)">
+                <div class="ctab-icon" style="font-size:10px;">16:9</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Aspect Ratio</span>
+                  <span class="ctab-formula">W:H → scale</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('scale',this)">
+                <div class="ctab-icon" style="font-size:10px;">1:n</div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Scale Ratio</span>
+                  <span class="ctab-formula">Map / model</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- ══ MODE 1: Simplify ══ -->
+          <div id="mode-simplify">
+            <div class="inp-desc">Enter any two numbers to reduce the ratio A:B to its simplest form using GCD.</div>
+            <div class="ratio-visual">
+              <div class="rv-part">
+                <span class="rv-lbl">A</span>
+                <input class="rv-inp" type="number" id="s-a" placeholder="12" min="0" step="any">
+              </div>
+              <span class="rv-colon">:</span>
+              <div class="rv-part">
+                <span class="rv-lbl">B</span>
+                <input class="rv-inp" type="number" id="s-b" placeholder="8" min="0" step="any">
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 2: Proportion / Missing Value ══ -->
+          <div id="mode-proportion" style="display:none;">
+            <div class="inp-desc">Solve A:B = C:D — enter any 3 values, leave the missing one blank.</div>
+            <div style="font-size:11px;font-weight:700;color:var(--text3);margin-bottom:8px;letter-spacing:.06em;">Which value is missing?</div>
+            <div class="missing-toggle">
+              <button class="mt-btn active" id="m-a" onclick="setMissing('A',this)">Find A</button>
+              <button class="mt-btn" id="m-b" onclick="setMissing('B',this)">Find B</button>
+              <button class="mt-btn" id="m-c" onclick="setMissing('C',this)">Find C</button>
+              <button class="mt-btn" id="m-d" onclick="setMissing('D',this)">Find D</button>
+            </div>
+            <div class="ratio-visual">
+              <div class="rv-part">
+                <span class="rv-lbl">A</span>
+                <input class="rv-inp" type="number" id="p-a" placeholder="3" step="any">
+              </div>
+              <span class="rv-colon">:</span>
+              <div class="rv-part">
+                <span class="rv-lbl">B</span>
+                <input class="rv-inp" type="number" id="p-b" placeholder="4" step="any">
+              </div>
+              <span class="rv-eq">=</span>
+              <div class="rv-part">
+                <span class="rv-lbl">C</span>
+                <input class="rv-inp" type="number" id="p-c" placeholder="9" step="any">
+              </div>
+              <span class="rv-colon">:</span>
+              <div class="rv-part">
+                <span class="rv-lbl">D</span>
+                <input class="rv-inp missing" type="number" id="p-d" placeholder="?" step="any" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 3: DTI Ratio ══ -->
+          <div id="mode-dti" style="display:none;">
+            <div class="inp-desc">Calculate your Debt-to-Income (DTI) ratio. Enter monthly debt payments and gross monthly income.</div>
+            <div style="font-size:11px;font-weight:700;color:var(--text3);margin-bottom:8px;letter-spacing:.06em;">Monthly Debt Payments</div>
+            <div class="debt-rows" id="debt-rows">
+              <div class="debt-row">
+                <input type="number" placeholder="Mortgage / Rent" min="0" step="any">
+                <span class="debt-lbl">Mortgage/Rent</span>
+              </div>
+              <div class="debt-row">
+                <input type="number" placeholder="Car loan" min="0" step="any">
+                <span class="debt-lbl">Car Payment</span>
+              </div>
+              <div class="debt-row">
+                <input type="number" placeholder="Student loan" min="0" step="any">
+                <span class="debt-lbl">Student Loan</span>
+              </div>
+              <div class="debt-row">
+                <input type="number" placeholder="Credit cards" min="0" step="any">
+                <span class="debt-lbl">Credit Cards</span>
+              </div>
+            </div>
+            <button class="add-debt-btn" onclick="addDebtRow()">
+              <svg fill="none" viewBox="0 0 14 14" width="14" height="14"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Add another debt
+            </button>
+            <div class="fgrp">
+              <label class="flbl">Gross Monthly Income <b>(before tax)</b></label>
+              <div class="finp-wrap">
+                <input type="number" id="dti-income" placeholder="5000" min="0" step="any">
+                <span class="sfx">$/month</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 4: Aspect Ratio ══ -->
+          <div id="mode-aspect" style="display:none;">
+            <div class="inp-desc">Enter original width and height to find the aspect ratio and scale to any new size.</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <label class="flbl">Width <b>(W)</b></label>
+                <div class="finp-wrap">
+                  <input type="number" id="ar-w" placeholder="1920" min="1" step="any">
+                  <span class="sfx">px</span>
+                </div>
+              </div>
+              <div class="fgrp">
+                <label class="flbl">Height <b>(H)</b></label>
+                <div class="finp-wrap">
+                  <input type="number" id="ar-h" placeholder="1080" min="1" step="any">
+                  <span class="sfx">px</span>
+                </div>
+              </div>
+            </div>
+            <div class="fgrp" style="margin-bottom:12px;">
+              <label class="flbl">New Width <b>(optional — scales height)</b></label>
+              <div class="finp-wrap">
+                <input type="number" id="ar-new-w" placeholder="1280" min="1" step="any">
+                <span class="sfx">px</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 5: Scale Ratio ══ -->
+          <div id="mode-scale" style="display:none;">
+            <div class="inp-desc">Convert between map/model scale and real-world measurements. Enter scale and one measurement.</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <label class="flbl">Scale <b>(1 : n)</b></label>
+                <div class="finp-wrap">
+                  <input type="number" id="sc-n" placeholder="100" min="1" step="any">
+                  <span class="sfx">n</span>
+                </div>
+              </div>
+              <div class="fgrp">
+                <label class="flbl">Map/Model Size</label>
+                <div class="finp-wrap">
+                  <input type="number" id="sc-map" placeholder="5" min="0" step="any">
+                  <span class="sfx">cm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please enter valid positive numbers.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Ratio
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">5-in-1</div><div class="stat-lbl">Ratio Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Steps</div><div class="stat-lbl">Always Shown</div></div>
+      <div class="stat-item"><div class="stat-val">DTI</div><div class="stat-lbl">Mortgage-Ready</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Step-by-Step Guide</div>
+    <h2 class="sec-title">How to Use the <span>Ratio Calculator</span></h2>
+    <p class="sec-sub">Five modes cover every ratio calculation. Select the right mode, enter your numbers, and get a complete step-by-step solution instantly.</p>
+    <div class="steps-guide">
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">01</div>
+          <div class="sg-icon" style="background:rgba(59,130,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><rect x="3" y="2" width="12" height="14" rx="2"/><path d="M6 6h6M6 9h4" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Choose a Mode</div>
+        <p class="sg-p">Select Simplify to reduce A:B, Proportion to find a missing value, DTI for debt-to-income, Aspect Ratio for screen sizes, or Scale for map distances.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">02</div>
+          <div class="sg-icon" style="background:rgba(16,185,129,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M4 9h10M9 4l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Enter Your Numbers</div>
+        <p class="sg-p">Type the values into the clearly labelled fields. For DTI, enter each monthly debt payment separately and your gross income. For Proportion, leave the unknown blank.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">03</div>
+          <div class="sg-icon" style="background:rgba(245,158,11,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Click Calculate</div>
+        <p class="sg-p">Press Calculate Ratio and see your result instantly — shown in bold with the simplified ratio, decimal equivalent, and all working steps clearly listed.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">04</div>
+          <div class="sg-icon" style="background:rgba(139,92,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 4h10v2H4zM4 8h8M4 12h6" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Read the Steps</div>
+        <p class="sg-p">Every result shows GCD calculation, simplification steps, cross-multiplication for proportions, or DTI zone assessment — so you understand the full method.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DTI ZONES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Debt-to-Income Guide</div>
+    <h2 class="sec-title">What Is a <span>Good DTI Ratio?</span></h2>
+    <p class="sec-sub">Your debt-to-income ratio tells lenders how much of your income is already committed to debt. Here's what the numbers mean for mortgage approval and financial health.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop"
+           alt="Debt to income ratio calculator — mortgage approval DTI calculation on financial documents">
+      <div class="img-overlay">
+        <span>Debt-to-income ratio calculator — understand your DTI for mortgage approval and financial planning</span>
+      </div>
+    </div>
+
+    <div class="dti-guide">
+      <div class="dti-zone-card" style="background:rgba(16,185,129,.05);border-color:rgba(16,185,129,.3);">
+        <div class="dti-zone-pct" style="color:var(--green);">Under 20%</div>
+        <div class="dti-zone-lbl" style="color:var(--green);">Excellent</div>
+        <div class="dti-zone-desc">Very healthy. Easily qualify for loans at best rates. Lots of financial flexibility.</div>
+      </div>
+      <div class="dti-zone-card" style="background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.3);">
+        <div class="dti-zone-pct" style="color:var(--accent2);">20% – 36%</div>
+        <div class="dti-zone-lbl" style="color:var(--accent2);">Good</div>
+        <div class="dti-zone-desc">Lenders consider this good. Most mortgages approved. Room for more credit if needed.</div>
+      </div>
+      <div class="dti-zone-card" style="background:rgba(245,158,11,.05);border-color:rgba(245,158,11,.3);">
+        <div class="dti-zone-pct" style="color:var(--orange);">37% – 49%</div>
+        <div class="dti-zone-lbl" style="color:var(--orange);">Manageable</div>
+        <div class="dti-zone-desc">Some lenders approve. FHA max is 43%. Consider reducing debt before applying for mortgage.</div>
+      </div>
+      <div class="dti-zone-card" style="background:rgba(239,68,68,.05);border-color:rgba(239,68,68,.3);">
+        <div class="dti-zone-pct" style="color:var(--red);">50%+</div>
+        <div class="dti-zone-lbl" style="color:var(--red);">High Risk</div>
+        <div class="dti-zone-desc">Most lenders decline at this level. Focus on paying down debt before applying for loans.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATIO TYPES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Types of Ratios</div>
+    <h2 class="sec-title">Common <span>Ratio Types</span></h2>
+    <p class="sec-sub">Ratios appear in finance, health, engineering, photography, and everyday life. Here are the most commonly calculated ratio types our calculator covers.</p>
+    <div class="rt-grid">
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><path d="M3 15L9 3l6 12" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 11h8" stroke-linecap="round"/></svg></div>
+        <div class="rtc-title">Debt-to-Income</div>
+        <div class="rtc-formula">DTI = Debt / Income × 100</div>
+        <p class="rtc-p">Used for mortgage qualification, loan approval, and financial health assessment.</p>
+      </div>
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><rect x="3" y="5" width="12" height="8" rx="1.5"/><path d="M3 9h12" stroke-linecap="round" opacity=".5"/></svg></div>
+        <div class="rtc-title">Aspect Ratio</div>
+        <div class="rtc-formula">AR = Width : Height</div>
+        <p class="rtc-p">Used in screens, photography, video (16:9, 4:3, 1:1) and responsive web design.</p>
+      </div>
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 3" stroke-linecap="round"/></svg></div>
+        <div class="rtc-title">Gear Ratio</div>
+        <div class="rtc-formula">GR = Driver Teeth / Driven Teeth</div>
+        <p class="rtc-p">Used in mechanical engineering, bicycles, and automotive transmissions.</p>
+      </div>
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 14l4-8 4 5 2-3 2 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="rtc-title">Cholesterol Ratio</div>
+        <div class="rtc-formula">Total / HDL Cholesterol</div>
+        <p class="rtc-p">Heart disease risk indicator. Below 5:1 is healthy; below 3.5:1 is ideal.</p>
+      </div>
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(236,72,153,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#ec4899" stroke-width="1.4"><path d="M9 3C5 3 3 6 3 9c0 4 2.5 6 6 6s6-2 6-6c0-3-2-6-6-6z"/><path d="M6 9h6" stroke-linecap="round" opacity=".5"/></svg></div>
+        <div class="rtc-title">Waist-to-Hip Ratio</div>
+        <div class="rtc-formula">WHR = Waist / Hip</div>
+        <p class="rtc-p">Health risk indicator. For women: &lt;0.85 healthy. For men: &lt;0.90 healthy.</p>
+      </div>
+      <div class="rtc">
+        <div class="rtc-icon" style="background:rgba(6,182,212,.1);"><svg fill="none" viewBox="0 0 18 18" stroke="#06b6d4" stroke-width="1.4"><path d="M3 3h12v12H3z" rx="2"/><path d="M3 9h12M9 3v12" stroke-linecap="round" opacity=".5"/></svg></div>
+        <div class="rtc-title">Scale Ratio</div>
+        <div class="rtc-formula">1 : n (map to real size)</div>
+        <p class="rtc-p">Used in architecture, map reading, model building, and engineering drawings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">Ratios are fundamental to finance, health, design, cooking, engineering, and science. Here's where our free ratio calculator helps most.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M3 7h14M7 3v4M13 3v4M5 11h4v6H5zM11 11h4v6h-4z" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Mortgage & Loans</div>
+        <p class="uc-p">Calculate DTI ratio before applying for a mortgage. Most lenders require DTI below 36-43%. Know your ratio before the bank does.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M2 9h16M8 9v8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Photography & Video</div>
+        <p class="uc-p">Find the correct aspect ratio for YouTube thumbnails (16:9), Instagram posts (1:1), or cinema (2.39:1). Scale dimensions precisely.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><path d="M10 3a7 7 0 100 14 7 7 0 000-14zM4 10h12M10 4c-2 2-3 4-3 6s1 4 3 6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Map Reading & Scale</div>
+        <p class="uc-p">Convert map distances to real distances using scale ratios. 1:50,000 means 1cm on map = 50,000cm = 500m in reality.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><path d="M10 3v14M3 10h14" stroke-linecap="round"/><circle cx="10" cy="10" r="7"/></svg>
+        </div>
+        <div class="uc-h">Cooking & Recipes</div>
+        <p class="uc-p">Scale recipes up or down using proportions. If a recipe serves 4 and you need 10, use our proportion solver to find the new ingredient quantities.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><path d="M10 3a7 7 0 100 14A7 7 0 0010 3z"/><path d="M7 10h6M10 7v6" stroke-linecap="round" opacity=".7"/></svg>
+        </div>
+        <div class="uc-h">Health & Medicine</div>
+        <p class="uc-p">Calculate waist-to-hip ratio, cholesterol ratio, BMI comparisons, medication dilution ratios, and PF ratio (lung oxygen efficiency).</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M4 4l12 12M4 16L16 4" stroke-linecap="round" opacity=".4"/><circle cx="10" cy="10" r="7"/></svg>
+        </div>
+        <div class="uc-h">Business & Finance</div>
+        <p class="uc-p">Calculate expense ratio, rent-to-income ratio, profit-to-cost ratio, power-to-weight ratio for products, and dilution ratios for chemical mixing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Ratio Calculator?</h2>
+  <p>A <strong>ratio calculator</strong> is a free online tool that simplifies ratios to their lowest terms, solves proportions to find missing values, and calculates specialized ratios like the debt-to-income ratio, aspect ratio, and scale ratio — all with step-by-step working shown. Our <strong>ratio calculator online</strong> covers five different ratio modes in one place, making it far more versatile than basic ratio tools that only simplify.</p>
+
+  <h2>How to Simplify a Ratio — Step by Step</h2>
+  <p>To simplify a ratio A:B, divide both numbers by their Greatest Common Divisor (GCD). The GCD is the largest number that divides both A and B without a remainder.</p>
+  <div class="ex-box">
+    <h4>📘 Example — Simplify 24:36</h4>
+    <p>
+      Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24<br>
+      Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36<br>
+      GCD(24, 36) = 12<br>
+      24 ÷ 12 = 2 &nbsp;|&nbsp; 36 ÷ 12 = 3<br>
+      <strong>Simplified ratio: 2:3</strong>
+    </p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900&q=80&auto=format&fit=crop"
+         alt="Ratio calculator online — proportion solving, aspect ratio, and scale ratio calculations">
+    <div class="img-overlay">
+      <span>Online ratio calculator — simplify ratios, solve proportions, aspect ratio, scale ratio, and DTI calculations</span>
+    </div>
+  </div>
+
+  <h2>What Is My Debt to Income Ratio?</h2>
+  <p>Your <strong>debt-to-income (DTI) ratio</strong> is the percentage of your gross monthly income (before taxes) that goes toward paying your monthly debts. It is one of the most important numbers lenders look at when you apply for a mortgage, car loan, or any other credit.</p>
+  <p><strong>Formula:</strong> <span class="fi">DTI = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100</span></p>
+
+  <h3>How to Calculate Debt to Income Ratio</h3>
+  <ol>
+    <li>Add up ALL monthly debt payments: mortgage/rent, car loans, student loans, credit card minimum payments, personal loans, child support, alimony</li>
+    <li>Find your gross monthly income (your salary before tax, plus any other regular income)</li>
+    <li>Divide total monthly debt by gross monthly income</li>
+    <li>Multiply by 100 to get the percentage</li>
+  </ol>
+  <div class="ex-box">
+    <h4>📘 Example — How to Figure Out Debt to Income Ratio</h4>
+    <p>
+      Mortgage: $1,200/month<br>
+      Car loan: $350/month<br>
+      Student loan: $200/month<br>
+      Credit cards: $150/month<br>
+      <strong>Total debt: $1,900/month</strong><br><br>
+      Gross monthly income: $5,500<br>
+      DTI = ($1,900 ÷ $5,500) × 100 = <strong>34.5%</strong><br>
+      Assessment: Good — most lenders will approve
+    </p>
+  </div>
+
+  <div class="tip">
+    <p><strong>What is a good debt-to-income ratio?</strong> For mortgage approval, aim for a DTI below 36%. Below 20% is considered excellent. For FHA loans, the limit is typically 43%. For conventional loans, most lenders prefer 36% or less. Our DTI calculator shows your zone (Excellent / Good / Manageable / High Risk) automatically.</p>
+  </div>
+
+  <h2>How to Solve a Proportion (Missing Value)</h2>
+  <p>A proportion states that two ratios are equal: A:B = C:D. If any one value is missing, you can find it using <strong>cross-multiplication</strong>:</p>
+  <p><span class="fi">A × D = B × C</span></p>
+  <div class="ex-box">
+    <h4>📘 Example — Find D: 3:4 = 9:?</h4>
+    <p>
+      Cross multiply: 3 × D = 4 × 9<br>
+      3D = 36<br>
+      D = 36 ÷ 3 = <strong>12</strong><br>
+      Answer: 3:4 = 9:12 ✓ (both simplify to 3:4)
+    </p>
+  </div>
+
+  <h2>Aspect Ratio Calculator — Screen & Photo Sizes</h2>
+  <p>The <strong>aspect ratio</strong> describes the proportional relationship between width and height. It is written as W:H. Common aspect ratios:</p>
+  <ul>
+    <li><strong>16:9</strong> — HD/Full HD/4K TV screens, YouTube, most phones (landscape)</li>
+    <li><strong>4:3</strong> — Old TV screens, older monitors, some cameras</li>
+    <li><strong>1:1</strong> — Instagram square posts, profile pictures</li>
+    <li><strong>2.39:1</strong> — Cinematic / widescreen film format</li>
+    <li><strong>9:16</strong> — Vertical/portrait phone video, TikTok, Reels</li>
+  </ul>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+         alt="Aspect ratio calculator and scale ratio — used in photography, video production, and architecture">
+    <div class="img-overlay">
+      <span>Ratio calculator online — aspect ratio for screens, scale ratio for maps and blueprints, DTI for finance</span>
+    </div>
+  </div>
+
+  <h2>Rent to Income Ratio — What Is Affordable?</h2>
+  <p>The common rule is that rent should not exceed 30% of your gross monthly income. This is calculated as: <span class="fi">Rent Ratio = Monthly Rent ÷ Monthly Income × 100</span></p>
+  <p>Example: Rent of $1,500 / Income of $5,000 = 30% — right at the affordability limit. Use our Proportion mode to calculate this by entering: rent as A, income as B, 30 as C, and find D (the maximum rent you can afford at 30%).</p>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Ratio Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is a debt-to-income ratio and how to calculate it?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>debt-to-income (DTI) ratio</strong> is the percentage of your gross monthly income that goes to debt payments. Formula: <strong>DTI = (Total Monthly Debt ÷ Gross Monthly Income) × 100</strong>. Include all monthly payments: mortgage, car, student loans, credit cards, personal loans. Use our DTI tab — enter each debt and your income, then click Calculate to get your DTI% and lender assessment instantly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is a good debt-to-income ratio for a mortgage?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>For mortgage approval: <strong>Under 36%</strong> is ideal and qualifies for most conventional loans. <strong>36-43%</strong> is acceptable — FHA loans allow up to 43%. <strong>43-49%</strong> is risky and limits your options. <strong>50% or above</strong> — most lenders will decline. The lower your DTI, the better your interest rate. Aim to reduce debts before applying if your DTI is above 36%.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to simplify a ratio — what is the ratio calculator method?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Enter A and B into the Simplify tab and click Calculate. The calculator finds the <strong>Greatest Common Divisor (GCD)</strong> of both numbers, then divides both by it: Simplified = (A÷GCD) : (B÷GCD). For example, 18:12 → GCD=6 → 3:2. The result also shows the decimal form (18:12 = 1.5:1) and percentage split (60% : 40%).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find a missing value in a proportion?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use our <strong>Proportion tab</strong>. Select which value (A, B, C, or D) is missing, enter the three known values, and click Calculate. The method is <strong>cross-multiplication</strong>: in A:B = C:D, if D is missing: D = (B × C) ÷ A. Example: 5:8 = 15:? → ? = (8 × 15) ÷ 5 = 24. Works for all four positions.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to calculate aspect ratio for a new screen size?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the <strong>Aspect Ratio tab</strong>. Enter the original Width and Height (e.g. 1920 × 1080), then optionally enter a new Width to calculate the proportional Height. The calculator simplifies the ratio using GCD (1920:1080 → 16:9) and scales dimensions proportionally. This ensures images and videos are not distorted when resizing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is the rent-to-income ratio rule?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The standard rule is that <strong>rent should be no more than 30% of your gross monthly income</strong>. This is the rent-to-income ratio. Formula: Rent Ratio = (Monthly Rent ÷ Monthly Income) × 100. If you earn $4,000/month, maximum affordable rent is $1,200 (30%). Use our DTI calculator — enter rent as a debt payment — to see how rent affects your overall DTI ratio.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CALCS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="11" r="2"/><path d="M13 3L3 13" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">6 percentage modes</div>
+      </a>
+      <a href="/fraction-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><path d="M8 2v12" stroke-linecap="round"/><circle cx="8" cy="4.5" r="1.5" fill="#10b981"/><circle cx="8" cy="11.5" r="1.5" fill="#10b981"/></svg></div>
+        <div class="oc-name">Fraction Calculator</div>
+        <div class="oc-desc">Simplify & convert</div>
+      </a>
+      <a href="/average-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><path d="M2 12l4-8 4 5 2-3 4 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Average Calculator</div>
+        <div class="oc-desc">Mean, median, mode</div>
+      </a>
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h4M5 11h2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">Full math functions</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let activeTab = 'simplify';
+let missingVal = 'D';
+
+function gcd(a, b) {
+  a = Math.abs(Math.round(a)); b = Math.abs(Math.round(b));
+  while (b) { let t = b; b = a % b; a = t; }
+  return a || 1;
+}
+
+function fmt(n, dp = 6) {
+  if (isNaN(n) || !isFinite(n)) return '—';
+  return parseFloat(n.toFixed(dp)).toString();
+}
+
+// ═══════════════════════════════════════════
+// TAB SWITCH
+// ═══════════════════════════════════════════
+function switchTab(tab, btn) {
+  activeTab = tab;
+  document.querySelectorAll('.mode-selector .ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['simplify','proportion','dti','aspect','scale'].forEach(t => {
+    const el = document.getElementById('mode-' + t);
+    if (el) el.style.display = t === tab ? 'block' : 'none';
+  });
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display = 'none';
+}
+
+// ═══════════════════════════════════════════
+// PROPORTION MISSING VALUE
+// ═══════════════════════════════════════════
+function setMissing(val, btn) {
+  missingVal = val;
+  document.querySelectorAll('.mt-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['p-a','p-b','p-c','p-d'].forEach(id => {
+    const inp = document.getElementById(id);
+    const letter = id.split('-')[1].toUpperCase();
+    inp.readOnly = letter === val;
+    inp.classList.toggle('missing', letter === val);
+    inp.value = letter === val ? '' : inp.value;
+    inp.placeholder = letter === val ? '?' : (letter === 'A'?'3':letter==='B'?'4':letter==='C'?'9':'12');
+  });
+}
+
+// ═══════════════════════════════════════════
+// DEBT ROWS
+// ═══════════════════════════════════════════
+let debtRowCount = 4;
+function addDebtRow() {
+  const container = document.getElementById('debt-rows');
+  const div = document.createElement('div');
+  div.className = 'debt-row';
+  debtRowCount++;
+  div.innerHTML = `<input type="number" placeholder="Other debt ${debtRowCount-4}" min="0" step="any">
+    <span class="debt-lbl">Other debt</span>`;
+  container.appendChild(div);
+}
+
+// ═══════════════════════════════════════════
+// SHOW RESULT
+// ═══════════════════════════════════════════
+function showResult(lbl, big, sub, chips, steps, extra) {
+  const rc = document.getElementById('result-content');
+  const chipsHTML = chips && chips.length
+    ? `<div class="chips-row">${chips.map(c => `<span class="chip">${c}</span>`).join('')}</div>` : '';
+  const stepsHTML = steps && steps.length
+    ? `<div class="steps-box"><div class="steps-title">
+         <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.4"><path d="M2 4h10M2 7h7M2 10h5" stroke-linecap="round"/></svg>
+         Step-by-Step Solution</div>
+         ${steps.map((s,i) => `<div class="step-row"><span class="step-n">${i+1}.</span><div><div class="step-math">${s.math}</div><div>${s.note}</div></div></div>`).join('')}
+       </div>` : '';
+
+  rc.innerHTML = `
+    <div class="result-main">
+      <div class="result-lbl">${lbl}</div>
+      <div class="result-big">${big}</div>
+      ${sub ? `<div class="result-sub">${sub}</div>` : ''}
+      ${chipsHTML}
+      ${extra || ''}
+    </div>
+    ${stepsHTML}`;
+
+  const p = document.getElementById('result-panel');
+  p.classList.remove('show'); void p.offsetWidth; p.classList.add('show');
+}
+
+function showErr(msg) {
+  const el = document.getElementById('err-msg');
+  el.textContent = msg || 'Please enter valid positive numbers.';
+  el.style.display = 'block';
+}
+
+// ═══════════════════════════════════════════
+// MAIN CALCULATE
+// ═══════════════════════════════════════════
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+  if (activeTab === 'simplify') calcSimplify();
+  else if (activeTab === 'proportion') calcProportion();
+  else if (activeTab === 'dti') calcDTI();
+  else if (activeTab === 'aspect') calcAspect();
+  else calcScale();
+}
+
+// ── Simplify A:B ──
+function calcSimplify() {
+  const a = parseFloat(document.getElementById('s-a').value);
+  const b = parseFloat(document.getElementById('s-b').value);
+  if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) { showErr('Enter two positive numbers.'); return; }
+
+  const g = gcd(a, b);
+  const sa = a / g, sb = b / g;
+  const decimal = a / b;
+  const pctA = (a / (a + b) * 100).toFixed(1);
+  const pctB = (b / (a + b) * 100).toFixed(1);
+
+  const steps = [
+    { math: `Original ratio: ${a} : ${b}`, note: 'Start with the given ratio' },
+    { math: `Find GCD(${a}, ${b}) = ${g}`, note: 'Greatest Common Divisor — largest number that divides both' },
+    { math: `${a} ÷ ${g} = ${sa}`, note: 'Divide first part by GCD' },
+    { math: `${b} ÷ ${g} = ${sb}`, note: 'Divide second part by GCD' },
+    { math: `Simplified: ${sa} : ${sb}`, note: g === 1 ? 'Already in simplest form' : `Reduced by factor of ${g}` },
+  ];
+
+  showResult(
+    `Simplified Ratio`,
+    `${sa} : ${sb}`,
+    `${a} : ${b} reduces to ${sa} : ${sb}`,
+    [
+      `Decimal: ${fmt(decimal)}`,
+      `${pctA}% : ${pctB}%`,
+      `GCD = ${g}`,
+      g === 1 ? 'Already simplest' : `Factor: ÷${g}`,
+    ],
+    steps, null
+  );
+}
+
+// ── Proportion A:B = C:D ──
+function calcProportion() {
+  const va = parseFloat(document.getElementById('p-a').value);
+  const vb = parseFloat(document.getElementById('p-b').value);
+  const vc = parseFloat(document.getElementById('p-c').value);
+  const vd = parseFloat(document.getElementById('p-d').value);
+
+  let result, known = { A: va, B: vb, C: vc, D: vd };
+  const steps = [{ math: `A : B = C : D (proportion)`, note: 'Two equal ratios — cross multiply to solve' }];
+  steps.push({ math: `A × D = B × C`, note: 'Cross-multiplication rule' });
+
+  if (missingVal === 'D') {
+    if ([va,vb,vc].some(isNaN) || vb===0) { showErr('Enter valid A, B, C values. B cannot be 0.'); return; }
+    result = (vb * vc) / va;
+    steps.push({ math: `D = (B × C) / A = (${vb} × ${vc}) / ${va}`, note: 'Solve for D' });
+    steps.push({ math: `D = ${fmt(result)}`, note: 'Final answer' });
+    steps.push({ math: `Verify: ${va}:${vb} = ${vc}:${fmt(result)} → ${fmt(va/vb)} = ${fmt(vc/result)} ✓`, note: 'Check both ratios are equal' });
+    showResult(`Proportion Solution — D`, `D = ${fmt(result)}`, `${va} : ${vb} = ${vc} : ${fmt(result)}`, [`${va}/${vb} = ${fmt(va/vb)}`, `${vc}/${fmt(result)} = ${fmt(va/vb)}`], steps, null);
+  } else if (missingVal === 'C') {
+    if ([va,vb,vd].some(isNaN) || va===0) { showErr('Enter valid A, B, D values.'); return; }
+    result = (va * vd) / vb;
+    steps.push({ math: `C = (A × D) / B = (${va} × ${vd}) / ${vb}`, note: 'Solve for C' });
+    steps.push({ math: `C = ${fmt(result)}`, note: 'Final answer' });
+    showResult(`Proportion Solution — C`, `C = ${fmt(result)}`, `${va} : ${vb} = ${fmt(result)} : ${vd}`, [`${va}/${vb} = ${fmt(va/vb)}`], steps, null);
+  } else if (missingVal === 'B') {
+    if ([va,vc,vd].some(isNaN) || vc===0) { showErr('Enter valid A, C, D values.'); return; }
+    result = (va * vd) / vc;
+    steps.push({ math: `B = (A × D) / C = (${va} × ${vd}) / ${vc}`, note: 'Solve for B' });
+    steps.push({ math: `B = ${fmt(result)}`, note: 'Final answer' });
+    showResult(`Proportion Solution — B`, `B = ${fmt(result)}`, `${va} : ${fmt(result)} = ${vc} : ${vd}`, [], steps, null);
+  } else if (missingVal === 'A') {
+    if ([vb,vc,vd].some(isNaN) || vd===0) { showErr('Enter valid B, C, D values.'); return; }
+    result = (vb * vc) / vd;
+    steps.push({ math: `A = (B × C) / D = (${vb} × ${vc}) / ${vd}`, note: 'Solve for A' });
+    steps.push({ math: `A = ${fmt(result)}`, note: 'Final answer' });
+    showResult(`Proportion Solution — A`, `A = ${fmt(result)}`, `${fmt(result)} : ${vb} = ${vc} : ${vd}`, [], steps, null);
+  }
+}
+
+// ── DTI Ratio ──
+function calcDTI() {
+  const income = parseFloat(document.getElementById('dti-income').value);
+  if (isNaN(income) || income <= 0) { showErr('Please enter your gross monthly income.'); return; }
+
+  const debtInputs = document.querySelectorAll('#debt-rows .debt-row input');
+  let totalDebt = 0;
+  const debtLabels = ['Mortgage/Rent','Car Payment','Student Loan','Credit Cards'];
+  const debtBreakdown = [];
+  debtInputs.forEach((inp, i) => {
+    const v = parseFloat(inp.value) || 0;
+    totalDebt += v;
+    if (v > 0) debtBreakdown.push({ label: debtLabels[i] || `Other debt ${i-3}`, amount: v });
+  });
+
+  if (totalDebt === 0) { showErr('Please enter at least one monthly debt payment.'); return; }
+
+  const dti = (totalDebt / income) * 100;
+  let zone, zoneColor, zoneNote;
+  if (dti < 20) { zone = 'Excellent ✓'; zoneColor = 'var(--green)'; zoneNote = 'Very low DTI — easily qualify for loans at the best rates.'; }
+  else if (dti < 36) { zone = 'Good ✓'; zoneColor = 'var(--accent2)'; zoneNote = 'Most lenders will approve. Good position for mortgage application.'; }
+  else if (dti < 43) { zone = 'Acceptable'; zoneColor = 'var(--orange)'; zoneNote = 'FHA loans allow up to 43%. Consider reducing debt before applying.'; }
+  else if (dti < 50) { zone = 'High Risk'; zoneColor = 'var(--red)'; zoneNote = 'Lenders are cautious. Work on reducing monthly debt payments.'; }
+  else { zone = 'Very High ✗'; zoneColor = 'var(--red)'; zoneNote = 'Most lenders will decline. Focus on paying down debt significantly.'; }
+
+  const fillPct = Math.min(100, dti);
+  const fillColor = dti < 20 ? '#10b981' : dti < 36 ? '#3b82f6' : dti < 43 ? '#f59e0b' : '#ef4444';
+
+  const steps = [
+    { math: `Total Monthly Debt = $${totalDebt.toFixed(2)}`, note: `Sum of all ${debtBreakdown.length} debt payment(s)` },
+    { math: `Gross Monthly Income = $${income.toFixed(2)}`, note: 'Income before tax' },
+    { math: `DTI = ($${totalDebt.toFixed(2)} ÷ $${income.toFixed(2)}) × 100`, note: 'Apply DTI formula' },
+    { math: `DTI = ${dti.toFixed(2)}%`, note: 'Debt-to-Income Ratio' },
+    { math: `Assessment: ${zone}`, note: zoneNote },
+  ];
+
+  const extra = `
+    <div class="dti-bar" style="margin-top:12px;">
+      <div class="dti-fill" style="width:${fillPct}%;background:${fillColor};"></div>
+    </div>
+    <div class="dti-zone" style="color:${zoneColor};">${zone} — ${zoneNote}</div>
+    <div style="margin-top:10px;font-size:12px;color:var(--text3);">
+      Monthly Debt: $${totalDebt.toFixed(0)} &nbsp;|&nbsp; Income: $${income.toFixed(0)} &nbsp;|&nbsp; Remaining: $${(income - totalDebt).toFixed(0)}/mo
+    </div>`;
+
+  showResult('Debt-to-Income Ratio', `${dti.toFixed(1)}%`, `$${totalDebt.toFixed(0)} debt / $${income.toFixed(0)} income`, [], steps, extra);
+}
+
+// ── Aspect Ratio ──
+function calcAspect() {
+  const w = parseFloat(document.getElementById('ar-w').value);
+  const h = parseFloat(document.getElementById('ar-h').value);
+  const nw = parseFloat(document.getElementById('ar-new-w').value);
+  if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) { showErr('Enter positive width and height values.'); return; }
+
+  const g = gcd(w, h);
+  const aw = w / g, ah = h / g;
+  const decimal = w / h;
+
+  const steps = [
+    { math: `Original: ${w} × ${h}`, note: 'Width × Height' },
+    { math: `GCD(${w}, ${h}) = ${g}`, note: 'Find Greatest Common Divisor' },
+    { math: `Aspect Ratio = ${aw} : ${ah}`, note: `${w}÷${g} : ${h}÷${g}` },
+    { math: `Decimal ratio = ${fmt(decimal, 4)}:1`, note: 'Width per unit of height' },
+  ];
+
+  let newH = null;
+  if (!isNaN(nw) && nw > 0) {
+    newH = (nw / w) * h;
+    steps.push({ math: `New Height = ${nw} × (${h}/${w}) = ${fmt(newH)}`, note: `Scale ${w}×${h} to new width ${nw}` });
+  }
+
+  const sub = newH ? `New size: ${nw} × ${fmt(newH, 0)}px` : `Decimal: ${fmt(decimal, 4)}:1`;
+  showResult('Aspect Ratio', `${aw} : ${ah}`, sub,
+    [
+      `${w} × ${h}px`,
+      `Ratio: ${aw}:${ah}`,
+      `${fmt(decimal, 3)}:1`,
+      newH ? `Scaled: ${nw}×${Math.round(newH)}` : `GCD: ${g}`,
+    ], steps, null);
+}
+
+// ── Scale Ratio ──
+function calcScale() {
+  const n = parseFloat(document.getElementById('sc-n').value);
+  const map = parseFloat(document.getElementById('sc-map').value);
+  if (isNaN(n) || n <= 0) { showErr('Enter a valid scale (n must be > 0).'); return; }
+  if (isNaN(map) || map <= 0) { showErr('Enter a valid map/model measurement.'); return; }
+
+  const real = map * n;
+  const realM = real / 100;
+  const realKm = real / 100000;
+
+  const steps = [
+    { math: `Scale = 1 : ${n}`, note: '1 unit on map = n units in reality' },
+    { math: `Map distance = ${map} cm`, note: 'Measured on map/model' },
+    { math: `Real distance = ${map} × ${n} = ${real} cm`, note: 'Multiply map distance by scale n' },
+    { math: `= ${realM} m = ${fmt(realKm, 4)} km`, note: 'Convert to metres and kilometres' },
+  ];
+
+  showResult('Scale Ratio Result', `${real.toLocaleString()} cm`, `1:${n} scale — ${map}cm on map`,
+    [`${realM.toLocaleString()} metres`, `${fmt(realKm, 3)} km`, `1cm = ${n}cm real`], steps, null);
+}
+
+function faq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// INIT — set default missing to D
+setMissing('D', document.getElementById('m-d'));
+</script>
+
+</body>
+</html>

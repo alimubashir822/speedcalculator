@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Triangle Calculator — Solve Any Triangle, Area & Missing Sides Free | SpeedCalculator.net</title>
+<meta name="description" content="Free triangle calculator online. Find missing sides, angles & area using SSS, SAS, ASA, AAS or right triangle. Step-by-step solutions with visual diagram. Works for all triangle types.">
+<meta name="keywords" content="triangle calculator, solve triangle calculator, find missing side of triangle calculator, area of a triangle calculator, isosceles triangle calculator, equilateral triangle calculator, triangle calculator trig, right triangle calculator, triangle area calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/triangle-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Triangle Calculator",
+  "url":"https://www.speedcalculator.net/triangle-calculator/",
+  "description":"Free triangle calculator — SSS, SAS, ASA, AAS, right triangle. Find sides, angles, area, perimeter, height with steps.",
+  "applicationCategory":"EducationApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How to find the missing side of a triangle?","acceptedAnswer":{"@type":"Answer","text":"Use the Law of Cosines: c² = a² + b² − 2ab·cos(C) when you know two sides and the included angle. Use the Law of Sines: a/sin(A) = b/sin(B) = c/sin(C) when you know a side and its opposite angle. For right triangles, use the Pythagorean theorem: c² = a² + b²."}},
+    {"@type":"Question","name":"How to calculate the area of a triangle?","acceptedAnswer":{"@type":"Answer","text":"Area = (1/2) × base × height. If you know all three sides, use Heron's formula: Area = √(s(s-a)(s-b)(s-c)) where s = (a+b+c)/2. If you know two sides and included angle: Area = (1/2)ab·sin(C)."}},
+    {"@type":"Question","name":"Can three sides form a triangle?","acceptedAnswer":{"@type":"Answer","text":"Yes, if and only if the sum of any two sides is greater than the third side (Triangle Inequality). For sides a, b, c: a+b>c AND a+c>b AND b+c>a must all be true."}},
+    {"@type":"Question","name":"How to find the height of a triangle?","acceptedAnswer":{"@type":"Answer","text":"Height h = 2×Area / base. First calculate the area using Heron's formula or other methods, then divide by the chosen base side and multiply by 2. Our triangle calculator shows all three heights automatically."}},
+    {"@type":"Question","name":"How to find the value of x in a triangle?","acceptedAnswer":{"@type":"Answer","text":"Use the angle sum property (all angles = 180°), Law of Sines, Law of Cosines, or Pythagoras depending on what is given. Enter the known values into our triangle calculator and select the matching mode — it will solve for all unknowns including x."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--pink:#ec4899;--red:#ef4444;--teal:#06b6d4;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,0.12);--border2:rgba(59,130,246,0.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:start;}
+@media(max-width:860px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4.5vw,58px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* CALC CARD */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),var(--purple),transparent);}
+
+/* CALC HEAD */
+.calc-head{padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle span{color:var(--accent2);}
+.calc-htitle-icon{width:28px;height:28px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.calc-htitle-icon svg{width:14px;height:14px;stroke:var(--accent2);}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:16px 22px 22px;}
+
+/* MODE SELECTOR */
+.mode-selector{display:flex;flex-direction:column;gap:5px;margin-bottom:16px;}
+.mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.mode-row.r2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:360px){.mode-row{grid-template-columns:1fr 1fr;}}
+.ctab{border:1px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);color:var(--text3);font-family:'Barlow',sans-serif;cursor:pointer;transition:all .2s;text-align:left;padding:9px 10px;display:flex;align-items:center;gap:8px;}
+.ctab:hover{border-color:rgba(59,130,246,.3);color:var(--text2);}
+.ctab.active{border-color:var(--accent);background:rgba(59,130,246,.1);color:var(--text);}
+.ctab.active .ctab-label{color:var(--accent2);}
+.ctab.active .ctab-icon{background:var(--accent);color:#fff;border-color:var(--accent);}
+.ctab-icon{width:30px;height:30px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.ctab-icon svg{width:15px;height:15px;}
+.ctab-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.ctab-label{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text2);transition:color .2s;white-space:nowrap;}
+.ctab-formula{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--text3);}
+
+/* TRIANGLE SVG DIAGRAM */
+.tri-diagram{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;margin-bottom:14px;text-align:center;}
+.tri-diagram svg{max-width:100%;height:auto;}
+
+/* INPUT DESC */
+.inp-desc{font-size:12px;color:var(--text2);margin-bottom:12px;padding:9px 12px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
+.inp-desc::before{content:'ℹ';font-size:13px;color:var(--accent2);flex-shrink:0;margin-top:1px;}
+
+/* FIELD GRIDS */
+.fields-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:10px;}
+.fields-grid.f2{grid-template-columns:1fr 1fr;}
+@media(max-width:400px){.fields-grid{grid-template-columns:1fr 1fr;}.fields-grid.f2{grid-template-columns:1fr;}}
+.fgrp{}
+.flbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:4px;}
+.flbl-side{color:var(--accent2);}
+.flbl-angle{color:var(--orange);}
+.flbl-right{color:var(--green);}
+.finp{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.finp:focus-within{border-color:var(--accent);}
+.finp input{flex:1;background:transparent;border:none;outline:none;padding:10px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;text-align:center;}
+.finp input::placeholder{color:var(--text3);font-size:15px;font-weight:400;}
+.finp .sfx{padding:0 8px;display:flex;align-items:center;font-size:10px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);}
+
+/* SECTION LABEL */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.sec-lbl::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:14px 20px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;line-height:1;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+.calc-btn:active{transform:translateY(0);}
+.calc-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+/* RESULT */
+.result-panel{display:none;margin-top:12px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESULT GRID */
+.result-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px;}
+@media(max-width:380px){.result-cards{grid-template-columns:1fr 1fr;}}
+.rc-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px;text-align:center;}
+.rc-card.highlight{border-color:var(--accent2);background:rgba(59,130,246,.07);}
+.rc-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.rc-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--accent2);line-height:1;}
+.rc-unit{font-size:10px;color:var(--text3);margin-top:2px;}
+
+/* TRI SVG RESULT */
+.tri-result-svg{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:10px;margin-bottom:10px;text-align:center;}
+
+/* STEPS BOX */
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 15px;margin-top:8px;}
+.steps-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:9px;display:flex;align-items:center;gap:5px;}
+.step-row{display:flex;align-items:flex-start;gap:9px;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);line-height:1.6;}
+.step-row:last-child{border:none;}
+.step-n{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--accent2);min-width:20px;}
+.step-math{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--text);font-weight:600;}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 14px;font-size:13px;color:#f87171;margin-top:10px;display:none;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* HOW TO STEPS */
+.steps-guide{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+@media(max-width:720px){.steps-guide{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-guide{grid-template-columns:1fr;}}
+.sg-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:border-color .2s;}
+.sg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s;}
+.sg-card:hover{border-color:var(--border2);}
+.sg-card:hover::before{opacity:1;}
+.sg-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);}
+.sg-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.sg-icon svg{width:18px;height:18px;}
+.sg-h{font-size:14px;font-weight:700;color:var(--text);margin:10px 0 4px;}
+.sg-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* FORMULA CARDS */
+.formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:28px;}
+@media(max-width:680px){.formula-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.formula-grid{grid-template-columns:1fr;}}
+.fc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.fc:hover{border-color:var(--border2);}
+.fc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.fc-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fc-icon svg{width:18px;height:18px;}
+.fc-name{font-size:13px;font-weight:700;color:var(--text);}
+.fc-formula{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--accent2);background:var(--bg3);border-radius:5px;padding:7px 11px;margin-bottom:7px;line-height:1.6;}
+.fc-note{font-size:11px;color:var(--text3);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 8px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:var(--accent2);margin:20px 0 8px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:280px;}
+
+/* OTHER CALCS */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Triangle Calculator
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Free · 5 Modes · Steps + Diagram</div>
+        <h1>Triangle<em>Calculator</em></h1>
+        <p class="hero-sub">Solve any triangle — find missing sides, angles, area, perimeter, and heights using SSS, SAS, ASA, AAS, or right triangle modes. Step-by-step solutions with a live diagram.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">All Triangle Types</span>
+          <span class="badge p">Live Diagram</span>
+          <span class="badge">Law of Sines/Cosines</span>
+          <span class="badge g">Heron's Formula</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="calc-htitle-icon">
+              <svg fill="none" viewBox="0 0 14 14"><path d="M2 12L7 2l5 10H2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            Triangle <span>Calculator</span>
+          </div>
+          <div class="live-pill">✦ Steps + Diagram</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- MODE SELECTOR -->
+          <div class="mode-selector">
+            <div class="mode-row">
+              <button class="ctab active" onclick="switchTab('sss',this)">
+                <div class="ctab-icon">
+                  <svg fill="none" viewBox="0 0 15 15"><path d="M2 12L7.5 3l5.5 9H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><text x="3.5" y="11.5" font-size="4" fill="currentColor" font-family="monospace">abc</text></svg>
+                </div>
+                <div class="ctab-text">
+                  <span class="ctab-label">SSS</span>
+                  <span class="ctab-formula">3 Sides</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('sas',this)">
+                <div class="ctab-icon">
+                  <svg fill="none" viewBox="0 0 15 15"><path d="M2 12L7.5 3l5.5 9H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="ctab-text">
+                  <span class="ctab-label">SAS</span>
+                  <span class="ctab-formula">2 Sides + Angle</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('asa',this)">
+                <div class="ctab-icon">
+                  <svg fill="none" viewBox="0 0 15 15"><path d="M2 12L7.5 3l5.5 9H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="ctab-text">
+                  <span class="ctab-label">ASA</span>
+                  <span class="ctab-formula">2 Angles + Side</span>
+                </div>
+              </button>
+            </div>
+            <div class="mode-row r2">
+              <button class="ctab" onclick="switchTab('aas',this)">
+                <div class="ctab-icon">
+                  <svg fill="none" viewBox="0 0 15 15"><path d="M2 12L7.5 3l5.5 9H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="ctab-text">
+                  <span class="ctab-label">AAS</span>
+                  <span class="ctab-formula">2 Angles + Side</span>
+                </div>
+              </button>
+              <button class="ctab" onclick="switchTab('right',this)">
+                <div class="ctab-icon">
+                  <svg fill="none" viewBox="0 0 15 15"><path d="M2 12L2 3l10 9H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="2" y="9" width="3" height="3" stroke="currentColor" stroke-width="1" fill="none"/></svg>
+                </div>
+                <div class="ctab-text">
+                  <span class="ctab-label">Right Triangle</span>
+                  <span class="ctab-formula">90° + Pythagoras</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- LIVE TRIANGLE DIAGRAM -->
+          <div class="tri-diagram">
+            <svg id="tri-svg" viewBox="0 0 260 160" width="260" height="160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Triangle shape -->
+              <polygon id="tri-poly" points="30,130 230,130 140,30" fill="rgba(59,130,246,0.06)" stroke="#3b82f6" stroke-width="1.5"/>
+              <!-- Vertices -->
+              <circle cx="30" cy="130" r="4" fill="#3b82f6"/>
+              <circle cx="230" cy="130" r="4" fill="#3b82f6"/>
+              <circle cx="140" cy="30" r="4" fill="#3b82f6"/>
+              <!-- Vertex labels -->
+              <text x="16" y="145" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">A</text>
+              <text x="234" y="145" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">B</text>
+              <text x="135" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">C</text>
+              <!-- Side labels -->
+              <text id="lbl-c" x="130" y="147" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle">c (AB)</text>
+              <text id="lbl-b" x="82" y="88" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" transform="rotate(-45 82 88)">b (AC)</text>
+              <text id="lbl-a" x="195" y="88" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="middle" transform="rotate(45 195 88)">a (BC)</text>
+              <!-- Angle arcs -->
+              <path d="M 50,130 A 18,18 0 0,1 43,115" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.7"/>
+              <path d="M 212,130 A 18,18 0 0,0 220,113" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.7"/>
+              <path d="M 127,42 A 18,18 0 0,1 155,40" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity="0.7"/>
+              <!-- Angle labels -->
+              <text x="52" y="122" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b">A</text>
+              <text x="200" y="122" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b">B</text>
+              <text x="136" y="50" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b">C</text>
+            </svg>
+          </div>
+
+          <!-- ══ MODE 1: SSS — Three Sides ══ -->
+          <div id="mode-sss">
+            <div class="inp-desc">Enter all 3 sides to find all angles, area, perimeter, and heights.</div>
+            <div class="sec-lbl">Sides</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side a</span> (BC)</div>
+                <div class="finp"><input type="number" id="sss-a" placeholder="5" min="0" step="any"></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side b</span> (AC)</div>
+                <div class="finp"><input type="number" id="sss-b" placeholder="7" min="0" step="any"></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side c</span> (AB)</div>
+                <div class="finp"><input type="number" id="sss-c" placeholder="8" min="0" step="any"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 2: SAS ══ -->
+          <div id="mode-sas" style="display:none;">
+            <div class="inp-desc">Two sides + the angle between them. Example: sides a, b with included angle C.</div>
+            <div class="sec-lbl">Sides</div>
+            <div class="fields-grid f2">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side a</span></div>
+                <div class="finp"><input type="number" id="sas-a" placeholder="7" min="0" step="any"></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side b</span></div>
+                <div class="finp"><input type="number" id="sas-b" placeholder="5" min="0" step="any"></div>
+              </div>
+            </div>
+            <div class="sec-lbl">Included Angle</div>
+            <div class="fields-grid" style="grid-template-columns:1fr;">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle C</span> (between a and b)</div>
+                <div class="finp"><input type="number" id="sas-C" placeholder="60" min="0" max="180" step="any"><span class="sfx">deg</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 3: ASA ══ -->
+          <div id="mode-asa" style="display:none;">
+            <div class="inp-desc">Two angles + the side between them (side c, opposite to vertex C).</div>
+            <div class="sec-lbl">Angles</div>
+            <div class="fields-grid f2">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle A</span></div>
+                <div class="finp"><input type="number" id="asa-A" placeholder="60" min="0" max="180" step="any"><span class="sfx">°</span></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle B</span></div>
+                <div class="finp"><input type="number" id="asa-B" placeholder="70" min="0" max="180" step="any"><span class="sfx">°</span></div>
+              </div>
+            </div>
+            <div class="sec-lbl">Side Between Angles</div>
+            <div class="fields-grid" style="grid-template-columns:1fr;">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side c</span> (between A and B)</div>
+                <div class="finp"><input type="number" id="asa-c" placeholder="10" min="0" step="any"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 4: AAS ══ -->
+          <div id="mode-aas" style="display:none;">
+            <div class="inp-desc">Two angles + a non-included side (side a, opposite to angle A).</div>
+            <div class="sec-lbl">Angles</div>
+            <div class="fields-grid f2">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle A</span></div>
+                <div class="finp"><input type="number" id="aas-A" placeholder="45" min="0" max="180" step="any"><span class="sfx">°</span></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle B</span></div>
+                <div class="finp"><input type="number" id="aas-B" placeholder="65" min="0" max="180" step="any"><span class="sfx">°</span></div>
+              </div>
+            </div>
+            <div class="sec-lbl">Non-Included Side</div>
+            <div class="fields-grid" style="grid-template-columns:1fr;">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Side a</span> (opposite to angle A)</div>
+                <div class="finp"><input type="number" id="aas-a" placeholder="8" min="0" step="any"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ MODE 5: RIGHT TRIANGLE ══ -->
+          <div id="mode-right" style="display:none;">
+            <div class="inp-desc">Right triangle (90° at C). Enter any 2 known values — hypotenuse (c), leg (a or b), or angle.</div>
+            <div class="sec-lbl">Sides (enter any 2)</div>
+            <div class="fields-grid">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Leg a</span></div>
+                <div class="finp"><input type="number" id="rt-a" placeholder="3" min="0" step="any"></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-side">Leg b</span></div>
+                <div class="finp"><input type="number" id="rt-b" placeholder="4" min="0" step="any"></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-right">Hypotenuse c</span></div>
+                <div class="finp"><input type="number" id="rt-c" placeholder="5" min="0" step="any"></div>
+              </div>
+            </div>
+            <div class="sec-lbl">Or Enter an Angle (optional)</div>
+            <div class="fields-grid f2">
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle A</span></div>
+                <div class="finp"><input type="number" id="rt-A" placeholder="—" min="0" max="90" step="any"><span class="sfx">°</span></div>
+              </div>
+              <div class="fgrp">
+                <div class="flbl"><span class="flbl-angle">Angle B</span></div>
+                <div class="finp"><input type="number" id="rt-B" placeholder="—" min="0" max="90" step="any"><span class="sfx">°</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please check your inputs. Values may not form a valid triangle.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Solve Triangle
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">5</div><div class="stat-lbl">Solve Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Live</div><div class="stat-lbl">Diagram</div></div>
+      <div class="stat-item"><div class="stat-val">Steps</div><div class="stat-lbl">Always Shown</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Quick Guide</div>
+    <h2 class="sec-title">How to Use the <span>Triangle Calculator</span></h2>
+    <p class="sec-sub">Choose the mode that matches your known values, enter the numbers, and get all missing sides, angles, area, and heights with full working steps.</p>
+    <div class="steps-guide">
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">01</div>
+          <div class="sg-icon" style="background:rgba(59,130,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><path d="M2 15L9 3l7 12H2z" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Pick Your Mode</div>
+        <p class="sg-p">SSS = 3 sides. SAS = 2 sides + included angle. ASA = 2 angles + side between. AAS = 2 angles + other side. Right = 90° triangle.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">02</div>
+          <div class="sg-icon" style="background:rgba(16,185,129,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M4 9h10M9 4l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Enter Known Values</div>
+        <p class="sg-p">Type your known sides and/or angles. Blue labels = sides, orange labels = angles. The diagram shows which sides a, b, c are in a standard triangle.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">03</div>
+          <div class="sg-icon" style="background:rgba(245,158,11,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Click Solve</div>
+        <p class="sg-p">Press Solve Triangle and see all sides, all angles, area, perimeter, and all three heights — with step-by-step working for each calculation.</p>
+      </div>
+      <div class="sg-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="sg-badge">04</div>
+          <div class="sg-icon" style="background:rgba(139,92,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 4h10v2H4zM4 8h8M4 12h6" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="sg-h">Read the Steps</div>
+        <p class="sg-p">Every result shows the law of cosines, law of sines, or Pythagorean theorem steps with your actual numbers — perfect for verifying exam answers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULA REFERENCE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Formula Reference</div>
+    <h2 class="sec-title">Triangle <span>Formulas Explained</span></h2>
+    <p class="sec-sub">Every calculation in our triangle calculator uses one of these formulas. Understanding which formula applies makes solving any triangle straightforward.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format&fit=crop"
+           alt="Triangle calculator formulas — law of sines, law of cosines, Heron's formula on blackboard">
+      <div class="img-overlay">
+        <span>Triangle solving formulas — law of sines, law of cosines, Heron's formula, and Pythagorean theorem</span>
+      </div>
+    </div>
+
+    <div class="formula-grid">
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(59,130,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><path d="M2 14L9 3l7 11H2z" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="fc-name">Law of Cosines</div>
+        </div>
+        <div class="fc-formula">c² = a² + b² − 2ab·cos(C)</div>
+        <p class="fc-note">Used for SSS (find angles) and SAS (find missing side). Generalizes the Pythagorean theorem for any triangle.</p>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(16,185,129,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M2 14L9 3l7 11H2z" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="fc-name">Law of Sines</div>
+        </div>
+        <div class="fc-formula">a/sin(A) = b/sin(B) = c/sin(C)</div>
+        <p class="fc-note">Used for ASA and AAS. When you know a side-angle pair, find all other sides and angles using this ratio.</p>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(245,158,11,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><path d="M2 14L2 3l12 11H2z" stroke-linejoin="round"/><rect x="2" y="10" width="4" height="4" stroke="#f59e0b" stroke-width="1" fill="none"/></svg>
+          </div>
+          <div class="fc-name">Pythagorean Theorem</div>
+        </div>
+        <div class="fc-formula">c² = a² + b²</div>
+        <p class="fc-note">Only for right triangles (90°). c is always the hypotenuse (longest side). Used to find missing side calculator.</p>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(139,92,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M2 14L9 3l7 11H2z" stroke-linejoin="round"/><path d="M9 14V3M2 14h14" stroke-linecap="round" stroke-dasharray="2 2" opacity=".5"/></svg>
+          </div>
+          <div class="fc-name">Heron's Formula</div>
+        </div>
+        <div class="fc-formula">Area = √(s(s-a)(s-b)(s-c))<br>s = (a+b+c)/2</div>
+        <p class="fc-note">Find area of any triangle from 3 sides alone. s is the semi-perimeter. Used in our area of a triangle calculator.</p>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(236,72,153,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#ec4899" stroke-width="1.4"><path d="M2 14L9 3l7 11H2z" stroke-linejoin="round"/><path d="M9 3v11" stroke-linecap="round" stroke-dasharray="2 2"/></svg>
+          </div>
+          <div class="fc-name">Area Formulas</div>
+        </div>
+        <div class="fc-formula">Area = ½ × base × height<br>Area = ½ab·sin(C)</div>
+        <p class="fc-note">Base × height when height is known. Two sides + included angle formula when height is unknown.</p>
+      </div>
+      <div class="fc">
+        <div class="fc-head">
+          <div class="fc-icon" style="background:rgba(6,182,212,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#06b6d4" stroke-width="1.4"><path d="M2 14L9 3l7 11H2z" stroke-linejoin="round"/><circle cx="9" cy="9" r="3" stroke-dasharray="2 2"/></svg>
+          </div>
+          <div class="fc-name">Heights & Perimeter</div>
+        </div>
+        <div class="fc-formula">h_a = 2·Area / a<br>Perimeter = a + b + c</div>
+        <p class="fc-note">All three heights are calculated from the area. Perimeter is simply the sum of all three sides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">Triangles appear in every field of science, construction, navigation, and art. Our free triangle calculator handles them all.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M10 2L2 7l8 5 8-5-8-5zM2 17l8-5 8 5"/></svg>
+        </div>
+        <div class="uc-h">Students & Trigonometry</div>
+        <p class="uc-p">Solve triangle problems for geometry and trig exams. Verify homework answers and learn the law of sines and cosines with step-by-step working shown.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M2 9h16M8 3v14" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Construction & Architecture</div>
+        <p class="uc-p">Calculate roof pitch angles, rafter lengths, and diagonal bracing in construction. Find the hypotenuse for any right-angle structural element.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2z"/><path d="M10 6v4l3 3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Navigation & GPS</div>
+        <p class="uc-p">Calculate distances using triangulation. If you know two angles to a landmark and the baseline distance, find the distance to the landmark using ASA mode.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 14l4-8 4 5 3-3 3 6" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="2"/></svg>
+        </div>
+        <div class="uc-h">Engineering & Physics</div>
+        <p class="uc-p">Resolve force vectors, calculate incline angles, and analyze structural loads using triangle geometry — all core to mechanical and civil engineering.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><circle cx="10" cy="10" r="8"/><path d="M6 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Art & Design</div>
+        <p class="uc-p">Create geometric artwork, calculate perspective angles in technical drawing, and design logos and patterns using precise triangle proportions.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/></svg>
+        </div>
+        <div class="uc-h">Surveying & Land</div>
+        <p class="uc-p">Measure plot areas and boundary distances. Professional surveyors use triangulation to measure land areas from known reference points.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE + FAQ -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Triangle Calculator?</h2>
+  <p>A <strong>triangle calculator</strong> is a free online tool that solves any triangle completely — finding all unknown sides, angles, area, perimeter, and heights from the values you provide. Our <strong>solve triangle calculator</strong> uses the Law of Sines, Law of Cosines, Heron's Formula, and the Pythagorean Theorem depending on which values you enter, and shows every calculation step clearly.</p>
+  <p>Whether you need to <strong>find the missing side of a triangle</strong>, calculate the area, or verify that three measurements form a valid triangle, this free tool handles all five standard input combinations: SSS, SAS, ASA, AAS, and right triangle.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+         alt="Triangle calculator trig — solving triangles using law of sines and cosines for students and engineers">
+    <div class="img-overlay">
+      <span>Free triangle calculator — find missing sides, angles, area & height using SSS, SAS, ASA, AAS, right triangle</span>
+    </div>
+  </div>
+
+  <h2>Triangle Calculator FAQs</h2>
+
+  <h3>How to find the missing side of a triangle?</h3>
+  <p>The method depends on what you know. For the <strong>find missing side of triangle calculator</strong>:</p>
+  <ul>
+    <li><strong>Right triangle (90°)</strong>: Use Pythagoras — c² = a² + b². Enter the two known sides in Right Triangle mode.</li>
+    <li><strong>Two sides + included angle (SAS)</strong>: Use Law of Cosines — c² = a² + b² − 2ab·cos(C).</li>
+    <li><strong>One side + two angles (ASA/AAS)</strong>: Use Law of Sines — a/sin(A) = b/sin(B) = c/sin(C).</li>
+  </ul>
+  <div class="ex-box">
+    <h4>📘 Example — Find the missing side: a=5, b=7, C=60°</h4>
+    <p>
+      Using Law of Cosines (SAS mode):<br>
+      c² = 5² + 7² − 2(5)(7)·cos(60°)<br>
+      c² = 25 + 49 − 70 × 0.5 = 74 − 35 = 39<br>
+      c = √39 ≈ <strong>6.245</strong>
+    </p>
+  </div>
+
+  <h3>What is the third side of a triangle?</h3>
+  <p>The third side of a triangle can always be found using the Law of Cosines when two sides and the angle between them are known. The calculator returns all three sides — labelled a, b, and c — where c is opposite to angle C, b opposite to B, and a opposite to A.</p>
+
+  <h3>How to calculate the area of a triangle?</h3>
+  <p>Our <strong>area of a triangle calculator</strong> automatically shows the area using the most appropriate formula:</p>
+  <ul>
+    <li><strong>Heron's Formula</strong> (from 3 sides): Area = √(s(s−a)(s−b)(s−c)) where s = (a+b+c)/2</li>
+    <li><strong>Base × Height</strong>: Area = ½ × base × height</li>
+    <li><strong>Two sides + angle</strong>: Area = ½ × a × b × sin(C)</li>
+  </ul>
+
+  <div class="ex-box">
+    <h4>📘 Example — Area of triangle with sides 5, 7, 8 (Heron's Formula)</h4>
+    <p>
+      s = (5+7+8)/2 = 10<br>
+      Area = √(10 × (10−5) × (10−7) × (10−8))<br>
+      Area = √(10 × 5 × 3 × 2) = √300 ≈ <strong>17.32 square units</strong>
+    </p>
+  </div>
+
+  <h3>How to find the height of a triangle?</h3>
+  <p>Once the area is known, all three heights can be found:</p>
+  <p><span class="fi">h_a = 2 × Area / a</span> &nbsp; <span class="fi">h_b = 2 × Area / b</span> &nbsp; <span class="fi">h_c = 2 × Area / c</span></p>
+  <p>Our triangle calculator automatically shows all three heights in the result. For an equilateral triangle with side a, the height = (a × √3) / 2. For an isosceles triangle, use the Pythagorean theorem with the base halved.</p>
+
+  <h3>Can three sides form a triangle?</h3>
+  <p>Three sides can form a triangle <strong>if and only if</strong> the sum of any two sides is greater than the third side. This is called the <strong>Triangle Inequality Theorem</strong>:</p>
+  <ul>
+    <li>a + b &gt; c</li>
+    <li>a + c &gt; b</li>
+    <li>b + c &gt; a</li>
+  </ul>
+  <p>For example: sides 3, 4, 5 form a valid triangle (3+4=7&gt;5 ✓). But sides 1, 2, 10 do NOT (1+2=3, which is not &gt;10 ✗). Our calculator checks this automatically and shows an error if the sides are invalid.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900&q=80&auto=format&fit=crop"
+         alt="Solve the triangle calculator — find missing side, area, and angles with step-by-step solutions">
+    <div class="img-overlay">
+      <span>Solve triangle calculator — isosceles, equilateral, right triangle, scalene with all missing values found</span>
+    </div>
+  </div>
+
+  <h3>How to find the value of x in a triangle?</h3>
+  <p>Finding x depends on what is given:</p>
+  <ul>
+    <li><strong>Angle sum</strong>: If two angles are given, x = 180° − A − B (angles must sum to 180°)</li>
+    <li><strong>Missing side</strong>: Use the Law of Cosines or Law of Sines depending on the given values</li>
+    <li><strong>Right triangle</strong>: Use Pythagorean theorem if x is a side, or inverse trig (arcsin, arccos, arctan) if x is an angle</li>
+  </ul>
+  <p>Enter your known values into the matching mode of our <strong>solve the triangle calculator</strong> and it finds x — along with all other unknowns — automatically.</p>
+
+  <div class="tip">
+    <p><strong>Triangle Types Quick Reference:</strong> <strong>Equilateral</strong> = all sides equal, all angles 60°. <strong>Isosceles</strong> = two sides equal, two angles equal. <strong>Scalene</strong> = all sides different, all angles different. <strong>Right</strong> = one angle exactly 90°. Our calculator handles all of these — just enter what you know.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Triangle Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find the missing side of a triangle?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The method depends on what you know. <strong>Right triangle</strong>: use Pythagoras (c²=a²+b²). <strong>Two sides + included angle (SAS)</strong>: use Law of Cosines (c²=a²+b²−2ab·cos(C)). <strong>Two angles + one side (ASA/AAS)</strong>: use Law of Sines (a/sin(A)=b/sin(B)). Select the matching mode in our calculator — enter what you know and all unknowns are found instantly with full steps.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to calculate the area of a triangle?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use one of these three formulas: 1. <strong>½ × base × height</strong> — if you know base and height. 2. <strong>Heron's Formula</strong>: Area=√(s(s−a)(s−b)(s−c)) where s=(a+b+c)/2 — if you know all 3 sides. 3. <strong>½ab·sin(C)</strong> — if you know 2 sides and the included angle. Our area of a triangle calculator applies the correct formula automatically and shows every step.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Can three sides form a triangle?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Three sides a, b, c form a valid triangle <strong>only if</strong> all three triangle inequality conditions hold: a+b&gt;c AND a+c&gt;b AND b+c&gt;a. Example: 3, 4, 5 → valid ✓ (3+4=7&gt;5). But 1, 2, 10 → invalid ✗ (1+2=3, not &gt;10). Our calculator checks this automatically and displays an error if the sides cannot form a triangle.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find the height of a triangle?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Height = (2 × Area) / base. First find the area (using Heron's formula from 3 sides, or ½bh if height is known, or ½ab·sin(C) from sides and angle). Then divide: h_a = 2·Area/a, h_b = 2·Area/b, h_c = 2·Area/c. Our calculator shows all three heights automatically in the result panel — no extra steps needed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find the value of x in a triangle?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>If x is a missing <strong>angle</strong>: use x = 180° − A − B (angle sum property). If x is a missing <strong>side</strong>: use the Law of Cosines or Law of Sines based on your known values. In a <strong>right triangle</strong>: use Pythagoras for a missing side, or inverse trig (sin⁻¹, cos⁻¹, tan⁻¹) for a missing angle. Select the matching mode in our calculator, enter your known values, and x is solved instantly.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is an isosceles triangle — and how to solve it?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>An <strong>isosceles triangle</strong> has two equal sides (legs) and two equal base angles. For our <strong>isosceles triangle calculator</strong>: enter the two equal sides and the base in SSS mode, or enter both equal sides and the apex angle in SAS mode. The calculator finds the base, all angles, area, and heights. For an equilateral triangle, all three sides are equal and all angles = 60° — just enter one side in SSS mode.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CALCS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h4M5 11h2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">sin, cos, tan & more</div>
+      </a>
+      <a href="/square-root-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><path d="M2 10l3-6 2 4 2-2 5 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Square Root Calc</div>
+        <div class="oc-desc">Radical & simplified form</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="11" r="2"/><path d="M13 3L3 13" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">6 calculation modes</div>
+      </a>
+      <a href="/fraction-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><path d="M8 2v12" stroke-linecap="round"/><circle cx="8" cy="4.5" r="1.5" fill="#8b5cf6"/><circle cx="8" cy="11.5" r="1.5" fill="#8b5cf6"/></svg></div>
+        <div class="oc-name">Fraction Calculator</div>
+        <div class="oc-desc">Simplify & convert</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+const DEG = Math.PI / 180;
+const RAD = 180 / Math.PI;
+let activeTab = 'sss';
+
+function toR(d){ return d * DEG; }
+function toD(r){ return r * RAD; }
+function fmt(n, dp=4){ if(isNaN(n)||!isFinite(n)) return '—'; return parseFloat(n.toFixed(dp)).toString(); }
+
+// ═══ TAB SWITCH ═══
+function switchTab(tab, btn){
+  activeTab = tab;
+  document.querySelectorAll('.mode-selector .ctab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['sss','sas','asa','aas','right'].forEach(t=>{
+    const el=document.getElementById('mode-'+t);
+    if(el) el.style.display = t===tab?'block':'none';
+  });
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display='none';
+}
+
+// ═══ SHOW RESULT ═══
+function showResult(sides, angles, area, perim, heights, steps){
+  const {a,b,c} = sides;
+  const {A,B,C} = angles;
+  const ha=heights.a, hb=heights.b, hc=heights.c;
+
+  // Update diagram
+  updateDiagram(a,b,c);
+
+  const cardsHTML = `
+    <div class="result-cards">
+      <div class="rc-card highlight"><div class="rc-lbl">Side a</div><div class="rc-val">${fmt(a)}</div></div>
+      <div class="rc-card highlight"><div class="rc-lbl">Side b</div><div class="rc-val">${fmt(b)}</div></div>
+      <div class="rc-card highlight"><div class="rc-lbl">Side c</div><div class="rc-val">${fmt(c)}</div></div>
+      <div class="rc-card"><div class="rc-lbl">Angle A</div><div class="rc-val" style="color:var(--orange);">${fmt(A,2)}°</div></div>
+      <div class="rc-card"><div class="rc-lbl">Angle B</div><div class="rc-val" style="color:var(--orange);">${fmt(B,2)}°</div></div>
+      <div class="rc-card"><div class="rc-lbl">Angle C</div><div class="rc-val" style="color:var(--orange);">${fmt(C,2)}°</div></div>
+      <div class="rc-card"><div class="rc-lbl">Area</div><div class="rc-val" style="color:var(--green);">${fmt(area,4)}</div><div class="rc-unit">sq units</div></div>
+      <div class="rc-card"><div class="rc-lbl">Perimeter</div><div class="rc-val">${fmt(perim,4)}</div></div>
+      <div class="rc-card"><div class="rc-lbl">Heights</div><div class="rc-val" style="font-size:13px;color:var(--purple);">${fmt(ha,3)}, ${fmt(hb,3)}, ${fmt(hc,3)}</div><div class="rc-unit">h_a, h_b, h_c</div></div>
+    </div>`;
+
+  const stepsHTML = steps.length ? `
+    <div class="steps-box">
+      <div class="steps-title"><svg width="13" height="13" fill="none" viewBox="0 0 13 13" stroke="currentColor" stroke-width="1.4"><path d="M2 4h9M2 7h7M2 10h5" stroke-linecap="round"/></svg> Step-by-Step Solution</div>
+      ${steps.map((s,i)=>`<div class="step-row"><span class="step-n">${i+1}.</span><div><div class="step-math">${s.math}</div><div>${s.note}</div></div></div>`).join('')}
+    </div>` : '';
+
+  document.getElementById('result-content').innerHTML = cardsHTML + stepsHTML;
+  const p = document.getElementById('result-panel');
+  p.classList.remove('show'); void p.offsetWidth; p.classList.add('show');
+}
+
+// ═══ UPDATE SVG DIAGRAM ═══
+function updateDiagram(a, b, c){
+  if(!a||!b||!c||isNaN(a)||isNaN(b)||isNaN(c)) return;
+  const W=260, H=160, pad=30;
+  const scale = Math.min((W-2*pad)/c, (H-2*pad)/b) * 0.85;
+  const Ax=pad, Ay=H-pad;
+  const Bx=pad+c*scale, By=H-pad;
+  const cosA=(b*b+c*c-a*a)/(2*b*c);
+  const Cx=pad+b*scale*Math.max(-0.98,Math.min(0.98,cosA));
+  const sinA=Math.sqrt(Math.max(0,1-cosA*cosA));
+  const Cy=(H-pad)-b*scale*sinA;
+  const pts=`${Ax},${Ay} ${Bx},${By} ${Cx},${Cy}`;
+  document.getElementById('tri-poly').setAttribute('points', pts);
+  const mx=(Ax+Bx)/2, my=Ay+14;
+  const bmx=(Ax+Cx)/2-12, bmy=(Ay+Cy)/2;
+  const amx=(Bx+Cx)/2+8, amy=(By+Cy)/2;
+  document.getElementById('lbl-c').setAttribute('x', mx);
+  document.getElementById('lbl-c').setAttribute('y', my);
+  document.getElementById('lbl-c').textContent=`c=${fmt(c,2)}`;
+  document.getElementById('lbl-b').setAttribute('x', bmx);
+  document.getElementById('lbl-b').setAttribute('y', bmy);
+  document.getElementById('lbl-b').textContent=`b=${fmt(b,2)}`;
+  document.getElementById('lbl-a').setAttribute('x', amx);
+  document.getElementById('lbl-a').setAttribute('y', amy);
+  document.getElementById('lbl-a').textContent=`a=${fmt(a,2)}`;
+}
+
+function showErr(msg){
+  const el=document.getElementById('err-msg');
+  el.textContent=msg||'Please check your inputs.';
+  el.style.display='block';
+}
+
+// ═══ MAIN CALCULATE ═══
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  try {
+    if(activeTab==='sss') solveSSS();
+    else if(activeTab==='sas') solveSAS();
+    else if(activeTab==='asa') solveASA();
+    else if(activeTab==='aas') solveAAS();
+    else solveRight();
+  } catch(e){ showErr('Could not solve — check your values form a valid triangle.'); }
+}
+
+function finalCalcs(a,b,c,A,B,C){
+  const s=(a+b+c)/2;
+  const area=Math.sqrt(Math.max(0,s*(s-a)*(s-b)*(s-c)));
+  const perim=a+b+c;
+  const ha=2*area/a, hb=2*area/b, hc=2*area/c;
+  return {area,perim,heights:{a:ha,b:hb,c:hc}};
+}
+
+// SSS
+function solveSSS(){
+  const a=parseFloat(document.getElementById('sss-a').value);
+  const b=parseFloat(document.getElementById('sss-b').value);
+  const c=parseFloat(document.getElementById('sss-c').value);
+  if([a,b,c].some(isNaN)||[a,b,c].some(v=>v<=0)){showErr('Enter 3 positive side lengths.');return;}
+  if(a+b<=c||a+c<=b||b+c<=a){showErr('These sides cannot form a triangle (Triangle Inequality violated).');return;}
+  const A=toD(Math.acos((b*b+c*c-a*a)/(2*b*c)));
+  const B=toD(Math.acos((a*a+c*c-b*b)/(2*a*c)));
+  const C=180-A-B;
+  const {area,perim,heights}=finalCalcs(a,b,c,A,B,C);
+  const steps=[
+    {math:`Given: a=${a}, b=${b}, c=${c}`, note:'Three sides known — use Law of Cosines for angles'},
+    {math:`cos(A) = (b²+c²−a²)/(2bc) = (${fmt(b*b)}+${fmt(c*c)}−${fmt(a*a)})/(2×${b}×${c}) = ${fmt((b*b+c*c-a*a)/(2*b*c),4)}`, note:'Law of Cosines'},
+    {math:`A = arccos(${fmt((b*b+c*c-a*a)/(2*b*c),4)}) = ${fmt(A,2)}°`, note:'Angle A'},
+    {math:`cos(B) = (a²+c²−b²)/(2ac) = ${fmt((a*a+c*c-b*b)/(2*a*c),4)}`, note:'Law of Cosines for B'},
+    {math:`B = ${fmt(B,2)}°`, note:'Angle B'},
+    {math:`C = 180° − A − B = 180° − ${fmt(A,2)}° − ${fmt(B,2)}° = ${fmt(C,2)}°`, note:'Angle sum property'},
+    {math:`s = (${a}+${b}+${c})/2 = ${fmt((a+b+c)/2,3)}`, note:"Semi-perimeter for Heron's"},
+    {math:`Area = √(s·(s−a)·(s−b)·(s−c)) = ${fmt(area,4)}`, note:"Heron's formula"},
+  ];
+  showResult({a,b,c},{A,B,C},area,perim,heights,steps);
+}
+
+// SAS
+function solveSAS(){
+  const a=parseFloat(document.getElementById('sas-a').value);
+  const b=parseFloat(document.getElementById('sas-b').value);
+  const C=parseFloat(document.getElementById('sas-C').value);
+  if([a,b,C].some(isNaN)||a<=0||b<=0||C<=0||C>=180){showErr('Enter valid sides and an angle between 0°–180°.');return;}
+  const c=Math.sqrt(a*a+b*b-2*a*b*Math.cos(toR(C)));
+  const A=toD(Math.acos((b*b+c*c-a*a)/(2*b*c)));
+  const B=180-A-C;
+  const {area,perim,heights}=finalCalcs(a,b,c,A,B,C);
+  const steps=[
+    {math:`Given: a=${a}, b=${b}, C=${C}°`, note:'Two sides + included angle — use Law of Cosines'},
+    {math:`c² = a²+b²−2ab·cos(C) = ${fmt(a*a)}+${fmt(b*b)}−2×${a}×${b}×cos(${C}°)`, note:'Law of Cosines'},
+    {math:`c² = ${fmt(c*c,4)} → c = ${fmt(c,4)}`, note:'Third side found'},
+    {math:`A = arccos((b²+c²−a²)/(2bc)) = ${fmt(A,2)}°`, note:'Law of Cosines for angle A'},
+    {math:`B = 180°−C−A = ${fmt(B,2)}°`, note:'Angle sum property'},
+    {math:`Area = ½·a·b·sin(C) = ½×${a}×${b}×sin(${C}°) = ${fmt(area,4)}`, note:'Area from two sides + angle'},
+  ];
+  showResult({a,b,c},{A,B,C},area,perim,heights,steps);
+}
+
+// ASA
+function solveASA(){
+  const A=parseFloat(document.getElementById('asa-A').value);
+  const B=parseFloat(document.getElementById('asa-B').value);
+  const c=parseFloat(document.getElementById('asa-c').value);
+  if([A,B,c].some(isNaN)||c<=0||A<=0||B<=0){showErr('Enter valid angles and side.');return;}
+  const C=180-A-B;
+  if(C<=0){showErr('Angles must sum to less than 180°.');return;}
+  const ratio=c/Math.sin(toR(C));
+  const a=ratio*Math.sin(toR(A));
+  const b=ratio*Math.sin(toR(B));
+  const {area,perim,heights}=finalCalcs(a,b,c,A,B,C);
+  const steps=[
+    {math:`Given: A=${A}°, B=${B}°, c=${c}`, note:'Two angles + included side (ASA)'},
+    {math:`C = 180°−${A}°−${B}° = ${fmt(C,2)}°`, note:'Third angle from angle sum'},
+    {math:`a/sin(A) = c/sin(C) → a = c·sin(A)/sin(C)`, note:'Law of Sines'},
+    {math:`a = ${fmt(c,3)}×sin(${A}°)/sin(${fmt(C,2)}°) = ${fmt(a,4)}`, note:'Side a found'},
+    {math:`b = c·sin(B)/sin(C) = ${fmt(b,4)}`, note:'Side b from Law of Sines'},
+    {math:`Area = ½·a·b·sin(C) = ${fmt(area,4)}`, note:'Area'},
+  ];
+  showResult({a,b,c},{A,B,C},area,perim,heights,steps);
+}
+
+// AAS
+function solveAAS(){
+  const A=parseFloat(document.getElementById('aas-A').value);
+  const B=parseFloat(document.getElementById('aas-B').value);
+  const a=parseFloat(document.getElementById('aas-a').value);
+  if([A,B,a].some(isNaN)||a<=0||A<=0||B<=0){showErr('Enter valid angles and side a.');return;}
+  const C=180-A-B;
+  if(C<=0){showErr('Angles must sum to less than 180°.');return;}
+  const ratio=a/Math.sin(toR(A));
+  const b=ratio*Math.sin(toR(B));
+  const c=ratio*Math.sin(toR(C));
+  const {area,perim,heights}=finalCalcs(a,b,c,A,B,C);
+  const steps=[
+    {math:`Given: A=${A}°, B=${B}°, a=${a}`, note:'Two angles + non-included side a (AAS)'},
+    {math:`C = 180°−${A}°−${B}° = ${fmt(C,2)}°`, note:'Third angle from angle sum'},
+    {math:`a/sin(A) = b/sin(B) = c/sin(C)`, note:'Law of Sines ratio'},
+    {math:`b = a·sin(B)/sin(A) = ${fmt(a)}×sin(${B}°)/sin(${A}°) = ${fmt(b,4)}`, note:'Side b'},
+    {math:`c = a·sin(C)/sin(A) = ${fmt(c,4)}`, note:'Side c'},
+    {math:`Area = ${fmt(area,4)} sq units`, note:"Heron's formula"},
+  ];
+  showResult({a,b,c},{A,B,C},area,perim,heights,steps);
+}
+
+// RIGHT TRIANGLE
+function solveRight(){
+  let a=parseFloat(document.getElementById('rt-a').value);
+  let b=parseFloat(document.getElementById('rt-b').value);
+  let c=parseFloat(document.getElementById('rt-c').value);
+  let A=parseFloat(document.getElementById('rt-A').value);
+  let B=parseFloat(document.getElementById('rt-B').value);
+  const C=90;
+  const steps=[];
+  const known=[!isNaN(a)&&a>0,!isNaN(b)&&b>0,!isNaN(c)&&c>0,!isNaN(A)&&A>0,!isNaN(B)&&B>0];
+  const knownCount=known.filter(Boolean).length;
+
+  if(knownCount<2){showErr('Enter at least 2 known values for a right triangle.');return;}
+
+  if(known[0]&&known[1]){ // a and b
+    c=Math.sqrt(a*a+b*b);
+    A=toD(Math.atan2(a,b)); B=90-A;
+    steps.push({math:`c = √(a²+b²) = √(${fmt(a*a)}+${fmt(b*b)}) = ${fmt(c,4)}`, note:'Pythagorean theorem'});
+    steps.push({math:`A = arctan(a/b) = arctan(${fmt(a)}/${fmt(b)}) = ${fmt(A,2)}°`, note:'Inverse tangent'});
+    steps.push({math:`B = 90° − A = ${fmt(B,2)}°`, note:'Complementary angles'});
+  } else if(known[0]&&known[2]){ // a and c
+    b=Math.sqrt(c*c-a*a);
+    if(b<=0||isNaN(b)){showErr('Hypotenuse must be longer than leg a.');return;}
+    A=toD(Math.asin(a/c)); B=90-A;
+    steps.push({math:`b = √(c²−a²) = √(${fmt(c*c)}−${fmt(a*a)}) = ${fmt(b,4)}`, note:'Pythagorean theorem'});
+    steps.push({math:`A = arcsin(a/c) = ${fmt(A,2)}°`, note:'Inverse sine'});
+    steps.push({math:`B = 90°−A = ${fmt(B,2)}°`, note:''});
+  } else if(known[1]&&known[2]){ // b and c
+    a=Math.sqrt(c*c-b*b);
+    if(a<=0||isNaN(a)){showErr('Hypotenuse must be longer than leg b.');return;}
+    B=toD(Math.asin(b/c)); A=90-B;
+    steps.push({math:`a = √(c²−b²) = ${fmt(a,4)}`, note:'Pythagorean theorem'});
+    steps.push({math:`B = arcsin(b/c) = ${fmt(B,2)}°`, note:'Inverse sine'});
+    steps.push({math:`A = 90°−B = ${fmt(A,2)}°`, note:''});
+  } else if(known[3]&&known[0]){ // A and a
+    A=parseFloat(document.getElementById('rt-A').value);
+    B=90-A; b=a/Math.tan(toR(A)); c=a/Math.sin(toR(A));
+    steps.push({math:`B = 90°−${A}° = ${fmt(B,2)}°`, note:'Complementary angles'});
+    steps.push({math:`b = a/tan(A) = ${fmt(a)}/tan(${A}°) = ${fmt(b,4)}`, note:'Tangent ratio'});
+    steps.push({math:`c = a/sin(A) = ${fmt(a)}/sin(${A}°) = ${fmt(c,4)}`, note:'Sine ratio'});
+  } else if(known[3]&&known[1]){ // A and b
+    A=parseFloat(document.getElementById('rt-A').value);
+    B=90-A; a=b*Math.tan(toR(A)); c=b/Math.cos(toR(A));
+    steps.push({math:`B = 90°−${A}° = ${fmt(B,2)}°`, note:''});
+    steps.push({math:`a = b·tan(A) = ${fmt(b)}×tan(${A}°) = ${fmt(a,4)}`, note:'Tangent ratio'});
+    steps.push({math:`c = b/cos(A) = ${fmt(c,4)}`, note:'Cosine ratio'});
+  } else if(known[3]&&known[2]){ // A and c
+    A=parseFloat(document.getElementById('rt-A').value);
+    B=90-A; a=c*Math.sin(toR(A)); b=c*Math.cos(toR(A));
+    steps.push({math:`a = c·sin(A) = ${fmt(c)}×sin(${A}°) = ${fmt(a,4)}`, note:'Sine ratio'});
+    steps.push({math:`b = c·cos(A) = ${fmt(c)}×cos(${A}°) = ${fmt(b,4)}`, note:'Cosine ratio'});
+  } else {
+    showErr('This combination of values cannot be solved. Try entering different known values.');return;
+  }
+
+  const area=0.5*a*b;
+  const perim=a+b+c;
+  const heights={a:2*area/a, b:2*area/b, c:2*area/c};
+  steps.push({math:`Area = ½·a·b = ½×${fmt(a,3)}×${fmt(b,3)} = ${fmt(area,4)}`, note:'Right triangle area'});
+  showResult({a,b,c},{A,B,C:90},area,perim,heights,steps);
+}
+
+function faq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

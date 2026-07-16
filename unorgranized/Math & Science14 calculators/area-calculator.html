@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Calculator — 2D Area, Surface Area, Body & Roof | SpeedCalculator.net</title>
+<meta name="description" content="Free area calculator online. Calculate 2D area (circle, triangle, rectangle, hexagon, polygon) and 3D surface area (cylinder, cone, prism, pyramid). Also body surface area and roof area calculators.">
+<meta name="keywords" content="area calculator, surface area calculator, circle area calculator, triangle area calculator, trapezoid area calculator, rectangle area calculator, hexagon area calculator, cylinder surface area calculator, cone surface area calculator, rectangular prism surface area calculator, triangular prism surface area calculator, triangular pyramid surface area calculator, body surface area calculator, roof area calculator, right triangle area calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/area-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Area Calculator",
+  "url":"https://www.speedcalculator.net/area-calculator/",
+  "description":"Free area calculator — 2D shapes, 3D surface area, body surface area and roof area with formulas and steps",
+  "applicationCategory":"UtilityApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How to find the area of a triangle calculator?","acceptedAnswer":{"@type":"Answer","text":"Use the formula Area = ½ × base × height. Enter the base and height in our Triangle area calculator. If you only know 3 sides, use Heron's formula: s=(a+b+c)/2, Area=√(s(s-a)(s-b)(s-c)). For a right triangle, the two legs ARE the base and height, so Area = ½ × leg1 × leg2."}},
+    {"@type":"Question","name":"How to find surface area of a triangular pyramid calculator?","acceptedAnswer":{"@type":"Answer","text":"A triangular pyramid (tetrahedron) has 4 triangular faces. Total surface area = base area + 3 × lateral face area. If all faces are equilateral triangles with side a: SA = √3 × a². Use our Triangular Pyramid surface area calculator — enter base edge and slant height for instant results."}},
+    {"@type":"Question","name":"How to find length and width with area calculator?","acceptedAnswer":{"@type":"Answer","text":"If you know the area and one dimension, rearrange the formula. For a rectangle: Length = Area ÷ Width. Enter the area and one dimension — our calculator solves for the missing one. Example: Area=120 ft², Width=10 ft → Length = 120÷10 = 12 ft."}},
+    {"@type":"Question","name":"How to calculate body surface area?","acceptedAnswer":{"@type":"Answer","text":"Body surface area (BSA) is calculated using the Du Bois formula: BSA (m²) = 0.007184 × Height(cm)^0.725 × Weight(kg)^0.425. Average adult BSA is approximately 1.7 m² (male) and 1.6 m² (female). BSA is used in medicine to calculate drug dosages."}},
+    {"@type":"Question","name":"How to calculate cylinder surface area?","acceptedAnswer":{"@type":"Answer","text":"Total surface area of a cylinder = 2πr² + 2πrh, where r=radius and h=height. This includes both circular ends (2πr²) plus the lateral surface (2πrh). Lateral only: SA = 2πrh. Example: r=3, h=10 → Total SA = 2π(9) + 2π(3)(10) = 56.55 + 188.5 = 245.04 sq units."}}
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--red:#ef4444;--teal:#06b6d4;--pink:#ec4899;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.35fr;gap:38px;align-items:start;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,4vw,54px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:20px;max-width:420px;}
+.badges{display:flex;gap:7px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.badge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+
+/* CALC CARD */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),var(--green),var(--purple),transparent);}
+.calc-head{padding:15px 20px 13px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:7px;}
+.calc-htitle span{color:var(--accent2);}
+.ht-icon{width:26px;height:26px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.ht-icon svg{width:13px;height:13px;stroke:var(--accent2);}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 11px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:14px 20px 20px;}
+
+/* MAIN TABS: 2D / 3D / NICHE */
+.main-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--bg3);border-radius:var(--radius);padding:4px;margin-bottom:14px;}
+.main-tab{border:none;border-radius:10px;background:transparent;color:var(--text3);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:all .2s;padding:8px 4px;text-align:center;line-height:1.3;}
+.main-tab.active{background:var(--accent);color:#fff;}
+.main-tab:hover:not(.active){color:var(--text2);}
+
+/* SHAPE GRID */
+.shape-grid-2d{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:12px;}
+.shape-grid-3d{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:12px;}
+.shape-grid-niche{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:12px;}
+@media(max-width:380px){.shape-grid-2d,.shape-grid-3d,.shape-grid-niche{grid-template-columns:repeat(2,1fr);}}
+
+.shape-btn{border:1px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);cursor:pointer;transition:all .2s;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.shape-btn:hover{border-color:rgba(59,130,246,.35);}
+.shape-btn.active{border-color:var(--accent);background:rgba(59,130,246,.1);}
+.shape-btn.active .s-name{color:var(--accent2);}
+.s-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;}
+.s-icon svg{width:28px;height:28px;}
+.s-name{font-size:9px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--text3);text-align:center;transition:color .2s;line-height:1.3;}
+
+/* UNIT ROW */
+.unit-row{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.unit-lbl{font-size:11px;font-weight:700;color:var(--text3);white-space:nowrap;}
+.unit-select{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:5px 9px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;outline:none;}
+.unit-select:focus{border-color:var(--accent);}
+
+/* PREVIEW + FIELDS */
+.shape-preview{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;min-height:80px;}
+.shape-preview svg{max-width:100%;height:auto;}
+
+.frow{display:grid;gap:7px;margin-bottom:7px;}
+.frow.c1{grid-template-columns:1fr;}
+.frow.c2{grid-template-columns:1fr 1fr;}
+.frow.c3{grid-template-columns:1fr 1fr 1fr;}
+@media(max-width:360px){.frow.c3{grid-template-columns:1fr 1fr;}}
+.fgrp label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;display:block;}
+.finp{display:flex;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.finp:focus-within{border-color:var(--accent);}
+.finp input{flex:1;background:transparent;border:none;outline:none;padding:9px 8px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);min-width:0;width:100%;text-align:center;}
+.finp input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.finp .sfx{padding:0 8px;display:flex;align-items:center;font-size:10px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);white-space:nowrap;}
+
+.inp-desc{font-size:11px;color:var(--text2);margin-bottom:10px;padding:8px 11px;background:rgba(59,130,246,.05);border-radius:var(--radius-sm);border-left:3px solid var(--accent);display:flex;gap:7px;line-height:1.5;}
+.inp-desc::before{content:'ℹ';color:var(--accent2);flex-shrink:0;font-size:12px;}
+
+/* RADIO CHOICE */
+.radio-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.radio-chip{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 12px;cursor:pointer;font-size:11px;font-weight:600;color:var(--text2);transition:all .2s;}
+.radio-chip.selected{background:var(--accent);border-color:var(--accent);color:#fff;}
+.radio-chip input{display:none;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:13px 20px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;line-height:1;box-shadow:0 4px 20px rgba(59,130,246,.25);}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(59,130,246,.35);}
+.calc-btn svg{width:17px;height:17px;flex-shrink:0;}
+
+/* RESULT */
+.result-panel{display:none;margin-top:12px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(96,165,250,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:15px;text-align:center;margin-bottom:9px;position:relative;overflow:hidden;}
+.result-main::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--green),var(--purple));}
+.r-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:3px;}
+.r-big{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,8vw,50px);font-weight:900;color:var(--green);line-height:1;letter-spacing:-1px;}
+.r-unit{font-size:13px;color:var(--accent2);font-weight:600;margin-top:2px;}
+.r-extra{font-size:12px;color:var(--text3);margin-top:5px;}
+.r-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.r-chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:600;color:var(--text2);}
+.r-chip b{color:var(--text);}
+.steps-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 13px;}
+.steps-hd{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;display:flex;align-items:center;gap:5px;}
+.step-r{display:flex;gap:7px;padding:4px 0;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2);line-height:1.6;}
+.step-r:last-child{border:none;}
+.step-n{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--accent2);min-width:18px;}
+.step-m{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--text);font-weight:600;}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:8px 13px;font-size:13px;color:#f87171;margin-top:8px;display:none;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:14px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* FORMULA MEGA GRID */
+.fml-section{margin-bottom:32px;}
+.fml-section-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--text);letter-spacing:.03em;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.fml-section-title span{font-size:12px;font-weight:600;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:20px;padding:2px 10px;color:var(--accent2);}
+.fml-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;}
+@media(max-width:720px){.fml-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:400px){.fml-grid{grid-template-columns:1fr;}}
+.fc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;transition:all .2s;cursor:pointer;}
+.fc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.fc-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.fc-icon svg{width:30px;height:30px;}
+.fc-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.fc-formula{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--accent2);background:var(--bg3);border-radius:4px;padding:5px 8px;line-height:1.5;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 8px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:260px;}
+
+/* OC */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Area Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <div>
+        <div class="eyebrow"><span class="dot"></span> 2D Area · 3D Surface · Niche Calcs</div>
+        <h1>Area<em>Calculator</em></h1>
+        <p class="hero-sub">Calculate 2D area for any shape, 3D surface area for solids, plus body surface area and roof area. Full formulas and step-by-step solutions. Free, instant, no signup.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">7 × 2D Shapes</span>
+          <span class="badge p">5 × 3D Solids</span>
+          <span class="badge o">BSA + Roof</span>
+          <span class="badge">Unit Conversion</span>
+        </div>
+      </div>
+
+      <!-- CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-htitle">
+            <div class="ht-icon">
+              <svg fill="none" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h4M7 5v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            Area <span>Calculator</span>
+          </div>
+          <div class="live-pill">✦ Formula + Steps</div>
+        </div>
+
+        <div class="calc-body">
+
+          <!-- MAIN TABS -->
+          <div class="main-tabs">
+            <button class="main-tab active" onclick="switchMain('2d',this)">2D Area</button>
+            <button class="main-tab" onclick="switchMain('3d',this)">3D Surface</button>
+            <button class="main-tab" onclick="switchMain('niche',this)">BSA & Roof</button>
+          </div>
+
+          <!-- ══ 2D SHAPES ══ -->
+          <div id="panel-2d">
+            <div class="shape-grid-2d" id="grid-2d"></div>
+            <div class="unit-row">
+              <span class="unit-lbl">Unit:</span>
+              <select class="unit-select" id="unit-2d">
+                <option value="m">Meters (m)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="mm">Millimeters (mm)</option>
+                <option value="ft" selected>Feet (ft)</option>
+                <option value="in">Inches (in)</option>
+                <option value="yd">Yards (yd)</option>
+              </select>
+            </div>
+            <div class="shape-preview" id="preview-2d"></div>
+            <div id="fields-2d"></div>
+          </div>
+
+          <!-- ══ 3D SHAPES ══ -->
+          <div id="panel-3d" style="display:none;">
+            <div class="shape-grid-3d" id="grid-3d"></div>
+            <div class="unit-row">
+              <span class="unit-lbl">Unit:</span>
+              <select class="unit-select" id="unit-3d">
+                <option value="m">Meters (m)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="ft" selected>Feet (ft)</option>
+                <option value="in">Inches (in)</option>
+              </select>
+              <span class="unit-lbl" style="color:var(--text3);">→ result in sq units²</span>
+            </div>
+            <div class="shape-preview" id="preview-3d"></div>
+            <div id="fields-3d"></div>
+          </div>
+
+          <!-- ══ NICHE ══ -->
+          <div id="panel-niche" style="display:none;">
+            <div class="shape-grid-niche" id="grid-niche"></div>
+            <div class="shape-preview" id="preview-niche"></div>
+            <div id="fields-niche"></div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please enter valid positive values in all fields.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="17" height="17" fill="none" viewBox="0 0 17 17" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="8.5" cy="8.5" r="6.5"/><path d="M5.5 8.5l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Area
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div id="result-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">7</div><div class="stat-lbl">2D Shapes</div></div>
+      <div class="stat-item"><div class="stat-val">5</div><div class="stat-lbl">3D Solids</div></div>
+      <div class="stat-item"><div class="stat-val">BSA</div><div class="stat-lbl">Body + Roof</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULA REFERENCE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Formula Reference</div>
+    <h2 class="sec-title">All <span>Area Formulas</span></h2>
+    <p class="sec-sub">Click any shape card to jump directly to that calculator with one tap.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format&fit=crop"
+           alt="Area calculator formulas for 2D shapes and 3D surface area — circle, rectangle, cylinder, cone">
+      <div class="img-overlay"><span>Area and surface area formulas — 2D shapes, 3D solids, body surface area, and roof area calculations</span></div>
+    </div>
+
+    <!-- 2D -->
+    <div class="fml-section">
+      <div class="fml-section-title">2D Area Formulas <span>7 shapes</span></div>
+      <div class="fml-grid">
+        <div class="fc" onclick="jumpTo('2d','circle')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#3b82f6" stroke-width="2"/><line x1="15" y1="15" x2="27" y2="15" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="2 1"/></svg></div>
+          <div class="fc-name">Circle Area</div>
+          <div class="fc-formula">A = π × r²</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','rectangle')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><rect x="2" y="8" width="26" height="14" rx="1" stroke="#10b981" stroke-width="2"/></svg></div>
+          <div class="fc-name">Rectangle Area</div>
+          <div class="fc-formula">A = L × W</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','triangle')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="15,2 28,28 2,28" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></div>
+          <div class="fc-name">Triangle Area</div>
+          <div class="fc-formula">A = ½ × b × h</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','righttri')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="2,28 2,2 28,28" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linejoin="round"/><rect x="2" y="23" width="5" height="5" stroke="#f59e0b" stroke-width="1" fill="none"/></svg></div>
+          <div class="fc-name">Right Triangle</div>
+          <div class="fc-formula">A = ½ × a × b</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','trapezoid')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="8,26 22,26 28,6 2,6" stroke="#ec4899" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></div>
+          <div class="fc-name">Trapezoid Area</div>
+          <div class="fc-formula">A = ½(a+b)×h</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','hexagon')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="15,2 26,8.5 26,21.5 15,28 4,21.5 4,8.5" stroke="#06b6d4" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></div>
+          <div class="fc-name">Hexagon Area</div>
+          <div class="fc-formula">A = (3√3/2)×s²</div>
+        </div>
+        <div class="fc" onclick="jumpTo('2d','polygon')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="15,2 27,10 22,25 8,25 3,10" stroke="#a78bfa" stroke-width="2" fill="none" stroke-linejoin="round"/></svg></div>
+          <div class="fc-name">Polygon Area</div>
+          <div class="fc-formula">A = (n×s²)/(4×tan(π/n))</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D -->
+    <div class="fml-section">
+      <div class="fml-section-title">3D Surface Area Formulas <span>5 solids</span></div>
+      <div class="fml-grid">
+        <div class="fc" onclick="jumpTo('3d','cylinder')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><ellipse cx="15" cy="8" rx="11" ry="4" stroke="#10b981" stroke-width="1.8"/><ellipse cx="15" cy="22" rx="11" ry="4" stroke="#10b981" stroke-width="1.8"/><line x1="4" y1="8" x2="4" y2="22" stroke="#10b981" stroke-width="1.8"/><line x1="26" y1="8" x2="26" y2="22" stroke="#10b981" stroke-width="1.8"/></svg></div>
+          <div class="fc-name">Cylinder SA</div>
+          <div class="fc-formula">SA = 2πr² + 2πrh</div>
+        </div>
+        <div class="fc" onclick="jumpTo('3d','cone')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><ellipse cx="15" cy="24" rx="11" ry="4" stroke="#f59e0b" stroke-width="1.8"/><line x1="4" y1="24" x2="15" y2="4" stroke="#f59e0b" stroke-width="1.8"/><line x1="26" y1="24" x2="15" y2="4" stroke="#f59e0b" stroke-width="1.8"/></svg></div>
+          <div class="fc-name">Cone SA</div>
+          <div class="fc-formula">SA = πr² + πrl</div>
+        </div>
+        <div class="fc" onclick="jumpTo('3d','rectprism')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><rect x="3" y="12" width="18" height="14" rx="1" stroke="#8b5cf6" stroke-width="1.8"/><path d="M3 12l6-8h18l-6 8" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/><line x1="21" y1="4" x2="21" y2="26" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
+          <div class="fc-name">Rect Prism SA</div>
+          <div class="fc-formula">SA = 2(lw+lh+wh)</div>
+        </div>
+        <div class="fc" onclick="jumpTo('3d','triprism')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="15,3 25,26 5,26" stroke="#ec4899" stroke-width="1.8" fill="none" stroke-linejoin="round"/><line x1="15" y1="3" x2="20" y2="12" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="2 2"/><line x1="25" y1="26" x2="28" y2="18" stroke="#ec4899" stroke-width="1.5"/><line x1="5" y1="26" x2="2" y2="18" stroke="#ec4899" stroke-width="1.5"/><line x1="2" y1="18" x2="28" y2="18" stroke="#ec4899" stroke-width="1.5"/></svg></div>
+          <div class="fc-name">Tri Prism SA</div>
+          <div class="fc-formula">SA = bh + (a+b+c)×l</div>
+        </div>
+        <div class="fc" onclick="jumpTo('3d','tripyramid')">
+          <div class="fc-icon"><svg viewBox="0 0 30 30" fill="none"><polygon points="15,2 28,26 2,26" stroke="#06b6d4" stroke-width="1.8" fill="none" stroke-linejoin="round"/><line x1="15" y1="2" x2="15" y2="26" stroke="#67e8f9" stroke-width="1.2" stroke-dasharray="2 2"/><line x1="15" y1="26" x2="22" y2="18" stroke="#67e8f9" stroke-width="1.2"/></svg></div>
+          <div class="fc-name">Tri Pyramid SA</div>
+          <div class="fc-formula">SA = A_base + 3×A_face</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE + FAQ -->
+<div class="container">
+<div class="article">
+
+  <h2>Area Calculator — Complete Guide</h2>
+  <p>Our <strong>area calculator</strong> covers every type of area calculation — from simple 2D geometric shapes to complex 3D surface area, body surface area, and roof area. Each calculation shows the formula used with your values substituted in, plus step-by-step working, and automatic unit conversions.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&auto=format&fit=crop"
+         alt="Area calculator online — surface area calculator for construction, geometry and home renovation">
+    <div class="img-overlay"><span>Area and surface area calculator — used in construction, architecture, medicine, and everyday geometry</span></div>
+  </div>
+
+  <h2>2D Area Formulas</h2>
+
+  <h3>Circle Area Calculator</h3>
+  <p>Formula: <span class="fi">A = π × r²</span>. If you know the diameter (d), use r = d/2. The area of a circle grows with the square of the radius — doubling the radius quadruples the area.</p>
+  <div class="ex-box">
+    <h4>📘 Example — Pool with 5m radius</h4>
+    <p>A = π × 5² = 3.14159 × 25 = <strong>78.54 m²</strong><br>For tiling: buy at least 87 m² (add 10% for waste)</p>
+  </div>
+
+  <h3>How to Find the Area of a Triangle</h3>
+  <p>For a basic triangle: <span class="fi">A = ½ × base × height</span>. Height must be perpendicular to the base. For a right triangle: the two legs ARE base and height, so <span class="fi">A = ½ × leg₁ × leg₂</span>. For any triangle when 3 sides are known, use Heron's formula: <span class="fi">A = √(s(s−a)(s−b)(s−c))</span> where s = (a+b+c)/2.</p>
+
+  <h3>Hexagon and Polygon Area</h3>
+  <p>Regular hexagon: <span class="fi">A = (3√3/2) × s²</span> where s is the side length. Regular polygon with n sides: <span class="fi">A = (n × s²) / (4 × tan(π/n))</span>. Hexagons appear in honeycombs, floor tiles, and architectural designs.</p>
+
+  <h2>3D Surface Area Calculator</h2>
+
+  <h3>Cylinder Surface Area Calculator</h3>
+  <p>Total SA = <span class="fi">2πr² + 2πrh</span> (two circles + lateral surface). Lateral only = <span class="fi">2πrh</span>. Used for canning, pipe insulation, and tank lining calculations.</p>
+
+  <h3>Cone Surface Area Calculator</h3>
+  <p>Total SA = <span class="fi">πr² + πrl</span> where l = slant height = √(r²+h²). Lateral only = πrl. Used in ice cream cone design, traffic cones, and funnel dimensions.</p>
+
+  <h3>How to Find Surface Area of a Triangular Pyramid</h3>
+  <p>A triangular pyramid has 4 triangular faces. Total SA = <span class="fi">base area + 3 × lateral face area</span>. For a regular triangular pyramid with equilateral base of side a and slant height l: SA = (√3/4)a² + (3/2)al. Our calculator handles both regular and irregular cases.</p>
+
+  <h2>Body Surface Area (BSA) Calculator</h2>
+  <p>Body surface area is used in medicine to calculate drug dosages (especially chemotherapy), renal clearance, and burn treatment coverage. The most widely used formula is the <strong>Du Bois formula</strong>:</p>
+  <p><span class="fi">BSA = 0.007184 × H^0.725 × W^0.425</span> (H in cm, W in kg)</p>
+  <p>Average adult BSA: Male ≈ 1.9 m², Female ≈ 1.6 m². Our BSA calculator also shows the Mosteller formula (simpler, also widely used): BSA = √(H(cm) × W(kg) / 3600).</p>
+
+  <h2>Roof Area Calculator</h2>
+  <p>Roof area is calculated from the footprint area × pitch factor. The pitch factor accounts for the roof's slope. For a gabled roof: <span class="fi">Roof Area = Footprint × Pitch Factor</span>. Common pitch factors: flat (1.00), 4/12 pitch (1.054), 6/12 pitch (1.118), 8/12 pitch (1.202), 12/12 pitch (1.414). Use our roof calculator to find total area for roofing materials.</p>
+
+  <div class="tip">
+    <p><strong>How to find length and width from area:</strong> Rearrange the rectangle formula. If Area = L × W, then Length = Area ÷ Width. Example: a room with 120 ft² area and 10 ft width → Length = 120 ÷ 10 = <strong>12 ft</strong>. Enter area and one dimension in our rectangle mode to find the other.</p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop"
+         alt="Roof area calculator and surface area calculator for construction and home renovation projects">
+    <div class="img-overlay"><span>Roof area calculator — find total roof surface area for shingles, tiles, and waterproofing material estimates</span></div>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Area Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find the area of a triangle calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use <strong>A = ½ × base × height</strong> where height is perpendicular to the base. Select Triangle in our 2D calculator, enter base and height, and click Calculate. For a <strong>right triangle</strong>, the two legs are the base and height: A = ½ × leg₁ × leg₂ (no separate height needed). If you only know 3 sides, our calculator applies Heron's formula automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find surface area of a triangular pyramid calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A triangular pyramid has 4 triangular faces — 1 base + 3 lateral faces. <strong>Total SA = base area + 3 × lateral face area</strong>. For a regular triangular pyramid: base area = (√3/4)a², lateral face area = ½ × a × slant height. Select Triangular Pyramid in our 3D Surface Area section, enter base edge and slant height, and get the total surface area with step-by-step formula breakdown.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to find length and width with area calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Rearrange the rectangle formula: <strong>Length = Area ÷ Width</strong> (or Width = Area ÷ Length). Example: Area = 150 ft², Width = 10 ft → Length = 150 ÷ 10 = <strong>15 ft</strong>. You can also use our rectangle calculator — enter two knowns (e.g. area and width) and the calculator finds the third. Alternatively, if only area is known and the shape is a square: side = √Area.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to calculate cylinder surface area?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>Total SA = 2πr² + 2πrh</strong> (two circular ends + lateral surface). Lateral surface only = 2πrh. Example: cylinder r=3cm, h=10cm → Total SA = 2π(9) + 2π(3)(10) = 56.55 + 188.5 = <strong>245.04 cm²</strong>. Use our Cylinder SA calculator in the 3D tab — choose "Total" or "Lateral Only" before calculating.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to calculate body surface area (BSA)?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The most common formula is the <strong>Du Bois formula: BSA = 0.007184 × H^0.725 × W^0.425</strong> (H in cm, W in kg). Average adult BSA is 1.7–1.9 m². BSA is used in medicine for chemotherapy dosing and renal function assessment. The simpler <strong>Mosteller formula: BSA = √(H(cm) × W(kg) / 3600)</strong> is also widely used and gives similar results. Select BSA in our Niche tab.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How to calculate roof area for roofing materials?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Measure the footprint (floor area below the roof), then multiply by the pitch factor based on the slope. <strong>Pitch factor</strong> for common pitches: 4/12 = 1.054, 6/12 = 1.118, 8/12 = 1.202, 12/12 = 1.414. Example: 1200 ft² footprint, 6/12 pitch → Roof area = 1200 × 1.118 = <strong>1342 ft²</strong>. Add 10–15% for waste. Use our Roof Area calculator in the Niche tab.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CALCS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/triangle-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><path d="M2 13L8 2l6 11H2z" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Triangle Calculator</div>
+        <div class="oc-desc">SSS, SAS, ASA modes</div>
+      </a>
+      <a href="/right-triangle-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><path d="M2 13L2 2l11 11H2z" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Right Triangle Calc</div>
+        <div class="oc-desc">Pythagoras + trig</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="11" r="2"/><path d="M13 3L3 13" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">6 percentage modes</div>
+      </a>
+      <a href="/scientific-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 5h6M5 8h4M5 11h2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Scientific Calculator</div>
+        <div class="oc-desc">sin, cos, tan & more</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+const PI=Math.PI, SQRT3=Math.sqrt(3);
+let activeMain='2d', active2d='circle', active3d='cylinder', activeNiche='bsa';
+let cylType='total';
+
+function fmt(n,dp=4){if(isNaN(n)||!isFinite(n))return'—';return parseFloat(n.toFixed(dp)).toString();}
+
+/* ════ UNIT CONVERSIONS ════ */
+const U2M2={m:1,cm:1e-4,mm:1e-6,ft:0.0929,in:6.452e-4,yd:0.8361};
+const UL={m:'m²',cm:'cm²',mm:'mm²',ft:'ft²',in:'in²',yd:'yd²'};
+
+/* ════ 2D SHAPES CONFIG ════ */
+const S2D={
+  circle:{name:'Circle',formula:'π·r²',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><circle cx="80" cy="40" r="33" stroke="#3b82f6" stroke-width="2" fill="rgba(59,130,246,.06)"/><line x1="80" y1="40" x2="113" y2="40" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3 2"/><text x="93" y="35" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#60a5fa" font-weight="700">r</text></svg>`,
+    fields:[{id:'r',label:'Radius (r)',ph:'5'}],
+    desc:'Enter radius. Diameter known? r = diameter ÷ 2.',
+    calc(v){const r=v.r;const A=PI*r*r;return{A,extra:`Circumference = ${fmt(2*PI*r,3)}`,steps:[{m:`A = π × r² = π × ${r}² = π × ${r*r}`,n:'Circle area formula'},{m:`A = ${fmt(A,4)}`,n:'Multiply by π'}]};}
+  },
+  rectangle:{name:'Rectangle',formula:'L×W',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><rect x="15" y="15" width="130" height="50" rx="2" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.06)"/><text x="80" y="44" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" font-weight="700" text-anchor="middle">Length × Width</text></svg>`,
+    fields:[{id:'l',label:'Length (L)',ph:'8'},{id:'w',label:'Width (W)',ph:'5'}],
+    desc:'Enter length and width. Use feet for square footage calculations.',
+    calc(v){const{l,w}=v;const A=l*w;return{A,extra:`Perimeter = ${fmt(2*(l+w),3)}`,steps:[{m:`A = L × W = ${l} × ${w}`,n:'Rectangle area'},{m:`A = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  triangle:{name:'Triangle',formula:'½·b·h',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="80,5 150,75 10,75" stroke="#8b5cf6" stroke-width="2" fill="rgba(139,92,246,.06)" stroke-linejoin="round"/><line x1="80" y1="5" x2="80" y2="75" stroke="#c4b5fd" stroke-width="1.2" stroke-dasharray="3 2"/><text x="85" y="50" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#c4b5fd" font-weight="700">h</text><text x="80" y="80" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">base</text></svg>`,
+    fields:[{id:'b',label:'Base (b)',ph:'10'},{id:'h',label:'Height (h)',ph:'6'}],
+    desc:'Height must be perpendicular to the base — not the slant side.',
+    calc(v){const{b,h}=v;const A=0.5*b*h;return{A,steps:[{m:`A = ½ × base × height = ½ × ${b} × ${h}`,n:'Triangle area formula'},{m:`A = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  righttri:{name:'Right Tri.',formula:'½·a·b',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="15,75 15,5 145,75" stroke="#f59e0b" stroke-width="2" fill="rgba(245,158,11,.06)" stroke-linejoin="round"/><rect x="15" y="62" width="13" height="13" stroke="#f59e0b" stroke-width="1.5" fill="none"/><text x="12" y="45" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" font-weight="700">a</text><text x="78" y="80" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" font-weight="700">b</text></svg>`,
+    fields:[{id:'a',label:'Leg a',ph:'3'},{id:'b',label:'Leg b',ph:'4'}],
+    desc:'Both legs of the right triangle are the base and height. 90° is at the corner between them.',
+    calc(v){const{a,b}=v;const A=0.5*a*b;const hyp=Math.sqrt(a*a+b*b);return{A,extra:`Hypotenuse = ${fmt(hyp,4)}`,steps:[{m:`A = ½ × leg_a × leg_b = ½ × ${a} × ${b}`,n:'Right triangle area — legs are base and height'},{m:`A = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  trapezoid:{name:'Trapezoid',formula:'½(a+b)·h',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="45,10 115,10 145,70 15,70" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.06)" stroke-linejoin="round"/><line x1="80" y1="10" x2="80" y2="70" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="3 2"/><text x="85" y="45" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f9a8d4" font-weight="700">h</text></svg>`,
+    fields:[{id:'a',label:'Base a (top)',ph:'6'},{id:'b',label:'Base b (bottom)',ph:'10'},{id:'h',label:'Height (h)',ph:'4'}],
+    desc:'a and b are the two parallel sides. h is the perpendicular distance between them.',
+    calc(v){const{a,b,h}=v;const A=0.5*(a+b)*h;return{A,steps:[{m:`A = ½ × (a+b) × h = ½ × (${a}+${b}) × ${h}`,n:'Trapezoid area formula'},{m:`A = ½ × ${a+b} × ${h} = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  hexagon:{name:'Hexagon',formula:'(3√3/2)s²',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="80,5 134,35 134,65 80,75 26,65 26,35" stroke="#06b6d4" stroke-width="2" fill="rgba(6,182,212,.06)" stroke-linejoin="round"/><line x1="80" y1="5" x2="134" y2="35" stroke="#67e8f9" stroke-width="1.2" stroke-dasharray="2 2"/><text x="110" y="22" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#67e8f9" font-weight="700">s</text></svg>`,
+    fields:[{id:'s',label:'Side length (s)',ph:'6'}],
+    desc:'Enter the length of one side. All 6 sides of a regular hexagon are equal.',
+    calc(v){const{s}=v;const A=(3*SQRT3/2)*s*s;const perim=6*s;return{A,extra:`Perimeter = ${perim}`,steps:[{m:`A = (3√3/2) × s² = (3×1.732/2) × ${s}²`,n:'Regular hexagon area formula'},{m:`A = 2.598 × ${s*s} = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  polygon:{name:'Polygon',formula:'ns²/4tan(π/n)',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="80,5 133,28 133,62 80,75 27,62 27,28" stroke="#a78bfa" stroke-width="2" fill="rgba(167,139,250,.06)" stroke-linejoin="round"/><text x="80" y="44" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#a78bfa" font-weight="700" text-anchor="middle">n sides</text></svg>`,
+    fields:[{id:'n',label:'# Sides (n)',ph:'5'},{id:'s',label:'Side length (s)',ph:'6'}],
+    desc:'Regular polygon — all sides equal. Enter number of sides (min 3) and side length.',
+    calc(v){const{n,s}=v;if(n<3)return null;const A=(n*s*s)/(4*Math.tan(PI/n));return{A,extra:`Interior angle = ${fmt((n-2)*180/n,2)}°`,steps:[{m:`A = (n × s²) / (4 × tan(π/n))`,n:'Regular polygon area formula'},{m:`A = (${n} × ${s}²) / (4 × tan(${fmt(PI/n,4)}))`},{m:`A = ${fmt(n*s*s,3)} / ${fmt(4*Math.tan(PI/n),4)} = ${fmt(A,4)}`,n:'Result'}]};}
+  }
+};
+
+/* ════ 3D SHAPES CONFIG ════ */
+const S3D={
+  cylinder:{name:'Cylinder',formula:'2πr²+2πrh',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><ellipse cx="80" cy="18" rx="55" ry="14" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.08)"/><ellipse cx="80" cy="62" rx="55" ry="14" stroke="#10b981" stroke-width="2" fill="rgba(16,185,129,.04)"/><line x1="25" y1="18" x2="25" y2="62" stroke="#10b981" stroke-width="2"/><line x1="135" y1="18" x2="135" y2="62" stroke="#10b981" stroke-width="2"/><line x1="80" y1="18" x2="135" y2="18" stroke="#6ee7b7" stroke-width="1.2" stroke-dasharray="3 2"/><text x="105" y="13" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#6ee7b7" font-weight="700">r</text><text x="138" y="43" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#6ee7b7" font-weight="700">h</text></svg>`,
+    fields:[{id:'r',label:'Radius (r)',ph:'3'},{id:'h',label:'Height (h)',ph:'10'}],
+    desc:'Choose Total SA (both ends + side) or Lateral SA (side only). No top/bottom = open cylinder = lateral only.',
+    extraUI:'cyl',
+    calc(v){const{r,h}=v;const lat=2*PI*r*h;const total=2*PI*r*r+lat;const A=cylType==='total'?total:lat;return{A,extra:`Total SA=${fmt(total,3)} | Lateral=${fmt(lat,3)}`,steps:[{m:cylType==='total'?`Total SA = 2πr² + 2πrh (top+bottom+side)`:`Lateral SA = 2πrh (side only)`},{m:`= 2π(${r})² + 2π(${r})(${h}) = ${fmt(2*PI*r*r,3)} + ${fmt(lat,3)}`,n:'Substitute values'},{m:`= ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  cone:{name:'Cone',formula:'πr²+πrl',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><ellipse cx="80" cy="65" rx="55" ry="12" stroke="#f59e0b" stroke-width="2" fill="rgba(245,158,11,.06)"/><line x1="25" y1="65" x2="80" y2="8" stroke="#f59e0b" stroke-width="2"/><line x1="135" y1="65" x2="80" y2="8" stroke="#f59e0b" stroke-width="2"/><line x1="80" y1="65" x2="135" y2="65" stroke="#fcd34d" stroke-width="1.2" stroke-dasharray="3 2"/><text x="105" y="62" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#fcd34d" font-weight="700">r</text></svg>`,
+    fields:[{id:'r',label:'Radius (r)',ph:'4'},{id:'h',label:'Height (h)',ph:'8'}],
+    desc:'Height is the vertical height from base center to apex. Slant height is calculated automatically.',
+    calc(v){const{r,h}=v;const l=Math.sqrt(r*r+h*h);const A=PI*r*r+PI*r*l;return{A,extra:`Slant height l = ${fmt(l,4)} | Lateral = ${fmt(PI*r*l,3)}`,steps:[{m:`Slant height l = √(r²+h²) = √(${r*r}+${h*h}) = ${fmt(l,4)}`,n:'Calculate slant height first'},{m:`Total SA = πr² + πrl = π(${r})² + π(${r})(${fmt(l,3)})`},{m:`= ${fmt(PI*r*r,3)} + ${fmt(PI*r*l,3)} = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  rectprism:{name:'Rect Prism',formula:'2(lw+lh+wh)',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><rect x="10" y="30" width="90" height="45" rx="1" stroke="#8b5cf6" stroke-width="2" fill="rgba(139,92,246,.06)"/><path d="M10 30l25-22h90l-25 22" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round"/><line x1="100" y1="8" x2="100" y2="75" stroke="#8b5cf6" stroke-width="2"/><text x="105" y="48" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#c4b5fd" font-weight="700">w</text></svg>`,
+    fields:[{id:'l',label:'Length (l)',ph:'8'},{id:'w',label:'Width (w)',ph:'5'},{id:'h',label:'Height (h)',ph:'4'}],
+    desc:'A rectangular prism (box) has 6 rectangular faces. Total surface area = all 6 faces combined.',
+    calc(v){const{l,w,h}=v;const A=2*(l*w+l*h+w*h);return{A,extra:`Volume = ${fmt(l*w*h,3)}`,steps:[{m:`SA = 2(lw + lh + wh)`,n:'Rectangular prism surface area'},{m:`= 2(${l}×${w} + ${l}×${h} + ${w}×${h}) = 2(${l*w}+${l*h}+${w*h})`},{m:`= 2 × ${l*w+l*h+w*h} = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  triprism:{name:'Tri Prism',formula:'bh+(a+b+c)×l',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="50,5 100,5 130,70 20,70" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.06)" stroke-linejoin="round"/><line x1="100" y1="5" x2="155" y2="50" stroke="#ec4899" stroke-width="1.8"/><line x1="130" y1="70" x2="155" y2="50" stroke="#ec4899" stroke-width="1.8"/><line x1="155" y1="15" x2="155" y2="50" stroke="#f9a8d4" stroke-width="1.2" stroke-dasharray="2 2"/></svg>`,
+    fields:[{id:'a',label:'Tri side a',ph:'5'},{id:'b',label:'Tri base b',ph:'6'},{id:'h_t',label:'Tri height h',ph:'4'},{id:'l',label:'Prism length l',ph:'10'}],
+    desc:'Triangular prism: enter the 3 triangle dimensions (a, b, base height h_tri) and the prism length.',
+    calc(v){const{a,b,h_t,l}=v;const triArea=0.5*b*h_t;const A=2*triArea+(a+b+a)*l;return{A,extra:`Triangle area = ${fmt(triArea,3)} | Volume = ${fmt(triArea*l,3)}`,steps:[{m:`Triangle base area = ½ × b × h = ½ × ${b} × ${h_t} = ${fmt(triArea,3)}`,n:'Triangular face area'},{m:`Lateral area = perimeter × l = (${a}+${b}+${a}) × ${l} = ${fmt((a+b+a)*l,3)}`},{m:`Total SA = 2×${fmt(triArea,3)} + ${fmt((a+b+a)*l,3)} = ${fmt(A,4)}`,n:'Result'}]};}
+  },
+  tripyramid:{name:'Tri Pyramid',formula:'Base+3×Face',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="80,5 140,70 20,70" stroke="#06b6d4" stroke-width="2" fill="rgba(6,182,212,.06)" stroke-linejoin="round"/><line x1="80" y1="5" x2="80" y2="70" stroke="#67e8f9" stroke-width="1.2" stroke-dasharray="2 2"/><line x1="80" y1="70" x2="115" y2="50" stroke="#67e8f9" stroke-width="1.2"/><text x="82" y="44" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#67e8f9" font-weight="700">l</text></svg>`,
+    fields:[{id:'s',label:'Base side (s)',ph:'6'},{id:'l',label:'Slant height (l)',ph:'8'}],
+    desc:'Regular triangular pyramid (equilateral base). s = base edge length, l = slant height of lateral face.',
+    calc(v){const{s,l}=v;const baseArea=(SQRT3/4)*s*s;const faceArea=0.5*s*l;const A=baseArea+3*faceArea;return{A,extra:`Base area = ${fmt(baseArea,3)} | 3 faces = ${fmt(3*faceArea,3)}`,steps:[{m:`Base area (equilateral) = (√3/4)×s² = ${fmt(baseArea,4)}`},{m:`Lateral face area = ½×s×l = ½×${s}×${l} = ${faceArea} each`},{m:`Total SA = Base + 3×Face = ${fmt(baseArea,3)} + ${fmt(3*faceArea,3)} = ${fmt(A,4)}`,n:'Result'}]};}
+  }
+};
+
+/* ════ NICHE CONFIG ════ */
+const SNICHE={
+  bsa:{name:'Body SA',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><circle cx="80" cy="20" r="12" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.06)"/><path d="M55,40 Q60,35 80,35 Q100,35 105,40 L110,75 H50 Z" stroke="#ec4899" stroke-width="2" fill="rgba(236,72,153,.06)"/><line x1="50" y1="55" x2="35" y2="70" stroke="#ec4899" stroke-width="2"/><line x1="110" y1="55" x2="125" y2="70" stroke="#ec4899" stroke-width="2"/></svg>`,
+    fields:[{id:'h',label:'Height (cm)',ph:'170'},{id:'w',label:'Weight (kg)',ph:'70'}],
+    desc:'Body Surface Area for drug dosing. Uses Du Bois formula. Enter height in cm, weight in kg.',
+    calc(v){const{h,w}=v;const dubois=0.007184*Math.pow(h,0.725)*Math.pow(w,0.425);const mosteller=Math.sqrt(h*w/3600);return{A:dubois,overrideUnit:'m²',extra:`Mosteller formula = ${fmt(mosteller,4)} m²`,steps:[{m:`Du Bois: BSA = 0.007184 × H^0.725 × W^0.425`},{m:`= 0.007184 × ${h}^0.725 × ${w}^0.425`},{m:`= ${fmt(dubois,4)} m²`,n:'Medical standard BSA'}]};}
+  },
+  roof:{name:'Roof Area',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="80,5 150,40 130,40 130,75 30,75 30,40 10,40" stroke="#f59e0b" stroke-width="2" fill="rgba(245,158,11,.06)" stroke-linejoin="round"/><line x1="80" y1="5" x2="80" y2="40" stroke="#fcd34d" stroke-width="1.2" stroke-dasharray="2 2"/></svg>`,
+    fields:[{id:'l',label:'Length (ft)',ph:'40'},{id:'w',label:'Width (ft)',ph:'30'},{id:'pitch',label:'Pitch (x/12)',ph:'6'}],
+    desc:'Enter footprint length and width in feet, and roof pitch (rise per 12" run). E.g. 6/12 pitch → enter 6.',
+    calc(v){const{l,w,pitch}=v;const pitchFactor=Math.sqrt(1+(pitch/12)*(pitch/12));const A=l*w*pitchFactor;const squares=A/100;return{A,overrideUnit:'ft²',extra:`Pitch factor=${fmt(pitchFactor,4)} | Roofing squares=${fmt(squares,2)}`,steps:[{m:`Footprint = ${l} × ${w} = ${l*w} ft²`},{m:`Pitch factor = √(1 + (${pitch}/12)²) = ${fmt(pitchFactor,4)}`},{m:`Roof area = ${l*w} × ${fmt(pitchFactor,4)} = ${fmt(A,4)} ft²`,n:'Add 10-15% for waste'}]};}
+  },
+  irregular:{name:'Irregular',
+    svg:`<svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="80"><polygon points="20,70 10,30 50,10 110,15 150,35 140,70" stroke="#a78bfa" stroke-width="2" fill="rgba(167,139,250,.06)" stroke-linejoin="round"/><text x="80" y="50" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#a78bfa" font-weight="700" text-anchor="middle">Rect 1 + Rect 2</text></svg>`,
+    fields:[{id:'a1',label:'Area 1 (ft²)',ph:'120'},{id:'a2',label:'Area 2 (ft²)',ph:'80'},{id:'a3',label:'Area 3 (ft²)',ph:'0'}],
+    desc:'Break an irregular shape into rectangles or triangles. Enter each area separately — they are added together.',
+    calc(v){const a1=v.a1||0,a2=v.a2||0,a3=v.a3||0;const A=a1+a2+a3;return{A,overrideUnit:'ft²',extra:`${a1} + ${a2}${a3?` + ${a3}`:''}`,steps:[{m:`Total = Area 1 + Area 2${a3?` + Area 3`:''}`},{m:`= ${a1} + ${a2}${a3?` + ${a3}`:''} = ${fmt(A,2)} ft²`,n:'Sum of all sections'}]};}
+  }
+};
+
+/* ════ BUILD BUTTONS ════ */
+function buildButtons(){
+  // 2D
+  document.getElementById('grid-2d').innerHTML=Object.entries(S2D).map(([k,s])=>`
+    <button class="shape-btn${k===active2d?' active':''}" onclick="sel2d('${k}',this)">
+      <div class="s-icon"><svg viewBox="0 0 28 28" fill="none">${getIcon2d(k)}</svg></div>
+      <div class="s-name">${s.name}</div>
+    </button>`).join('');
+  // 3D
+  document.getElementById('grid-3d').innerHTML=Object.entries(S3D).map(([k,s])=>`
+    <button class="shape-btn${k===active3d?' active':''}" onclick="sel3d('${k}',this)">
+      <div class="s-icon"><svg viewBox="0 0 28 28" fill="none">${getIcon3d(k)}</svg></div>
+      <div class="s-name">${s.name}</div>
+    </button>`).join('');
+  // Niche
+  document.getElementById('grid-niche').innerHTML=Object.entries(SNICHE).map(([k,s])=>`
+    <button class="shape-btn${k===activeNiche?' active':''}" onclick="selNiche('${k}',this)">
+      <div class="s-icon"><svg viewBox="0 0 28 28" fill="none">${getIconNiche(k)}</svg></div>
+      <div class="s-name">${s.name}</div>
+    </button>`).join('');
+  renderAll();
+}
+
+function getIcon2d(k){const m={circle:'<circle cx="14" cy="14" r="11" stroke="#3b82f6" stroke-width="2"/>',rectangle:'<rect x="2" y="8" width="24" height="12" rx="1" stroke="#10b981" stroke-width="2"/>',triangle:'<polygon points="14,2 26,26 2,26" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linejoin="round"/>',righttri:'<polygon points="2,26 2,2 26,26" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linejoin="round"/>',trapezoid:'<polygon points="8,8 20,8 26,20 2,20" stroke="#ec4899" stroke-width="2" fill="none"/>',hexagon:'<polygon points="14,2 23,7.5 23,19.5 14,25 5,19.5 5,7.5" stroke="#06b6d4" stroke-width="2" fill="none"/>',polygon:'<polygon points="14,2 24,9 20,22 8,22 4,9" stroke="#a78bfa" stroke-width="2" fill="none"/>',};return m[k]||'';}
+function getIcon3d(k){const m={cylinder:'<ellipse cx="14" cy="7" rx="10" ry="4" stroke="#10b981" stroke-width="1.8"/><ellipse cx="14" cy="21" rx="10" ry="4" stroke="#10b981" stroke-width="1.8"/><line x1="4" y1="7" x2="4" y2="21" stroke="#10b981" stroke-width="1.8"/><line x1="24" y1="7" x2="24" y2="21" stroke="#10b981" stroke-width="1.8"/>',cone:'<ellipse cx="14" cy="22" rx="10" ry="4" stroke="#f59e0b" stroke-width="1.8"/><line x1="4" y1="22" x2="14" y2="4" stroke="#f59e0b" stroke-width="1.8"/><line x1="24" y1="22" x2="14" y2="4" stroke="#f59e0b" stroke-width="1.8"/>',rectprism:'<rect x="3" y="12" width="14" height="12" stroke="#8b5cf6" stroke-width="1.8"/><path d="M3 12l5-7h14l-5 7" stroke="#8b5cf6" stroke-width="1.5"/><line x1="17" y1="5" x2="17" y2="24" stroke="#8b5cf6" stroke-width="1.5"/>',triprism:'<polygon points="14,3 24,25 4,25" stroke="#ec4899" stroke-width="1.8" fill="none"/>',tripyramid:'<polygon points="14,2 26,25 2,25" stroke="#06b6d4" stroke-width="1.8" fill="none"/><line x1="14" y1="2" x2="14" y2="25" stroke="#67e8f9" stroke-width="1.2" stroke-dasharray="2 2"/>',};return m[k]||'';}
+function getIconNiche(k){const m={bsa:'<circle cx="14" cy="7" r="5" stroke="#ec4899" stroke-width="1.8"/><path d="M5,14 Q9,12 14,12 Q19,12 23,14 L25,26 H3 Z" stroke="#ec4899" stroke-width="1.8" fill="none"/>',roof:'<polygon points="14,3 26,13 22,13 22,26 6,26 6,13 2,13" stroke="#f59e0b" stroke-width="1.8" fill="none"/>',irregular:'<polygon points="4,24 3,10 12,3 22,5 26,14 23,24" stroke="#a78bfa" stroke-width="1.8" fill="none"/>',};return m[k]||'';}
+
+/* ════ SELECT FUNCTIONS ════ */
+function sel2d(k,btn){active2d=k;document.querySelectorAll('#grid-2d .shape-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderShape('2d');resetResult();}
+function sel3d(k,btn){active3d=k;document.querySelectorAll('#grid-3d .shape-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderShape('3d');resetResult();}
+function selNiche(k,btn){activeNiche=k;document.querySelectorAll('#grid-niche .shape-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderShape('niche');resetResult();}
+
+function switchMain(tab,btn){
+  activeMain=tab;
+  document.querySelectorAll('.main-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['2d','3d','niche'].forEach(t=>{const el=document.getElementById('panel-'+t);if(el)el.style.display=t===tab?'block':'none';});
+  resetResult();
+}
+
+function resetResult(){document.getElementById('result-panel').classList.remove('show');document.getElementById('err-msg').style.display='none';}
+
+function renderAll(){renderShape('2d');renderShape('3d');renderShape('niche');}
+
+function renderShape(panel){
+  const cfg=panel==='2d'?S2D[active2d]:panel==='3d'?S3D[active3d]:SNICHE[activeNiche];
+  if(!cfg)return;
+  document.getElementById('preview-'+panel).innerHTML=cfg.svg||'';
+  const fr=document.getElementById('fields-'+panel);
+  const cols=cfg.fields.length===1?'c1':cfg.fields.length===2?'c2':'c3';
+  const extraUI=cfg.extraUI==='cyl'?`<div class="radio-row" id="cyl-toggle">
+    <label class="radio-chip${cylType==='total'?' selected':''}" onclick="setCylType('total',this)"><input type="radio" name="cyl"> Total SA</label>
+    <label class="radio-chip${cylType==='lat'?' selected':''}" onclick="setCylType('lat',this)"><input type="radio" name="cyl"> Lateral Only</label>
+  </div>`:'';
+  fr.innerHTML=`<div class="inp-desc">${cfg.desc}</div>${extraUI}
+    <div class="frow ${cols}">
+      ${cfg.fields.map(f=>`<div class="fgrp"><label>${f.label}</label><div class="finp"><input type="number" id="inp-${panel}-${f.id}" placeholder="${f.ph}" min="0" step="any"></div></div>`).join('')}
+    </div>`;
+}
+
+function setCylType(t,el){cylType=t;document.querySelectorAll('.radio-chip').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');}
+
+/* ════ CALCULATE ════ */
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  const panel=activeMain;
+  const cfg=panel==='2d'?S2D[active2d]:panel==='3d'?S3D[active3d]:SNICHE[activeNiche];
+  const vals={};
+  let valid=true;
+  cfg.fields.forEach(f=>{
+    const v=parseFloat(document.getElementById(`inp-${panel}-${f.id}`).value);
+    if(isNaN(v)||v<0){valid=false;}
+    vals[f.id]=v;
+  });
+  if(!valid){document.getElementById('err-msg').style.display='block';return;}
+  const res=cfg.calc(vals);
+  if(!res){document.getElementById('err-msg').style.display='block';return;}
+
+  const A=res.A;
+  let unit, ul;
+  if(res.overrideUnit){unit=null;ul=res.overrideUnit;}
+  else{unit=document.getElementById(`unit-${panel}`)||document.getElementById('unit-2d');const u=unit?unit.value:'ft';ul=UL[u]||'units²';}
+
+  // Conversions (only for 2D with unit)
+  let chipsHTML='';
+  if(!res.overrideUnit&&unit){
+    const u=unit.value, m2=A*U2M2[u];
+    const convs=[];
+    if(u!=='m')convs.push(`<span class="r-chip">${fmt(m2,3)} m²</span>`);
+    if(u!=='ft')convs.push(`<span class="r-chip">${fmt(m2/0.0929,2)} ft²</span>`);
+    chipsHTML=convs.join('');
+  }
+
+  const stepsHTML=res.steps.map((s,i)=>`<div class="step-r"><span class="step-n">${i+1}.</span><div><div class="step-m">${s.m}</div><div>${s.n||''}</div></div></div>`).join('');
+
+  document.getElementById('result-content').innerHTML=`
+    <div class="result-main">
+      <div class="r-lbl">${panel==='3d'?'Surface Area':'Area'}</div>
+      <div class="r-big">${fmt(A,4)}</div>
+      <div class="r-unit">${ul}</div>
+      ${res.extra?`<div class="r-extra">${res.extra}</div>`:''}
+      ${chipsHTML?`<div class="r-chips">${chipsHTML}</div>`:''}
+    </div>
+    <div class="steps-box">
+      <div class="steps-hd"><svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.4"><path d="M2 3h8M2 6h6M2 9h4" stroke-linecap="round"/></svg> Step-by-Step</div>
+      ${stepsHTML}
+    </div>`;
+
+  const p=document.getElementById('result-panel');
+  p.classList.remove('show');void p.offsetWidth;p.classList.add('show');
+}
+
+function jumpTo(panel,shape){
+  const tabMap={'2d':0,'3d':1,'niche':2};
+  const btn=document.querySelectorAll('.main-tab')[tabMap[panel]];
+  switchMain(panel,btn);
+  if(panel==='2d'){const sb=document.querySelectorAll('#grid-2d .shape-btn');const keys=Object.keys(S2D);const idx=keys.indexOf(shape);if(idx>=0)sel2d(shape,sb[idx]);}
+  if(panel==='3d'){const sb=document.querySelectorAll('#grid-3d .shape-btn');const keys=Object.keys(S3D);const idx=keys.indexOf(shape);if(idx>=0)sel3d(shape,sb[idx]);}
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function faq(el){const item=el.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+
+buildButtons();
+</script>
+</body>
+</html>

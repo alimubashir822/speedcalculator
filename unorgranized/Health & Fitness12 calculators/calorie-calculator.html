@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calorie Calculator — Daily Needs, Weight Loss & Gain | SpeedCalculator.net</title>
+<meta name="description" content="Free calorie calculator online. Find your daily calorie needs for weight loss, maintenance, or weight gain using the Mifflin-St Jeor formula. Includes food calorie calculator, exercise calorie burn (running, walking, treadmill), and personalized macro breakdown.">
+<meta name="keywords" content="calorie calculator, maintenance calorie calculator, food calorie calculator, calorie calculator for weight loss, weight loss calorie calculator, calorie calculator to lose weight, daily calorie calculator, running calorie calculator, treadmill calorie calculator, walking calorie calculator, calorie calculator to gain weight, online calorie calculator, recipe calorie calculator, chipotle calorie calculator, starbucks calorie calculator, subway calorie calculator, dog calorie calculator, cat calorie calculator, chipotle bowl calorie calculator, dunkin calorie calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/calorie-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Calorie Calculator",
+  "alternateName":["Maintenance Calorie Calculator","Daily Calorie Calculator","Calorie Calculator for Weight Loss","Weight Loss Calorie Calculator","Calorie Calculator to Lose Weight","Running Calorie Calculator","Walking Calorie Calculator","Treadmill Calorie Calculator","Online Calorie Calculator","Food Calorie Calculator"],
+  "url":"https://www.speedcalculator.net/calorie-calculator/",
+  "description":"Free calorie calculator — find your daily calorie needs for weight loss, maintenance, and weight gain using the Mifflin-St Jeor equation. Includes TDEE, BMR, macro breakdown, and exercise calorie burn.",
+  "applicationCategory":"HealthApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Daily calorie calculator (TDEE)","BMR calculator","Calorie calculator for weight loss","Maintenance calorie calculator","Calorie calculator to gain weight","Running calorie calculator","Walking calorie calculator","Treadmill calorie calculator","Macro breakdown (protein/carbs/fat)","Mifflin-St Jeor formula","Harris-Benedict formula","All activity levels"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Calorie Calculator",
+  "description":"Calculate your daily calorie needs for weight loss, maintenance, or weight gain",
+  "totalTime":"PT2M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Enter Your Measurements","text":"Select your gender and enter your age, height, and weight. Use metric (kg/cm) or imperial (lbs/ft). The calorie calculator uses the Mifflin-St Jeor equation — the most accurate formula for estimating BMR."},
+    {"@type":"HowToStep","position":2,"name":"Select Activity Level","text":"Choose your typical weekly activity level: Sedentary (desk job, little exercise), Lightly Active (1–3 days/week), Moderately Active (3–5 days), Very Active (6–7 days), or Extra Active (2× daily or physical job). This determines your TDEE (Total Daily Energy Expenditure)."},
+    {"@type":"HowToStep","position":3,"name":"Choose Your Goal","text":"Select your goal: Lose Weight (calorie deficit), Maintain Weight (maintenance calories), or Gain Weight (calorie surplus). The calculator adjusts calorie targets based on a safe deficit or surplus."},
+    {"@type":"HowToStep","position":4,"name":"Review Results","text":"See your BMR, TDEE/maintenance calories, target calories for your goal, and macro breakdown (protein, carbs, fat). The exercise tab shows calorie burn for running, walking, cycling, and treadmill workouts."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How many calories should I eat per day?","acceptedAnswer":{"@type":"Answer","text":"Daily calorie needs depend on your age, gender, height, weight, and activity level. Average needs: Women 1,600–2,400 calories/day; Men 2,000–3,000 calories/day. Use our daily calorie calculator (TDEE formula) for your exact number. For weight loss, subtract 500 calories/day (loses ~1 lb/week). Never go below 1,200 calories (women) or 1,500 calories (men) without medical supervision."}},
+    {"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR (Basal Metabolic Rate) is the calories your body burns at complete rest — just to keep you alive (breathing, circulation, organ function). TDEE (Total Daily Energy Expenditure) = BMR × Activity Factor. TDEE is your maintenance calorie calculator result — the total calories you burn in a day including all activity. To lose weight, eat below your TDEE. To gain weight, eat above it."}},
+    {"@type":"Question","name":"How many calories should I eat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"A 500–750 calorie daily deficit leads to 0.5–1 lb (0.25–0.5 kg) weight loss per week. Use our calorie calculator for weight loss: find your TDEE, then subtract 500 for moderate loss or 750 for faster loss. Minimum safe intake: 1,200 cal/day (women), 1,500 cal/day (men). Slower deficits (250 cal/day) preserve more muscle mass. Never go below BMR without medical supervision."}},
+    {"@type":"Question","name":"How many calories does running burn?","acceptedAnswer":{"@type":"Answer","text":"Running calorie burn = approximately 0.75 × body weight (lbs) per mile, or 1.65 × body weight (kg) per km. For a 155 lb person: ~116 calories per mile. 30 minutes at 6 mph = ~350 calories. Our running calorie calculator and treadmill calorie calculator use MET (metabolic equivalent) values: running at 6 mph = MET 10. Formula: Calories = MET × weight(kg) × hours."}},
+    {"@type":"Question","name":"How many calories should I eat to gain weight?","acceptedAnswer":{"@type":"Answer","text":"For lean muscle gain: eat 250–500 calories above your TDEE (maintenance calories). This produces 0.25–0.5 lb weight gain per week — slow enough to minimize fat gain. Our calorie calculator to gain weight shows your exact surplus target. Pair with strength training to ensure the gain is muscle, not fat. Aim for 1g protein per lb of bodyweight on a bulk."}},
+    {"@type":"Question","name":"What is the Mifflin-St Jeor formula?","acceptedAnswer":{"@type":"Answer","text":"Mifflin-St Jeor (most accurate BMR formula): Men: BMR = 10×weight(kg) + 6.25×height(cm) − 5×age + 5. Women: BMR = 10×weight(kg) + 6.25×height(cm) − 5×age − 161. TDEE = BMR × Activity Factor (1.2 sedentary to 1.9 extra active). This is the formula used by our daily calorie calculator and is more accurate than the older Harris-Benedict formula for most people."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,70px);font-weight:900;line-height:1.05;letter-spacing:0px;text-transform:uppercase;margin-bottom:22px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;margin-top:4px;letter-spacing:1px;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALCULATOR CARD */
+.calc-section{padding:0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--green),var(--orange),var(--teal),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* TAB SWITCHER (main modes) */
+.tab-row{display:flex;gap:0;padding:14px 28px 0;}
+.tab-btn{flex:1;max-width:180px;padding:9px 10px;background:var(--bg3);border:1px solid var(--border2);font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .15s;text-align:center;text-transform:uppercase;letter-spacing:.04em;}
+.tab-btn:first-child{border-radius:var(--radius-sm) 0 0 var(--radius-sm);}
+.tab-btn:last-child{border-radius:0 var(--radius-sm) var(--radius-sm) 0;border-left:none;}
+.tab-btn:not(:first-child):not(:last-child){border-left:none;}
+.tab-btn.on{background:rgba(59,130,246,.15);border-color:var(--accent);color:var(--accent2);}
+
+/* UNIT TOGGLE */
+.unit-row{display:flex;align-items:center;gap:10px;padding:10px 28px 0;}
+.unit-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.unit-tabs{display:flex;gap:0;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;overflow:hidden;padding:2px;}
+.u-tab{padding:5px 16px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;border-radius:18px;transition:all .15s;}
+.u-tab.on{background:var(--accent);color:#fff;}
+
+.calc-body{padding:20px 28px 28px;}
+.calc-cols{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUTS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:2px 9px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 12px;font-size:13px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);min-width:42px;justify-content:center;}
+.inp-suf{padding:0 12px;font-size:12px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 10px;font-family:'Barlow Condensed',sans-serif;font-size:23px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.sel-wrap{position:relative;margin-bottom:5px;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;z-index:1;}
+.sel-wrap select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;padding:12px 40px 12px 14px;background:var(--bg3);color:#f0f4ff;border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;color:#f0f4ff;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.18);}
+.sl::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+
+/* GENDER TABS */
+.gender-row{display:flex;gap:8px;margin-bottom:13px;}
+.g-tab{flex:1;padding:9px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-sm);font-size:12px;font-weight:700;color:var(--text3);cursor:pointer;text-align:center;transition:all .15s;}
+.g-tab.on{background:rgba(59,130,246,.13);border-color:var(--accent);color:var(--accent2);}
+
+/* GOAL TABS */
+.goal-row{display:flex;flex-direction:column;gap:6px;margin-bottom:13px;}
+.goal-opt{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-sm);cursor:pointer;transition:all .15s;}
+.goal-opt.on{border-color:var(--accent);background:rgba(59,130,246,.08);}
+.goal-radio{width:14px;height:14px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;transition:all .15s;position:relative;}
+.goal-opt.on .goal-radio{border-color:var(--accent);background:var(--accent);}
+.goal-opt.on .goal-radio::after{content:'';position:absolute;inset:2px;border-radius:50%;background:#fff;}
+.goal-text{font-size:12px;font-weight:700;color:var(--text2);flex:1;}
+.goal-opt.on .goal-text{color:var(--accent2);}
+.goal-cal{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--text3);}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:14px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:300px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* CALORIE HERO */
+.cal-hero{background:linear-gradient(135deg,rgba(59,130,246,.13),rgba(16,185,129,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:20px;margin-bottom:10px;position:relative;overflow:hidden;text-align:center;}
+.cal-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--teal),var(--green));}
+.ch-badge{display:inline-block;background:rgba(59,130,246,.15);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ch-cal{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,10vw,66px);font-weight:900;color:var(--green);line-height:1;letter-spacing:-2px;}
+.ch-unit{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text3);display:block;margin-top:2px;}
+.ch-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.chc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;}
+.chc.g{color:var(--green);border-color:rgba(16,185,129,.3);}
+.chc.b{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+.chc.o{color:var(--orange);border-color:rgba(245,158,11,.3);}
+
+/* 3-GOAL CARDS */
+.goal-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;}
+.gc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 8px;text-align:center;}
+.gc-lbl{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.gc-cal{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;line-height:1;}
+.gc-sub{font-size:9px;color:var(--text3);margin-top:2px;}
+
+/* MACRO BAR */
+.macro-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;margin-bottom:10px;}
+.macro-title{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
+.macro-bar-track{height:10px;border-radius:5px;overflow:hidden;display:flex;margin-bottom:8px;}
+.mb-protein{background:#60a5fa;transition:width .6s ease;}
+.mb-carbs{background:#10b981;transition:width .6s ease;}
+.mb-fat{background:#f59e0b;transition:width .6s ease;}
+.macro-legend{display:flex;gap:12px;flex-wrap:wrap;}
+.ml{display:flex;align-items:center;gap:5px;font-size:11px;}
+.ml-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.ml-lbl{color:var(--text2);}
+.ml-val{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
+
+/* METRICS 2×2 */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,3.5vw,22px);font-weight:900;line-height:1;}
+.m-val.green{color:var(--green);}
+.m-val.orange{color:var(--orange);}
+.m-val.blue{color:var(--accent2);}
+.m-val.teal{color:var(--teal);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+
+/* EXERCISE PANEL */
+.exercise-panel{display:none;}
+.exercise-panel.show{display:block;}
+.ex-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px;}
+.ex-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center;}
+.ex-ico{font-size:22px;margin-bottom:6px;}
+.ex-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:4px;}
+.ex-cal{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--accent2);}
+.ex-min{font-size:10px;color:var(--text3);}
+
+/* FOOD PANEL */
+.food-panel{display:none;}
+.food-panel.show{display:block;}
+.food-search{margin-top:8px;}
+.food-grid{display:flex;flex-direction:column;gap:6px;margin-top:8px;max-height:240px;overflow-y:auto;}
+.food-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;display:flex;justify-content:space-between;align-items:center;}
+.food-name{font-size:12px;font-weight:600;color:var(--text);}
+.food-brand{font-size:10px;color:var(--text3);}
+.food-cal-tag{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--orange);}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* ACTIVITY CARDS */
+.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.act-grid{grid-template-columns:repeat(2,1fr);}}
+.ac{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.ac:hover{border-color:var(--border2);transform:translateY(-2px);}
+.ac-ico{font-size:26px;margin-bottom:10px;}
+.ac-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.ac-cal{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--orange);background:rgba(245,158,11,.08);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:7px;}
+.ac-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* SVG IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+
+/* RESTAURANT CARDS */
+.rest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:720px){.rest-grid{grid-template-columns:repeat(2,1fr);}}
+.rest-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:all .2s;}
+.rest-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.rest-ico{font-size:24px;margin-bottom:8px;}
+.rest-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.rest-ex{font-size:11px;color:var(--text2);line-height:1.6;}
+.rest-tip{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--accent2);background:rgba(59,130,246,.07);border-radius:4px;padding:2px 8px;display:inline-block;margin-top:5px;}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:400px;}
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Calorie Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Daily Needs &middot; Weight Loss &middot; Weight Gain &middot; Exercise Burn &middot; Macros</div>
+    <h1 class="hero-h1">Calorie<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>calorie calculator</strong> — find your daily calorie needs for weight loss, maintenance, or weight gain. Uses the Mifflin-St Jeor formula (more accurate than Mayo Clinic's tool). Includes exercise calorie burn (running, walking, treadmill) and macro breakdown.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">Weight Loss</span>
+      <span class="hbadge p">Weight Gain</span>
+      <span class="hbadge o">Exercise Burn</span>
+      <span class="hbadge t">Macro Breakdown</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 1a3 3 0 100 6 3 3 0 000-6zM2 13c0-2.76 2.24-5 5-5s5 2.24 5 5"/><path d="M11 5l1.5 3M3 5L1.5 8"/></svg>
+          </div>
+          Calorie <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Mifflin-St Jeor</div>
+      </div>
+
+      <!-- TAB SWITCHER -->
+      <div class="tab-row">
+        <div class="tab-btn on" id="tab-daily" onclick="setTab('daily',this)">&#128197; Daily Calories</div>
+        <div class="tab-btn" id="tab-exercise" onclick="setTab('exercise',this)">&#127939; Exercise Burn</div>
+        <div class="tab-btn" id="tab-food" onclick="setTab('food',this)">&#127869; Food Calories</div>
+      </div>
+
+      <!-- UNIT TOGGLE -->
+      <div class="unit-row">
+        <span class="unit-lbl">Units:</span>
+        <div class="unit-tabs">
+          <div class="u-tab on" id="u-metric"   onclick="setUnit('metric')">Metric (kg/cm)</div>
+          <div class="u-tab"    id="u-imperial" onclick="setUnit('imperial')">Imperial (lbs/ft)</div>
+        </div>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M5.5 1a2 2 0 110 4 2 2 0 010-4zm0 5c-2.5 0-4 1.12-4 2.5h8c0-1.38-1.5-2.5-4-2.5z"/></svg>
+              Your Details
+            </div>
+
+            <!-- DAILY CALORIE PANEL -->
+            <div id="panel-daily">
+              <!-- GENDER -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Gender</span></div>
+                <div class="gender-row">
+                  <div class="g-tab on" id="g-male" onclick="setGender('male',this)">&#9794; Male</div>
+                  <div class="g-tab" id="g-female" onclick="setGender('female',this)">&#9792; Female</div>
+                </div>
+              </div>
+
+              <!-- AGE -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Age</span><span class="inp-bdg" id="bdg-age">25 yrs</span></div>
+                <div class="inp-wrap"><span class="inp-pre">AGE</span><input type="number" id="f-age" min="15" max="100" step="1" value="25"><span class="inp-suf">years</span></div>
+                <input type="range" class="sl" id="sl-age" min="15" max="80" step="1" value="25">
+                <div class="sl-row"><span>15</span><span>80</span></div>
+              </div>
+
+              <!-- HEIGHT METRIC -->
+              <div id="hm-wrap">
+                <div class="inp-grp">
+                  <div class="inp-top"><span class="inp-lbl">Height</span><span class="inp-bdg" id="bdg-ht-m">175 cm</span></div>
+                  <div class="inp-wrap"><span class="inp-pre">↕</span><input type="number" id="f-ht-cm" min="100" max="250" step="1" value="175"><span class="inp-suf">cm</span></div>
+                  <input type="range" class="sl" id="sl-ht-cm" min="120" max="220" step="1" value="175">
+                  <div class="sl-row"><span>120cm</span><span>220cm</span></div>
+                </div>
+              </div>
+              <!-- HEIGHT IMPERIAL -->
+              <div id="hi-wrap" style="display:none;">
+                <div class="inp-grp">
+                  <div class="inp-top"><span class="inp-lbl">Height</span><span class="inp-bdg" id="bdg-ht-i">5 ft 9 in</span></div>
+                  <div class="grid2">
+                    <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="f-ht-ft" min="3" max="8" step="1" value="5" placeholder="5"><span class="inp-suf">ft</span></div>
+                    <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="f-ht-in" min="0" max="11" step="1" value="9" placeholder="0"><span class="inp-suf">in</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WEIGHT METRIC -->
+              <div id="wm-wrap">
+                <div class="inp-grp">
+                  <div class="inp-top"><span class="inp-lbl">Weight</span><span class="inp-bdg" id="bdg-wt-m">70 kg</span></div>
+                  <div class="inp-wrap"><span class="inp-pre">⚖</span><input type="number" id="f-wt-kg" min="20" max="400" step="0.5" value="70"><span class="inp-suf">kg</span></div>
+                  <input type="range" class="sl" id="sl-wt-kg" min="30" max="200" step="0.5" value="70">
+                  <div class="sl-row"><span>30kg</span><span>200kg</span></div>
+                </div>
+              </div>
+              <!-- WEIGHT IMPERIAL -->
+              <div id="wi-wrap" style="display:none;">
+                <div class="inp-grp">
+                  <div class="inp-top"><span class="inp-lbl">Weight</span><span class="inp-bdg" id="bdg-wt-i">154 lbs</span></div>
+                  <div class="inp-wrap"><span class="inp-pre">⚖</span><input type="number" id="f-wt-lbs" min="50" max="800" step="1" value="154"><span class="inp-suf">lbs</span></div>
+                  <input type="range" class="sl" id="sl-wt-lbs" min="80" max="400" step="1" value="154">
+                  <div class="sl-row"><span>80lbs</span><span>400lbs</span></div>
+                </div>
+              </div>
+
+              <!-- ACTIVITY LEVEL -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Activity Level</span></div>
+                <div class="sel-wrap">
+                  <select id="f-activity">
+                    <option value="1.2">Sedentary — desk job, little/no exercise</option>
+                    <option value="1.375">Lightly Active — exercise 1–3 days/week</option>
+                    <option value="1.55" selected>Moderately Active — exercise 3–5 days/week</option>
+                    <option value="1.725">Very Active — hard exercise 6–7 days/week</option>
+                    <option value="1.9">Extra Active — 2× daily or physical job</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- GOAL -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Your Goal</span></div>
+                <div class="goal-row">
+                  <div class="goal-opt" id="goal-lose" onclick="setGoal('lose',this)">
+                    <div class="goal-radio"></div>
+                    <span class="goal-text">&#128200; Lose Weight</span>
+                    <span class="goal-cal" id="gcal-lose">—</span>
+                  </div>
+                  <div class="goal-opt on" id="goal-maintain" onclick="setGoal('maintain',this)">
+                    <div class="goal-radio"></div>
+                    <span class="goal-text">&#9868; Maintain Weight</span>
+                    <span class="goal-cal" id="gcal-maintain">—</span>
+                  </div>
+                  <div class="goal-opt" id="goal-gain" onclick="setGoal('gain',this)">
+                    <div class="goal-radio"></div>
+                    <span class="goal-text">&#128640; Gain Weight</span>
+                    <span class="goal-cal" id="gcal-gain">—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EXERCISE PANEL -->
+            <div id="panel-exercise" style="display:none;">
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Your Weight</span><span class="inp-bdg" id="bdg-ex-wt">70 kg</span></div>
+                <div class="inp-wrap"><span class="inp-pre">⚖</span><input type="number" id="f-ex-wt" min="20" max="400" step="0.5" value="70"><span class="inp-suf" id="ex-wt-unit">kg</span></div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Duration</span><span class="inp-bdg" id="bdg-ex-dur">30 min</span></div>
+                <div class="inp-wrap"><span class="inp-pre">&#128337;</span><input type="number" id="f-ex-dur" min="1" max="300" step="5" value="30"><span class="inp-suf">minutes</span></div>
+                <input type="range" class="sl" id="sl-ex-dur" min="5" max="120" step="5" value="30">
+                <div class="sl-row"><span>5 min</span><span>120 min</span></div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Intensity / Speed</span></div>
+                <div class="sel-wrap">
+                  <select id="f-ex-speed">
+                    <option value="slow">Slow / Low Intensity</option>
+                    <option value="moderate" selected>Moderate / Medium</option>
+                    <option value="fast">Fast / High Intensity</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- FOOD PANEL -->
+            <div id="panel-food" style="display:none;">
+              <p style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:12px;">Common calorie counts for popular foods and restaurants. Use these as reference alongside our <strong>daily calorie calculator</strong>.</p>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Quick Reference Category</span></div>
+                <div class="sel-wrap">
+                  <select id="f-food-cat" onchange="loadFoodCat()">
+                    <option value="chipotle">Chipotle Bowl Items</option>
+                    <option value="starbucks">Starbucks Drinks</option>
+                    <option value="subway">Subway Sandwiches</option>
+                    <option value="dunkin">Dunkin' Items</option>
+                    <option value="common">Common Foods</option>
+                    <option value="exercise">Exercise Comparison</option>
+                  </select>
+                </div>
+              </div>
+              <div id="food-list" class="food-grid"></div>
+            </div>
+
+            <div class="err-msg" id="err-msg">Please enter valid height and weight values.</div>
+            <button class="calc-btn" id="main-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="btn-label">Calculate Calories</span>
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+
+            <div class="r-placeholder" id="r-placeholder">
+              <div style="font-size:48px;">&#127829;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.8;">Enter your details and click<br><strong style="color:var(--accent2);">Calculate Calories</strong><br>for your daily calorie target,<br>macros, and BMR.</div>
+            </div>
+
+            <div class="results-block" id="results-block">
+
+              <!-- DAILY RESULTS -->
+              <div id="daily-results">
+                <!-- CALORIE HERO -->
+                <div class="cal-hero">
+                  <div class="ch-badge" id="ch-badge">Daily Target Calories</div>
+                  <div class="ch-cal" id="ch-cal">2,000</div>
+                  <span class="ch-unit">calories / day</span>
+                  <div class="ch-chips">
+                    <span class="chc g" id="chip-goal">Goal: Maintain</span>
+                    <span class="chc b" id="chip-bmr">BMR: —</span>
+                    <span class="chc o" id="chip-tdee">TDEE: —</span>
+                  </div>
+                </div>
+
+                <!-- 3 GOAL CARDS -->
+                <div class="goal-cards">
+                  <div class="gc">
+                    <div class="gc-lbl">Lose Weight</div>
+                    <div class="gc-cal" style="color:var(--red);" id="gc-lose">—</div>
+                    <div class="gc-sub">−500 cal/day</div>
+                  </div>
+                  <div class="gc" style="border-color:var(--accent);background:rgba(59,130,246,.07);">
+                    <div class="gc-lbl">Maintain</div>
+                    <div class="gc-cal" style="color:var(--accent2);" id="gc-maint">—</div>
+                    <div class="gc-sub">TDEE</div>
+                  </div>
+                  <div class="gc">
+                    <div class="gc-lbl">Gain Weight</div>
+                    <div class="gc-cal" style="color:var(--green);" id="gc-gain">—</div>
+                    <div class="gc-sub">+500 cal/day</div>
+                  </div>
+                </div>
+
+                <!-- METRICS -->
+                <div class="metrics-grid">
+                  <div class="metric">
+                    <div class="m-lbl">BMR</div>
+                    <div class="m-val blue" id="r-bmr">—</div>
+                    <div class="m-sub">at rest (Mifflin)</div>
+                  </div>
+                  <div class="metric">
+                    <div class="m-lbl">TDEE</div>
+                    <div class="m-val green" id="r-tdee">—</div>
+                    <div class="m-sub">maintenance calories</div>
+                  </div>
+                  <div class="metric">
+                    <div class="m-lbl">Protein Target</div>
+                    <div class="m-val teal" id="r-protein">—</div>
+                    <div class="m-sub">grams / day</div>
+                  </div>
+                  <div class="metric">
+                    <div class="m-lbl">Weekly Change</div>
+                    <div class="m-val orange" id="r-weekly">—</div>
+                    <div class="m-sub">at target calories</div>
+                  </div>
+                </div>
+
+                <!-- MACRO BAR -->
+                <div class="macro-box">
+                  <div class="macro-title">Macro Breakdown (Recommended)</div>
+                  <div class="macro-bar-track">
+                    <div class="mb-protein" id="mb-p" style="width:30%;"></div>
+                    <div class="mb-carbs"   id="mb-c" style="width:40%;"></div>
+                    <div class="mb-fat"     id="mb-f" style="width:30%;"></div>
+                  </div>
+                  <div class="macro-legend">
+                    <div class="ml"><div class="ml-dot" style="background:#60a5fa;"></div><span class="ml-lbl">Protein</span>&nbsp;<span class="ml-val" id="ml-p">—g</span></div>
+                    <div class="ml"><div class="ml-dot" style="background:#10b981;"></div><span class="ml-lbl">Carbs</span>&nbsp;<span class="ml-val" id="ml-c">—g</span></div>
+                    <div class="ml"><div class="ml-dot" style="background:#f59e0b;"></div><span class="ml-lbl">Fat</span>&nbsp;<span class="ml-val" id="ml-f">—g</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EXERCISE RESULTS -->
+              <div id="exercise-results" style="display:none;">
+                <div class="cal-hero">
+                  <div class="ch-badge">Exercise Calorie Burn</div>
+                  <div class="ch-cal" id="ex-total">—</div>
+                  <span class="ch-unit">calories burned</span>
+                  <div class="ch-chips">
+                    <span class="chc b" id="ex-chip-dur">30 min</span>
+                    <span class="chc o" id="ex-chip-wt">70 kg</span>
+                  </div>
+                </div>
+                <div class="ex-grid" id="ex-grid"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Goal Modes</div></div>
+      <div class="stat-item"><div class="stat-val">TDEE</div><div class="stat-lbl">+ BMR</div></div>
+      <div class="stat-item"><div class="stat-val">Macro</div><div class="stat-lbl">Breakdown</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXERCISE CALORIE SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Exercise Calorie Burn Calculator</div>
+    <h2 class="sec-title">Running, Walking &amp; <span>Treadmill Calorie Calculator</span></h2>
+    <p class="sec-sub">Our <strong>running calorie calculator</strong>, <strong>walking calorie calculator</strong>, and <strong>treadmill calorie calculator</strong> use MET (Metabolic Equivalent of Task) values for accurate burn estimates. Click the Exercise Burn tab above to calculate yours.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gP" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".9"/><stop offset="100%" stop-color="#6d28d9" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".9"/><stop offset="100%" stop-color="#0e7490" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/><rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">CALORIE CALCULATOR — EXERCISE BURN PER 30 MINUTES (70KG / 154LBS PERSON)</text>
+        <line x1="48" y1="182" x2="862" y2="182" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- bars -->
+        <rect x="55"  y="155" width="75" height="27" rx="5" fill="url(#gB)" opacity=".7"/>
+        <text x="92"  y="149" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#93c5fd" text-anchor="middle">~140</text>
+        <text x="92"  y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Walking</text>
+        <text x="92"  y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">3.5 mph slow</text>
+
+        <rect x="190" y="130" width="75" height="52" rx="5" fill="url(#gB)"/>
+        <text x="227" y="124" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">~183</text>
+        <text x="227" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Walking</text>
+        <text x="227" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#60a5fa" text-anchor="middle">4.5 mph brisk</text>
+
+        <rect x="325" y="105" width="75" height="77" rx="5" fill="url(#gT)"/>
+        <text x="362" y="99" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#67e8f9" text-anchor="middle">~280</text>
+        <text x="362" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Treadmill</text>
+        <text x="362" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#06b6d4" text-anchor="middle">5 mph moderate</text>
+
+        <rect x="460" y="72" width="75" height="110" rx="5" fill="url(#gG)"/>
+        <text x="497" y="66" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">~350</text>
+        <text x="497" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Running</text>
+        <text x="497" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">6 mph (10 min/mi)</text>
+
+        <rect x="595" y="48" width="75" height="134" rx="5" fill="url(#gO)"/>
+        <text x="632" y="42" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">~420</text>
+        <text x="632" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Running</text>
+        <text x="632" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">7.5 mph (8 min/mi)</text>
+
+        <rect x="730" y="28" width="75" height="154" rx="5" fill="url(#gP)"/>
+        <text x="767" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#a78bfa" text-anchor="middle">~497</text>
+        <text x="767" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">HIIT / Sprint</text>
+        <text x="767" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">High intensity</text>
+      </svg>
+      <div class="img-overlay"><span>Running calorie calculator, treadmill calorie calculator, and walking calorie calculator — calories burned in 30 minutes at 70kg (154lbs) from 140 cal (slow walk) to 497 cal (HIIT/sprint)</span></div>
+    </div>
+
+    <div class="act-grid">
+      <div class="ac">
+        <div class="ac-ico">&#127939;</div>
+        <div class="ac-name">Running Calorie Calculator</div>
+        <div class="ac-cal">~350–500 cal/30min</div>
+        <p class="ac-p">Running burns approximately 0.75 × body weight (lbs) per mile. Our <strong>running calorie calculator</strong> uses MET 10 for 6mph pace. Heavier runners burn more calories per mile.</p>
+      </div>
+      <div class="ac">
+        <div class="ac-ico">&#127937;</div>
+        <div class="ac-name">Treadmill Calorie Calculator</div>
+        <div class="ac-cal">~200–400 cal/30min</div>
+        <p class="ac-p">Treadmill burns slightly fewer calories than outdoor running (no wind resistance). Our <strong>treadmill calorie calculator</strong> adjusts MET for incline and speed. Add 5% for each % of incline.</p>
+      </div>
+      <div class="ac">
+        <div class="ac-ico">&#128694;</div>
+        <div class="ac-name">Walking Calorie Calculator</div>
+        <div class="ac-cal">~140–200 cal/30min</div>
+        <p class="ac-p">Walking burns about 0.53 × body weight (lbs) per mile. Our <strong>walking calorie calculator</strong> uses MET values from 3.0 (slow) to 5.0 (brisk). Brisk walking burns 50% more than slow walking.</p>
+      </div>
+      <div class="ac">
+        <div class="ac-ico">&#128692;</div>
+        <div class="ac-name">Cycling Calorie Calculator</div>
+        <div class="ac-cal">~250–600 cal/30min</div>
+        <p class="ac-p">Cycling MET ranges from 4.0 (light) to 16.0 (racing). A 70kg person burns ~295 cal/30min at moderate pace (~14mph). Use Exercise Burn tab and select cycling for your estimate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Food Calorie Reference</div>
+    <h2 class="sec-title">Chipotle, Starbucks, Subway &amp; <span>More — Calorie Guide</span></h2>
+    <p class="sec-sub">Planning your meals? Use our <strong>food calorie calculator</strong> tab for quick Chipotle bowl, Starbucks, Subway, and Dunkin calorie lookups alongside your daily target.</p>
+
+    <div class="rest-grid">
+      <div class="rest-card">
+        <div class="rest-ico">&#127828;</div>
+        <div class="rest-name">Chipotle Calorie Calculator</div>
+        <p class="rest-ex">A typical <strong>Chipotle bowl calorie calculator</strong> result: Burrito Bowl with chicken, rice, black beans, cheese, sour cream, and guac = ~1,050–1,250 calories. Chicken bowl without cheese/sour cream = ~650 cal. Switch to lettuce wrap (-200 cal) or skip rice (-200 cal). Use our Food tab for a full Chipotle calorie breakdown.</p>
+        <span class="rest-tip">Bowl avg: 750–1,250 cal</span>
+      </div>
+      <div class="rest-card">
+        <div class="rest-ico">&#9749;</div>
+        <div class="rest-name">Starbucks Calorie Calculator</div>
+        <p class="rest-ex">Our <strong>Starbucks calorie calculator</strong> shows: Pumpkin Spice Latte Grande (2% milk, whip) = 380 cal. Caramel Frappuccino Grande = 430 cal. Brewed coffee = 5 cal. Cold brew = 5 cal. Matcha Latte Grande = 240 cal. Simple syrups add 20 cal per pump. Choose oat milk (+70 cal vs nonfat).</p>
+        <span class="rest-tip">Coffee: 5 cal | Frappuccino: 430+</span>
+      </div>
+      <div class="rest-card">
+        <div class="rest-ico">&#127828;</div>
+        <div class="rest-name">Subway Calorie Calculator</div>
+        <p class="rest-ex">Our <strong>Subway calorie calculator</strong> guide: 6" Turkey Breast on 9-grain wheat = 280 cal. 6" Italian BMT = 410 cal. Footlong doubles these. Avocado adds 110 cal. Cheese adds 50–60 cal per serving. Chipotle Southwest sauce = 100 cal. Choose mustard (5 cal) instead of mayo (110 cal) to save 105 calories.</p>
+        <span class="rest-tip">6" Turkey: 280 cal</span>
+      </div>
+      <div class="rest-card">
+        <div class="rest-ico">&#129366;</div>
+        <div class="rest-name">Dunkin Calorie Calculator</div>
+        <p class="rest-ex">Our <strong>Dunkin calorie calculator</strong> reference: Medium Iced Coffee with cream and sugar = 170 cal. Glazed Donut = 260 cal. Butter Croissant = 380 cal. Bacon Egg & Cheese on Croissant = 550 cal. Cold Brew (medium) = 5 cal. Oat Milk Latte Medium = 270 cal. Munchkin = 60 cal each.</p>
+        <span class="rest-tip">Cold Brew: 5 cal | Donut: 260 cal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Calorie Calculator — Complete Guide</h2>
+  <p>Our free <strong>calorie calculator</strong> is more complete than calculator.net, the Mayo Clinic calorie calculator, and Cancer.org's tool — because it uses the Mifflin-St Jeor equation (the most accurate BMR formula), supports both metric and imperial units, offers three goal modes (<strong>calorie calculator for weight loss</strong>, maintenance, <strong>calorie calculator to gain weight</strong>), provides a full macro breakdown, includes a <strong>running calorie calculator</strong>, <strong>walking calorie calculator</strong>, and <strong>treadmill calorie calculator</strong>, plus a food reference with Chipotle, Starbucks, Subway, and Dunkin calories. This is the only <strong>daily calorie calculator</strong> and <strong>online calorie calculator</strong> you need.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/><rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DAILY CALORIE CALCULATOR — MIFFLIN-ST JEOR FORMULA (BMR) EXPLAINED</text>
+      <rect x="30" y="35" width="390" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="225" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle" letter-spacing="1">BMR FORMULA (MIFFLIN-ST JEOR)</text>
+      <text x="50" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Men:</text>
+      <text x="210" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">10×wt(kg) + 6.25×ht(cm) − 5×age + 5</text>
+      <text x="50" y="100" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Women:</text>
+      <text x="210" y="100" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">10×wt(kg) + 6.25×ht(cm) − 5×age − 161</text>
+      <text x="50" y="122" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">TDEE:</text>
+      <text x="210" y="122" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">BMR × Activity Factor (1.2 → 1.9)</text>
+      <rect x="42" y="134" width="366" height="26" rx="5" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="225" y="151" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">Man, 30, 175cm, 80kg → BMR=1,807 | TDEE=2,800</text>
+      <text x="50" y="174" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Lose 1lb/wk:</text>
+      <text x="210" y="174" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b">TDEE − 500 = 2,300 cal/day</text>
+      <!-- Right panel -->
+      <line x1="452" y1="32" x2="452" y2="192" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <rect x="462" y="35" width="408" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+      <text x="666" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#f59e0b" text-anchor="middle" letter-spacing="1">ACTIVITY LEVEL MULTIPLIERS</text>
+      <text x="475" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Sedentary (desk job):</text>
+      <text x="760" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">BMR × 1.2</text>
+      <text x="475" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Lightly Active (1–3d/wk):</text>
+      <text x="760" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">BMR × 1.375</text>
+      <text x="475" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Moderately Active (3–5d):</text>
+      <text x="760" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981">BMR × 1.55</text>
+      <text x="475" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Very Active (6–7d/wk):</text>
+      <text x="760" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">BMR × 1.725</text>
+      <text x="475" y="158" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Extra Active (2× daily):</text>
+      <text x="760" y="158" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">BMR × 1.9</text>
+      <text x="475" y="178" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Most people:</text>
+      <text x="760" y="178" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b">Choose 1.375 or 1.55</text>
+    </svg>
+    <div class="img-overlay"><span>Daily calorie calculator — Mifflin-St Jeor BMR formula for men and women with activity multipliers. TDEE = BMR × activity factor. For weight loss: TDEE − 500 cal/day = ~1 lb/week loss.</span></div>
+  </div>
+
+  <h2>How to Use the Calorie Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Select gender and enter your stats</strong><span>Choose Male or Female. Enter your age, height, and weight. Toggle between metric (kg/cm) and imperial (lbs/ft) using the unit switch. Our <strong>maintenance calorie calculator</strong> and <strong>weight loss calorie calculator</strong> use the Mifflin-St Jeor equation — more accurate than the older Harris-Benedict formula used by many competitors.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Select your activity level honestly</strong><span>Most people overestimate their activity level. If you sit at a desk all day and go to the gym 3x/week, choose "Lightly Active" (not Moderately). Activity level has the largest impact on your <strong>daily calorie calculator</strong> result — choosing one level higher can add 200–400 calories to your TDEE.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Choose your goal</strong><span>Select Lose Weight (−500 cal/day deficit = ~1 lb/week loss), Maintain Weight (eat at TDEE), or Gain Weight (+500 cal/day surplus = ~1 lb/week gain). Our <strong>calorie calculator to lose weight</strong> and <strong>calorie calculator to gain weight</strong> show exact daily targets and estimated weekly change.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Review BMR, TDEE, and macros</strong><span>See your BMR (calories at complete rest), TDEE (total daily expenditure with activity), goal-specific calorie target, and recommended macro split (protein/carbs/fat) in grams per day. The protein target is especially important — hit it to preserve or build muscle during weight loss or gain.</span></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-txt"><strong>Use the Exercise Burn tab for workout calories</strong><span>Switch to the Exercise Burn tab for our <strong>running calorie calculator</strong>, <strong>treadmill calorie calculator</strong>, <strong>walking calorie calculator</strong>, cycling, swimming, and HIIT estimates. Enter your weight and workout duration for accurate calorie burn using MET values.</span></div></div>
+  </div>
+
+  <h2>Calorie Calculator for Weight Loss — How Many Calories to Lose Weight?</h2>
+  <p>Our <strong>calorie calculator for weight loss</strong> and <strong>weight loss calorie calculator</strong> use a 500 calorie/day deficit below TDEE, which produces approximately 1 pound (0.45 kg) of fat loss per week (based on 3,500 calories = 1 lb fat). For faster loss, use a 750 cal/day deficit (~1.5 lbs/week). Never go below 1,200 calories (women) or 1,500 calories (men) without medical supervision — extremely low calories cause muscle loss, metabolic adaptation, and nutrient deficiencies.</p>
+
+  <div class="exb">
+    <h4>Calorie Calculator to Lose Weight — Example</h4>
+    <p>Woman, 35, 165cm, 75kg, Moderately Active<br>
+    BMR = 10×75 + 6.25×165 − 5×35 − 161 = 1,514 cal<br>
+    TDEE = 1,514 × 1.55 = <strong>2,347 cal/day (maintenance)</strong><br>
+    Weight loss target (−500): <strong>1,847 cal/day → ~1 lb/week loss</strong><br>
+    Faster loss (−750): 1,597 cal/day → ~1.5 lbs/week loss</p>
+  </div>
+
+  <h2>Maintenance Calorie Calculator — What Is TDEE?</h2>
+  <p>The <strong>maintenance calorie calculator</strong> computes your TDEE (Total Daily Energy Expenditure) — the exact number of calories you need each day to maintain your current weight. TDEE = BMR × Activity Factor. At your TDEE, body weight stays constant. Eat above = gain weight. Eat below = lose weight. Most adults have a TDEE between 1,800–3,000 calories depending on size and activity level. Our <strong>online calorie calculator</strong> computes your exact TDEE using the Mifflin-St Jeor formula.</p>
+
+  <h2>Dog Calorie Calculator &amp; Cat Calorie Calculator</h2>
+  <p>Looking for a <strong>dog calorie calculator</strong> or <strong>cat calorie calculator</strong>? While our tool focuses on humans, here are general pet guidelines: Dogs need approximately 30 × body weight (kg) + 70 calories per day for maintenance (the RER formula). Cats need approximately 70 × body weight (kg)^0.75 calories per day. For example, a 10kg (22 lb) dog needs about 370 calories/day, while a 4.5kg (10 lb) cat needs about 200 calories/day. Always consult your veterinarian for precise pet nutrition guidance, especially for weight loss, growing pets, or those with health conditions.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/><rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">CALORIE CALCULATOR — DAILY NEEDS BY GOAL (WOMAN 30 · 165CM · 68KG · MODERATE)</text>
+      <line x1="42" y1="155" x2="870" y2="155" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+      <!-- Lose aggressive -->
+      <rect x="55" y="95" width="90" height="60" rx="5" fill="#ef4444" opacity=".7"/>
+      <text x="100" y="89" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f87171" text-anchor="middle">1,350</text>
+      <text x="100" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Lose Fast</text>
+      <text x="100" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">−750 cal/day</text>
+      <!-- Lose moderate -->
+      <rect x="205" y="70" width="90" height="85" rx="5" fill="#f59e0b" opacity=".8"/>
+      <text x="250" y="64" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">1,600</text>
+      <text x="250" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Lose Moderate</text>
+      <text x="250" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">−500 cal/day</text>
+      <!-- Lose mild -->
+      <rect x="355" y="52" width="90" height="103" rx="5" fill="#10b981" opacity=".8"/>
+      <text x="400" y="46" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">1,850</text>
+      <text x="400" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Lose Mild</text>
+      <text x="400" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">−250 cal/day</text>
+      <!-- Maintain -->
+      <rect x="505" y="28" width="90" height="127" rx="5" fill="#3b82f6"/>
+      <text x="550" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">2,100</text>
+      <text x="550" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Maintain ✓</text>
+      <text x="550" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#60a5fa" text-anchor="middle">TDEE</text>
+      <!-- Gain mild -->
+      <rect x="655" y="40" width="90" height="115" rx="5" fill="#8b5cf6" opacity=".8"/>
+      <text x="700" y="34" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#a78bfa" text-anchor="middle">2,350</text>
+      <text x="700" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Gain Mild</text>
+      <text x="700" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">+250 cal/day</text>
+      <!-- Gain -->
+      <rect x="785" y="20" width="80" height="135" rx="5" fill="#8b5cf6"/>
+      <text x="825" y="14" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#c4b5fd" text-anchor="middle">2,600</text>
+      <text x="825" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Gain Weight</text>
+      <text x="825" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">+500 cal/day</text>
+    </svg>
+    <div class="img-overlay"><span>Calorie calculator for weight loss and gain — Woman, 30, 165cm, 68kg, moderately active: from 1,350 cal (aggressive loss) to 2,600 cal (muscle gain). Maintenance TDEE = 2,100 cal/day.</span></div>
+  </div>
+
+  <h2>Recipe Calorie Calculator — How to Count Food Calories</h2>
+  <p>Our <strong>recipe calorie calculator</strong> tab (click "Food Calories" above) shows calorie counts for popular foods, restaurant items, and common ingredients. For a complete <strong>food calorie calculator</strong>, add up each ingredient's calories based on serving size. Use the USDA FoodData Central database (search online) for precise per-gram calorie counts. General calorie density: Protein = 4 cal/g, Carbohydrates = 4 cal/g, Fat = 9 cal/g, Alcohol = 7 cal/g.</p>
+
+  <div class="tip">
+    <p><strong>The most accurate calorie tracking tip:</strong> Use a food scale for 2 weeks instead of measuring cups. Studies show people underestimate calorie intake by 20–40% using visual estimates. Once you understand portions visually, you can go back to estimating. This single habit change is more impactful than choosing a specific diet plan or using any particular <strong>online calorie calculator</strong>.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Calorie Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Questions covering daily calorie needs, weight loss, TDEE, BMR, running/walking calorie burn, and food calorie lookups.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How many calories should I eat per day?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Daily calorie needs vary significantly by age, gender, size, and activity level. General ranges: Women 1,600–2,400 cal/day; Men 2,000–3,000 cal/day. For your exact number, use our <strong>daily calorie calculator</strong> above — it uses the Mifflin-St Jeor formula, the most accurate available. Your TDEE (maintenance calories) is the foundation: eat less to lose weight, eat more to gain. For weight loss: TDEE − 500 = ~1 lb/week loss. For weight gain: TDEE + 500 = ~1 lb/week gain. Never go below 1,200 (women) or 1,500 (men) calories without medical supervision.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does the maintenance calorie calculator work?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>maintenance calorie calculator</strong> computes TDEE (Total Daily Energy Expenditure) in two steps: 1) Calculate BMR (Basal Metabolic Rate) using the Mifflin-St Jeor formula. 2) Multiply BMR by your activity factor: Sedentary ×1.2, Lightly Active ×1.375, Moderately Active ×1.55, Very Active ×1.725, Extra Active ×1.9. TDEE = your maintenance calories. Eating exactly at TDEE = stable weight. This is the most important number from our <strong>online calorie calculator</strong>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How many calories does running burn?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>running calorie calculator</strong> uses MET (Metabolic Equivalent) values. Formula: Calories = MET × weight(kg) × hours. Running at 6 mph: MET = 10. A 70kg person running 30 minutes = 10 × 70 × 0.5 = <strong>350 calories</strong>. Running at 8 mph: MET = 13.5 = 473 cal/30min. Our <strong>treadmill calorie calculator</strong> is nearly identical — treadmill burns slightly less due to no wind resistance. Use the Exercise Burn tab above to calculate your specific burn based on your weight, duration, and speed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How many calories in a Chipotle bowl?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>Chipotle calorie calculator</strong> / <strong>Chipotle bowl calorie calculator</strong> breakdown: Chicken (4oz) = 190 cal · White Rice = 210 cal · Black Beans = 130 cal · Cheese = 110 cal · Sour Cream = 120 cal · Guacamole = 230 cal · Salsa (fresh) = 20 cal. A fully-loaded chicken bowl = ~1,010–1,200 cal. Lower calorie bowl: Chicken + Lettuce base + Black beans + Fajita veggies + Fresh salsa = ~500–600 cal. Use our Food tab for more details. Switch rice for lettuce (save ~200 cal) and skip cheese + sour cream (save ~230 cal).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the Mifflin-St Jeor formula and why use it?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The Mifflin-St Jeor formula is the most validated BMR equation for most adults. It was derived in 1990 and is the formula recommended by the Academy of Nutrition and Dietetics. Men: BMR = 10×weight(kg) + 6.25×height(cm) − 5×age + 5. Women: BMR = 10×weight(kg) + 6.25×height(cm) − 5×age − 161. It's ~5% more accurate than the older Harris-Benedict formula for predicting resting metabolic rate in most adults. Our <strong>daily calorie calculator</strong> uses Mifflin-St Jeor exclusively, which is why it's more accurate than many competitors' tools that still use Harris-Benedict.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How many calories should I eat to gain weight?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>calorie calculator to gain weight</strong> recommends eating 250–500 calories above your TDEE. A 250 cal/day surplus = ~0.5 lb/week gain (better for lean gains). A 500 cal/day surplus = ~1 lb/week gain. Combine with strength training to ensure you're building muscle, not just fat. Aim for 0.8–1g protein per lb of bodyweight during a bulk. If you're gaining more than 1 lb/week, reduce the surplus — excess calories above muscle synthesis capacity = fat gain. Use our <strong>calorie calculator to gain weight</strong> goal mode for your exact daily target.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Health &amp; Finance Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/bmi-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);">&#9878;</div>
+        <div class="oc-name">BMI Calculator</div>
+        <div class="oc-desc">Body mass index for men, women &amp; children</div>
+      </a>
+      <a href="/investment-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><path d="M2 11l3-5 3 3.5 2-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Investment Calculator</div>
+        <div class="oc-desc">Compound growth, 401k, retirement</div>
+      </a>
+      <a href="/discount-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><path d="M2 12L12 2M5 2.5h-3v3M9 11.5h3v-3" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Discount Calculator</div>
+        <div class="oc-desc">% off, double &amp; triple discounts</div>
+      </a>
+      <a href="/salary-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2.5 2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Salary Calculator</div>
+        <div class="oc-desc">Hourly to annual, take-home pay</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var tabMode = 'daily';
+var unitMode = 'metric';
+var gender = 'male';
+var goal = 'maintain';
+
+/* FOOD DATA */
+var FOOD_DATA = {
+  chipotle: [
+    {n:'Chicken (4oz)',            cal:190},
+    {n:'Steak (4oz)',              cal:210},
+    {n:'White Rice',              cal:210},
+    {n:'Brown Rice',              cal:215},
+    {n:'Black Beans',             cal:130},
+    {n:'Pinto Beans',             cal:120},
+    {n:'Fajita Veggies',          cal:20},
+    {n:'Cheese',                  cal:110},
+    {n:'Sour Cream',              cal:120},
+    {n:'Guacamole',               cal:230},
+    {n:'Fresh Tomato Salsa',      cal:20},
+    {n:'Corn Salsa',              cal:90},
+    {n:'Flour Tortilla (burrito)',cal:330},
+    {n:'Lettuce (bowl base)',     cal:5}
+  ],
+  starbucks: [
+    {n:'Brewed Coffee (venti)',       cal:5},
+    {n:'Cold Brew (grande)',          cal:5},
+    {n:'Caramel Latte (grande, 2%)',  cal:300},
+    {n:'Pumpkin Spice Latte (grande)',cal:380},
+    {n:'Caramel Frappuccino (grande)',cal:430},
+    {n:'Matcha Latte (grande, oat)',  cal:310},
+    {n:'Vanilla Sweet Cream Cold Brew',cal:200},
+    {n:'Chai Latte (grande)',         cal:240},
+    {n:'Espresso (solo)',             cal:10},
+    {n:'Croissant',                   cal:280},
+    {n:'Chocolate Croissant',         cal:340},
+    {n:'Blueberry Muffin',            cal:380}
+  ],
+  subway: [
+    {n:'6" Turkey Breast',           cal:280},
+    {n:'6" Italian BMT',             cal:410},
+    {n:'6" Veggie Delite',           cal:200},
+    {n:'6" Chicken Teriyaki',        cal:370},
+    {n:'6" BLT',                     cal:340},
+    {n:'Footlong Turkey Breast',     cal:560},
+    {n:'Avocado (addition)',         cal:110},
+    {n:'Cheese (slice)',             cal:55},
+    {n:'Mayo (1 tbsp)',              cal:110},
+    {n:'Mustard (1 tsp)',            cal:5},
+    {n:'Chipotle Southwest Sauce',   cal:100},
+    {n:'Chocolate Chip Cookie',      cal:220}
+  ],
+  dunkin: [
+    {n:'Cold Brew Medium',           cal:5},
+    {n:'Iced Coffee (med, cream+sugar)',cal:170},
+    {n:'Oat Milk Latte Medium',      cal:270},
+    {n:'Caramel Macchiato Medium',   cal:290},
+    {n:'Glazed Donut',               cal:260},
+    {n:'Boston Kreme Donut',         cal:300},
+    {n:'Butter Croissant',           cal:380},
+    {n:'Bacon Egg & Cheese Croissant',cal:550},
+    {n:'Hash Browns',                cal:130},
+    {n:'Munchkins (glazed, each)',    cal:60},
+    {n:'Avocado Toast',              cal:290},
+    {n:'Wake-Up Wrap',               cal:180}
+  ],
+  common: [
+    {n:'Chicken Breast (100g, cooked)',cal:165},
+    {n:'Brown Rice (100g, cooked)',    cal:123},
+    {n:'Broccoli (100g)',              cal:34},
+    {n:'Egg (large)',                  cal:78},
+    {n:'Banana (medium)',              cal:105},
+    {n:'Apple (medium)',               cal:95},
+    {n:'Almonds (28g / 1oz)',          cal:164},
+    {n:'Greek Yogurt (170g)',          cal:100},
+    {n:'Salmon (100g, cooked)',        cal:208},
+    {n:'Avocado (half)',               cal:120},
+    {n:'Whole Milk (240ml)',           cal:149},
+    {n:'Oatmeal (1 cup cooked)',       cal:158},
+    {n:'Pizza slice (cheese, medium)', cal:285},
+    {n:'Big Mac (McDonald\'s)',        cal:563}
+  ],
+  exercise: [
+    {n:'Walking 30 min (70kg)',        cal:140},
+    {n:'Running 30 min 6mph (70kg)',   cal:350},
+    {n:'Cycling 30 min moderate (70kg)',cal:280},
+    {n:'Swimming 30 min (70kg)',       cal:250},
+    {n:'HIIT 30 min (70kg)',           cal:450},
+    {n:'Yoga 60 min (70kg)',           cal:190},
+    {n:'Weight Training 60 min (70kg)',cal:250},
+    {n:'Dancing 30 min (70kg)',        cal:195}
+  ]
+};
+
+/* MET VALUES for exercise */
+var METs = {
+  walking: {slow:3.0, moderate:4.3, fast:5.0},
+  running: {slow:9.0, moderate:11.0, fast:14.5},
+  cycling: {slow:5.0, moderate:8.0, fast:12.0},
+  swimming:{slow:6.0, moderate:8.0, fast:11.0},
+  hiit:    {slow:8.0, moderate:10.0,fast:14.0},
+  yoga:    {slow:2.5, moderate:3.0, fast:4.0}
+};
+
+function setTab(t, el) {
+  tabMode = t;
+  document.getElementById('tab-daily').classList.remove('on');
+  document.getElementById('tab-exercise').classList.remove('on');
+  document.getElementById('tab-food').classList.remove('on');
+  el.classList.add('on');
+  document.getElementById('panel-daily').style.display    = t==='daily'    ? 'block' : 'none';
+  document.getElementById('panel-exercise').style.display = t==='exercise' ? 'block' : 'none';
+  document.getElementById('panel-food').style.display     = t==='food'     ? 'block' : 'none';
+  document.getElementById('daily-results').style.display  = t==='daily'    ? 'block' : 'none';
+  document.getElementById('exercise-results').style.display = t==='exercise'?'block' : 'none';
+  document.getElementById('btn-label').textContent = t==='daily'?'Calculate Calories':t==='exercise'?'Calculate Burn':'View Food Calories';
+  if(t==='food') loadFoodCat();
+  resetResult();
+}
+
+function setUnit(u) {
+  unitMode = u;
+  document.getElementById('u-metric').classList.toggle('on',   u==='metric');
+  document.getElementById('u-imperial').classList.toggle('on', u==='imperial');
+  document.getElementById('hm-wrap').style.display = u==='metric'   ? 'block':'none';
+  document.getElementById('hi-wrap').style.display = u==='imperial' ? 'block':'none';
+  document.getElementById('wm-wrap').style.display = u==='metric'   ? 'block':'none';
+  document.getElementById('wi-wrap').style.display = u==='imperial' ? 'block':'none';
+  resetResult();
+}
+
+function setGender(g, el) {
+  gender = g;
+  document.getElementById('g-male').classList.toggle('on',   g==='male');
+  document.getElementById('g-female').classList.toggle('on', g==='female');
+}
+
+function setGoal(g, el) {
+  goal = g;
+  ['lose','maintain','gain'].forEach(function(id){
+    document.getElementById('goal-'+id).classList.remove('on');
+  });
+  el.classList.add('on');
+}
+
+/* SLIDERS */
+function bindSl(inpId, slId, bdgId, fmt) {
+  var inp=document.getElementById(inpId), sl=document.getElementById(slId), bdg=document.getElementById(bdgId);
+  if(!inp) return;
+  if(sl) sl.addEventListener('input',function(){ inp.value=this.value; if(bdg) bdg.textContent=fmt(this.value); });
+  inp.addEventListener('input',function(){ if(sl) sl.value=Math.min(parseFloat(this.value)||0,parseFloat(sl.max)); if(bdg) bdg.textContent=fmt(this.value); });
+}
+bindSl('f-age','sl-age','bdg-age',function(v){return v+' yrs';});
+bindSl('f-ht-cm','sl-ht-cm','bdg-ht-m',function(v){return v+' cm';});
+bindSl('f-wt-kg','sl-wt-kg','bdg-wt-m',function(v){return v+' kg';});
+bindSl('f-wt-lbs','sl-wt-lbs','bdg-wt-i',function(v){return v+' lbs';});
+bindSl('f-ex-dur','sl-ex-dur','bdg-ex-dur',function(v){return v+' min';});
+document.getElementById('f-ht-ft').addEventListener('input', function(){
+  var ft=parseInt(this.value)||0, ins=parseInt(document.getElementById('f-ht-in').value)||0;
+  document.getElementById('bdg-ht-i').textContent = ft+' ft '+ins+' in';
+});
+document.getElementById('f-ht-in').addEventListener('input', function(){
+  var ft=parseInt(document.getElementById('f-ht-ft').value)||0, ins=parseInt(this.value)||0;
+  document.getElementById('bdg-ht-i').textContent = ft+' ft '+ins+' in';
+});
+document.getElementById('f-ex-wt').addEventListener('input',function(){
+  document.getElementById('bdg-ex-wt').textContent = this.value+' '+(unitMode==='metric'?'kg':'lbs');
+});
+
+function resetResult(){
+  if(tabMode==='food') return;
+  document.getElementById('results-block').style.display='none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display='flex';
+  document.getElementById('err-msg').style.display='none';
+}
+
+function gv(id){ var el=document.getElementById(id); return el?parseFloat(el.value)||0:0; }
+function gs(id){ var el=document.getElementById(id); return el?el.value:''; }
+function fc(n){ return Math.round(n).toLocaleString(); }
+
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+
+  if(tabMode==='food'){ loadFoodCat(); return; }
+
+  if(tabMode==='exercise'){
+    calcExercise(); return;
+  }
+
+  /* DAILY CALORIE CALCULATION */
+  var age=gv('f-age');
+  var wtKg, htCm;
+  if(unitMode==='metric'){
+    htCm = gv('f-ht-cm'); wtKg = gv('f-wt-kg');
+  } else {
+    var ft=gv('f-ht-ft'), ins=gv('f-ht-in'), lbs=gv('f-wt-lbs');
+    htCm = (ft*12+ins)*2.54; wtKg = lbs*0.453592;
+  }
+
+  if(!htCm||!wtKg||!age||htCm<100||htCm>250||wtKg<20||wtKg>400){
+    document.getElementById('err-msg').style.display='block'; return;
+  }
+
+  /* Mifflin-St Jeor BMR */
+  var bmr;
+  if(gender==='male')   bmr = 10*wtKg + 6.25*htCm - 5*age + 5;
+  else                  bmr = 10*wtKg + 6.25*htCm - 5*age - 161;
+  bmr = Math.round(bmr);
+
+  var actFactor = parseFloat(gs('f-activity'))||1.55;
+  var tdee = Math.round(bmr * actFactor);
+
+  var loseCal = Math.max(tdee-500, gender==='female'?1200:1500);
+  var gainCal = tdee + 500;
+
+  var targetCal = goal==='lose' ? loseCal : goal==='gain' ? gainCal : tdee;
+  var weeklyChange = goal==='lose' ? '-1 lb/week' : goal==='gain' ? '+1 lb/week' : '0 (stable)';
+  var goalLabel = goal==='lose' ? 'Lose Weight (−500 cal)' : goal==='gain' ? 'Gain Weight (+500 cal)' : 'Maintain Weight';
+
+  /* MACROS (standard split: 30% protein, 40% carbs, 30% fat) */
+  var proteinCal = targetCal * 0.30;
+  var carbsCal   = targetCal * 0.40;
+  var fatCal     = targetCal * 0.30;
+  var proteinG = Math.round(proteinCal/4);
+  var carbsG   = Math.round(carbsCal/4);
+  var fatG     = Math.round(fatCal/9);
+
+  /* Goal calorie preview in options */
+  document.getElementById('gcal-lose').textContent    = fc(loseCal)+' cal';
+  document.getElementById('gcal-maintain').textContent = fc(tdee)+' cal';
+  document.getElementById('gcal-gain').textContent    = fc(gainCal)+' cal';
+
+  /* Results */
+  document.getElementById('ch-badge').textContent = goalLabel;
+  document.getElementById('ch-cal').textContent   = fc(targetCal);
+  document.getElementById('chip-goal').textContent = 'Goal: '+['Lose','Maintain','Gain'][['lose','maintain','gain'].indexOf(goal)];
+  document.getElementById('chip-bmr').textContent  = 'BMR: '+fc(bmr);
+  document.getElementById('chip-tdee').textContent = 'TDEE: '+fc(tdee);
+  document.getElementById('gc-lose').textContent  = fc(loseCal);
+  document.getElementById('gc-maint').textContent = fc(tdee);
+  document.getElementById('gc-gain').textContent  = fc(gainCal);
+  document.getElementById('r-bmr').textContent    = fc(bmr);
+  document.getElementById('r-tdee').textContent   = fc(tdee);
+  document.getElementById('r-protein').textContent = proteinG+'g';
+  document.getElementById('r-weekly').textContent  = weeklyChange;
+
+  /* MACRO BAR */
+  document.getElementById('mb-p').style.width = '30%';
+  document.getElementById('mb-c').style.width = '40%';
+  document.getElementById('mb-f').style.width = '30%';
+  document.getElementById('ml-p').textContent = proteinG+'g';
+  document.getElementById('ml-c').textContent = carbsG+'g';
+  document.getElementById('ml-f').textContent = fatG+'g';
+
+  showResult();
+}
+
+function calcExercise(){
+  var wtVal = gv('f-ex-wt');
+  var dur   = gv('f-ex-dur');
+  var speed = gs('f-ex-speed');
+  if(!wtVal||!dur){ document.getElementById('err-msg').style.display='block'; return; }
+  var wtKg = unitMode==='metric' ? wtVal : wtVal*0.453592;
+  var hrs  = dur/60;
+
+  var burns = [
+    {name:'Walking',  ico:'&#128694;', met:METs.walking[speed]},
+    {name:'Running',  ico:'&#127939;', met:METs.running[speed]},
+    {name:'Treadmill',ico:'&#127937;', met:METs.running[speed]*0.92},
+    {name:'Cycling',  ico:'&#128692;', met:METs.cycling[speed]},
+    {name:'Swimming', ico:'&#127946;', met:METs.swimming[speed]},
+    {name:'HIIT',     ico:'&#128170;', met:METs.hiit[speed]}
+  ];
+
+  var totalMain = Math.round(burns[1].met * wtKg * hrs); /* running as main */
+  document.getElementById('ex-total').textContent = totalMain;
+  document.getElementById('ex-chip-dur').textContent = dur+' min';
+  document.getElementById('ex-chip-wt').textContent  = wtVal+' '+(unitMode==='metric'?'kg':'lbs');
+
+  var grid = document.getElementById('ex-grid');
+  grid.innerHTML = '';
+  burns.forEach(function(b){
+    var cal = Math.round(b.met * wtKg * hrs);
+    var div = document.createElement('div'); div.className='ex-card';
+    div.innerHTML = '<div class="ex-ico">'+b.ico+'</div><div class="ex-name">'+b.name+'</div><div class="ex-cal">'+cal+'</div><div class="ex-min">cal / '+dur+' min</div>';
+    grid.appendChild(div);
+  });
+
+  document.getElementById('exercise-results').style.display='block';
+  showResult();
+}
+
+function loadFoodCat(){
+  var cat = gs('f-food-cat') || 'chipotle';
+  var items = FOOD_DATA[cat] || [];
+  var list = document.getElementById('food-list');
+  if(!list) return;
+  list.innerHTML='';
+  items.forEach(function(item){
+    var div=document.createElement('div'); div.className='food-item';
+    div.innerHTML='<span class="food-name">'+item.n+'</span><span class="food-cal-tag">'+item.cal+' cal</span>';
+    list.appendChild(div);
+  });
+  /* Show results area for food tab */
+  document.getElementById('r-placeholder').style.display='none';
+  document.getElementById('results-block').style.display='block';
+  document.getElementById('results-block').classList.add('show');
+  document.getElementById('daily-results').style.display='none';
+  document.getElementById('exercise-results').style.display='none';
+}
+
+function showResult(){
+  document.getElementById('r-placeholder').style.display='none';
+  var rb=document.getElementById('results-block');
+  rb.style.display='block'; rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+function faqT(el){
+  var item=el.parentElement,was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was)item.classList.add('open');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter') calculate(); });
+  });
+});
+</script>
+</body>
+</html>

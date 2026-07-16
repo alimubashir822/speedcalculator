@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audiobook Speed Calculator Online — Free Listening Time at Any Speed | SpeedCalculator.net</title>
+<meta name="description" content="Free audiobook speed calculator online. Use our audiobook speed calculator to find exact listening time at 1.25x, 1.5x, 1.75x, 2x and any custom speed. Enter hours, minutes, or page count — instant results with full speed comparison table.">
+<meta name="keywords" content="audiobook speed calculator, audiobook speed calculator online, audiobook calculator, audiobook listening time calculator, audiobook speed, how long to listen to audiobook, audiobook playback speed, podcast speed calculator, reading time calculator, audiobook time calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/audiobook-speed-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Audiobook Speed Calculator Online",
+  "alternateName":"Audiobook Speed Calculator",
+  "url":"https://www.speedcalculator.net/audiobook-speed-calculator/",
+  "description":"Free audiobook speed calculator online — use our audiobook speed calculator to calculate listening time at any playback speed (0.5x through 3x) for audiobooks and podcasts",
+  "applicationCategory":"UtilityApplication",
+  "operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Playback speed comparison table","Hours/minutes/pages input","Time saved calculation","Popular book presets","Podcast support"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HowTo",
+  "name":"How to Use the Audiobook Speed Calculator Online",
+  "description":"Step-by-step guide to using our free audiobook speed calculator to find listening time at different playback speeds",
+  "step":[
+    {"@type":"HowToStep","name":"Enter Audiobook Length","text":"Enter the total length of your audiobook in hours and minutes. You can find this on Audible, the app, or the back of the book. Alternatively, enter page count for an estimate."},
+    {"@type":"HowToStep","name":"Choose Your Playback Speed","text":"Select your preferred playback speed — 1.25x, 1.5x, 1.75x, 2x, or enter a custom speed. Most listeners find 1.5x the sweet spot for comprehension and efficiency."},
+    {"@type":"HowToStep","name":"See Instant Results","text":"The calculator instantly shows your new listening time, time saved, and a full comparison table for all major speeds from 1x to 3x."},
+    {"@type":"HowToStep","name":"Compare All Speeds","text":"Review the full speed comparison table to pick the best balance between time savings and comprehension for your specific book."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Does listening speed affect comprehension?","acceptedAnswer":{"@type":"Answer","text":"Research shows most people can listen at 1.5x with little to no comprehension loss. At 2x, comprehension begins to drop for complex material. For fiction and familiar topics, 2x is manageable. For technical or dense content, 1.25–1.5x is recommended. Regular practice at higher speeds improves your ability to process faster audio over time."}},
+    {"@type":"Question","name":"What is the best audiobook speed for retention?","acceptedAnswer":{"@type":"Answer","text":"1.5x is considered the sweet spot — it saves 33% listening time while maintaining strong comprehension. Studies by researchers at UC Berkeley found that listeners could accurately recall content at speeds up to 1.5x without significant loss. Beyond 2x, most listeners show meaningful drops in long-term retention."}},
+    {"@type":"Question","name":"How many audiobooks can I finish per month at 2x speed?","acceptedAnswer":{"@type":"Answer","text":"The average audiobook is 10–11 hours at 1x speed. At 2x speed, that becomes 5–5.5 hours. If you listen 1 hour per day at 2x speed, you can finish approximately 4 audiobooks per month instead of 2 at normal speed. At 1.5x for 1 hour/day, you would complete about 3 audiobooks per month."}},
+    {"@type":"Question","name":"How do I find the length of an audiobook?","acceptedAnswer":{"@type":"Answer","text":"Audiobook length is listed on Audible (under the title), on Amazon in the product details, in the Libby or Hoopla app, in the Apple Books app, or on the publisher's website. For physical books, estimate listening time using the formula: (word count ÷ 9,300) hours, which accounts for the average narration speed of about 155 words per minute."}},
+    {"@type":"Question","name":"How do I calculate audiobook listening time from page count?","acceptedAnswer":{"@type":"Answer","text":"Average audiobook narration speed is 150–160 words per minute. An average paperback page has about 250–300 words. So: Listening hours = (pages × 275 words/page) ÷ (155 words/minute × 60). For a 400-page book: (400 × 275) ÷ 9,300 = approximately 11.8 hours at 1x speed."}},
+    {"@type":"Question","name":"What is a good listening speed for language learning?","acceptedAnswer":{"@type":"Answer","text":"For language learning, 1x or even slower is ideal for beginners. As you improve, gradually increase to 1.25x. Native speed (1x) trains your ear for natural speech patterns. Going slower than 1x (0.75x) can help with unfamiliar vocabulary. Avoid speeds above 1.25x for language learning until you are near-fluent."}},
+    {"@type":"Question","name":"How much time can I save with audiobook speed increase?","acceptedAnswer":{"@type":"Answer","text":"Time savings formula: Saved time = Original time × (1 − 1/speed). At 1.5x on a 10-hour book: 10 × (1 − 1/1.5) = 10 × 0.333 = 3.33 hours saved. At 2x: 10 × 0.5 = 5 hours saved. Our calculator shows this automatically for any book length and speed combination."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* ═══ HERO BANNER — centered, no side calc ═══ */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,68px);font-weight:900;line-height:.92;letter-spacing:-2px;text-transform:uppercase;margin-bottom:18px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:600px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+
+/* ═══ CALCULATOR — full width below hero ═══ */
+.calc-section{padding:0 0 0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:860px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--purple),var(--teal),var(--green),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:24px 28px 28px;}
+
+/* TWO-COL LAYOUT */
+.calc-cols{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;}
+@media(max-width:680px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUT SIDE */
+.inp-section-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px;}
+
+/* PRESET BOOKS */
+.preset-strip{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:16px;}
+.preset-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:4px 11px;font-size:10px;font-weight:600;color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.preset-btn:hover{border-color:var(--accent);color:var(--accent2);}
+.preset-lbl{font-size:10px;font-weight:700;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:7px;}
+
+/* INPUT MODE TOGGLE */
+.mode-toggle{display:flex;gap:5px;margin-bottom:16px;background:var(--bg3);border-radius:var(--radius-sm);padding:4px;}
+.mode-btn{flex:1;border:none;border-radius:6px;background:transparent;color:var(--text3);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .18s;padding:7px 4px;text-align:center;}
+.mode-btn.active{background:var(--accent);color:#fff;}
+
+/* FIELDS */
+.inp-stack{display:flex;flex-direction:column;gap:13px;}
+.inp-grp{display:flex;flex-direction:column;gap:5px;}
+.inp-grp label{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text3);}
+.inp-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-prefix,.inp-suffix{padding:0 11px;font-size:14px;font-weight:700;color:var(--text3);background:rgba(255,255,255,.03);display:flex;align-items:center;white-space:nowrap;border-right:1px solid var(--border);}
+.inp-suffix{border-right:none;border-left:1px solid var(--border);font-size:11px;font-weight:700;}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.inp-sub{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+
+/* SPEED SLIDER */
+.speed-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:10px;}
+@media(max-width:340px){.speed-grid{grid-template-columns:repeat(3,1fr);}}
+.speed-chip{border:1.5px solid var(--border2);border-radius:var(--radius-sm);background:var(--bg3);cursor:pointer;transition:all .18s;padding:9px 4px;text-align:center;}
+.speed-chip:hover{border-color:rgba(59,130,246,.4);}
+.speed-chip.active{border-color:var(--accent);background:rgba(59,130,246,.13);}
+.speed-chip.active .sc-val{color:var(--accent2);}
+.sc-val{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;color:var(--text3);line-height:1;transition:color .18s;}
+.sc-lbl{font-size:8.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text3);margin-top:2px;}
+
+/* CUSTOM SPEED */
+.custom-speed-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.custom-speed-label{font-size:11px;font-weight:600;color:var(--text3);}
+.speed-slider{-webkit-appearance:none;appearance:none;flex:1;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;}
+.speed-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.2);}
+.speed-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);}
+.speed-val-disp{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;color:var(--accent2);min-width:38px;text-align:right;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:4px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+
+/* ERR */
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-bottom:9px;display:none;}
+
+/* ═══ RESULTS ═══ */
+.results-col{display:flex;flex-direction:column;gap:0;}
+.result-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* MAIN RESULT */
+.main-result{background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(139,92,246,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:18px;margin-bottom:12px;position:relative;overflow:hidden;text-align:center;}
+.main-result::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--purple),var(--teal));}
+.mr-speed-badge{display:inline-block;background:rgba(59,130,246,.15);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:10px;}
+.mr-time{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,8vw,52px);font-weight:900;color:var(--teal);line-height:1;letter-spacing:-1px;margin-bottom:4px;}
+.mr-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-weight:700;}
+.mr-chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+.mr-chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;}
+.mr-chip.saved{color:var(--green);border-color:rgba(16,185,129,.3);}
+.mr-chip.original{color:var(--text3);}
+.mr-chip.finish{color:var(--accent2);border-color:var(--border2);}
+
+/* SPEED COMPARISON TABLE */
+.comp-table-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:12px;}
+.comp-tbl-head{padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);}
+.comp-tbl{width:100%;border-collapse:collapse;}
+.comp-tbl th{background:var(--bg);color:var(--text3);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;text-align:center;border-bottom:1px solid var(--border);}
+.comp-tbl th:first-child{text-align:left;}
+.comp-tbl td{padding:7px 10px;color:var(--text2);border-bottom:1px solid rgba(59,130,246,.05);text-align:center;font-size:12px;}
+.comp-tbl td:first-child{text-align:left;font-weight:700;color:var(--text);}
+.comp-tbl tr.active-row td{background:rgba(59,130,246,.06);color:var(--accent2);}
+.comp-tbl tr.active-row td:first-child{color:var(--accent2);}
+.comp-tbl .saved-cell{color:var(--green);font-weight:600;}
+.comp-tbl .badge-cell .sp-badge{display:inline-block;background:rgba(59,130,246,.12);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700;color:var(--accent2);}
+
+/* LISTEN PLAN */
+.listen-plan{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.lp-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
+.lp-rows{display:flex;flex-direction:column;gap:6px;}
+.lp-row{display:flex;align-items:center;gap:10px;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;}
+.lp-icon{font-size:16px;flex-shrink:0;}
+.lp-text{font-size:12px;color:var(--text2);flex:1;}
+.lp-val{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:620px;line-height:1.75;}
+
+/* SPEED GUIDE CARDS */
+.speed-guide{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.speed-guide{grid-template-columns:repeat(2,1fr);}}
+.sg-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.sg-card:hover{border-color:var(--border2);}
+.sg-speed{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;line-height:1;margin-bottom:6px;}
+.sg-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.sg-badge{display:inline-block;border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;margin-bottom:10px;}
+.sg-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 10px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:26px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:360px;}
+
+/* RELATED */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.oc-ico svg{width:15px;height:15px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Audiobook Speed Calculator Online
+  </div>
+</div>
+
+<!-- ═══ HERO BANNER ═══ -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Free Online &middot; Audiobooks &middot; Podcasts &middot; Any Speed</div>
+    <h1 class="hero-h1">Audiobook Speed<em>Calculator Online</em></h1>
+    <p class="hero-sub">The free <strong>audiobook speed calculator</strong> online — instantly find your listening time at any playback speed (1.25x, 1.5x, 1.75x, 2x, or custom). Enter book length in hours, minutes, or pages. Get a full speed comparison table in seconds.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">All Speeds 0.5x–3x</span>
+      <span class="hbadge p">Full Speed Table</span>
+      <span class="hbadge o">Page Count Input</span>
+      <span class="hbadge" style="border-color:rgba(6,182,212,.3);color:var(--teal);">Popular Book Presets</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CALCULATOR ═══ -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="15" height="15" fill="none" viewBox="0 0 15 15" stroke="currentColor" stroke-width="1.5"><circle cx="7.5" cy="7.5" r="6.5"/><path d="M7.5 4v3.5l2.5 2" stroke-linecap="round"/></svg>
+          </div>
+          Audiobook Speed <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Instant Results</div>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="inp-section-label">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="10" height="10" rx="1.5"/><path d="M3 6h6M3 4h4M3 8h3" stroke-linecap="round"/></svg>
+              Book / Podcast Length
+            </div>
+
+            <!-- POPULAR PRESETS -->
+            <div class="preset-lbl">&#9654; Popular Books (click to load)</div>
+            <div class="preset-strip">
+              <button class="preset-btn" onclick="loadPreset(6,52,'Atomic Habits')">Atomic Habits <span style="color:var(--accent2);">5h 52m</span></button>
+              <button class="preset-btn" onclick="loadPreset(8,10,'Harry Potter 1')">HP Book 1 <span style="color:var(--accent2);">8h 10m</span></button>
+              <button class="preset-btn" onclick="loadPreset(19,47,'Sapiens')">Sapiens <span style="color:var(--accent2);">19h 47m</span></button>
+              <button class="preset-btn" onclick="loadPreset(13,30,'The Hobbit')">The Hobbit <span style="color:var(--accent2);">13h 30m</span></button>
+              <button class="preset-btn" onclick="loadPreset(1,0,'Podcast 1hr')">Podcast 1hr</button>
+              <button class="preset-btn" onclick="loadPreset(21,21,'Harry Potter 7')">HP Book 7 <span style="color:var(--accent2);">21h 21m</span></button>
+            </div>
+
+            <!-- INPUT MODE -->
+            <div class="mode-toggle">
+              <button class="mode-btn active" id="mode-time" onclick="setInputMode('time',this)">&#128336; Hours &amp; Minutes</button>
+              <button class="mode-btn" id="mode-pages" onclick="setInputMode('pages',this)">&#128218; Page Count</button>
+            </div>
+
+            <!-- TIME INPUT -->
+            <div id="input-time">
+              <div class="inp-stack">
+                <div class="inp-grp">
+                  <label>Book Length</label>
+                  <div class="inp-row-2">
+                    <div>
+                      <div class="inp-wrap"><input type="number" id="b-hrs" placeholder="10" min="0" max="999" step="1" value="10"><div class="inp-suffix">hrs</div></div>
+                      <div class="inp-sub">hours</div>
+                    </div>
+                    <div>
+                      <div class="inp-wrap"><input type="number" id="b-min" placeholder="30" min="0" max="59" step="1" value="0"><div class="inp-suffix">min</div></div>
+                      <div class="inp-sub">minutes (0–59)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAGE INPUT -->
+            <div id="input-pages" style="display:none;">
+              <div class="inp-stack">
+                <div class="inp-grp">
+                  <label>Page Count</label>
+                  <div class="inp-wrap">
+                    <input type="number" id="b-pages" placeholder="350" min="1" max="10000" step="1">
+                    <div class="inp-suffix">pages</div>
+                  </div>
+                  <div class="inp-sub">Estimated at 275 words/page, 155 words/minute narration</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SPEED SELECTOR -->
+            <div class="inp-section-label" style="margin-top:18px;">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M6 2v4l2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="6" r="5"/></svg>
+              Playback Speed
+            </div>
+
+            <div class="speed-grid" id="speed-grid">
+              <div class="speed-chip" data-speed="1"    onclick="setSpeed(1,this)"><div class="sc-val">1x</div><div class="sc-lbl">Normal</div></div>
+              <div class="speed-chip" data-speed="1.25" onclick="setSpeed(1.25,this)"><div class="sc-val">1.25x</div><div class="sc-lbl">Slight</div></div>
+              <div class="speed-chip active" data-speed="1.5" onclick="setSpeed(1.5,this)"><div class="sc-val" style="color:var(--accent2);">1.5x</div><div class="sc-lbl">Recommended</div></div>
+              <div class="speed-chip" data-speed="1.75" onclick="setSpeed(1.75,this)"><div class="sc-val">1.75x</div><div class="sc-lbl">Fast</div></div>
+              <div class="speed-chip" data-speed="2"    onclick="setSpeed(2,this)"><div class="sc-val">2x</div><div class="sc-lbl">Double</div></div>
+            </div>
+            <div class="custom-speed-row">
+              <span class="custom-speed-label">Custom:</span>
+              <input type="range" class="speed-slider" id="custom-speed-slider" min="0.5" max="3" step="0.05" value="1.5">
+              <span class="speed-val-disp" id="custom-speed-val">1.5x</span>
+            </div>
+
+            <!-- LISTEN DAILY (optional) -->
+            <div class="inp-section-label" style="margin-top:18px;">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="10" height="9" rx="1.5"/><path d="M1 5h10M4 2V1M8 2V1" stroke-linecap="round"/></svg>
+              Daily Listening Goal <span style="font-size:9px;font-weight:400;color:var(--text3);margin-left:4px;">(optional)</span>
+            </div>
+            <div class="inp-stack">
+              <div class="inp-grp">
+                <div class="inp-wrap">
+                  <input type="number" id="daily-min" placeholder="60" min="1" max="1440" step="5" value="60">
+                  <div class="inp-suffix">min / day</div>
+                </div>
+                <div class="inp-sub">Enter how many minutes you listen per day to see estimated finish date</div>
+              </div>
+            </div>
+
+            <div class="err-msg" id="err-msg">Please enter a valid book length — hours and/or minutes must be greater than 0.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Listening Time
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="inp-section-label">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M2 9l2.5-5 2.5 3.5 2-3 1.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+
+            <div class="result-placeholder" id="result-placeholder">
+              <div style="font-size:44px;">&#127911;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.7;">Enter your audiobook length<br>and click <strong style="color:var(--accent2);">Calculate</strong> to see<br>your adjusted listening time.</div>
+            </div>
+
+            <div class="results-block" id="results-block">
+
+              <!-- MAIN RESULT -->
+              <div class="main-result">
+                <div class="mr-speed-badge" id="mr-speed-badge">At 1.5x speed</div>
+                <div class="mr-time" id="mr-time">—</div>
+                <div class="mr-label">New Listening Time</div>
+                <div class="mr-chips">
+                  <span class="mr-chip original" id="chip-original">&#9654; Original: —</span>
+                  <span class="mr-chip saved" id="chip-saved">&#9200; Saved: —</span>
+                  <span class="mr-chip finish" id="chip-finish" style="display:none;">&#128197; Done in: —</span>
+                </div>
+              </div>
+
+              <!-- SPEED COMPARISON TABLE -->
+              <div class="comp-table-wrap">
+                <div class="comp-tbl-head">Full Speed Comparison Table</div>
+                <table class="comp-tbl">
+                  <thead>
+                    <tr>
+                      <th style="text-align:left;">Speed</th>
+                      <th>Time</th>
+                      <th>Time Saved</th>
+                      <th>Recommendation</th>
+                    </tr>
+                  </thead>
+                  <tbody id="comp-tbl-body"></tbody>
+                </table>
+              </div>
+
+              <!-- LISTENING PLAN -->
+              <div class="listen-plan" id="listen-plan">
+                <div class="lp-title">Listening Plan</div>
+                <div class="lp-rows" id="lp-rows"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">0.5x</div><div class="stat-lbl">Min Speed</div></div>
+      <div class="stat-item"><div class="stat-val">3x</div><div class="stat-lbl">Max Speed</div></div>
+      <div class="stat-item"><div class="stat-val">1.5x</div><div class="stat-lbl">Sweet Spot</div></div>
+      <div class="stat-item"><div class="stat-val">33%</div><div class="stat-lbl">Time Saved at 1.5x</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SPEED GUIDE ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Audiobook Speed Calculator — Playback Speed Guide</div>
+    <h2 class="sec-title">Which <span>Speed</span> Is Right for You?</h2>
+    <p class="sec-sub">Use this guide alongside our free audiobook speed calculator online to choose the best playback speed for your book type and listening goals.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&auto=format&fit=crop"
+           alt="Audiobook speed calculator — listening to audiobooks at different playback speeds on headphones">
+      <div class="img-overlay"><span>Audiobook speed calculator — find your perfect listening speed for any book or podcast</span></div>
+    </div>
+
+    <div class="speed-guide">
+      <div class="sg-card">
+        <div class="sg-speed" style="color:var(--text3);">1x</div>
+        <div class="sg-name">Normal Speed</div>
+        <div class="sg-badge" style="background:rgba(148,163,184,.1);color:var(--text3);">Best for beginners</div>
+        <p class="sg-p">Full comprehension. Ideal for language learning, complex non-fiction, or first-time audiobook listeners. No time savings.</p>
+      </div>
+      <div class="sg-card">
+        <div class="sg-speed" style="color:var(--accent2);">1.5x</div>
+        <div class="sg-name">Recommended Speed</div>
+        <div class="sg-badge" style="background:rgba(59,130,246,.1);color:var(--accent2);">&#11088; Most popular</div>
+        <p class="sg-p">Saves 33% of listening time. Research shows minimal comprehension loss at this speed. The sweet spot for most listeners.</p>
+      </div>
+      <div class="sg-card">
+        <div class="sg-speed" style="color:var(--orange);">2x</div>
+        <div class="sg-name">Double Speed</div>
+        <div class="sg-badge" style="background:rgba(245,158,11,.1);color:var(--orange);">Power listener</div>
+        <p class="sg-p">Saves 50% of time. Requires practice to maintain comprehension. Good for familiar topics or fiction you know well.</p>
+      </div>
+      <div class="sg-card">
+        <div class="sg-speed" style="color:var(--pink);">3x</div>
+        <div class="sg-name">Ultra Speed</div>
+        <div class="sg-badge" style="background:rgba(236,72,153,.1);color:var(--pink);">Advanced only</div>
+        <p class="sg-p">Saves 67% of time. Very few people maintain good comprehension at 3x. Typically used for review or skimming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARTICLE ═══ -->
+<div class="container">
+<div class="article">
+
+  <h2>Audiobook Speed Calculator — Complete Guide</h2>
+  <p>Our free <strong>audiobook speed calculator online</strong> instantly tells you how long any audiobook or podcast will take at your chosen playback speed. This <strong>audiobook speed calculator</strong> is the most complete tool available — enter the original book length in hours and minutes (or page count), choose your speed, and see not only the adjusted listening time but a full comparison table covering every speed from 0.5x to 3x. Whether you want to know how long Atomic Habits takes at 2x or how many days to finish Harry Potter at 1.5x with a 30-minute daily commute, this free audiobook speed calculator online gives you the answer instantly.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=900&q=80&auto=format&fit=crop"
+         alt="Audiobook speed calculator — calculate listening time for any audiobook at 1.5x, 2x playback speed">
+    <div class="img-overlay"><span>Audiobook speed calculator — calculate how long any book takes at 1x, 1.25x, 1.5x, 1.75x, 2x and beyond</span></div>
+  </div>
+
+  <h2>How to Use the Audiobook Speed Calculator Online</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Enter the audiobook length</strong><span>Type the total length in hours and minutes. Find this on Audible, the audiobook app, or the product page. Alternatively, click a popular book preset — Atomic Habits, Harry Potter, Sapiens, or others — to load it instantly. You can also switch to "Page Count" mode if you only have the physical book.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Select your playback speed</strong><span>Click one of the five preset speed chips (1x, 1.25x, 1.5x, 1.75x, 2x) or drag the custom slider for any speed from 0.5x to 3x. The 1.5x button is pre-selected as it is the research-backed sweet spot for most listeners.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter your daily listening goal</strong><span>Optionally enter how many minutes you listen per day. This lets the calculator show you how many days it will take to finish the book at your chosen speed — helpful for planning your reading list.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Click Calculate and review results</strong><span>Get your new listening time, time saved, and a complete comparison table for all speeds. The Listening Plan section shows daily breakdowns and finish estimates.</span></div></div>
+  </div>
+
+  <h2>Audiobook Speed Calculator Formula — How It Works</h2>
+  <p>The <strong>audiobook speed calculator</strong> formula is: <span class="fi">New Time = Original Time ÷ Speed</span>. Time saved = <span class="fi">Original Time × (1 − 1/Speed)</span>. Our audiobook speed calculator online applies this formula automatically for every speed in the comparison table.</p>
+  <div class="exb">
+    <h4>Example — Sapiens (19h 47min) at 1.5x speed</h4>
+    <p>Original: 19h 47min = 1,187 minutes<br>
+    At 1.5x: 1,187 ÷ 1.5 = 791.3 minutes = <strong>13h 11min</strong><br>
+    Time saved: 1,187 − 791 = 396 minutes = <strong>6 hours 36 minutes saved</strong><br>
+    At 1hr/day listening: finished in <strong>14 days</strong> instead of 20 days</p>
+  </div>
+
+  <h2>How Long Do Audiobooks Take? — Popular Books at Every Speed</h2>
+  <table class="data-table">
+    <tr><th>Audiobook</th><th>Original Length</th><th>At 1.5x</th><th>At 2x</th><th>Time Saved @ 2x</th></tr>
+    <tr><td><strong>Atomic Habits</strong></td><td>5h 52m</td><td>3h 55m</td><td class="good">2h 56m</td><td class="good">2h 56m</td></tr>
+    <tr><td><strong>Harry Potter 1</strong></td><td>8h 10m</td><td>5h 27m</td><td class="good">4h 5m</td><td class="good">4h 5m</td></tr>
+    <tr><td><strong>Sapiens</strong></td><td>19h 47m</td><td>13h 11m</td><td class="good">9h 54m</td><td class="good">9h 53m</td></tr>
+    <tr><td><strong>The Hobbit</strong></td><td>13h 30m</td><td>9h 0m</td><td class="good">6h 45m</td><td class="good">6h 45m</td></tr>
+    <tr><td><strong>Harry Potter 7</strong></td><td>21h 21m</td><td>14h 14m</td><td class="good">10h 41m</td><td class="good">10h 40m</td></tr>
+    <tr><td><strong>1-hour podcast</strong></td><td>1h 0m</td><td>40m</td><td class="good">30m</td><td class="good">30m saved</td></tr>
+  </table>
+
+  <h2>How to Calculate Audiobook Length from Page Count</h2>
+  <p>If you have a physical book and want to estimate the audiobook listening time, use this formula: <span class="fi">Hours = (Pages × 275) ÷ 9,300</span>. This assumes the average page has about 275 words and the average narrator reads at 155 words per minute (9,300 words/hour).</p>
+  <div class="exb">
+    <h4>Example — 400-page novel</h4>
+    <p>Estimated words: 400 × 275 = 110,000 words<br>
+    At 155 wpm narration: 110,000 ÷ 155 = 710 minutes = <strong>~11.8 hours at 1x speed</strong><br>
+    At 1.5x: 11.8 ÷ 1.5 = <strong>~7.9 hours (7h 52min)</strong></p>
+  </div>
+  <p>Use our calculator's <strong>Page Count</strong> mode for this conversion automatically — just enter the page count and select your speed.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=900&q=80&auto=format&fit=crop"
+         alt="Audiobook reading time calculator — books, headphones, and listening speed comparison">
+    <div class="img-overlay"><span>Audiobook speed and listening time — how different playback speeds affect your reading progress and comprehension</span></div>
+  </div>
+
+  <h2>Audiobook Speed and Comprehension — What the Research Says</h2>
+  <p>Multiple studies have examined how playback speed affects comprehension and retention:</p>
+  <ul>
+    <li><strong>1.25x:</strong> No measurable comprehension loss for most listeners. Barely perceptible speed increase.</li>
+    <li><strong>1.5x:</strong> Minor comprehension decrease for dense non-fiction; negligible for fiction. The most popular speed among regular audiobook listeners.</li>
+    <li><strong>2x:</strong> Noticeable comprehension drop for complex or unfamiliar material. Manageable for leisure fiction or familiar topics.</li>
+    <li><strong>2.5x and above:</strong> Significant comprehension loss for most listeners. Useful only for review of already-familiar content.</li>
+  </ul>
+  <p>The key insight from research at the University of California is that <strong>regular practice at higher speeds improves your ability to comprehend fast audio over time</strong>. Start at 1.25x and gradually increase every few weeks.</p>
+
+  <div class="tip">
+    <p><strong>Pro audiobook tip:</strong> Use the "chapter-by-chapter" approach — listen to a new, challenging book at 1.25x for comprehension, then re-listen to your favorite passages at 1.5x–2x for efficient review. This maximizes both learning and time efficiency.</p>
+  </div>
+
+  <h2>Best Audiobook Apps and Their Speed Settings</h2>
+  <table class="data-table">
+    <tr><th>App</th><th>Speed Range</th><th>Increment</th><th>Notes</th></tr>
+    <tr><td><strong>Audible</strong></td><td>0.5x – 3.5x</td><td>0.1x steps</td><td>Most popular, best library</td></tr>
+    <tr><td><strong>Libby (OverDrive)</strong></td><td>0.6x – 3x</td><td>Fixed steps</td><td>Free with library card</td></tr>
+    <tr><td><strong>Apple Books</strong></td><td>0.5x – 2x</td><td>0.1x steps</td><td>iOS only, good UI</td></tr>
+    <tr><td><strong>Google Play Books</strong></td><td>0.5x – 2x</td><td>0.1x steps</td><td>Android integration</td></tr>
+    <tr><td><strong>Pocket Casts (podcasts)</strong></td><td>0.5x – 3x</td><td>0.1x steps</td><td>Best podcast app</td></tr>
+    <tr><td><strong>Hoopla</strong></td><td>0.8x – 1.5x</td><td>Fixed steps</td><td>Free with library card</td></tr>
+  </table>
+
+</div>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Audiobook Speed Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Everything you need to know about using our free audiobook speed calculator online.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">Does listening at higher speed affect comprehension?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Research shows most people can listen at <strong>1.5x with little or no comprehension loss</strong>. At 2x, comprehension begins to drop for complex or unfamiliar material, but remains acceptable for fiction and familiar topics. At 2.5x and above, significant retention loss occurs for most people. The good news: your brain adapts with practice. Start at 1.25x for a week, then move to 1.5x. Regular speed listeners typically reach comfortable 1.75x–2x comprehension within 2–3 months of practice. Use our <strong>audiobook speed calculator online</strong> to see exactly how much time you save at each speed for your specific book.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the best audiobook playback speed?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p><strong>1.5x is the most widely recommended speed</strong> — it saves 33% of listening time while maintaining strong comprehension. Surveys of regular audiobook listeners show 1.5x is the most common choice. For dense non-fiction or technical books, start at 1.25x. For light fiction you are enjoying for pleasure, 1.75x–2x is comfortable for most experienced listeners. For language learning, stick to 1x. Use our <strong>audiobook speed calculator</strong> to see the exact time impact of any speed on your specific book — simply enter the book length and our audiobook speed calculator online shows all speeds at once.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How many audiobooks can I finish per year at 2x speed?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The average audiobook is about 10–11 hours at 1x speed. At 2x, that is 5–5.5 hours per book. If you listen for 1 hour per day: at 1x = ~33 books/year, at 1.5x = ~50 books/year, at 2x = ~66 books/year. Most audiobook enthusiasts who listen during commutes (30–60 min/day) finish 20–50 books per year at speeds between 1.5x and 2x. Use the daily listening goal field in our calculator to see exactly how many days your next book will take.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I find the length of an audiobook on Audible?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>On <strong>Audible</strong>: the length is shown on the book's product page under "Program Type" or in the "Product Details" section. In the Audible app, tap on any title and look at the progress bar or the details screen. On <strong>Amazon</strong>, it is listed in the product details as "Listening Length." For <strong>Libby/OverDrive</strong>, the duration is shown on the book's detail page. You can also find audiobook lengths on Goodreads — just click the audiobook edition. Once you have the length, enter it into our audiobook speed calculator for instant results at any speed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I calculate listening time from page count?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the formula: <strong>Listening hours = (Pages × 275) ÷ 9,300</strong>. This assumes 275 words per page (paperback average) and 155 words per minute narration speed. Example: a 400-page book = (400 × 275) ÷ 9,300 = 110,000 ÷ 9,300 = <strong>~11.8 hours</strong>. Switch to <strong>Page Count mode</strong> in our audiobook calculator — just enter the page number and we handle the conversion automatically. Note: this is an estimate, as actual narration speed varies by narrator (130–180 wpm).</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">Does this calculator work for podcasts?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — our audiobook speed calculator works for any audio content, including <strong>podcasts</strong>, lectures, course recordings, and YouTube videos. Enter the episode or video length in hours and minutes, select your playback speed (most podcast apps support 1.5x and 2x), and see the adjusted time instantly. Many podcast listeners use 1.75x–2x for interview shows and 1.25x–1.5x for educational content. The formula is identical: new time = original time ÷ speed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How much time can I save by increasing audiobook speed?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Time savings formula: <strong>Saved = Original × (1 − 1/Speed)</strong>. At 1.25x on 10 hours: saves 2 hours. At 1.5x: saves 3h 20min. At 2x: saves 5 hours. Over a full year of audiobook listening (say 200 total hours), switching from 1x to 1.5x saves 66 hours — nearly 3 full days of audio time. Switching to 2x saves 100 hours per year. Our speed comparison table shows these savings for your specific book with every speed option displayed side by side.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/speed-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2.5 2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, speed, and time</div>
+      </a>
+      <a href="/pace-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><path d="M3 12L7 3l4 6 2-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Pace Calculator</div>
+        <div class="oc-desc">Running pace and finish time</div>
+      </a>
+      <a href="/time-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2.5 1.5" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Time Calculator</div>
+        <div class="oc-desc">Add and subtract time</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><circle cx="4" cy="4" r="2"/><circle cx="11" cy="11" r="2"/><path d="M12 3L3 12" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">% faster, % time saved</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+var activeSpeed = 1.5;
+var inputMode = 'time';
+
+/* ── INPUT MODE ── */
+function setInputMode(mode, btn) {
+  inputMode = mode;
+  document.querySelectorAll('.mode-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('input-time').style.display  = mode === 'time'  ? 'block' : 'none';
+  document.getElementById('input-pages').style.display = mode === 'pages' ? 'block' : 'none';
+}
+
+/* ── PRESETS ── */
+function loadPreset(hrs, mins, name) {
+  setInputMode('time', document.getElementById('mode-time'));
+  document.getElementById('b-hrs').value = hrs;
+  document.getElementById('b-min').value = mins;
+  calculate();
+}
+
+/* ── SPEED CHIPS ── */
+function setSpeed(speed, el) {
+  activeSpeed = speed;
+  document.querySelectorAll('.speed-chip').forEach(function(c){ c.classList.remove('active'); c.querySelector('.sc-val').style.color=''; });
+  if(el){ el.classList.add('active'); el.querySelector('.sc-val').style.color = 'var(--accent2)'; }
+  document.getElementById('custom-speed-slider').value = speed;
+  document.getElementById('custom-speed-val').textContent = speed + 'x';
+}
+
+/* ── CUSTOM SLIDER ── */
+document.getElementById('custom-speed-slider').addEventListener('input', function(){
+  activeSpeed = parseFloat(parseFloat(this.value).toFixed(2));
+  document.getElementById('custom-speed-val').textContent = activeSpeed + 'x';
+  /* Deselect all chips */
+  document.querySelectorAll('.speed-chip').forEach(function(c){
+    c.classList.remove('active');
+    c.querySelector('.sc-val').style.color = '';
+    if(parseFloat(c.getAttribute('data-speed')) === activeSpeed){
+      c.classList.add('active');
+      c.querySelector('.sc-val').style.color = 'var(--accent2)';
+    }
+  });
+});
+
+/* ── FORMAT TIME ── */
+function fmtTime(totalMinutes) {
+  totalMinutes = Math.round(totalMinutes);
+  var h = Math.floor(totalMinutes / 60);
+  var m = totalMinutes % 60;
+  if(h === 0) return m + 'min';
+  if(m === 0) return h + 'h';
+  return h + 'h ' + (m < 10 ? '0' : '') + m + 'min';
+}
+
+function fmtTimeLong(totalMinutes) {
+  totalMinutes = Math.round(totalMinutes);
+  var h = Math.floor(totalMinutes / 60);
+  var m = totalMinutes % 60;
+  if(h === 0) return m + ' minutes';
+  if(m === 0) return h + ' hour' + (h > 1 ? 's' : '');
+  return h + ' hr ' + m + ' min';
+}
+
+/* ── CALCULATE ── */
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+
+  var origMins;
+  if(inputMode === 'time') {
+    var hrs = parseFloat(document.getElementById('b-hrs').value) || 0;
+    var mins = parseFloat(document.getElementById('b-min').value) || 0;
+    if(hrs <= 0 && mins <= 0){ document.getElementById('err-msg').style.display = 'block'; return; }
+    origMins = hrs * 60 + mins;
+  } else {
+    var pages = parseFloat(document.getElementById('b-pages').value);
+    if(isNaN(pages) || pages <= 0){ document.getElementById('err-msg').style.display = 'block'; return; }
+    /* 275 words/page, 155 wpm narration */
+    origMins = (pages * 275) / 155;
+  }
+
+  var dailyMin = parseFloat(document.getElementById('daily-min').value) || 0;
+  var speed = activeSpeed;
+  var newMins = origMins / speed;
+  var savedMins = origMins - newMins;
+
+  /* ── MAIN RESULT ── */
+  document.getElementById('mr-speed-badge').textContent = 'At ' + speed + 'x speed';
+  document.getElementById('mr-time').textContent = fmtTime(newMins);
+  document.getElementById('chip-original').textContent = '▶ Original: ' + fmtTime(origMins);
+  document.getElementById('chip-saved').textContent = '⏱ Saved: ' + fmtTime(savedMins);
+
+  if(dailyMin > 0) {
+    var daysToFinish = Math.ceil(newMins / dailyMin);
+    document.getElementById('chip-finish').textContent = '📅 Done in: ' + daysToFinish + ' day' + (daysToFinish > 1 ? 's' : '');
+    document.getElementById('chip-finish').style.display = 'inline-block';
+  } else {
+    document.getElementById('chip-finish').style.display = 'none';
+  }
+
+  /* ── COMPARISON TABLE ── */
+  var speeds = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3];
+  var labels = ['0.5x','0.75x','1x','1.25x','1.5x','1.75x','2x','2.5x','3x'];
+  var recs   = ['Slow (study)','Slow','Normal','Slight','⭐ Recommended','Fast','Double','Ultra','Max'];
+  var tbody = document.getElementById('comp-tbl-body');
+  tbody.innerHTML = '';
+  speeds.forEach(function(sp, idx) {
+    var t = origMins / sp;
+    var saved = origMins - t;
+    var isActive = Math.abs(sp - speed) < 0.01;
+    var tr = document.createElement('tr');
+    if(isActive) tr.className = 'active-row';
+    var savedStr = saved > 0 ? '<span class="saved-cell">−' + fmtTime(saved) + '</span>' : '<span style="color:var(--text3);">+' + fmtTime(-saved) + '</span>';
+    tr.innerHTML = '<td>' + labels[idx] + '</td>'
+      + '<td><strong>' + fmtTime(t) + '</strong></td>'
+      + '<td>' + savedStr + '</td>'
+      + '<td><span class="sp-badge">' + recs[idx] + '</span></td>';
+    tbody.appendChild(tr);
+  });
+
+  /* ── LISTENING PLAN ── */
+  var lp = document.getElementById('lp-rows');
+  lp.innerHTML = '';
+  var plans = [
+    {icon:'🚶', label:'30 min/day commute', daily:30},
+    {icon:'🚗', label:'1 hr/day drive', daily:60},
+    {icon:'🏃', label:'2 hrs/day dedicated', daily:120}
+  ];
+  if(dailyMin > 0) plans.push({icon:'🎯', label:'Your goal (' + dailyMin + ' min/day)', daily:dailyMin});
+  plans.forEach(function(plan) {
+    var days = Math.ceil(newMins / plan.daily);
+    var div = document.createElement('div');
+    div.className = 'lp-row';
+    div.innerHTML = '<span class="lp-icon">' + plan.icon + '</span>'
+      + '<span class="lp-text">' + plan.label + '</span>'
+      + '<span class="lp-val">' + days + ' day' + (days > 1 ? 's' : '') + '</span>';
+    lp.appendChild(div);
+  });
+
+  /* SHOW RESULTS */
+  document.getElementById('result-placeholder').style.display = 'none';
+  var rb = document.getElementById('results-block');
+  rb.style.display = 'block';
+  rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+/* ── FAQ ── */
+function faqT(el) {
+  var item = el.parentElement, was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!was) item.classList.add('open');
+}
+
+/* ── ENTER KEY ── */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown', function(e){ if(e.key === 'Enter') calculate(); });
+  });
+});
+</script>
+</body>
+</html>

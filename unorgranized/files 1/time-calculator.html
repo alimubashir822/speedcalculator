@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO META ═══ -->
+<!-- SUGGESTED URL: /time-calculator/ -->
+<title>Time Calculator — Add & Subtract Hours, Minutes & Seconds Free Online | SpeedCalculator.net</title>
+<meta name="description" content="Free online time calculator. Add or subtract hours, minutes, and seconds instantly. 3 modes: Time Adder, Date+Time Offset, and Expression Mode. Mobile-friendly, leap-year accurate, instant results.">
+<meta name="keywords" content="time calculator, time duration calculator, elapsed time calculator, time difference calculator, date and time calculator, hours calculator, minutes calculator, add time calculator, subtract time calculator, work hours calculator, travel time calculator, speed distance time calculator, countdown calculator, time interval calculator, business days calculator, time zone calculator, calculate time online, time between two dates, time between two times, duration calculator, hours and minutes calculator, date duration calculator, time conversion calculator, calculate elapsed time">
+<link rel="canonical" href="https://www.speedcalculator.net/time-calculator/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Time Calculator — Add & Subtract Hours, Minutes & Seconds Free Online">
+<meta property="og:description" content="Instantly add or subtract hours, minutes, and seconds. Three powerful modes. Free, mobile-friendly, no login.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.speedcalculator.net/time-calculator/">
+
+<!-- Schema: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Time Calculator",
+  "alternateName":["Time Duration Calculator","Elapsed Time Calculator","Time Difference Calculator","Date and Time Calculator","Hours Calculator","Minutes Calculator","Add Time Calculator","Subtract Time Calculator","Work Hours Calculator","Travel Time Calculator","Speed Distance Time Calculator","Countdown Calculator","Time Interval Calculator","Business Days Calculator","Time Zone Calculator","Hours and Minutes Calculator","Date Duration Calculator","Time Conversion Calculator"],
+  "url":"https://www.speedcalculator.net/time-calculator/",
+  "description":"Free online time calculator — calculate elapsed time, time duration, time difference, add or subtract hours and minutes, work hours, travel time, and countdown. Three modes: time adder, date+time offset, and expression mode.",
+  "applicationCategory":"UtilityApplication",
+  "operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I add hours and minutes together?","acceptedAnswer":{"@type":"Answer","text":"Enter each time value (days, hours, minutes, seconds) in a row and select the + operator. Click Calculate and the tool automatically handles carry-over — for example, 75 minutes becomes 1 hour 15 minutes in the result."}},
+    {"@type":"Question","name":"How do I calculate total time from multiple time entries?","acceptedAnswer":{"@type":"Answer","text":"Use the Time Adder tab. Add as many rows as needed, each with its own + or − operator, enter the hours/minutes/seconds for each, and click Calculate. The tool sums everything and presents a clean breakdown."}},
+    {"@type":"Question","name":"How do I add time to a specific date and time?","acceptedAnswer":{"@type":"Answer","text":"Switch to the Date + Time Offset tab. Enter your starting date and time, choose Add or Subtract, then enter the days, hours, minutes, and seconds you want to offset. The result shows the exact resulting date and time."}},
+    {"@type":"Question","name":"How many seconds are in an hour?","acceptedAnswer":{"@type":"Answer","text":"There are 3,600 seconds in one hour (60 minutes × 60 seconds = 3,600 seconds). One day contains 86,400 seconds (24 × 3,600)."}},
+    {"@type":"Question","name":"Can I mix adding and subtracting in one calculation?","acceptedAnswer":{"@type":"Answer","text":"Yes. In Time Adder mode, each row has its own + or − toggle so you can freely mix additions and subtractions in a single calculation. In Expression mode, type any combination like '2h 30m + 45m − 10s' directly."}},
+    {"@type":"Question","name":"How does the elapsed time calculator work?","acceptedAnswer":{"@type":"Answer","text":"The elapsed time calculator formula: Elapsed Time = End Time − Start Time. Enter both times in Date+Time Offset mode using Subtract. Example: start 09:15, end 17:45 = 8 hours 30 minutes elapsed. For overnight durations (e.g., 10:30 PM to 6:15 AM), the calculator automatically handles the midnight crossover, giving 7 hours 45 minutes. Use this as a time duration calculator, time difference calculator, or time interval calculator."}},
+    {"@type":"Question","name":"Can this calculator be used as a work hours calculator?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use Time Adder mode as a work hours calculator — add a row for each work session, subtract break times, and the total shows your billable hours and minutes. For example: +8h 30m work, −1h lunch = 7h 30m billable. This also works as a date and time calculator for project timelines, a travel time calculator for trip durations, a countdown calculator for deadlines, and a speed distance time calculator when combined with distance data."}},
+    {"@type":"Question","name":"What is the difference between time duration and time difference?","acceptedAnswer":{"@type":"Answer","text":"Time duration is how long something lasts (e.g., a 2-hour movie). Time difference is the gap between two specific clock times (e.g., 3:00 PM minus 1:30 PM = 1 hour 30 minutes difference). Our time duration calculator handles durations, while the time difference calculator finds the gap between two timestamps. Both use the same formula but different inputs. The time between two times is always: End Time − Start Time."}}
+  ]
+}
+</script>
+
+<!-- Fonts — same family as homepage -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS — cyan/teal accent for Time
+══════════════════════════════════════════ */
+:root{
+  --bg:#05080f;
+  --bg2:#0b1220;
+  --bg3:#111b2e;
+  --accent:#3b82f6;        /* cyan-500  */
+  --accent2:#60a5fa;       /* cyan-400  */
+  --accent-dim:rgba(59,130,246,0.12);
+  --green:#10b981;
+  --orange:#f59e0b;
+  --purple:#a78bfa;
+  --pink:#f472b6;
+  --red:#f87171;
+  --text:#f0f4ff;
+  --text2:#94a3b8;
+  --text3:#4a6080;
+  --border:rgba(59,130,246,0.12);
+  --border2:rgba(59,130,246,0.25);
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 8px 40px rgba(0,0,0,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+/* ambient glow + grid */
+body::before{
+  content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;z-index:0;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* ──────────────── NAV ──────────────── */
+nav{
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;
+  background:rgba(5,8,15,0.92);
+  backdrop-filter:blur(12px);
+  z-index:100;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:22px;font-weight:900;letter-spacing:0.04em;
+  text-decoration:none;color:var(--text);
+}
+.logo span{color:var(--accent2);}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--text2);
+  text-decoration:none;letter-spacing:0.03em;transition:color 0.2s;
+}
+.nav-links a:hover,.nav-active{color:var(--accent2)!important;}
+.nav-cta{
+  background:var(--accent);color:#fff;
+  padding:8px 18px;border-radius:20px;
+  font-size:12px;font-weight:700;text-decoration:none;
+  letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;
+}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px);}
+@media(max-width:640px){.nav-links{display:none;}}
+
+/* ──────────────── BREADCRUMB ──────────────── */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;opacity:0.5;}
+
+/* ──────────────── HERO ──────────────── */
+.hero{
+  padding:48px 0 32px;
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:44px;align-items:start;
+}
+@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center;gap:28px;}}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-dim);border:1px solid var(--border2);
+  border-radius:20px;padding:6px 16px;
+  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent2);margin-bottom:18px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(38px,5vw,62px);
+  font-weight:900;line-height:.95;
+  letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;
+}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{
+  font-size:16px;color:var(--text2);
+  font-weight:300;line-height:1.65;margin-bottom:24px;max-width:440px;
+}
+@media(max-width:800px){.hero-sub{margin:0 auto 24px;}}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;}
+@media(max-width:800px){.hero-badges{justify-content:center;}}
+.hbadge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);
+}
+.hbadge svg{width:12px;height:12px;}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.c{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+
+/* ──────────────── STATS STRIP ──────────────── */
+.stats-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;margin:32px 0;
+}
+.stat-item{background:var(--bg2);padding:18px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:580px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* ──────────────── CALC CARD ──────────────── */
+.calc-card{
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:20px;overflow:hidden;position:relative;
+}
+.calc-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);
+}
+.calc-head{
+  padding:24px 28px 0;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.calc-head-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+}
+.calc-head-title span{color:var(--accent2);}
+.calc-mode-pill{
+  background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);
+  border-radius:20px;padding:5px 14px;
+  font-size:11px;font-weight:700;color:var(--green);
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.calc-body{padding:20px 28px 26px;}
+@media(max-width:420px){.calc-body{padding:14px 14px 20px;}}
+
+/* ──────────────── TABS ──────────────── */
+.calc-tabs{
+  display:flex;gap:4px;background:var(--bg3);
+  border-radius:25px;padding:4px;margin-bottom:20px;width:100%;
+}
+.ctab{
+  flex:1;padding:8px 6px;border-radius:20px;border:none;
+  background:transparent;color:var(--text2);
+  font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;cursor:pointer;
+  transition:all .2s;text-align:center;line-height:1.3;
+}
+.ctab.active{background:var(--accent);color:#fff;}
+.ctab:hover:not(.active){color:var(--text);}
+
+/* ──────────────── FIELD COMPONENTS ──────────────── */
+.f-label{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:7px;
+}
+.f-wrap{
+  display:flex;border:1.5px solid var(--border2);
+  border-radius:var(--radius-sm);overflow:hidden;
+  transition:border-color .2s;background:var(--bg3);
+}
+.f-wrap:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
+.f-wrap input{
+  flex:1;background:transparent;border:none;outline:none;
+  padding:12px 13px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:700;color:var(--text);min-width:0;
+}
+.f-wrap input::placeholder{color:var(--text3);font-weight:400;font-size:16px;}
+.f-wrap input[type="date"],
+.f-wrap input[type="time"]{
+  font-family:'Barlow',sans-serif;font-size:14px;font-weight:500;color-scheme:dark;
+}
+.f-wrap select{
+  background:transparent;border:none;border-left:1px solid var(--border);
+  outline:none;padding:0 10px;
+  font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;
+  color:var(--accent2);cursor:pointer;min-width:50px;
+}
+.f-wrap select option{background:var(--bg2);}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator{filter:invert(.5);cursor:pointer;}
+
+/* ──────────────── TIME ADDER ROWS ──────────────── */
+.adder-rows{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+.adder-row{
+  display:grid;grid-template-columns:48px 1fr 1fr 1fr 1fr 32px;
+  gap:8px;align-items:center;
+}
+@media(max-width:500px){
+  .adder-row{grid-template-columns:40px 1fr 1fr 32px;grid-template-rows:auto auto;}
+}
+.row-op{
+  display:flex;
+  background:var(--bg3);border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);overflow:hidden;height:46px;
+}
+.row-op button{
+  flex:1;border:none;background:transparent;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:700;cursor:pointer;
+  color:var(--text3);transition:all .15s;
+}
+.row-op button.active-plus{background:rgba(16,185,129,.15);color:var(--green);}
+.row-op button.active-minus{background:rgba(248,113,113,.12);color:var(--red);}
+.row-op button:hover:not(.active-plus):not(.active-minus){color:var(--text);}
+.adder-cell{position:relative;}
+.adder-cell label{
+  display:block;font-size:9px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:4px;
+}
+.adder-cell input{
+  width:100%;background:var(--bg3);
+  border:1.5px solid var(--border2);border-radius:var(--radius-sm);
+  outline:none;padding:10px 10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:700;color:var(--text);
+  transition:border-color .2s;
+}
+.adder-cell input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
+.adder-cell input::placeholder{color:var(--text3);font-weight:400;font-size:15px;}
+.row-del{
+  background:transparent;border:1.5px solid var(--border);
+  border-radius:var(--radius-sm);width:32px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--text3);transition:all .15s;
+  padding:0;align-self:end;
+}
+.row-del:hover{border-color:var(--red);color:var(--red);}
+.row-del svg{width:14px;height:14px;}
+.add-row-btn{
+  display:flex;align-items:center;gap:7px;
+  background:transparent;border:1.5px dashed var(--border);
+  border-radius:var(--radius-sm);padding:10px 16px;
+  font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;
+  color:var(--text3);cursor:pointer;transition:all .2s;margin-bottom:14px;width:100%;
+  justify-content:center;
+}
+.add-row-btn:hover{border-color:var(--accent);color:var(--accent2);}
+.add-row-btn svg{width:14px;height:14px;}
+
+/* ──────────────── OFFSET GRID ──────────────── */
+.offset-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;
+}
+@media(max-width:460px){.offset-grid{grid-template-columns:1fr 1fr;}}
+.date-time-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;
+}
+@media(max-width:460px){.date-time-row{grid-template-columns:1fr;}}
+.op-toggle{
+  display:flex;gap:0;background:var(--bg3);
+  border-radius:var(--radius-sm);overflow:hidden;
+  border:1.5px solid var(--border);margin-bottom:14px;width:fit-content;
+}
+.op-btn{
+  padding:10px 22px;border:none;background:transparent;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;font-weight:700;cursor:pointer;
+  color:var(--text3);transition:all .2s;letter-spacing:.04em;
+}
+.op-btn.active{background:var(--accent);color:#fff;}
+
+/* ──────────────── EXPRESSION MODE ──────────────── */
+.expr-input-wrap{
+  background:var(--bg3);border:1.5px solid var(--border2);
+  border-radius:var(--radius-sm);overflow:hidden;
+  transition:border-color .2s;margin-bottom:14px;
+}
+.expr-input-wrap:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
+.expr-input{
+  width:100%;background:transparent;border:none;outline:none;
+  padding:14px 16px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:600;color:var(--text);
+  letter-spacing:.02em;
+}
+.expr-input::placeholder{color:var(--text3);font-weight:400;font-size:15px;}
+.expr-hint{
+  font-size:11px;color:var(--text3);margin-bottom:14px;
+  padding:0 2px;line-height:1.5;
+}
+.expr-hint code{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:4px;padding:1px 7px;
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--accent2);
+}
+
+/* ──────────────── CALC BUTTON ──────────────── */
+.calc-btn{
+  width:100%;padding:15px;
+  background:var(--accent);border:none;border-radius:var(--radius-sm);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.calc-btn:hover{background:var(--accent2);transform:translateY(-1px);}
+.calc-btn:active{transform:translateY(0);}
+.calc-btn svg{width:18px;height:18px;}
+.err-msg{
+  background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);
+  border-radius:var(--radius-sm);padding:10px 14px;
+  font-size:13px;color:var(--red);margin-top:10px;display:none;
+}
+
+/* ──────────────── RESULT PANEL ──────────────── */
+.result-panel{margin-top:18px;display:none;animation:slideUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.result-main{
+  background:linear-gradient(135deg,rgba(6,182,212,.09),rgba(34,211,238,.04));
+  border:1px solid var(--border2);border-radius:var(--radius);
+  padding:22px;text-align:center;margin-bottom:10px;
+}
+.result-heading{
+  font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:6px;
+}
+.result-big{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(30px,5.5vw,52px);font-weight:900;
+  color:var(--accent2);line-height:1.1;letter-spacing:-1px;
+}
+.result-date-out{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(18px,4vw,28px);font-weight:800;
+  color:var(--green);line-height:1.2;
+}
+.result-sub{font-size:12px;color:var(--text3);margin-top:6px;}
+
+.result-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:8px;margin-bottom:10px;
+}
+@media(max-width:440px){.result-grid{grid-template-columns:repeat(2,1fr);}}
+.r-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:12px;text-align:center;
+}
+.r-val{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:700;color:var(--text);margin-bottom:2px;
+}
+.r-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;}
+
+.result-totals{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+}
+@media(max-width:440px){.result-totals{grid-template-columns:1fr 1fr;}}
+.r-total{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:10px 12px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.r-total .rv{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:16px;font-weight:700;color:var(--purple);
+}
+.r-total .rl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+
+/* ──────────────── SECTIONS ──────────────── */
+.section{padding:56px 0;}
+.sec-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent2);margin-bottom:8px;
+}
+.sec-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(26px,4vw,40px);font-weight:900;
+  text-transform:uppercase;letter-spacing:-.5px;
+  margin-bottom:12px;line-height:1.05;
+}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:560px;line-height:1.7;}
+
+/* ──────────────── STEPS GRID ──────────────── */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px;}
+@media(max-width:760px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:400px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;
+  position:relative;overflow:hidden;transition:border-color .2s;
+}
+.step-card:hover{border-color:var(--border2);}
+.step-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  opacity:0;transition:opacity .2s;
+}
+.step-card:hover::before{opacity:1;}
+.step-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:48px;font-weight:900;color:var(--bg3);line-height:1;margin-bottom:10px;
+}
+.step-icon{
+  width:38px;height:38px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:10px;
+}
+.step-icon svg{width:20px;height:20px;}
+.step-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.step-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ──────────────── FEATURE CARDS ──────────────── */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+@media(max-width:700px){.feature-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.feature-grid{grid-template-columns:1fr;}}
+.feat-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;transition:all .2s;
+}
+.feat-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.feat-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.feat-icon svg{width:22px;height:22px;}
+.feat-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.feat-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ──────────────── USE CASES ──────────────── */
+.usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
+@media(max-width:700px){.usecase-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.usecase-grid{grid-template-columns:1fr;}}
+.uc-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;transition:all .2s;
+}
+.uc-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.uc-icon svg{width:22px;height:22px;}
+.uc-h{font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* ──────────────── FORMULA BOX ──────────────── */
+.formula-box{
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:20px;padding:40px;margin-bottom:56px;
+}
+.formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:600px){.formula-grid{grid-template-columns:1fr;}}
+.f-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px;text-align:center;transition:border-color .2s;
+}
+.f-card:hover{border-color:var(--border2);}
+.f-card-lbl{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:10px;
+}
+.f-eq{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--text);}
+.f-eq em{color:var(--accent2);font-style:normal;}
+.f-ex{font-size:12px;color:var(--text3);margin-top:7px;font-style:italic;}
+
+/* ──────────────── TIME UNIT TABLE ──────────────── */
+.ex-table-wrap{
+  overflow-x:auto;border-radius:var(--radius);
+  border:1px solid var(--border);margin-top:28px;
+}
+table{width:100%;border-collapse:collapse;}
+thead tr{background:var(--bg3);}
+th{
+  padding:12px 16px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--text3);
+  text-align:left;white-space:nowrap;
+}
+td{
+  padding:10px 16px;font-size:13px;color:var(--text2);
+  border-top:1px solid var(--border);
+}
+td:first-child{font-weight:600;color:var(--text);}
+tr:hover td{background:rgba(6,182,212,.025);}
+.td-hl{color:var(--accent2);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;}
+.td-g{color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;}
+
+/* ──────────────── IMAGE PLACEHOLDER ──────────────── */
+.img-block{
+  border-radius:16px;overflow:hidden;
+  border:1px solid var(--border);position:relative;
+  background:var(--bg2);display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:12px;padding:40px;text-align:center;
+  min-height:200px;
+}
+.img-block .img-icon{
+  width:56px;height:56px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+}
+.img-block .img-icon svg{width:30px;height:30px;}
+.img-block .img-cap{font-size:13px;color:var(--text3);}
+.img-block .img-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0;}
+@media(max-width:600px){.three-col{grid-template-columns:1fr;}}
+
+/* ──────────────── ARTICLE ──────────────── */
+.article-wrap{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:20px;padding:40px;margin-bottom:56px;
+}
+.article-wrap h2{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:24px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.03em;color:var(--text);margin:28px 0 10px;
+}
+.article-wrap h2:first-child{margin-top:0;}
+.article-wrap h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article-wrap p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:12px;}
+.article-wrap ul,.article-wrap ol{margin:0 0 14px 20px;}
+.article-wrap li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article-wrap strong{color:var(--text);font-weight:600;}
+.inline-formula{
+  display:inline-block;background:var(--bg3);border:1px solid var(--border2);
+  border-radius:5px;padding:3px 10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:700;color:var(--accent2);margin:2px;
+}
+.tip-box{
+  background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);
+  border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;
+}
+.tip-box p{color:var(--text2);font-size:13px;margin:0;}
+.tip-box strong{color:var(--green);}
+.info-box{
+  background:var(--accent-dim);border:1px solid var(--border2);
+  border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;
+}
+.info-box p{color:var(--text2);font-size:13px;margin:0;}
+.info-box strong{color:var(--accent2);}
+.example-box{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:16px 18px;margin:14px 0;
+}
+.example-box .ex-title{
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:8px;
+}
+.example-box p{color:var(--text2);font-size:13px;margin:0;line-height:1.7;}
+.example-box .ex-result{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:700;color:var(--accent2);
+  margin-top:6px;
+}
+
+/* ──────────────── FAQ ──────────────── */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:32px;}
+.faq-item{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.faq-q{
+  padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);
+  cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;user-select:none;transition:background .15s;
+}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-q .arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .32s ease,padding .2s;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.75;padding-bottom:16px;}
+.faq-a code{
+  background:var(--bg3);border:1px solid var(--border2);
+  border-radius:4px;padding:1px 6px;
+  font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--accent2);
+}
+.faq-item.open .faq-a{max-height:300px;}
+
+/* ──────────────── RELATED ──────────────── */
+.other-calcs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px;}
+@media(max-width:700px){.other-calcs{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:360px){.other-calcs{grid-template-columns:1fr;}}
+.oc-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px;
+  text-decoration:none;transition:all .2s;display:block;
+}
+.oc-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:10px;
+}
+.oc-icon svg{width:18px;height:18px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+/* ──────────────── FOOTER ──────────────── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:36px 0 24px;}
+.footer-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:28px;margin-bottom:32px;}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr 1fr;}}
+@media(max-width:580px){.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:380px){.footer-inner{grid-template-columns:1fr;}}
+@media(max-width:700px){.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.footer-inner{grid-template-columns:1fr;}}
+.footer-brand .logo{font-size:19px;display:block;margin-bottom:8px;}
+.footer-desc{font-size:12px;color:var(--text3);line-height:1.7;max-width:240px;}
+.f-col-title{
+  font-size:10px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:10px;
+}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.f-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s;}
+.f-links a:hover{color:var(--accent2);}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:18px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+}
+.footer-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.footer-tag{font-size:10px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:3px 8px;color:var(--text3);}
+.footer-copy{font-size:11px;color:var(--text3);}
+
+/* Entrance animations */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .55s ease both;}
+.calc-card{animation:fadeInUp .55s .08s ease both;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAV — same branding as homepage
+════════════════════════════════════════════════════ -->
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Time Calculator
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO  +  CALCULATOR (split layout)
+════════════════════════════════════════════════════ -->
+<section id="calculator">
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT: Headline -->
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Free · Instant · No Login</div>
+        <h1>Time<em>Calculator</em></h1>
+        <p class="hero-sub">Free <strong>time calculator</strong> — calculate <strong>elapsed time</strong>, <strong>time duration</strong>, <strong>time difference</strong>, <strong>add or subtract time</strong>, <strong>work hours calculator</strong>, <strong>travel time calculator</strong>, <strong>countdown calculator</strong>, and more. Three modes: time adder, date+time offset, and expression mode. Supports <strong>hours and minutes calculator</strong>, seconds, and days. Instant, carry-correct results.</p>
+        <div class="hero-badges">
+          <span class="hbadge g">
+            <svg fill="none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M3.5 6l2 2 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100% Free
+          </span>
+          <span class="hbadge c">3 Calculator Modes</span>
+          <span class="hbadge">Auto Carry-Over</span>
+          <span class="hbadge g">Date + Time Offset</span>
+          <span class="hbadge o">Expression Mode</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Calculator Card -->
+      <div class="calc-card">
+        <div class="calc-head">
+          <div class="calc-head-title">Time <span>Calculator</span></div>
+          <div class="calc-mode-pill">Instant Results</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- TABS -->
+          <div class="calc-tabs">
+            <button class="ctab active" onclick="setTab('adder',this)">Time Adder</button>
+            <button class="ctab" onclick="setTab('offset',this)">Date + Time</button>
+            <button class="ctab" onclick="setTab('expr',this)">Expression</button>
+          </div>
+
+          <!-- ═══ TAB 1: TIME ADDER ═══ -->
+          <div id="tab-adder">
+            <!-- Column headers -->
+            <div style="display:grid;grid-template-columns:48px 1fr 1fr 1fr 1fr 32px;gap:8px;margin-bottom:4px;" id="adder-header">
+              <div></div>
+              <div class="f-label">Days</div>
+              <div class="f-label">Hours</div>
+              <div class="f-label">Minutes</div>
+              <div class="f-label">Seconds</div>
+              <div></div>
+            </div>
+            <div class="adder-rows" id="adder-rows">
+              <!-- Row 1 (no delete, always present) -->
+              <div class="adder-row" data-idx="0">
+                <div class="row-op">
+                  <button class="active-plus" title="Add" onclick="setRowOp(this,'+')">+</button>
+                  <button title="Subtract" onclick="setRowOp(this,'-')">−</button>
+                </div>
+                <div class="adder-cell"><input type="number" class="r-d" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-h" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-m" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-s" placeholder="0" min="0"></div>
+                <div style="width:32px;"></div>
+              </div>
+              <!-- Row 2 -->
+              <div class="adder-row" data-idx="1">
+                <div class="row-op">
+                  <button class="active-plus" title="Add" onclick="setRowOp(this,'+')">+</button>
+                  <button title="Subtract" onclick="setRowOp(this,'-')">−</button>
+                </div>
+                <div class="adder-cell"><input type="number" class="r-d" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-h" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-m" placeholder="0" min="0"></div>
+                <div class="adder-cell"><input type="number" class="r-s" placeholder="0" min="0"></div>
+                <button class="row-del" onclick="removeRow(this)" title="Remove row">
+                  <svg fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.6"><path d="M2 2l10 10M12 2L2 12" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <button class="add-row-btn" onclick="addRow()">
+              <svg fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10" stroke-linecap="round"/></svg>
+              Add Another Time Row
+            </button>
+            <button class="calc-btn" onclick="calcAdder()">
+              <svg fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="7"/><path d="M10 7v3l2 2" stroke-linecap="round"/></svg>
+              Calculate Total Time
+            </button>
+            <div class="err-msg" id="err-adder">⚠ Please enter at least one non-zero value.</div>
+            <div class="result-panel" id="res-adder">
+              <div class="result-main">
+                <div class="result-heading">Total Time</div>
+                <div class="result-big" id="adder-main">—</div>
+                <div class="result-sub" id="adder-sub"></div>
+              </div>
+              <div class="result-grid">
+                <div class="r-card"><div class="r-val" id="a-days">0</div><div class="r-lbl">Days</div></div>
+                <div class="r-card"><div class="r-val" id="a-hours">0</div><div class="r-lbl">Hours</div></div>
+                <div class="r-card"><div class="r-val" id="a-mins">0</div><div class="r-lbl">Minutes</div></div>
+                <div class="r-card"><div class="r-val" id="a-secs">0</div><div class="r-lbl">Seconds</div></div>
+              </div>
+              <div class="result-totals">
+                <div class="r-total"><span class="rv" id="a-tsec">0</span><span class="rl">Total Seconds</span></div>
+                <div class="r-total"><span class="rv" id="a-tmin">0</span><span class="rl">Total Minutes</span></div>
+                <div class="r-total"><span class="rv" id="a-thrs">0</span><span class="rl">Total Hours</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ TAB 2: DATE + TIME OFFSET ═══ -->
+          <div id="tab-offset" style="display:none;">
+            <div class="date-time-row">
+              <div>
+                <div class="f-label">Start Date</div>
+                <div class="f-wrap"><input type="date" id="o-date"></div>
+              </div>
+              <div>
+                <div class="f-label">Start Time</div>
+                <div class="f-wrap"><input type="time" id="o-time" step="1"></div>
+              </div>
+            </div>
+            <div class="f-label" style="margin-bottom:8px;">Operation</div>
+            <div class="op-toggle">
+              <button class="op-btn active" id="op-add" onclick="setOp('add')">＋ Add</button>
+              <button class="op-btn" id="op-sub" onclick="setOp('sub')">－ Subtract</button>
+            </div>
+            <div class="offset-grid">
+              <div>
+                <div class="f-label">Days</div>
+                <div class="f-wrap"><input type="number" id="off-d" placeholder="0" min="0"></div>
+              </div>
+              <div>
+                <div class="f-label">Hours</div>
+                <div class="f-wrap"><input type="number" id="off-h" placeholder="0" min="0"></div>
+              </div>
+              <div>
+                <div class="f-label">Minutes</div>
+                <div class="f-wrap"><input type="number" id="off-m" placeholder="0" min="0"></div>
+              </div>
+              <div>
+                <div class="f-label">Seconds</div>
+                <div class="f-wrap"><input type="number" id="off-s" placeholder="0" min="0"></div>
+              </div>
+            </div>
+            <button class="calc-btn" onclick="calcOffset()">
+              <svg fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M8 4v4M12 4v4" stroke-linecap="round"/></svg>
+              Find Result Date & Time
+            </button>
+            <div class="err-msg" id="err-offset">⚠ Please select a start date and time.</div>
+            <div class="result-panel" id="res-offset">
+              <div class="result-main">
+                <div class="result-heading">Result</div>
+                <div class="result-date-out" id="off-date-out">—</div>
+                <div class="result-big" id="off-time-out" style="font-size:clamp(22px,4vw,36px);margin-top:4px;"></div>
+                <div class="result-sub" id="off-sub"></div>
+              </div>
+              <div class="result-totals" style="grid-template-columns:repeat(3,1fr);">
+                <div class="r-total"><span class="rv" id="off-tsec">0</span><span class="rl">Seconds Added</span></div>
+                <div class="r-total"><span class="rv" id="off-tmin">0</span><span class="rl">Minutes</span></div>
+                <div class="r-total"><span class="rv" id="off-thrs">0</span><span class="rl">Hours</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ TAB 3: EXPRESSION MODE ═══ -->
+          <div id="tab-expr" style="display:none;">
+            <div class="f-label">Time Expression</div>
+            <div class="expr-input-wrap">
+              <input class="expr-input" id="expr-input"
+                placeholder="e.g. 2h 30m + 45m 20s - 1h 10m"
+                spellcheck="false" autocorrect="off">
+            </div>
+            <p class="expr-hint">
+              Use <code>d</code> days · <code>h</code> hours · <code>m</code> minutes · <code>s</code> seconds.
+              Operators: <code>+</code> and <code>-</code> only.
+              Example: <code>1d 2h + 3h 45m - 30m 10s</code>
+            </p>
+            <button class="calc-btn" onclick="calcExpr()">
+              <svg fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8"><path d="M4 5h12M4 10h8M4 15h5" stroke-linecap="round"/></svg>
+              Evaluate Expression
+            </button>
+            <div class="err-msg" id="err-expr">⚠ Invalid expression. Check format: <code>2h 30m + 45s</code></div>
+            <div class="result-panel" id="res-expr">
+              <div class="result-main">
+                <div class="result-heading">Expression Result</div>
+                <div class="result-big" id="expr-main">—</div>
+                <div class="result-sub" id="expr-sub"></div>
+              </div>
+              <div class="result-grid">
+                <div class="r-card"><div class="r-val" id="ex-days">0</div><div class="r-lbl">Days</div></div>
+                <div class="r-card"><div class="r-val" id="ex-hours">0</div><div class="r-lbl">Hours</div></div>
+                <div class="r-card"><div class="r-val" id="ex-mins">0</div><div class="r-lbl">Minutes</div></div>
+                <div class="r-card"><div class="r-val" id="ex-secs">0</div><div class="r-lbl">Seconds</div></div>
+              </div>
+              <div class="result-totals">
+                <div class="r-total"><span class="rv" id="ex-tsec">0</span><span class="rl">Total Seconds</span></div>
+                <div class="r-total"><span class="rv" id="ex-tmin">0</span><span class="rl">Total Minutes</span></div>
+                <div class="r-total"><span class="rv" id="ex-thrs">0</span><span class="rl">Total Hours</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /calc-body -->
+      </div><!-- /calc-card -->
+
+    </div><!-- /hero -->
+
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="stat-item">
+        <div class="stat-val">86,400</div>
+        <div class="stat-lbl">Seconds in a Day</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">3,600</div>
+        <div class="stat-lbl">Seconds in an Hour</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">1,440</div>
+        <div class="stat-lbl">Minutes in a Day</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">168</div>
+        <div class="stat-lbl">Hours in a Week</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-eyebrow">How It Works</div>
+    <h2 class="sec-title">Three Modes, <span>One Powerful Tool</span></h2>
+    <p class="sec-sub">Pick the mode that matches your task — then get an accurate result in seconds with automatic carry-over handling.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon" style="background:rgba(59,130,246,.12);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#22d3ee" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M10 7v3l2 2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Choose a Mode</div>
+        <p class="step-p">Time Adder for totals, Date+Time for finding a future/past moment, or Expression for typed formulas.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon" style="background:rgba(16,185,129,.12);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.5"><path d="M4 10h12M10 4l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step-h">Enter Your Values</div>
+        <p class="step-p">Type days, hours, minutes, and seconds into any field. Blank fields default to zero — no errors.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon" style="background:rgba(245,158,11,.12);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.5"><path d="M10 4v12M4 10h12" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Mix Add & Subtract</div>
+        <p class="step-p">Each row in Time Adder has its own + / − toggle. Mix additions and subtractions freely in one calculation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon" style="background:rgba(167,139,250,.12);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#a78bfa" stroke-width="1.5"><path d="M5 10l4 4 7-7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7"/></svg>
+        </div>
+        <div class="step-h">Read Clear Results</div>
+        <p class="step-p">Get a full breakdown — days, hours, minutes, seconds — plus totals in seconds, minutes, and hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPROVEMENTS OVER BASIC CALCULATORS ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-eyebrow">Why This Tool Is Better</div>
+    <h2 class="sec-title">Built for <span>Real People</span></h2>
+    <p class="sec-sub">Most online time calculators are clunky, table-based forms from the early 2000s. Here's what we do differently.</p>
+    <div class="feature-grid">
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#22d3ee" stroke-width="1.4"><path d="M11 3v8l5 3" stroke-linecap="round"/><circle cx="11" cy="11" r="8"/></svg>
+        </div>
+        <div class="feat-h">Auto Carry-Over</div>
+        <p class="feat-p">Enter 75 minutes and the calculator automatically converts it to 1 hour 15 minutes — no manual math required.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#10b981" stroke-width="1.4"><path d="M4 11h14M4 7h10M4 15h7" stroke-linecap="round"/></svg>
+        </div>
+        <div class="feat-h">Unlimited Rows</div>
+        <p class="feat-p">Add as many time rows as you need. Sum ten different work sessions, seven tasks, or an entire project timeline.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#f59e0b" stroke-width="1.4"><rect x="3" y="4" width="16" height="15" rx="2"/><path d="M3 9h16M8 4v5M14 4v5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="feat-h">Date + Time Offset</div>
+        <p class="feat-p">Add 36 hours and 45 minutes to any starting date and time to find the exact resulting calendar date and clock time.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(167,139,250,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#a78bfa" stroke-width="1.4"><path d="M4 6h14M7 6V4h8v2M9 17l-2-5 3-3 2 4 4-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feat-h">Expression Mode</div>
+        <p class="feat-p">Type <code style="background:var(--bg3);border-radius:4px;padding:1px 6px;font-family:'Barlow Condensed',sans-serif;color:var(--accent2)">2h 30m + 45m - 10s</code> directly — perfect for power users who think in formulas.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(244,114,182,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#f472b6" stroke-width="1.4"><rect x="5" y="2" width="12" height="18" rx="2"/><path d="M9 7h4M9 11h4M9 15h2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="feat-h">Input Validation</div>
+        <p class="feat-p">Negative values and invalid inputs are caught before calculation. Clear error messages guide you to the correct format.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#22d3ee" stroke-width="1.4"><path d="M4 6h14M4 11h9M4 16h5" stroke-linecap="round"/><path d="M18 12l-4 5h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feat-h">Total Breakdowns</div>
+        <p class="feat-p">Every result shows the full decomposed breakdown (d/h/m/s) plus aggregate totals in seconds, minutes, and hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE BLOCK 1 — placed contextually in content ═══ -->
+<!-- 📷 SUGGESTED IMAGE: A clock face or digital stopwatch on a modern desk -->
+<section style="padding:0 0 40px;">
+  <div class="container">
+    <div class="two-col">
+      <div class="img-block">
+        <div class="img-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 30 30" stroke="#22d3ee" stroke-width="1.4"><circle cx="15" cy="15" r="11"/><path d="M15 9v6l4 3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="img-title">How Time Addition Works</div>
+        <div class="img-cap">
+          📷 Suggested image: A clean digital stopwatch or wall clock showing time accumulation — reinforces the time-counting concept visually.
+        </div>
+      </div>
+      <div class="img-block">
+        <div class="img-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 30 30" stroke="#10b981" stroke-width="1.4"><rect x="4" y="5" width="22" height="20" rx="2"/><path d="M4 11h22M10 5v6M20 5v6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="img-title">Date + Time Calculations</div>
+        <div class="img-cap">
+          📷 Suggested image: A calendar with a clock overlay — ideal for the Date+Time Offset mode section showing scheduling and deadline planning.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMULA + UNIT REFERENCE ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="formula-box">
+      <div class="sec-eyebrow">Time Arithmetic</div>
+      <h2 class="sec-title" style="margin-bottom:6px;">The Math Behind <span>Time Calculations</span></h2>
+      <p style="font-size:14px;color:var(--text2);max-width:600px;font-weight:300;margin-bottom:0;">
+        Time uses a sexagesimal (base-60) system — not base-10 — which is why adding time values requires special carry-over logic.
+      </p>
+      <div class="formula-grid">
+        <div class="f-card">
+          <div class="f-card-lbl">Seconds → Minutes</div>
+          <div class="f-eq"><em>60</em> seconds = 1 minute</div>
+          <div class="f-ex">e.g. 130s = 2m 10s</div>
+        </div>
+        <div class="f-card">
+          <div class="f-card-lbl">Minutes → Hours</div>
+          <div class="f-eq"><em>60</em> minutes = 1 hour</div>
+          <div class="f-ex">e.g. 75m = 1h 15m</div>
+        </div>
+        <div class="f-card">
+          <div class="f-card-lbl">Hours → Days</div>
+          <div class="f-eq"><em>24</em> hours = 1 day</div>
+          <div class="f-ex">e.g. 30h = 1d 6h</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIME UNIT REFERENCE TABLE -->
+    <div class="sec-eyebrow">Quick Reference</div>
+    <h2 class="sec-title">Common <span>Time Units Explained</span></h2>
+    <p class="sec-sub">A clear reference table for every time unit — from nanoseconds to decades — useful for students, developers, and professionals.</p>
+    <div class="ex-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Time Unit</th>
+            <th>Equal to (Seconds)</th>
+            <th>Equal to (Minutes)</th>
+            <th>Equal to (Hours)</th>
+            <th>Common Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1 Second</td><td class="td-hl">1 s</td><td class="td-g">0.017 min</td><td>0.000278 hr</td><td>Base unit, stopwatch</td></tr>
+          <tr><td>1 Minute</td><td class="td-hl">60 s</td><td class="td-g">1 min</td><td>0.0167 hr</td><td>Short tasks, meetings</td></tr>
+          <tr><td>1 Hour</td><td class="td-hl">3,600 s</td><td class="td-g">60 min</td><td>1 hr</td><td>Work blocks, travel</td></tr>
+          <tr><td>1 Day</td><td class="td-hl">86,400 s</td><td class="td-g">1,440 min</td><td>24 hr</td><td>Deadlines, schedules</td></tr>
+          <tr><td>1 Week</td><td class="td-hl">604,800 s</td><td class="td-g">10,080 min</td><td>168 hr</td><td>Sprint planning</td></tr>
+          <tr><td>1 Month (avg)</td><td class="td-hl">2,629,800 s</td><td class="td-g">43,830 min</td><td>730.5 hr</td><td>Billing cycles</td></tr>
+          <tr><td>1 Year (avg)</td><td class="td-hl">31,557,600 s</td><td class="td-g">525,960 min</td><td>8,766 hr</td><td>Contracts, leases</td></tr>
+          <tr><td>1 Decade</td><td class="td-hl">315,576,000 s</td><td class="td-g">5,259,600 min</td><td>87,660 hr</td><td>Long-term planning</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This Tool</div>
+    <h2 class="sec-title">Real World <span>Use Cases</span></h2>
+    <p class="sec-sub">From tracking work hours to scheduling shifts to solving physics problems — a time calculator is used across almost every field.</p>
+    <div class="usecase-grid">
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#22d3ee" stroke-width="1.4"><rect x="3" y="3" width="16" height="16" rx="2"/><path d="M3 9h16M9 3v6M15 3v6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Freelancers & Billing</div>
+        <p class="uc-p">Sum multiple work sessions — 1h 45m + 2h 30m + 45m — to calculate exact billable hours for client invoices.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#10b981" stroke-width="1.4"><path d="M3 11l5 5 11-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Shift Workers & HR</div>
+        <p class="uc-p">Calculate total weekly hours worked across irregular shifts, or find exactly when a shift ends given a start time and duration.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#f59e0b" stroke-width="1.4"><path d="M11 5v6l4 3" stroke-linecap="round"/><circle cx="11" cy="11" r="8"/></svg>
+        </div>
+        <div class="uc-h">Students & Teachers</div>
+        <p class="uc-p">Solve physics and math problems involving time arithmetic, or calculate total study time across multiple sessions.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(167,139,250,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#a78bfa" stroke-width="1.4"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+        </div>
+        <div class="uc-h">Logistics & Drivers</div>
+        <p class="uc-p">Add driving time, loading time, and breaks together to calculate total trip duration and find exact arrival time.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(244,114,182,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#f472b6" stroke-width="1.4"><path d="M14 3l3 3-10 10-4 1 1-4L14 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Content Creators</div>
+        <p class="uc-p">Total up video clip durations, podcast recording blocks, or edit session lengths to track production time accurately.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 22 22" stroke="#10b981" stroke-width="1.4"><path d="M13 4l-4 8h5l-2 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Athletes & Coaches</div>
+        <p class="uc-p">Add lap times, rest intervals, and training segments to calculate total workout duration and identify personal records.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMAGE BLOCK 2 ═══ -->
+<section style="padding:0 0 40px;">
+  <div class="container">
+    <div class="img-block">
+      <div class="img-icon" style="background:rgba(245,158,11,.1);">
+        <svg fill="none" viewBox="0 0 30 30" stroke="#f59e0b" stroke-width="1.3"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+      </div>
+      <div class="img-title">Time Calculations in Logistics & Driving</div>
+      <div class="img-cap" style="max-width:560px;">
+        📷 Suggested image: A highway at golden hour with a digital dashboard clock — represents travel time, driving schedules, and logistics planning using the time calculator.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEO ARTICLE ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="article-wrap">
+
+      <h2>What Is a Time Calculator?</h2>
+      <p>
+        A <strong>time calculator</strong> is a free online tool that lets you <strong>calculate time online</strong> — add or subtract time values in days, hours, minutes, and seconds. It works as a <strong>time duration calculator</strong>, <strong>elapsed time calculator</strong>, <strong>time difference calculator</strong>, <strong>hours calculator</strong>, <strong>minutes calculator</strong>, <strong>add time calculator</strong>, and <strong>subtract time calculator</strong> — all in one. Unlike regular arithmetic where numbers carry over at powers of ten, time uses a <strong>sexagesimal (base-60) system</strong> — 60 seconds per minute, 60 minutes per hour, 24 hours per day. Adding 45 minutes to 1 hour 25 minutes gives <strong>2 hours 10 minutes</strong>, not "1 hour 70 minutes" — because 60 of those 70 minutes carry over into an additional hour.
+      </p>
+      <p>
+        Our <strong>free online time calculator</strong> handles all carry-over automatically. Whether you need a <strong>work hours calculator</strong> for tracking billable time, a <strong>travel time calculator</strong> for trip planning, a <strong>countdown calculator</strong> for events, a <strong>time interval calculator</strong> for measuring durations, a <strong>date and time calculator</strong> for project scheduling, or a <strong>speed distance time calculator</strong> — this tool covers every use case. The <strong>hours and minutes calculator</strong> and <strong>time conversion calculator</strong> functions are built in automatically.
+      </p>
+
+      <h2>How to Use the Time Calculator — Step by Step</h2>
+
+      <h3>Mode 1: Time Adder (Most Popular)</h3>
+      <p>
+        The Time Adder is the most commonly used mode. It lets you combine multiple time entries — each with its own + or − operator — and returns the total time.
+      </p>
+      <ol>
+        <li><strong>Each row</strong> represents one time entry (a work session, a leg of a trip, a task).</li>
+        <li>Click <strong>+</strong> or <strong>−</strong> on each row to choose whether to add or subtract that entry.</li>
+        <li>Enter <strong>days, hours, minutes,</strong> and <strong>seconds</strong> for each row — leave any field blank to treat it as zero.</li>
+        <li>Click <strong>Add Another Time Row</strong> to include more entries (as many as you need).</li>
+        <li>Click <strong>Calculate Total Time</strong> to see the result — broken down into d/h/m/s plus totals.</li>
+      </ol>
+
+      <div class="example-box">
+        <div class="ex-title">📌 Real-World Example — Freelance Hours</div>
+        <p>A freelancer worked three sessions on Monday: 1h 45m, 2h 30m, and 0h 50m. They took a 30-minute break. Total billable time?</p>
+        <p>Enter: <strong>+1h 45m</strong> / <strong>+2h 30m</strong> / <strong>+0h 50m</strong> / <strong>−0h 30m</strong></p>
+        <div class="ex-result">Result: 4 hours 35 minutes</div>
+      </div>
+
+      <h3>Mode 2: Date + Time Offset</h3>
+      <p>
+        This mode answers a different question: <em>"If I start at a specific date and time, and add (or subtract) a set duration, what is the exact resulting date and time?"</em>
+      </p>
+      <ol>
+        <li>Enter your <strong>start date</strong> using the date picker.</li>
+        <li>Enter your <strong>start time</strong> in hours and minutes (24-hour format supported).</li>
+        <li>Toggle <strong>Add</strong> or <strong>Subtract</strong> depending on your direction.</li>
+        <li>Enter the <strong>days, hours, minutes, and seconds</strong> to offset.</li>
+        <li>Click <strong>Find Result Date & Time</strong> to get the exact ending date and time.</li>
+      </ol>
+
+      <div class="example-box">
+        <div class="ex-title">📌 Real-World Example — Shift End Time</div>
+        <p>A night-shift worker starts at 10:30 PM on Friday and works 9 hours 45 minutes. What time and day do they finish?</p>
+        <p>Start: <strong>Friday, 22:30</strong> + <strong>9h 45m</strong></p>
+        <div class="ex-result">Result: Saturday, 08:15 AM</div>
+      </div>
+
+      <h3>Mode 3: Expression Mode (Power Users)</h3>
+      <p>
+        Expression Mode lets you type a time formula directly — ideal for users who are comfortable with a text-based syntax and want to enter complex calculations in one line.
+      </p>
+
+      <div class="info-box">
+        <p><strong>Accepted format:</strong> Use <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. Operators are <code>+</code> and <code>-</code> only. Values without a unit are ignored.</p>
+        <p style="margin-top:6px;">Valid examples: <code>1d 2h + 3h 45m - 30m 10s</code> · <code>5h 30m + 2h</code> · <code>90m - 15s</code></p>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>Pro Tip:</strong> Expression Mode is especially powerful for video editors and podcast producers who need to sum clip durations quickly. Type all your clip lengths in one line: <code>12m 34s + 8m 20s + 22m 05s + 5m 48s</code> and instantly get the total runtime.</p>
+      </div>
+
+      <h2>Time Duration Calculator — Elapsed Time &amp; Time Difference</h2>
+      <p>
+        The <strong>time duration calculator</strong> and <strong>elapsed time calculator</strong> mode works by finding the total time between a start and end time. Formula: <strong>Elapsed Time = End Time − Start Time</strong>. Example: start 9:15 AM, end 5:45 PM = 8 hours 30 minutes elapsed. To <strong>calculate elapsed time</strong> across midnight (e.g., night shift): add 24 hours to the end time first. Our <strong>time difference calculator</strong> and <strong>time between two times</strong> function handles this automatically in Date+Time Offset mode.
+      </p>
+      <p>
+        For <strong>time between two dates</strong>, use the Date+Time Offset mode: enter your start date/time, toggle to Subtract, enter the end date offset. The <strong>date and time calculator</strong> and <strong>date duration calculator</strong> function shows the exact days, hours, minutes, and seconds between any two points in time. This is perfect as a <strong>business days calculator</strong> (count working days), <strong>countdown calculator</strong> (days until an event), or <strong>time interval calculator</strong> (how long between two timestamps).
+      </p>
+      <p>
+        Need a <strong>time zone calculator</strong>? Add or subtract the UTC offset difference between two time zones using our expression mode. Example: London (UTC+0) to New York (UTC-5): subtract 5 hours from London time. Our <strong>time conversion calculator</strong> handles all hour/minute/second conversions — including <strong>hours and minutes calculator</strong> for payroll, <strong>work hours calculator</strong> for freelancers, and <strong>travel time calculator</strong> for trip planning using our <strong>speed distance time calculator</strong> integration.
+      </p>
+
+      <h2>Time Arithmetic — Why Carry-Over Matters</h2>
+      <p>
+        The most common mistake people make when adding time manually is forgetting to carry over. Here is a breakdown of how the three carry-over boundaries work:
+      </p>
+      <ul>
+        <li><strong>60+ seconds</strong> → every 60 seconds becomes 1 minute (remainder stays as seconds)</li>
+        <li><strong>60+ minutes</strong> → every 60 minutes becomes 1 hour (remainder stays as minutes)</li>
+        <li><strong>24+ hours</strong> → every 24 hours becomes 1 day (remainder stays as hours)</li>
+      </ul>
+      <p>
+        Our calculator applies all three carry-over rules simultaneously so results are always expressed in the simplest, most readable form.
+      </p>
+
+      <h2>Average Time Benchmarks for Common Activities</h2>
+      <p>
+        Understanding typical time durations helps you make sense of your calculations. Below are realistic average durations for common activities — useful reference points when totalling time with this calculator:
+      </p>
+      <ul>
+        <li><strong>Average commute (one way):</strong> 27 minutes in the US · 40 minutes in the UK</li>
+        <li><strong>Standard work day:</strong> 8 hours (480 minutes)</li>
+        <li><strong>Average sleep duration (adults):</strong> 7–9 hours (420–540 minutes)</li>
+        <li><strong>Average feature film:</strong> 1 hour 45 minutes to 2 hours 30 minutes</li>
+        <li><strong>Average podcast episode:</strong> 30–60 minutes</li>
+        <li><strong>Marathon completion time (average runner):</strong> 4 hours 30 minutes</li>
+        <li><strong>Average read time for a 300-page book:</strong> 6–8 hours</li>
+        <li><strong>Transatlantic flight (New York → London):</strong> approximately 7 hours</li>
+      </ul>
+
+      <h2>A Brief History of How Humans Measure Time</h2>
+      <p>
+        The way we measure time today traces back thousands of years. The ancient Egyptians were among the first to divide the day into 12 parts using sundials, and 12 parts of night using star patterns — giving rise to the 24-hour day. Around 127 BC, the Greek astronomer Hipparchus standardized these into equal-length hours, laying the foundation for the system we still use.
+      </p>
+      <p>
+        The base-60 system for minutes and seconds originated with the Babylonians, who also used 60 as the base for their mathematics due to its exceptional divisibility. The number 60 can be divided evenly by 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30 — making it extraordinarily practical for subdividing hours and minutes without fractions.
+      </p>
+      <p>
+        Today, the second is defined by the cesium atomic clock — measuring exactly 9,192,631,770 oscillations of a cesium-133 atom. This definition keeps global time accurate to within one second over millions of years.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-eyebrow">FAQ</div>
+    <h2 class="sec-title">Common <span>Questions</span></h2>
+    <p class="sec-sub">Everything you need to know about adding and subtracting time values online.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I add hours and minutes together correctly?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use the <strong>Time Adder</strong> tab. Enter each time value's hours and minutes in a separate row, set each row's operator to + (Add), then click Calculate. The tool automatically handles carry-over — so 45 minutes + 25 minutes correctly becomes 1 hour 10 minutes, not 70 minutes. You never need to do the carry-over math yourself.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I calculate total work hours across multiple sessions?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>In the Time Adder, click <strong>Add Another Time Row</strong> for each work session, enter the duration of each session, and set all operators to +. Click Calculate and the result shows your total hours and minutes. This is the most accurate way to add time for freelance invoicing, timesheet reporting, or project tracking.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How many seconds are in an hour? In a day?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>One hour contains <strong>3,600 seconds</strong> (60 minutes × 60 seconds). One full day contains <strong>86,400 seconds</strong> (24 hours × 60 minutes × 60 seconds = 24 × 3,600). One week contains 604,800 seconds. These values are shown in the stats strip above the calculator and are always displayed in your result's "Total Seconds" field.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I mix addition and subtraction in one calculation?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — that's one of this calculator's key improvements over basic tools. In the <strong>Time Adder</strong>, every row has its own + / − toggle. Set some rows to add and others to subtract in the same calculation. For example: total work session time (+) minus total break time (−) = net productive hours. In <strong>Expression Mode</strong>, you can mix + and − freely inline: <code>3h 30m + 45m - 15m 10s</code>.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What does the Date + Time mode do differently from Time Adder?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Time Adder gives you a <em>duration</em> — a total time span (e.g. "4 hours 35 minutes"). Date + Time Offset gives you a <em>specific moment in time</em> — an exact date and clock time (e.g. "Saturday, May 3, 2026 at 08:15 AM"). Use it when you need to know <em>when</em> something ends or begins, not just how long it takes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What format should I use in Expression Mode?
+          <svg class="arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Type values followed immediately by their unit letter: <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, <code>s</code> for seconds. Separate terms with <code>+</code> or <code>-</code>. Units within a term can be in any order, though conventional order (d h m s) is recommended. Examples: <code>2h 30m + 45m</code> · <code>1d 6h - 2h 30m</code> · <code>90m + 1h 20m - 15s</code></p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED CALCULATORS ═══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <p class="sec-sub">Explore more free date and time calculators on SpeedCalculator.net.</p>
+    <div class="other-calcs">
+      <a href="/date-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(99,102,241,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#818cf8" stroke-width="1.4"><rect x="2" y="3" width="14" height="13" rx="2"/><path d="M2 7h14M6 3v4M12 3v4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="oc-name">Date Calculator</div>
+        <div class="oc-desc">Days between dates · add/subtract</div>
+      </a>
+      <a href="/age-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><circle cx="9" cy="7" r="3"/><path d="M3 17c0-2.8 2.7-5 6-5s6 2.2 6 5"/></svg>
+        </div>
+        <div class="oc-name">Age Calculator</div>
+        <div class="oc-desc">Exact age in years, months & days</div>
+      </a>
+      <a href="/hours-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="oc-name">Hours Calculator</div>
+        <div class="oc-desc">Hours between two clock times</div>
+      </a>
+      <a href="/business-days-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(167,139,250,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#a78bfa" stroke-width="1.4"><path d="M4 14V7l5-3 5 3v7M7 14v-3h4v3"/></svg>
+        </div>
+        <div class="oc-name">Business Days</div>
+        <div class="oc-desc">Working days between two dates</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER — same as homepage
+════════════════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════
+     JAVASCRIPT — Calculator Logic
+════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ─── DEFAULTS ───────────────────────────────────────
+(function(){
+  const now  = new Date();
+  const fmt  = d => d.toISOString().split('T')[0];
+  const fmtT = d => `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+  document.getElementById('o-date').value = fmt(now);
+  document.getElementById('o-time').value = fmtT(now);
+})();
+
+// ─── TAB SWITCHING ──────────────────────────────────
+let currentTab = 'adder';
+function setTab(tab, btn){
+  currentTab = tab;
+  document.querySelectorAll('.ctab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-adder').style.display  = tab==='adder'  ? 'block' : 'none';
+  document.getElementById('tab-offset').style.display = tab==='offset' ? 'block' : 'none';
+  document.getElementById('tab-expr').style.display   = tab==='expr'   ? 'block' : 'none';
+}
+
+// ─── OP TOGGLE (offset tab) ─────────────────────────
+let offsetOp = 'add';
+function setOp(op){
+  offsetOp = op;
+  document.getElementById('op-add').classList.toggle('active', op==='add');
+  document.getElementById('op-sub').classList.toggle('active', op==='sub');
+}
+
+// ─── ROW OP TOGGLE ──────────────────────────────────
+function setRowOp(clickedBtn, op){
+  const pair = clickedBtn.parentElement.querySelectorAll('button');
+  pair.forEach(b => { b.classList.remove('active-plus','active-minus'); });
+  clickedBtn.classList.add(op==='+'? 'active-plus':'active-minus');
+  clickedBtn.dataset.op = op;
+}
+
+// ─── ADD ROW ────────────────────────────────────────
+let rowCount = 2;
+function addRow(){
+  rowCount++;
+  const idx = rowCount;
+  const row = document.createElement('div');
+  row.className='adder-row';
+  row.dataset.idx = idx;
+  row.innerHTML = `
+    <div class="row-op">
+      <button class="active-plus" title="Add" onclick="setRowOp(this,'+')">+</button>
+      <button title="Subtract" onclick="setRowOp(this,'-')">−</button>
+    </div>
+    <div class="adder-cell"><input type="number" class="r-d" placeholder="0" min="0"></div>
+    <div class="adder-cell"><input type="number" class="r-h" placeholder="0" min="0"></div>
+    <div class="adder-cell"><input type="number" class="r-m" placeholder="0" min="0"></div>
+    <div class="adder-cell"><input type="number" class="r-s" placeholder="0" min="0"></div>
+    <button class="row-del" onclick="removeRow(this)" title="Remove row">
+      <svg fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.6">
+        <path d="M2 2l10 10M12 2L2 12" stroke-linecap="round"/>
+      </svg>
+    </button>`;
+  document.getElementById('adder-rows').appendChild(row);
+}
+function removeRow(btn){
+  const rows = document.querySelectorAll('#adder-rows .adder-row');
+  if(rows.length <= 1) return;
+  btn.closest('.adder-row').remove();
+}
+
+// ─── HELPERS ────────────────────────────────────────
+function n(id){ return parseFloat(document.getElementById(id).value)||0; }
+function ni(el){ return Math.abs(parseFloat(el.value))||0; }
+function numFmt(v){ return v.toLocaleString('en'); }
+
+function secondsToHMS(total){
+  const neg = total < 0;
+  total = Math.abs(Math.round(total));
+  const d = Math.floor(total/86400);
+  const h = Math.floor((total%86400)/3600);
+  const m = Math.floor((total%3600)/60);
+  const s = total%60;
+  return {d,h,m,s,neg};
+}
+
+function formatBig(obj){
+  const {d,h,m,s,neg} = obj;
+  const sign = neg ? '−' : '';
+  const parts=[];
+  if(d) parts.push(`${d}d`);
+  if(h) parts.push(`${h}h`);
+  if(m) parts.push(`${m}m`);
+  if(s||!parts.length) parts.push(`${s}s`);
+  return sign + parts.join(' ');
+}
+function formatSub(obj){
+  const {d,h,m,s,neg} = obj;
+  const totalSec = (d*86400+h*3600+m*60+s)*(neg?-1:1);
+  return `${numFmt(Math.abs(Math.round(totalSec/3600*100)/100))} hrs · `+
+         `${numFmt(Math.abs(Math.round(totalSec/60)))} min · `+
+         `${numFmt(Math.abs(totalSec))} sec total`;
+}
+
+function showResult(panelId,errId){
+  const panel = document.getElementById(panelId);
+  const err   = document.getElementById(errId);
+  err.style.display='none';
+  panel.classList.remove('show');
+  void panel.offsetWidth;
+  panel.classList.add('show');
+}
+function showErr(errId){
+  document.getElementById(errId).style.display='block';
+  document.getElementById(errId.replace('err-','res-')).classList.remove('show');
+}
+
+// ─── TAB 1: TIME ADDER ──────────────────────────────
+function calcAdder(){
+  const rows = document.querySelectorAll('#adder-rows .adder-row');
+  let totalSec = 0;
+  let hasValue = false;
+
+  rows.forEach(row => {
+    const d = ni(row.querySelector('.r-d'));
+    const h = ni(row.querySelector('.r-h'));
+    const m = ni(row.querySelector('.r-m'));
+    const s = ni(row.querySelector('.r-s'));
+    const rowSec = d*86400 + h*3600 + m*60 + s;
+    if(rowSec) hasValue=true;
+    const opBtn = row.querySelector('.row-op .active-plus,.row-op .active-minus');
+    const isPlus = row.querySelector('.row-op button:first-child').classList.contains('active-plus');
+    totalSec += isPlus ? rowSec : -rowSec;
+  });
+
+  if(!hasValue){ showErr('err-adder'); return; }
+
+  const obj = secondsToHMS(totalSec);
+  const ts = Math.abs(Math.round(totalSec));
+
+  document.getElementById('adder-main').textContent = formatBig(obj);
+  document.getElementById('adder-sub').textContent  = `${obj.neg?'Net negative time · ':''}${numFmt(ts)} total seconds`;
+  document.getElementById('a-days').textContent  = obj.d;
+  document.getElementById('a-hours').textContent = obj.h;
+  document.getElementById('a-mins').textContent  = obj.m;
+  document.getElementById('a-secs').textContent  = obj.s;
+  document.getElementById('a-tsec').textContent  = numFmt(ts);
+  document.getElementById('a-tmin').textContent  = numFmt(Math.round(ts/60*10)/10);
+  document.getElementById('a-thrs').textContent  = numFmt(Math.round(ts/3600*100)/100);
+
+  showResult('res-adder','err-adder');
+}
+
+// ─── TAB 2: DATE+TIME OFFSET ────────────────────────
+function calcOffset(){
+  const dateVal = document.getElementById('o-date').value;
+  const timeVal = document.getElementById('o-time').value;
+  if(!dateVal||!timeVal){ showErr('err-offset'); return; }
+
+  const d = n('off-d'), h = n('off-h'), m = n('off-m'), s = n('off-s');
+  const totalOffSec = (d*86400 + h*3600 + m*60 + s) * (offsetOp==='add'?1:-1);
+
+  const [yr,mo,dy] = dateVal.split('-').map(Number);
+  const [hr,mn]    = timeVal.split(':').map(Number);
+  const base = new Date(yr,mo-1,dy,hr,mn,0);
+  const result = new Date(base.getTime() + totalOffSec*1000);
+
+  const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const MONTHS = ['January','February','March','April','May','June','July',
+                  'August','September','October','November','December'];
+  const rh = String(result.getHours()).padStart(2,'0');
+  const rm = String(result.getMinutes()).padStart(2,'0');
+  const rs = String(result.getSeconds()).padStart(2,'0');
+  const timeStr = `${rh}:${rm}:${rs}`;
+  const dateStr = `${DAYS[result.getDay()]}, ${MONTHS[result.getMonth()]} ${result.getDate()}, ${result.getFullYear()}`;
+
+  const absOff = Math.abs(totalOffSec);
+  const opLabel = offsetOp==='add'?'added':'subtracted';
+
+  document.getElementById('off-date-out').textContent = dateStr;
+  document.getElementById('off-time-out').textContent = timeStr;
+  document.getElementById('off-sub').textContent = `${numFmt(absOff)} seconds ${opLabel}`;
+  document.getElementById('off-tsec').textContent = numFmt(absOff);
+  document.getElementById('off-tmin').textContent = numFmt(Math.round(absOff/60*10)/10);
+  document.getElementById('off-thrs').textContent = numFmt(Math.round(absOff/3600*100)/100);
+
+  showResult('res-offset','err-offset');
+}
+
+// ─── TAB 3: EXPRESSION MODE ─────────────────────────
+function calcExpr(){
+  const raw = document.getElementById('expr-input').value.trim();
+  if(!raw){ showErr('err-expr'); return; }
+
+  // Tokenise: split on + and - keeping the sign
+  // Normalise: ensure each token is separated by operator
+  const normalised = raw.replace(/\s*\+\s*/g,' + ').replace(/\s*-\s*/g,' - ');
+  const tokens = normalised.split(/(?=[+-])/).map(t=>t.trim()).filter(Boolean);
+
+  let totalSec = 0;
+  let valid = false;
+
+  for(const token of tokens){
+    const sign = token.startsWith('-') ? -1 : 1;
+    const clean = token.replace(/^[+-]/,'').trim();
+
+    const dMatch = clean.match(/(\d+(?:\.\d+)?)\s*d/i);
+    const hMatch = clean.match(/(\d+(?:\.\d+)?)\s*h/i);
+    const mMatch = clean.match(/(\d+(?:\.\d+)?)\s*m(?!s)/i);
+    const sMatch = clean.match(/(\d+(?:\.\d+)?)\s*s/i);
+
+    const d = dMatch ? parseFloat(dMatch[1]) : 0;
+    const h = hMatch ? parseFloat(hMatch[1]) : 0;
+    const m = mMatch ? parseFloat(mMatch[1]) : 0;
+    const s = sMatch ? parseFloat(sMatch[1]) : 0;
+    const rowSec = d*86400 + h*3600 + m*60 + s;
+
+    if(!dMatch&&!hMatch&&!mMatch&&!sMatch) continue;
+    valid = true;
+    totalSec += sign * rowSec;
+  }
+
+  if(!valid){ showErr('err-expr'); return; }
+
+  const obj = secondsToHMS(totalSec);
+  const ts  = Math.abs(Math.round(totalSec));
+
+  document.getElementById('expr-main').textContent = formatBig(obj);
+  document.getElementById('expr-sub').textContent  = `= ${numFmt(ts)} seconds total`;
+  document.getElementById('ex-days').textContent   = obj.d;
+  document.getElementById('ex-hours').textContent  = obj.h;
+  document.getElementById('ex-mins').textContent   = obj.m;
+  document.getElementById('ex-secs').textContent   = obj.s;
+  document.getElementById('ex-tsec').textContent   = numFmt(ts);
+  document.getElementById('ex-tmin').textContent   = numFmt(Math.round(ts/60*10)/10);
+  document.getElementById('ex-thrs').textContent   = numFmt(Math.round(ts/3600*100)/100);
+
+  showResult('res-expr','err-expr');
+}
+
+// ─── FAQ ACCORDION ──────────────────────────────────
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// ─── ENTER KEY shortcut ─────────────────────────────
+document.getElementById('expr-input').addEventListener('keydown', e=>{
+  if(e.key==='Enter') calcExpr();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>How to Calculate Average Speed: Formula & Step-by-Step Guide | SpeedCalculator.net</title>
+<meta name="description" content="Master the average speed formula without making common math errors. Learn how to calculate trips with multiple legs step-by-step and use our free calculator!">
+<link rel="canonical" href="https://www.speedcalculator.net/blog/average-speed-formula/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 4px;color:var(--text3);}
+
+/* LAYOUT */
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:36px;padding:32px 0 72px;}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;}}
+
+/* ── ARTICLE ── */
+.article-col{}
+
+/* HERO BANNER */
+.post-hero{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;margin-bottom:32px;position:relative;}
+.post-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),transparent);}
+.hero-img{width:100%;display:block;}
+.hero-img svg{display:block;width:100%;}
+.post-hero-body{padding:28px 32px 32px;}
+@media(max-width:560px){.post-hero-body{padding:20px 18px 24px;}}
+
+.post-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid rgba(59,130,246,.3);background:rgba(59,130,246,.08);color:var(--accent2);margin-bottom:14px;}
+.post-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.02;letter-spacing:-.5px;text-transform:uppercase;color:#60a5fa;margin-bottom:16px;}
+.post-excerpt{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:20px;max-width:680px;}
+
+/* META ROW */
+.post-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:32px;}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);}
+.meta-item strong{color:var(--text2);font-weight:600;}
+.author-chip{display:flex;align-items:center;gap:8px;}
+.author-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:#fff;}
+.share-row{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.share-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.share-btn{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid var(--border);}
+.share-btn:hover{border-color:var(--accent2);background:rgba(59,130,246,.1);}
+
+/* CONTENT */
+.post-content{font-size:15px;color:var(--text2);line-height:1.9;}
+.post-content h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.3px;color:var(--text);margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.post-content h2::before{content:'';width:4px;height:24px;background:linear-gradient(180deg,var(--accent),var(--teal));border-radius:2px;flex-shrink:0;}
+.post-content h3{font-size:17px;font-weight:700;color:var(--accent2);margin:28px 0 10px;}
+.post-content p{margin-bottom:18px;}
+.post-content strong{color:var(--text);font-weight:600;}
+.post-content a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);transition:border-color .2s;}
+.post-content a:hover{border-color:var(--accent2);}
+.post-content ul,.post-content ol{margin:0 0 18px 22px;}
+.post-content li{margin-bottom:7px;line-height:1.75;}
+.post-content li::marker{color:var(--accent2);}
+
+/* FORMULA BOX */
+.formula-box{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:18px 20px;margin:20px 0;}
+.formula-box .f-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.formula-box .f-eq{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.4;}
+.formula-box .f-note{font-size:12px;color:var(--text3);margin-top:7px;line-height:1.6;}
+
+/* EXAMPLE BOX */
+.example-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;margin:20px 0;}
+.ex-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.ex-step{display:flex;gap:12px;margin-bottom:10px;font-size:14px;}
+.ex-step:last-child{margin-bottom:0;}
+.ex-num{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px;}
+.ex-text{color:var(--text2);line-height:1.65;}
+.ex-text strong{color:var(--accent2);}
+
+/* TIP BOX */
+.tip-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.tip-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.tip-text strong{color:var(--green);}
+
+/* WARNING BOX */
+.warn-box{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.warn-ico{font-size:18px;flex-shrink:0;}
+.warn-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.warn-text strong{color:var(--orange);}
+
+/* INLINE IMAGE */
+.post-img{border-radius:var(--radius);overflow:hidden;margin:24px 0;border:1px solid var(--border2);}
+.post-img img{display:block;width:100%;height:auto;}
+.post-img figcaption{padding:10px 16px;font-size:11.5px;color:var(--text3);line-height:1.5;background:var(--bg2);border-top:1px solid var(--border);}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border);margin:20px 0;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--bg3);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;}
+td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);font-size:13.5px;}
+tr:last-child td{border:none;}
+td:first-child{font-weight:600;color:var(--text);}
+tr:hover td{background:rgba(59,130,246,.03);}
+
+/* PROGRESS / TOC */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));z-index:999;transition:width .1s;}
+
+/* TAGS */
+.post-tags{display:flex;flex-wrap:wrap;gap:7px;margin:32px 0;}
+.post-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.post-tag:hover{border-color:var(--accent2);color:var(--accent2);}
+
+/* AUTHOR BOX */
+.author-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:18px;align-items:flex-start;margin:36px 0;}
+@media(max-width:480px){.author-box{flex-direction:column;align-items:center;text-align:center;}}
+.author-av-lg{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;flex-shrink:0;}
+.author-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.author-role{font-size:11px;color:var(--accent2);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.author-bio{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* RELATED POSTS */
+.related-section{margin:36px 0;}
+.rel-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:18px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.rel-title span{color:var(--accent2);}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:560px){.rel-grid{grid-template-columns:1fr;}}
+.rel-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.rel-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.rel-cat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
+.rel-title-sm{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:5px;}
+.rel-date{font-size:10px;color:var(--text3);}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+.sb-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sb-head{padding:14px 18px;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text);display:flex;align-items:center;gap:7px;}
+.sb-head em{color:var(--accent2);font-style:normal;}
+
+/* TOC */
+.toc-list{padding:12px 0;list-style:none;}
+.toc-item{border-bottom:1px solid var(--border);}
+.toc-item:last-child{border:none;}
+.toc-link{display:block;padding:9px 18px;font-size:12.5px;color:var(--text3);text-decoration:none;transition:all .15s;line-height:1.4;}
+.toc-link:hover,.toc-link.active{background:var(--bg3);color:var(--accent2);border-left:2px solid var(--accent);}
+
+/* CALC CTA */
+.calc-cta{padding:18px;}
+.calc-cta p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
+.cta-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:12px 18px;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.25);}
+.cta-btn:hover{opacity:.9;transform:translateY(-1px);}
+
+/* POPULAR POSTS SB */
+.pop-list{list-style:none;padding:8px 0;}
+.pop-item{display:flex;gap:10px;align-items:flex-start;padding:9px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
+.pop-item:last-child{border:none;}
+.pop-item:hover{background:var(--bg3);}
+.pop-num{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--border2);line-height:1;min-width:22px;}
+.pop-item:hover .pop-num{color:var(--accent2);}
+.pop-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:2px;}
+.pop-meta-sm{font-size:10px;color:var(--text3);}
+
+/* TAGS SB */
+.tags-body{padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px;}
+.tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.tag:hover{border-color:var(--accent2);color:var(--accent2);}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- READING PROGRESS BAR -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/blog/">Blog</a><sep>&#8250;</sep>
+    <a href="/blog/category/speed/">Speed</a><sep>&#8250;</sep>
+    Average Speed Formula
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+<div class="post-layout">
+
+  <!-- ═══ ARTICLE COLUMN ═══ -->
+  <article class="article-col">
+
+    <!-- HERO BANNER -->
+    <div class="post-hero">
+      <div class="hero-img">
+        <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#05080f"/><stop offset="100%" stop-color="#0b1220"/></linearGradient>
+            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".15"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="860" height="320" fill="url(#bg-grad)"/>
+          <pattern id="pg" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(59,130,246,.04)" stroke-width="1"/></pattern>
+          <rect width="860" height="320" fill="url(#pg)"/>
+          
+          <!-- Visual Glow -->
+          <circle cx="210" cy="160" r="150" fill="url(#glow)"/>
+          
+          <!-- Graph/Road representing multiple legs -->
+          <line x1="70" y1="240" x2="330" y2="240" stroke="rgba(94,109,128,.3)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="70" y1="80" x2="70" y2="240" stroke="rgba(94,109,128,.3)" stroke-width="2" stroke-linecap="round"/>
+          
+          <path d="M70 240 L170 160 L310 120" fill="none" stroke="url(#glow-grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="70" cy="240" r="6" fill="#3b82f6"/>
+          <circle cx="170" cy="160" r="6" fill="#f59e0b"/>
+          <circle cx="310" cy="120" r="6" fill="#10b981"/>
+          
+          <line x1="70" y1="240" x2="310" y2="120" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+          
+          <text x="330" y="255" font-family="Barlow" font-size="10" font-weight="700" fill="#4a6080" text-anchor="end">TIME</text>
+          <text x="65" y="70" font-family="Barlow" font-size="10" font-weight="700" fill="#4a6080" text-anchor="start">DISTANCE</text>
+          
+          <text x="110" y="190" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="800" fill="#60a5fa" transform="rotate(-38 110 190)">Leg 1 (50 mph)</text>
+          <text x="240" y="132" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="800" fill="#f59e0b" transform="rotate(-16 240 132)">Leg 2 (25 mph)</text>
+          <text x="180" y="210" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="800" fill="#8b5cf6" transform="rotate(-26 180 210)">Average (33.3 mph)</text>
+          
+          <!-- Formula info panel on the right -->
+          <rect x="390" y="55" width="430" height="210" rx="14" fill="rgba(11,18,32,.75)" stroke="rgba(59,130,246,.15)" stroke-width="1.5"/>
+          <text x="415" y="90" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#4a6080" letter-spacing="2">AVERAGE SPEED FORMULA</text>
+          <text x="415" y="132" font-family="Barlow Condensed,sans-serif" font-size="24" font-weight="900" fill="#60a5fa">Average Speed =</text>
+          <text x="415" y="166" font-family="Barlow Condensed,sans-serif" font-size="20" font-weight="800" fill="#f0f4ff">Total Distance &divide; Total Time</text>
+          <line x1="415" y1="182" x2="795" y2="182" stroke="rgba(96,165,250,.3)" stroke-width="1.5"/>
+          
+          <text x="415" y="210" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Calculates overall rate for multiple trip legs</text>
+          <text x="415" y="232" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Includes stopped time and traffic slowdowns</text>
+          <text x="415" y="252" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Prevents math error of simple average of speeds</text>
+        </svg>
+      </div>
+      <div class="post-hero-body">
+        <div class="post-cat">&#9889; Speed Calculator</div>
+        <h1 class="post-title">How to Calculate Average Speed: Formula & Step-by-Step Guide</h1>
+        <p class="post-excerpt">Master the average speed formula without making common math errors. Learn how to calculate trips with multiple legs step-by-step and use our free calculator!</p>
+        <!-- META -->
+        <div class="post-meta">
+          <div class="meta-item author-chip">
+            <div class="author-av">SC</div>
+            <strong>SpeedCalc Team</strong>
+          </div>
+          <div class="meta-item">&#128197; <strong>July 16, 2026</strong></div>
+          <div class="meta-item">&#9202; <strong>6 min</strong> read</div>
+          <div class="meta-item">&#128065; <strong>1.1k</strong> views</div>
+          <div class="meta-item">&#128172; <strong>0</strong> comments</div>
+          <div class="share-row">
+            <span class="share-lbl">Share:</span>
+            <a class="share-btn" href="#" title="Twitter/X">&#120143;</a>
+            <a class="share-btn" href="#" title="Facebook">f</a>
+            <a class="share-btn" href="#" title="LinkedIn">in</a>
+            <a class="share-btn" href="#" title="Copy link">&#128279;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ POST CONTENT ═══ -->
+    <div class="post-content">
+
+      <p>If you ask someone how fast their road trip was, they won't report on all the miles. They'll provide you with one number. The average speed is that number. It eliminates all red lights, traffic jams, and clear road segments to produce a comprehensive report. This guide will explain the meaning of average speed, how the formula works, and how to use it properly outside of class and in physics class.</p>
+
+      <h2 id="definition">Average Speed Definition</h2>
+      <p>The average speed of an object is the total distance traveled divided by the total time taken. It doesn't factor in any acceleration or deceleration en route. It provides a single number for the whole trip.</p>
+      <p>Unlike a car's speedometer, this is not the speed shown at any particular moment. That number is known as instantaneous speed, and it's constantly evolving. Average speed is constant after the end of a journey. It's not a one-moment thing; it's based on the full distance and the full time.</p>
+
+      <h2 id="formula">Average Speed Formula Physics Students Actually Use</h2>
+      <p>The formula behind average speed is simple:</p>
+
+      <div class="formula-box">
+        <div class="f-label">Average Speed Formula</div>
+        <div class="f-eq">Average Speed = Total Distance &divide; Total Time</div>
+        <div class="f-note">This simple equation is all you need. If you have the total distance covered and the total duration, you have everything required to find the answer.</div>
+      </div>
+
+      <p>If a cyclist rides 40 kilometers in 2 hours, their average speed is 20 km/h. Whether the rider slowed down on a hill or sped up on flat ground doesn't matter. The formula only cares about the start distance, the end distance, and the time elapsed in between.</p>
+      
+      <div class="tip-box">
+        <div class="tip-ico">&#9881;</div>
+        <div class="tip-text"><strong>Try it yourself:</strong> Want to skip the manual math? Try our free <a href="/average-speed-calculator/">Average Speed Calculator</a> to get instant results for any trip.</div>
+      </div>
+
+      <h2 id="mph-version">Average Miles Per Hour: A Common Real-World Version</h2>
+      <p>Average speed is typically expressed in average miles per hour (mph) in the United States. It comes up frequently on road trips, in racing, and even in wind speed reports on the weather news.</p>
+      <p>If a family travels 300 miles and it takes 6 hours to make the trip, then the distance covered per hour is 300 miles &divide; 6 hours. This includes gas and food stops. The average speed for the entire trip is 50 miles per hour. The car probably sat at 65 or 70 mph for long stretches on the highway, but the overall average doesn't reflect that. City driving and stops pull the average down.</p>
+      <p>This fact trips a lot of people up. Average speed includes stopping time, as long as that time was part of the total time being measured. Take away the rest stops, and you get a different number.</p>
+
+      <h2 id="step-by-step">How to Find Average Speed Step by Step</h2>
+      <p>Finding average speed always follows the same three steps, no matter the situation:</p>
+      
+      <div class="example-box">
+        <div class="ex-head">&#128203; Step-by-Step Calculation Guide</div>
+        <div class="ex-step">
+          <div class="ex-num">1</div>
+          <div class="ex-text"><strong>Measure the total distance traveled.</strong> This includes all distance covered, from start to end, in miles or kilometers.</div>
+        </div>
+        <div class="ex-step">
+          <div class="ex-num">2</div>
+          <div class="ex-text"><strong>Measure the total time taken.</strong> This includes all pauses, slowdowns, or stops within that window.</div>
+        </div>
+        <div class="ex-step">
+          <div class="ex-num">3</div>
+          <div class="ex-text"><strong>Divide distance by time.</strong> The result is the average speed for that time period.</div>
+        </div>
+      </div>
+
+      <p>A runner's average speed is 0.2 kilometres per minute if they run 10 kilometres in 50 minutes. Converted, that's 12 km/h. The formula doesn't change based on units — it only depends on which units you choose for your final answer.</p>
+
+      <h2 id="multiple-legs">Example for Average Speed: Multiple Legs of a Trip</h2>
+      <p>Real trips don't happen at the same speed the whole way through. The formula still holds even with varying speeds, as shown in this typical scenario.</p>
+      
+      <div class="warn-box">
+        <div class="warn-ico">&#9888;</div>
+        <div class="warn-text"><strong>Common Mistake:</strong> Suppose a car travels 100 miles at 50 mph. The driver then covers another 100 miles at a slower 25 mph because of traffic. A common mistake is to simply average the two speeds: (50 + 25) &divide; 2 = 37.5 mph. <strong>That is incorrect!</strong></div>
+      </div>
+
+      <p>The proper way is to work with total distance and total time. The first leg takes 2 hours (100 &divide; 50). The second leg takes 4 hours (100 &divide; 25). Total distance is 200 miles, and total time is 6 hours. The average speed is 200 &divide; 6, which comes out to about <strong>33.3 mph</strong> (not 37.5 mph).</p>
+      <p>Averaging two speeds directly only works when equal time is spent at each speed. In real trips, that's rarely the case, since speed rises and falls with traffic, hills, and stoplights. This is one of the most common errors in both physics homework and everyday estimates.</p>
+
+      <h2 id="sports-example">Explain Average Speed With a Sports Example</h2>
+      <p>Some of the clearest examples of average speed show up in sports. This figure is almost always reported as the race result.</p>
+      <p>If a runner completes a 42.2 km marathon in 3 hours, their average speed is approximately 14 km/h. That count includes water breaks, hills, and any sprint at the end — none of that changes the final average. It depends only on the overall distance and overall race time.</p>
+      <p>That's why average speed is the standard way to compare runners, cyclists, and swimmers across different races. It strips away all the ups and downs and leaves one number that can be compared directly.</p>
+
+      <h2 id="why-not-mean">Why You Can't Just Average Two Speed Values</h2>
+      <p>This error is common enough that it's worth clarifying again: the sum of two speeds divided by two is not the correct answer if the time spent at each speed isn't equal.</p>
+      <p>Recall the driver example. The car spent much longer at 25 mph than at 50 mph, because lower speeds take more time to cover the same distance. That's why the simple average of 37.5 mph is wrong — it's off by 4.2 mph from the true answer of 33.3 mph. The true average will always lean closer to the speed at which the object spent the most time.</p>
+      <p>This is why only one formula works in every case: total distance divided by total time, regardless of how many different speeds were used along the way.</p>
+
+      <h2 id="physics-vs-everyday">Average Speed Meaning in Physics vs. Everyday Use</h2>
+      <p>In physics, average speed means the same thing as it does in everyday life. The only difference is that physics requires precise units (like meters per second) and exact measurements, rather than rough estimates.</p>
+      <p>The essence never changes. Average speed always asks: what single speed would have covered the same distance in the same amount of time?</p>
+
+      <h2 id="common-mistakes">Common Mistakes When Calculating Average Speed</h2>
+      <p>A few errors show up again and again:</p>
+      <ul>
+        <li><strong>Confusing average speed with average velocity:</strong> Velocity uses displacement (straight line distance from start to finish) instead of total distance covered.</li>
+        <li><strong>Forgetting that stopping time still counts:</strong> Any rest stops, fuel stops, or red lights are part of the total time being measured and will lower the overall average.</li>
+        <li><strong>Mixing units without converting:</strong> Ensure you convert units to match before performing the division (e.g., matching hours with miles for mph).</li>
+      </ul>
+      <p>Avoiding these three mistakes clears up almost every error people run into with average speed problems.</p>
+
+      <h2 id="quick-recap">Quick Recap: Average Speed in One Glance</h2>
+      <ul>
+        <li>Average speed is the distance travelled divided by the time taken.</li>
+        <li>It ignores all speed-ups and slow-downs during the trip.</li>
+        <li>Averaging two speeds directly is usually incorrect unless equal time was spent at each.</li>
+        <li>Stopped time still counts, since total time keeps running until the trip ends.</li>
+        <li>The formula works the same for a road trip, a race, or a physics problem.</li>
+      </ul>
+      <p>If this formula feels natural, it's the starting point for related concepts like average velocity, where direction gets added to the mix and the formula shifts slightly.</p>
+
+      <!-- TAGS -->
+      <div class="post-tags">
+        <a href="/blog/tag/speed/" class="post-tag">speed</a>
+        <a href="/blog/tag/average-speed/" class="post-tag">average speed</a>
+        <a href="/blog/tag/formula/" class="post-tag">formula</a>
+        <a href="/blog/tag/physics/" class="post-tag">physics</a>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box">
+        <div class="author-av-lg">SC</div>
+        <div>
+          <div class="author-name">SpeedCalc Editorial Team</div>
+          <div class="author-role">Calculator Experts &amp; Technical Writers</div>
+          <div class="author-bio">The SpeedCalculator.net team creates accurate, easy-to-understand guides on speed, distance, time, RPM, finance, and health calculators. All formulas are verified against engineering references and real-world test data.</div>
+        </div>
+      </div>
+
+      <!-- RELATED POSTS -->
+      <div class="related-section">
+        <div class="rel-title">Related <span>Articles</span></div>
+        <div class="rel-grid">
+          <a href="/blog/what-is-speed-in-physics/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">What Is Speed in Physics? The Scientific Definition, Explained Simply</div>
+            <div class="rel-date">&#128197; Jul 14, 2026</div>
+          </a>
+          <a href="/blog/audiobook-speed-calculator-guide/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">Audiobook Speed Calculator: How Much Time You Actually Save</div>
+            <div class="rel-date">&#128197; Jul 14, 2026</div>
+          </a>
+          <a href="/blog/rpm-to-speed-calculator-guide/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">How to Use the RPM to Speed Calculator — Complete Guide</div>
+            <div class="rel-date">&#128197; May 20, 2026</div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end post-content -->
+  </article>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128203; Table of <em>Contents</em></div>
+      <ul class="toc-list" id="toc">
+        <li class="toc-item"><a href="#definition" class="toc-link active">Average Speed Definition</a></li>
+        <li class="toc-item"><a href="#formula" class="toc-link">Average Speed Formula</a></li>
+        <li class="toc-item"><a href="#mph-version" class="toc-link">Miles Per Hour Version</a></li>
+        <li class="toc-item"><a href="#step-by-step" class="toc-link">Step-by-Step Guide</a></li>
+        <li class="toc-item"><a href="#multiple-legs" class="toc-link">Multiple Legs Example</a></li>
+        <li class="toc-item"><a href="#sports-example" class="toc-link">Sports Example</a></li>
+        <li class="toc-item"><a href="#why-not-mean" class="toc-link">Averaging Two Speeds</a></li>
+        <li class="toc-item"><a href="#physics-vs-everyday" class="toc-link">Physics vs. Everyday Meaning</a></li>
+        <li class="toc-item"><a href="#common-mistakes" class="toc-link">Common Mistakes</a></li>
+        <li class="toc-item"><a href="#quick-recap" class="toc-link">Quick Recap</a></li>
+      </ul>
+    </div>
+
+    <!-- CALCULATOR CTA -->
+    <div class="sb-card">
+      <div class="sb-head">&#9881; Try the <em>Calculator</em></div>
+      <div class="calc-cta">
+        <p>Use our free Average Speed Calculator to solve trip time, speed, or distance calculations instantly.</p>
+        <a href="/average-speed-calculator/" class="cta-btn">Average Speed Calc &#8594;</a>
+      </div>
+    </div>
+
+    <!-- POPULAR POSTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128293; Popular <em>Articles</em></div>
+      <ul class="pop-list">
+        <a href="/blog/rpm-to-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">01</span>
+          <div><div class="pop-title">How to Use the RPM to Speed Calculator</div><div class="pop-meta-sm">&#128197; May 20 &nbsp;·&nbsp; &#128065; 4.2k</div></div>
+        </a>
+        <a href="/blog/audiobook-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">02</span>
+          <div><div class="pop-title">Audiobook Speed Calculator Savings Guide</div><div class="pop-meta-sm">&#128197; Jul 14 &nbsp;·&nbsp; &#128065; 1.2k</div></div>
+        </a>
+        <a href="/blog/what-is-speed-in-physics/" class="pop-item">
+          <span class="pop-num">03</span>
+          <div><div class="pop-title">What Is Speed in Physics Explained</div><div class="pop-meta-sm">&#128197; Jul 14 &nbsp;·&nbsp; &#128065; 850</div></div>
+        </a>
+        <a href="/blog/tdee-calculator-guide/" class="pop-item">
+          <span class="pop-num">04</span>
+          <div><div class="pop-title">TDEE Calculator Guide — What Is TDEE</div><div class="pop-meta-sm">&#128197; May 12 &nbsp;·&nbsp; &#128065; 3.8k</div></div>
+        </a>
+      </ul>
+    </div>
+
+    <!-- TAGS -->
+    <div class="sb-card">
+      <div class="sb-head">&#127991; Popular <em>Tags</em></div>
+      <div class="tags-body">
+        <a href="/blog/tag/speed/" class="tag">speed</a>
+        <a href="/blog/tag/velocity/" class="tag">velocity</a>
+        <a href="/blog/tag/formula/" class="tag">formula</a>
+        <a href="/blog/tag/physics/" class="tag">physics</a>
+        <a href="/blog/tag/distance/" class="tag">distance</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</div>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var winH = document.documentElement.scrollHeight - window.innerHeight;
+  var pct  = (window.scrollY / winH) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+// Active TOC highlight on scroll
+var sections = document.querySelectorAll('h2[id]');
+var tocLinks = document.querySelectorAll('.toc-link');
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(function(l) {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+  });
+});
+
+// Copy link share button
+document.querySelectorAll('.share-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    if (this.title === 'Copy link') {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = '✓';
+        setTimeout(function(){ btn.textContent = '🔗'; }, 2000);
+      });
+    }
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../../js/shared.js"></script>
+</body>
+</html>

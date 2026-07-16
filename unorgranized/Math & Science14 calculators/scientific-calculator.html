@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator Online Free — Advanced Calculator with Trig, Log & Steps | SpeedCalculator.net</title>
+<meta name="description" content="Free scientific calculator online. Full-function advanced calculator with trigonometry, logarithms, exponents, square root, fractions & scientific notation. Works on any device. No download needed.">
+<meta name="keywords" content="scientific calculator online, free scientific calculator, advanced scientific calculator, scientific calculator with steps, scientific calculator with fractions, scientific calculator with exponents, scientific calculator with log, scientific calculator with square root, scientific calculator with trigonometry, online scientific calculator free, best scientific calculator online, scientific calculator for students, scientific calculator for physics, scientific calculator for algebra">
+<link rel="canonical" href="https://www.speedcalculator.net/scientific-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Scientific Calculator Online",
+  "url":"https://www.speedcalculator.net/scientific-calculator/",
+  "description":"Free advanced scientific calculator — trigonometry, logarithms, exponents, roots, fractions, scientific notation",
+  "applicationCategory":"EducationApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a scientific calculator?","acceptedAnswer":{"@type":"Answer","text":"A scientific calculator is an advanced calculator that handles complex mathematical functions beyond basic arithmetic — including trigonometry (sin, cos, tan), logarithms, exponents, roots, factorials, and scientific notation. It is essential for students, engineers, scientists, and professionals."}},
+    {"@type":"Question","name":"How to use a scientific calculator?","acceptedAnswer":{"@type":"Answer","text":"Enter numbers and functions using the buttons. Use DEG/RAD to switch between degrees and radians for trig functions. For powers, press xʸ then the exponent. For roots, press √. Results appear in the display after pressing =. Use memory buttons (M+, MR) to store and recall values."}},
+    {"@type":"Question","name":"How to do scientific notation on a calculator?","acceptedAnswer":{"@type":"Answer","text":"Press the EXP (or ×10ˣ) button to enter scientific notation. For example, to enter 3.5×10⁶, type 3.5 then EXP then 6. The calculator displays it as 3.5e6 or 3.5×10⁶."}},
+    {"@type":"Question","name":"How to calculate sin, cos, tan on a scientific calculator?","acceptedAnswer":{"@type":"Answer","text":"Make sure DEG or RAD mode is correct for your problem. Press sin, cos, or tan, then enter the angle, then press =. For inverse trig (sin⁻¹, cos⁻¹, tan⁻¹), press the 2nd/Shift function first."}},
+    {"@type":"Question","name":"Is this scientific calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — 100% free forever. No download, no signup, no subscription. Our online scientific calculator works on any device — phone, tablet, or computer."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,0.12);--border2:rgba(59,130,246,0.25);
+  --radius:14px;--radius-sm:8px;
+  --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,0.1),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.3fr;gap:44px;align-items:start;}
+@media(max-width:860px){.hero{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,58px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.badge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.badge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.badge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* ═══ CALCULATOR CONTAINER ═══ */
+.calc-container{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:440px;}
+.calc-container::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);}
+
+/* DISPLAY */
+.calc-display{background:#030810;padding:16px 18px 12px;border-bottom:1px solid var(--border);}
+.calc-display-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.mode-btns{display:flex;gap:4px;}
+.mode-btn{padding:3px 9px;border-radius:12px;border:1px solid var(--border2);background:transparent;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--text3);cursor:pointer;transition:all .2s;letter-spacing:.05em;}
+.mode-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.shift-btn{padding:3px 10px;border-radius:12px;border:1px solid rgba(245,158,11,.3);background:transparent;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--orange);cursor:pointer;transition:all .2s;}
+.shift-btn.on{background:var(--orange);color:#03111a;border-color:var(--orange);}
+.history-line{font-family:var(--mono);font-size:11px;color:var(--text3);text-align:right;min-height:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.expr-line{font-family:var(--mono);font-size:15px;color:var(--text2);text-align:right;min-height:22px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:2px 0;}
+.result-line{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--accent2);text-align:right;min-height:40px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.result-line.error{color:var(--red);font-size:18px;}
+
+/* KEYBOARD */
+.calc-keys{padding:12px;}
+.key-row{display:grid;gap:5px;margin-bottom:5px;}
+.key-row:last-child{margin-bottom:0;}
+.key-row.r5{grid-template-columns:repeat(5,1fr);}
+.key-row.r4{grid-template-columns:repeat(4,1fr);}
+
+.key{border:none;border-radius:var(--radius-sm);font-family:var(--mono);font-weight:600;cursor:pointer;transition:all .15s;user-select:none;padding:0;height:44px;display:flex;align-items:center;justify-content:center;font-size:13px;position:relative;letter-spacing:0;}
+.key:active{transform:scale(.93);}
+.key .shift-label{position:absolute;top:3px;left:4px;font-size:8px;font-weight:600;color:var(--orange);opacity:.8;font-family:'Barlow',sans-serif;}
+
+/* KEY TYPES */
+.key-num{background:#0f1e35;color:var(--text);border:1px solid rgba(59,130,246,.1);font-size:16px;}
+.key-num:hover{background:#162940;}
+.key-op{background:rgba(59,130,246,.12);color:var(--accent2);border:1px solid rgba(59,130,246,.2);}
+.key-op:hover{background:rgba(59,130,246,.22);}
+.key-eq{background:var(--accent);color:#fff;border:1px solid var(--accent);font-size:18px;}
+.key-eq:hover{background:#2563eb;}
+.key-fn{background:rgba(139,92,246,.1);color:#c4b5fd;border:1px solid rgba(139,92,246,.18);font-size:12px;}
+.key-fn:hover{background:rgba(139,92,246,.2);}
+.key-fn.active-shift{background:rgba(245,158,11,.15);color:var(--orange);border-color:rgba(245,158,11,.3);}
+.key-trig{background:rgba(16,185,129,.08);color:#6ee7b7;border:1px solid rgba(16,185,129,.15);font-size:12px;}
+.key-trig:hover{background:rgba(16,185,129,.16);}
+.key-trig.active-shift{background:rgba(245,158,11,.12);color:var(--orange);border-color:rgba(245,158,11,.25);}
+.key-clear{background:rgba(239,68,68,.12);color:#fca5a5;border:1px solid rgba(239,68,68,.2);}
+.key-clear:hover{background:rgba(239,68,68,.22);}
+.key-mem{background:rgba(6,182,212,.08);color:#67e8f9;border:1px solid rgba(6,182,212,.15);font-size:11px;}
+.key-mem:hover{background:rgba(6,182,212,.16);}
+.key-const{background:rgba(236,72,153,.08);color:#f9a8d4;border:1px solid rgba(236,72,153,.15);font-size:12px;}
+.key-const:hover{background:rgba(236,72,153,.15);}
+.key-special{background:rgba(245,158,11,.1);color:var(--orange);border:1px solid rgba(245,158,11,.2);font-size:12px;}
+.key-special:hover{background:rgba(245,158,11,.18);}
+
+/* HISTORY PANEL */
+.history-panel{background:#030810;border-top:1px solid var(--border);max-height:100px;overflow-y:auto;padding:8px 14px;}
+.history-panel:empty::after{content:'— calculation history —';font-size:11px;color:var(--text3);font-family:var(--mono);}
+.hist-item{font-family:var(--mono);font-size:11px;color:var(--text3);padding:2px 0;cursor:pointer;display:flex;justify-content:space-between;border-bottom:1px solid rgba(59,130,246,.05);}
+.hist-item:last-child{border:none;}
+.hist-item:hover{color:var(--text2);}
+.hist-expr{color:var(--text3);}
+.hist-res{color:var(--accent2);font-weight:600;}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* FUNCTION REFERENCE CARDS */
+.fn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:700px){.fn-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.fn-grid{grid-template-columns:1fr;}}
+.fn-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.fn-card:hover{border-color:var(--border2);}
+.fn-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-family:var(--mono);font-size:14px;font-weight:700;}
+.fn-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.fn-list{list-style:none;display:flex;flex-direction:column;gap:3px;}
+.fn-list li{font-size:11px;color:var(--text2);display:flex;justify-content:space-between;align-items:center;}
+.fn-list li code{font-family:var(--mono);font-size:11px;color:var(--accent2);background:var(--bg3);padding:1px 6px;border-radius:3px;}
+
+/* STEPS GUIDE */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+@media(max-width:720px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;transition:border-color .2s;}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s;}
+.step-card:hover{border-color:var(--border2);}
+.step-card:hover::before{opacity:1;}
+.step-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);flex-shrink:0;}
+.step-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-icon svg{width:18px;height:18px;}
+.step-h{font-size:14px;font-weight:700;color:var(--text);margin:10px 0 4px;}
+.step-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.uc-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.uc-grid{grid-template-columns:1fr;}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;margin:24px 0 8px;}
+.img-block img{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius);}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.85));padding:14px 18px;border-radius:0 0 var(--radius) var(--radius);}
+.img-overlay span{font-size:11px;color:rgba(255,255,255,.7);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article ul,.article ol{margin:0 0 14px 20px;}
+.article li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip p{color:var(--text2);font-size:13px;margin:0;}
+.tip strong{color:var(--green);}
+.ex-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.ex-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.ex-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;font-family:var(--mono);}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:260px;}
+
+/* OTHER CALCS */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .5s ease both;}
+</style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/calculators/">Calculators</a><span>›</span>
+    Scientific Calculator
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Free · Full Function · Keyboard Support</div>
+        <h1>Scientific<em>Calculator</em></h1>
+        <p class="hero-sub">A fully functional free scientific calculator online — with trigonometry, logarithms, exponents, square roots, fractions, scientific notation, memory functions, and calculation history.</p>
+        <div class="badges">
+          <span class="badge g">✓ 100% Free</span>
+          <span class="badge b">Sin Cos Tan</span>
+          <span class="badge p">Log & Ln</span>
+          <span class="badge">Keyboard Input</span>
+          <span class="badge g">Calc History</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: SCIENTIFIC CALCULATOR -->
+      <div class="calc-container" id="calculator">
+
+        <!-- DISPLAY -->
+        <div class="calc-display">
+          <div class="calc-display-top">
+            <div class="mode-btns">
+              <button class="mode-btn active" id="btn-deg" onclick="setAngleMode('DEG')">DEG</button>
+              <button class="mode-btn" id="btn-rad" onclick="setAngleMode('RAD')">RAD</button>
+            </div>
+            <button class="shift-btn" id="shift-btn" onclick="toggleShift()">2nd</button>
+          </div>
+          <div class="history-line" id="history-line"></div>
+          <div class="expr-line" id="expr-line"></div>
+          <div class="result-line" id="result-line">0</div>
+        </div>
+
+        <!-- KEYBOARD -->
+        <div class="calc-keys">
+
+          <!-- ROW 1: Memory + Clear -->
+          <div class="key-row r5">
+            <button class="key key-mem" onclick="mem('mc')">MC</button>
+            <button class="key key-mem" onclick="mem('mr')">MR</button>
+            <button class="key key-mem" onclick="mem('mp')">M+</button>
+            <button class="key key-mem" onclick="mem('mm')">M−</button>
+            <button class="key key-mem" onclick="mem('ms')">MS</button>
+          </div>
+
+          <!-- ROW 2: Trig row 1 -->
+          <div class="key-row r5">
+            <button class="key key-trig" id="key-sin" onclick="insertFn('sin(')">
+              <span class="shift-label">sin⁻¹</span>sin
+            </button>
+            <button class="key key-trig" id="key-cos" onclick="insertFn('cos(')">
+              <span class="shift-label">cos⁻¹</span>cos
+            </button>
+            <button class="key key-trig" id="key-tan" onclick="insertFn('tan(')">
+              <span class="shift-label">tan⁻¹</span>tan
+            </button>
+            <button class="key key-const" onclick="insertStr('π')">π</button>
+            <button class="key key-const" onclick="insertStr('e')">e</button>
+          </div>
+
+          <!-- ROW 3: Power / Root -->
+          <div class="key-row r5">
+            <button class="key key-fn" id="key-x2" onclick="insertStr('²')">
+              <span class="shift-label">x³</span>x²
+            </button>
+            <button class="key key-fn" id="key-sqrt" onclick="insertFn('√(')">
+              <span class="shift-label">∛</span>√x
+            </button>
+            <button class="key key-fn" id="key-pow" onclick="insertStr('^')">
+              <span class="shift-label">ʸ√x</span>xʸ
+            </button>
+            <button class="key key-fn" id="key-log" onclick="insertFn('log(')">
+              <span class="shift-label">10ˣ</span>log
+            </button>
+            <button class="key key-fn" id="key-ln" onclick="insertFn('ln(')">
+              <span class="shift-label">eˣ</span>ln
+            </button>
+          </div>
+
+          <!-- ROW 4: Special -->
+          <div class="key-row r5">
+            <button class="key key-special" onclick="insertFn('abs(')">|x|</button>
+            <button class="key key-special" id="key-fact" onclick="insertStr('!')">
+              <span class="shift-label">nPr</span>n!
+            </button>
+            <button class="key key-special" onclick="insertStr('(')">( )</button>
+            <button class="key key-special" onclick="insertStr('%')">%</button>
+            <button class="key key-special" onclick="toggleSign()">±</button>
+          </div>
+
+          <!-- ROW 5: 7 8 9 DEL AC -->
+          <div class="key-row r5">
+            <button class="key key-num" onclick="insertNum('7')">7</button>
+            <button class="key key-num" onclick="insertNum('8')">8</button>
+            <button class="key key-num" onclick="insertNum('9')">9</button>
+            <button class="key key-clear" onclick="backspace()">⌫</button>
+            <button class="key key-clear" onclick="clearAll()" style="font-size:12px;">AC</button>
+          </div>
+
+          <!-- ROW 6: 4 5 6 × ÷ -->
+          <div class="key-row r5">
+            <button class="key key-num" onclick="insertNum('4')">4</button>
+            <button class="key key-num" onclick="insertNum('5')">5</button>
+            <button class="key key-num" onclick="insertNum('6')">6</button>
+            <button class="key key-op" onclick="insertOp('×')">×</button>
+            <button class="key key-op" onclick="insertOp('÷')">÷</button>
+          </div>
+
+          <!-- ROW 7: 1 2 3 + - -->
+          <div class="key-row r5">
+            <button class="key key-num" onclick="insertNum('1')">1</button>
+            <button class="key key-num" onclick="insertNum('2')">2</button>
+            <button class="key key-num" onclick="insertNum('3')">3</button>
+            <button class="key key-op" onclick="insertOp('+')">+</button>
+            <button class="key key-op" onclick="insertOp('−')">−</button>
+          </div>
+
+          <!-- ROW 8: 0 . EXP ANS = -->
+          <div class="key-row r5">
+            <button class="key key-num" onclick="insertNum('0')" style="font-size:17px;">0</button>
+            <button class="key key-num" onclick="insertNum('.')">.</button>
+            <button class="key key-special" onclick="insertFn('EXP')">EXP</button>
+            <button class="key key-fn" onclick="insertStr('ANS')" style="font-size:11px;">ANS</button>
+            <button class="key key-eq" onclick="calculate()">=</button>
+          </div>
+
+        </div>
+
+        <!-- HISTORY -->
+        <div class="history-panel" id="history-panel"></div>
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">40+</div><div class="stat-lbl">Functions</div></div>
+      <div class="stat-item"><div class="stat-val">DEG/RAD</div><div class="stat-lbl">Angle Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Memory</div><div class="stat-lbl">M+, MR, MS</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Quick Guide</div>
+    <h2 class="sec-title">How to Use the <span>Scientific Calculator</span></h2>
+    <p class="sec-sub">Use buttons or your keyboard to enter expressions. The calculator shows your working expression as you type, then the result when you press =.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">01</div>
+          <div class="step-icon" style="background:rgba(59,130,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><rect x="3" y="2" width="12" height="14" rx="2"/><path d="M6 6h6M6 9h4" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Set DEG or RAD</div>
+        <p class="step-p">For trigonometry, set the correct angle mode first. DEG for degrees (most common), RAD for radians (used in calculus and physics).</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">02</div>
+          <div class="step-icon" style="background:rgba(16,185,129,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M3 9h12M9 3l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Enter Your Expression</div>
+        <p class="step-p">Click buttons or type on your keyboard. Press sin, log, √ then enter the number. Use ^ for powers, ! for factorial, and EXP for scientific notation.</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">03</div>
+          <div class="step-icon" style="background:rgba(245,158,11,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><path d="M4 9h10M9 4l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Press 2nd for Inverse</div>
+        <p class="step-p">Press the 2nd button (or Shift) to access inverse functions — sin⁻¹, cos⁻¹, tan⁻¹, 10ˣ, eˣ, x³, ∛x, and more hidden on every key.</p>
+      </div>
+      <div class="step-card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="step-badge">04</div>
+          <div class="step-icon" style="background:rgba(139,92,246,.1);">
+            <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 4h10v2H4zM4 8h8M4 12h6" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="step-h">Read History & Memory</div>
+        <p class="step-p">Previous calculations appear in the history panel — click any to reuse. Use M+/MR to store values in memory for multi-step calculations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCTION REFERENCE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Function Reference</div>
+    <h2 class="sec-title">All Calculator <span>Functions</span></h2>
+    <p class="sec-sub">Complete reference for every function in our free online scientific calculator — with examples for each.</p>
+
+    <div class="img-block">
+      <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=900&q=80&auto=format&fit=crop"
+           alt="Student using online scientific calculator for physics and algebra problems">
+      <div class="img-overlay">
+        <span>Free scientific calculator online — used by millions of students and professionals worldwide</span>
+      </div>
+    </div>
+
+    <div class="fn-grid">
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(16,185,129,.1);color:#6ee7b7;">sin</div>
+        <div class="fn-title">Trigonometry</div>
+        <ul class="fn-list">
+          <li>sin(x) <code>sin(30) = 0.5</code></li>
+          <li>cos(x) <code>cos(60) = 0.5</code></li>
+          <li>tan(x) <code>tan(45) = 1</code></li>
+          <li>sin⁻¹(x) <code>asin(0.5) = 30°</code></li>
+          <li>cos⁻¹(x) <code>acos(0.5) = 60°</code></li>
+          <li>tan⁻¹(x) <code>atan(1) = 45°</code></li>
+        </ul>
+      </div>
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(59,130,246,.1);color:#93c5fd;">log</div>
+        <div class="fn-title">Logarithms</div>
+        <ul class="fn-list">
+          <li>log(x) <code>log(100) = 2</code></li>
+          <li>ln(x) <code>ln(e) = 1</code></li>
+          <li>10ˣ (2nd+log) <code>10^3 = 1000</code></li>
+          <li>eˣ (2nd+ln) <code>e^2 ≈ 7.389</code></li>
+          <li>log₂(x) <code>log(8)/log(2) = 3</code></li>
+        </ul>
+      </div>
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(139,92,246,.1);color:#c4b5fd;">xʸ</div>
+        <div class="fn-title">Powers & Roots</div>
+        <ul class="fn-list">
+          <li>x² <code>5² = 25</code></li>
+          <li>x³ (2nd) <code>3³ = 27</code></li>
+          <li>xʸ <code>2^10 = 1024</code></li>
+          <li>√x <code>√144 = 12</code></li>
+          <li>∛x (2nd) <code>∛27 = 3</code></li>
+          <li>ʸ√x (2nd) <code>⁴√16 = 2</code></li>
+        </ul>
+      </div>
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(245,158,11,.1);color:#fcd34d;">EXP</div>
+        <div class="fn-title">Scientific Notation</div>
+        <ul class="fn-list">
+          <li>EXP button <code>3.5 EXP 6 = 3.5×10⁶</code></li>
+          <li>× 10ˣ <code>2.99 × 10⁸</code></li>
+          <li>E notation <code>6.022E23</code></li>
+        </ul>
+      </div>
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(236,72,153,.1);color:#f9a8d4;">π e</div>
+        <div class="fn-title">Constants</div>
+        <ul class="fn-list">
+          <li>π <code>3.14159265...</code></li>
+          <li>e <code>2.71828182...</code></li>
+          <li>2π <code>6.28318...</code></li>
+          <li>π/2 <code>1.5708...</code></li>
+        </ul>
+      </div>
+      <div class="fn-card">
+        <div class="fn-icon" style="background:rgba(6,182,212,.1);color:#67e8f9;">M+</div>
+        <div class="fn-title">Memory Functions</div>
+        <ul class="fn-list">
+          <li>MC <code>Clear memory</code></li>
+          <li>MR <code>Recall memory</code></li>
+          <li>M+ <code>Add to memory</code></li>
+          <li>M− <code>Subtract from memory</code></li>
+          <li>MS <code>Store to memory</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This Tool</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">Our free advanced scientific calculator is used by students, engineers, teachers, and professionals worldwide for a wide range of mathematical problems.</p>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M10 2L2 7l8 5 8-5-8-5zM2 17l8-5 8 5"/></svg>
+        </div>
+        <div class="uc-h">Students & Algebra</div>
+        <p class="uc-p">Solve algebraic equations, evaluate expressions, simplify radicals, and check exam answers with our scientific calculator for algebra.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 4v4l3 3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Physics Problems</div>
+        <p class="uc-p">Calculate velocity, force, energy, and wave functions using trig, square roots, and scientific notation. Perfect scientific calculator for physics problems.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><path d="M3 17L17 3M10 3h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Engineering</div>
+        <p class="uc-p">Compute structural loads, electrical impedance, signal frequencies, and fluid dynamics using the full range of mathematical functions.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><rect x="2" y="2" width="16" height="16" rx="2"/><path d="M2 9h16M9 2v16" stroke-linecap="round"/></svg>
+        </div>
+        <div class="uc-h">Trigonometry</div>
+        <p class="uc-p">Find angles, sides of triangles, navigate bearings, and solve wave equations using all six trig functions with both degrees and radians.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><path d="M4 14l4-8 4 5 3-3 3 6" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="2"/></svg>
+        </div>
+        <div class="uc-h">Statistics & Finance</div>
+        <p class="uc-p">Calculate compound interest, standard deviation, probability functions, and logarithmic financial models using log and power functions.</p>
+      </div>
+      <div class="uc">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h11l4 4-2 6H5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+        </div>
+        <div class="uc-h">Navigation & GPS</div>
+        <p class="uc-p">Calculate bearing angles, distances using the haversine formula, and coordinate transformations using inverse trig functions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>What Is a Scientific Calculator?</h2>
+  <p>A <strong>scientific calculator</strong> is an advanced calculator capable of performing complex mathematical operations far beyond basic addition, subtraction, multiplication, and division. It handles trigonometric functions (sin, cos, tan), logarithms, exponential functions, roots, powers, factorials, and scientific notation — making it an essential tool for students, engineers, scientists, and mathematicians.</p>
+  <p>Our <strong>free scientific calculator online</strong> provides all the functions of a physical scientific calculator — like the Casio FX-991 or Texas Instruments TI-30 — right in your browser, with no download or installation required. It works on any device, including phones and tablets.</p>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80&auto=format&fit=crop"
+         alt="Advanced scientific calculator being used for mathematics and physics calculations">
+    <div class="img-overlay">
+      <span>Online scientific calculator — full functions for trigonometry, logarithms, powers, and more</span>
+    </div>
+  </div>
+
+  <h2>How to Use a Scientific Calculator — Step by Step</h2>
+
+  <h3>Step 1: Choose DEG or RAD Mode</h3>
+  <p>Before using any trigonometric function, always set the correct angle unit. <strong>DEG (Degrees)</strong> is used in everyday geometry and navigation — most problems state angles in degrees. <strong>RAD (Radians)</strong> is used in calculus, physics, and advanced mathematics where 2π = 360°. Most school exam problems use degrees.</p>
+
+  <h3>Step 2: Enter Your Expression</h3>
+  <p>You can enter expressions by clicking buttons or typing directly on your keyboard. The full expression is shown in the display as you type, so you can verify what you're computing before pressing =.</p>
+
+  <div class="ex-box">
+    <h4>Examples of Typed Expressions</h4>
+    <p>
+      sin(30) → press sin, type 30, press ) then =<br>
+      2^10 → type 2, press xʸ, type 10, press =<br>
+      log(1000) → press log, type 1000, press ) then =<br>
+      √(144) → press √, type 144, press ) then =<br>
+      3! → type 3, press n!, press =<br>
+      5.4 EXP 3 → type 5.4, press EXP, type 3, press =
+    </p>
+  </div>
+
+  <h3>Step 3: Use 2nd/Shift for Inverse Functions</h3>
+  <p>Press the <strong>2nd button</strong> to unlock the secondary functions printed above each key in orange. This gives you access to:</p>
+  <ul>
+    <li>sin⁻¹, cos⁻¹, tan⁻¹ — inverse trigonometric functions</li>
+    <li>10ˣ — raise 10 to a power (inverse of log)</li>
+    <li>eˣ — raise e to a power (inverse of ln)</li>
+    <li>x³ — cube a number (instead of x²)</li>
+    <li>∛x — cube root (instead of √)</li>
+  </ul>
+
+  <h2>How to Do Scientific Notation on a Calculator</h2>
+  <p>Scientific notation is used to write very large or very small numbers. For example, 3.5 × 10⁶ (3.5 million) or 1.6 × 10⁻¹⁹ (Planck's constant).</p>
+  <p>To enter scientific notation using the <strong>EXP button</strong>:</p>
+  <ol>
+    <li>Type the coefficient: e.g. <strong>6.022</strong></li>
+    <li>Press <strong>EXP</strong> (this means "× 10 to the power of")</li>
+    <li>Type the exponent: e.g. <strong>23</strong></li>
+    <li>Press <strong>=</strong> to evaluate</li>
+    <li>Result: 6.022 × 10²³ (Avogadro's number)</li>
+  </ol>
+  <div class="tip">
+    <p><strong>Pro Tip:</strong> To enter negative exponents (for very small numbers like 1.6×10⁻¹⁹), press EXP then use ± to make the exponent negative: type 1.6 → EXP → 19 → ± → =</p>
+  </div>
+
+  <h2>Trigonometry on a Scientific Calculator</h2>
+  <h3>Finding sin(30°)</h3>
+  <p>Ensure DEG mode is selected. Press sin, enter 30, press ) then = → result: 0.5</p>
+
+  <h3>Finding an Angle (Inverse Trig)</h3>
+  <p>To find an angle when you know the ratio: Press 2nd, then sin⁻¹ (or asin), enter the value (e.g. 0.5), press ) then = → result: 30°</p>
+
+  <div class="ex-box">
+    <h4>Common Trig Values (DEG mode)</h4>
+    <p>
+      sin(0°) = 0       cos(0°) = 1       tan(0°) = 0<br>
+      sin(30°) = 0.5    cos(30°) = 0.866  tan(30°) = 0.577<br>
+      sin(45°) = 0.707  cos(45°) = 0.707  tan(45°) = 1<br>
+      sin(60°) = 0.866  cos(60°) = 0.5    tan(60°) = 1.732<br>
+      sin(90°) = 1      cos(90°) = 0      tan(90°) = undefined
+    </p>
+  </div>
+
+  <div class="img-block">
+    <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=900&q=80&auto=format&fit=crop"
+         alt="Physics and mathematics formulas with scientific calculator for engineering problems">
+    <div class="img-overlay">
+      <span>Scientific calculator for physics and engineering — handles trig, logs, exponents, and scientific notation</span>
+    </div>
+  </div>
+
+  <h2>Keyboard Shortcuts — Type Faster</h2>
+  <p>Our scientific calculator online fully supports keyboard input. Use these shortcuts to speed up your calculations:</p>
+  <ul>
+    <li><strong>Numbers 0–9</strong> — enter digits directly</li>
+    <li><strong>+ − * /</strong> — basic operators (/ becomes ÷)</li>
+    <li><strong>Enter or =</strong> — calculate result</li>
+    <li><strong>Backspace</strong> — delete last character</li>
+    <li><strong>Escape</strong> — clear all (AC)</li>
+    <li><strong>s, c, t</strong> — sin, cos, tan</li>
+    <li><strong>l</strong> — log, <strong>n</strong> — ln</li>
+    <li><strong>p</strong> — insert π</li>
+    <li><strong>^</strong> — power (xʸ)</li>
+    <li><strong>! </strong> — factorial</li>
+  </ul>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Scientific Calculator <span>FAQ</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">What is a scientific calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A <strong>scientific calculator</strong> is an advanced calculator that handles complex math beyond basic arithmetic — including trigonometry (sin, cos, tan), logarithms (log, ln), exponents, roots, factorials, and scientific notation. It is used by students, engineers, physicists, and mathematicians for solving problems in algebra, calculus, physics, chemistry, and statistics.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">How to use a scientific calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>First, set the angle mode (DEG or RAD). Enter numbers and functions using the buttons or keyboard. For trig, press sin/cos/tan, enter the angle, then press ) and =. For powers, press xʸ, enter the exponent, then =. Use the <strong>2nd</strong> button to access inverse and alternate functions. Press <strong>AC</strong> to clear and start over.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">How to type in a scientific calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our scientific calculator online supports full keyboard input. Type numbers using your number keys, use + − * / for operators, and Enter or = to calculate. Special keys: s for sin, c for cos, t for tan, l for log, n for ln, p for π, ^ for power, ! for factorial, and Esc to clear. Click any button or type — both work simultaneously.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">How to do scientific notation on a calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Press <strong>EXP</strong> to enter scientific notation. For 3.5 × 10⁶: type 3.5, press EXP, type 6, press =. For negative exponents (like 10⁻³), type 3, press EXP, type 3, then press ± to make it negative. The result displays in standard decimal or scientific notation automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">How to calculate sin, cos, tan on a scientific calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Set <strong>DEG mode</strong> for degree inputs (most common). Click <strong>sin</strong>, enter the angle (e.g. 45), close the bracket ), then press =. Example: sin(45) = 0.7071. For inverse trig (to find angle from a ratio), press <strong>2nd</strong> first, then sin⁻¹, enter the ratio, close bracket, press =. Example: sin⁻¹(0.5) = 30°.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqToggle(this)">Is this scientific calculator free and works on phone?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — <strong>100% free forever</strong>, no download, no signup. Our online scientific calculator is fully mobile-responsive and works perfectly on phones, tablets, and computers. All buttons are touch-friendly and sized for easy tapping on small screens. It works on any browser — Chrome, Safari, Firefox, Edge.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CALCS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="11" r="2"/><path d="M13 3L3 13" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">Calculate any percentage</div>
+      </a>
+      <a href="/fraction-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><path d="M8 2v12" stroke-linecap="round"/><circle cx="8" cy="4.5" r="1.5" fill="#10b981"/><circle cx="8" cy="11.5" r="1.5" fill="#10b981"/></svg></div>
+        <div class="oc-name">Fraction Calculator</div>
+        <div class="oc-desc">Add, simplify, convert</div>
+      </a>
+      <a href="/square-root-calculator/" class="oc">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><path d="M2 10l3-6 2 4 2-2 5 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Square Root Calc</div>
+        <div class="oc-desc">Simplify radicals & √x</div>
+      </a>
+      <a href="/" class="oc">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><path d="M8 3v4l3 2" stroke-linecap="round"/><circle cx="8" cy="8" r="6"/></svg></div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, speed & time</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT — FULL CALCULATOR LOGIC -->
+<script>
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+let expr = '';
+let lastResult = 0;
+let angleMode = 'DEG'; // DEG or RAD
+let shiftOn = false;
+let memory = 0;
+let history = [];
+
+const D = document;
+const display = id => D.getElementById(id);
+
+// ═══════════════════════════════════════════════
+// DISPLAY UPDATE
+// ═══════════════════════════════════════════════
+function updateDisplay() {
+  const el = display('expr-line');
+  el.textContent = expr || '';
+  el.scrollLeft = el.scrollWidth;
+}
+
+function setResult(val, isErr = false) {
+  const el = display('result-line');
+  el.textContent = val;
+  el.className = 'result-line' + (isErr ? ' error' : '');
+}
+
+// ═══════════════════════════════════════════════
+// INPUT HANDLERS
+// ═══════════════════════════════════════════════
+function insertNum(ch) { expr += ch; updateDisplay(); }
+
+function insertOp(op) {
+  const ops = ['+','−','×','÷','^'];
+  if (ops.some(o => expr.endsWith(o))) { expr = expr.slice(0,-1); }
+  expr += op; updateDisplay();
+}
+
+function insertFn(fn) {
+  if (fn === 'EXP') { expr += '×10^'; }
+  else if (fn === '√(') { expr += shiftOn ? '∛(' : '√('; }
+  else if (fn === 'sin(') {
+    if (shiftOn) { expr += 'asin('; }
+    else { expr += 'sin('; }
+  } else if (fn === 'cos(') {
+    if (shiftOn) { expr += 'acos('; }
+    else { expr += 'cos('; }
+  } else if (fn === 'tan(') {
+    if (shiftOn) { expr += 'atan('; }
+    else { expr += 'tan('; }
+  } else if (fn === 'log(') {
+    if (shiftOn) { expr += '10^('; }
+    else { expr += 'log('; }
+  } else if (fn === 'ln(') {
+    if (shiftOn) { expr += 'e^('; }
+    else { expr += 'ln('; }
+  } else if (fn === 'abs(') {
+    expr += 'abs(';
+  } else {
+    expr += fn;
+  }
+  if (shiftOn) { shiftOn = false; updateShiftUI(); }
+  updateDisplay();
+}
+
+function insertStr(ch) {
+  if (ch === '²') {
+    expr += shiftOn ? '³' : '²';
+  } else if (ch === '^') {
+    if (shiftOn) { expr += '^(1/'; }
+    else { expr += '^'; }
+  } else if (ch === '!') {
+    expr += '!';
+  } else if (ch === 'π') {
+    expr += 'π';
+  } else if (ch === 'e') {
+    expr += 'ℯ';
+  } else if (ch === 'ANS') {
+    expr += lastResult.toString();
+  } else if (ch === '(') {
+    // Smart parenthesis
+    const opens = (expr.match(/\(/g)||[]).length;
+    const closes = (expr.match(/\)/g)||[]).length;
+    expr += opens > closes ? ')' : '(';
+  } else if (ch === '%') {
+    expr += '%';
+  } else {
+    expr += ch;
+  }
+  if (shiftOn) { shiftOn = false; updateShiftUI(); }
+  updateDisplay();
+}
+
+function clearAll() { expr = ''; setResult('0'); updateDisplay(); display('history-line').textContent = ''; }
+
+function backspace() {
+  expr = expr.slice(0,-1);
+  updateDisplay();
+  if (!expr) setResult('0');
+}
+
+function toggleSign() {
+  if (expr.startsWith('−(')) { expr = expr.slice(2, -1); }
+  else if (expr === '' || expr === '0') { expr = '−('; }
+  else { expr = '−(' + expr + ')'; }
+  updateDisplay();
+}
+
+// ═══════════════════════════════════════════════
+// ANGLE MODE & SHIFT
+// ═══════════════════════════════════════════════
+function setAngleMode(mode) {
+  angleMode = mode;
+  display('btn-deg').classList.toggle('active', mode === 'DEG');
+  display('btn-rad').classList.toggle('active', mode === 'RAD');
+}
+
+function toggleShift() {
+  shiftOn = !shiftOn;
+  display('shift-btn').classList.toggle('on', shiftOn);
+  updateShiftUI();
+}
+
+function updateShiftUI() {
+  const trigKeys = ['key-sin','key-cos','key-tan','key-sqrt','key-pow','key-log','key-ln','key-x2','key-fact'];
+  trigKeys.forEach(id => {
+    const el = display(id);
+    if (el) el.classList.toggle('active-shift', shiftOn);
+  });
+}
+
+// ═══════════════════════════════════════════════
+// MEMORY
+// ═══════════════════════════════════════════════
+function mem(op) {
+  if (op === 'mc') { memory = 0; }
+  else if (op === 'mr') { expr += memory.toString(); updateDisplay(); }
+  else if (op === 'mp') { memory += parseFloat(display('result-line').textContent) || 0; }
+  else if (op === 'mm') { memory -= parseFloat(display('result-line').textContent) || 0; }
+  else if (op === 'ms') { memory = parseFloat(display('result-line').textContent) || 0; }
+}
+
+// ═══════════════════════════════════════════════
+// EXPRESSION EVALUATOR
+// ═══════════════════════════════════════════════
+function toRad(deg) { return deg * Math.PI / 180; }
+function toDeg(rad) { return rad * 180 / Math.PI; }
+
+function factorial(n) {
+  n = Math.round(n);
+  if (n < 0) return NaN;
+  if (n > 170) return Infinity;
+  if (n === 0 || n === 1) return 1;
+  let r = 1;
+  for (let i = 2; i <= n; i++) r *= i;
+  return r;
+}
+
+function evaluate(raw) {
+  let s = raw.trim();
+  if (!s) return '';
+
+  // Replace display chars with JS equivalents
+  s = s.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-');
+  s = s.replace(/π/g, '(Math.PI)').replace(/ℯ/g, '(Math.E)');
+  s = s.replace(/²/g, '**2').replace(/³/g, '**3');
+  s = s.replace(/\^/g, '**');
+
+  // Trig functions — handle DEG/RAD
+  if (angleMode === 'DEG') {
+    s = s.replace(/\bsin\(/g, 'Math.sin(degToRad(');
+    s = s.replace(/\bcos\(/g, 'Math.cos(degToRad(');
+    s = s.replace(/\btan\(/g, 'Math.tan(degToRad(');
+    // Close extra paren for deg conversion
+    s = s.replace(/Math\.sin\(degToRad\(([^)]+)\)/g, (m, inner) => `Math.sin(degToRad(${inner}))`);
+    s = s.replace(/Math\.cos\(degToRad\(([^)]+)\)/g, (m, inner) => `Math.cos(degToRad(${inner}))`);
+    s = s.replace(/Math\.tan\(degToRad\(([^)]+)\)/g, (m, inner) => `Math.tan(degToRad(${inner}))`);
+  } else {
+    s = s.replace(/\bsin\(/g, 'Math.sin(');
+    s = s.replace(/\bcos\(/g, 'Math.cos(');
+    s = s.replace(/\btan\(/g, 'Math.tan(');
+  }
+
+  // Inverse trig
+  if (angleMode === 'DEG') {
+    s = s.replace(/\basin\(/g, 'radToDeg(Math.asin(');
+    s = s.replace(/\bacos\(/g, 'radToDeg(Math.acos(');
+    s = s.replace(/\batan\(/g, 'radToDeg(Math.atan(');
+  } else {
+    s = s.replace(/\basin\(/g, 'Math.asin(');
+    s = s.replace(/\bacos\(/g, 'Math.acos(');
+    s = s.replace(/\batan\(/g, 'Math.atan(');
+  }
+
+  s = s.replace(/\blog\(/g, 'Math.log10(');
+  s = s.replace(/\bln\(/g, 'Math.log(');
+  s = s.replace(/\babs\(/g, 'Math.abs(');
+  s = s.replace(/√\(/g, 'Math.sqrt(');
+  s = s.replace(/∛\(/g, 'Math.cbrt(');
+
+  // Factorial
+  s = s.replace(/(\d+(?:\.\d+)?)!/g, (m, n) => `factorial(${n})`);
+
+  // Percentage
+  s = s.replace(/(\d+(?:\.\d+)?)%/g, (m, n) => `(${n}/100)`);
+
+  // Scientific notation × 10^
+  s = s.replace(/×10\*\*/g, '*10**');
+
+  // Close unmatched parentheses
+  const opens = (s.match(/\(/g)||[]).length;
+  const closes = (s.match(/\)/g)||[]).length;
+  if (opens > closes) s += ')'.repeat(opens - closes);
+
+  // Implicit multiply (2π, 2(, etc)
+  s = s.replace(/(\d)\s*\(/g, '$1*(');
+  s = s.replace(/\)\s*(\d)/g, ')*$1');
+  s = s.replace(/\)\s*\(/g, ')*(');
+
+  // asin/acos/atan need double-close if DEG mode (radToDeg wrapping)
+  if (angleMode === 'DEG') {
+    s = s.replace(/radToDeg\(Math\.asin\(([^)]+)\)/g, (m, i) => `radToDeg(Math.asin(${i}))`);
+    s = s.replace(/radToDeg\(Math\.acos\(([^)]+)\)/g, (m, i) => `radToDeg(Math.acos(${i}))`);
+    s = s.replace(/radToDeg\(Math\.atan\(([^)]+)\)/g, (m, i) => `radToDeg(Math.atan(${i}))`);
+  }
+
+  const fn = new Function('degToRad','radToDeg','factorial','Math','return ' + s);
+  return fn(toRad, toDeg, factorial, Math);
+}
+
+function fmtResult(val) {
+  if (typeof val !== 'number' || !isFinite(val)) return isNaN(val) ? 'Error' : val === Infinity ? '∞' : '-∞';
+  // Use toPrecision to avoid float weirdness
+  let str = parseFloat(val.toPrecision(12)).toString();
+  // Scientific notation for very large/small
+  if (Math.abs(val) >= 1e15 || (Math.abs(val) < 1e-6 && val !== 0)) {
+    str = val.toExponential(6).replace('e+','×10^').replace('e','×10^');
+  }
+  return str;
+}
+
+// ═══════════════════════════════════════════════
+// MAIN CALCULATE
+// ═══════════════════════════════════════════════
+function calculate() {
+  if (!expr.trim()) return;
+  try {
+    const result = evaluate(expr);
+    const formatted = fmtResult(result);
+    lastResult = typeof result === 'number' ? result : 0;
+
+    // History
+    history.unshift({ expr: expr, result: formatted });
+    if (history.length > 10) history.pop();
+    renderHistory();
+
+    display('history-line').textContent = expr + ' =';
+    setResult(formatted);
+    expr = '';
+    updateDisplay();
+  } catch (e) {
+    setResult('Syntax Error', true);
+  }
+}
+
+function renderHistory() {
+  const panel = display('history-panel');
+  panel.innerHTML = history.map((h, i) =>
+    `<div class="hist-item" onclick="useHistory(${i})">
+       <span class="hist-expr">${h.expr}</span>
+       <span class="hist-res">= ${h.result}</span>
+     </div>`
+  ).join('');
+}
+
+function useHistory(i) {
+  if (history[i]) { expr = history[i].result; updateDisplay(); setResult(history[i].result); }
+}
+
+// ═══════════════════════════════════════════════
+// KEYBOARD SUPPORT
+// ═══════════════════════════════════════════════
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const k = e.key;
+  if (k >= '0' && k <= '9') { insertNum(k); }
+  else if (k === '+') insertOp('+');
+  else if (k === '-') insertOp('−');
+  else if (k === '*') insertOp('×');
+  else if (k === '/') { e.preventDefault(); insertOp('÷'); }
+  else if (k === '^') insertStr('^');
+  else if (k === '.') insertNum('.');
+  else if (k === '(' || k === ')') insertStr('(');
+  else if (k === 'Enter' || k === '=') { e.preventDefault(); calculate(); }
+  else if (k === 'Backspace') { e.preventDefault(); backspace(); }
+  else if (k === 'Escape') clearAll();
+  else if (k === '%') insertStr('%');
+  else if (k === '!') insertStr('!');
+  else if (k === 's') insertFn('sin(');
+  else if (k === 'c') insertFn('cos(');
+  else if (k === 't') insertFn('tan(');
+  else if (k === 'l') insertFn('log(');
+  else if (k === 'n') insertFn('ln(');
+  else if (k === 'p') insertStr('π');
+  else if (k === 'e') insertStr('e');
+  else if (k === 'r') insertFn('√(');
+  else if (k === 'q') insertStr('²');
+});
+
+function faqToggle(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

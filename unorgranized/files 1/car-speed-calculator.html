@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Speed Calculator — Gear Ratio, MPH, KM/H & RC Car | SpeedCalculator.net</title>
+<meta name="description" content="Free car speed calculator online. Calculate vehicle speed from gear ratio, RPM, and tire size in MPH or KM/H. Includes race car speed calculator, RC car speed calculator, gear ratio speed calculator, and live car speed calculator. Faster and more accurate than Spicer Parts.">
+<meta name="keywords" content="car speed calculator, rc car speed calculator, race car speed calculator, car speed calculator mph, car speed calculator online, car speed calculator km, live car speed calculator, car speed calculator live, car speed calculator gear ratio, car speed calculator km/h, online car speed calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/car-speed-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Car Speed Calculator",
+  "alternateName":["RC Car Speed Calculator","Race Car Speed Calculator","Car Speed Calculator MPH","Car Speed Calculator KM/H","Car Speed Calculator Gear Ratio","Online Car Speed Calculator","Live Car Speed Calculator"],
+  "url":"https://www.speedcalculator.net/car-speed-calculator/",
+  "description":"Free car speed calculator — calculate vehicle speed from gear ratio, RPM, and tire size in MPH or KM/H. Includes race car, RC car, and gear ratio speed calculator with all transmission gears and live calculation.",
+  "applicationCategory":"UtilityApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Car speed calculator MPH and KM/H","Gear ratio speed calculator","RC car speed calculator","Race car speed calculator","All 6 transmission gears","Live real-time calculation","Tire size calculator","Axle ratio calculator","RPM to speed conversion","Speed to RPM reverse calculator","Tachometer simulator"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Car Speed Calculator",
+  "description":"Calculate your vehicle top speed and gear speeds from gear ratios, RPM, and tire size",
+  "totalTime":"PT2M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Enter Engine RPM","text":"Enter your engine's RPM (revolutions per minute). Use your redline RPM for maximum speed calculations, or your typical cruising RPM for highway speed. Typical passenger cars redline at 5,000-7,000 RPM. High-performance and RC cars may rev to 9,000-20,000+ RPM."},
+    {"@type":"HowToStep","position":2,"name":"Enter Gear Ratios","text":"Enter your transmission gear ratios for each gear. These can be found in your vehicle's service manual, owner's manual, or online databases. 1st gear is always highest (e.g., 3.50:1) and overdrive gears go below 1.00:1. For RC car speed calculator, use your gearbox ratio."},
+    {"@type":"HowToStep","position":3,"name":"Enter Axle Ratio","text":"Enter your rear axle (differential) gear ratio. This is typically 2.73:1 to 4.10:1 for passenger vehicles. Lower numbers = better highway fuel economy. Higher numbers = better acceleration. Found on door sticker, axle tag, or in service manual."},
+    {"@type":"HowToStep","position":4,"name":"Enter Tire Size","text":"Enter your tire diameter in inches or millimeters, or use the P-metric tire format (e.g., 235/55R17). Our car speed calculator automatically converts tire dimensions to calculate the correct rolling circumference."},
+    {"@type":"HowToStep","position":5,"name":"View Speed Results","text":"See speed in MPH and KM/H for every gear simultaneously, plus a live tachometer-style gauge. Toggle between MPH and KM/H for the car speed calculator km/h or mph display. The race car speed calculator mode shows power band overlay."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do you calculate car speed from gear ratio and RPM?","acceptedAnswer":{"@type":"Answer","text":"Car speed formula: Speed (MPH) = (RPM × Tire Diameter × π) ÷ (Gear Ratio × Axle Ratio × 336). Or: Speed (km/h) = (RPM × Tire Diameter × π) ÷ (Gear Ratio × Axle Ratio × 336) × 1.60934. Where Tire Diameter is in inches, RPM is engine revolutions per minute, Gear Ratio is transmission gear ratio for the selected gear, and Axle Ratio is rear differential ratio. Example: 3,000 RPM, gear ratio 1.00:1, axle ratio 3.73, tire 27 inches diameter: Speed = (3000 × 27 × π) ÷ (1.00 × 3.73 × 336) = 254,469 ÷ 1,253 = 203 ÷ 63.2 = approximately 64 MPH."}},
+    {"@type":"Question","name":"What is the RC car speed calculator formula?","acceptedAnswer":{"@type":"Answer","text":"RC car speed calculator formula: Speed (MPH) = (Motor RPM × Wheel Diameter × π) ÷ (Total Gear Ratio × 63,360). Total Gear Ratio = Motor Pinion Teeth ÷ Spur Gear Teeth × Transmission Ratio. Wheel Diameter is in inches. For an RC car with 30,000 RPM motor, 20-tooth pinion, 80-tooth spur (ratio 4:1), 4-inch diameter wheel: Speed = (30,000 × 4 × π) ÷ (4 × 63,360) = 376,991 ÷ 253,440 = approximately 49 MPH."}},
+    {"@type":"Question","name":"What gear ratio gives the best top speed?","acceptedAnswer":{"@type":"Answer","text":"For maximum top speed: lower gear ratios (closer to 1:1 or below) in overdrive, combined with high engine RPM and large tire diameter. An overdrive gear of 0.70:1 with a 3.73 axle gives an effective ratio of 2.61:1 vs 3.73:1 in direct drive — dramatically increasing top speed. Race cars often use tall final drive ratios (low numerical) like 2.50:1 to 3.08:1 for top speed. For acceleration (drag racing): higher numerical ratios like 4.10:1 or 4.56:1 give stronger launches but lower top speed. Our car speed calculator gear ratio mode shows speed for every gear at any RPM."}},
+    {"@type":"Question","name":"How do I find my car's gear ratios?","acceptedAnswer":{"@type":"Answer","text":"Find your car's gear ratios from: 1) Vehicle service manual (most accurate). 2) Owner's manual (sometimes listed in specifications). 3) Online databases like Tremec, ZF, or manufacturer websites. 4) Axle ratio: check the tag on your differential housing, door sticker, or Vehicle Safety Certification Label (door jamb). 5) Drive wheel coasting test: lift drive wheels, mark tire, rotate driveshaft exactly once and count tire rotations — that's your axle ratio. Our car speed calculator online has preset ratios for popular transmissions as a starting point."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--red:#ef4444;--lime:#34d399;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,6vw,68px);font-weight:900;line-height:1.05;letter-spacing:0px;text-transform:uppercase;margin-bottom:22px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;margin-top:4px;letter-spacing:1px;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+.hbadge.r{border-color:rgba(239,68,68,.3);color:var(--red);}
+
+/* CALC CARD */
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:1060px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--green),var(--orange),var(--red),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1s infinite;}
+
+/* MODE PILLS */
+.mode-row{display:flex;gap:5px;flex-wrap:wrap;padding:14px 28px 0;}
+.m-pill{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.m-pill:hover{border-color:rgba(59,130,246,.4);}
+.m-pill.on{border-color:var(--accent);background:rgba(59,130,246,.13);color:var(--accent2);}
+
+/* UNIT TOGGLE */
+.unit-row{display:flex;align-items:center;gap:10px;padding:8px 28px 0;}
+.unit-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.unit-tabs{display:flex;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;overflow:hidden;padding:2px;}
+.u-tab{padding:5px 16px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;border-radius:18px;transition:all .15s;}
+.u-tab.on{background:var(--accent);color:#fff;}
+
+.calc-body{padding:20px 28px 28px;}
+
+/* 3-COLUMN LAYOUT */
+.calc-3col{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:22px;}
+@media(max-width:900px){.calc-3col{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.calc-3col{grid-template-columns:1fr;}}
+
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:11px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:1px 8px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 10px;font-size:13px;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);min-width:40px;justify-content:center;}
+.inp-suf{padding:0 10px;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:9px 8px;font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:13px;font-weight:400;}
+.sel-wrap{position:relative;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;z-index:1;}
+.sel-wrap select{-webkit-appearance:none;appearance:none;width:100%;padding:10px 36px 10px 12px;background:var(--bg3);color:#f0f4ff;border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;color:#f0f4ff;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;margin-top:4px;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.18);}
+.sl::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);}
+.sl-row{display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-top:2px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:3px;line-height:1.4;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+
+/* GEAR RATIOS GRID */
+.gear-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:4px;}
+.gear-inp{display:flex;flex-direction:column;gap:3px;}
+.gear-lbl{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.gear-field{background:var(--bg3);border:2px solid var(--border2);border-radius:var(--radius-sm);display:flex;align-items:center;overflow:hidden;transition:border-color .2s;}
+.gear-field:focus-within{border-color:var(--accent);}
+.gear-field input{flex:1;background:transparent;border:none;outline:none;padding:7px 6px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--text);width:100%;min-width:0;}
+.gear-field span{padding:0 7px;font-size:10px;font-weight:700;color:var(--text3);white-space:nowrap;}
+
+/* PRESET BUTTONS */
+.preset-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;}
+.preset-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:3px 11px;font-size:10px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.preset-btn:hover{border-color:rgba(59,130,246,.4);color:var(--accent2);}
+
+/* RESULTS COLUMN */
+.results-col{display:flex;flex-direction:column;gap:10px;}
+
+/* TACHOMETER */
+.tacho-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center;}
+.tacho-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.tacho-svg{display:block;margin:0 auto;width:160px;height:90px;}
+.tacho-speed{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--accent2);line-height:1;}
+.tacho-unit{font-size:12px;color:var(--text3);margin-top:2px;}
+.tacho-gear{font-size:11px;font-weight:700;color:var(--text2);margin-top:4px;}
+
+/* SPEED BARS */
+.speed-bars{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.sb-head{padding:9px 13px;background:var(--bg);border-bottom:1px solid var(--border);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.sb-row{padding:8px 13px;border-bottom:1px solid rgba(59,130,246,.05);display:flex;align-items:center;gap:10px;}
+.sb-row:last-child{border:none;}
+.sb-gear{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;min-width:32px;color:var(--text3);}
+.sb-bar-wrap{flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden;}
+.sb-bar{height:100%;border-radius:4px;transition:width .5s ease;}
+.sb-speed{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;min-width:75px;text-align:right;}
+.sb-kmh{font-size:11px;color:var(--text3);min-width:65px;text-align:right;}
+
+/* REVERSE CALC */
+.rev-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;}
+.rev-title{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.rev-result{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--green);margin-top:6px;}
+.rev-sub{font-size:10px;color:var(--text3);margin-top:2px;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:10px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* GEAR RATIO CARDS */
+.ratio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:720px){.ratio-grid{grid-template-columns:repeat(2,1fr);}}
+.rc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;}
+.rc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.rc-ratio{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;line-height:1;margin-bottom:6px;}
+.rc-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.rc-p{font-size:11.5px;color:var(--text2);line-height:1.5;}
+
+/* SVG IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:400px;}
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Car Speed Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Gear Ratio &middot; RPM &middot; Tire Size &middot; MPH &middot; KM/H &middot; RC Car &middot; Race Car</div>
+    <h1 class="hero-h1">Car Speed<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>car speed calculator</strong> — calculate vehicle top speed and gear speeds from gear ratio, RPM, and tire size in MPH or KM/H. Includes <strong>RC car speed calculator</strong>, <strong>race car speed calculator</strong>, live speed display, and speed-to-RPM reverse calculator. Better than the Spicer Parts tool.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">All 6 Gears</span>
+      <span class="hbadge o">MPH &amp; KM/H</span>
+      <span class="hbadge t">RC Car Mode</span>
+      <span class="hbadge r">Race Car Mode</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="container" id="calculator" style="padding-bottom:0;">
+  <div class="calc-card">
+    <div class="calc-head">
+      <div class="calc-htitle">
+        <div class="ht-icon">
+          <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="5.5"/><path d="M7 3v4l3 2"/></svg>
+        </div>
+        Car Speed <em>Calculator</em>
+      </div>
+      <div class="live-pill"><span class="live-dot"></span> Live Calculation</div>
+    </div>
+
+    <!-- MODE PILLS -->
+    <div class="mode-row">
+      <span class="m-pill on" data-mode="standard" onclick="setMode('standard',this)">&#128664; Standard Car</span>
+      <span class="m-pill" data-mode="race"     onclick="setMode('race',this)">&#127937; Race Car</span>
+      <span class="m-pill" data-mode="rc"       onclick="setMode('rc',this)">&#127922; RC Car</span>
+      <span class="m-pill" data-mode="reverse"  onclick="setMode('reverse',this)">&#8635; Speed → RPM</span>
+    </div>
+
+    <!-- UNIT TOGGLE -->
+    <div class="unit-row">
+      <span class="unit-lbl">Output units:</span>
+      <div class="unit-tabs">
+        <div class="u-tab on" id="u-mph" onclick="setUnit('mph')">MPH</div>
+        <div class="u-tab" id="u-kmh" onclick="setUnit('kmh')">KM/H</div>
+        <div class="u-tab" id="u-both" onclick="setUnit('both')">Both</div>
+      </div>
+    </div>
+
+    <div class="calc-body">
+      <div class="calc-3col">
+
+        <!-- COL 1: ENGINE & AXLE -->
+        <div>
+          <div class="sec-lbl">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="5.5" cy="5.5" r="4.5"/><path d="M5.5 3v2.5l2 1.5"/></svg>
+            Engine &amp; Axle
+          </div>
+
+          <!-- ENGINE RPM -->
+          <div class="inp-grp">
+            <div class="inp-top"><span class="inp-lbl">Engine RPM</span><span class="inp-bdg" id="bdg-rpm">6,000</span></div>
+            <div class="inp-wrap"><span class="inp-pre">&#9889;</span><input type="number" id="f-rpm" min="500" max="20000" step="100" value="6000" placeholder="6000"></div>
+            <input type="range" class="sl" id="sl-rpm" min="500" max="9000" step="100" value="6000">
+            <div class="sl-row"><span>500</span><span id="rpm-max-lbl">9,000 RPM</span></div>
+            <div class="inp-note" id="rpm-note">Typical passenger car: 4,000–7,000 RPM redline</div>
+          </div>
+
+          <!-- AXLE RATIO -->
+          <div class="inp-grp">
+            <div class="inp-top"><span class="inp-lbl">Rear Axle Ratio</span></div>
+            <div class="inp-wrap"><span class="inp-pre">&#9881;</span><input type="number" id="f-axle" min="1.5" max="7.0" step="0.01" value="3.73" placeholder="3.73"><span class="inp-suf">:1</span></div>
+            <div class="inp-note">Common: 2.73, 3.08, 3.31, 3.55, 3.73, 4.10, 4.56</div>
+          </div>
+
+          <!-- PRESET AXLE -->
+          <div class="preset-row">
+            <span class="preset-btn" onclick="setVal('f-axle','2.73')">2.73</span>
+            <span class="preset-btn" onclick="setVal('f-axle','3.08')">3.08</span>
+            <span class="preset-btn" onclick="setVal('f-axle','3.55')">3.55</span>
+            <span class="preset-btn" onclick="setVal('f-axle','3.73')">3.73</span>
+            <span class="preset-btn" onclick="setVal('f-axle','4.10')">4.10</span>
+            <span class="preset-btn" onclick="setVal('f-axle','4.56')">4.56</span>
+          </div>
+
+          <!-- TIRE SIZE -->
+          <div class="inp-grp">
+            <div class="inp-top"><span class="inp-lbl">Tire Diameter</span></div>
+            <div class="inp-wrap"><span class="inp-pre">&#9898;</span><input type="number" id="f-tire" min="10" max="50" step="0.1" value="26.8" placeholder="26.8"><span class="inp-suf" id="tire-unit-suf">inches</span></div>
+            <div class="inp-note">Outside diameter. Use Tire Size Converter below if needed.</div>
+          </div>
+
+          <!-- TIRE CONVERTER (P-metric) -->
+          <div style="background:rgba(59,130,246,.04);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;margin-bottom:10px;">
+            <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;">P-Metric Tire Converter</div>
+            <div class="grid2" style="gap:5px;margin-bottom:5px;">
+              <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="tc-width" min="100" max="400" value="235" placeholder="235"><span class="inp-suf">mm</span></div>
+              <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="tc-ar" min="25" max="90" value="55" placeholder="55"><span class="inp-suf">%</span></div>
+            </div>
+            <div class="grid2" style="gap:5px;">
+              <div class="inp-wrap" style="margin-bottom:0;"><input type="number" id="tc-rim" min="10" max="30" value="17" placeholder="17"><span class="inp-suf">in rim</span></div>
+              <button onclick="convertTire()" style="background:var(--accent);border:none;border-radius:var(--radius-sm);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;cursor:pointer;padding:0 10px;">Convert &#8594;</button>
+            </div>
+            <div id="tc-result" style="font-size:10px;color:var(--green);margin-top:5px;display:none;"></div>
+          </div>
+
+          <!-- RC CAR EXTRA -->
+          <div id="rc-extra" style="display:none;">
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Motor Pinion Teeth</span></div>
+              <div class="inp-wrap"><span class="inp-pre">&#9881;</span><input type="number" id="f-pinion" min="10" max="60" step="1" value="20" placeholder="20"><span class="inp-suf">T</span></div>
+            </div>
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Spur Gear Teeth</span></div>
+              <div class="inp-wrap"><span class="inp-pre">&#9881;</span><input type="number" id="f-spur" min="30" max="120" step="1" value="80" placeholder="80"><span class="inp-suf">T</span></div>
+            </div>
+          </div>
+
+          <!-- REVERSE MODE -->
+          <div id="rev-extra" style="display:none;">
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Target Speed</span></div>
+              <div class="inp-wrap"><span class="inp-pre">&#128204;</span><input type="number" id="f-rev-speed" min="1" max="400" step="1" value="60" placeholder="60"><span class="inp-suf" id="rev-suf">mph</span></div>
+            </div>
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Gear for Speed Target</span></div>
+              <div class="sel-wrap">
+                <select id="f-rev-gear">
+                  <option value="0">1st Gear</option>
+                  <option value="1">2nd Gear</option>
+                  <option value="2">3rd Gear</option>
+                  <option value="3">4th Gear</option>
+                  <option value="4" selected>5th Gear</option>
+                  <option value="5">6th Gear (OD)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COL 2: GEAR RATIOS -->
+        <div>
+          <div class="sec-lbl">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 9l3-3 2 2 4-5"/></svg>
+            Gear Ratios
+          </div>
+
+          <!-- PRESET TRANSMISSIONS -->
+          <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:5px;">Load Preset Transmission</div>
+          <div class="preset-row">
+            <span class="preset-btn" onclick="loadPreset('t56')">T56 6-Spd</span>
+            <span class="preset-btn" onclick="loadPreset('auto4l60')">4L60E Auto</span>
+            <span class="preset-btn" onclick="loadPreset('getrag')">Getrag 5-Spd</span>
+            <span class="preset-btn" onclick="loadPreset('nv3550')">NV3550</span>
+            <span class="preset-btn" onclick="loadPreset('zf8')">ZF 8HP</span>
+            <span class="preset-btn" onclick="loadPreset('cvt')">CVT Approx</span>
+          </div>
+
+          <!-- GEAR RATIO INPUTS -->
+          <div class="gear-grid">
+            <div class="gear-inp">
+              <div class="gear-lbl">1st Gear</div>
+              <div class="gear-field"><input type="number" id="g1" min="0.5" max="6" step="0.01" value="2.97"><span>:1</span></div>
+            </div>
+            <div class="gear-inp">
+              <div class="gear-lbl">2nd Gear</div>
+              <div class="gear-field"><input type="number" id="g2" min="0.5" max="5" step="0.01" value="2.07"><span>:1</span></div>
+            </div>
+            <div class="gear-inp">
+              <div class="gear-lbl">3rd Gear</div>
+              <div class="gear-field"><input type="number" id="g3" min="0.5" max="4" step="0.01" value="1.43"><span>:1</span></div>
+            </div>
+            <div class="gear-inp">
+              <div class="gear-lbl">4th Gear</div>
+              <div class="gear-field"><input type="number" id="g4" min="0.3" max="3" step="0.01" value="1.00"><span>:1</span></div>
+            </div>
+            <div class="gear-inp">
+              <div class="gear-lbl">5th Gear</div>
+              <div class="gear-field"><input type="number" id="g5" min="0.3" max="2" step="0.01" value="0.84"><span>:1</span></div>
+            </div>
+            <div class="gear-inp">
+              <div class="gear-lbl">6th/OD</div>
+              <div class="gear-field"><input type="number" id="g6" min="0.3" max="1.5" step="0.01" value="0.62"><span>:1</span></div>
+            </div>
+          </div>
+          <div class="inp-note" style="margin-top:6px;">Leave unused gears at 0 or blank. OD (overdrive) ratios are typically below 1.00:1.</div>
+
+          <!-- TRANSMISSION EFFICIENCY -->
+          <div class="inp-grp" style="margin-top:10px;">
+            <div class="inp-top"><span class="inp-lbl">Transmission Efficiency</span><span class="inp-bdg" id="bdg-eff">98%</span></div>
+            <input type="range" class="sl" id="sl-eff" min="80" max="100" step="1" value="98">
+            <div class="sl-row"><span>80%</span><span>100%</span></div>
+            <div class="inp-note">Manual: ~98%. Automatic: ~90–94%. Accounts for drivetrain power loss.</div>
+          </div>
+
+          <div class="err-msg" id="err-msg">Please enter valid values for all required fields.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Speed
+          </button>
+        </div>
+
+        <!-- COL 3: RESULTS -->
+        <div class="results-col">
+          <div class="sec-lbl">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Speed Results
+          </div>
+
+          <!-- TACHO -->
+          <div class="tacho-wrap" id="tacho-wrap">
+            <div class="tacho-lbl" id="tacho-lbl">Speed at Selected Gear &amp; RPM</div>
+            <svg class="tacho-svg" viewBox="0 0 160 90" id="tacho-svg">
+              <!-- Arc background -->
+              <path d="M 15 85 A 65 65 0 0 1 145 85" fill="none" stroke="rgba(59,130,246,.1)" stroke-width="12" stroke-linecap="round"/>
+              <!-- Speed arc (filled) -->
+              <path d="M 15 85 A 65 65 0 0 1 145 85" fill="none" stroke="url(#speedGrad)" stroke-width="12" stroke-linecap="round" id="speed-arc" stroke-dasharray="0 204"/>
+              <defs><linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#10b981"/><stop offset="60%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#ef4444"/></linearGradient></defs>
+              <!-- Needle -->
+              <line id="tacho-needle" x1="80" y1="80" x2="80" y2="28" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" transform="rotate(0,80,80)"/>
+              <circle cx="80" cy="80" r="4" fill="var(--accent2)"/>
+              <!-- Labels -->
+              <text x="12" y="82" font-family="Barlow Condensed,sans-serif" font-size="8" fill="#4a6080">0</text>
+              <text x="148" y="82" font-family="Barlow Condensed,sans-serif" font-size="8" fill="#4a6080" text-anchor="end" id="tacho-max-lbl">200</text>
+              <text x="80" y="70" font-family="Barlow Condensed,sans-serif" font-size="8" fill="#4a6080" text-anchor="middle" id="tacho-mid-lbl">100</text>
+            </svg>
+            <div class="tacho-speed" id="tacho-speed">—</div>
+            <div class="tacho-unit" id="tacho-unit">MPH at redline</div>
+            <div class="tacho-gear" id="tacho-gear">Enter values and calculate</div>
+          </div>
+
+          <!-- SPEED BARS -->
+          <div class="speed-bars" id="speed-bars">
+            <div class="sb-head" id="sb-head">All Gear Speeds at <span id="sb-rpm-lbl">—</span> RPM</div>
+            <div id="sb-rows">
+              <div class="sb-row" style="justify-content:center;padding:20px;"><span style="color:var(--text3);font-size:13px;">Calculate to see gear speeds</span></div>
+            </div>
+          </div>
+
+          <!-- REVERSE RESULT -->
+          <div class="rev-box" id="rev-box" style="display:none;">
+            <div class="rev-title">Reverse Calculator Result</div>
+            <div style="font-size:12px;color:var(--text2);" id="rev-question">At <span id="rev-speed-lbl">—</span> in gear <span id="rev-gear-lbl">—</span>, your RPM would be:</div>
+            <div class="rev-result" id="rev-result">— RPM</div>
+            <div class="rev-sub" id="rev-sub">Enter values above and press Calculate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">All Gears</div></div>
+    <div class="stat-item"><div class="stat-val">MPH</div><div class="stat-lbl">+ KM/H</div></div>
+    <div class="stat-item"><div class="stat-val">Live</div><div class="stat-lbl">Calculation</div></div>
+    <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+  </div>
+</div>
+
+<!-- GEAR RATIO SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Car Speed Calculator — Gear Ratio Guide</div>
+    <h2 class="sec-title">Understanding <span>Gear Ratios</span> &amp; Speed</h2>
+    <p class="sec-sub">Our <strong>car speed calculator gear ratio</strong> tool shows how each gear ratio affects vehicle speed. Understanding gear ratios is essential for performance tuning, fuel economy, and finding the right axle ratio for your driving style.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ef4444" stop-opacity=".9"/><stop offset="100%" stop-color="#991b1b" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/><rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">CAR SPEED CALCULATOR — SPEED BY GEAR AT 6,000 RPM (3.73 AXLE, 26.8&quot; TIRE)</text>
+        <line x1="48" y1="182" x2="862" y2="182" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- Gear bars -->
+        <rect x="55"  y="148" width="100" height="34" rx="5" fill="url(#gG)" opacity=".7"/>
+        <text x="105" y="141" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#34d399" text-anchor="middle">28 mph</text>
+        <text x="105" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">1st (2.97)</text>
+
+        <rect x="200" y="118" width="100" height="64" rx="5" fill="url(#gG)"/>
+        <text x="250" y="111" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">40 mph</text>
+        <text x="250" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">2nd (2.07)</text>
+
+        <rect x="345" y="78"  width="100" height="104" rx="5" fill="url(#gB)"/>
+        <text x="395" y="71"  font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">58 mph</text>
+        <text x="395" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">3rd (1.43)</text>
+
+        <rect x="490" y="48"  width="100" height="134" rx="5" fill="url(#gO)"/>
+        <text x="540" y="41"  font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">83 mph</text>
+        <text x="540" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">4th (1.00)</text>
+
+        <rect x="635" y="28"  width="100" height="154" rx="5" fill="url(#gR)"/>
+        <text x="685" y="21"  font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fca5a5" text-anchor="middle">99 mph</text>
+        <text x="685" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">5th (0.84)</text>
+
+        <rect x="780" y="10"  width="100" height="172" rx="5" fill="url(#gR)" opacity=".9"/>
+        <text x="830" y="5"   font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#ef4444" text-anchor="middle">134 mph</text>
+        <text x="830" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">6th OD (0.62)</text>
+      </svg>
+      <div class="img-overlay"><span>Car speed calculator gear ratio result — 6,000 RPM, 3.73 axle, 26.8&quot; tire: 1st gear 28 mph · 2nd 40 mph · 3rd 58 mph · 4th 83 mph · 5th 99 mph · 6th OD 134 mph. Use the calculator above for your vehicle.</span></div>
+    </div>
+
+    <div class="ratio-grid">
+      <div class="rc">
+        <div class="rc-ratio" style="color:var(--green);">2.73:1</div>
+        <div class="rc-name">Economy Axle</div>
+        <p class="rc-p">Best for highway fuel economy. Lower RPM at highway speed. Less acceleration punch but excellent cruising efficiency. Common in highway trucks and economy sedans.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-ratio" style="color:var(--accent2);">3.73:1</div>
+        <div class="rc-name">Performance Balance</div>
+        <p class="rc-p">Excellent balance of acceleration and highway ability. The most popular axle ratio for performance vehicles and towing trucks. Our <strong>car speed calculator</strong> default.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-ratio" style="color:var(--orange);">4.10:1</div>
+        <div class="rc-name">Sport/Towing</div>
+        <p class="rc-p">Strong off-the-line acceleration and towing torque. Higher RPM at highway speed uses more fuel. Popular in muscle cars and heavy-duty trucks. Reduces top speed slightly.</p>
+      </div>
+      <div class="rc">
+        <div class="rc-ratio" style="color:var(--red);">4.56:1</div>
+        <div class="rc-name">Drag Racing</div>
+        <p class="rc-p">Maximum launch acceleration for drag racing. Very high engine RPM at highway speeds — impractical for daily driving. Our <strong>race car speed calculator</strong> mode handles this.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Car Speed Calculator — Complete Guide</h2>
+  <p>Our free <strong>car speed calculator online</strong> is more complete than the Spicer Parts transmission ratio calculator — because it handles all 6 gears simultaneously, shows MPH and KM/H, includes a <strong>RC car speed calculator</strong> mode for pinion/spur gear setups, a <strong>race car speed calculator</strong> mode with extended RPM range, a P-metric tire size converter, transmission efficiency adjustment, and a reverse <strong>live car speed calculator</strong> that finds RPM from target speed. It works as both a <strong>car speed calculator mph</strong> and <strong>car speed calculator km</strong> / <strong>car speed calculator km/h</strong> tool in a single interface.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/><rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">CAR SPEED CALCULATOR FORMULA — HOW IT WORKS</text>
+      <rect x="30" y="35" width="390" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="225" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle" letter-spacing="1">SPEED FORMULA (MPH)</text>
+      <text x="50" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Formula:</text>
+      <text x="170" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">(RPM x Tire Dia x pi) / (Gear x Axle x 336)</text>
+      <text x="50" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Example:</text>
+      <text x="170" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">6000 RPM, ratio 1.00, axle 3.73, 26.8&quot;</text>
+      <text x="50" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Calc:</text>
+      <text x="170" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">(6000 x 26.8 x 3.14159) / (1.00 x 3.73 x 336)</text>
+      <rect x="42" y="130" width="366" height="26" rx="5" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="225" y="148" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">= 505,019 / 1,253.3 = 83 mph</text>
+      <text x="50" y="172" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">For km/h:</text>
+      <text x="170" y="172" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981">multiply mph x 1.60934 = 134 km/h</text>
+      <!-- Right side -->
+      <line x1="452" y1="32" x2="452" y2="192" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <rect x="462" y="35" width="408" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="666" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle" letter-spacing="1">RC CAR SPEED FORMULA</text>
+      <text x="475" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Motor RPM:</text>
+      <text x="640" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">20,000–35,000 RPM typical</text>
+      <text x="475" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Gear ratio:</text>
+      <text x="640" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Pinion teeth / Spur gear teeth</text>
+      <text x="475" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Formula:</text>
+      <text x="640" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">(RPM x Wheel Dia x pi) / (Ratio x 63360)</text>
+      <rect x="472" y="130" width="384" height="26" rx="5" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="664" y="148" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">30k RPM, 4:1 ratio, 4&quot; wheel = 56 mph</text>
+      <text x="475" y="172" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Select:</text>
+      <text x="640" y="172" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">RC Car mode in calculator above</text>
+    </svg>
+    <div class="img-overlay"><span>Car speed calculator formula — Standard car: Speed(mph) = (RPM × Tire Dia × π) ÷ (Gear Ratio × Axle Ratio × 336). RC car: (RPM × Wheel Dia × π) ÷ (Pinion/Spur × 63,360). Both formulas in our calculator.</span></div>
+  </div>
+
+  <h2>How to Use the Car Speed Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Select your vehicle mode</strong><span>Choose Standard Car for everyday vehicles (up to 9,000 RPM), Race Car for high-revving engines (up to 20,000 RPM), RC Car for radio-controlled vehicles using pinion/spur gear ratios, or the Speed → RPM reverse mode. Our <strong>car speed calculator online</strong> covers all four in one tool — no need for multiple sites.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Enter engine RPM</strong><span>Set your engine RPM using the slider or text field. For maximum speed calculation, use your redline RPM. For cruise speed, use your typical highway RPM (usually 1,800–3,500 RPM for modern cars). The <strong>live car speed calculator</strong> updates automatically as you drag the slider — no button required for slider changes.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter your gear ratios</strong><span>Use the preset transmission buttons (T56, 4L60E, Getrag, NV3550, ZF 8HP, CVT) as a starting point, or enter your custom ratios. Our <strong>car speed calculator gear ratio</strong> section accepts ratios for all 6 gears. Unused gears can be left at 0. For <strong>RC car speed calculator</strong> mode, enter pinion and spur gear tooth counts instead.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Set tire size and axle ratio</strong><span>Enter your tire outside diameter in inches, or use the P-metric converter (enter your tire's 3-part size like 235/55R17). Common diameters: P215/65R15 = 26.0&quot;, P245/45R18 = 26.7&quot;, P275/40R20 = 28.7&quot;. Axle ratio presets include 2.73, 3.08, 3.55, 3.73, 4.10, and 4.56 for quick setup. Our <strong>car speed calculator mph</strong> and <strong>car speed calculator km/h</strong> both use tire diameter in inches internally.</span></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-txt"><strong>Read all-gear speed results</strong><span>The speed bar chart shows MPH (and KM/H in Both mode) for every gear simultaneously. The tachometer-style gauge highlights your top gear speed. For the <strong>car speed calculator km</strong> results, toggle the unit selector to KM/H. The reverse mode (Speed → RPM) tells you exactly what RPM you'll be turning at any target speed in any gear.</span></div></div>
+  </div>
+
+  <h2>RC Car Speed Calculator — Pinion, Spur &amp; Motor RPM</h2>
+  <p>The <strong>RC car speed calculator</strong> works differently from a standard vehicle calculator because RC cars use electric motors with very high RPM ratings (15,000–50,000+ RPM) and simpler gear reduction ratios. The formula: <span class="fi">Speed (mph) = (Motor RPM × Wheel Diameter × π) ÷ (Gear Ratio × 63,360)</span>. Gear ratio = Spur teeth ÷ Pinion teeth. Example: 30,000 RPM motor, 20-tooth pinion, 80-tooth spur (4:1 ratio), 4-inch wheel: Speed = (30,000 × 4 × 3.14159) ÷ (4 × 63,360) = 56 mph. To increase RC car top speed: use a larger pinion gear (less reduction, more speed) or a smaller spur gear. To increase acceleration: smaller pinion or larger spur. Switch to RC Car mode in our calculator above.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/><rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">RACE CAR SPEED CALCULATOR — POPULAR TRANSMISSION RATIOS</text>
+      <rect x="35" y="34" width="828" height="136" rx="8" fill="rgba(11,18,32,.85)" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <text x="120" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#60a5fa" text-anchor="middle">TRANSMISSION</text>
+      <text x="270" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#10b981" text-anchor="middle">1ST GEAR</text>
+      <text x="390" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#f59e0b" text-anchor="middle">4TH GEAR</text>
+      <text x="510" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#ef4444" text-anchor="middle">TOP GEAR</text>
+      <text x="650" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#8b5cf6" text-anchor="middle">GEARS</text>
+      <text x="810" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#f0f4ff" text-anchor="middle">BEST FOR</text>
+      <line x1="50" y1="64" x2="850" y2="64" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="120" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Tremec T56</text>
+      <text x="270" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">2.97:1</text>
+      <text x="390" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">1.00:1</text>
+      <text x="510" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">0.50:1 (6th)</text>
+      <text x="650" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">6-speed</text>
+      <text x="810" y="84"  font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Muscle cars</text>
+      <text x="120" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">ZF 8HP</text>
+      <text x="270" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">4.71:1</text>
+      <text x="390" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">1.00:1</text>
+      <text x="510" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">0.69:1 (8th)</text>
+      <text x="650" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">8-speed</text>
+      <text x="810" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">BMW, Jeep, RAM</text>
+      <text x="120" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">4L60E Auto</text>
+      <text x="270" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">3.06:1</text>
+      <text x="390" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">1.00:1</text>
+      <text x="510" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">0.70:1 (4th)</text>
+      <text x="650" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">4-speed</text>
+      <text x="810" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">GM trucks, Camaro</text>
+      <text x="120" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Getrag 6-Spd</text>
+      <text x="270" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">4.21:1</text>
+      <text x="390" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">1.00:1</text>
+      <text x="510" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">0.63:1 (6th)</text>
+      <text x="650" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">6-speed</text>
+      <text x="810" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">BMW, Mustang</text>
+      <text x="120" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">NV3550</text>
+      <text x="270" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">4.01:1</text>
+      <text x="390" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">1.00:1</text>
+      <text x="510" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">0.79:1 (5th)</text>
+      <text x="650" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">5-speed</text>
+      <text x="810" y="164" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Jeep TJ/XJ</text>
+    </svg>
+    <div class="img-overlay"><span>Race car speed calculator — popular transmission ratios. Our car speed calculator online has presets for all these transmissions. Enter your axle ratio and tire size to get complete gear-by-gear speed charts in MPH and KM/H.</span></div>
+  </div>
+
+  <h2>Car Speed Calculator MPH vs KM/H — Unit Conversion</h2>
+  <p>Our <strong>car speed calculator mph</strong>, <strong>car speed calculator km</strong>, and <strong>car speed calculator km/h</strong> toggle between units with one click. The base formula always calculates in MPH using tire diameter in inches. For KM/H: <span class="fi">km/h = mph × 1.60934</span>. You can also use the "Both" mode to see MPH and km/h simultaneously for all gears. This is especially useful for import car tuners, international motorsport events, or anyone comparing a vehicle spec sheet that uses different units. Our <strong>online car speed calculator</strong> is the only tool that shows both units in the same bar chart.</p>
+
+  <table class="data-table">
+    <tr><th>Speed (MPH)</th><th>Speed (KM/H)</th><th>Typical Gear</th><th>Driving Context</th></tr>
+    <tr><td><strong>0–30 mph</strong></td><td>0–48 km/h</td><td class="good">1st–2nd</td><td>City driving, parking, stop-go traffic</td></tr>
+    <tr><td><strong>30–60 mph</strong></td><td>48–97 km/h</td><td class="good">2nd–4th</td><td>Suburban roads, town speed limits</td></tr>
+    <tr><td><strong>60–80 mph</strong></td><td>97–129 km/h</td><td class="warn">4th–5th</td><td>Highway cruising, US interstate speeds</td></tr>
+    <tr><td><strong>80–120 mph</strong></td><td>129–193 km/h</td><td class="warn">5th–6th</td><td>Autobahn, race track, spirited driving</td></tr>
+    <tr><td><strong>120+ mph</strong></td><td>193+ km/h</td><td>6th/OD</td><td>Track day, top speed run, RC car redline</td></tr>
+  </table>
+
+  <div class="tip">
+    <p><strong>Pro tip — use the reverse calculator:</strong> The Speed → RPM reverse mode in our <strong>car speed calculator live</strong> is essential for selecting the correct axle ratio. Set your target highway speed (e.g., 65 mph) and desired cruising RPM (e.g., 1,800 RPM) in 5th or 6th gear, then adjust the axle ratio and tire size until the calculator matches. This tells you the perfect axle ratio for your specific engine's torque curve without trial and error. Our <strong>live car speed calculator</strong> also updates in real-time as you move the RPM slider.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Car Speed Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Questions covering gear ratio speed calculation, RC car speed, tire size effects, axle ratio selection, and the speed formula.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do you calculate car speed from gear ratio and RPM?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>car speed calculator gear ratio</strong> uses this formula: Speed (MPH) = (RPM × Tire Diameter × π) ÷ (Transmission Gear Ratio × Axle Ratio × 336). The 336 constant equals 336 = 60 min/hr × 12 in/ft × 2 (to get radius not diameter) — or more precisely, it's the unit conversion factor to get MPH from inches and RPM. For <strong>car speed calculator km/h</strong>: multiply MPH result by 1.60934. Example: 6,000 RPM, 4th gear (1.00:1), 3.73 axle, 26.8-inch tire = (6,000 × 26.8 × 3.14159) ÷ (1.00 × 3.73 × 336) = 505,019 ÷ 1,253 = 83 MPH = 134 km/h. Our <strong>car speed calculator online</strong> does all this automatically for all 6 gears.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does tire size affect car speed?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Larger tires increase speed at the same RPM because each tire rotation covers more ground. A 1-inch increase in tire diameter increases speed by approximately 3.5–4%. Example: changing from a 27-inch tire to a 31-inch tire on the same axle ratio and RPM increases speed by 14.8%. This is why lifted trucks with larger tires need recalibrated speedometers — the speedometer still reads the old tire size. Our <strong>car speed calculator mph</strong> shows the exact speed change when you update tire diameter. Use the P-metric converter in our calculator to convert your tire size (e.g., 265/70R17 = 31.6 inches) to diameter.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the RC car speed calculator formula?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>RC car speed calculator</strong> formula: Speed (MPH) = (Motor KV × Battery Voltage × Wheel Diameter × π) ÷ (Pinion/Spur Ratio × 63,360). Or simply: (Motor RPM × Wheel Diameter × π) ÷ (Gear Ratio × 63,360) where Gear Ratio = Spur ÷ Pinion. The 63,360 = 12 inches/foot × 5,280 feet/mile. For a 3,000 KV motor on 3S LiPo (11.1V): Motor RPM = 3,000 × 11.1 = 33,300 RPM. With 20-tooth pinion, 76-tooth spur (3.8:1 ratio), 4-inch wheel: Speed = (33,300 × 4 × 3.14159) ÷ (3.8 × 63,360) = 418,407 ÷ 240,768 = 57 MPH. Select RC Car mode in our calculator and enter these values.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I choose the right axle ratio for my car?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Use our <strong>car speed calculator online</strong> Speed → RPM reverse mode to find your ideal axle ratio: 1) Enter your target highway cruising speed (e.g., 65 mph). 2) Enter your ideal cruise RPM (e.g., 1,800–2,200 for most engines). 3) Enter your tire size. 4) Adjust axle ratio until the calculated RPM matches your target. Lower ratio (2.73:1) = lower RPM = better fuel economy. Higher ratio (4.10:1) = higher RPM = more torque multiplication = better acceleration but worse economy. For towing: 3.73–4.10. For fuel economy: 2.73–3.08. For performance balance: 3.55–3.73. For drag racing: 4.10–4.56+. Our <strong>race car speed calculator</strong> and standard modes both support this analysis.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">Can this calculator do km/h (kilometers per hour)?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — our <strong>car speed calculator km</strong> and <strong>car speed calculator km/h</strong> toggle is at the top of the calculator. Toggle between MPH, KM/H, or Both (which shows both units in the same results bar). The conversion formula is: km/h = mph × 1.60934. All gear speeds are shown simultaneously. Our <strong>online car speed calculator</strong> is particularly useful for European and Australian users who work in km/h, or for motorsport applications that use both units (some international race tracks post speeds in km/h while pit lane communications use mph). The <strong>car speed calculator km/h</strong> mode uses the exact same gear ratio calculation — only the output unit changes.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Speed Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/speed-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);">&#128204;</div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, time, and speed calculator</div>
+      </a>
+      <a href="/rpm-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);">&#9881;</div>
+        <div class="oc-name">RPM Calculator</div>
+        <div class="oc-desc">Engine RPM from speed and gear ratio</div>
+      </a>
+      <a href="/fuel-cost-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);">&#9981;</div>
+        <div class="oc-name">Fuel Cost Calculator</div>
+        <div class="oc-desc">Trip fuel cost from MPG and distance</div>
+      </a>
+      <a href="/horsepower-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(239,68,68,.1);">&#128293;</div>
+        <div class="oc-name">Horsepower Calculator</div>
+        <div class="oc-desc">HP from torque and RPM</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var mode='standard', unit='mph';
+
+/* TRANSMISSION PRESETS */
+var PRESETS={
+  t56:   {g:[2.97,2.07,1.43,1.00,0.84,0.62], name:'Tremec T56 6-Speed'},
+  auto4l60:{g:[3.06,1.63,1.00,0.70,0,0],     name:'4L60E 4-Speed Auto'},
+  getrag:{g:[4.21,2.49,1.66,1.24,1.00,0.83], name:'Getrag 6-Speed'},
+  nv3550:{g:[4.01,2.32,1.40,1.00,0.79,0],    name:'NV3550 5-Speed'},
+  zf8:   {g:[4.71,3.14,2.11,1.67,1.29,1.00], name:'ZF 8HP (first 6 gears)'},
+  cvt:   {g:[2.50,2.00,1.60,1.30,1.00,0.80], name:'CVT Approximate'}
+};
+
+/* Bar colors per gear */
+var GEAR_COLORS=['#10b981','#3b82f6','#f59e0b','#ef4444','#8b5cf6','#ec4899'];
+var GEAR_NAMES=['1st','2nd','3rd','4th','5th','6th/OD'];
+
+function setMode(m,el){
+  mode=m;
+  document.querySelectorAll('.m-pill').forEach(function(p){p.classList.remove('on');});
+  if(el)el.classList.add('on');
+  var isRC=(m==='rc'), isRev=(m==='reverse'), isRace=(m==='race');
+  document.getElementById('rc-extra').style.display=isRC?'block':'none';
+  document.getElementById('rev-extra').style.display=isRev?'block':'none';
+  document.getElementById('rev-box').style.display=isRev?'block':'none';
+  document.getElementById('speed-bars').style.display=isRev?'none':'block';
+  var rpmMax=isRace?20000:isRC?50000:9000;
+  document.getElementById('sl-rpm').max=rpmMax;
+  document.getElementById('rpm-max-lbl').textContent=(rpmMax/1000).toFixed(0)+',000 RPM';
+  var notes={standard:'Typical passenger car: 4,000–7,000 RPM redline',race:'Race car: 8,000–20,000 RPM redline',rc:'RC motor: 20,000–50,000 RPM',reverse:'Enter target speed and gear to find required RPM'};
+  document.getElementById('rpm-note').textContent=notes[m]||notes.standard;
+}
+
+function setUnit(u){
+  unit=u;
+  document.getElementById('u-mph').classList.toggle('on',u==='mph');
+  document.getElementById('u-kmh').classList.toggle('on',u==='kmh');
+  document.getElementById('u-both').classList.toggle('on',u==='both');
+  document.getElementById('rev-suf').textContent=u==='kmh'?'km/h':'mph';
+}
+
+function setVal(id,v){document.getElementById(id).value=v;}
+
+function loadPreset(key){
+  var p=PRESETS[key];if(!p)return;
+  var ids=['g1','g2','g3','g4','g5','g6'];
+  ids.forEach(function(id,i){document.getElementById(id).value=p.g[i]||0;});
+}
+
+function convertTire(){
+  var w=parseFloat(document.getElementById('tc-width').value)||235;
+  var ar=parseFloat(document.getElementById('tc-ar').value)||55;
+  var rim=parseFloat(document.getElementById('tc-rim').value)||17;
+  var sidwall=(w*ar/100)*2; /* mm, both sides */
+  var totalDiaMM=rim*25.4+sidwall;
+  var totalDiaIn=totalDiaMM/25.4;
+  document.getElementById('f-tire').value=totalDiaIn.toFixed(1);
+  var res=document.getElementById('tc-result');
+  res.textContent=w+'/'+ar+'R'+rim+' = '+totalDiaIn.toFixed(2)+'" diameter';
+  res.style.display='block';
+}
+
+function gv(id){var el=document.getElementById(id);return el?parseFloat(el.value)||0:0;}
+function gs(id){var el=document.getElementById(id);return el?el.value:'';}
+
+/* SPEED FORMULA */
+function calcSpeed(rpm,gearRatio,axleRatio,tireDia,eff){
+  if(!gearRatio||!axleRatio||!tireDia)return 0;
+  var mph=(rpm*tireDia*Math.PI)/(gearRatio*axleRatio*336);
+  return mph*(eff/100);
+}
+
+/* TACHOMETER ARC */
+function setTacho(speed,maxSpeed){
+  var pct=Math.min(speed/maxSpeed,1);
+  var arcLen=204*pct; /* 204 = half circumference approx */
+  document.getElementById('speed-arc').setAttribute('stroke-dasharray',arcLen+' '+(204-arcLen));
+  /* Needle: -90 deg (left) to +90 deg (right) */
+  var angle=-90+pct*180;
+  document.getElementById('tacho-needle').setAttribute('transform','rotate('+angle+',80,80)');
+}
+
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  var rpm=gv('f-rpm');
+  var axle=gv('f-axle');
+  var tire=gv('f-tire');
+  var eff=parseFloat(document.getElementById('sl-eff').value)||98;
+  if(!rpm||!axle||!tire){document.getElementById('err-msg').style.display='block';return;}
+
+  var gears=[gv('g1'),gv('g2'),gv('g3'),gv('g4'),gv('g5'),gv('g6')];
+
+  /* RC mode overrides */
+  if(mode==='rc'){
+    var pinion=gv('f-pinion')||20, spur=gv('f-spur')||80;
+    var rcRatio=spur/pinion;
+    var rcSpeed=(rpm*tire*Math.PI)/(rcRatio*63360)*(eff/100);
+    var rcKmh=rcSpeed*1.60934;
+    /* Show single result */
+    document.getElementById('tacho-speed').textContent=rcSpeed.toFixed(1);
+    document.getElementById('tacho-unit').textContent=(unit==='kmh'?rcKmh.toFixed(1)+' km/h':unit==='both'?rcSpeed.toFixed(1)+' mph / '+rcKmh.toFixed(1)+' km/h':'at current RPM');
+    document.getElementById('tacho-gear').textContent='RC Car — Ratio '+rcRatio.toFixed(2)+':1';
+    setTacho(rcSpeed,150);
+    var maxSp=unit==='kmh'?Math.round(rcKmh*1.5):Math.round(rcSpeed*1.5);
+    document.getElementById('tacho-max-lbl').textContent=maxSp;
+    document.getElementById('tacho-mid-lbl').textContent=Math.round(maxSp/2);
+    document.getElementById('sb-head').textContent='RC Car Speed @ '+rpm.toLocaleString()+' RPM';
+    document.getElementById('sb-rpm-lbl').textContent=rpm.toLocaleString();
+    var sbR=document.getElementById('sb-rows');sbR.innerHTML='';
+    var d=document.createElement('div');d.className='sb-row';
+    var disp=unit==='kmh'?rcKmh.toFixed(1)+' km/h':unit==='both'?rcSpeed.toFixed(1)+' mph':rcSpeed.toFixed(1)+' mph';
+    d.innerHTML='<span class="sb-gear" style="color:#10b981;">RC</span><div class="sb-bar-wrap"><div class="sb-bar" style="width:70%;background:#10b981;"></div></div><span class="sb-speed" style="color:#10b981;">'+disp+'</span>';
+    sbR.appendChild(d);
+    showResult(); return;
+  }
+
+  /* REVERSE mode */
+  if(mode==='reverse'){
+    var tgtSpeed=gv('f-rev-speed');
+    var gearIdx=parseInt(gs('f-rev-gear'))||0;
+    var gRatio=gears[gearIdx]||1;
+    if(!tgtSpeed){document.getElementById('err-msg').style.display='block';return;}
+    var speedMPH=unit==='kmh'?tgtSpeed/1.60934:tgtSpeed;
+    var revRPM=(speedMPH*gRatio*axle*336)/(tire*Math.PI);
+    revRPM=revRPM/(eff/100);
+    document.getElementById('rev-speed-lbl').textContent=tgtSpeed+(unit==='kmh'?' km/h':' mph');
+    document.getElementById('rev-gear-lbl').textContent=GEAR_NAMES[gearIdx];
+    document.getElementById('rev-result').textContent=Math.round(revRPM).toLocaleString()+' RPM';
+    document.getElementById('rev-sub').textContent='Gear ratio: '+gRatio.toFixed(2)+':1 | Axle: '+axle+':1 | Tire: '+tire+'"';
+    /* Tacho */
+    document.getElementById('tacho-speed').textContent=Math.round(revRPM).toLocaleString();
+    document.getElementById('tacho-unit').textContent='RPM required';
+    document.getElementById('tacho-gear').textContent='In '+GEAR_NAMES[gearIdx]+' at '+tgtSpeed+(unit==='kmh'?' km/h':' mph');
+    setTacho(revRPM,9000);
+    showResult(); return;
+  }
+
+  /* STANDARD / RACE */
+  var speeds=gears.map(function(gr){return gr>0?calcSpeed(rpm,gr,axle,tire,eff):0;});
+  var maxSpd=Math.max.apply(null,speeds);
+  var displaySpeeds=speeds.map(function(s){return unit==='kmh'?s*1.60934:s;});
+  var maxDisp=unit==='kmh'?maxSpd*1.60934:maxSpd;
+  var unitLabel=unit==='kmh'?'km/h':'mph';
+
+  /* Tacho — show top gear speed */
+  var topSpeed=displaySpeeds[displaySpeeds.length-1]||displaySpeeds.reduce(function(a,b){return Math.max(a,b);},0);
+  var maxGaugeSpeed=unit==='kmh'?Math.ceil(maxDisp/50)*50+50:Math.ceil(maxDisp/25)*25+25;
+  document.getElementById('tacho-speed').textContent=topSpeed.toFixed(0);
+  document.getElementById('tacho-unit').textContent=unitLabel+' at '+rpm.toLocaleString()+' RPM';
+  document.getElementById('tacho-gear').textContent=(unit==='both'?'Top: '+topSpeed.toFixed(0)+' mph / '+(topSpeed*1.60934).toFixed(0)+' km/h':'Top gear speed');
+  document.getElementById('tacho-max-lbl').textContent=maxGaugeSpeed;
+  document.getElementById('tacho-mid-lbl').textContent=Math.round(maxGaugeSpeed/2);
+  setTacho(topSpeed,maxGaugeSpeed);
+
+  /* Speed bars */
+  document.getElementById('sb-rpm-lbl').textContent=rpm.toLocaleString()+' RPM';
+  var sbRows=document.getElementById('sb-rows');sbRows.innerHTML='';
+  gears.forEach(function(gr,i){
+    if(!gr)return;
+    var spd=displaySpeeds[i];
+    var barPct=(spd/maxDisp)*100;
+    var color=GEAR_COLORS[i];
+    var d=document.createElement('div');d.className='sb-row';
+    var spdStr=unit==='both'?spd.toFixed(1)+' mph':spd.toFixed(1)+' '+unitLabel;
+    var kmhStr=unit==='both'?(spd*1.60934).toFixed(1)+' km/h':gr.toFixed(2)+':1';
+    d.innerHTML='<span class="sb-gear" style="color:'+color+';">'+GEAR_NAMES[i]+'</span>'
+      +'<div class="sb-bar-wrap"><div class="sb-bar" style="width:'+barPct.toFixed(0)+'%;background:'+color+';"></div></div>'
+      +'<span class="sb-speed" style="color:'+color+';">'+spdStr+'</span>'
+      +'<span class="sb-kmh">'+kmhStr+'</span>';
+    sbRows.appendChild(d);
+  });
+
+  showResult();
+}
+
+function showResult(){
+  document.getElementById('r-placeholder') && (document.getElementById('r-placeholder').style.display='none');
+}
+
+/* Slider bindings */
+document.getElementById('f-rpm').addEventListener('input',function(){
+  document.getElementById('sl-rpm').value=Math.min(parseFloat(this.value)||0,parseFloat(document.getElementById('sl-rpm').max));
+  document.getElementById('bdg-rpm').textContent=(parseFloat(this.value)||0).toLocaleString();
+});
+document.getElementById('sl-rpm').addEventListener('input',function(){
+  document.getElementById('f-rpm').value=this.value;
+  document.getElementById('bdg-rpm').textContent=parseFloat(this.value).toLocaleString();
+});
+document.getElementById('sl-eff').addEventListener('input',function(){
+  document.getElementById('bdg-eff').textContent=this.value+'%';
+});
+/* Live calc on slider move */
+document.getElementById('sl-rpm').addEventListener('input',function(){calculate();});
+
+function faqT(el){
+  var item=el.parentElement,was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was)item.classList.add('open');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  setMode('standard',document.querySelector('.m-pill[data-mode="standard"]'));
+  loadPreset('t56');
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')calculate();});
+  });
+  calculate();
+});
+</script>
+</body>
+</html>

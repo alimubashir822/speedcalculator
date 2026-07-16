@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Water Intake Calculator — Daily, By Weight, Age & Creatine | SpeedCalculator.net</title>
+<meta name="description" content="Free water intake calculator online. Find your daily water needs by weight, age, activity, and climate. Includes creatine water intake, keto hydration, bodybuilding calculator, dog and cat water needs, and NHS-aligned recommendations.">
+<meta name="keywords" content="water intake calculator, daily water intake calculator, water intake calculator for weight loss, water intake calculator by weight, creatine water intake calculator, water intake calculator kg litre, dog water intake calculator, water intake calculator to lose weight, recommended water intake calculator, cat water intake calculator, water intake calculator by age, water intake calculator app, water intake calculator with creatine, bodybuilding water intake calculator, keto water intake calculator, water intake calculator height weight, ideal water intake calculator, nhs water intake calculator, daily water intake calculator height weight, water intake calculator kg">
+<link rel="canonical" href="https://www.speedcalculator.net/water-intake-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Water Intake Calculator",
+  "alternateName":["Daily Water Intake Calculator","Water Intake Calculator by Weight","Creatine Water Intake Calculator","Dog Water Intake Calculator","Cat Water Intake Calculator","Bodybuilding Water Intake Calculator","Keto Water Intake Calculator","NHS Water Intake Calculator","Ideal Water Intake Calculator","Recommended Water Intake Calculator"],
+  "url":"https://www.speedcalculator.net/water-intake-calculator/",
+  "description":"Free water intake calculator — find your daily water needs by weight, age, activity level, and climate. Includes creatine supplementation, keto diet, bodybuilding hydration, and pet water calculators.",
+  "applicationCategory":"HealthApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Daily water intake calculator by weight","Water intake calculator by age","Activity-adjusted water needs","Climate adjustment","Creatine water intake calculator","Keto water intake calculator","Bodybuilding water intake calculator","Dog water intake calculator","Cat water intake calculator","NHS-aligned recommendations","Cups and oz conversions","Hourly drinking schedule"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Water Intake Calculator",
+  "description":"Calculate your personalized daily water intake based on weight, age, activity, and other factors",
+  "totalTime":"PT1M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Enter Your Weight","text":"Enter your current body weight in kilograms or pounds. Water intake is primarily based on body weight — the most accurate base formula is 30–35ml per kg of body weight for sedentary adults."},
+    {"@type":"HowToStep","position":2,"name":"Select Age Group","text":"Choose your age range. Water needs change with age — children and elderly adults have different hydration requirements than young adults. The calculator adjusts for age-specific recommendations."},
+    {"@type":"HowToStep","position":3,"name":"Set Activity Level","text":"Choose your typical activity level from sedentary to very active. Each 30 minutes of moderate exercise adds approximately 500ml (17 oz) of additional water needed. Athletes and bodybuilders need significantly more."},
+    {"@type":"HowToStep","position":4,"name":"Add Special Conditions","text":"Enable toggles for creatine supplementation (+500ml), keto diet (+500ml), hot climate (+500ml), breastfeeding (+900ml), or pregnancy (+300ml). Each condition increases your baseline water needs."},
+    {"@type":"HowToStep","position":5,"name":"View Personalized Results","text":"See your total daily water intake in liters, ml, oz, and cups. View the hourly drinking schedule and water breakdown by source (drinking water, food, beverages)."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How much water should I drink per day?","acceptedAnswer":{"@type":"Answer","text":"Base water intake = 30–35ml per kg of body weight for sedentary adults. A 70kg person needs ~2,100–2,450ml (2.1–2.45 liters) daily. The NHS recommends 6–8 glasses (1.5–2 liters) per day for most adults in a temperate climate. The US National Academies recommend 3.7 liters total water for men and 2.7 liters for women (including water from food, which accounts for ~20%). Use our daily water intake calculator for your personalized recommendation."}},
+    {"@type":"Question","name":"How does the creatine water intake calculator work?","acceptedAnswer":{"@type":"Answer","text":"Creatine supplementation requires additional water because creatine pulls water into muscle cells, increasing intracellular water retention. Most sports nutrition experts recommend adding 500ml–1 liter of extra water per day when taking creatine (typically 3–5g/day maintenance dose). During the loading phase (20g/day), some recommend up to 1.5 extra liters. Our creatine water intake calculator adds 500ml to your baseline when you enable the creatine toggle."}},
+    {"@type":"Question","name":"How much water should I drink on a keto diet?","acceptedAnswer":{"@type":"Answer","text":"On a keto diet, you need more water than average because: 1) Glycogen depletion releases bound water (each gram of glycogen holds ~3g water), 2) Reduced insulin causes kidneys to excrete more sodium and water, 3) Ketosis has a mild diuretic effect. Keto water intake recommendation: add 500ml–1 liter above your baseline daily intake. Our keto water intake calculator automatically adds 500ml for keto dieters."}},
+    {"@type":"Question","name":"How much water do dogs need per day?","acceptedAnswer":{"@type":"Answer","text":"Dog water intake = approximately 50–60ml per kg of body weight per day. A 20kg (44 lb) dog needs about 1,000–1,200ml (1–1.2 liters) per day. Active dogs, puppies, and dogs in hot climates need more. Dogs on dry kibble need more water than those on wet food. Our dog water intake calculator uses the 55ml/kg formula as the baseline."}},
+    {"@type":"Question","name":"How do I lose weight by drinking more water?","acceptedAnswer":{"@type":"Answer","text":"Water aids weight loss by: 1) Boosting metabolism by 24–30% for 1–1.5 hours after drinking 500ml. 2) Suppressing appetite — drink 500ml before meals to reduce calorie intake by ~13%. 3) Replacing calorie-containing drinks. 4) Improving fat-burning (lipolysis requires adequate hydration). Our water intake calculator for weight loss adds an extra 500ml above baseline for those with weight loss goals, targeting 2.5–3.5 liters daily depending on weight."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,6vw,68px);font-weight:900;line-height:1.05;letter-spacing:0px;text-transform:uppercase;margin-bottom:22px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;margin-top:4px;letter-spacing:1px;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALC CARD */
+.calc-section{padding:0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--teal),var(--accent),var(--green),var(--teal),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* MODE PILLS */
+.mode-row{display:flex;gap:5px;flex-wrap:wrap;padding:14px 28px 0;}
+.m-pill{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.m-pill:hover{border-color:rgba(59,130,246,.4);}
+.m-pill.on{border-color:var(--accent);background:rgba(59,130,246,.13);color:var(--accent2);}
+
+/* UNIT TOGGLE */
+.unit-row{display:flex;align-items:center;gap:10px;padding:8px 28px 0;}
+.unit-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.unit-tabs{display:flex;gap:0;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;overflow:hidden;padding:2px;}
+.u-tab{padding:5px 16px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;border-radius:18px;transition:all .15s;}
+.u-tab.on{background:var(--accent);color:#fff;}
+
+.calc-body{padding:20px 28px 28px;}
+.calc-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUTS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:2px 9px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 12px;font-size:14px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);min-width:42px;justify-content:center;}
+.inp-suf{padding:0 12px;font-size:12px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.sel-wrap{position:relative;margin-bottom:5px;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;z-index:1;}
+.sel-wrap select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;padding:12px 40px 12px 14px;background:var(--bg3);color:#f0f4ff;border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;color:#f0f4ff;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--teal);border:2px solid var(--teal);cursor:pointer;box-shadow:0 0 0 3px rgba(6,182,212,.18);}
+.sl::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:var(--teal);border:2px solid var(--teal);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+
+/* TOGGLES (conditions) */
+.conditions-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.tog-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px;}
+.tog-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;user-select:none;transition:all .15s;}
+.tog-row:hover{border-color:rgba(59,130,246,.3);}
+.tog-row.on{border-color:var(--teal);background:rgba(6,182,212,.08);}
+.sw{width:30px;height:17px;background:var(--bg);border:1px solid var(--border2);border-radius:9px;position:relative;flex-shrink:0;transition:background .2s;}
+.sw.on{background:var(--teal);border-color:var(--teal);}
+.sw-k{position:absolute;top:3px;left:3px;width:9px;height:9px;border-radius:50%;background:#fff;transition:left .2s;}
+.sw.on .sw-k{left:16px;}
+.tog-lbl{font-size:11px;font-weight:600;color:var(--text2);line-height:1.3;}
+.tog-row.on .tog-lbl{color:var(--teal);}
+.tog-ml{font-size:9px;color:var(--text3);margin-left:auto;}
+.tog-row.on .tog-ml{color:var(--teal);}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:14px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:300px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* WATER HERO */
+.water-hero{background:linear-gradient(135deg,rgba(6,182,212,.13),rgba(59,130,246,.04));border:1px solid rgba(6,182,212,.3);border-radius:var(--radius);padding:20px;margin-bottom:10px;position:relative;overflow:hidden;text-align:center;}
+.water-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--accent),var(--green));}
+.wh-badge{display:inline-block;background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.3);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px;}
+.wh-amount{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,10vw,66px);font-weight:900;color:var(--teal);line-height:1;letter-spacing:-2px;}
+.wh-unit{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--text3);}
+.wh-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.whc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;}
+.whc.g{color:var(--green);border-color:rgba(16,185,129,.3);}
+.whc.b{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+.whc.t{color:var(--teal);border-color:rgba(6,182,212,.3);}
+.whc.o{color:var(--orange);border-color:rgba(245,158,11,.3);}
+
+/* WATER BOTTLE VISUAL */
+.bottle-visual{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;}
+.bottle-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bottle-svg{width:44px;height:80px;}
+.bottle-count{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--teal);text-align:center;}
+.bottle-info{flex:1;}
+.bi-title{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.bi-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:3px 0;border-bottom:1px solid rgba(59,130,246,.05);}
+.bi-row:last-child{border:none;}
+.bi-lbl{color:var(--text2);}
+.bi-val{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+
+/* METRICS 2×2 */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,3.5vw,21px);font-weight:900;line-height:1;}
+.m-val.green{color:var(--green);}
+.m-val.orange{color:var(--orange);}
+.m-val.blue{color:var(--accent2);}
+.m-val.teal{color:var(--teal);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+
+/* HOURLY SCHEDULE */
+.schedule-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.sch-head{padding:9px 14px;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.sch-ttl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.sch-scroll{max-height:200px;overflow-y:auto;}
+.sch-row{display:flex;align-items:center;gap:10px;padding:7px 14px;border-bottom:1px solid rgba(59,130,246,.05);font-size:11.5px;}
+.sch-time{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--teal);min-width:55px;}
+.sch-ico{font-size:14px;}
+.sch-desc{color:var(--text2);flex:1;}
+.sch-ml{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--accent2);}
+
+/* STATS */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--teal);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* SPECIAL MODE CARDS */
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.spec-grid{grid-template-columns:repeat(2,1fr);}}
+.sc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;cursor:pointer;}
+.sc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.sc-ico{font-size:26px;margin-bottom:10px;}
+.sc-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.sc-extra{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--teal);background:rgba(6,182,212,.08);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:7px;}
+.sc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* SVG IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--teal);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid rgba(6,182,212,.25);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--teal);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.3);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:400px;}
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Water Intake Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> By Weight &middot; Age &middot; Activity &middot; Creatine &middot; Keto &middot; Dog &middot; Cat</div>
+    <h1 class="hero-h1">Water Intake<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>water intake calculator</strong> — find your personalized daily water needs by weight, age, activity level, and special conditions. Includes <strong>creatine water intake calculator</strong>, keto hydration, bodybuilding, weight loss, dog &amp; cat water calculators, and a hourly drinking schedule. More complete than NHS and MedIndia tools.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">By Weight &amp; Age</span>
+      <span class="hbadge p">Creatine &amp; Keto</span>
+      <span class="hbadge o">Dog &amp; Cat</span>
+      <span class="hbadge t">Hourly Schedule</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 2c0 0-5 5-5 8a5 5 0 0010 0c0-3-5-8-5-8z"/></svg>
+          </div>
+          Water Intake <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Personalized</div>
+      </div>
+
+      <!-- MODE PILLS -->
+      <div class="mode-row">
+        <span class="m-pill on" data-mode="human"   onclick="setMode('human',this)">&#128167; Human</span>
+        <span class="m-pill"    data-mode="dog"     onclick="setMode('dog',this)">&#128054; Dog</span>
+        <span class="m-pill"    data-mode="cat"     onclick="setMode('cat',this)">&#128049; Cat</span>
+      </div>
+
+      <!-- UNIT TOGGLE -->
+      <div class="unit-row">
+        <span class="unit-lbl">Weight units:</span>
+        <div class="unit-tabs">
+          <div class="u-tab on" id="u-kg" onclick="setUnit('kg')">kg</div>
+          <div class="u-tab" id="u-lbs" onclick="setUnit('lbs')">lbs</div>
+        </div>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="sec-lbl" id="inp-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M5.5 1c0 0-4 4-4 6.5a4 4 0 008 0C9.5 5 5.5 1 5.5 1z"/></svg>
+              Your Details
+            </div>
+
+            <!-- HUMAN MODE -->
+            <div id="panel-human">
+              <!-- WEIGHT -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Body Weight</span><span class="inp-bdg" id="bdg-wt">70 kg</span></div>
+                <div class="inp-wrap"><span class="inp-pre">⚖</span><input type="number" id="f-wt" min="20" max="300" step="0.5" value="70" placeholder="70"></div>
+                <input type="range" class="sl" id="sl-wt" min="20" max="150" step="0.5" value="70">
+                <div class="sl-row"><span id="sl-min-wt">20 kg</span><span id="sl-max-wt">150 kg</span></div>
+              </div>
+
+              <!-- AGE -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Age</span></div>
+                <div class="sel-wrap">
+                  <select id="f-age">
+                    <option value="child">Child (4–12 years)</option>
+                    <option value="teen">Teen (13–18 years)</option>
+                    <option value="adult" selected>Adult (19–55 years)</option>
+                    <option value="senior">Senior (55+ years)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- ACTIVITY -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Activity Level</span></div>
+                <div class="sel-wrap">
+                  <select id="f-activity">
+                    <option value="0">Sedentary (desk job, no exercise)</option>
+                    <option value="300">Lightly active (1–3 days/week)</option>
+                    <option value="500" selected>Moderately active (3–5 days/week)</option>
+                    <option value="700">Very active (6–7 days/week)</option>
+                    <option value="1000">Athlete / intense daily training</option>
+                  </select>
+                </div>
+                <div class="inp-note">Each 30 min of exercise adds ~350–500ml of extra water needed</div>
+              </div>
+
+              <!-- CLIMATE -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Climate / Environment</span></div>
+                <div class="sel-wrap">
+                  <select id="f-climate">
+                    <option value="0">Temperate / Normal (UK, Europe)</option>
+                    <option value="300">Warm (25–30°C)</option>
+                    <option value="500">Hot &amp; Humid (30–35°C)</option>
+                    <option value="700">Very Hot (35°C+ / desert)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- GOAL -->
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Primary Goal</span></div>
+                <div class="sel-wrap">
+                  <select id="f-goal">
+                    <option value="general">General Health</option>
+                    <option value="weightloss">Weight Loss (+300ml)</option>
+                    <option value="muscle">Muscle Building (+400ml)</option>
+                    <option value="endurance">Endurance Sports (+600ml)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- SPECIAL CONDITIONS -->
+              <div class="conditions-title">Special Conditions (toggle to add)</div>
+              <div class="tog-grid">
+                <div class="tog-row" id="tog-creatine" onclick="toggleCond('creatine')">
+                  <div class="sw" id="sw-creatine"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">Creatine</span>
+                  <span class="tog-ml">+500ml</span>
+                </div>
+                <div class="tog-row" id="tog-keto" onclick="toggleCond('keto')">
+                  <div class="sw" id="sw-keto"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">Keto Diet</span>
+                  <span class="tog-ml">+500ml</span>
+                </div>
+                <div class="tog-row" id="tog-pregnant" onclick="toggleCond('pregnant')">
+                  <div class="sw" id="sw-pregnant"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">Pregnant</span>
+                  <span class="tog-ml">+300ml</span>
+                </div>
+                <div class="tog-row" id="tog-nursing" onclick="toggleCond('nursing')">
+                  <div class="sw" id="sw-nursing"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">Breastfeeding</span>
+                  <span class="tog-ml">+900ml</span>
+                </div>
+                <div class="tog-row" id="tog-alcohol" onclick="toggleCond('alcohol')">
+                  <div class="sw" id="sw-alcohol"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">Drinks Alcohol</span>
+                  <span class="tog-ml">+500ml</span>
+                </div>
+                <div class="tog-row" id="tog-caffeine" onclick="toggleCond('caffeine')">
+                  <div class="sw" id="sw-caffeine"><div class="sw-k"></div></div>
+                  <span class="tog-lbl">High Caffeine</span>
+                  <span class="tog-ml">+200ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DOG MODE -->
+            <div id="panel-dog" style="display:none;">
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Dog's Weight</span><span class="inp-bdg" id="bdg-dog-wt">20 kg</span></div>
+                <div class="inp-wrap"><span class="inp-pre">&#128054;</span><input type="number" id="f-dog-wt" min="1" max="100" step="0.5" value="20" placeholder="20"></div>
+                <input type="range" class="sl" id="sl-dog-wt" min="1" max="60" step="0.5" value="20">
+                <div class="sl-row"><span>1 kg</span><span>60 kg</span></div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Life Stage</span></div>
+                <div class="sel-wrap">
+                  <select id="f-dog-stage">
+                    <option value="1.2">Puppy (×1.2 adult needs)</option>
+                    <option value="1.0" selected>Adult dog</option>
+                    <option value="1.1">Senior dog (×1.1)</option>
+                    <option value="1.5">Nursing/lactating (×1.5)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Food Type</span></div>
+                <div class="sel-wrap">
+                  <select id="f-dog-food">
+                    <option value="1.2">Dry kibble (needs more water)</option>
+                    <option value="1.0" selected>Mixed diet</option>
+                    <option value="0.7">Wet food / raw diet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="inp-note">Dogs on dry kibble need 50–60% more water than those on wet food. Always provide fresh, clean water.</div>
+            </div>
+
+            <!-- CAT MODE -->
+            <div id="panel-cat" style="display:none;">
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Cat's Weight</span><span class="inp-bdg" id="bdg-cat-wt">4.5 kg</span></div>
+                <div class="inp-wrap"><span class="inp-pre">&#128049;</span><input type="number" id="f-cat-wt" min="0.5" max="15" step="0.1" value="4.5" placeholder="4.5"></div>
+                <input type="range" class="sl" id="sl-cat-wt" min="0.5" max="10" step="0.1" value="4.5">
+                <div class="sl-row"><span>0.5 kg</span><span>10 kg</span></div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Life Stage</span></div>
+                <div class="sel-wrap">
+                  <select id="f-cat-stage">
+                    <option value="1.3">Kitten (×1.3)</option>
+                    <option value="1.0" selected>Adult cat</option>
+                    <option value="1.2">Senior cat (×1.2)</option>
+                    <option value="1.5">Nursing cat (×1.5)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="inp-grp">
+                <div class="inp-top"><span class="inp-lbl">Diet Type</span></div>
+                <div class="sel-wrap">
+                  <select id="f-cat-food">
+                    <option value="1.3">Dry food only (cats often under-drink!)</option>
+                    <option value="1.0" selected>Mixed wet and dry</option>
+                    <option value="0.6">Mostly wet food</option>
+                  </select>
+                </div>
+              </div>
+              <div class="inp-note">Cats on dry food are at high risk of dehydration and UTIs. Wet food counts toward daily fluid intake.</div>
+            </div>
+
+            <div class="err-msg" id="err-msg">Please enter a valid weight value.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Water Intake
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M5.5 1c0 0-4 4-4 6.5a4 4 0 008 0C9.5 5 5.5 1 5.5 1z"/></svg>
+              Results
+            </div>
+            <div class="r-placeholder" id="r-placeholder">
+              <div style="font-size:50px;">&#128167;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.8;">Enter your details and click<br><strong style="color:var(--teal);">Calculate Water Intake</strong><br>for your personalized daily<br>water recommendation.</div>
+            </div>
+            <div class="results-block" id="results-block">
+
+              <!-- WATER HERO -->
+              <div class="water-hero">
+                <div class="wh-badge" id="wh-badge">Daily Water Target</div>
+                <div class="wh-amount" id="wh-amount">2.5</div>
+                <div class="wh-unit">litres / day</div>
+                <div class="wh-chips">
+                  <span class="whc t" id="chip-ml">— ml</span>
+                  <span class="whc b" id="chip-oz">— oz</span>
+                  <span class="whc g" id="chip-cups">— cups</span>
+                  <span class="whc o" id="chip-bottles">— bottles</span>
+                </div>
+              </div>
+
+              <!-- BOTTLE VISUAL -->
+              <div class="bottle-visual">
+                <div class="bottle-wrap">
+                  <svg class="bottle-svg" viewBox="0 0 44 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="13" y="0" width="18" height="8" rx="3" fill="rgba(6,182,212,.3)"/>
+                    <rect x="8" y="8" width="28" height="62" rx="6" fill="rgba(11,18,32,.8)" stroke="rgba(6,182,212,.4)" stroke-width="1.5"/>
+                    <rect id="water-fill" x="9" y="9" width="26" height="60" rx="5" fill="url(#wg)" style="transform-origin:bottom;"/>
+                    <defs><linearGradient id="wg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#60a5fa" stop-opacity=".9"/><stop offset="100%" stop-color="#06b6d4" stop-opacity=".7"/></linearGradient></defs>
+                    <!-- waves -->
+                    <text x="22" y="44" font-family="Barlow Condensed,sans-serif" font-size="9" fill="rgba(255,255,255,.5)" text-anchor="middle" id="bottle-pct">—</text>
+                  </svg>
+                  <div class="bottle-count" id="bottle-count">— × 500ml</div>
+                </div>
+                <div class="bottle-info">
+                  <div class="bi-title">Daily Breakdown</div>
+                  <div class="bi-row"><span class="bi-lbl">Pure drinking water</span><span class="bi-val" id="bi-drink">—</span></div>
+                  <div class="bi-row"><span class="bi-lbl">From food (~20%)</span><span class="bi-val" id="bi-food">—</span></div>
+                  <div class="bi-row"><span class="bi-lbl">Beverages (tea/coffee)</span><span class="bi-val" id="bi-bev">—</span></div>
+                  <div class="bi-row"><span class="bi-lbl">Total water intake</span><span class="bi-val" style="color:var(--teal);" id="bi-total">—</span></div>
+                </div>
+              </div>
+
+              <!-- METRICS 2×2 -->
+              <div class="metrics-grid">
+                <div class="metric">
+                  <div class="m-lbl">Minimum</div>
+                  <div class="m-val teal" id="r-min">—</div>
+                  <div class="m-sub">bare minimum/day</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Optimal</div>
+                  <div class="m-val green" id="r-opt">—</div>
+                  <div class="m-sub">recommended/day</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Per Hour (awake)</div>
+                  <div class="m-val blue" id="r-hour">—</div>
+                  <div class="m-sub">16 waking hours</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Per Sip Target</div>
+                  <div class="m-val orange" id="r-sip">—</div>
+                  <div class="m-sub">every 2 hours</div>
+                </div>
+              </div>
+
+              <!-- HOURLY SCHEDULE -->
+              <div class="schedule-box">
+                <div class="sch-head">
+                  <div class="sch-ttl">Hourly Drinking Schedule</div>
+                  <div style="font-size:10px;color:var(--teal);font-weight:700;" id="sch-total">—</div>
+                </div>
+                <div class="sch-scroll">
+                  <div id="sch-rows"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">Conditions</div></div>
+      <div class="stat-item"><div class="stat-val">NHS</div><div class="stat-lbl">Aligned Guidelines</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SPECIAL MODES SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Specialized Water Intake Calculators</div>
+    <h2 class="sec-title">Every <span>Water Intake Calculator</span> You Need</h2>
+    <p class="sec-sub">From bodybuilding to keto to pet hydration — our <strong>recommended water intake calculator</strong> covers every scenario. Click any card to enable that mode.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".9"/><stop offset="100%" stop-color="#0e7490" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gP" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".9"/><stop offset="100%" stop-color="#6d28d9" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/><rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="24" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DAILY WATER INTAKE CALCULATOR — RECOMMENDED INTAKE BY WEIGHT (KG)</text>
+        <line x1="48" y1="182" x2="862" y2="182" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- 50kg -->
+        <rect x="55" y="128" width="75" height="54" rx="5" fill="url(#gT)" opacity=".7"/>
+        <text x="92" y="122" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#67e8f9" text-anchor="middle">1.75L</text>
+        <text x="92" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">50 kg</text>
+        <!-- 60kg -->
+        <rect x="190" y="108" width="75" height="74" rx="5" fill="url(#gT)"/>
+        <text x="227" y="102" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#67e8f9" text-anchor="middle">2.1L</text>
+        <text x="227" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">60 kg</text>
+        <!-- 70kg -->
+        <rect x="325" y="84" width="75" height="98" rx="5" fill="url(#gG)"/>
+        <text x="362" y="78" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">2.45L</text>
+        <text x="362" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">70 kg</text>
+        <!-- 80kg -->
+        <rect x="460" y="62" width="75" height="120" rx="5" fill="url(#gB)"/>
+        <text x="497" y="56" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">2.8L</text>
+        <text x="497" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">80 kg</text>
+        <!-- 90kg -->
+        <rect x="595" y="44" width="75" height="138" rx="5" fill="url(#gO)"/>
+        <text x="632" y="38" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">3.15L</text>
+        <text x="632" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">90 kg</text>
+        <!-- 100kg -->
+        <rect x="730" y="24" width="75" height="158" rx="5" fill="url(#gP)"/>
+        <text x="767" y="18" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#a78bfa" text-anchor="middle">3.5L</text>
+        <text x="767" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">100 kg</text>
+      </svg>
+      <div class="img-overlay"><span>Daily water intake calculator by weight — using 35ml/kg formula: 50kg = 1.75L, 60kg = 2.1L, 70kg = 2.45L, 80kg = 2.8L, 90kg = 3.15L, 100kg = 3.5L per day (sedentary adults, temperate climate)</span></div>
+    </div>
+
+    <div class="spec-grid">
+      <div class="sc" onclick="enableCond('creatine')">
+        <div class="sc-ico">&#128170;</div>
+        <div class="sc-name">Creatine Water Calculator</div>
+        <div class="sc-extra">+500ml/day</div>
+        <p class="sc-p">Our <strong>creatine water intake calculator</strong> and <strong>water intake calculator with creatine</strong> adds the extra hydration needed when taking creatine. Creatine draws water into muscles, increasing daily water needs by 500ml–1L.</p>
+      </div>
+      <div class="sc" onclick="enableCond('keto')">
+        <div class="sc-ico">&#127789;</div>
+        <div class="sc-name">Keto Water Calculator</div>
+        <div class="sc-extra">+500ml/day</div>
+        <p class="sc-p">Our <strong>keto water intake calculator</strong> accounts for the diuretic effect of ketosis. Keto depletes glycogen (releasing water) and lowers insulin, causing increased urination — requiring 500ml–1L extra daily.</p>
+      </div>
+      <div class="sc" onclick="scrollToCalc()">
+        <div class="sc-ico">&#127947;</div>
+        <div class="sc-name">Bodybuilding Water Calculator</div>
+        <div class="sc-extra">+700–1000ml</div>
+        <p class="sc-p">Our <strong>bodybuilding water intake calculator</strong> targets athletes doing intense training. Select "Athlete / intense daily training" in activity level — adds 700–1000ml above your base weight-based intake.</p>
+      </div>
+      <div class="sc" onclick="setModeScroll('dog')">
+        <div class="sc-ico">&#128054;</div>
+        <div class="sc-name">Dog Water Calculator</div>
+        <div class="sc-extra">55ml/kg/day</div>
+        <p class="sc-p">Our <strong>dog water intake calculator</strong> uses the 55ml/kg/day formula. A 20kg dog needs ~1.1 liters. Adjusts for puppies, seniors, nursing dogs, and diet type (dry kibble vs wet food).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Water Intake Calculator — Complete Guide</h2>
+  <p>Our free <strong>water intake calculator</strong> is more comprehensive than MedIndia, GetWellis, and the University of Florida tool — because it calculates personalized hydration needs based on weight, age, activity, climate, AND special conditions including <strong>creatine water intake calculator</strong>, <strong>keto water intake calculator</strong>, <strong>bodybuilding water intake calculator</strong>, pregnancy, breastfeeding, alcohol, and caffeine. We also include a <strong>dog water intake calculator</strong> and <strong>cat water intake calculator</strong>. The results include multiple units (liters, ml, oz, cups, bottles), a visual breakdown, and a full hourly drinking schedule — tools the NHS and most online calculators simply don't provide.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/><rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">WATER INTAKE FORMULA — HOW DAILY WATER NEEDS ARE CALCULATED</text>
+      <rect x="30" y="35" width="390" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(6,182,212,.2)" stroke-width="1"/>
+      <text x="225" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#06b6d4" text-anchor="middle" letter-spacing="1">BASE FORMULA (ml/day)</text>
+      <text x="50" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Base water =</text>
+      <text x="210" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Weight (kg) × 35 ml</text>
+      <text x="50" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">+ Activity:</text>
+      <text x="210" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">0–1,000 ml added</text>
+      <text x="50" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">+ Climate:</text>
+      <text x="210" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">0–700 ml added</text>
+      <text x="50" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">+ Conditions:</text>
+      <text x="210" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Creatine, keto, etc.</text>
+      <rect x="42" y="150" width="366" height="26" rx="5" fill="rgba(6,182,212,.08)" stroke="rgba(6,182,212,.2)" stroke-width="1"/>
+      <text x="225" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#06b6d4" text-anchor="middle">70kg + moderate = 2,450 + 500 = 2,950 ml/day</text>
+      <!-- Right -->
+      <line x1="452" y1="32" x2="452" y2="192" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <rect x="462" y="35" width="408" height="150" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="666" y="56" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#10b981" text-anchor="middle" letter-spacing="1">NHS / GLOBAL GUIDELINES</text>
+      <text x="475" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">NHS (UK):</text>
+      <text x="640" y="78" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">1.5–2L (6–8 glasses)</text>
+      <text x="475" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">US NIDDK:</text>
+      <text x="640" y="98" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Men 3.7L, Women 2.7L</text>
+      <text x="475" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">WHO:</text>
+      <text x="640" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">2–4L depending on climate</text>
+      <text x="475" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Per weight:</text>
+      <text x="640" y="138" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">30–40ml per kg body weight</text>
+      <rect x="472" y="150" width="384" height="26" rx="5" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="664" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">~20% of water intake comes from food</text>
+    </svg>
+    <div class="img-overlay"><span>Water intake calculator formula — Base: weight(kg) × 35ml + activity + climate + conditions. Example: 70kg moderately active person = 2,450 + 500 = 2,950ml/day. NHS recommends 1.5–2L as minimum.</span></div>
+  </div>
+
+  <h2>How to Use the Water Intake Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Enter your weight and select age group</strong><span>Weight is the primary driver of water needs. The standard <strong>water intake calculator by weight</strong> formula is 30–35ml per kg. Select your age group — children need proportionally more water per kg than adults, while seniors have a reduced thirst response and need reminders to drink. Our <strong>water intake calculator by age</strong> adjusts these factors automatically.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Set activity level and climate</strong><span>Activity level is the second biggest factor after weight. Every 30 minutes of moderate exercise requires an additional 350–500ml of water. Climate adds 300–700ml in hot or humid environments. These two together can increase your baseline water needs by 50–100%.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enable special conditions</strong><span>Toggle on any conditions that apply: Creatine (+500ml) for the <strong>creatine water intake calculator</strong> mode, Keto (+500ml) for the <strong>keto water intake calculator</strong>, Pregnant (+300ml), Breastfeeding (+900ml), Alcohol (+500ml), or High Caffeine (+200ml). Each condition increases your baseline and the calculator adjusts instantly.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Review results and hourly schedule</strong><span>See your daily water target in liters, ml, oz, cups, and 500ml bottles. View the breakdown between pure drinking water, water from food (~20%), and beverages. The hourly drinking schedule shows exactly when to drink throughout the day — especially helpful for the <strong>daily water intake calculator</strong> habit-building mode.</span></div></div>
+  </div>
+
+  <h2>Water Intake Calculator by Weight — The Formula Explained</h2>
+  <p>The most accurate <strong>water intake calculator by weight</strong> formula: <span class="fi">Water (ml) = Weight (kg) × 35</span>. For the <strong>water intake calculator kg litre</strong> version: divide by 1000. A 70kg person = 70 × 35 = 2,450ml = 2.45 liters/day baseline. The <strong>water intake calculator kg</strong> range is 30–40ml/kg: 30ml for sedentary adults in cool climates, 40ml for active people in warm weather. The <strong>water intake calculator height weight</strong> version adds a height adjustment for very tall or short individuals. Our <strong>daily water intake calculator height weight</strong> uses weight as the primary factor since height has a secondary effect through BMI-adjusted metabolic rate.</p>
+
+  <div class="exb">
+    <h4>Daily Water Intake Calculator — Worked Example</h4>
+    <p>Person: 75kg, Adult, Moderately Active (3–5 days/week), Warm Climate<br>
+    Taking Creatine: YES · Keto Diet: NO<br>
+    Base: 75 × 35 = 2,625 ml<br>
+    + Activity (moderate): +500 ml<br>
+    + Warm climate (+25°C): +300 ml<br>
+    + Creatine: +500 ml<br>
+    <strong>Total = 3,925 ml (3.9 liters / day)</strong><br>
+    = ~7.8 × 500ml bottles = ~13.3 × 8oz cups = 133 fl oz</p>
+  </div>
+
+  <h2>Creatine Water Intake Calculator — Why You Need More Water</h2>
+  <p>The <strong>creatine water intake calculator</strong> and <strong>water intake calculator with creatine</strong> add extra hydration because creatine has a unique osmotic effect — it draws water from your bloodstream into your muscle cells (intramyocellular water). This reduces available circulatory water, making increased intake essential. Standard recommendation: add 500ml for maintenance doses (3–5g/day). During the loading phase (20g/day for 5–7 days), many sports dietitians recommend adding 1,000–1,500ml extra daily. Signs of creatine-related dehydration include muscle cramps, headaches, and reduced exercise performance.</p>
+
+  <h2>NHS Water Intake Calculator — UK Recommendations</h2>
+  <p>The <strong>NHS water intake calculator</strong> approach recommends 6–8 glasses of fluid per day (1.5–2 liters) as a baseline for adults in the UK's temperate climate. This is a minimum, not an optimal target. The NHS recommendation is lower than the US (3.7L men, 2.7L women) because the UK climate is cooler and less sweat-inducing. Our <strong>ideal water intake calculator</strong> aligns with NHS guidance for sedentary adults in the UK (temperate climate setting) while providing more nuanced recommendations for active individuals, hot climates, and special conditions.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/><rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DOG &amp; CAT WATER INTAKE CALCULATOR — DAILY NEEDS BY WEIGHT</text>
+      <rect x="35" y="34" width="828" height="136" rx="8" fill="rgba(11,18,32,.85)" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <text x="110" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#60a5fa" text-anchor="middle">WEIGHT</text>
+      <text x="270" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#06b6d4" text-anchor="middle">DOG (55ml/kg)</text>
+      <text x="440" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#10b981" text-anchor="middle">DOG + DRY FOOD</text>
+      <text x="620" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#f472b6" text-anchor="middle">CAT (60ml/kg)</text>
+      <text x="800" y="57" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#f59e0b" text-anchor="middle">CAT + DRY FOOD</text>
+      <line x1="50" y1="64" x2="850" y2="64" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="110" y="84" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">5 kg</text>
+      <text x="270" y="84" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#06b6d4" text-anchor="middle">275 ml/day</text>
+      <text x="440" y="84" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">330 ml/day</text>
+      <text x="620" y="84" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f472b6" text-anchor="middle">300 ml/day</text>
+      <text x="800" y="84" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">390 ml/day</text>
+      <text x="110" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">10 kg</text>
+      <text x="270" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#06b6d4" text-anchor="middle">550 ml/day</text>
+      <text x="440" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">660 ml/day</text>
+      <text x="620" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f472b6" text-anchor="middle">600 ml/day</text>
+      <text x="800" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">780 ml/day</text>
+      <text x="110" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">20 kg</text>
+      <text x="270" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#06b6d4" text-anchor="middle">1,100 ml/day</text>
+      <text x="440" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">1,320 ml/day</text>
+      <text x="620" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f472b6" text-anchor="middle">N/A</text>
+      <text x="800" y="124" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">N/A</text>
+      <text x="110" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">30 kg</text>
+      <text x="270" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#06b6d4" text-anchor="middle">1,650 ml/day</text>
+      <text x="440" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#10b981" text-anchor="middle">1,980 ml/day</text>
+      <text x="620" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f472b6" text-anchor="middle">N/A</text>
+      <text x="800" y="144" font-family="Barlow Condensed,sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">N/A</text>
+      <text x="450" y="167" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#4a6080" text-anchor="middle">Dog water intake = 55ml/kg · Cat water intake = 60ml/kg · Dry food adds ~20% more water need · Always provide fresh water ad lib</text>
+    </svg>
+    <div class="img-overlay"><span>Dog water intake calculator (55ml/kg) and cat water intake calculator (60ml/kg). Dogs on dry kibble need ~20% more. Switch to Dog or Cat tab in the calculator above for your pet's personalized water intake.</span></div>
+  </div>
+
+  <h2>Water Intake Calculator for Weight Loss</h2>
+  <p>Our <strong>water intake calculator for weight loss</strong> and <strong>water intake calculator to lose weight</strong> adds 300ml above the standard baseline for weight loss goals. Research shows drinking 500ml of water before meals can reduce calorie intake by ~13%. Cold water slightly boosts metabolism (the body burns ~8 calories warming 1 glass of cold water). A 2016 study showed 1.5 liters of extra water per day led to additional weight loss in overweight adults. Our <strong>daily water intake calculator</strong> weight loss mode targets 2.5–4 liters/day depending on weight and activity level.</p>
+
+  <table class="data-table">
+    <tr><th>Condition</th><th>Extra Water</th><th>Why</th></tr>
+    <tr><td><strong>Creatine supplement</strong></td><td class="good">+500–1,000 ml</td><td>Creatine draws water into muscle cells</td></tr>
+    <tr><td><strong>Keto / low-carb diet</strong></td><td class="good">+500–1,000 ml</td><td>Glycogen depletion releases water, diuretic effect</td></tr>
+    <tr><td><strong>Pregnancy</strong></td><td class="good">+300 ml</td><td>Increased blood volume, amniotic fluid</td></tr>
+    <tr><td><strong>Breastfeeding</strong></td><td class="good">+900 ml</td><td>Milk production requires significant extra water</td></tr>
+    <tr><td><strong>Alcohol</strong></td><td class="warn">+500 ml</td><td>Alcohol is a diuretic, increases urine output</td></tr>
+    <tr><td><strong>High caffeine (5+ cups)</strong></td><td class="warn">+200 ml</td><td>Mild diuretic effect at high intake</td></tr>
+    <tr><td><strong>Hot climate (30°C+)</strong></td><td class="warn">+500–700 ml</td><td>Sweating significantly increases fluid loss</td></tr>
+  </table>
+
+  <div class="tip">
+    <p><strong>Hydration tip:</strong> Check urine color — the easiest hydration test available. Pale yellow (like lemonade) = well hydrated. Dark yellow = drink more water. Clear = possibly over-hydrated. Urine color is the practical alternative to using a <strong>water intake calculator app</strong> for daily monitoring. If your urine is consistently dark yellow, increase your intake by 500ml/day and reassess.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Water Intake Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Answers for daily water needs, creatine hydration, keto water intake, dog and cat water needs, weight loss hydration, and the NHS water recommendation.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How much water should I drink per day?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Daily water needs depend on weight, age, activity, and climate. The most practical formula for the <strong>recommended water intake calculator</strong>: Weight (kg) × 35ml = daily baseline. A 70kg moderately active adult in a temperate climate: 70 × 35 = 2,450ml base + 500ml activity = <strong>2,950ml (2.95 liters/day)</strong>. The NHS recommends a minimum of 6–8 glasses (1.5–2L) for UK adults, while the US recommends 3.7L for men and 2.7L for women (including water from food). Use our <strong>daily water intake calculator</strong> for your exact personalized amount.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How much extra water do I need with creatine?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>creatine water intake calculator</strong> adds 500ml above baseline for standard creatine use (3–5g/day maintenance). During the loading phase (20g/day for 5–7 days), some experts recommend 1,000–1,500ml extra. The reason: creatine is stored in muscles with water (1g creatine binds ~3–4g water). This pulls water from blood into muscles, reducing circulatory hydration. Signs you're not drinking enough with creatine: muscle cramps, headaches, bloating, darker urine. Enable "Creatine" in our <strong>water intake calculator with creatine</strong> toggle for your adjusted daily target.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How much water should I drink on a keto diet?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>keto water intake calculator</strong> adds 500ml above your baseline. Keto dehydration happens for two reasons: 1) Glycogen depletion (reducing carbs from 300g to near-zero) releases ~600–800ml of water from muscle glycogen stores. 2) Low insulin levels cause kidneys to excrete more sodium and water. Electrolytes are also lost — sodium, potassium, and magnesium. On keto, drink an extra 500ml–1L of water daily and add electrolytes. Enable "Keto Diet" in our calculator for your keto-adjusted water intake target.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How much water does my dog or cat need per day?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>dog water intake calculator</strong>: Dogs need approximately 55ml of water per kg of body weight per day. A 15kg Labrador needs ~825ml (0.8L) daily. Dogs on dry kibble need 20–30% more. Puppies and nursing dogs need 1.5× more. Our <strong>cat water intake calculator</strong>: Cats need approximately 60ml per kg per day. A 4.5kg cat needs ~270ml daily. Cats are notoriously poor drinkers — they evolved as desert animals. Cats on dry food are at high risk of UTIs and kidney disease from chronic mild dehydration. Switch to wet food or use a cat water fountain. Select "Dog" or "Cat" mode in our calculator above for exact amounts.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">Does drinking more water help with weight loss?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — research supports water for weight loss in multiple ways: 1) Drinking 500ml before meals reduces calorie intake by ~13% (2015 RCT, University of Birmingham). 2) Cold water boosts metabolic rate by 24–30% for 30–40 minutes post-drink. 3) Water replaces calorie-containing drinks (reducing 1 soda/day = ~150 cal less). 4) Adequate hydration improves fat oxidation (lipolysis). Our <strong>water intake calculator for weight loss</strong> / <strong>water intake calculator to lose weight</strong> adds 300ml to baseline — targeting 2.5–3.5+ liters daily depending on weight. Enable the "Weight Loss" goal in the calculator.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What does the NHS recommend for daily water intake?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>NHS water intake calculator</strong> recommendation: 6–8 glasses of fluid per day (approximately 1.5–2 liters) for adults in the UK. This includes water, lower-fat milk, and sugar-free drinks — but not alcohol. The NHS notes that tea and coffee count but caffeinated drinks have a mild diuretic effect. The NHS recommendation is a minimum baseline for temperate climates and sedentary lifestyles. Our <strong>ideal water intake calculator</strong> aligns with NHS guidance at the "Sedentary, Temperate" setting and scales up for activity, climate, and special conditions. For most active adults in warmer climates, 2.5–3L is a more appropriate target.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Health Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/bmi-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);">&#9878;</div>
+        <div class="oc-name">BMI Calculator</div>
+        <div class="oc-desc">Body mass index for men &amp; women</div>
+      </a>
+      <a href="/calorie-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);">&#127829;</div>
+        <div class="oc-name">Calorie Calculator</div>
+        <div class="oc-desc">Daily calories for weight loss or gain</div>
+      </a>
+      <a href="/age-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);">&#127881;</div>
+        <div class="oc-name">Age Calculator</div>
+        <div class="oc-desc">Exact age from date of birth</div>
+      </a>
+      <a href="/investment-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(6,182,212,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#06b6d4" stroke-width="1.4"><path d="M2 11l3-5 3 3.5 2-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Investment Calculator</div>
+        <div class="oc-desc">Compound growth &amp; retirement savings</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var mode = 'human';
+var unit = 'kg';
+var conditions = {creatine:false,keto:false,pregnant:false,nursing:false,alcohol:false,caffeine:false};
+var COND_ML = {creatine:500,keto:500,pregnant:300,nursing:900,alcohol:500,caffeine:200};
+
+function setMode(m, el) {
+  mode = m;
+  document.querySelectorAll('.m-pill').forEach(function(p){p.classList.remove('on');});
+  if(el) el.classList.add('on');
+  document.getElementById('panel-human').style.display = m==='human'?'block':'none';
+  document.getElementById('panel-dog').style.display   = m==='dog'  ?'block':'none';
+  document.getElementById('panel-cat').style.display   = m==='cat'  ?'block':'none';
+  var labels={human:'Your Hydration Details',dog:'Dog\'s Details',cat:'Cat\'s Details'};
+  document.getElementById('inp-lbl').lastChild.textContent=' '+labels[m];
+  resetResult();
+}
+
+function setModeScroll(m) {
+  var pill=document.querySelector('.m-pill[data-mode="'+m+'"]');
+  if(pill) setMode(m,pill);
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function scrollToCalc(){document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'});}
+
+function setUnit(u) {
+  unit = u;
+  document.getElementById('u-kg').classList.toggle('on', u==='kg');
+  document.getElementById('u-lbs').classList.toggle('on', u==='lbs');
+  var sfx = u==='kg'?'kg':'lbs';
+  document.getElementById('sl-min-wt').textContent = u==='kg'?'20 kg':'44 lbs';
+  document.getElementById('sl-max-wt').textContent = u==='kg'?'150 kg':'330 lbs';
+  document.querySelector('#f-wt').placeholder = u==='kg'?'70':'154';
+  if(u==='lbs' && parseFloat(document.getElementById('f-wt').value)<50){
+    document.getElementById('f-wt').value=154;
+    document.getElementById('sl-wt').value=154;
+    document.getElementById('bdg-wt').textContent='154 lbs';
+  }
+}
+
+function toggleCond(c) {
+  conditions[c] = !conditions[c];
+  var row=document.getElementById('tog-'+c), sw=document.getElementById('sw-'+c);
+  if(conditions[c]){row.classList.add('on');sw.classList.add('on');}
+  else{row.classList.remove('on');sw.classList.remove('on');}
+}
+
+function enableCond(c){
+  if(!conditions[c]) toggleCond(c);
+  scrollToCalc();
+}
+
+/* SLIDER BINDINGS */
+function bindSl(inpId,slId,bdgId,sfx){
+  var inp=document.getElementById(inpId),sl=document.getElementById(slId),bdg=document.getElementById(bdgId);
+  if(!inp||!sl)return;
+  inp.addEventListener('input',function(){sl.value=Math.min(parseFloat(this.value)||0,parseFloat(sl.max));if(bdg)bdg.textContent=this.value+' '+sfx;});
+  sl.addEventListener('input',function(){inp.value=this.value;if(bdg)bdg.textContent=this.value+' '+sfx;});
+}
+bindSl('f-wt','sl-wt','bdg-wt','');
+bindSl('f-dog-wt','sl-dog-wt','bdg-dog-wt','kg');
+bindSl('f-cat-wt','sl-cat-wt','bdg-cat-wt','kg');
+document.getElementById('f-wt').addEventListener('input',function(){
+  document.getElementById('bdg-wt').textContent=this.value+' '+(unit==='kg'?'kg':'lbs');
+});
+document.getElementById('sl-wt').addEventListener('input',function(){
+  document.getElementById('bdg-wt').textContent=this.value+' '+(unit==='kg'?'kg':'lbs');
+});
+
+function resetResult(){
+  document.getElementById('results-block').style.display='none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display='flex';
+  document.getElementById('err-msg').style.display='none';
+}
+
+function gv(id){var el=document.getElementById(id);return el?parseFloat(el.value)||0:0;}
+function gs(id){var el=document.getElementById(id);return el?el.value:'';}
+function fmt(ml){return (ml/1000).toFixed(2)+'L';}
+function fmtR(ml){return Math.round(ml)+'ml';}
+
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+
+  if(mode==='dog'){
+    var dogWt=gv('f-dog-wt');
+    if(!dogWt||dogWt<=0){document.getElementById('err-msg').style.display='block';return;}
+    var stage=parseFloat(gs('f-dog-stage'))||1;
+    var food=parseFloat(gs('f-dog-food'))||1;
+    var base=dogWt*55*stage*food;
+    var min=dogWt*40, opt=base;
+    showWaterResults('Daily Water for Your Dog', base, min, opt, 'Dog');
+    return;
+  }
+
+  if(mode==='cat'){
+    var catWt=gv('f-cat-wt');
+    if(!catWt||catWt<=0){document.getElementById('err-msg').style.display='block';return;}
+    var cstage=parseFloat(gs('f-cat-stage'))||1;
+    var cfood=parseFloat(gs('f-cat-food'))||1;
+    var cbase=catWt*60*cstage*cfood;
+    var cmin=catWt*40, copt=cbase;
+    showWaterResults('Daily Water for Your Cat', cbase, cmin, copt, 'Cat');
+    return;
+  }
+
+  /* HUMAN */
+  var rawWt = gv('f-wt');
+  if(!rawWt||rawWt<=0){document.getElementById('err-msg').style.display='block';return;}
+  var wtKg = unit==='lbs' ? rawWt*0.453592 : rawWt;
+  var age = gs('f-age');
+  var activity = parseInt(gs('f-activity'))||0;
+  var climate  = parseInt(gs('f-climate'))||0;
+  var goal = gs('f-goal');
+
+  /* Age multiplier */
+  var ageMult = age==='child'?1.3:age==='teen'?1.1:age==='adult'?1.0:0.9;
+  /* Goal extra */
+  var goalExtra = goal==='weightloss'?300:goal==='muscle'?400:goal==='endurance'?600:0;
+
+  /* Base */
+  var base = wtKg * 35 * ageMult;
+  /* Add-ons */
+  var condTotal = 0;
+  Object.keys(conditions).forEach(function(c){if(conditions[c])condTotal+=COND_ML[c];});
+  var total = base + activity + climate + goalExtra + condTotal;
+  var minW  = wtKg * 30;
+  var optW  = total;
+
+  var goalLabel = goal==='weightloss'?'Weight Loss':goal==='muscle'?'Muscle Building':goal==='endurance'?'Endurance':' General Health';
+  showWaterResults('Daily Water Intake — '+goalLabel, total, minW, optW, 'Human');
+}
+
+function showWaterResults(badge, totalMl, minMl, optMl, type){
+  var liters = totalMl/1000;
+  var oz     = (totalMl/29.5735).toFixed(0);
+  var cups   = (totalMl/237).toFixed(1);
+  var bottles= (totalMl/500).toFixed(1);
+  var hourly = (totalMl/16).toFixed(0); /* 16 waking hours */
+  var per2hr = (totalMl/8).toFixed(0);  /* every 2 hours */
+
+  document.getElementById('wh-badge').textContent = badge;
+  document.getElementById('wh-amount').textContent = liters.toFixed(2);
+  document.getElementById('chip-ml').textContent   = Math.round(totalMl)+' ml';
+  document.getElementById('chip-oz').textContent   = oz+' fl oz';
+  document.getElementById('chip-cups').textContent = cups+' cups';
+  document.getElementById('chip-bottles').textContent = bottles+' bottles';
+
+  /* Bottle visual */
+  var fillPct = Math.min(100, Math.max(5,(totalMl/4000)*100));
+  var fillEl = document.getElementById('water-fill');
+  if(fillEl){
+    var fillH = (60*fillPct/100);
+    fillEl.setAttribute('y', 9+60-fillH); fillEl.setAttribute('height', fillH);
+  }
+  document.getElementById('bottle-pct').textContent = Math.round(fillPct)+'%';
+  document.getElementById('bottle-count').textContent = '×'+Math.ceil(totalMl/500)+' × 500ml';
+
+  /* Breakdown */
+  var drinkOnly = totalMl*0.8;
+  var fromFood  = totalMl*0.15;
+  var fromBev   = totalMl*0.05;
+  document.getElementById('bi-drink').textContent = Math.round(drinkOnly)+' ml';
+  document.getElementById('bi-food').textContent  = Math.round(fromFood)+' ml';
+  document.getElementById('bi-bev').textContent   = Math.round(fromBev)+' ml';
+  document.getElementById('bi-total').textContent = Math.round(totalMl)+' ml';
+
+  /* Metrics */
+  document.getElementById('r-min').textContent  = fmt(minMl);
+  document.getElementById('r-opt').textContent  = fmt(optMl);
+  document.getElementById('r-hour').textContent = hourly+' ml';
+  document.getElementById('r-sip').textContent  = per2hr+' ml';
+
+  /* Schedule */
+  var schedule = [
+    {t:'07:00',ico:'🌅',d:'Wake up & first glass',ml:Math.round(per2hr)},
+    {t:'09:00',ico:'☕',d:'After breakfast',ml:Math.round(hourly*0.9)},
+    {t:'11:00',ico:'💧',d:'Mid-morning',ml:Math.round(per2hr)},
+    {t:'12:30',ico:'🥗',d:'Before lunch (weight loss tip)',ml:300},
+    {t:'13:00',ico:'💧',d:'After lunch',ml:Math.round(hourly*0.9)},
+    {t:'15:00',ico:'💧',d:'Afternoon',ml:Math.round(per2hr)},
+    {t:'17:00',ico:'🏃',d:'Exercise / workout (sip during)',ml:Math.round(per2hr*1.2)},
+    {t:'18:30',ico:'💧',d:'Post-workout recovery',ml:Math.round(per2hr)},
+    {t:'19:30',ico:'🥦',d:'Before dinner',ml:250},
+    {t:'21:00',ico:'💧',d:'Evening (not too close to bed)',ml:Math.round(hourly*0.7)},
+    {t:'22:00',ico:'🌙',d:'Small glass before bed',ml:150}
+  ];
+  document.getElementById('sch-total').textContent='~'+Math.round(totalMl)+'ml total';
+  var schContainer=document.getElementById('sch-rows'); schContainer.innerHTML='';
+  schedule.forEach(function(s){
+    var div=document.createElement('div');div.className='sch-row';
+    div.innerHTML='<span class="sch-time">'+s.t+'</span><span class="sch-ico">'+s.ico+'</span><span class="sch-desc">'+s.d+'</span><span class="sch-ml">'+s.ml+'ml</span>';
+    schContainer.appendChild(div);
+  });
+
+  /* SHOW */
+  document.getElementById('r-placeholder').style.display='none';
+  var rb=document.getElementById('results-block');
+  rb.style.display='block'; rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+function faqT(el){
+  var item=el.parentElement,was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was)item.classList.add('open');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  setMode('human',document.querySelector('.m-pill[data-mode="human"]'));
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')calculate();});
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

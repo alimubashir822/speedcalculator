@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Discount Calculator — Percent Off, Double, Triple & Tax | SpeedCalculator.net</title>
+<meta name="description" content="Free discount calculator online. Calculate percent off, final price, amount saved, and price with tax. Supports single, double, and triple discounts, bulk pricing, and sales tax. Instant results — no signup needed.">
+<meta name="keywords" content="discount calculator, percent discount calculator, percentage discount calculator, discount calculator online, discount calculator with tax, double discount calculator, omni discount calculator, price discount calculator, triple discount calculator, sales discount calculator, retail discount calculator, gm employee discount calculator, sales tax and discount calculator, 10 discount calculator, progressive snapshot discount calculator, % discount calculator, best buy employee discount calculator, tax and discount calculator, discount calculator omni, bulk discount calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/discount-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Discount Calculator",
+  "alternateName":["Percent Discount Calculator","Percentage Discount Calculator","Discount Calculator Online","Discount Calculator with Tax","Double Discount Calculator","Price Discount Calculator","Triple Discount Calculator","Sales Discount Calculator","Retail Discount Calculator","Bulk Discount Calculator","Sales Tax and Discount Calculator","Tax and Discount Calculator"],
+  "url":"https://www.speedcalculator.net/discount-calculator/",
+  "description":"Free discount calculator online — calculate percent off, final price, amount saved, double and triple discounts, and price with sales tax instantly.",
+  "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Percent off calculator","Double discount calculator","Triple discount calculator","Discount calculator with tax","Sales tax and discount calculator","Bulk discount calculator","Find discount percentage from two prices","Find original price from discounted price","Retail discount calculator","Multiple discount stacking"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Discount Calculator",
+  "description":"Calculate percent off, final price, and amount saved using our free discount calculator online",
+  "totalTime":"PT1M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Select Calculator Mode","text":"Choose your mode: Percent Off (enter price and discount %), Find Discount % (enter original and sale price), Find Original Price (enter sale price and discount %), Double/Triple Discount, or Discount with Tax."},
+    {"@type":"HowToStep","position":2,"name":"Enter the Original Price","text":"Type the original price of the item. For a discount calculator with tax, also enter your local sales tax rate."},
+    {"@type":"HowToStep","position":3,"name":"Enter the Discount Percentage","text":"Enter the discount percentage. For double or triple discount calculator, enter each discount separately (e.g., 20% + 15% + 10%)."},
+    {"@type":"HowToStep","position":4,"name":"See Instant Results","text":"Click Calculate to instantly see the final price, amount saved, discount amount, and price with tax. The savings percentage and total value are also shown."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate percent off a price?","acceptedAnswer":{"@type":"Answer","text":"Discount amount = Original Price × (Discount% ÷ 100). Final price = Original Price − Discount Amount. Example: 30% off $80 → Discount = $80 × 0.30 = $24. Final price = $80 − $24 = $56. Our percent discount calculator does this instantly. Enter the original price and discount percentage to get the final price and amount saved."}},
+    {"@type":"Question","name":"How does a double discount calculator work?","acceptedAnswer":{"@type":"Answer","text":"A double discount applies two successive discounts — NOT by adding them together. First discount is applied to the original price, then the second discount is applied to the already-discounted price. Example: 20% off then 15% off a $100 item: Step 1: $100 × 0.80 = $80. Step 2: $80 × 0.85 = $68. Total effective discount = 32%, NOT 35%. Our double discount calculator shows the true compounded discount."}},
+    {"@type":"Question","name":"How do I calculate discount with sales tax?","acceptedAnswer":{"@type":"Answer","text":"Discount with tax formula: Final Price = (Original Price × (1 − Discount%)) × (1 + Tax%). Example: $200 item, 25% off, 8% sales tax: After discount = $200 × 0.75 = $150. With tax = $150 × 1.08 = $162. Tax is always calculated on the post-discount price, not the original price. Use our discount calculator with tax to see the exact final price including sales tax."}},
+    {"@type":"Question","name":"How do I find the original price from a discounted price?","acceptedAnswer":{"@type":"Answer","text":"Original Price = Sale Price ÷ (1 − Discount% ÷ 100). Example: item is $68 after 15% off: Original = $68 ÷ 0.85 = $80. Use 'Find Original Price' mode in our percentage discount calculator by entering the discounted price and the discount percentage."}},
+    {"@type":"Question","name":"How do I calculate what percentage discount was applied?","acceptedAnswer":{"@type":"Answer","text":"Discount % = ((Original Price − Sale Price) ÷ Original Price) × 100. Example: was $120, now $84 → Discount = (($120 − $84) ÷ $120) × 100 = ($36 ÷ $120) × 100 = 30% off. Use 'Find Discount %' mode in our price discount calculator by entering both the original and sale price."}},
+    {"@type":"Question","name":"What is the difference between 20% off and buy 1 get 1 free?","acceptedAnswer":{"@type":"Answer","text":"Buy 1 Get 1 Free (BOGO) is equivalent to 50% off per item when buying 2 — not 100% off one item on its own. 20% off applies to every single item regardless of quantity. BOGO only saves when you actually need 2 items. Our discount calculator helps you compare: for 2 $50 items, BOGO = pay $50 total (saves $50), vs 20% off = pay $80 total (saves $20). BOGO wins here, but only if you need both."}},
+    {"@type":"Question","name":"How does a triple discount calculator work?","acceptedAnswer":{"@type":"Answer","text":"A triple discount applies three successive discounts, each applied to the previous result. For 20% + 10% + 5% off $100: Step 1: $100 × 0.80 = $80. Step 2: $80 × 0.90 = $72. Step 3: $72 × 0.95 = $68.40. Effective total discount = 31.6%, NOT 35%. Always use a triple discount calculator instead of adding percentages together — stacked discounts never equal their sum."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f; --bg2:#0b1220; --bg3:#111b2e;
+  --accent:#3b82f6; --accent2:#60a5fa;
+  --green:#10b981; --orange:#f59e0b; --purple:#8b5cf6;
+  --teal:#06b6d4; --pink:#ec4899; --lime:#34d399; --red:#ef4444;
+  --text:#f0f4ff; --text2:#94a3b8; --text3:#4a6080;
+  --border:rgba(59,130,246,.12); --border2:rgba(59,130,246,.25);
+  --radius:14px; --radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,70px);font-weight:900;line-height:.9;letter-spacing:-2px;text-transform:uppercase;margin-bottom:18px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALC CARD */
+.calc-section{padding:0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--orange),var(--green),var(--purple),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;color:var(--text);}
+.calc-htitle em{color:var(--orange);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* MODE PILLS */
+.mode-row{display:flex;gap:5px;flex-wrap:wrap;padding:14px 28px 0;}
+.mode-pill{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .18s;white-space:nowrap;}
+.mode-pill:hover{border-color:rgba(245,158,11,.4);}
+.mode-pill.on{border-color:var(--orange);background:rgba(245,158,11,.12);color:var(--orange);}
+
+.calc-body{padding:18px 28px 28px;}
+
+/* TWO-COL */
+.calc-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUTS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--orange);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);border-radius:6px;padding:2px 9px;white-space:nowrap;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 11px;font-size:15px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);}
+.inp-suf{padding:0 11px;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:10px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--orange);border:2px solid var(--orange);cursor:pointer;box-shadow:0 0 0 3px rgba(245,158,11,.18);}
+.sl::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:var(--orange);border:2px solid var(--orange);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+
+/* DISCOUNT STACKING - for double/triple mode */
+.discount-stack{display:flex;flex-direction:column;gap:8px;}
+.disc-row{display:flex;align-items:center;gap:8px;}
+.disc-num{width:22px;height:22px;border-radius:50%;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--orange);flex-shrink:0;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--orange),#b45309);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(245,158,11,.28);margin-top:12px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(245,158,11,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:260px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* BIG SAVINGS DISPLAY */
+.savings-hero{background:linear-gradient(135deg,rgba(245,158,11,.13),rgba(16,185,129,.04));border:1px solid rgba(245,158,11,.35);border-radius:var(--radius);padding:20px;margin-bottom:10px;position:relative;overflow:hidden;text-align:center;}
+.savings-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--green),var(--accent));}
+.sh-label{display:inline-block;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;}
+.sh-amount{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,9vw,58px);font-weight:900;color:var(--orange);line-height:1;letter-spacing:-2px;}
+.sh-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-top:4px;}
+
+/* PRICE CHIPS */
+.price-chips{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+.pc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;}
+.pc.final{color:var(--green);border-color:rgba(16,185,129,.3);}
+.pc.orig{color:var(--text3);}
+.pc.tax{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+
+/* METRICS GRID */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,3.5vw,22px);font-weight:900;line-height:1;}
+.m-val.orange{color:var(--orange);}
+.m-val.green{color:var(--green);}
+.m-val.blue{color:var(--accent2);}
+.m-val.purple{color:var(--purple);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+
+/* SAVINGS BAR */
+.savings-bar{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;margin-bottom:10px;}
+.sb-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.bar-track{height:14px;background:rgba(255,255,255,.05);border-radius:7px;overflow:hidden;position:relative;margin-bottom:8px;}
+.bar-you-pay{height:100%;border-radius:7px 0 0 7px;background:var(--accent);transition:width .6s ease;}
+.bar-you-save{height:100%;border-radius:0 7px 7px 0;background:var(--orange);transition:width .6s ease;position:absolute;top:0;}
+.bar-labels{display:flex;justify-content:space-between;font-size:10px;}
+.bar-lbl-pay{color:var(--accent2);}
+.bar-lbl-save{color:var(--orange);}
+
+/* STACKED DISCOUNT BREAKDOWN */
+.stack-breakdown{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.sb-title{padding:9px 13px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);}
+.sb-row{display:flex;justify-content:space-between;align-items:center;padding:7px 13px;border-bottom:1px solid rgba(59,130,246,.05);font-size:12px;}
+.sb-row:last-child{border:none;}
+.sb-row-lbl{color:var(--text2);}
+.sb-row-val{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;}
+.sb-row-val.orange{color:var(--orange);}
+.sb-row-val.green{color:var(--green);}
+.sb-row-val.red{color:var(--red);}
+
+/* QUICK PRESETS */
+.presets{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:13px;}
+.preset-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:4px 12px;font-size:10.5px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .15s;}
+.preset-btn:hover{border-color:rgba(245,158,11,.4);color:var(--orange);}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--orange);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* USE CASE CARDS */
+.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.use-grid{grid-template-columns:repeat(2,1fr);}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;cursor:pointer;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-ico{font-size:24px;margin-bottom:10px;}
+.uc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--orange);background:rgba(245,158,11,.08);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:7px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* SVG IMAGE */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--orange);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+.data-table td.bad{color:var(--red);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--orange);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid rgba(245,158,11,.25);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--orange);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.warnb{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.warnb p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.warnb strong{color:var(--orange);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--orange);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:380px;}
+
+/* RELATED */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.oc-ico svg{width:15px;height:15px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Discount Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> % Off &middot; Double &middot; Triple &middot; With Tax &middot; Bulk &middot; Find Original</div>
+    <h1 class="hero-h1">Discount<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>discount calculator online</strong> — calculate percent off, final price, amount saved, double and triple discounts, and price with sales tax. More complete than the Omni discount calculator. Quick presets for 10%, 15%, 20%, 25%, 30%, 50%, and more.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">% Off Calculator</span>
+      <span class="hbadge p">Double &amp; Triple</span>
+      <span class="hbadge o">With Tax</span>
+      <span class="hbadge t">Bulk Discounts</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12L12 2M5 2.5h-3v3M9 11.5h3v-3"/></svg>
+          </div>
+          Discount <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Instant Results</div>
+      </div>
+
+      <!-- MODE PILLS -->
+      <div class="mode-row">
+        <span class="mode-pill on" data-mode="pct-off"    onclick="setMode('pct-off',this)">&#37; Percent Off</span>
+        <span class="mode-pill"     data-mode="find-pct"   onclick="setMode('find-pct',this)">&#128269; Find Discount %</span>
+        <span class="mode-pill"     data-mode="find-orig"  onclick="setMode('find-orig',this)">&#8617; Find Original Price</span>
+        <span class="mode-pill"     data-mode="double"     onclick="setMode('double',this)">&#10006; Double Discount</span>
+        <span class="mode-pill"     data-mode="triple"     onclick="setMode('triple',this)">&#10006;&#10006; Triple Discount</span>
+        <span class="mode-pill"     data-mode="with-tax"   onclick="setMode('with-tax',this)">&#128196; With Tax</span>
+        <span class="mode-pill"     data-mode="bulk"       onclick="setMode('bulk',this)">&#128722; Bulk</span>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="sec-lbl" id="inp-sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="5.5" r="4.5"/><path d="M3.5 5.5L5 7l2.5-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Discount Details
+            </div>
+
+            <!-- QUICK PRESETS (shown in pct-off mode) -->
+            <div id="preset-row" style="margin-bottom:13px;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;">Quick Presets</div>
+              <div class="presets">
+                <span class="preset-btn" onclick="setPreset(5)">5% Off</span>
+                <span class="preset-btn" onclick="setPreset(10)">10% Off</span>
+                <span class="preset-btn" onclick="setPreset(15)">15% Off</span>
+                <span class="preset-btn" onclick="setPreset(20)">20% Off</span>
+                <span class="preset-btn" onclick="setPreset(25)">25% Off</span>
+                <span class="preset-btn" onclick="setPreset(30)">30% Off</span>
+                <span class="preset-btn" onclick="setPreset(40)">40% Off</span>
+                <span class="preset-btn" onclick="setPreset(50)">50% Off</span>
+                <span class="preset-btn" onclick="setPreset(70)">70% Off</span>
+              </div>
+            </div>
+
+            <!-- DYNAMIC INPUT AREA -->
+            <div id="dynamic-inputs"></div>
+
+            <div class="err-msg" id="err-msg">Please enter valid positive values in all required fields.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><path d="M2 16L16 2M6 2H2v4M12 16h4v-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Discount
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+
+            <div class="r-placeholder" id="r-placeholder">
+              <div style="font-size:44px;">&#127991;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.8;">Enter your price and discount,<br>then click<br><strong style="color:var(--orange);">Calculate Discount</strong><br>to see instant savings.</div>
+            </div>
+
+            <div class="results-block" id="results-block">
+
+              <!-- BIG SAVINGS -->
+              <div class="savings-hero">
+                <div class="sh-label" id="sh-label">You Save</div>
+                <div class="sh-amount" id="sh-amount">$0.00</div>
+                <div class="sh-lbl" id="sh-lbl">Amount Saved</div>
+                <div class="price-chips">
+                  <span class="pc orig" id="chip-orig">Original: —</span>
+                  <span class="pc final" id="chip-final">Final: —</span>
+                  <span class="pc tax" id="chip-tax" style="display:none;">With Tax: —</span>
+                </div>
+              </div>
+
+              <!-- METRICS 2×2 -->
+              <div class="metrics-grid">
+                <div class="metric">
+                  <div class="m-lbl">Final Price</div>
+                  <div class="m-val green" id="r-final">—</div>
+                  <div class="m-sub">after discount</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Amount Saved</div>
+                  <div class="m-val orange" id="r-saved">—</div>
+                  <div class="m-sub">total savings</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Discount %</div>
+                  <div class="m-val purple" id="r-pct">—</div>
+                  <div class="m-sub">effective discount</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl" id="r-extra-lbl">Original Price</div>
+                  <div class="m-val blue" id="r-extra">—</div>
+                  <div class="m-sub" id="r-extra-sub">before discount</div>
+                </div>
+              </div>
+
+              <!-- YOU PAY vs YOU SAVE BAR -->
+              <div class="savings-bar">
+                <div class="sb-head">
+                  <span>You Pay vs You Save</span>
+                  <span id="bar-ratio">—</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-you-pay" id="bar-pay" style="width:60%;"></div>
+                  <div class="bar-you-save" id="bar-save" style="left:60%;width:40%;"></div>
+                </div>
+                <div class="bar-labels">
+                  <span class="bar-lbl-pay" id="bar-lbl-pay">You Pay: —</span>
+                  <span class="bar-lbl-save" id="bar-lbl-save">You Save: —</span>
+                </div>
+              </div>
+
+              <!-- STACKED BREAKDOWN (for double/triple/tax modes) -->
+              <div class="stack-breakdown" id="stack-breakdown">
+                <div class="sb-title" id="stack-title">Step-by-Step Breakdown</div>
+                <div id="stack-rows"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">7</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Tax</div><div class="stat-lbl">Included Option</div></div>
+      <div class="stat-item"><div class="stat-val">3×</div><div class="stat-lbl">Stacked Discounts</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- USE CASES SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Discount Calculator for Every Situation</div>
+    <h2 class="sec-title"><span>Discount Calculator</span> — Every Use Case</h2>
+    <p class="sec-sub">Our free <strong>percentage discount calculator</strong> handles every shopping, retail, and business scenario. Click any card to load that calculator mode.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gP" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".9"/><stop offset="100%" stop-color="#6d28d9" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/>
+        <rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="24" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">PERCENT DISCOUNT CALCULATOR — FINAL PRICE ON $200 ITEM AT COMMON DISCOUNTS</text>
+        <line x1="48" y1="178" x2="872" y2="178" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- 10% off -->
+        <rect x="60" y="108" width="75" height="70" rx="5" fill="url(#gO)" opacity=".6"/>
+        <text x="97" y="102" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f59e0b" text-anchor="middle">$180</text>
+        <text x="97" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">10% off</text>
+        <text x="97" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">Save $20</text>
+        <!-- 20% off -->
+        <rect x="190" y="88" width="75" height="90" rx="5" fill="url(#gO)" opacity=".7"/>
+        <text x="227" y="82" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f59e0b" text-anchor="middle">$160</text>
+        <text x="227" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">20% off</text>
+        <text x="227" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">Save $40</text>
+        <!-- 30% off -->
+        <rect x="320" y="68" width="75" height="110" rx="5" fill="url(#gO)" opacity=".8"/>
+        <text x="357" y="62" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">$140</text>
+        <text x="357" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">30% off</text>
+        <text x="357" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">Save $60</text>
+        <!-- 50% off -->
+        <rect x="450" y="48" width="75" height="130" rx="5" fill="url(#gG)"/>
+        <text x="487" y="42" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">$100</text>
+        <text x="487" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">50% off</text>
+        <text x="487" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">Save $100 ✓</text>
+        <!-- 20%+10% double -->
+        <rect x="580" y="75" width="80" height="103" rx="5" fill="url(#gB)"/>
+        <text x="620" y="69" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">$144</text>
+        <text x="620" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">20%+10%</text>
+        <text x="620" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#60a5fa" text-anchor="middle">Double: 28% eff.</text>
+        <!-- 20%+10%+5% triple -->
+        <rect x="716" y="84" width="80" height="94" rx="5" fill="url(#gP)"/>
+        <text x="756" y="78" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#a78bfa" text-anchor="middle">$136.80</text>
+        <text x="756" y="193" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">20%+10%+5%</text>
+        <text x="756" y="206" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">Triple: 31.6% eff.</text>
+      </svg>
+      <div class="img-overlay"><span>Percent discount calculator — final price on a $200 item at 10%, 20%, 30%, 50% off, plus double discount (20%+10%=28% effective) and triple discount (20%+10%+5%=31.6% effective)</span></div>
+    </div>
+
+    <div class="use-grid">
+      <div class="uc" onclick="setModeAndScroll('pct-off')">
+        <div class="uc-ico">&#37;</div>
+        <div class="uc-h">Percent Off Calculator</div>
+        <div class="uc-tag">Most Popular</div>
+        <p class="uc-p">Enter any price and discount % to instantly see final price and amount saved. Works for 10%, 15%, 20%, 25%, 30%, 50%, 70% and any custom discount.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('double')">
+        <div class="uc-ico">&#10006;</div>
+        <div class="uc-h">Double Discount Calculator</div>
+        <div class="uc-tag">Stacked Discounts</div>
+        <p class="uc-p">Apply two successive discounts correctly. A 20% + 15% double discount ≠ 35% off. The real effective discount is only 32%. See the difference instantly.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('triple')">
+        <div class="uc-ico">&#10006;&#10006;</div>
+        <div class="uc-h">Triple Discount Calculator</div>
+        <div class="uc-tag">3 Stacked Discounts</div>
+        <p class="uc-p">Stack three discounts correctly. Retail clearance + coupon + loyalty rewards? Each applies to the already-reduced price. Get the accurate final total.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('with-tax')">
+        <div class="uc-ico">&#128196;</div>
+        <div class="uc-h">Discount Calculator with Tax</div>
+        <div class="uc-tag">Sales Tax Included</div>
+        <p class="uc-p">See the complete price: original → after discount → after tax. Tax is applied to the discounted price, not the original. Perfect for retail and online shopping.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('find-pct')">
+        <div class="uc-ico">&#128269;</div>
+        <div class="uc-h">Find Discount Percentage</div>
+        <div class="uc-tag">Reverse Calculator</div>
+        <p class="uc-p">Know the original price and sale price but not the discount %? Enter both prices and instantly see what percentage off was applied.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('find-orig')">
+        <div class="uc-ico">&#8617;</div>
+        <div class="uc-h">Find Original Price</div>
+        <div class="uc-tag">Work Backwards</div>
+        <p class="uc-p">Know the sale price and discount % but not the original price? This reverse discount calculator finds what the item was before the markdown.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('bulk')">
+        <div class="uc-ico">&#128722;</div>
+        <div class="uc-h">Bulk Discount Calculator</div>
+        <div class="uc-tag">Wholesale & Retail</div>
+        <p class="uc-p">Calculate discount savings across multiple quantities. See how much you save buying 10, 50, or 100 units at a discount compared to full price.</p>
+      </div>
+      <div class="uc" onclick="setModeAndScroll('pct-off')">
+        <div class="uc-ico">&#128283;</div>
+        <div class="uc-h">Sales Discount Calculator</div>
+        <div class="uc-tag">Retail & Online</div>
+        <p class="uc-p">Our retail discount calculator and sales discount calculator work for any store sale — Black Friday, clearance, coupons, or member pricing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Discount Calculator — Complete Guide</h2>
+  <p>Our free <strong>discount calculator online</strong> is the most complete <strong>% discount calculator</strong> available — better than the <strong>omni discount calculator</strong> and basic tools on calculator.net because it offers 7 different modes in one place: percent off, find discount %, find original price, <strong>double discount calculator</strong>, <strong>triple discount calculator</strong>, <strong>discount calculator with tax</strong>, and <strong>bulk discount calculator</strong>. Whether you are shopping a Black Friday sale, negotiating wholesale pricing, comparing coupon stacks, or running a retail markdown, this is the only <strong>percentage discount calculator</strong> you need.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/>
+      <rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DISCOUNT CALCULATOR FORMULAS — ALL 7 MODES EXPLAINED</text>
+      <!-- Left panel -->
+      <rect x="30" y="34" width="400" height="155" rx="8" fill="rgba(11,18,32,.8)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+      <text x="230" y="54" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#f59e0b" text-anchor="middle" letter-spacing="1">KEY FORMULAS</text>
+      <text x="50" y="76" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">% Off  =</text><text x="210" y="76" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Price × (1 − Discount%/100)</text>
+      <text x="50" y="96" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Amount Saved  =</text><text x="210" y="96" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Price × Discount% / 100</text>
+      <text x="50" y="116" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Find %  =</text><text x="210" y="116" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">(Orig − Sale) ÷ Orig × 100</text>
+      <text x="50" y="136" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Find Orig  =</text><text x="210" y="136" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Sale Price ÷ (1 − Disc%/100)</text>
+      <text x="50" y="156" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Double Disc  =</text><text x="210" y="156" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Price × (1−D1) × (1−D2)</text>
+      <text x="50" y="176" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">With Tax  =</text><text x="210" y="176" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f0f4ff">Discounted × (1 + Tax%/100)</text>
+      <!-- Right panel -->
+      <line x1="452" y1="30" x2="452" y2="192" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+      <text x="672" y="48" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle" letter-spacing="1">EXAMPLE: $150 · 30% OFF · 8% TAX</text>
+      <rect x="462" y="56" width="420" height="24" rx="5" fill="rgba(245,158,11,.08)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+      <text x="672" y="72" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Amount Saved: $150 × 0.30 = $45.00</text>
+      <rect x="462" y="88" width="420" height="24" rx="5" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.2)" stroke-width="1"/>
+      <text x="672" y="104" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#10b981" text-anchor="middle">Final Price: $150 × 0.70 = $105.00</text>
+      <rect x="462" y="120" width="420" height="24" rx="5" fill="rgba(59,130,246,.08)" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="672" y="136" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">With 8% Tax: $105 × 1.08 = $113.40</text>
+      <rect x="462" y="152" width="420" height="24" rx="5" fill="rgba(139,92,246,.08)" stroke="rgba(139,92,246,.2)" stroke-width="1"/>
+      <text x="672" y="168" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#a78bfa" text-anchor="middle">Total Savings vs. $150+tax: $50.40</text>
+    </svg>
+    <div class="img-overlay"><span>Discount calculator formulas for all 7 modes — with a worked example: $150 item at 30% off with 8% sales tax = $113.40 final price, saving $50.40 total</span></div>
+  </div>
+
+  <h2>How to Use the Discount Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Select your mode</strong><span>Click the appropriate mode pill at the top: "% Percent Off" for standard discount calculation, "Find Discount %" to calculate what % off was applied, "Find Original Price" to reverse-engineer from sale price, "Double Discount" for stacked % discounts, "Triple Discount" for three stacked discounts, "With Tax" to include sales tax, or "Bulk" for quantity-based calculations.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Use Quick Presets or enter custom values</strong><span>In Percent Off mode, click a preset button (5%, 10%, 15%, 20%, 25%, 30%, 40%, 50%, 70%) to automatically fill the discount field. Or type any custom percentage. Drag the slider for quick visual adjustment.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter the price and discount details</strong><span>Type the original price. For double/triple discount calculator, enter each discount percentage separately — the calculator applies them sequentially (each to the previously discounted price), not by adding them together.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Review instant results</strong><span>See the amount saved, final price, effective discount %, and the visual "You Pay vs You Save" bar. For double/triple discounts, the step-by-step breakdown shows exactly how each discount was applied. For tax mode, see the complete price chain: original → discounted → taxed.</span></div></div>
+  </div>
+
+  <h2>Discount Calculator Formula — How Percent Off Is Calculated</h2>
+  <p>The <strong>percent discount calculator</strong> formula: <span class="fi">Final Price = Original Price × (1 − Discount% ÷ 100)</span>. Amount saved: <span class="fi">Savings = Original Price × (Discount% ÷ 100)</span>.</p>
+  <table class="data-table">
+    <tr><th>Original Price</th><th>Discount</th><th>You Save</th><th>Final Price</th><th>% of Original</th></tr>
+    <tr><td><strong>$100</strong></td><td>10% off</td><td class="good">$10</td><td>$90</td><td>90%</td></tr>
+    <tr><td><strong>$100</strong></td><td>20% off</td><td class="good">$20</td><td>$80</td><td>80%</td></tr>
+    <tr><td><strong>$100</strong></td><td>30% off</td><td class="good">$30</td><td>$70</td><td>70%</td></tr>
+    <tr><td><strong>$100</strong></td><td>50% off</td><td class="good">$50</td><td>$50</td><td>50%</td></tr>
+    <tr><td><strong>$250</strong></td><td>25% off</td><td class="good">$62.50</td><td>$187.50</td><td>75%</td></tr>
+    <tr><td><strong>$1,200</strong></td><td>15% off</td><td class="good">$180</td><td>$1,020</td><td>85%</td></tr>
+  </table>
+
+  <h2>Double Discount Calculator — Why Stacked Discounts Are Less Than You Think</h2>
+  <p>The most important insight from a <strong>double discount calculator</strong>: two discounts applied sequentially are <em>never</em> equal to their sum. A 20% discount followed by a 15% discount is NOT 35% off — it is only 32% effective. This is because the second discount applies to the already-reduced price, not the original. Retailers use this to make deals sound better than they are.</p>
+  <div class="exb">
+    <h4>Double Discount Calculator Example</h4>
+    <p>$100 item · First discount: 20% · Second discount: 15%<br>
+    Step 1: $100 × (1 − 0.20) = $100 × 0.80 = <strong>$80</strong><br>
+    Step 2: $80 × (1 − 0.15) = $80 × 0.85 = <strong>$68</strong><br>
+    Total saved: $32 · Effective discount: 32% (NOT 35%)<br>
+    The difference: if it were 35% off, final price = $65 (you'd save $3 more)</p>
+  </div>
+
+  <h2>Triple Discount Calculator — Stacking Three Discounts</h2>
+  <p>The <strong>triple discount calculator</strong> extends the same sequential logic to three discounts. Effective Triple Discount = <span class="fi">1 − (1−D1) × (1−D2) × (1−D3)</span>. A 20% + 10% + 5% triple discount has an effective rate of only 31.6%, not 35%.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/>
+      <rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DOUBLE vs TRIPLE DISCOUNT CALCULATOR — $200 ITEM, STACKED DISCOUNTS</text>
+      <!-- Double discount flow -->
+      <rect x="35" y="40" width="120" height="50" rx="6" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.25)" stroke-width="1"/>
+      <text x="95" y="62" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#f0f4ff" text-anchor="middle">$200.00</text>
+      <text x="95" y="78" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Original Price</text>
+      <text x="175" y="68" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#f59e0b" text-anchor="middle">→</text>
+      <rect x="190" y="40" width="130" height="50" rx="6" fill="rgba(245,158,11,.1)" stroke="rgba(245,158,11,.25)" stroke-width="1"/>
+      <text x="255" y="59" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">− 20%</text>
+      <text x="255" y="75" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle">$160.00</text>
+      <text x="340" y="68" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#f59e0b" text-anchor="middle">→</text>
+      <rect x="355" y="40" width="130" height="50" rx="6" fill="rgba(245,158,11,.1)" stroke="rgba(245,158,11,.25)" stroke-width="1"/>
+      <text x="420" y="59" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">− 15% (on $160)</text>
+      <text x="420" y="75" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">$136.00</text>
+      <rect x="504" y="40" width="160" height="50" rx="6" fill="rgba(16,185,129,.1)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+      <text x="584" y="59" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981" text-anchor="middle">EFFECTIVE: 32%</text>
+      <text x="584" y="75" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">NOT 35% !</text>
+      <!-- Triple discount flow -->
+      <rect x="35" y="115" width="120" height="50" rx="6" fill="rgba(59,130,246,.1)" stroke="rgba(59,130,246,.25)" stroke-width="1"/>
+      <text x="95" y="137" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#f0f4ff" text-anchor="middle">$200.00</text>
+      <text x="95" y="153" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Original Price</text>
+      <text x="175" y="143" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#8b5cf6" text-anchor="middle">→</text>
+      <rect x="190" y="115" width="100" height="50" rx="6" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.25)" stroke-width="1"/>
+      <text x="240" y="137" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">−20% → $160</text>
+      <text x="305" y="143" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#8b5cf6" text-anchor="middle">→</text>
+      <rect x="320" y="115" width="110" height="50" rx="6" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.25)" stroke-width="1"/>
+      <text x="375" y="137" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">−10% → $144</text>
+      <text x="444" y="143" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#8b5cf6" text-anchor="middle">→</text>
+      <rect x="460" y="115" width="110" height="50" rx="6" fill="rgba(139,92,246,.1)" stroke="rgba(139,92,246,.25)" stroke-width="1"/>
+      <text x="515" y="137" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">−5% → $136.80</text>
+      <rect x="584" y="115" width="145" height="50" rx="6" fill="rgba(16,185,129,.1)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+      <text x="656" y="137" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981" text-anchor="middle">EFFECTIVE: 31.6%</text>
+      <text x="656" y="153" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">NOT 35% !</text>
+    </svg>
+    <div class="img-overlay"><span>Double discount calculator: $200, 20%+15% → $136 final (effective 32%, not 35%). Triple discount calculator: $200, 20%+10%+5% → $136.80 (effective 31.6%, not 35%)</span></div>
+  </div>
+
+  <h2>Discount Calculator with Tax — Sales Tax and Discount</h2>
+  <p>Our <strong>discount calculator with tax</strong> and <strong>sales tax and discount calculator</strong> follow the correct order of operations: tax is always applied to the post-discount price, not the original price. The formula: <span class="fi">Final = Original × (1 − Discount%) × (1 + Tax%)</span>.</p>
+  <div class="exb">
+    <h4>Tax and Discount Calculator Example</h4>
+    <p>$200 TV · 25% off · 8.5% sales tax<br>
+    After discount: $200 × 0.75 = <strong>$150</strong><br>
+    With tax: $150 × 1.085 = <strong>$162.75</strong><br>
+    Total paid vs. full price with tax: $200 × 1.085 = $217 vs $162.75<br>
+    <strong>Total savings including tax: $54.25</strong></p>
+  </div>
+
+  <h2>Bulk Discount Calculator — Wholesale and Quantity Pricing</h2>
+  <p>The <strong>bulk discount calculator</strong> is essential for wholesale buyers, resellers, and quantity purchasers. It calculates your total savings when buying multiple units at a discount rate. Formula: Total Savings = (Original Price − Discounted Price) × Quantity. Use the Bulk mode in our calculator to compare how much you save buying 1, 10, 50, or 100 units at your negotiated discount rate.</p>
+
+  <h2>Retail Discount Calculator — Employee Discounts, GM, Best Buy & More</h2>
+  <p>Our <strong>retail discount calculator</strong> and <strong>sales discount calculator</strong> handle every common retail scenario — from Black Friday markdowns to employee pricing programs. Whether you are calculating a store's marked-down price, verifying an employee discount, or stacking a promo code on top of a clearance price, this tool gives the accurate answer instantly.</p>
+
+  <h3>GM Employee Discount Calculator</h3>
+  <p>The <strong>GM employee discount calculator</strong> helps current and former GM employees (and eligible family members) understand their savings under the GM Employee Discount program, also known as the GMS (General Motors Supplier) or Friends &amp; Family pricing. GM employee discounts typically range from 2–5% below dealer invoice price. To use our tool as a <strong>GM employee discount calculator</strong>: enter the MSRP of the vehicle, then enter the discount percentage provided in your GM employee pricing letter. The result shows your discounted price and exact dollar savings.</p>
+
+  <div class="exb">
+    <h4>GM Employee Discount Calculator Example</h4>
+    <p>Vehicle MSRP: $42,000 · GM Employee Discount: 4% below invoice (invoice ≈ $39,000)<br>
+    Employee price = $39,000 × (1 − 0.04) = <strong>$37,440</strong><br>
+    Savings vs MSRP: $42,000 − $37,440 = <strong>$4,560 saved</strong><br>
+    Enter MSRP in the calculator above and use 10.9% discount to approximate the employee-to-MSRP spread.</p>
+  </div>
+
+  <h3>Best Buy Employee Discount Calculator</h3>
+  <p>The <strong>Best Buy employee discount calculator</strong> helps Best Buy team members estimate their savings. Best Buy employees typically receive a discount of 5% above cost on most products (excluding certain categories like Apple, Google, and major appliances). To calculate your employee price: find the product cost (usually 10–30% below retail depending on category), add 5%, and compare to retail. Our <strong>price discount calculator</strong> helps you verify: enter the retail price and your estimated employee discount percentage to see final price and savings instantly.</p>
+
+  <h3>Progressive Snapshot Discount Calculator</h3>
+  <p>The <strong>Progressive Snapshot discount calculator</strong> estimates your potential savings from Progressive Insurance's Snapshot program, which monitors your driving behavior. Snapshot discounts are based on factors like braking, acceleration, and time-of-day driving. Discounts range from 0–30%, with an average of about 10–15% for safe drivers. While the exact discount is determined by Progressive's algorithm, our <strong>percent discount calculator</strong> lets you model potential savings: enter your current premium and a discount percentage (e.g., 10%, 15%, or 25%) to see your estimated new premium and savings amount.</p>
+
+  <div class="tip">
+    <p><strong>Smart shopping tip:</strong> When a store advertises "take an additional 20% off sale prices," this is a <strong>double discount</strong> — use our double discount calculator to see the real effective discount. If something is 30% off and you get an additional 20% off, the effective discount is only 44% (not 50%). Still a great deal, but you now know the exact math.</p>
+  </div>
+
+  <div class="warnb">
+    <p><strong>Common mistake:</strong> Adding discount percentages together gives the wrong answer for stacked discounts. 30% off + 20% off ≠ 50% off. The correct result using our <strong>double discount calculator</strong> is 44% effective discount. Always calculate each discount sequentially to get the accurate final price.</p>
+  </div>
+
+  <h2>Our Discount Calculator vs Omni Discount Calculator</h2>
+  <p>The <strong>omni discount calculator</strong> (from Omni Calculator) and the <strong>discount calculator omni</strong> style tools offer basic percent-off and reverse calculations. Our free <strong>discount calculator online</strong> goes further — with 7 modes including double discount, triple discount, sales tax integration, bulk quantity pricing, employee discount modeling, and step-by-step visual breakdowns for every calculation. Whether you're using it as a <strong>10 discount calculator</strong> for a quick 10% off calculation or modeling a complex stacked GM employee discount scenario, this single tool covers every use case without switching between multiple pages.</p>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Discount Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Questions answered for percent discount calculator, double discount, triple discount, discount with tax, bulk discount, GM employee discount, Best Buy employee discount, Progressive Snapshot discount, and more.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I calculate percent off a price?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Formula: <strong>Final Price = Original Price × (1 − Discount% ÷ 100)</strong>. Amount Saved = Original Price × (Discount% ÷ 100). Quick mental math: for 20% off any price, multiply by 0.80. For 30% off, multiply by 0.70. For 25% off, multiply by 0.75. Our <strong>percent discount calculator</strong> handles any percentage instantly — enter the original price, enter the discount %, and click Calculate. The Quick Presets (10%, 15%, 20%, 25%, 30%, 40%, 50%) let you calculate common discounts in one click without typing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does the double discount calculator work?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A <strong>double discount</strong> applies two successive discounts where the second applies to the already-reduced price. Formula: <strong>Final = Price × (1−D1/100) × (1−D2/100)</strong>. Example: $100 item, 20% off then 15% off: $100 × 0.80 = $80, then $80 × 0.85 = $68. Effective discount = 32%, NOT 35% (which would give $65). Our double discount calculator shows the step-by-step breakdown and the true effective discount percentage, so you can compare stacked discounts accurately.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does a discount calculator with tax work?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our <strong>discount calculator with tax</strong> applies tax to the post-discount price (which is how stores legally calculate it). Formula: <strong>Final = (Price × (1−Discount%)) × (1+Tax%)</strong>. Example: $150 item, 30% off, 8% tax: After discount: $150 × 0.70 = $105. With tax: $105 × 1.08 = $113.40. If you had paid full price with tax: $150 × 1.08 = $162. Total savings including tax = $162 − $113.40 = <strong>$48.60</strong>. Use the "With Tax" mode in our <strong>sales tax and discount calculator</strong> for complete pricing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is a 10 discount calculator — how much is 10% off any price?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A <strong>10% discount calculator</strong> is simple — just multiply the price by 0.90 (or divide by 10 to find the discount amount). 10% off $50 = $45 (save $5). 10% off $200 = $180 (save $20). 10% off $89.99 = $80.99 (save $9). Quick mental trick: 10% off any price = move the decimal point one place left. $150 → 10% = $15 savings → final price $135. Click the "10% Off" preset button in our calculator above for instant results at any price.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I find the original price from a discounted price?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Formula: <strong>Original Price = Sale Price ÷ (1 − Discount% ÷ 100)</strong>. Example: item now costs $68, it's 15% off → Original = $68 ÷ (1 − 0.15) = $68 ÷ 0.85 = $80. Use "Find Original Price" mode in our <strong>price discount calculator</strong>: enter the discounted price and the discount percentage to instantly find what the item cost before the markdown. Useful for checking if a "sale" price is really a discount, or for verifying retailer pricing claims.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does a triple discount calculator differ from adding percentages?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Adding three discount percentages together is always wrong for stacked discounts. Our <strong>triple discount calculator</strong> shows the correct sequential calculation: 20% + 10% + 5% stacked on $100: Step 1: $100 × 0.80 = $80. Step 2: $80 × 0.90 = $72. Step 3: $72 × 0.95 = $68.40. Effective discount = <strong>31.6%</strong>, NOT 35%. The formula: Effective = 1 − (0.80 × 0.90 × 0.95) = 1 − 0.684 = 31.6%. Always use our triple discount calculator instead of manually adding percentages for accurate results.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the bulk discount calculator used for?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>bulk discount calculator</strong> is for calculating savings when buying multiple units at a discount. It shows: Unit price after discount, Total cost for quantity, Total savings vs full price, and Cost per unit. Example: Buy 50 units at $12 each with 30% bulk discount: Discounted unit price = $8.40. Total cost = $420. Savings vs full price ($600) = $180. Perfect for wholesale buyers, resellers, office supply purchases, or any quantity purchasing decision. Select "Bulk" mode in our retail discount calculator above.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Calculators</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><circle cx="4.5" cy="4.5" r="2"/><circle cx="10.5" cy="10.5" r="2"/><path d="M12 3L3 12" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">% of, increase, decrease</div>
+      </a>
+      <a href="/profit-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><path d="M2 11l3-5 3 3.5 2-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Profit Calculator</div>
+        <div class="oc-desc">Margin, ROI, break-even</div>
+      </a>
+      <a href="/salary-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2.5 2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Salary Calculator</div>
+        <div class="oc-desc">Hourly to annual, take-home</div>
+      </a>
+      <a href="/loan-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><rect x="1" y="1" width="13" height="13" rx="2"/><path d="M4 7h7M4 4.5h4" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Loan Calculator</div>
+        <div class="oc-desc">Monthly payment and interest</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var mode = 'pct-off';
+
+var MODE_TEMPLATES = {
+  'pct-off': {
+    lbl: 'Percent Off Details',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Price</span><span class="inp-bdg" id="bdg-p">$0.00</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="0.01" placeholder="100.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Discount Percentage</span><span class="inp-bdg" id="bdg-d">20%</span></div>
+        <div class="inp-wrap"><input type="number" id="f-d" min="0" max="100" step="0.1" value="20" placeholder="20"><span class="inp-suf">% off</span></div>
+        <input type="range" id="sl-d" class="sl" min="1" max="90" step="1" value="20" style="margin-top:6px;">
+        <div class="sl-row"><span>1%</span><span>90%</span></div>
+      </div>`
+  },
+  'find-pct': {
+    lbl: 'Find Discount % Mode',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-orig" min="0" step="0.01" placeholder="120.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Sale Price (discounted)</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-sale" min="0" step="0.01" placeholder="84.00"></div>
+      </div>
+      <div class="inp-note" style="margin-top:-8px;">Enter both prices to find the % discount applied</div>`
+  },
+  'find-orig': {
+    lbl: 'Find Original Price Mode',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Discounted / Sale Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-sale2" min="0" step="0.01" placeholder="68.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Discount Percentage Applied</span></div>
+        <div class="inp-wrap"><input type="number" id="f-d2" min="0" max="99" step="0.1" placeholder="15"><span class="inp-suf">% off</span></div>
+      </div>
+      <div class="inp-note" style="margin-top:-8px;">Find what the item cost before the discount</div>`
+  },
+  'double': {
+    lbl: 'Double Discount Details',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="0.01" placeholder="100.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">First Discount</span></div>
+        <div class="discount-stack">
+          <div class="disc-row"><div class="disc-num">1</div><div class="inp-wrap" style="flex:1;margin-bottom:0;"><input type="number" id="f-d1" min="0" max="99" step="0.1" value="20" placeholder="20"><span class="inp-suf">% off</span></div></div>
+          <div class="disc-row"><div class="disc-num">2</div><div class="inp-wrap" style="flex:1;margin-bottom:0;"><input type="number" id="f-d2" min="0" max="99" step="0.1" value="15" placeholder="15"><span class="inp-suf">% off (then)</span></div></div>
+        </div>
+      </div>
+      <div class="inp-note">Applied sequentially — 2nd discount applies to already-reduced price</div>`
+  },
+  'triple': {
+    lbl: 'Triple Discount Details',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="0.01" placeholder="100.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-lbl" style="margin-bottom:8px;">Three Stacked Discounts</div>
+        <div class="discount-stack">
+          <div class="disc-row"><div class="disc-num">1</div><div class="inp-wrap" style="flex:1;margin-bottom:0;"><input type="number" id="f-d1" min="0" max="99" step="0.1" value="20" placeholder="20"><span class="inp-suf">% off</span></div></div>
+          <div class="disc-row"><div class="disc-num">2</div><div class="inp-wrap" style="flex:1;margin-bottom:0;"><input type="number" id="f-d2" min="0" max="99" step="0.1" value="10" placeholder="10"><span class="inp-suf">% off (then)</span></div></div>
+          <div class="disc-row"><div class="disc-num">3</div><div class="inp-wrap" style="flex:1;margin-bottom:0;"><input type="number" id="f-d3" min="0" max="99" step="0.1" value="5" placeholder="5"><span class="inp-suf">% off (then)</span></div></div>
+        </div>
+      </div>
+      <div class="inp-note">Each discount applies to the previous reduced price — not added together</div>`
+  },
+  'with-tax': {
+    lbl: 'Discount + Tax Details',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="0.01" placeholder="200.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Discount Percentage</span></div>
+        <div class="inp-wrap"><input type="number" id="f-d" min="0" max="100" step="0.1" value="25" placeholder="25"><span class="inp-suf">% off</span></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Sales Tax Rate</span></div>
+        <div class="inp-wrap"><input type="number" id="f-tax" min="0" max="20" step="0.01" value="8" placeholder="8"><span class="inp-suf">%</span></div>
+        <div class="inp-note">Tax applied to post-discount price (standard retail practice)</div>
+      </div>`
+  },
+  'bulk': {
+    lbl: 'Bulk Discount Details',
+    html: `
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Original Unit Price</span></div>
+        <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-p" min="0" step="0.01" placeholder="50.00"></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Bulk Discount</span></div>
+        <div class="inp-wrap"><input type="number" id="f-d" min="0" max="100" step="0.1" value="20" placeholder="20"><span class="inp-suf">% off</span></div>
+      </div>
+      <div class="inp-grp">
+        <div class="inp-top"><span class="inp-lbl">Quantity</span></div>
+        <div class="inp-wrap"><input type="number" id="f-qty" min="1" step="1" value="10" placeholder="10"><span class="inp-suf">units</span></div>
+      </div>`
+  }
+};
+
+/* SET MODE */
+function setMode(m, el) {
+  mode = m;
+  document.querySelectorAll('.mode-pill').forEach(function(p){p.classList.remove('on');});
+  if(el) el.classList.add('on');
+  var tmpl = MODE_TEMPLATES[m];
+  document.getElementById('dynamic-inputs').innerHTML = tmpl.html;
+  document.getElementById('inp-sec-lbl').lastChild.textContent = ' ' + tmpl.lbl;
+  /* Show/hide preset row */
+  document.getElementById('preset-row').style.display = (m==='pct-off') ? 'block' : 'none';
+  /* Bind slider for pct-off mode */
+  if(m==='pct-off') bindPctSlider();
+  resetResult();
+}
+
+function setModeAndScroll(m) {
+  var pill = document.querySelector('.mode-pill[data-mode="'+m+'"]');
+  if(pill) setMode(m, pill);
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function bindPctSlider() {
+  var sl = document.getElementById('sl-d');
+  var inp = document.getElementById('f-d');
+  var bdg = document.getElementById('bdg-d');
+  if(!sl || !inp) return;
+  sl.addEventListener('input', function(){
+    inp.value = this.value;
+    if(bdg) bdg.textContent = this.value + '%';
+  });
+  inp.addEventListener('input', function(){
+    if(sl) sl.value = Math.min(90, parseFloat(this.value)||0);
+    if(bdg) bdg.textContent = (this.value||'0') + '%';
+  });
+  var priceInp = document.getElementById('f-p');
+  if(priceInp) {
+    var bdgP = document.getElementById('bdg-p');
+    priceInp.addEventListener('input', function(){
+      if(bdgP) bdgP.textContent = '$' + (parseFloat(this.value)||0).toFixed(2);
+    });
+  }
+}
+
+/* PRESET */
+function setPreset(pct) {
+  var inp = document.getElementById('f-d');
+  var sl = document.getElementById('sl-d');
+  var bdg = document.getElementById('bdg-d');
+  if(inp){ inp.value = pct; }
+  if(sl){ sl.value = pct; }
+  if(bdg){ bdg.textContent = pct + '%'; }
+}
+
+/* FORMAT */
+function fmt(n) { return '$' + Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function pct(n) { return n.toFixed(2) + '%'; }
+function fmtQ(n) { return n < 1000 ? n.toFixed(2) : n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+function resetResult() {
+  document.getElementById('results-block').style.display='none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display='flex';
+  document.getElementById('err-msg').style.display='none';
+}
+
+function getV(id) { return parseFloat(document.getElementById(id)?.value)||0; }
+
+/* CALCULATE */
+function calculate() {
+  document.getElementById('err-msg').style.display='none';
+  var orig=0, finalP=0, saved=0, effectivePct=0;
+  var taxFinal=null, stackRows=[];
+  var extraLbl='Original Price', extraVal='—', extraSub='before discount';
+
+  try {
+    if(mode==='pct-off') {
+      orig = getV('f-p'); var disc = getV('f-d');
+      if(!orig || orig<=0) throw '';
+      saved = orig * disc / 100;
+      finalP = orig - saved;
+      effectivePct = disc;
+      stackRows = [{l:'Original Price',v:fmt(orig),c:'blue'},{l:disc+'% Discount',v:'−'+fmt(saved),c:'orange'},{l:'Final Price',v:fmt(finalP),c:'green'}];
+      extraLbl = 'Markup to Original'; extraVal = pct(saved/finalP*100); extraSub = '% above sale price';
+
+    } else if(mode==='find-pct') {
+      orig = getV('f-orig'); finalP = getV('f-sale');
+      if(!orig||!finalP||orig<=0||finalP<=0||finalP>=orig) throw '';
+      saved = orig - finalP; effectivePct = (saved/orig)*100;
+      stackRows = [{l:'Original Price',v:fmt(orig),c:'blue'},{l:'Sale Price',v:fmt(finalP),c:'green'},{l:'Amount Saved',v:fmt(saved),c:'orange'},{l:'Discount %',v:pct(effectivePct),c:'orange'}];
+      extraLbl='Effective Discount'; extraVal=pct(effectivePct); extraSub='calculated %';
+
+    } else if(mode==='find-orig') {
+      finalP = getV('f-sale2'); var disc = getV('f-d2');
+      if(!finalP||!disc||finalP<=0||disc>=100) throw '';
+      orig = finalP / (1 - disc/100);
+      saved = orig - finalP; effectivePct = disc;
+      stackRows = [{l:'Original Price',v:fmt(orig),c:'blue'},{l:disc+'% Was Applied',v:'−'+fmt(saved),c:'orange'},{l:'Discounted Price',v:fmt(finalP),c:'green'}];
+      extraLbl='Original Price'; extraVal=fmt(orig); extraSub='before '+disc+'% discount';
+
+    } else if(mode==='double') {
+      orig = getV('f-p'); var d1=getV('f-d1'), d2=getV('f-d2');
+      if(!orig||!d1||!d2) throw '';
+      var p1 = orig*(1-d1/100), p2 = p1*(1-d2/100);
+      finalP=p2; saved=orig-p2; effectivePct=(saved/orig)*100;
+      stackRows = [
+        {l:'Original Price',v:fmt(orig),c:'blue'},
+        {l:'After 1st Discount ('+d1+'%)',v:fmt(p1)+' (−'+fmt(orig-p1)+')',c:'orange'},
+        {l:'After 2nd Discount ('+d2+'%)',v:fmt(p2)+' (−'+fmt(p1-p2)+')',c:'orange'},
+        {l:'Total Saved',v:fmt(saved),c:'green'},
+        {l:'Effective Discount',v:pct(effectivePct)+' (not '+(d1+d2).toFixed(1)+'%)',c:'purple'}
+      ];
+      extraLbl='Effective Discount'; extraVal=pct(effectivePct); extraSub='vs claimed '+(d1+d2).toFixed(1)+'%';
+
+    } else if(mode==='triple') {
+      orig = getV('f-p'); var d1=getV('f-d1'),d2=getV('f-d2'),d3=getV('f-d3');
+      if(!orig||!d1||!d2||!d3) throw '';
+      var p1=orig*(1-d1/100), p2=p1*(1-d2/100), p3=p2*(1-d3/100);
+      finalP=p3; saved=orig-p3; effectivePct=(saved/orig)*100;
+      stackRows = [
+        {l:'Original Price',v:fmt(orig),c:'blue'},
+        {l:'After 1st ('+d1+'%)',v:fmt(p1),c:'orange'},
+        {l:'After 2nd ('+d2+'%)',v:fmt(p2),c:'orange'},
+        {l:'After 3rd ('+d3+'%)',v:fmt(p3),c:'orange'},
+        {l:'Total Saved',v:fmt(saved),c:'green'},
+        {l:'Effective Discount',v:pct(effectivePct)+' (not '+(d1+d2+d3).toFixed(1)+'%)',c:'purple'}
+      ];
+      extraLbl='Effective Discount'; extraVal=pct(effectivePct); extraSub='not '+(d1+d2+d3).toFixed(1)+'% sum';
+
+    } else if(mode==='with-tax') {
+      orig=getV('f-p'); var disc=getV('f-d'),tax=getV('f-tax');
+      if(!orig) throw '';
+      var discounted=orig*(1-disc/100);
+      taxFinal=discounted*(1+tax/100);
+      finalP=discounted; saved=orig-discounted; effectivePct=disc;
+      var taxAmt=taxFinal-discounted;
+      var totalSavedVsFullTax=orig*(1+tax/100)-taxFinal;
+      stackRows = [
+        {l:'Original Price',v:fmt(orig),c:'blue'},
+        {l:disc+'% Discount',v:'−'+fmt(saved),c:'orange'},
+        {l:'After Discount',v:fmt(discounted),c:'green'},
+        {l:'+ '+tax+'% Sales Tax',v:'+'+fmt(taxAmt),c:'teal'},
+        {l:'Final Price (with tax)',v:fmt(taxFinal),c:'green'},
+        {l:'Total Savings vs full+tax',v:fmt(totalSavedVsFullTax),c:'purple'}
+      ];
+      extraLbl='With Tax Final'; extraVal=fmt(taxFinal); extraSub='incl. '+tax+'% tax';
+
+    } else if(mode==='bulk') {
+      orig=getV('f-p'); var disc=getV('f-d'),qty=getV('f-qty')||1;
+      if(!orig) throw '';
+      var unitFinal=orig*(1-disc/100);
+      finalP=unitFinal; saved=orig-unitFinal; effectivePct=disc;
+      var totalSaved=saved*qty, totalCost=unitFinal*qty, totalFull=orig*qty;
+      stackRows = [
+        {l:'Unit Price (original)',v:fmt(orig),c:'blue'},
+        {l:'Unit Price (after '+disc+'%)',v:fmt(unitFinal),c:'green'},
+        {l:'Quantity',v:qty.toLocaleString()+' units',c:'blue'},
+        {l:'Total Full Price',v:fmt(totalFull),c:'orange'},
+        {l:'Total After Discount',v:fmt(totalCost),c:'green'},
+        {l:'Total Savings',v:fmt(totalSaved),c:'purple'}
+      ];
+      extraLbl='Total Savings'; extraVal=fmt(totalSaved); extraSub=qty+' units × '+fmt(saved);
+    }
+  } catch(e) {
+    document.getElementById('err-msg').style.display='block'; return;
+  }
+
+  /* POPULATE RESULTS */
+  document.getElementById('sh-label').textContent = mode==='find-pct' ? 'Discount Found' : mode==='find-orig' ? 'Original Was' : mode==='bulk' ? 'Unit Savings' : 'You Save';
+  document.getElementById('sh-amount').textContent = (mode==='find-pct') ? pct(effectivePct) : (mode==='find-orig') ? fmt(orig) : fmt(saved);
+  document.getElementById('sh-lbl').textContent = (mode==='find-pct') ? 'Effective Discount %' : (mode==='find-orig') ? 'Original Price' : 'Amount Saved';
+  document.getElementById('chip-orig').textContent = 'Original: ' + fmt(orig||getV('f-sale2')||getV('f-orig'));
+  document.getElementById('chip-final').textContent = 'Final: ' + fmt(finalP);
+  var taxChip = document.getElementById('chip-tax');
+  if(taxFinal !== null){ taxChip.textContent = 'With Tax: '+fmt(taxFinal); taxChip.style.display='inline-flex'; }
+  else { taxChip.style.display='none'; }
+  document.getElementById('r-final').textContent = fmt(finalP);
+  document.getElementById('r-saved').textContent = fmt(saved);
+  document.getElementById('r-pct').textContent = pct(effectivePct);
+  document.getElementById('r-extra-lbl').textContent = extraLbl;
+  document.getElementById('r-extra').textContent = extraVal;
+  document.getElementById('r-extra-sub').textContent = extraSub;
+
+  /* BAR */
+  var payPct = orig > 0 ? (finalP/orig)*100 : 50;
+  var savPct = 100 - payPct;
+  document.getElementById('bar-pay').style.width = payPct + '%';
+  document.getElementById('bar-save').style.left = payPct + '%';
+  document.getElementById('bar-save').style.width = savPct + '%';
+  document.getElementById('bar-ratio').textContent = payPct.toFixed(1)+'% / '+savPct.toFixed(1)+'%';
+  document.getElementById('bar-lbl-pay').textContent = 'You Pay: ' + fmt(finalP);
+  document.getElementById('bar-lbl-save').textContent = 'You Save: ' + fmt(saved);
+
+  /* STACK BREAKDOWN */
+  var stackContainer = document.getElementById('stack-rows');
+  stackContainer.innerHTML = '';
+  var stackColors = {blue:'var(--accent2)',orange:'var(--orange)',green:'var(--green)',purple:'var(--purple)',teal:'var(--teal)',red:'var(--red)'};
+  stackRows.forEach(function(r){
+    var div = document.createElement('div'); div.className = 'sb-row';
+    div.innerHTML = '<span class="sb-row-lbl">'+r.l+'</span><span class="sb-row-val" style="color:'+stackColors[r.c]+'">'+r.v+'</span>';
+    stackContainer.appendChild(div);
+  });
+
+  /* SHOW */
+  document.getElementById('r-placeholder').style.display='none';
+  var rb=document.getElementById('results-block');
+  rb.style.display='block'; rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+/* FAQ */
+function faqT(el){
+  var item=el.parentElement, was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was) item.classList.add('open');
+}
+
+/* INIT */
+document.addEventListener('DOMContentLoaded', function(){
+  setMode('pct-off', document.querySelector('.mode-pill[data-mode="pct-off"]'));
+  document.addEventListener('keydown', function(e){ if(e.key==='Enter') calculate(); });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

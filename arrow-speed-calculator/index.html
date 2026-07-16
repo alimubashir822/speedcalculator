@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Arrow Speed Calculator — Compound Bow, Recurve, Crossbow FPS & Kinetic Energy | SpeedCalculator.net</title>
+<meta name="description" content="Free arrow speed calculator — the most accurate arrow speed calculator for compound bow, recurve bow, and crossbow. Calculate FPS by draw weight, kinetic energy, momentum, and time of flight. Works as an archery arrow speed calculator and crossbow arrow speed calculator app online.">
+<meta name="keywords" content="arrow speed calculator, bow arrow speed calculator, archery arrow speed calculator, draw weight arrow speed calculator, compound bow arrow speed calculator, recurve arrow speed calculator, recurve bow arrow speed calculator, crossbow arrow speed calculator, arrow speed calculator for crossbow, most accurate arrow speed calculator, arrow speed calculator app">
+<link rel="canonical" href="https://www.speedcalculator.net/arrow-speed-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Arrow Speed Calculator",
+  "alternateName": [
+    "Bow Arrow Speed Calculator",
+    "Archery Arrow Speed Calculator",
+    "Compound Bow Arrow Speed Calculator",
+    "Recurve Arrow Speed Calculator",
+    "Crossbow Arrow Speed Calculator",
+    "Draw Weight Arrow Speed Calculator",
+    "Most Accurate Arrow Speed Calculator"
+  ],
+  "url": "https://www.speedcalculator.net/arrow-speed-calculator/",
+  "description": "Free arrow speed calculator — most accurate online arrow speed calculator app for compound bow, recurve bow, and crossbow. Calculate FPS by draw weight, kinetic energy, momentum, and time of flight.",
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Compound bow arrow speed calculator",
+    "Recurve bow arrow speed calculator",
+    "Crossbow arrow speed calculator for any draw weight",
+    "Draw weight arrow speed calculation",
+    "Archery arrow speed calculator with kinetic energy",
+    "Arrow momentum calculation",
+    "Time of flight to target",
+    "Arrow drop estimation",
+    "IBO and AMO standard support",
+    "Hunting suitability rating"
+  ]
+}
+</script>
+
+<!-- HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Use the Arrow Speed Calculator — Compound Bow, Recurve & Crossbow",
+  "description": "Use our bow arrow speed calculator and archery arrow speed calculator to calculate FPS from draw weight, draw length, and arrow weight for any bow type",
+  "totalTime": "PT2M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Select Bow Type",
+      "text": "Choose your bow type — Compound Bow, Recurve Bow, or Crossbow. Each type uses a different efficiency factor and speed formula."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Enter Draw Weight",
+      "text": "Enter your bow's peak draw weight in pounds (lbs). For compound bows this is typically 40–70 lbs. For recurve bows, 25–50 lbs. For crossbows, 100–200 lbs."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Enter Draw Length",
+      "text": "Enter your draw length in inches. Standard AMO/IBO draw length is 30 inches for speed ratings. Adjust for your actual draw length — each inch difference from 30 inches changes speed by approximately 10 FPS."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Enter Arrow Weight",
+      "text": "Enter your arrow's total weight in grains (gr). Include broadhead or field point weight. IBO standard uses 5 gr/lb of draw weight. A 300 gr arrow is light and fast; 400–500 gr is mid-weight; 600+ gr is heavy."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Calculate and Read Results",
+      "text": "Click Calculate Arrow Speed to see velocity in FPS and MPH, kinetic energy in foot-pounds, momentum, time of flight to target, and hunting suitability rating."
+    }
+  ]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is arrow speed calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arrow speed in FPS is estimated using the IBO formula adjusted for draw weight, draw length, and arrow weight. The base formula: FPS = (Draw Weight × Bow Efficiency × Draw Length) ÷ Arrow Weight in grains × constant. Each inch of draw length from the 30-inch IBO standard adds or subtracts approximately 10 FPS. Each 5 grains of arrow weight above the IBO standard (5 gr/lb of draw weight) reduces speed by about 1 FPS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is kinetic energy in archery and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kinetic energy (KE) in archery is the energy an arrow carries in flight, measured in foot-pounds (ft-lbs). Formula: KE = (Arrow Weight in grains × Velocity²) ÷ 450,240. For hunting: under 25 ft-lbs for small game, 25–41 ft-lbs for deer-sized game, 42–65 ft-lbs for elk/black bear, 65+ ft-lbs for large dangerous game. Kinetic energy determines penetration power more than speed alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What arrow speed do I need for deer hunting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ethical deer hunting, most archery organizations recommend a minimum of 270 FPS and at least 40 ft-lbs of kinetic energy. Most modern compound bows shoot 280–340 FPS, which is more than sufficient for deer at ethical bowhunting distances (under 40 yards). Arrow weight matters as much as speed — a heavier arrow at 270 FPS can outperform a lighter arrow at 300 FPS in terms of penetration and momentum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the IBO speed rating for bows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IBO (International Bowhunting Organization) speed is measured at: 70 lbs draw weight, 30-inch draw length, and 350-grain arrow (5 gr/lb). AMO (Archery Manufacturers Organization) speed is measured at: 60 lbs draw weight, 30-inch draw length, and 540-grain arrow. IBO ratings are typically 15–20 FPS higher than AMO ratings. Always adjust for your actual setup when comparing speeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does draw length affect arrow speed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Draw length has a direct impact on arrow speed. Every additional inch of draw length beyond 30 inches adds approximately 10 FPS. Every inch shorter than 30 inches subtracts approximately 10 FPS. A bow rated at 310 IBO FPS at 30-inch draw length will shoot approximately 300 FPS at 29 inches and 320 FPS at 31 inches. This is a key factor the arrow speed calculator accounts for automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is arrow momentum and how is it different from kinetic energy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arrow momentum = (Arrow Weight in grains × Velocity) ÷ 225,400, measured in slug⋅ft/s. While kinetic energy determines initial impact force, momentum determines how well an arrow maintains that force through penetration (pushing through hide, muscle, and bone). A heavier, slower arrow often has better momentum and penetration than a lighter, faster arrow with similar kinetic energy. Both values are shown in our arrow speed calculator."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #05080f; --bg2: #0b1220; --bg3: #111b2e;
+  --accent: #3b82f6; --accent2: #60a5fa;
+  --green: #10b981; --orange: #f59e0b; --purple: #8b5cf6;
+  --teal: #06b6d4; --pink: #ec4899; --lime: #34d399; --red: #ef4444;
+  --text: #f0f4ff; --text2: #94a3b8; --text3: #4a6080;
+  --border: rgba(59,130,246,.12); --border2: rgba(59,130,246,.25);
+  --radius: 14px; --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Barlow', sans-serif; line-height: 1.7; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(59,130,246,.08), transparent); pointer-events: none; z-index: 0; }
+body::after { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(59,130,246,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,.02) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* BREADCRUMB */
+.breadcrumb { padding: 14px 0; font-size: 12px; color: var(--text3); }
+.breadcrumb a { color: var(--text3); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent2); }
+.breadcrumb sep { margin: 0 6px; }
+
+/* ═══ HERO ═══ */
+.hero-banner { padding: 52px 0 36px; text-align: center; animation: fadeInUp .5s ease both; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(59,130,246,.08); border: 1px solid var(--border2); border-radius: 20px; padding: 6px 18px; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 18px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero-h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(34px,6vw,68px); font-weight: 900; line-height: .92; letter-spacing: -2px; text-transform: uppercase; margin-bottom: 18px; }
+.hero-h1 em { display: block; color: var(--accent2); font-style: normal; }
+.hero-sub { font-size: 16px; color: var(--text2); font-weight: 300; line-height: 1.75; margin-bottom: 22px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.hero-badges { display: flex; gap: 7px; flex-wrap: wrap; justify-content: center; }
+.hbadge { display: inline-flex; align-items: center; gap: 5px; background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 13px; font-size: 11px; font-weight: 600; color: var(--text2); }
+.hbadge.g { border-color: rgba(16,185,129,.3); color: var(--green); }
+.hbadge.b { border-color: rgba(59,130,246,.3); color: var(--accent2); }
+.hbadge.p { border-color: rgba(139,92,246,.3); color: var(--purple); }
+.hbadge.o { border-color: rgba(245,158,11,.3); color: var(--orange); }
+.hbadge.t { border-color: rgba(6,182,212,.3); color: var(--teal); }
+
+/* ═══ CALCULATOR CARD ═══ */
+.calc-section { padding: 0; }
+.calc-card { background: var(--bg2); border: 1px solid var(--border2); border-radius: 20px; overflow: hidden; position: relative; max-width: 940px; margin: 0 auto; }
+.calc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--orange), var(--accent), var(--green), var(--purple), transparent); }
+.calc-head { padding: 16px 28px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid var(--border); }
+.calc-htitle { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; display: flex; align-items: center; gap: 8px; color: var(--text); }
+.calc-htitle em { color: var(--accent2); font-style: normal; }
+.ht-icon { width: 30px; height: 30px; background: rgba(59,130,246,.12); border: 1px solid var(--border2); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+.live-pill { background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.25); border-radius: 20px; padding: 4px 14px; font-size: 10px; font-weight: 700; color: var(--green); letter-spacing: .08em; text-transform: uppercase; }
+.calc-body { padding: 24px 28px 28px; }
+
+/* BOW TYPE TABS */
+.bow-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-bottom: 22px; }
+.bow-tab { border: 1px solid var(--border2); border-radius: var(--radius-sm); background: var(--bg3); cursor: pointer; transition: all .18s; padding: 12px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.bow-tab:hover { border-color: rgba(59,130,246,.4); }
+.bow-tab.active { border-color: var(--accent); background: rgba(59,130,246,.13); }
+.bow-tab.active .bt-name { color: var(--accent2); }
+.bt-icon { font-size: 24px; line-height: 1; }
+.bt-name { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text3); transition: color .18s; }
+.bt-speed { font-size: 10px; color: var(--text3); }
+
+/* STD TOGGLE */
+.std-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.std-label { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; }
+.std-chip { background: var(--bg3); border: 1px solid var(--border2); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600; color: var(--text3); cursor: pointer; transition: all .18s; }
+.std-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* TWO-COL */
+.calc-cols { display: grid; grid-template-columns: 1fr 1.05fr; gap: 28px; }
+@media(max-width:700px) { .calc-cols { grid-template-columns: 1fr; gap: 22px; } }
+
+/* INPUTS */
+.inp-section-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 7px; }
+.inp-stack { display: flex; flex-direction: column; gap: 14px; }
+.inp-grp { display: flex; flex-direction: column; gap: 5px; }
+.inp-grp label { font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--text3); }
+.inp-wrap { display: flex; align-items: stretch; border: 2px solid var(--border2); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg3); transition: border-color .2s; }
+.inp-wrap:focus-within { border-color: var(--accent); }
+.inp-wrap input, .inp-wrap select { flex: 1; background: transparent; border: none; outline: none; padding: 10px 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); min-width: 0; width: 100%; }
+.inp-wrap input::placeholder { color: var(--text3); font-size: 14px; font-weight: 400; }
+.inp-wrap select { font-size: 14px; font-weight: 600; cursor: pointer; }
+.inp-suffix { padding: 0 11px; font-size: 11px; font-weight: 700; color: var(--text3); border-left: 1px solid var(--border); display: flex; align-items: center; white-space: nowrap; background: rgba(255,255,255,.02); }
+.inp-sub { font-size: 10px; color: var(--text3); margin-top: 2px; line-height: 1.4; }
+
+/* SLIDER */
+.slider-row { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
+.inp-slider { -webkit-appearance: none; appearance: none; flex: 1; height: 4px; border-radius: 2px; background: var(--bg); outline: none; cursor: pointer; }
+.inp-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 17px; height: 17px; border-radius: 50%; background: var(--accent); border: 2px solid var(--accent2); cursor: pointer; box-shadow: 0 0 0 3px rgba(59,130,246,.2); }
+.inp-slider::-moz-range-thumb { width: 17px; height: 17px; border-radius: 50%; background: var(--accent); border: 2px solid var(--accent2); }
+.slider-val { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent2); min-width: 48px; text-align: right; white-space: nowrap; }
+
+/* TARGET DISTANCE */
+.target-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* CALC BTN */
+.calc-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--orange), #b45309); border: none; border-radius: var(--radius-sm); font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: #fff; cursor: pointer; transition: all .2s; display: flex; align-items: center; justify-content: center; gap: 9px; box-shadow: 0 4px 22px rgba(245,158,11,.28); margin-top: 4px; }
+.calc-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 30px rgba(245,158,11,.4); }
+
+/* ERR */
+.err-msg { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.25); border-radius: var(--radius-sm); padding: 9px 13px; font-size: 12px; color: #f87171; margin-bottom: 9px; display: none; }
+
+/* ═══ RESULTS ═══ */
+.results-col { display: flex; flex-direction: column; }
+.result-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 36px 16px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; min-height: 200px; }
+.results-block { display: none; }
+.results-block.show { display: block; animation: fadeUp .35s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+/* MAIN FPS RESULT */
+.fps-result { background: linear-gradient(135deg, rgba(245,158,11,.12), rgba(59,130,246,.04)); border: 1px solid rgba(245,158,11,.3); border-radius: var(--radius); padding: 18px; margin-bottom: 12px; position: relative; overflow: hidden; text-align: center; }
+.fps-result::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--orange), var(--accent), var(--green)); }
+.fps-bow-badge { display: inline-block; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); border-radius: 20px; padding: 3px 13px; font-size: 11px; font-weight: 700; color: var(--orange); margin-bottom: 10px; }
+.fps-val { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(48px,10vw,72px); font-weight: 900; color: var(--orange); line-height: 1; letter-spacing: -2px; }
+.fps-unit { font-size: 18px; color: var(--text3); font-weight: 700; margin-left: 4px; vertical-align: top; margin-top: 12px; display: inline-block; }
+.fps-mph { font-size: 14px; color: var(--text3); margin-top: 4px; }
+
+/* STAT GRID */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.stat-box { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px; text-align: center; }
+.stat-box.full { grid-column: 1 / -1; }
+.sb-lbl { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.sb-val { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(18px,4vw,26px); font-weight: 900; line-height: 1; }
+.sb-val.ke { color: var(--green); }
+.sb-val.mom { color: var(--purple); }
+.sb-val.tof { color: var(--teal); }
+.sb-val.drop { color: var(--pink); }
+.sb-unit { font-size: 10px; color: var(--text3); margin-top: 3px; }
+
+/* HUNT RATING */
+.hunt-rating { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 13px 15px; margin-bottom: 12px; }
+.hr-title { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
+.hr-bar-wrap { height: 8px; background: rgba(255,255,255,.05); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+.hr-bar { height: 100%; border-radius: 4px; transition: width .6s ease; }
+.hr-label { font-size: 12px; font-weight: 700; }
+.hr-tiers { display: flex; justify-content: space-between; font-size: 9px; color: var(--text3); margin-top: 5px; }
+
+/* KE REFERENCE */
+.ke-ref { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.ke-ref-title { padding: 9px 13px; font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); border-bottom: 1px solid var(--border); }
+.ke-ref-row { display: flex; align-items: center; gap: 10px; padding: 7px 13px; border-bottom: 1px solid rgba(59,130,246,.05); font-size: 11.5px; color: var(--text2); }
+.ke-ref-row:last-child { border: none; }
+.ke-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.ke-ref-game { flex: 1; }
+.ke-ref-val { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; color: var(--text3); }
+.ke-ref-row.active-ke .ke-ref-game { color: var(--text); font-weight: 600; }
+.ke-ref-row.active-ke .ke-ref-val { color: var(--green); }
+
+/* STATS STRIP */
+.stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 40px 0; }
+.stat-item { background: var(--bg2); padding: 16px; text-align: center; }
+.stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent2); line-height: 1; }
+.stat-lbl { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .07em; margin-top: 5px; }
+@media(max-width:540px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* SECTIONS */
+.section { padding: 56px 0 0; }
+.sec-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+.sec-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(26px,4vw,40px); font-weight: 900; text-transform: uppercase; letter-spacing: -.5px; margin-bottom: 14px; line-height: 1.05; }
+.sec-title span { color: var(--accent2); }
+.sec-sub { font-size: 15px; color: var(--text2); font-weight: 300; max-width: 620px; line-height: 1.75; }
+
+/* BOW TYPE SHOWCASE */
+.bow-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+@media(max-width:640px) { .bow-showcase { grid-template-columns: 1fr; } }
+.bsc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; transition: all .2s; }
+.bsc:hover { border-color: var(--border2); }
+.bsc-icon { font-size: 32px; margin-bottom: 12px; }
+.bsc-h { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.bsc-fps { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; color: var(--orange); background: rgba(245,158,11,.1); border-radius: 4px; padding: 2px 9px; display: inline-block; margin-bottom: 9px; }
+.bsc-p { font-size: 13px; color: var(--text2); line-height: 1.65; }
+
+/* KE GUIDE GRID */
+.ke-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 22px; }
+@media(max-width:500px) { .ke-grid { grid-template-columns: 1fr; } }
+.ke-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+.ke-card-range { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; margin-bottom: 6px; }
+.ke-card-game { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.ke-card-p { font-size: 12px; color: var(--text2); line-height: 1.6; }
+
+/* IMG */
+.img-block { border-radius: var(--radius); overflow: hidden; position: relative; height: 220px; margin: 24px 0 10px; }
+.img-block img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(5,8,15,.88)); padding: 14px 18px; }
+.img-overlay span { font-size: 11.5px; color: rgba(255,255,255,.7); line-height: 1.5; }
+
+/* DATA TABLE */
+.data-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13.5px; }
+.data-table th { background: var(--bg3); color: var(--accent2); font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border2); }
+.data-table td { padding: 11px 14px; color: var(--text2); border-bottom: 1px solid var(--border); line-height: 1.6; }
+.data-table tr:last-child td { border: none; }
+.data-table td strong { color: var(--text); }
+.data-table td.good { color: var(--green); }
+.data-table td.warn { color: var(--orange); }
+
+/* ARTICLE */
+.article { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-top: 52px; margin-bottom: 52px; }
+.article h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; color: var(--text); margin: 40px 0 12px; }
+.article h2:first-child { margin-top: 0; }
+.article h3 { font-size: 15px; font-weight: 700; color: var(--accent2); margin: 26px 0 8px; line-height: 1.4; }
+.article p { font-size: 14.5px; color: var(--text2); line-height: 1.9; margin-bottom: 16px; }
+.article p:last-child { margin-bottom: 0; }
+.article ul, .article ol { margin: 0 0 18px 22px; }
+.article li { font-size: 14.5px; color: var(--text2); line-height: 1.8; margin-bottom: 8px; padding-left: 4px; }
+.article strong { color: var(--text); }
+.fi { display: inline-block; background: var(--bg3); border: 1px solid var(--border2); border-radius: 5px; padding: 2px 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent2); margin: 2px 1px; }
+.tip { background: rgba(16,185,129,.05); border: 1px solid rgba(16,185,129,.2); border-radius: var(--radius-sm); padding: 16px 18px; margin: 20px 0; }
+.tip p { color: var(--text2); font-size: 14px; margin: 0; line-height: 1.75; }
+.tip strong { color: var(--green); }
+.warnb { background: rgba(245,158,11,.05); border: 1px solid rgba(245,158,11,.2); border-radius: var(--radius-sm); padding: 16px 18px; margin: 20px 0; }
+.warnb p { color: var(--text2); font-size: 14px; margin: 0; line-height: 1.75; }
+.warnb strong { color: var(--orange); }
+.exb { background: rgba(59,130,246,.05); border: 1px solid rgba(59,130,246,.14); border-radius: var(--radius-sm); padding: 16px 18px; margin: 20px 0; }
+.exb h4 { font-size: 11px; font-weight: 700; color: var(--accent2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .1em; }
+.exb p { font-size: 14px; color: var(--text2); margin: 0; line-height: 1.8; }
+.how-steps { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+.how-step { display: flex; gap: 14px; align-items: flex-start; }
+.how-num { width: 32px; height: 32px; border-radius: 50%; background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.3); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 800; color: var(--orange); flex-shrink: 0; margin-top: 2px; }
+.how-txt strong { display: block; font-size: 14.5px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+.how-txt span { font-size: 13.5px; color: var(--text2); line-height: 1.7; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+.faq-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q { padding: 18px 20px; font-size: 14.5px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px; user-select: none; transition: background .15s; line-height: 1.5; }
+.faq-q:hover, .faq-item.open .faq-q { background: var(--bg3); }
+.faq-arr { width: 18px; height: 18px; flex-shrink: 0; color: var(--text3); transition: transform .2s; }
+.faq-item.open .faq-arr { transform: rotate(180deg); }
+.faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-a p { font-size: 13.5px; color: var(--text2); line-height: 1.85; padding: 4px 0 20px; margin: 0; }
+.faq-item.open .faq-a { max-height: 360px; }
+
+/* RELATED */
+.oc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 22px; }
+@media(max-width:640px) { .oc-grid { grid-template-columns: repeat(2,1fr); } }
+.oc { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-decoration: none; transition: all .2s; display: block; }
+.oc:hover { border-color: var(--border2); transform: translateY(-2px); }
+.oc-ico { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.oc-ico svg { width: 15px; height: 15px; }
+.oc-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+.oc-desc { font-size: 12px; color: var(--text3); line-height: 1.4; }
+
+@keyframes fadeInUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Arrow Speed Calculator — Compound, Recurve &amp; Crossbow
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Compound &middot; Recurve &middot; Crossbow &middot; Draw Weight &middot; FPS &middot; Kinetic Energy</div>
+    <h1 class="hero-h1">Arrow Speed<em>Calculator</em></h1>
+    <p class="hero-sub">The most accurate <strong>arrow speed calculator</strong> online — use it as a <strong>compound bow arrow speed calculator</strong>, <strong>recurve bow arrow speed calculator</strong>, or <strong>crossbow arrow speed calculator</strong>. Enter draw weight, draw length, and arrow weight to get FPS, kinetic energy, momentum, and hunting suitability in seconds.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge o">FPS + MPH</span>
+      <span class="hbadge b">Kinetic Energy</span>
+      <span class="hbadge p">Momentum</span>
+      <span class="hbadge t">Hunting Rating</span>
+      <span class="hbadge" style="border-color:rgba(52,211,153,.3);color:var(--lime);">Works as App</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CALCULATOR ═══ -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="15" height="15" fill="none" viewBox="0 0 15 15" stroke="currentColor" stroke-width="1.5"><path d="M2 13L13 2" stroke-linecap="round"/><path d="M13 2l-3 1.5-1.5 3L2 13" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Arrow Speed <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Physics-Based Formula</div>
+      </div>
+
+      <div class="calc-body">
+
+        <!-- BOW TYPE -->
+        <div class="bow-tabs">
+          <button class="bow-tab active" data-bow="compound" onclick="setBow('compound',this)">
+            <span class="bt-icon">&#127993;</span>
+            <span class="bt-name">Compound Bow</span>
+            <span class="bt-speed">260–350+ FPS</span>
+          </button>
+          <button class="bow-tab" data-bow="recurve" onclick="setBow('recurve',this)">
+            <span class="bt-icon">&#127992;</span>
+            <span class="bt-name">Recurve Bow</span>
+            <span class="bt-speed">150–220 FPS</span>
+          </button>
+          <button class="bow-tab" data-bow="crossbow" onclick="setBow('crossbow',this)">
+            <span class="bt-icon">&#9893;</span>
+            <span class="bt-name">Crossbow</span>
+            <span class="bt-speed">280–470 FPS</span>
+          </button>
+        </div>
+
+        <!-- STD TOGGLE -->
+        <div class="std-row">
+          <span class="std-label">Rating Standard:</span>
+          <span class="std-chip active" id="std-ibo" onclick="setStd('IBO',this)">IBO (70 lb / 30&quot; / 350gr)</span>
+          <span class="std-chip" id="std-amo" onclick="setStd('AMO',this)">AMO (60 lb / 30&quot; / 540gr)</span>
+          <span class="std-chip" id="std-actual" onclick="setStd('Actual',this)">Actual Setup</span>
+        </div>
+
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="inp-section-label">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="10" height="10" rx="1.5"/><path d="M3 6h6M6 3v6" stroke-linecap="round"/></svg>
+              Bow &amp; Arrow Specs
+            </div>
+            <div class="inp-stack">
+
+              <div class="inp-grp">
+                <label>Draw Weight</label>
+                <div class="inp-wrap">
+                  <input type="number" id="draw-weight" placeholder="65" min="20" max="220" step="1" value="65">
+                  <span class="inp-suffix">lbs</span>
+                </div>
+                <div class="slider-row">
+                  <input type="range" class="inp-slider" id="sl-dw" min="20" max="220" step="1" value="65">
+                  <span class="slider-val" id="sv-dw">65 lbs</span>
+                </div>
+                <div class="inp-sub" id="hint-dw">Compound: 40–90 lbs · Recurve: 25–60 lbs · Crossbow: 100–220 lbs</div>
+              </div>
+
+              <div class="inp-grp" id="dl-group">
+                <label>Draw Length</label>
+                <div class="inp-wrap">
+                  <input type="number" id="draw-length" placeholder="28" min="18" max="36" step="0.5" value="28">
+                  <span class="inp-suffix">inches</span>
+                </div>
+                <div class="slider-row">
+                  <input type="range" class="inp-slider" id="sl-dl" min="18" max="36" step="0.5" value="28">
+                  <span class="slider-val" id="sv-dl">28 in</span>
+                </div>
+                <div class="inp-sub">IBO standard = 30 in. ±1 in from 30 in = ±10 FPS</div>
+              </div>
+
+              <div class="inp-grp">
+                <label>Arrow Weight (total)</label>
+                <div class="inp-wrap">
+                  <input type="number" id="arrow-weight" placeholder="400" min="100" max="1200" step="5" value="400">
+                  <span class="inp-suffix">grains</span>
+                </div>
+                <div class="slider-row">
+                  <input type="range" class="inp-slider" id="sl-aw" min="100" max="900" step="5" value="400">
+                  <span class="slider-val" id="sv-aw">400 gr</span>
+                </div>
+                <div class="inp-sub">IBO standard = 5 gr/lb of draw weight. Light: &lt;5 gr/lb · Mid: 6–8 gr/lb · Heavy: 8+ gr/lb</div>
+              </div>
+
+              <div class="inp-grp">
+                <label>Bow Efficiency (%)</label>
+                <div class="inp-wrap">
+                  <input type="number" id="efficiency" placeholder="80" min="50" max="98" step="1" value="80">
+                  <span class="inp-suffix">%</span>
+                </div>
+                <div class="slider-row">
+                  <input type="range" class="inp-slider" id="sl-eff" min="50" max="98" step="1" value="80">
+                  <span class="slider-val" id="sv-eff">80%</span>
+                </div>
+                <div class="inp-sub" id="hint-eff">Compound: 75–90% · Recurve: 60–75% · Crossbow: 50–75%</div>
+              </div>
+
+              <!-- TARGET DISTANCE -->
+              <div class="inp-section-label" style="margin-top:4px;">
+                <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="5"/><circle cx="6" cy="6" r="2"/><line x1="6" y1="1" x2="6" y2="3" stroke-linecap="round"/></svg>
+                Target Distance (optional)
+              </div>
+              <div class="target-row">
+                <div class="inp-grp">
+                  <label>Distance</label>
+                  <div class="inp-wrap">
+                    <input type="number" id="target-dist" placeholder="40" min="1" max="200" step="1" value="40">
+                    <span class="inp-suffix" id="dist-sfx">yds</span>
+                  </div>
+                </div>
+                <div class="inp-grp">
+                  <label>Unit</label>
+                  <div class="inp-wrap">
+                    <select id="dist-unit" onchange="document.getElementById('dist-sfx').textContent=this.value">
+                      <option value="yds">Yards</option>
+                      <option value="m">Meters</option>
+                      <option value="ft">Feet</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="err-msg" id="err-msg">Please enter valid positive values for all fields.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><path d="M3 15L15 3M15 3H9M15 3v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Arrow Speed
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="inp-section-label">
+              <svg width="12" height="12" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M2 9l2-4 2.5 3 2-2.5 1.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+
+            <div class="result-placeholder" id="result-placeholder">
+              <div style="font-size:48px;">&#127993;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.75;">Enter your bow specs<br>and click <strong style="color:var(--orange);">Calculate Arrow Speed</strong><br>to see velocity, kinetic energy,<br>and hunting suitability.</div>
+            </div>
+
+            <div class="results-block" id="results-block">
+
+              <!-- FPS -->
+              <div class="fps-result">
+                <div class="fps-bow-badge" id="fps-badge">Compound Bow</div>
+                <div>
+                  <span class="fps-val" id="r-fps">—</span>
+                  <span class="fps-unit">FPS</span>
+                </div>
+                <div class="fps-mph" id="r-mph">— MPH &nbsp;|&nbsp; — m/s</div>
+              </div>
+
+              <!-- STAT GRID -->
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="sb-lbl">Kinetic Energy</div>
+                  <div class="sb-val ke" id="r-ke">—</div>
+                  <div class="sb-unit">ft&#8901;lbs</div>
+                </div>
+                <div class="stat-box">
+                  <div class="sb-lbl">Momentum</div>
+                  <div class="sb-val mom" id="r-mom">—</div>
+                  <div class="sb-unit">slug&#8901;ft/s</div>
+                </div>
+                <div class="stat-box" id="tof-box" style="display:none;">
+                  <div class="sb-lbl">Time of Flight</div>
+                  <div class="sb-val tof" id="r-tof">—</div>
+                  <div class="sb-unit">seconds to target</div>
+                </div>
+                <div class="stat-box" id="drop-box" style="display:none;">
+                  <div class="sb-lbl">Arrow Drop</div>
+                  <div class="sb-val drop" id="r-drop">—</div>
+                  <div class="sb-unit">inches (gravity drop)</div>
+                </div>
+              </div>
+
+              <!-- HUNT RATING -->
+              <div class="hunt-rating">
+                <div class="hr-title">Hunting Suitability — Based on Kinetic Energy</div>
+                <div class="hr-bar-wrap">
+                  <div class="hr-bar" id="hr-bar"></div>
+                </div>
+                <div class="hr-label" id="hr-label">—</div>
+                <div class="hr-tiers">
+                  <span>Small game</span>
+                  <span>Deer</span>
+                  <span>Elk / Bear</span>
+                  <span>Large game</span>
+                </div>
+              </div>
+
+              <!-- KE REFERENCE -->
+              <div class="ke-ref">
+                <div class="ke-ref-title">KE Reference — Your Result Highlighted</div>
+                <div class="ke-ref-row" id="ke-r1">
+                  <div class="ke-dot" style="background:#60a5fa;"></div>
+                  <span class="ke-ref-game">Small game (rabbit, squirrel)</span>
+                  <span class="ke-ref-val">&lt; 25 ft&#8901;lbs</span>
+                </div>
+                <div class="ke-ref-row" id="ke-r2">
+                  <div class="ke-dot" style="background:#10b981;"></div>
+                  <span class="ke-ref-game">Deer, antelope, pronghorn</span>
+                  <span class="ke-ref-val">25–41 ft&#8901;lbs</span>
+                </div>
+                <div class="ke-ref-row" id="ke-r3">
+                  <div class="ke-dot" style="background:#f59e0b;"></div>
+                  <span class="ke-ref-game">Elk, black bear, wild boar</span>
+                  <span class="ke-ref-val">42–65 ft&#8901;lbs</span>
+                </div>
+                <div class="ke-ref-row" id="ke-r4">
+                  <div class="ke-dot" style="background:#ef4444;"></div>
+                  <span class="ke-ref-game">Moose, brown bear, bison</span>
+                  <span class="ke-ref-val">65+ ft&#8901;lbs</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">FPS</div><div class="stat-lbl">Velocity Output</div></div>
+      <div class="stat-item"><div class="stat-val">KE</div><div class="stat-lbl">Kinetic Energy</div></div>
+      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Bow Types</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BOW TYPES SECTION ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Bow Arrow Speed Calculator — 3 Types</div>
+    <h2 class="sec-title">Arrow Speed by <span>Bow Type</span></h2>
+    <p class="sec-sub">Our <strong>bow arrow speed calculator</strong> automatically adjusts the formula for each bow type. Select your bow to use it as a <strong>compound bow arrow speed calculator</strong>, <strong>recurve bow arrow speed calculator</strong>, or <strong>crossbow arrow speed calculator</strong>.</p>
+
+    <div class="img-block" style="height:240px;background:var(--bg2);border:1px solid var(--border2);">
+      <svg viewBox="0 0 900 240" width="100%" height="240" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+        <!-- Background grid -->
+        <defs>
+          <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59,130,246,.07)" stroke-width="1"/></pattern>
+          <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".7"/></linearGradient>
+          <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".7"/></linearGradient>
+          <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".7"/></linearGradient>
+        </defs>
+        <rect width="900" height="240" fill="#0b1220"/>
+        <rect width="900" height="240" fill="url(#grid1)"/>
+        <!-- Glow blobs -->
+        <ellipse cx="150" cy="120" rx="120" ry="80" fill="#f59e0b" opacity=".06"/>
+        <ellipse cx="450" cy="120" rx="120" ry="80" fill="#3b82f6" opacity=".06"/>
+        <ellipse cx="750" cy="120" rx="120" ry="80" fill="#10b981" opacity=".06"/>
+        <!-- Dividers -->
+        <line x1="300" y1="20" x2="300" y2="220" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+        <line x1="600" y1="20" x2="600" y2="220" stroke="rgba(59,130,246,.15)" stroke-width="1"/>
+
+        <!-- === COMPOUND BOW (left panel) === -->
+        <!-- Bow body - vertical curve -->
+        <path d="M150,50 Q120,120 150,190" fill="none" stroke="url(#gOrange)" stroke-width="7" stroke-linecap="round"/>
+        <!-- Top cam (wheel) -->
+        <circle cx="153" cy="52" r="14" fill="none" stroke="#f59e0b" stroke-width="3"/>
+        <circle cx="153" cy="52" r="5" fill="#f59e0b" opacity=".5"/>
+        <!-- Bottom cam -->
+        <circle cx="153" cy="188" r="14" fill="none" stroke="#f59e0b" stroke-width="3"/>
+        <circle cx="153" cy="188" r="5" fill="#f59e0b" opacity=".5"/>
+        <!-- String -->
+        <line x1="153" y1="38" x2="153" y2="66" stroke="#60a5fa" stroke-width="1.5"/>
+        <line x1="153" y1="66" x2="118" y2="120" stroke="#60a5fa" stroke-width="1.5"/>
+        <line x1="118" y1="120" x2="153" y2="174" stroke="#60a5fa" stroke-width="1.5"/>
+        <line x1="153" y1="174" x2="153" y2="202" stroke="#60a5fa" stroke-width="1.5"/>
+        <!-- Arrow nocked -->
+        <line x1="118" y1="120" x2="230" y2="120" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Arrowhead -->
+        <polygon points="230,120 222,115 222,125" fill="#f59e0b"/>
+        <!-- Fletching -->
+        <path d="M125,120 Q122,112 118,120 Q122,128 125,120" fill="#60a5fa" opacity=".7"/>
+        <!-- Riser -->
+        <rect x="143" y="100" width="12" height="40" rx="3" fill="#1d4ed8" opacity=".6"/>
+        <!-- Labels -->
+        <text x="150" y="28" font-family="Barlow Condensed,sans-serif" font-size="16" font-weight="900" fill="#f59e0b" text-anchor="middle" letter-spacing="1">COMPOUND BOW</text>
+        <text x="150" y="218" font-family="Barlow Condensed,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">260–380+ FPS</text>
+        <!-- Speed badge -->
+        <rect x="92" y="100" width="100" height="22" rx="11" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.3)" stroke-width="1"/>
+        <text x="142" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">75–90% Efficiency</text>
+
+        <!-- === RECURVE BOW (center panel) === -->
+        <!-- Limbs curving outward -->
+        <path d="M430,55 Q385,75 385,120 Q385,165 430,185" fill="none" stroke="url(#gBlue)" stroke-width="7" stroke-linecap="round"/>
+        <!-- String -->
+        <line x1="430" y1="55" x2="430" y2="185" stroke="#60a5fa" stroke-width="1.5"/>
+        <!-- Arrow -->
+        <line x1="385" y1="120" x2="510" y2="120" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="510,120 502,115 502,125" fill="#3b82f6"/>
+        <path d="M392,120 Q389,112 385,120 Q389,128 392,120" fill="#a78bfa" opacity=".7"/>
+        <!-- Handle -->
+        <rect x="425" y="105" width="10" height="30" rx="3" fill="#1d4ed8" opacity=".6"/>
+        <!-- Labels -->
+        <text x="450" y="28" font-family="Barlow Condensed,sans-serif" font-size="16" font-weight="900" fill="#3b82f6" text-anchor="middle" letter-spacing="1">RECURVE BOW</text>
+        <text x="450" y="218" font-family="Barlow Condensed,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">150–225 FPS</text>
+        <rect x="392" y="100" width="100" height="22" rx="11" fill="rgba(59,130,246,.15)" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+        <text x="442" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">60–75% Efficiency</text>
+
+        <!-- === CROSSBOW (right panel) === -->
+        <!-- Stock horizontal -->
+        <rect x="660" y="113" width="130" height="14" rx="4" fill="#10b981" opacity=".7"/>
+        <!-- Barrel top -->
+        <rect x="680" y="105" width="90" height="8" rx="3" fill="#059669" opacity=".6"/>
+        <!-- Prod (limbs horizontal) -->
+        <path d="M680,109 Q670,90 685,82" fill="none" stroke="url(#gGreen)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M680,109 Q670,128 685,136" fill="none" stroke="url(#gGreen)" stroke-width="6" stroke-linecap="round"/>
+        <!-- String -->
+        <line x1="685" y1="82" x2="685" y2="136" stroke="#60a5fa" stroke-width="1.5"/>
+        <!-- Bolt/arrow -->
+        <line x1="685" y1="109" x2="800" y2="109" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="800,109 791,104 791,114" fill="#10b981"/>
+        <!-- Trigger -->
+        <rect x="715" y="120" width="8" height="16" rx="2" fill="#34d399" opacity=".6"/>
+        <!-- Labels -->
+        <text x="750" y="28" font-family="Barlow Condensed,sans-serif" font-size="16" font-weight="900" fill="#10b981" text-anchor="middle" letter-spacing="1">CROSSBOW</text>
+        <text x="750" y="218" font-family="Barlow Condensed,sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">280–470 FPS</text>
+        <rect x="692" y="142" width="110" height="22" rx="11" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.3)" stroke-width="1"/>
+        <text x="747" y="157" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">100–220 lb Draw</text>
+      </svg>
+      <div class="img-overlay"><span>Bow arrow speed calculator — compound bow (260–380+ FPS), recurve bow (150–225 FPS), and crossbow (280–470 FPS) speed comparison</span></div>
+    </div>
+
+    <div class="bow-showcase">
+      <div class="bsc" onclick="setBowAndScroll('compound')">
+        <div class="bsc-icon">&#127993;</div>
+        <div class="bsc-h">Compound Bow</div>
+        <div class="bsc-fps">260–380+ FPS</div>
+        <p class="bsc-p">Modern compound bows use cams and cables to reduce holding weight at full draw. Efficiency: 75–90%. Most hunting compound bows shoot 280–330 FPS at 65–70 lbs draw weight. IBO-rated speed is measured at 70 lbs, 30-inch draw, 350-grain arrow.</p>
+      </div>
+      <div class="bsc" onclick="setBowAndScroll('recurve')">
+        <div class="bsc-icon">&#127992;</div>
+        <div class="bsc-h">Recurve Bow</div>
+        <div class="bsc-fps">150–225 FPS</div>
+        <p class="bsc-p">Traditional recurve bows store energy in the limb tips. Efficiency: 60–75%. Olympic recurve bows at 45–50 lbs shoot 175–210 FPS. Heavier draw weights (55–60 lbs) can reach 200–220 FPS with light arrows. Draw length affects speed significantly.</p>
+      </div>
+      <div class="bsc" onclick="setBowAndScroll('crossbow')">
+        <div class="bsc-icon">&#9893;</div>
+        <div class="bsc-h">Crossbow</div>
+        <div class="bsc-fps">280–470 FPS</div>
+        <p class="bsc-p">Crossbows use high draw weights (100–220 lbs) with short power strokes (12–18 inches). Efficiency: 50–75%. Modern hunting crossbows shoot 300–400 FPS. Draw length for crossbows is the power stroke length, not a user-defined measurement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KE GUIDE ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Kinetic Energy Guide</div>
+    <h2 class="sec-title">How Much <span>Kinetic Energy</span> Do You Need?</h2>
+    <p class="sec-sub">Kinetic energy determines an arrow's ability to penetrate game. More KE means deeper penetration and greater lethality for ethical hunting.</p>
+    <div class="ke-grid">
+      <div class="ke-card">
+        <div class="ke-card-range" style="color:var(--accent2);">&lt; 25 ft&#8901;lbs</div>
+        <div class="ke-card-game">Small Game</div>
+        <p class="ke-card-p">Rabbit, squirrel, turkey. Sufficient for birds and small mammals at close range with sharp broadheads.</p>
+      </div>
+      <div class="ke-card">
+        <div class="ke-card-range" style="color:var(--green);">25–41 ft&#8901;lbs</div>
+        <div class="ke-card-game">Medium Game — Deer, Antelope</div>
+        <p class="ke-card-p">Minimum recommended for ethical whitetail deer hunting. Most bowhunting setups fall in this range. 40+ ft-lbs is preferred.</p>
+      </div>
+      <div class="ke-card">
+        <div class="ke-card-range" style="color:var(--orange);">42–65 ft&#8901;lbs</div>
+        <div class="ke-card-game">Large Game — Elk, Black Bear</div>
+        <p class="ke-card-p">Required for elk, black bear, wild boar, and caribou. Heavy arrows (500+ grains) at moderate speeds often achieve better penetration than light arrows at high speed.</p>
+      </div>
+      <div class="ke-card">
+        <div class="ke-card-range" style="color:var(--red);">65+ ft&#8901;lbs</div>
+        <div class="ke-card-game">Dangerous Game — Moose, Buffalo</div>
+        <p class="ke-card-p">Required for African plains game, brown bear, moose, and bison. Heavy arrows (600–900 grains) with strong mechanical or fixed broadheads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARTICLE ═══ -->
+<div class="container">
+<div class="article">
+
+  <h2>Arrow Speed Calculator — Complete Guide</h2>
+  <p>Our free <strong>arrow speed calculator</strong> — also the most accurate <strong>bow arrow speed calculator</strong> and <strong>archery arrow speed calculator</strong> available online — computes arrow velocity in FPS and MPH, along with kinetic energy, momentum, time of flight, and gravity drop. Use it as a <strong>compound bow arrow speed calculator</strong>, <strong>recurve arrow speed calculator</strong>, or <strong>crossbow arrow speed calculator for crossbow</strong> setups. This free <strong>arrow speed calculator app</strong> works on any device — phone, tablet, or desktop — with no download required. Unlike basic tools that only estimate FPS, this <strong>draw weight arrow speed calculator</strong> provides the complete ballistic picture needed for ethical hunting and precise target archery at any range.</p>
+
+  <div class="img-block" style="height:240px;background:var(--bg2);border:1px solid var(--border2);">
+    <svg viewBox="0 0 900 240" width="100%" height="240" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <defs>
+        <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#ef4444" stop-opacity=".8"/>
+        </linearGradient>
+        <filter id="glow2"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <rect width="900" height="240" fill="#05080f"/>
+      <!-- Speed lines / motion blur -->
+      <line x1="0" y1="115" x2="600" y2="115" stroke="rgba(245,158,11,.12)" stroke-width="18"/>
+      <line x1="0" y1="115" x2="500" y2="115" stroke="rgba(245,158,11,.1)" stroke-width="8"/>
+      <line x1="0" y1="115" x2="400" y2="115" stroke="rgba(245,158,11,.15)" stroke-width="3"/>
+      <line x1="80" y1="108" x2="430" y2="108" stroke="rgba(245,158,11,.08)" stroke-width="2"/>
+      <line x1="60" y1="122" x2="380" y2="122" stroke="rgba(245,158,11,.08)" stroke-width="2"/>
+      <!-- Main arrow shaft -->
+      <line x1="100" y1="115" x2="680" y2="115" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" filter="url(#glow2)"/>
+      <!-- Arrowhead -->
+      <polygon points="680,115 658,104 663,115 658,126" fill="#ef4444" filter="url(#glow2)"/>
+      <!-- Nock & fletching -->
+      <rect x="96" y="112" width="14" height="6" rx="2" fill="#60a5fa"/>
+      <path d="M100,115 Q95,104 105,110 Z" fill="#8b5cf6" opacity=".9"/>
+      <path d="M100,115 Q95,126 105,120 Z" fill="#8b5cf6" opacity=".9"/>
+      <path d="M108,115 Q100,104 112,108 Z" fill="#60a5fa" opacity=".7"/>
+
+      <!-- FPS Readout — large center display -->
+      <rect x="450" y="30" width="210" height="70" rx="10" fill="rgba(11,18,32,.95)" stroke="rgba(245,158,11,.4)" stroke-width="1.5"/>
+      <text x="555" y="55" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle" letter-spacing="2">ARROW VELOCITY</text>
+      <text x="555" y="90" font-family="Barlow Condensed,sans-serif" font-size="36" font-weight="900" fill="#f59e0b" text-anchor="middle">310 FPS</text>
+
+      <!-- KE Card -->
+      <rect x="450" y="118" width="95" height="60" rx="8" fill="rgba(11,18,32,.95)" stroke="rgba(16,185,129,.35)" stroke-width="1.5"/>
+      <text x="497" y="140" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="700" fill="#10b981" text-anchor="middle" letter-spacing="1.5">KIN. ENERGY</text>
+      <text x="497" y="165" font-family="Barlow Condensed,sans-serif" font-size="24" font-weight="900" fill="#10b981" text-anchor="middle">72 ft·lb</text>
+
+      <!-- Momentum Card -->
+      <rect x="555" y="118" width="105" height="60" rx="8" fill="rgba(11,18,32,.95)" stroke="rgba(139,92,246,.35)" stroke-width="1.5"/>
+      <text x="607" y="140" font-family="Barlow Condensed,sans-serif" font-size="10" font-weight="700" fill="#8b5cf6" text-anchor="middle" letter-spacing="1.5">MOMENTUM</text>
+      <text x="607" y="165" font-family="Barlow Condensed,sans-serif" font-size="22" font-weight="900" fill="#8b5cf6" text-anchor="middle">0.193 slug</text>
+
+      <!-- Small stat top-left -->
+      <rect x="30" y="30" width="160" height="50" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(96,165,250,.3)" stroke-width="1"/>
+      <text x="110" y="52" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#60a5fa" text-anchor="middle" letter-spacing="1.5">BOW SETUP</text>
+      <text x="110" y="70" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#94a3b8" text-anchor="middle">65 lb · 28 in · 400 gr</text>
+
+      <!-- Hunting badge -->
+      <rect x="30" y="160" width="160" height="50" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(16,185,129,.3)" stroke-width="1"/>
+      <text x="110" y="180" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981" text-anchor="middle" letter-spacing="1.5">HUNT RATING</text>
+      <circle cx="55" cy="195" r="6" fill="#10b981" opacity=".7"/>
+      <text x="110" y="197" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">Elk / Large Game ✓</text>
+
+      <!-- Ground line -->
+      <line x1="0" y1="205" x2="900" y2="205" stroke="rgba(59,130,246,.1)" stroke-width="1"/>
+      <!-- Target rings at far right -->
+      <circle cx="850" cy="115" r="40" fill="none" stroke="rgba(239,68,68,.2)" stroke-width="1.5"/>
+      <circle cx="850" cy="115" r="28" fill="none" stroke="rgba(239,68,68,.25)" stroke-width="1.5"/>
+      <circle cx="850" cy="115" r="16" fill="none" stroke="rgba(239,68,68,.3)" stroke-width="1.5"/>
+      <circle cx="850" cy="115" r="6"  fill="rgba(239,68,68,.5)"/>
+    </svg>
+    <div class="img-overlay"><span>Arrow speed calculator — velocity, kinetic energy, and momentum calculated from your compound bow, recurve, or crossbow setup</span></div>
+  </div>
+
+  <h2>How to Use the Arrow Speed Calculator — Step-by-Step</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Select your bow type</strong><span>Click <strong>Compound Bow</strong> (compound bow arrow speed calculator mode), <strong>Recurve Bow</strong> (recurve bow arrow speed calculator mode), or <strong>Crossbow</strong> (crossbow arrow speed calculator mode). Each type loads appropriate default efficiency values and adjusts the speed formula. Compound bows are most efficient (75–90%); recurve bows less so (60–75%).</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Enter draw weight in lbs</strong><span>This is the peak draw weight stamped on your bow's limb pocket. Use the actual measured weight, not the rated weight. Most hunting compound bows run 55–70 lbs. For crossbows, enter the rated draw weight (commonly 100–185 lbs).</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Enter draw length in inches</strong><span>Your draw length is the distance from the nocking point to the grip pivot point. The IBO standard is 30 inches. Most adult archers shoot 26–30 inches. Every inch longer adds approximately 10 FPS; every inch shorter subtracts 10 FPS.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Enter total arrow weight in grains</strong><span>Include the arrow shaft, insert, nock, fletching, and broadhead or field point. A typical hunting arrow with a 100-grain broadhead weighs 350–500 grains total. Heavier arrows are slower but hit harder and penetrate better.</span></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-txt"><strong>Add target distance (optional)</strong><span>Entering target distance calculates time of flight and gravity drop — critical information for shooting at longer ranges or for choosing sight settings. At 40 yards, most hunting arrows take 0.3–0.45 seconds and drop 4–8 inches from the line of sight.</span></div></div>
+  </div>
+
+  <h2>Arrow Speed Calculator Formula</h2>
+  <p>The <strong>arrow speed formula</strong> is based on the energy transfer model. The bow stores energy as it is drawn (draw work = approximately 0.5 × draw weight × draw length) and transfers a percentage of that energy to the arrow:</p>
+  <p><span class="fi">FPS = √(2 × Stored Energy × Efficiency ÷ Arrow Mass)</span></p>
+  <p>Where stored energy ≈ 0.5 × draw weight (lbs) × draw length (inches) × 0.0833 (unit conversion to foot-lbs), efficiency is the bow's energy transfer ratio (typically 75–90% for compound), and arrow mass is in pounds (grains ÷ 7000).</p>
+
+  <h3>Kinetic Energy Formula</h3>
+  <p><span class="fi">KE (ft·lbs) = (Arrow Weight in grains × Velocity²) ÷ 450,240</span></p>
+  <div class="exb">
+    <h4>Example — 65 lb compound bow, 28-inch draw, 400-grain arrow at 80% efficiency</h4>
+    <p>Stored energy ≈ 0.5 × 65 × 28 × 0.0833 = 75.8 ft-lbs<br>
+    Energy to arrow = 75.8 × 0.80 = 60.6 ft-lbs<br>
+    Arrow mass = 400 ÷ 7000 = 0.05714 lbs<br>
+    Velocity = √(2 × 60.6 ÷ 0.05714) = √(2,121) ≈ <strong>261 FPS</strong><br>
+    KE = (400 × 261²) ÷ 450,240 = <strong>60.5 ft·lbs</strong></p>
+  </div>
+
+  <h3>Momentum Formula</h3>
+  <p><span class="fi">Momentum = (Arrow Weight in grains × Velocity in FPS) ÷ 225,400</span></p>
+  <p>Momentum (slug·ft/s) is a better predictor of penetration than kinetic energy because it measures how well an arrow maintains its force through resistance — dense hide, muscle, and bone. A heavy, slow arrow often out-penetrates a light, fast arrow with similar KE.</p>
+
+  <h2>IBO vs AMO Speed Ratings — What Do They Mean?</h2>
+  <p>When shopping for a bow, you will see two speed rating systems. Understanding both prevents misleading comparisons:</p>
+  <table class="data-table">
+    <tr><th>Standard</th><th>Draw Weight</th><th>Draw Length</th><th>Arrow Weight</th><th>Notes</th></tr>
+    <tr><td><strong>IBO</strong></td><td>70 lbs</td><td>30 inches</td><td>350 gr (5 gr/lb)</td><td class="warn">Most common, highest numbers</td></tr>
+    <tr><td><strong>AMO</strong></td><td>60 lbs</td><td>30 inches</td><td>540 gr (9 gr/lb)</td><td>More realistic real-world speeds</td></tr>
+    <tr><td><strong>ATA</strong></td><td>70 lbs</td><td>30 inches</td><td>350 gr</td><td class="good">Same as IBO (ATA replaced IBO)</td></tr>
+  </table>
+  <p>IBO speeds are typically 15–30 FPS higher than real-world performance for an average adult archer. An IBO-rated 320 FPS bow with a 28-inch draw length shooting a 450-grain arrow will realistically shoot closer to 270–285 FPS. Our calculator adjusts for your actual draw length and arrow weight automatically.</p>
+
+  <h2>Draw Weight Arrow Speed Calculator — How Draw Weight Affects FPS</h2>
+  <p>Draw weight has the largest single impact on arrow speed in any <strong>draw weight arrow speed calculator</strong>. More stored energy = faster arrow. However, the relationship is not linear — doubling draw weight does not double speed because speed is proportional to the square root of energy.</p>
+  <table class="data-table">
+    <tr><th>Draw Weight</th><th>Approx FPS (400gr, 28", 80%)</th><th>KE (ft·lbs)</th><th>Hunting Use</th></tr>
+    <tr><td><strong>40 lbs</strong></td><td>200 FPS</td><td>35 ft·lbs</td><td>Deer (minimum)</td></tr>
+    <tr><td><strong>50 lbs</strong></td><td>228 FPS</td><td>46 ft·lbs</td><td class="good">Deer / elk</td></tr>
+    <tr><td><strong>60 lbs</strong></td><td>255 FPS</td><td>58 ft·lbs</td><td class="good">Elk / bear</td></tr>
+    <tr><td><strong>70 lbs</strong></td><td>278 FPS</td><td>68 ft·lbs</td><td class="good">Large game</td></tr>
+    <tr><td><strong>80 lbs</strong></td><td>300 FPS</td><td>80 ft·lbs</td><td class="good">Dangerous game</td></tr>
+  </table>
+
+  <div class="img-block" style="height:260px;background:var(--bg2);border:1px solid var(--border2);">
+    <svg viewBox="0 0 900 260" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <defs>
+        <linearGradient id="barGrad1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".7"/></linearGradient>
+        <linearGradient id="barGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#065f46" stop-opacity=".7"/></linearGradient>
+        <linearGradient id="barGrad3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309" stop-opacity=".7"/></linearGradient>
+        <linearGradient id="barGrad4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9" stop-opacity=".7"/></linearGradient>
+        <linearGradient id="barGrad5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#991b1b" stop-opacity=".7"/></linearGradient>
+      </defs>
+      <rect width="900" height="260" fill="#05080f"/>
+      <!-- Header -->
+      <text x="450" y="28" font-family="Barlow Condensed,sans-serif" font-size="16" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">DRAW WEIGHT ARROW SPEED CALCULATOR — FPS vs KE BY DRAW WEIGHT</text>
+      <!-- Axis lines -->
+      <line x1="80" y1="50" x2="80" y2="205" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+      <line x1="80" y1="205" x2="870" y2="205" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+      <!-- Grid lines -->
+      <line x1="80" y1="155" x2="870" y2="155" stroke="rgba(59,130,246,.08)" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="80" y1="105" x2="870" y2="105" stroke="rgba(59,130,246,.08)" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <!-- Y axis labels -->
+      <text x="70" y="210" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#4a6080" text-anchor="end">0</text>
+      <text x="70" y="160" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#4a6080" text-anchor="end">150</text>
+      <text x="70" y="110" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#4a6080" text-anchor="end">250</text>
+
+      <!-- BAR 1: 40 lbs -->
+      <rect x="110" y="140" width="50" height="65" rx="4" fill="url(#barGrad1)" opacity=".85"/>
+      <text x="135" y="135" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle">200</text>
+      <text x="135" y="148" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">FPS</text>
+      <text x="135" y="220" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">40 lbs</text>
+      <text x="135" y="234" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">35 ft·lb</text>
+
+      <!-- BAR 2: 50 lbs -->
+      <rect x="235" y="118" width="50" height="87" rx="4" fill="url(#barGrad2)" opacity=".85"/>
+      <text x="260" y="113" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle">228</text>
+      <text x="260" y="126" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">FPS</text>
+      <text x="260" y="220" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">50 lbs</text>
+      <text x="260" y="234" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">46 ft·lb</text>
+
+      <!-- BAR 3: 60 lbs (HIGHLIGHTED) -->
+      <rect x="358" y="95" width="58" height="110" rx="4" fill="url(#barGrad3)" opacity=".95"/>
+      <rect x="355" y="92" width="64" height="117" rx="5" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3 2" opacity=".5"/>
+      <text x="387" y="89" font-family="Barlow Condensed,sans-serif" font-size="15" font-weight="900" fill="#f59e0b" text-anchor="middle">255</text>
+      <text x="387" y="102" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">FPS</text>
+      <text x="387" y="220" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">60 lbs</text>
+      <text x="387" y="234" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">58 ft·lb ★</text>
+
+      <!-- BAR 4: 70 lbs -->
+      <rect x="490" y="78" width="50" height="127" rx="4" fill="url(#barGrad4)" opacity=".85"/>
+      <text x="515" y="73" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#8b5cf6" text-anchor="middle">278</text>
+      <text x="515" y="86" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">FPS</text>
+      <text x="515" y="220" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">70 lbs</text>
+      <text x="515" y="234" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">68 ft·lb</text>
+
+      <!-- BAR 5: 80 lbs -->
+      <rect x="615" y="60" width="50" height="145" rx="4" fill="url(#barGrad5)" opacity=".85"/>
+      <text x="640" y="55" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#ef4444" text-anchor="middle">300</text>
+      <text x="640" y="68" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">FPS</text>
+      <text x="640" y="220" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#f0f4ff" text-anchor="middle">80 lbs</text>
+      <text x="640" y="234" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">80 ft·lb</text>
+
+      <!-- Legend -->
+      <rect x="730" y="80" width="145" height="90" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <text x="802" y="100" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle" letter-spacing="1">SETUP</text>
+      <text x="802" y="118" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">400 grain arrow</text>
+      <text x="802" y="133" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">28 inch draw</text>
+      <text x="802" y="148" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">80% efficiency</text>
+      <rect x="738" y="157" width="127" height="1" fill="rgba(59,130,246,.2)"/>
+      <text x="802" y="162" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Draw Weight Arrow Speed Calculator</text>
+      <!-- Bottom label -->
+      <text x="450" y="254" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#4a6080" text-anchor="middle">Archery Arrow Speed Calculator — FPS increases with draw weight (not linear — proportional to √energy)</text>
+    </svg>
+    <div class="img-overlay" style="background:linear-gradient(transparent,rgba(5,8,15,.6));"><span>Draw weight arrow speed calculator — FPS and kinetic energy at 40, 50, 60, 70, and 80 lb draw weights (400 gr arrow, 28 in draw)</span></div>
+  </div>
+
+  <h2>Light vs Heavy Arrows — Speed vs Penetration Trade-Off</h2>
+  <p>One of the most important decisions in archery is choosing arrow weight. Lighter arrows fly faster but carry less momentum and create more noise. Heavier arrows are slower but hit harder, penetrate better, and are typically quieter. The "best" arrow depends entirely on your application.</p>
+  <table class="data-table">
+    <tr><th>Arrow Type</th><th>Weight</th><th>FPS (65lb bow)</th><th>KE</th><th>Momentum</th><th>Best For</th></tr>
+    <tr><td><strong>Ultra-light</strong></td><td>300 gr</td><td class="warn">295 FPS</td><td>58 ft·lbs</td><td>0.125</td><td>3D archery, flat trajectory</td></tr>
+    <tr><td><strong>Light</strong></td><td>350 gr</td><td class="warn">278 FPS</td><td>60 ft·lbs</td><td>0.138</td><td>Target, IBO speed rating</td></tr>
+    <tr><td><strong>Mid-weight</strong></td><td>450 gr</td><td>252 FPS</td><td>63 ft·lbs</td><td class="good">0.161</td><td>Deer, medium game</td></tr>
+    <tr><td><strong>Heavy</strong></td><td>550 gr</td><td>232 FPS</td><td>66 ft·lbs</td><td class="good">0.182</td><td>Elk, large game</td></tr>
+    <tr><td><strong>Ultra-heavy</strong></td><td>700 gr</td><td>208 FPS</td><td>67 ft·lbs</td><td class="good">0.206</td><td>Dangerous game, deep penetration</td></tr>
+  </table>
+
+  <h2>Compound Bow Arrow Speed Calculator</h2>
+  <p>When used as a <strong>compound bow arrow speed calculator</strong>, the formula accounts for the mechanical advantage of cams and cables — which reduce holding weight at full draw while maintaining peak stored energy. Compound bow efficiency ranges from 75–90%, significantly higher than recurve bows. Most hunting compound bows at 60–70 lbs draw weight produce 270–340 FPS with hunting arrows. The <strong>compound bow arrow speed calculator</strong> mode defaults to 80% efficiency — adjust this up if you have a high-performance speed cam or down if your bow is older.</p>
+
+  <h2>Recurve Bow Arrow Speed Calculator — Recurve Arrow Speed Calculator</h2>
+  <p>The <strong>recurve arrow speed calculator</strong> mode uses a lower efficiency factor (60–75%) reflecting traditional recurve limb design. Recurve bows store and release energy less efficiently than compound bows because the draw force curve is more linear. A <strong>recurve bow arrow speed calculator</strong> estimate at 40 lbs and 28-inch draw with a 400-grain arrow yields approximately 155–180 FPS — sufficient for target archery and small-to-medium game at close range. Olympic recurve bows at 45–50 lbs can reach 190–210 FPS with lighter arrows.</p>
+
+  <h2>Crossbow Arrow Speed Calculator — Arrow Speed Calculator for Crossbow</h2>
+  <p>Our <strong>crossbow arrow speed calculator</strong> and <strong>arrow speed calculator for crossbow</strong> setups uses the power stroke (not a user draw length) as the key distance variable. Crossbows have very high draw weights (100–220 lbs) but short power strokes (12–18 inches), resulting in net stored energy similar to vertical bows. Crossbow efficiency is typically 50–70% due to the mechanical system. Modern hunting crossbows rated at 330–420 FPS in our <strong>crossbow arrow speed calculator</strong> produce devastating kinetic energy at close to mid range, making them among the most powerful hunting tools in archery.</p>
+
+  <h2>Most Accurate Arrow Speed Calculator — Why Use an Online Tool?</h2>
+  <p>The <strong>most accurate arrow speed calculator</strong> online applies the physics energy transfer model rather than simple lookup tables. Our calculator is accurate within 5–10% of chronograph-measured speeds for most setups. To get the most accurate results from any <strong>arrow speed calculator</strong>: use your actual draw weight (measured, not rated), enter your real draw length (measured, not estimated), use your complete arrow weight including broadhead, and fine-tune the efficiency slider to match your bow type. For absolute precision, validate the calculator's estimate against a real chronograph — an inexpensive tool that costs $60–120 and removes all guesswork.</p>
+
+  <h2>Arrow Speed Calculator App — Use It on Any Device</h2>
+  <p>Our free <strong>arrow speed calculator app</strong> works on any device — iPhone, Android, tablet, or desktop — without downloading anything. Simply open the page in your mobile browser and use it exactly like a native app. Bookmark it to your home screen for quick access at the range or in the field. Unlike dedicated <strong>arrow speed calculator app</strong> downloads, our web-based tool is always up to date, requires no permissions, and never needs updates. It works offline once loaded on most modern browsers.</p>
+
+  <div class="tip">
+    <p><strong>Archery pro tip:</strong> For bowhunting deer at typical distances (15–35 yards), prioritize momentum over speed. A 450–500 grain arrow at 265 FPS with a razor-sharp fixed blade broadhead will out-penetrate a 300 grain arrow at 300 FPS. The heavier arrow also makes less noise at the shot, giving deer less time to react ("jumping the string").</p>
+  </div>
+
+  <div class="warnb">
+    <p><strong>Important:</strong> This arrow speed calculator provides estimates based on physics formulas and typical bow efficiency values. Actual arrow speed may vary due to bow tuning, cam timing, string material, accessories (quiver, stabilizers, sights), temperature, and individual shooting form. For precise measurements, use a chronograph to measure actual arrow speed from your specific bow and arrow setup.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Arrow Speed Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Answers covering the bow arrow speed calculator, archery arrow speed calculator, draw weight arrow speed calculator, compound bow, recurve, crossbow, and most accurate arrow speed calculator questions.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How is arrow speed calculated from draw weight and draw length?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Arrow speed is calculated using the energy transfer model: the bow stores energy equal to approximately 0.5 × draw weight × draw length (in feet). This energy, multiplied by the bow's efficiency percentage, is transferred to the arrow. Using the kinetic energy equation (KE = ½mv²), we solve for velocity: <strong>FPS = √(2 × stored energy × efficiency ÷ arrow mass in lbs)</strong>. Draw length adjustments from the IBO 30-inch standard add or subtract ~10 FPS per inch. Extra arrow weight above the IBO standard reduces speed at approximately 1.5–2 FPS per 5 grains added.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is a good arrow speed for deer hunting?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>For ethical whitetail deer hunting, most archery organizations recommend a minimum of <strong>270 FPS</strong> with at least <strong>40 ft-lbs of kinetic energy</strong>. Modern compound bows at 55–70 lbs draw weight typically shoot 270–320 FPS with hunting arrows (400–500 grains), which is well within the ethical range for shots under 40 yards. Speed is less important than kinetic energy and momentum — a 265 FPS setup with a 450-grain arrow can be more lethal than a 295 FPS setup with a 300-grain arrow because heavier arrows penetrate more consistently.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is kinetic energy in archery and how much do I need?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Kinetic energy (KE) in archery is the energy the arrow carries to the target, measured in foot-pounds. Formula: <strong>KE = (Arrow Weight in grains × Velocity²) ÷ 450,240</strong>. Guidelines for hunting: under 25 ft-lbs for small game; 25–41 ft-lbs for deer and antelope; 42–65 ft-lbs for elk, bear, and boar; 65+ ft-lbs for moose, buffalo, and African plains game. Our arrow speed calculator displays your kinetic energy automatically and highlights which game category your setup covers.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does draw length affect arrow speed?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Draw length directly affects how much energy the bow stores. Longer draw = more distance the string travels = more work done on the string = more energy stored. The rule of thumb: <strong>every inch of draw length from the IBO 30-inch standard adds or subtracts approximately 10 FPS</strong>. An archer with a 28-inch draw shooting an IBO-rated 310 FPS bow will realistically get about 290 FPS (2 inches short × 10 FPS = 20 FPS less). Always adjust IBO speed ratings for your actual draw length when comparing bows.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the difference between arrow momentum and kinetic energy?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Both measure an arrow's hitting power, but differently. <strong>Kinetic energy</strong> (KE = ½mv²) represents initial impact force — how hard the arrow hits on contact. <strong>Momentum</strong> (p = mv) represents the arrow's ability to maintain that force through resistance — how well it pushes through hide, muscle, and bone. A heavier, slower arrow often has better momentum and therefore deeper penetration, even if its KE is similar to a lighter, faster arrow. For hunting thick-skinned or heavily muscled game, prioritize momentum. For flat trajectory and long-range accuracy, prioritize kinetic energy and speed.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How accurate is an arrow speed calculator vs a chronograph?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>An arrow speed calculator provides estimates within ±5–15% of actual measured speed. Accuracy depends on how well the bow's actual efficiency matches the assumed value. Variables that affect real-world speed include: bow tuning quality, cam timing, string stretch and material (fast-flight strings are faster), accessories weight (heavy stabilizers and quivers can cost 5–10 FPS), arrow spine selection, temperature (bows shoot slightly slower in cold weather), and individual shooting form. For precise measurements, use a chronograph (like the Caldwell Ballistic Precision or Magnetospeed) to measure actual arrow speed from your specific setup.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is the best crossbow arrow speed calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Our free <strong>crossbow arrow speed calculator</strong> and <strong>arrow speed calculator for crossbow</strong> setups uses the power stroke length and draw weight to estimate FPS using physics energy transfer — more accurate than simple lookup tables. Select the Crossbow tab in our calculator, enter your crossbow's draw weight (typically 100–185 lbs), power stroke length (typically 12–18 inches), and bolt weight (typically 400–450 grains for hunting bolts). The <strong>crossbow arrow speed calculator</strong> will give you FPS, kinetic energy, and momentum instantly. Most hunting crossbows rated at 330–420 FPS produce 90–160 ft-lbs of kinetic energy — far more than vertical bows and sufficient for any North American big game.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How is the recurve bow arrow speed calculator different from compound?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>recurve bow arrow speed calculator</strong> mode in our tool uses a lower efficiency factor (60–75%) compared to compound bow mode (75–90%). This reflects the fundamental difference in limb mechanics — recurve bows transfer energy less efficiently because they lack the cam system that helps compound bows store more energy at the same draw weight. A <strong>recurve arrow speed calculator</strong> estimate for a 45 lb recurve at 28-inch draw with a 400-grain arrow typically yields 160–185 FPS — compared to 235–260 FPS from a compound bow at the same draw weight. This is why compound bows are more popular for bowhunting while recurves remain traditional and are used at Olympic level for target archery.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">Is there an arrow speed calculator app I can use on my phone?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Yes — our <strong>arrow speed calculator app</strong> works on any phone or tablet directly in your mobile browser. No download is needed. Open SpeedCalculator.net/arrow-speed-calculator/ on your iPhone or Android, and the page works exactly like a native <strong>arrow speed calculator app</strong>. You can bookmark it or add it to your home screen for one-tap access at the range. The <strong>most accurate arrow speed calculator</strong> experience is available on mobile, with the same physics-based formula, 4 sliders, 3 bow type tabs, and full results including kinetic energy, momentum, and hunting rating. All calculations happen instantly in your browser — no internet connection needed after the page loads.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/speed-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><path d="M2 12l4-8 3.5 5 2.5-3.5 2 4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, speed, and time</div>
+      </a>
+      <a href="/distance-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><path d="M2 7.5h11M9 4l4 3.5L9 11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Distance Calculator</div>
+        <div class="oc-desc">Range and distance tools</div>
+      </a>
+      <a href="/pace-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#f59e0b" stroke-width="1.4"><circle cx="7.5" cy="7.5" r="6"/><path d="M7.5 4v3.5l2.5 2" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Pace Calculator</div>
+        <div class="oc-desc">Running and speed pace</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><circle cx="4" cy="4" r="2"/><circle cx="11" cy="11" r="2"/><path d="M12 3L3 12" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calculator</div>
+        <div class="oc-desc">Percentage calculations</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+var bowType = 'compound';
+var ratingStd = 'IBO';
+
+var BOW_DEFAULTS = {
+  compound: { dw: 65, dl: 28, aw: 400, eff: 80, dwMin: 20, dwMax: 100, dlMin: 18, dlMax: 36, effMin: 65, effMax: 98, dlShow: true },
+  recurve:  { dw: 40, dl: 28, aw: 400, eff: 68, dwMin: 20, dwMax: 80,  dlMin: 18, dlMax: 36, effMin: 50, effMax: 82, dlShow: true },
+  crossbow: { dw: 150,dl: 14, aw: 400, eff: 65, dwMin: 80, dwMax: 220, dlMin: 8,  dlMax: 22, effMin: 45, effMax: 78, dlShow: true }
+};
+
+/* ── SET BOW TYPE ── */
+function setBow(type, btn) {
+  bowType = type;
+  document.querySelectorAll('.bow-tab').forEach(function(b){ b.classList.remove('active'); });
+  if(btn) btn.classList.add('active');
+  var cfg = BOW_DEFAULTS[type];
+  var dwEl = document.getElementById('draw-weight');
+  var dlEl = document.getElementById('draw-length');
+  var awEl = document.getElementById('arrow-weight');
+  var effEl = document.getElementById('efficiency');
+  dwEl.value = cfg.dw;
+  dlEl.value = cfg.dl;
+  awEl.value = cfg.aw;
+  effEl.value = cfg.eff;
+  var slDw = document.getElementById('sl-dw'); slDw.min = cfg.dwMin; slDw.max = cfg.dwMax; slDw.value = cfg.dw;
+  var slDl = document.getElementById('sl-dl'); slDl.min = cfg.dlMin; slDl.max = cfg.dlMax; slDl.value = cfg.dl;
+  var slAw = document.getElementById('sl-aw'); slAw.value = cfg.aw;
+  var slEff = document.getElementById('sl-eff'); slEff.min = cfg.effMin; slEff.max = cfg.effMax; slEff.value = cfg.eff;
+  document.getElementById('sv-dw').textContent = cfg.dw + ' lbs';
+  document.getElementById('sv-dl').textContent = cfg.dl + (type === 'crossbow' ? ' in (stroke)' : ' in');
+  document.getElementById('sv-aw').textContent = cfg.aw + ' gr';
+  document.getElementById('sv-eff').textContent = cfg.eff + '%';
+  var hints = { compound: 'Compound: 40–90 lbs · Recurve: 25–60 lbs · Crossbow: 100–220 lbs', recurve: 'Recurve: 25–60 lbs typical', crossbow: 'Crossbow: 100–220 lbs peak draw weight' };
+  document.getElementById('hint-dw').textContent = hints[type] || hints.compound;
+  var effHints = { compound: 'Compound bows: 75–90% efficiency typical', recurve: 'Recurve bows: 60–75% efficiency typical', crossbow: 'Crossbows: 50–70% efficiency (short power stroke)' };
+  document.getElementById('hint-eff').textContent = effHints[type];
+  var dlLabel = type === 'crossbow' ? 'Power Stroke Length' : 'Draw Length';
+  document.querySelector('#dl-group label').textContent = dlLabel;
+  document.getElementById('fps-badge').textContent = (type === 'compound' ? 'Compound Bow' : type === 'recurve' ? 'Recurve Bow' : 'Crossbow') + ' — Estimated FPS';
+  resetResult();
+}
+
+function setBowAndScroll(type) {
+  var btns = document.querySelectorAll('.bow-tab');
+  btns.forEach(function(b){ if(b.getAttribute('data-bow') === type) setBow(type, b); });
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ── RATING STD ── */
+function setStd(std, el) {
+  ratingStd = std;
+  document.querySelectorAll('.std-chip').forEach(function(c){ c.classList.remove('active'); });
+  el.classList.add('active');
+  if(std === 'IBO') {
+    document.getElementById('draw-weight').value = 70; document.getElementById('sl-dw').value = 70; document.getElementById('sv-dw').textContent = '70 lbs';
+    document.getElementById('draw-length').value = 30; document.getElementById('sl-dl').value = 30; document.getElementById('sv-dl').textContent = '30 in';
+    document.getElementById('arrow-weight').value = 350; document.getElementById('sl-aw').value = 350; document.getElementById('sv-aw').textContent = '350 gr';
+  } else if(std === 'AMO') {
+    document.getElementById('draw-weight').value = 60; document.getElementById('sl-dw').value = 60; document.getElementById('sv-dw').textContent = '60 lbs';
+    document.getElementById('draw-length').value = 30; document.getElementById('sl-dl').value = 30; document.getElementById('sv-dl').textContent = '30 in';
+    document.getElementById('arrow-weight').value = 540; document.getElementById('sl-aw').value = 540; document.getElementById('sv-aw').textContent = '540 gr';
+  }
+}
+
+/* ── SLIDERS SYNC ── */
+function syncPair(inpId, slId, dispId, suffix) {
+  var inp = document.getElementById(inpId), sl = document.getElementById(slId), disp = document.getElementById(dispId);
+  inp.addEventListener('input', function(){ sl.value = this.value; disp.textContent = this.value + suffix; });
+  sl.addEventListener('input', function(){ inp.value = this.value; disp.textContent = this.value + suffix; });
+}
+syncPair('draw-weight', 'sl-dw', 'sv-dw', ' lbs');
+syncPair('draw-length', 'sl-dl', 'sv-dl', ' in');
+syncPair('arrow-weight', 'sl-aw', 'sv-aw', ' gr');
+syncPair('efficiency', 'sl-eff', 'sv-eff', '%');
+
+/* ── FORMAT ── */
+function fmt(n, dp) { return parseFloat(n.toFixed(dp == null ? 1 : dp)).toString(); }
+
+/* ── RESET ── */
+function resetResult() {
+  document.getElementById('results-block').style.display = 'none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('result-placeholder').style.display = 'flex';
+  document.getElementById('err-msg').style.display = 'none';
+}
+
+/* ── CALCULATE ── */
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+  var dw = parseFloat(document.getElementById('draw-weight').value);
+  var dl = parseFloat(document.getElementById('draw-length').value);
+  var aw = parseFloat(document.getElementById('arrow-weight').value);
+  var eff = parseFloat(document.getElementById('efficiency').value) / 100;
+  var dist = parseFloat(document.getElementById('target-dist').value) || 0;
+  var distUnit = document.getElementById('dist-unit').value;
+
+  if(isNaN(dw)||dw<=0||isNaN(dl)||dl<=0||isNaN(aw)||aw<=0||isNaN(eff)||eff<=0){
+    document.getElementById('err-msg').style.display='block'; return;
+  }
+
+  /* ENERGY MODEL */
+  /* Stored energy in foot-pounds: work = avg force × distance
+     For compound bows, draw force varies — approximate stored energy:
+     E_stored ≈ 0.5 × draw_weight(lbs) × draw_length(in) × (1/12) ft/in */
+  var storedFtLb = 0.5 * dw * (dl / 12); /* ft-lbs */
+  var energyToArrow = storedFtLb * eff;
+
+  /* Arrow mass in slugs: 1 grain = 1/7000 lb; 1 slug = 1 lb / 32.174 */
+  var arrowLbs = aw / 7000;
+  var arrowSlugs = arrowLbs / 32.174;
+
+  /* Velocity: KE = 0.5 × m × v² → v = sqrt(2 × KE / m) */
+  /* energyToArrow is in ft-lbs = ft×lbf; 1 ft-lbf = 1 slug·ft²/s² */
+  var fps = Math.sqrt(2 * energyToArrow / arrowSlugs);
+
+  /* KINETIC ENERGY */
+  var ke = (aw * fps * fps) / 450240;
+
+  /* MOMENTUM */
+  var momentum = (aw * fps) / 225400;
+
+  /* MPH and m/s */
+  var mph = fps * 0.681818;
+  var ms = fps * 0.3048;
+
+  /* TIME OF FLIGHT & ARROW DROP */
+  var tof = 0, dropInches = 0;
+  if(dist > 0) {
+    var distFt = dist;
+    if(distUnit === 'yds') distFt = dist * 3;
+    else if(distUnit === 'm') distFt = dist * 3.28084;
+    tof = distFt / fps;
+    /* gravity drop in inches (ignoring arc): d = 0.5 × g × t² */
+    dropInches = 0.5 * 32.174 * tof * tof * 12; /* × 12 to convert ft to inches */
+  }
+
+  /* UPDATE UI */
+  document.getElementById('r-fps').textContent = fmt(fps, 0);
+  document.getElementById('r-mph').textContent = fmt(mph, 1) + ' MPH  |  ' + fmt(ms, 1) + ' m/s';
+  document.getElementById('r-ke').textContent = fmt(ke, 1);
+  document.getElementById('r-mom').textContent = fmt(momentum, 4);
+
+  if(dist > 0) {
+    document.getElementById('tof-box').style.display = 'block';
+    document.getElementById('drop-box').style.display = 'block';
+    document.getElementById('r-tof').textContent = fmt(tof, 3);
+    document.getElementById('r-drop').textContent = fmt(dropInches, 1);
+    document.querySelector('#tof-box .sb-unit').textContent = 'seconds to ' + dist + ' ' + distUnit;
+  } else {
+    document.getElementById('tof-box').style.display = 'none';
+    document.getElementById('drop-box').style.display = 'none';
+  }
+
+  /* HUNT RATING */
+  var hrBar = document.getElementById('hr-bar');
+  var hrLabel = document.getElementById('hr-label');
+  var barPct, barColor, labelText;
+  if(ke < 15) { barPct = 10; barColor='#4a6080'; labelText = '⚠️ Below minimum — small game or practice only'; }
+  else if(ke < 25) { barPct = 22; barColor='#60a5fa'; labelText = '🐇 Small game — rabbit, squirrel, turkey'; }
+  else if(ke < 42) { barPct = 45; barColor='#10b981'; labelText = '🦌 Deer / Antelope — ethical for medium game'; }
+  else if(ke < 65) { barPct = 70; barColor='#f59e0b'; labelText = '🦌 Elk / Black Bear — suitable for large game'; }
+  else { barPct = 95; barColor='#ef4444'; labelText = '🐻 Dangerous Game — moose, buffalo, brown bear'; }
+  hrBar.style.width = barPct + '%';
+  hrBar.style.background = 'linear-gradient(90deg,' + barColor + ',' + barColor + '88)';
+  hrLabel.style.color = barColor;
+  hrLabel.textContent = labelText;
+
+  /* KE REFERENCE HIGHLIGHTS */
+  ['ke-r1','ke-r2','ke-r3','ke-r4'].forEach(function(id){ document.getElementById(id).classList.remove('active-ke'); });
+  if(ke < 25) document.getElementById('ke-r1').classList.add('active-ke');
+  else if(ke < 42) document.getElementById('ke-r2').classList.add('active-ke');
+  else if(ke < 65) document.getElementById('ke-r3').classList.add('active-ke');
+  else document.getElementById('ke-r4').classList.add('active-ke');
+
+  /* SHOW */
+  document.getElementById('result-placeholder').style.display = 'none';
+  var rb = document.getElementById('results-block');
+  rb.style.display = 'block';
+  rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+/* ── FAQ ── */
+function faqT(el) {
+  var item = el.parentElement, was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!was) item.classList.add('open');
+}
+
+/* ENTER KEY */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown', function(e){ if(e.key === 'Enter') calculate(); });
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../js/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Time Calculator — Driving, Walking, Flight & More | SpeedCalculator.net</title>
+<meta name="description" content="Free travel time calculator — calculate driving time, walking time, flight time, and arrival time for any trip. Enter distance and speed for instant travel duration. Supports km/h and mph.">
+<meta name="keywords" content="travel time calculator, driving time calculator, travel duration calculator, trip time calculator, road trip calculator, journey time calculator, commute time calculator, distance and time calculator, travel speed calculator, arrival time calculator, route time calculator, driving distance and time calculator">
+<meta property="og:title" content="Travel Time Calculator — Free Online | SpeedCalculator.net">
+<meta property="og:description" content="Calculate travel time for driving, walking, cycling, or flights. Enter distance and speed — get instant travel duration and arrival time.">
+<meta property="og:url" content="https://www.speedcalculator.net/time/travel-time-calculator/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.speedcalculator.net/time/travel-time-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- SCHEMA 1: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Travel Time Calculator",
+  "alternateName":["Driving Time Calculator","Travel Duration Calculator","Trip Time Calculator","Road Trip Calculator","Journey Time Calculator","Commute Time Calculator","Distance and Time Calculator","Travel Speed Calculator","Arrival Time Calculator","Route Time Calculator","Driving Distance and Time Calculator","Travel Time Estimator","Trip Duration Calculator"],
+  "url":"https://www.speedcalculator.net/time/travel-time-calculator/",
+  "description":"Free travel time calculator — calculate driving time, walking time, cycling time, and flight time from distance and speed. Shows arrival time, travel duration in hours and minutes, and supports all speed units.",
+  "applicationCategory":"UtilityApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Driving time calculator","Walking time calculator","Cycling time calculator","Flight time calculator","Arrival time calculator","Multi-stop trip calculator","Speed and distance input","km/h and mph support","Rest stop calculator","Fuel stop estimator"]
+}
+</script>
+
+<!-- SCHEMA 2: HowTo -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Travel Time Calculator",
+  "description":"Calculate travel time for any journey — driving, walking, cycling, or flying",
+  "totalTime":"PT1M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Enter Your Distance","text":"Type the total distance of your journey. Select your unit — kilometers (km) or miles (mi). For a road trip from New York to Washington DC, enter 360 km or 225 miles. You can also use the quick city pair presets for common routes."},
+    {"@type":"HowToStep","position":2,"name":"Enter Your Speed","text":"Enter your average travel speed. For driving on highways use 100–120 km/h (60–75 mph). For city driving use 40–60 km/h. For walking use 4–6 km/h. For cycling use 15–25 km/h. For flights use 800–900 km/h. Select km/h or mph to match your distance unit."},
+    {"@type":"HowToStep","position":3,"name":"Set Departure Time (Optional)","text":"Toggle on the arrival time calculator to enter your departure time and date. The travel time calculator will show your estimated arrival time accounting for travel duration. Add rest stops or fuel breaks in the optional stops field."},
+    {"@type":"HowToStep","position":4,"name":"Click Calculate and View Results","text":"Click Calculate Travel Time to see your total travel duration in hours and minutes, estimated arrival time, distance breakdown, and travel speed summary. The road trip calculator also shows suggested rest stop intervals for safe long-distance driving."}
+  ]
+}
+</script>
+
+<!-- SCHEMA 3: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate travel time from distance and speed?","acceptedAnswer":{"@type":"Answer","text":"Travel time formula: Time = Distance ÷ Speed. Example: 300 km journey at 100 km/h = 300 ÷ 100 = 3 hours. For 250 miles at 60 mph: 250 ÷ 60 = 4 hours 10 minutes. Our travel time calculator does this instantly — just enter your distance and average speed, and it shows the travel duration in hours and minutes with the estimated arrival time."}},
+    {"@type":"Question","name":"How accurate is the driving time calculator?","acceptedAnswer":{"@type":"Answer","text":"Our driving time calculator is mathematically exact for the speed you enter. Real-world accuracy depends on your average speed. For highway driving, use 90–110 km/h (55–70 mph) as your average. For mixed city/highway, use 60–80 km/h. Always add 10–15% buffer for traffic, fuel stops, and rest breaks. The calculator also has a rest stop field to add break time to your total journey time."}},
+    {"@type":"Question","name":"What is the formula for calculating travel time?","acceptedAnswer":{"@type":"Answer","text":"The travel time formula is: Time = Distance ÷ Speed. The three related formulas are: Time = Distance ÷ Speed, Distance = Speed × Time, Speed = Distance ÷ Time. For hours and minutes: if the result is 2.75 hours, that is 2 hours and 45 minutes (0.75 × 60 = 45 minutes). Our travel time estimator handles the conversion automatically and shows results in h:mm format."}},
+    {"@type":"Question","name":"How do I calculate arrival time from departure time?","acceptedAnswer":{"@type":"Answer","text":"Arrival Time = Departure Time + Travel Duration + Rest Stop Time. Example: depart 8:30 AM, travel time 3h 45m, 30-minute rest stop = arrive at 12:45 PM. Toggle the Arrival Time section in our calculator, enter your departure time and date, add any planned stops, and the arrival time calculator shows your estimated arrival time automatically."}},
+    {"@type":"Question","name":"How long does it take to drive 100 miles?","acceptedAnswer":{"@type":"Answer","text":"Driving 100 miles takes approximately: 1 hour 20 minutes at 75 mph (120 km/h highway), 1 hour 40 minutes at 60 mph (96 km/h), 2 hours at 50 mph (80 km/h), 2 hours 30 minutes at 40 mph (city driving). Enter your specific speed in our driving time calculator to get the exact duration for 100 miles or any other distance."}},
+    {"@type":"Question","name":"What is a good average speed for a road trip calculator?","acceptedAnswer":{"@type":"Answer","text":"For road trip calculator purposes, use these average speeds: Highway (USA/Canada): 65–75 mph (105–120 km/h), Highway (Europe): 80–90 mph (130–145 km/h), Mixed roads: 50–60 mph (80–95 km/h), City driving: 25–35 mph (40–55 km/h). For a realistic road trip estimate, use 55–60 mph (88–96 km/h) average to account for stops, traffic, and speed variations. Add 15–20% to the calculated time for a comfortable travel plan."}}
+  ]
+}
+</script>
+</head>
+<body>
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;--teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+h1,h2,h3,h4,h5,h6{border:none;outline:none;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:44px 0 32px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,6.5vw,76px);font-weight:900;line-height:1.0;letter-spacing:-1px;text-transform:uppercase;margin-bottom:18px;outline:none;border:none;color:#60a5fa;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;max-width:600px;margin:0 auto 22px;line-height:1.75;}
+.hbadges{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;}
+.hbadge{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALC CARD */
+.calc-section{padding:0 0 52px;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),transparent);}
+.calc-head{padding:20px 28px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* TRANSPORT MODE SELECTOR */
+.mode-row{display:flex;gap:6px;flex-wrap:wrap;padding:16px 28px 0;}
+.t-mode{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--bg3);border:2px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;cursor:pointer;transition:all .18s;min-width:72px;flex:1;}
+.t-mode:hover{border-color:var(--border2);}
+.t-mode.on{border-color:var(--accent);background:rgba(59,130,246,.1);}
+.t-mode-ico{font-size:20px;line-height:1;}
+.t-mode-lbl{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);}
+.t-mode.on .t-mode-lbl{color:var(--accent2);}
+
+/* CALC BODY */
+.calc-body{padding:20px 28px 28px;}
+.calc-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:20px;}}
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+
+/* INPUT GROUPS */
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:2px 9px;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 12px;font-size:14px;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);min-width:44px;justify-content:center;}
+.inp-suf{padding:0 12px;font-size:12px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input[type=number],.inp-wrap input[type=time],.inp-wrap input[type=date]{flex:1;background:transparent;border:none;outline:none;padding:12px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;}
+.inp-wrap input[type=time],.inp-wrap input[type=date]{font-size:16px;color-scheme:dark;}
+.inp-wrap input::placeholder{color:var(--text3);font-weight:400;font-size:14px;}
+.sel-wrap{position:relative;margin-bottom:5px;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;}
+.sel-wrap select{-webkit-appearance:none;appearance:none;width:100%;padding:12px 36px 12px 14px;background:var(--bg3);color:var(--text);border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;}
+.inp-note{font-size:10.5px;color:var(--text3);line-height:1.5;margin-top:2px;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;margin-top:6px;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.18);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.divider{height:1px;background:var(--border);margin:12px 0;}
+
+/* TOGGLE SECTION */
+.toggle-sec{background:rgba(59,130,246,.04);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:12px;}
+.toggle-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;}
+.toggle-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);display:flex;align-items:center;gap:6px;}
+.toggle-switch{width:36px;height:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;position:relative;transition:background .2s;cursor:pointer;flex-shrink:0;}
+.toggle-switch.on{background:var(--accent);}
+.toggle-switch::after{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:2px;left:3px;transition:left .2s;}
+.toggle-switch.on::after{left:19px;}
+.toggle-body{display:none;margin-top:12px;}
+.toggle-body.show{display:block;}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(59,130,246,.3);margin-top:14px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;color:#f87171;margin-top:10px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:320px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .3s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.result-hero{background:linear-gradient(135deg,rgba(59,130,246,.09),rgba(16,185,129,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:22px;margin-bottom:10px;text-align:center;position:relative;overflow:hidden;}
+.result-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--teal),var(--green));}
+.rh-badge{display:inline-block;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:10px;}
+.rh-time{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,11vw,72px);font-weight:900;color:var(--accent2);line-height:1;letter-spacing:-2px;}
+.rh-unit{font-size:18px;font-weight:500;color:var(--text3);}
+.rh-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.rhc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;}
+.rhc.g{color:var(--green);border-color:rgba(16,185,129,.3);}
+.rhc.b{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+.rhc.o{color:var(--orange);border-color:rgba(245,158,11,.3);}
+.rhc.t{color:var(--teal);border-color:rgba(6,182,212,.3);}
+.rhc.p{color:var(--purple);border-color:rgba(139,92,246,.3);}
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,3.5vw,20px);font-weight:900;line-height:1;}
+.m-val.green{color:var(--green);}
+.m-val.blue{color:var(--accent2);}
+.m-val.orange{color:var(--orange);}
+.m-val.teal{color:var(--teal);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+.arrival-box{background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(6,182,212,.04));border:1px solid rgba(16,185,129,.25);border-radius:var(--radius-sm);padding:14px;text-align:center;margin-bottom:10px;}
+.arr-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+.arr-time{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;color:var(--green);line-height:1;}
+.arr-date{font-size:12px;color:var(--text3);margin-top:3px;}
+.speed-rows{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.sr-head{padding:9px 14px;background:var(--bg);border-bottom:1px solid var(--border);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.sr-row{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid rgba(59,130,246,.05);font-size:12px;}
+.sr-row:last-child{border:none;}
+.sr-row.highlight{background:rgba(59,130,246,.06);}
+.sr-ico{font-size:15px;width:20px;flex-shrink:0;}
+.sr-mode{color:var(--text2);font-weight:600;flex:1;}
+.sr-time{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--text);}
+.sr-speed{font-size:10px;color:var(--text3);margin-left:4px;}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:0 0 52px;}
+.stat-item{background:var(--bg2);padding:18px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:3px;}
+@media(max-width:560px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;background:linear-gradient(135deg,var(--accent2),#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* IMAGES */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+figure.img-block figcaption{padding:12px 16px;font-size:11.5px;color:var(--text3);line-height:1.5;background:var(--bg2);border-top:1px solid var(--border);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:48px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;color:var(--text);margin:36px 0 12px;display:flex;align-items:center;gap:8px;}
+.article h2::before{content:'';width:4px;height:22px;background:linear-gradient(180deg,var(--accent),var(--teal));border-radius:2px;flex-shrink:0;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:22px 0 8px;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:14px;}
+.article ul,.article ol{margin:0 0 16px 20px;}
+.article ul li,.article ol li{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:18px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+
+/* DATA TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border);margin:16px 0;}
+table.dt{width:100%;border-collapse:collapse;}
+.dt th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;}
+.dt td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);font-size:13.5px;}
+.dt tr:last-child td{border:none;}
+.dt td:first-child{font-weight:600;color:var(--text);}
+.dt tr:hover td{background:rgba(59,130,246,.03);}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:9px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .15s;}
+.faq-item.open{border-color:var(--border2);}
+.faq-q{padding:18px 22px;font-size:15px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:20px;height:20px;flex-shrink:0;color:var(--text3);transition:transform .25s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{font-size:14px;color:var(--text2);line-height:1.8;padding-bottom:20px;}
+.faq-item.open .faq-a{max-height:260px;}
+
+/* RELATED */
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/time/">Time</a><sep>&#8250;</sep>
+    Travel Time Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Driving &middot; Walking &middot; Cycling &middot; Flight &middot; Arrival Time</div>
+    <h1 class="hero-h1">Travel Time Calculator</h1>
+    <p class="hero-sub">Free <strong>travel time calculator</strong> — calculate <strong>driving time</strong>, walking time, cycling time, and flight time from distance and speed. Get your estimated arrival time instantly. Supports km/h and mph.</p>
+    <div class="hbadges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">km/h &amp; mph</span>
+      <span class="hbadge o">Arrival Time</span>
+      <span class="hbadge t">Rest Stop Included</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="calc-card">
+  <div class="calc-head">
+    <div class="calc-htitle">
+      <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="var(--accent2)" stroke-width="1.5"><circle cx="9" cy="9" r="7.5"/><path d="M9 5v4l3 2" stroke-linecap="round"/></svg>
+      Travel <em>Time Calculator</em>
+    </div>
+    <div class="live-pill">&#9889; Instant Results</div>
+  </div>
+
+  <!-- TRANSPORT MODE -->
+  <div class="mode-row">
+    <div class="t-mode on" data-mode="car" onclick="setTransport('car',this)">
+      <span class="t-mode-ico">&#128664;</span>
+      <span class="t-mode-lbl">Driving</span>
+    </div>
+    <div class="t-mode" data-mode="walk" onclick="setTransport('walk',this)">
+      <span class="t-mode-ico">&#128694;</span>
+      <span class="t-mode-lbl">Walking</span>
+    </div>
+    <div class="t-mode" data-mode="cycle" onclick="setTransport('cycle',this)">
+      <span class="t-mode-ico">&#128690;</span>
+      <span class="t-mode-lbl">Cycling</span>
+    </div>
+    <div class="t-mode" data-mode="flight" onclick="setTransport('flight',this)">
+      <span class="t-mode-ico">&#9992;</span>
+      <span class="t-mode-lbl">Flight</span>
+    </div>
+    <div class="t-mode" data-mode="train" onclick="setTransport('train',this)">
+      <span class="t-mode-ico">&#128646;</span>
+      <span class="t-mode-lbl">Train</span>
+    </div>
+    <div class="t-mode" data-mode="custom" onclick="setTransport('custom',this)">
+      <span class="t-mode-ico">&#9881;</span>
+      <span class="t-mode-lbl">Custom</span>
+    </div>
+  </div>
+
+  <div class="calc-body">
+    <div class="calc-cols">
+
+      <!-- LEFT: INPUTS -->
+      <div>
+        <div class="sec-lbl">
+          <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 5.5h9M5.5 1v9" stroke-linecap="round"/></svg>
+          <span id="inp-lbl">Driving — Distance &amp; Speed</span>
+        </div>
+
+        <!-- DISTANCE -->
+        <div class="inp-grp">
+          <div class="inp-top">
+            <span class="inp-lbl">Distance</span>
+            <span class="inp-bdg" id="bdg-dist">300 km</span>
+          </div>
+          <div class="inp-wrap">
+            <span class="inp-pre">&#128205;</span>
+            <input type="number" id="f-dist" min="0.1" max="50000" step="0.1" value="300" placeholder="300">
+            <select id="f-dist-unit" onchange="distUnitChange()" style="background:transparent;border:none;border-left:1px solid var(--border);outline:none;padding:0 10px;font-family:Barlow,sans-serif;font-size:12px;font-weight:700;color:var(--accent2);cursor:pointer;min-width:60px;">
+              <option value="km">km</option>
+              <option value="mi">miles</option>
+              <option value="m">m</option>
+            </select>
+          </div>
+          <input type="range" class="sl" id="sl-dist" min="1" max="2000" step="1" value="300">
+          <div class="sl-row"><span>1</span><span>2000</span></div>
+
+          <!-- QUICK ROUTES -->
+          <div class="inp-grp" style="margin-top:8px;">
+            <div class="inp-top"><span class="inp-lbl">Quick Routes</span></div>
+            <div class="sel-wrap">
+              <select id="f-route" onchange="routeChange()">
+                <option value="">-- Select a common route --</option>
+                <optgroup label="USA">
+                  <option value="362">New York → Washington DC (362 km)</option>
+                  <option value="3940">New York → Los Angeles (3,940 km)</option>
+                  <option value="700">Chicago → Detroit (700 km)</option>
+                  <option value="500">Boston → Philadelphia (500 km)</option>
+                </optgroup>
+                <optgroup label="Europe">
+                  <option value="341">London → Paris (341 km)</option>
+                  <option value="1054">Paris → Berlin (1,054 km)</option>
+                  <option value="587">Madrid → Barcelona (587 km)</option>
+                  <option value="1316">London → Edinburgh (1,316 km)</option>
+                </optgroup>
+                <optgroup label="Asia">
+                  <option value="1166">Karachi → Islamabad (1,166 km)</option>
+                  <option value="1153">Delhi → Mumbai (1,153 km)</option>
+                  <option value="1068">Beijing → Shanghai (1,068 km)</option>
+                  <option value="513">Dubai → Abu Dhabi (513 km)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPEED -->
+        <div class="inp-grp">
+          <div class="inp-top">
+            <span class="inp-lbl" id="spd-lbl">Average Speed</span>
+            <span class="inp-bdg" id="bdg-spd">100 km/h</span>
+          </div>
+          <div class="inp-wrap">
+            <span class="inp-pre">&#9889;</span>
+            <input type="number" id="f-spd" min="1" max="2000" step="1" value="100" placeholder="100">
+            <select id="f-spd-unit" style="background:transparent;border:none;border-left:1px solid var(--border);outline:none;padding:0 10px;font-family:Barlow,sans-serif;font-size:12px;font-weight:700;color:var(--accent2);cursor:pointer;">
+              <option value="kmh">km/h</option>
+              <option value="mph">mph</option>
+            </select>
+          </div>
+          <input type="range" class="sl" id="sl-spd" min="1" max="200" step="1" value="100">
+          <div class="sl-row" id="sl-spd-labels"><span>1</span><span>200</span></div>
+          <div class="inp-note" id="spd-note">Highway driving: 90–120 km/h. City driving: 40–60 km/h.</div>
+        </div>
+
+        <!-- STOP TIME -->
+        <div class="inp-grp">
+          <div class="inp-top">
+            <span class="inp-lbl">Rest / Stop Time</span>
+            <span class="inp-bdg" id="bdg-stops">0 min</span>
+          </div>
+          <div class="inp-wrap">
+            <span class="inp-pre">&#9749;</span>
+            <input type="number" id="f-stops" min="0" max="600" step="5" value="0" placeholder="0">
+            <span class="inp-suf">minutes</span>
+          </div>
+          <div class="inp-note">Add fuel stops, rest breaks, border crossings, meals, etc.</div>
+        </div>
+
+        <!-- ARRIVAL TIME TOGGLE -->
+        <div class="toggle-sec">
+          <div class="toggle-header" onclick="toggleArrival()">
+            <span class="toggle-lbl">&#127946; Arrival Time Calculator</span>
+            <div class="toggle-switch" id="toggle-arrival"></div>
+          </div>
+          <div class="toggle-body" id="arrival-body">
+            <div class="grid2" style="margin-top:0;">
+              <div class="inp-grp" style="margin-bottom:0;">
+                <div class="inp-top"><span class="inp-lbl">Departure Date</span></div>
+                <div class="inp-wrap"><input type="date" id="f-dep-date"></div>
+              </div>
+              <div class="inp-grp" style="margin-bottom:0;">
+                <div class="inp-top"><span class="inp-lbl">Departure Time</span></div>
+                <div class="inp-wrap"><input type="time" id="f-dep-time" value="08:00"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="err-msg" id="err-msg">Please enter valid positive values in distance and speed fields.</div>
+        <button class="calc-btn" onclick="calculate()">
+          <svg width="18" height="18" fill="none" viewBox="0 0 18 18"><path d="M4 9h10M9 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Calculate Travel Time
+        </button>
+      </div>
+
+      <!-- RIGHT: RESULTS -->
+      <div class="results-col">
+        <div class="sec-lbl">
+          <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Results
+        </div>
+        <div class="r-placeholder" id="r-placeholder">
+          <div style="font-size:44px;">&#9200;</div>
+          <div style="font-size:14px;color:var(--text3);line-height:1.8;">Enter distance &amp; speed,<br>then click<br><strong style="color:var(--accent2);">Calculate Travel Time</strong><br>for instant results.</div>
+        </div>
+        <div class="results-block" id="results-block">
+
+          <!-- MAIN RESULT -->
+          <div class="result-hero">
+            <div class="rh-badge" id="rh-badge">Travel Duration</div>
+            <div><span class="rh-time" id="rh-time">—</span></div>
+            <div class="rh-chips">
+              <span class="rhc b" id="chip1">—</span>
+              <span class="rhc g" id="chip2">—</span>
+              <span class="rhc o" id="chip3">—</span>
+              <span class="rhc t" id="chip4">—</span>
+            </div>
+          </div>
+
+          <!-- ARRIVAL TIME (shown if toggled) -->
+          <div class="arrival-box" id="arrival-result-box" style="display:none;">
+            <div class="arr-lbl">&#128205; Estimated Arrival Time</div>
+            <div class="arr-time" id="arr-time">—</div>
+            <div class="arr-date" id="arr-date">—</div>
+          </div>
+
+          <!-- METRICS -->
+          <div class="metrics-grid">
+            <div class="metric"><div class="m-lbl">Total Hours</div><div class="m-val blue" id="r-hours">—</div><div class="m-sub">decimal hours</div></div>
+            <div class="metric"><div class="m-lbl">Total Minutes</div><div class="m-val green" id="r-mins">—</div><div class="m-sub">total minutes</div></div>
+            <div class="metric"><div class="m-lbl">Drive Time</div><div class="m-val teal" id="r-drive">—</div><div class="m-sub">without stops</div></div>
+            <div class="metric"><div class="m-lbl">Stop Time</div><div class="m-val orange" id="r-stop">—</div><div class="m-sub">rest &amp; fuel breaks</div></div>
+          </div>
+
+          <!-- ALL MODES COMPARISON -->
+          <div class="speed-rows">
+            <div class="sr-head">Travel Time by Transport Mode (Same Distance)</div>
+            <div id="mode-rows"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<div class="container">
+  <div class="stats-strip">
+    <div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">Transport Modes</div></div>
+    <div class="stat-item"><div class="stat-val">km+mi</div><div class="stat-lbl">Both Units</div></div>
+    <div class="stat-item"><div class="stat-val">ETA</div><div class="stat-lbl">Arrival Time</div></div>
+    <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+  </div>
+</div>
+<!-- IMAGE 1: Travel Time Formula Visual -->
+<section class="section">
+<div class="container">
+  <div class="sec-eyebrow">Travel Time Formula</div>
+  <h2 class="sec-title">How the <span>Travel Time Calculator</span> Works</h2>
+  <p class="sec-sub">Our <strong>travel time calculator</strong> uses the core physics formula — Time = Distance ÷ Speed — applied across all transport modes with realistic average speeds.</p>
+
+  <figure class="img-block">
+    <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tt-title tt-desc">
+      <title id="tt-title">Travel Time Calculator Formula Diagram</title>
+      <desc id="tt-desc">Visual showing travel time formula Time equals Distance divided by Speed, with examples for driving, walking, cycling, and flight travel modes</desc>
+      <defs>
+        <pattern id="pgr" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0L0 0 0 30" fill="none" stroke="rgba(59,130,246,.04)" stroke-width="1"/></pattern>
+        <linearGradient id="gB" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".8"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+      </defs>
+      <rect width="900" height="220" fill="#05080f"/><rect width="900" height="220" fill="url(#pgr)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">TRAVEL TIME CALCULATOR — FORMULA &amp; TRANSPORT MODE SPEEDS</text>
+      <!-- Main formula -->
+      <rect x="15" y="32" width="260" height="170" rx="10" fill="rgba(11,18,32,.9)" stroke="rgba(59,130,246,.4)" stroke-width="1.5"/>
+      <text x="145" y="58" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle" letter-spacing="1">CORE FORMULA</text>
+      <rect x="28" y="66" width="236" height="32" rx="5" fill="rgba(59,130,246,.08)"/>
+      <text x="146" y="87" font-family="Barlow Condensed,sans-serif" font-size="18" font-weight="900" fill="#f0f4ff" text-anchor="middle">Time = Distance ÷ Speed</text>
+      <text x="28" y="116" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Distance = Speed × Time</text>
+      <text x="28" y="134" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8">Speed = Distance ÷ Time</text>
+      <text x="28" y="158" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981">✓ 300 km ÷ 100 km/h = 3 hours</text>
+      <text x="28" y="174" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981">✓ 200 mi ÷ 60 mph = 3h 20m</text>
+      <text x="28" y="190" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981">✓ Add stop time for total trip</text>
+      <!-- Mode boxes -->
+      <rect x="290" y="32" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+      <text x="364" y="56" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#128664;</text>
+      <text x="364" y="75" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">DRIVING</text>
+      <text x="364" y="92" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">80–120 km/h avg</text>
+      <rect x="290" y="122" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+      <text x="364" y="146" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#128694;</text>
+      <text x="364" y="165" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#10b981" text-anchor="middle">WALKING</text>
+      <text x="364" y="182" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">4–6 km/h avg</text>
+      <rect x="452" y="32" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(245,158,11,.25)" stroke-width="1"/>
+      <text x="526" y="56" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#128690;</text>
+      <text x="526" y="75" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">CYCLING</text>
+      <text x="526" y="92" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">15–25 km/h avg</text>
+      <rect x="452" y="122" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(6,182,212,.25)" stroke-width="1"/>
+      <text x="526" y="146" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#9992;</text>
+      <text x="526" y="165" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#06b6d4" text-anchor="middle">FLIGHT</text>
+      <text x="526" y="182" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">800–900 km/h avg</text>
+      <rect x="614" y="32" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(139,92,246,.25)" stroke-width="1"/>
+      <text x="688" y="56" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#128646;</text>
+      <text x="688" y="75" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#8b5cf6" text-anchor="middle">TRAIN</text>
+      <text x="688" y="92" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">80–300 km/h avg</text>
+      <rect x="614" y="122" width="148" height="80" rx="8" fill="rgba(11,18,32,.9)" stroke="rgba(236,72,153,.25)" stroke-width="1"/>
+      <text x="688" y="146" font-family="Barlow Condensed,sans-serif" font-size="22" text-anchor="middle">&#9881;</text>
+      <text x="688" y="165" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#ec4899" text-anchor="middle">CUSTOM</text>
+      <text x="688" y="182" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Any speed you set</text>
+      <!-- Arrow -->
+      <path d="M275 117 L290 117" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+    </svg>
+    <figcaption>Travel time calculator formula: Time = Distance ÷ Speed. Average speeds by transport mode — driving 80–120 km/h, walking 4–6 km/h, cycling 15–25 km/h, flight 800–900 km/h, train 80–300 km/h.</figcaption>
+  </figure>
+</div>
+</section>
+
+<!-- IMAGE 2: Road Trip Distance Reference -->
+<section class="section">
+<div class="container">
+  <div class="sec-eyebrow">Road Trip Reference</div>
+  <h2 class="sec-title">Popular Route <span>Travel Times</span></h2>
+  <p class="sec-sub">Use our <strong>road trip calculator</strong> and <strong>driving time calculator</strong> for any route. Here are common routes as a quick reference — enter your exact distance above for a precise estimate.</p>
+
+  <figure class="img-block">
+    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="routes-title routes-desc">
+      <title id="routes-title">Popular Route Travel Times Reference Chart</title>
+      <desc id="routes-desc">Chart showing estimated driving time, walking time, and flight time for popular routes including New York to LA, London to Paris, Delhi to Mumbai and other common travel routes</desc>
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.1)"/></pattern></defs>
+      <rect width="900" height="250" fill="#05080f"/><rect width="900" height="250" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">POPULAR ROUTES — ESTIMATED TRAVEL TIMES</text>
+      <rect x="15" y="32" width="870" height="24" rx="3" fill="rgba(17,27,46,.95)"/>
+      <text x="155" y="48" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#60a5fa" text-anchor="middle">ROUTE</text>
+      <text x="350" y="48" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#60a5fa" text-anchor="middle">DISTANCE</text>
+      <text x="490" y="48" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#10b981" text-anchor="middle">&#128664; DRIVE TIME</text>
+      <text x="640" y="48" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#06b6d4" text-anchor="middle">&#9992; FLIGHT TIME</text>
+      <text x="800" y="48" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="900" fill="#f59e0b" text-anchor="middle">&#128646; TRAIN TIME</text>
+      <!-- Rows -->
+      <rect x="15" y="56" width="870" height="22" fill="rgba(11,18,32,.5)"/>
+      <text x="155" y="71" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">New York → Washington DC</text>
+      <text x="350" y="71" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">362 km / 225 mi</text>
+      <text x="490" y="71" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~3h 45m</text>
+      <text x="640" y="71" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~1h 15m</text>
+      <text x="800" y="71" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~2h 45m</text>
+      <rect x="15" y="78" width="870" height="22" fill="rgba(11,18,32,.3)"/>
+      <text x="155" y="93" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">London → Paris</text>
+      <text x="350" y="93" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">341 km / 212 mi</text>
+      <text x="490" y="93" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~3h 30m</text>
+      <text x="640" y="93" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~1h 20m</text>
+      <text x="800" y="93" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~2h 20m (Eurostar)</text>
+      <rect x="15" y="100" width="870" height="22" fill="rgba(11,18,32,.5)"/>
+      <text x="155" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">Delhi → Mumbai</text>
+      <text x="350" y="115" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">1,153 km / 717 mi</text>
+      <text x="490" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~13h 30m</text>
+      <text x="640" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~2h 10m</text>
+      <text x="800" y="115" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~16h (Rajdhani)</text>
+      <rect x="15" y="122" width="870" height="22" fill="rgba(11,18,32,.3)"/>
+      <text x="155" y="137" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">Karachi → Islamabad</text>
+      <text x="350" y="137" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">1,166 km / 725 mi</text>
+      <text x="490" y="137" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~13h 30m</text>
+      <text x="640" y="137" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~1h 55m</text>
+      <text x="800" y="137" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~20h (by bus)</text>
+      <rect x="15" y="144" width="870" height="22" fill="rgba(11,18,32,.5)"/>
+      <text x="155" y="159" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">Sydney → Melbourne</text>
+      <text x="350" y="159" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">878 km / 546 mi</text>
+      <text x="490" y="159" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~9h 15m</text>
+      <text x="640" y="159" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~1h 30m</text>
+      <text x="800" y="159" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~11h (XPT Train)</text>
+      <rect x="15" y="166" width="870" height="22" fill="rgba(11,18,32,.3)"/>
+      <text x="155" y="181" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f0f4ff" text-anchor="middle">New York → Los Angeles</text>
+      <text x="350" y="181" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">3,940 km / 2,448 mi</text>
+      <text x="490" y="181" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">~39h (non-stop drive)</text>
+      <text x="640" y="181" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#06b6d4" text-anchor="middle">~5h 30m</text>
+      <text x="800" y="181" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#f59e0b" text-anchor="middle">~65h (Amtrak)</text>
+      <text x="450" y="225" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#4a6080" text-anchor="middle">All times are estimates at average speeds. Actual travel times vary based on traffic, stops, and route. Use our travel time calculator above for your exact journey.</text>
+    </svg>
+    <figcaption>Popular route travel times — estimated driving time, flight time, and train time for common city pairs. Use our driving time calculator or journey time calculator above for your specific route and speed.</figcaption>
+  </figure>
+
+  <!-- ARTICLE -->
+  <div class="article">
+    <h2>Travel Time Calculator — Complete Guide</h2>
+    <p>Our free <strong>travel time calculator</strong> is the most complete <strong>driving time calculator</strong>, <strong>journey time calculator</strong>, and <strong>trip time calculator</strong> — because it covers all 6 transport modes in one tool. The formula is simple: <span class="fi">Time = Distance ÷ Speed</span>. Enter your distance, select your transport mode (auto-fills the average speed), and click Calculate. You get total travel duration in hours and minutes, plus optional <strong>arrival time calculator</strong> that adds your departure time to give an exact ETA.</p>
+
+    <h3>Driving Time Calculator — How to Use</h3>
+    <p>The <strong>driving time calculator</strong> and <strong>road trip calculator</strong> mode uses your average driving speed. For highway trips use 90–110 km/h (55–70 mph). For mixed city/highway use 60–80 km/h (40–50 mph). Add rest stops in the Stop Time field — a 30-minute fuel break every 3 hours is recommended for long drives. The <strong>driving distance and time calculator</strong> also shows a comparison of all transport modes for the same distance, so you can compare driving vs. flying instantly.</p>
+
+    <div class="exb">
+      <h4>Driving Time Example — New York to Washington DC</h4>
+      <p>Distance: 362 km · Average speed: 95 km/h (highway) · Stop time: 20 min<br>
+      Drive time = 362 ÷ 95 = <strong>3 hours 49 minutes</strong><br>
+      Total trip time = 3h 49m + 20m stops = <strong>4 hours 9 minutes</strong><br>
+      Depart 7:00 AM → Arrive approx. <strong>11:09 AM</strong></p>
+    </div>
+
+    <h3>Travel Time Estimator — All Transport Modes</h3>
+    <p>Our <strong>travel time estimator</strong> and <strong>travel speed calculator</strong> calculates time for every mode. Walking (4–6 km/h): a 5 km commute takes 50–75 minutes. Cycling (15–25 km/h): same 5 km takes 12–20 minutes. For the <strong>commute time calculator</strong> use your actual daily commute distance and select your mode. The <strong>route time calculator</strong> and <strong>distance and time calculator</strong> show the full picture.</p>
+
+    <h3>Arrival Time Calculator — How It Works</h3>
+    <p>The <strong>arrival time calculator</strong> adds your departure time to the calculated travel duration. Formula: <span class="fi">Arrival = Departure Time + Travel Duration + Stop Time</span>. Toggle the "Arrival Time Calculator" section, enter your departure date and time, and the <strong>travel duration calculator</strong> automatically calculates when you'll arrive. Overnight journeys are handled correctly — if your arrival crosses midnight, it shows the next day's date.</p>
+
+    <h3>Road Trip Calculator — Planning a Long Drive</h3>
+    <p>For the <strong>road trip calculator</strong> use case, the most important factor is realistic average speed. Most road trips average 55–65 mph (88–105 km/h) including minor slowdowns, not the posted speed limit. Add 15–20% to your pure driving time for stops, traffic, and unexpected delays. For a 10-hour driving time estimate, plan for 11.5–12 total trip hours. Our <strong>travel planner calculator</strong> automatically shows driving, flying, train, and walking times side by side. The <strong>road travel calculator</strong> estimates <strong>vehicle travel time</strong> for any speed. The <strong>travel speed and distance</strong> inputs power the <strong>route duration calculator</strong> for precise planning. The <strong>time to destination calculator</strong> is in the arrival time toggle. The <strong>driving hours calculator</strong> helps logistics teams plan delivery schedules.</p>
+  </div>
+
+  <!-- DATA TABLE: Speed Reference -->
+  <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;text-transform:uppercase;margin:0 0 18px;background:linear-gradient(135deg,var(--accent2),#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Travel Speed <span style="-webkit-text-fill-color:var(--accent2)">Reference Guide</span></h3>
+  <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>Mode</th><th>Typical Speed</th><th>100 km Travel Time</th><th>Best Use Case</th></tr></thead>
+      <tbody>
+        <tr><td>&#128664; City Driving</td><td>40–60 km/h (25–37 mph)</td><td>1h 40m – 2h 30m</td><td>Urban commute calculator</td></tr>
+        <tr><td>&#128664; Highway Driving</td><td>90–120 km/h (55–75 mph)</td><td>50m – 1h 07m</td><td>Driving time calculator</td></tr>
+        <tr><td>&#128694; Walking</td><td>4–6 km/h (2.5–3.7 mph)</td><td>16h 40m – 25h</td><td>Walking distance calculator</td></tr>
+        <tr><td>&#128690; Cycling</td><td>15–25 km/h (9–15 mph)</td><td>4h – 6h 40m</td><td>Cycling commute time</td></tr>
+        <tr><td>&#128646; Train (Regional)</td><td>80–160 km/h (50–100 mph)</td><td>37m – 1h 15m</td><td>Journey time calculator</td></tr>
+        <tr><td>&#128646; High Speed Rail</td><td>250–320 km/h (155–200 mph)</td><td>19m – 24m</td><td>Trip time calculator</td></tr>
+        <tr><td>&#9992; Domestic Flight</td><td>700–850 km/h (435–530 mph)</td><td>7m – 9m</td><td>Flight time estimator</td></tr>
+        <tr><td>&#9992; Long-Haul Flight</td><td>850–950 km/h (530–590 mph)</td><td>6m – 7m</td><td>Travel duration calculator</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-bottom:64px;" id="faq">
+<div class="container">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">Travel Time Calculator <span>FAQ</span></h2>
+  <p class="sec-sub">Common questions about <strong>calculate travel time</strong>, driving hours, arrival time, and road trip planning.</p>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I calculate travel time from distance and speed?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>The <strong>travel time formula</strong> is: <strong>Time = Distance ÷ Speed</strong>. For a 300 km journey at 100 km/h: 300 ÷ 100 = 3 hours. For 250 miles at 60 mph: 250 ÷ 60 = 4.167 hours = 4 hours 10 minutes. To convert decimal hours to minutes: multiply the decimal part by 60. Our <strong>travel time calculator</strong> does this automatically — just enter your distance and average speed, and it shows the exact travel duration plus estimated arrival time.</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How accurate is the driving time calculator?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>Our <strong>driving time calculator</strong> is mathematically exact for the average speed you enter. Real accuracy depends on how realistic your speed estimate is. For highway trips, use 85–100 km/h (53–62 mph) average. For mixed routes, use 60–75 km/h. Add 10–20% buffer for traffic lights, construction, and slowdowns. Use the Stop Time field to add fuel breaks and rest stops for a more realistic <strong>road trip calculator</strong> estimate.</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I calculate my arrival time?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>The <strong>arrival time calculator</strong> formula: Arrival = Departure Time + Travel Duration + Stop Time. Example: depart 8:30 AM, driving time 3h 45m, 30-minute stops = arrive at 12:45 PM. In our <strong>trip time calculator</strong>, toggle "Arrival Time Calculator," enter your departure date and time, and it automatically calculates your ETA. Overnight journeys that cross midnight are handled correctly, showing the next day's date.</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to drive 100 miles or 100 km?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>Driving 100 km takes: 50 minutes at 120 km/h, 1 hour at 100 km/h, 1 hour 15 minutes at 80 km/h, 1 hour 40 minutes at 60 km/h. Driving 100 miles takes: 1 hour 20 minutes at 75 mph, 1 hour 40 minutes at 60 mph, 2 hours at 50 mph. Use our <strong>driving time calculator</strong> above for any exact distance and speed combination.</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What average speed should I use for a road trip calculator?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>For <strong>road trip calculator</strong> accuracy, use realistic averages: USA/Canada highway: 65–75 mph (105–120 km/h), Europe motorway: 80–90 mph (130–145 km/h), Mixed highway: 55–65 mph (88–105 km/h), City: 25–35 mph (40–55 km/h). For a multi-day road trip, 55 mph (88 km/h) average is a safe estimate that accounts for stops and slowdowns. Our <strong>travel time estimator</strong> uses these defaults when you select a transport mode.</p></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use this as a commute time calculator?<svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="faq-a"><p>Yes — our <strong>commute time calculator</strong> mode works by entering your daily commute distance and selecting your transport mode. For a 20 km car commute at 50 km/h average: 20 ÷ 50 = 0.4 hours = <strong>24 minutes</strong>. For the same 20 km by bicycle at 20 km/h: 20 ÷ 20 = 1 hour. Toggle the Arrival Time Calculator and enter your required arrival time to work backwards to your needed departure time.</p></div></div>
+  </div>
+</div>
+</section>
+
+<!-- RELATED CALCULATORS -->
+<section style="padding-bottom:72px;">
+<div class="container">
+  <div class="sec-eyebrow">More Free Calculators</div>
+  <h2 class="sec-title">Related <span>Calculators</span></h2>
+  <div class="oc-grid">
+    <a href="/" class="oc"><div class="oc-ico" style="background:rgba(59,130,246,.1);">&#128204;</div><div class="oc-name">Speed Calculator</div><div class="oc-desc">Find speed, distance, or time — mph, km/h, m/s, knots</div></a>
+    <a href="/distance/distance-calculator/" class="oc"><div class="oc-ico" style="background:rgba(16,185,129,.1);">&#128205;</div><div class="oc-name">Distance Calculator</div><div class="oc-desc">Straight-line, driving, walking, and flight distances</div></a>
+    <a href="/rpm-to-speed-calculator/" class="oc"><div class="oc-ico" style="background:rgba(6,182,212,.1);">&#9881;</div><div class="oc-name">RPM to Speed Calculator</div><div class="oc-desc">Engine RPM to vehicle speed in MPH or km/h</div></a>
+    <a href="/time/time-calculator/" class="oc"><div class="oc-ico" style="background:rgba(245,158,11,.1);">&#9200;</div><div class="oc-name">Time Calculator</div><div class="oc-desc">Add or subtract hours, minutes, and seconds</div></a>
+  </div>
+</div>
+</section>
+<script>
+var arrivalEnabled = false;
+var currentTransport = 'car';
+
+var MODES = {
+  car:    { lbl:'Driving',  ico:'&#128664;', spd:100, spdMin:10,  spdMax:200, spdNote:'Highway: 90–120 km/h · City: 40–60 km/h · Mixed: 70–90 km/h' },
+  walk:   { lbl:'Walking',  ico:'&#128694;', spd:5,   spdMin:1,   spdMax:15,  spdNote:'Leisurely: 4 km/h · Normal: 5 km/h · Brisk: 6–7 km/h' },
+  cycle:  { lbl:'Cycling',  ico:'&#128690;', spd:20,  spdMin:5,   spdMax:60,  spdNote:'Casual: 15 km/h · Road bike: 25–35 km/h · Mountain: 15–20 km/h' },
+  flight: { lbl:'Flight',   ico:'&#9992;',   spd:850, spdMin:400, spdMax:1200,spdNote:'Domestic: 700–800 km/h · Long-haul: 850–950 km/h' },
+  train:  { lbl:'Train',    ico:'&#128646;', spd:120, spdMin:20,  spdMax:350, spdNote:'Regional: 80–160 km/h · High speed: 250–320 km/h' },
+  custom: { lbl:'Custom',   ico:'&#9881;',   spd:60,  spdMin:1,   spdMax:2000,spdNote:'Enter any speed for your vehicle or transport mode' }
+};
+
+var COMPARE_MODES = [
+  {key:'car',    ico:'&#128664;', lbl:'Driving',      spd:100},
+  {key:'train',  ico:'&#128646;', lbl:'Train',        spd:120},
+  {key:'cycle',  ico:'&#128690;', lbl:'Cycling',      spd:20},
+  {key:'walk',   ico:'&#128694;', lbl:'Walking',      spd:5},
+  {key:'flight', ico:'&#9992;',   lbl:'Flight',       spd:850}
+];
+
+function setTransport(mode, btn) {
+  currentTransport = mode;
+  document.querySelectorAll('.t-mode').forEach(function(b){ b.classList.remove('on'); });
+  btn.classList.add('on');
+  var m = MODES[mode];
+  document.getElementById('inp-lbl').textContent = m.lbl + ' — Distance & Speed';
+  document.getElementById('spd-lbl').textContent = 'Average Speed';
+  document.getElementById('f-spd').value = m.spd;
+  document.getElementById('sl-spd').min = m.spdMin;
+  document.getElementById('sl-spd').max = m.spdMax;
+  document.getElementById('sl-spd').value = m.spd;
+  document.getElementById('bdg-spd').textContent = m.spd + ' km/h';
+  document.getElementById('spd-note').textContent = m.spdNote;
+  resetResult();
+}
+
+function routeChange() {
+  var v = document.getElementById('f-route').value;
+  if (!v) return;
+  document.getElementById('f-dist').value = v;
+  document.getElementById('sl-dist').value = Math.min(v, 2000);
+  document.getElementById('bdg-dist').textContent = v + ' km';
+}
+
+function distUnitChange() {
+  var u = document.getElementById('f-dist-unit').value;
+  document.getElementById('bdg-dist').textContent = document.getElementById('f-dist').value + ' ' + u;
+}
+
+function toggleArrival() {
+  arrivalEnabled = !arrivalEnabled;
+  var sw = document.getElementById('toggle-arrival');
+  var body = document.getElementById('arrival-body');
+  sw.classList.toggle('on', arrivalEnabled);
+  body.classList.toggle('show', arrivalEnabled);
+  if (arrivalEnabled && !document.getElementById('f-dep-date').value) {
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById('f-dep-date').value = today;
+  }
+}
+
+function fmt2(n){ return String(Math.floor(n)).padStart(2,'0'); }
+function fmtDur(h) {
+  var totalMins = Math.round(h * 60);
+  var hours = Math.floor(totalMins / 60);
+  var mins  = totalMins % 60;
+  if (hours === 0) return mins + ' min';
+  if (mins === 0)  return hours + 'h';
+  return hours + 'h ' + fmt2(mins) + 'm';
+}
+
+function toKmh(spd, unit) {
+  return unit === 'mph' ? spd * 1.60934 : (unit === 'ms' ? spd * 3.6 : spd);
+}
+function toKm(dist, unit) {
+  return unit === 'mi' ? dist * 1.60934 : (unit === 'm' ? dist / 1000 : dist);
+}
+
+function calcArrival(depDate, depTime, totalHours) {
+  if (!depDate || !depTime) return null;
+  var dt = new Date(depDate + 'T' + depTime + ':00');
+  dt.setMinutes(dt.getMinutes() + Math.round(totalHours * 60));
+  var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var timeStr = fmt2(dt.getHours()) + ':' + fmt2(dt.getMinutes());
+  var dateStr = days[dt.getDay()] + ', ' + dt.getDate() + ' ' + months[dt.getMonth()] + ' ' + dt.getFullYear();
+  return { time: timeStr, date: dateStr };
+}
+
+function calculate() {
+  document.getElementById('err-msg').style.display = 'none';
+  var rawDist  = parseFloat(document.getElementById('f-dist').value) || 0;
+  var rawSpd   = parseFloat(document.getElementById('f-spd').value)  || 0;
+  var stopMins = parseFloat(document.getElementById('f-stops').value) || 0;
+  var distUnit = document.getElementById('f-dist-unit').value;
+  var spdUnit  = document.getElementById('f-spd-unit').value;
+
+  if (!rawDist || !rawSpd || rawDist <= 0 || rawSpd <= 0) { showErr(); return; }
+
+  var distKm   = toKm(rawDist, distUnit);
+  var spdKmh   = toKmh(rawSpd, spdUnit);
+  var driveH   = distKm / spdKmh;
+  var stopH    = stopMins / 60;
+  var totalH   = driveH + stopH;
+  var distMi   = distKm * 0.621371;
+  var spdMph   = spdKmh * 0.621371;
+  var mode     = MODES[currentTransport];
+
+  // Hero
+  document.getElementById('rh-badge').textContent = mode.lbl + ' Travel Time';
+  document.getElementById('rh-time').textContent = fmtDur(totalH);
+  document.getElementById('chip1').textContent = fmtDur(driveH) + ' drive time';
+  document.getElementById('chip2').textContent = rawDist + ' ' + distUnit;
+  document.getElementById('chip3').textContent = rawSpd + ' ' + (spdUnit==='kmh'?'km/h':'mph');
+  document.getElementById('chip4').textContent = stopMins > 0 ? stopMins + ' min stops' : 'No stops';
+
+  // Metrics
+  document.getElementById('r-hours').textContent = totalH.toFixed(2) + ' hr';
+  document.getElementById('r-mins').textContent  = Math.round(totalH * 60) + ' min';
+  document.getElementById('r-drive').textContent = fmtDur(driveH);
+  document.getElementById('r-stop').textContent  = stopMins > 0 ? stopMins + ' min' : '—';
+
+  // Arrival time
+  var arrBox = document.getElementById('arrival-result-box');
+  if (arrivalEnabled) {
+    var arr = calcArrival(document.getElementById('f-dep-date').value, document.getElementById('f-dep-time').value, totalH);
+    if (arr) {
+      arrBox.style.display = 'block';
+      document.getElementById('arr-time').textContent = arr.time;
+      document.getElementById('arr-date').textContent = arr.date;
+    }
+  } else { arrBox.style.display = 'none'; }
+
+  // Compare modes
+  var rows = '';
+  COMPARE_MODES.forEach(function(m) {
+    var mH = distKm / m.spd;
+    var isActive = m.key === currentTransport;
+    rows += '<div class="sr-row' + (isActive ? ' highlight' : '') + '">' +
+      '<span class="sr-ico">' + m.ico + '</span>' +
+      '<span class="sr-mode">' + m.lbl + (isActive ? ' ★' : '') + '</span>' +
+      '<span class="sr-time">' + fmtDur(mH) + '</span>' +
+      '<span class="sr-speed">' + m.spd + ' km/h avg</span>' +
+      '</div>';
+  });
+  document.getElementById('mode-rows').innerHTML = rows;
+
+  // Show results
+  document.getElementById('r-placeholder').style.display = 'none';
+  var b = document.getElementById('results-block');
+  b.classList.remove('show'); void b.offsetWidth;
+  b.style.display = 'block'; b.classList.add('show');
+}
+
+function showErr() { document.getElementById('err-msg').style.display = 'block'; }
+function resetResult() {
+  document.getElementById('results-block').style.display = 'none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display = 'flex';
+  document.getElementById('err-msg').style.display = 'none';
+}
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
+}
+
+// Sliders
+function bindSl(inpId, slId, bdgId, sfxFn) {
+  var inp = document.getElementById(inpId), sl = document.getElementById(slId), bdg = document.getElementById(bdgId);
+  if (!inp || !sl) return;
+  inp.addEventListener('input', function(){ sl.value = Math.min(parseFloat(this.value)||0, parseFloat(sl.max)); if(bdg) bdg.textContent = sfxFn(this.value); });
+  sl.addEventListener('input', function(){ inp.value = this.value; if(bdg) bdg.textContent = sfxFn(this.value); });
+}
+bindSl('f-dist','sl-dist','bdg-dist',function(v){ return v+' '+document.getElementById('f-dist-unit').value; });
+bindSl('f-spd','sl-spd','bdg-spd',function(v){ return v+' '+(document.getElementById('f-spd-unit').value==='kmh'?'km/h':'mph'); });
+document.getElementById('f-stops').addEventListener('input', function(){ document.getElementById('bdg-stops').textContent = this.value+' min'; });
+document.getElementById('f-spd-unit').addEventListener('change', function(){ document.getElementById('bdg-spd').textContent = document.getElementById('f-spd').value+' '+(this.value==='kmh'?'km/h':'mph'); });
+
+document.addEventListener('keydown', function(e){ if(e.key==='Enter' && e.target.tagName==='INPUT') calculate(); });
+
+// Set today's date
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('f-dep-date').value = new Date().toISOString().split('T')[0];
+});
+</script>
+</body>
+</html>

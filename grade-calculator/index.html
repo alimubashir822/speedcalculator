@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade Calculator — Calculate Weighted Grades & GPA Free | SpeedCalculator.net</title>
+<meta name="description" content="Free grade calculator online. Calculate weighted average grade, final exam score needed, and simple average. Supports percentage, letter grades & points. Instant results.">
+<meta name="keywords" content="grade calculator, weighted grade calculator, final grade calculator, average grade calculator, grade percentage calculator, GPA calculator">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://www.speedcalculator.net/grade-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Grade Calculator",
+  "url": "https://www.speedcalculator.net/grade-calculator/",
+  "description": "Free online grade calculator — weighted average, final exam grade needed, simple average",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I calculate my weighted average grade?","acceptedAnswer":{"@type":"Answer","text":"Multiply each assignment grade by its weight percentage, add all the results, then divide by the total weight. Formula: Weighted Grade = Σ(grade × weight) ÷ Σ(weight)."}},
+    {"@type":"Question","name":"What grade do I need on my final exam to pass?","acceptedAnswer":{"@type":"Answer","text":"Use the formula: Final Needed = (Target Grade − Current Grade × (1 − Final Weight%)) ÷ Final Weight%. Our calculator does this automatically."}},
+    {"@type":"Question","name":"What is the difference between a weighted and unweighted grade?","acceptedAnswer":{"@type":"Answer","text":"A weighted grade accounts for how much each assignment contributes to your overall grade. An unweighted grade treats every assignment equally regardless of its importance."}},
+    {"@type":"Question","name":"How are letter grades converted to percentages?","acceptedAnswer":{"@type":"Answer","text":"Standard conversions: A+=97%, A=93%, A-=90%, B+=87%, B=83%, B-=80%, C+=77%, C=73%, C-=70%, D+=67%, D=63%, D-=60%, F=0%."}},
+    {"@type":"Question","name":"Is this grade calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No registration, no hidden fees, no limits."}}
+  ]
+}
+</script>
+
+<style>
+/* ===== HERO ===== */
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:start;}
+@media(max-width:820px){.hero{grid-template-columns:1fr;}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,4.5vw,62px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:15px;color:var(--text2);font-weight:300;line-height:1.65;margin-bottom:22px;max-width:440px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+
+/* ===== CALCULATOR CARD (hero right) ===== */
+.hero-calc{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;}
+.hero-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);}
+.calc-head{padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.calc-head-label{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;}
+.calc-head-label span{color:var(--accent2);}
+.mode-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+.calc-body{padding:18px 24px 24px;}
+
+/* TABS */
+.calc-tabs{display:flex;gap:4px;background:var(--bg3);border-radius:25px;padding:4px;margin-bottom:18px;}
+.ctab{flex:1;padding:7px 8px;border-radius:20px;border:none;background:transparent;color:var(--text2);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.ctab.active{background:var(--accent);color:#fff;}
+
+/* TABLE INPUTS */
+.grade-table-wrap{overflow-x:auto;margin-bottom:14px;}
+.grade-table{width:100%;border-collapse:collapse;}
+.grade-table thead th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);padding:0 0 8px;text-align:left;}
+.grade-table thead th:last-child{width:36px;}
+.grade-table tbody tr{border-bottom:1px solid var(--border);}
+.grade-table tbody tr:last-child{border:none;}
+.grade-table td{padding:6px 4px;}
+.tbl-input{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-family:'Barlow',sans-serif;font-size:13px;color:var(--text);outline:none;width:100%;transition:border-color .2s;}
+.tbl-input:focus{border-color:var(--accent);}
+.tbl-input::placeholder{color:var(--text3);}
+.tbl-select{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 6px;font-family:'Barlow',sans-serif;font-size:12px;color:var(--accent2);outline:none;width:100%;transition:border-color .2s;cursor:pointer;}
+.tbl-select:focus{border-color:var(--accent);}
+.tbl-select option{background:var(--bg2);}
+.del-btn{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);border-radius:5px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .2s;}
+.del-btn:hover{background:rgba(239,68,68,.25);}
+.del-btn svg{width:13px;height:13px;stroke:#ef4444;}
+
+.add-row-btn{display:flex;align-items:center;gap:6px;background:rgba(59,130,246,.08);border:1px dashed var(--border2);border-radius:var(--radius-sm);padding:9px 14px;font-size:12px;font-weight:600;color:var(--accent2);cursor:pointer;transition:all .2s;margin-bottom:14px;width:100%;}
+.add-row-btn:hover{background:rgba(59,130,246,.15);}
+.add-row-btn svg{width:14px;height:14px;}
+
+/* FINAL GRADE INPUTS */
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+@media(max-width:400px){.final-grid{grid-template-columns:1fr;}}
+.f-group{}
+.f-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;display:block;}
+.f-inp-wrap{display:flex;border:1px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;}
+.f-inp-wrap:focus-within{border-color:var(--accent);}
+.f-inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:11px 12px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);min-width:0;}
+.f-inp-wrap input::placeholder{color:var(--text3);font-size:15px;font-weight:400;}
+.f-inp-wrap .unit{padding:0 12px;display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--text3);border-left:1px solid var(--border);}
+
+/* SIMPLE AVG */
+.simple-rows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;max-height:220px;overflow-y:auto;}
+.simple-row{display:flex;gap:8px;align-items:center;}
+.simple-row input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:var(--text);outline:none;transition:border-color .2s;}
+.simple-row input:focus{border-color:var(--accent);}
+.simple-row input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:14px;background:var(--accent);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.calc-btn:hover{background:#2563eb;transform:translateY(-1px);}
+.calc-btn svg{width:18px;height:18px;}
+
+/* RESULT */
+.result-panel{display:none;margin-top:16px;animation:fadeUp .3s ease;}
+.result-panel.show{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-main{padding:20px;border-radius:var(--radius);text-align:center;margin-bottom:12px;}
+.result-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.result-grade{font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:900;line-height:1;letter-spacing:-2px;}
+.result-letter{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;margin-top:4px;}
+.result-note{font-size:12px;color:var(--text3);margin-top:6px;}
+.result-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+.chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--text2);}
+.chip span{color:var(--text);}
+
+/* GRADE COLORS */
+.grade-a-plus{background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(16,185,129,.04));border:1px solid rgba(16,185,129,.25);}
+.grade-a{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(16,185,129,.03));border:1px solid rgba(16,185,129,.2);}
+.grade-b{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(59,130,246,.03));border:1px solid rgba(59,130,246,.2);}
+.grade-c{background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.03));border:1px solid rgba(245,158,11,.2);}
+.grade-d{background:linear-gradient(135deg,rgba(249,115,22,.1),rgba(249,115,22,.03));border:1px solid rgba(249,115,22,.2);}
+.grade-f{background:linear-gradient(135deg,rgba(239,68,68,.1),rgba(239,68,68,.03));border:1px solid rgba(239,68,68,.2);}
+.color-a{color:var(--green);}
+.color-b{color:var(--accent2);}
+.color-c{color:var(--orange);}
+.color-d{color:#f97316;}
+.color-f{color:var(--red);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:#f87171;margin-top:10px;display:none;}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:36px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--accent2);}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:52px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:12px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:580px;line-height:1.7;}
+
+/* STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px;}
+@media(max-width:720px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:border-color .2s;}
+.step-card:hover{border-color:var(--border2);}
+.step-num{font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;color:var(--bg3);line-height:1;margin-bottom:10px;}
+.step-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.step-icon svg{width:18px;height:18px;}
+.step-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.step-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* GRADE TABLE */
+.grade-ref-table{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin-top:28px;}
+table.ref{width:100%;border-collapse:collapse;}
+table.ref thead tr{background:var(--bg3);}
+table.ref th{padding:11px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);text-align:left;}
+table.ref td{padding:10px 14px;font-size:13px;color:var(--text2);border-top:1px solid var(--border);}
+table.ref tr:hover td{background:rgba(59,130,246,.03);}
+.td-letter{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;}
+.td-range{font-weight:600;color:var(--text);}
+
+/* IMAGE BLOCKS */
+.img-block{border-radius:var(--radius);overflow:hidden;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:200px;margin:24px 0;position:relative;}
+.img-placeholder{display:flex;flex-direction:column;align-items:center;gap:12px;padding:36px;text-align:center;}
+.img-placeholder svg{width:48px;height:48px;stroke:var(--text3);}
+.img-placeholder p{font-size:12px;color:var(--text3);}
+.img-caption{font-size:11px;color:var(--text3);text-align:center;margin-top:-16px;margin-bottom:20px;font-style:italic;}
+
+/* ARTICLE */
+.article-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:36px;margin-top:52px;margin-bottom:52px;}
+.article-wrap h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:28px 0 10px;}
+.article-wrap h2:first-child{margin-top:0;}
+.article-wrap h3{font-size:16px;font-weight:700;color:var(--accent2);margin:18px 0 7px;}
+.article-wrap p{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:12px;}
+.article-wrap ul,.article-wrap ol{margin:0 0 14px 20px;}
+.article-wrap li{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:4px;}
+.article-wrap strong{color:var(--text);}
+.formula-inline{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:3px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
+.tip-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:14px 16px;margin:14px 0;}
+.tip-box p{color:var(--text2);font-size:13px;margin:0;}
+.tip-box strong{color:var(--green);}
+.example-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:var(--radius-sm);padding:16px;margin:14px 0;}
+.example-box h4{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.example-box p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+
+/* USE CASES */
+.usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+@media(max-width:640px){.usecase-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.usecase-grid{grid-template-columns:1fr;}}
+.uc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .2s;}
+.uc-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.uc-icon svg{width:20px;height:20px;}
+.uc-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:28px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;transition:background .15s;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.7;padding-bottom:16px;}
+.faq-item.open .faq-a{max-height:200px;}
+
+/* OTHER CALCS */
+.other-calcs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px;}
+@media(max-width:640px){.other-calcs{grid-template-columns:repeat(2,1fr);}}
+.oc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;}
+.oc-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.oc-icon svg{width:16px;height:16px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.oc-desc{font-size:11px;color:var(--text3);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero{animation:fadeInUp .55s ease both;}
+.hero-calc{animation:fadeInUp .55s .1s ease both;}
+</style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    Grade Calculator
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section>
+  <div class="container">
+    <div class="hero">
+
+      <!-- LEFT: HEADING -->
+      <div class="hero-left">
+        <div class="hero-eyebrow"><span class="dot"></span> Free · Instant · No Login</div>
+        <h1>Grade<em>Calculator</em></h1>
+        <p class="hero-sub">Calculate your weighted average grade, find out what score you need on your final exam, or compute a simple average — all in one free tool.</p>
+        <div class="hero-badges">
+          <span class="hbadge g">✓ 100% Free</span>
+          <span class="hbadge b">Weighted Grades</span>
+          <span class="hbadge p">Final Exam Planner</span>
+          <span class="hbadge">A–F Letter Grades</span>
+          <span class="hbadge g">Instant Results</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: CALCULATOR -->
+      <div class="hero-calc" id="calculator">
+        <div class="calc-head">
+          <div class="calc-head-label">Grade <span>Calculator</span></div>
+          <div class="mode-pill">Live Results</div>
+        </div>
+        <div class="calc-body">
+
+          <!-- TABS -->
+          <div class="calc-tabs">
+            <button class="ctab active" onclick="switchTab('weighted',this)">Weighted</button>
+            <button class="ctab" onclick="switchTab('final',this)">Final Exam</button>
+            <button class="ctab" onclick="switchTab('simple',this)">Average</button>
+          </div>
+
+          <!-- ======= TAB 1: WEIGHTED ======= -->
+          <div id="tab-weighted">
+            <div class="grade-table-wrap">
+              <table class="grade-table">
+                <thead>
+                  <tr>
+                    <th style="width:35%">Assignment / Exam</th>
+                    <th style="width:25%">Grade (%)</th>
+                    <th style="width:30%">Weight (%)</th>
+                    <th style="width:10%"></th>
+                  </tr>
+                </thead>
+                <tbody id="weighted-rows">
+                  <!-- rows injected by JS -->
+                </tbody>
+              </table>
+            </div>
+            <button class="add-row-btn" onclick="addWeightedRow()">
+              <svg fill="none" viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Add Assignment / Exam
+            </button>
+          </div>
+
+          <!-- ======= TAB 2: FINAL EXAM ======= -->
+          <div id="tab-final" style="display:none;">
+            <p style="font-size:12px;color:var(--text3);margin-bottom:14px;">Find out what score you need on your final exam to achieve your target grade.</p>
+            <div class="final-grid">
+              <div class="f-group">
+                <label class="f-lbl">Current Grade</label>
+                <div class="f-inp-wrap">
+                  <input type="number" id="fin-current" placeholder="78" min="0" max="100" step="any">
+                  <span class="unit">%</span>
+                </div>
+              </div>
+              <div class="f-group">
+                <label class="f-lbl">Target Grade</label>
+                <div class="f-inp-wrap">
+                  <input type="number" id="fin-target" placeholder="85" min="0" max="100" step="any">
+                  <span class="unit">%</span>
+                </div>
+              </div>
+              <div class="f-group" style="grid-column:1/-1;">
+                <label class="f-lbl">Final Exam Weight</label>
+                <div class="f-inp-wrap">
+                  <input type="number" id="fin-weight" placeholder="30" min="1" max="100" step="any">
+                  <span class="unit">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= TAB 3: SIMPLE AVG ======= -->
+          <div id="tab-simple" style="display:none;">
+            <p style="font-size:12px;color:var(--text3);margin-bottom:12px;">Enter your grades (as percentages). We'll calculate the simple average.</p>
+            <div class="simple-rows" id="simple-rows">
+              <!-- injected by JS -->
+            </div>
+            <button class="add-row-btn" onclick="addSimpleGrade()">
+              <svg fill="none" viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Add Another Grade
+            </button>
+          </div>
+
+          <!-- ERROR + BUTTON + RESULT -->
+          <div class="err-msg" id="err-msg">Please fill in valid grade and weight values.</div>
+          <button class="calc-btn" onclick="calculate()">
+            <svg fill="none" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calculate Grade
+          </button>
+
+          <div class="result-panel" id="result-panel">
+            <div class="result-main" id="result-main">
+              <div class="result-lbl">Your Grade</div>
+              <div class="result-grade" id="result-pct">—</div>
+              <div class="result-letter" id="result-letter">—</div>
+              <div class="result-note" id="result-note"></div>
+            </div>
+            <div class="result-chips" id="result-chips"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">3-in-1</div><div class="stat-lbl">Calculator Modes</div></div>
+      <div class="stat-item"><div class="stat-val">Instant</div><div class="stat-lbl">Results</div></div>
+      <div class="stat-item"><div class="stat-val">A–F</div><div class="stat-lbl">Letter Grade Scale</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">Forever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW TO USE ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Step-by-Step Guide</div>
+    <h2 class="sec-title">How to Use the <span>Grade Calculator</span></h2>
+    <p class="sec-sub">Three modes for three different needs. Choose the one that matches what you're trying to find out.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#3b82f6" stroke-width="1.4"><rect x="3" y="2" width="12" height="14" rx="2"/><path d="M6 6h6M6 9h6M6 12h4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Choose a Mode</div>
+        <p class="step-p">Select Weighted Average, Final Exam Planner, or Simple Average — depending on what you need.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#10b981" stroke-width="1.4"><path d="M4 4h10v2H4zM4 9h7M4 13h5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="step-h">Enter Your Grades</div>
+        <p class="step-p">Type each assignment or exam grade as a percentage. Add as many rows as you need.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#f59e0b" stroke-width="1.4"><path d="M9 4v5l3 3" stroke-linecap="round"/><circle cx="9" cy="9" r="7"/></svg>
+        </div>
+        <div class="step-h">Add Weights (if needed)</div>
+        <p class="step-p">For weighted mode, enter the percentage weight of each assignment (quizzes, midterms, final, etc.).</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 18 18" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 9l4 4 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step-h">Get Instant Result</div>
+        <p class="step-p">Click Calculate to see your final grade as both a percentage and a letter grade (A, B, C, D, or F).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GRADE REFERENCE TABLE ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Grade Scale Reference</div>
+    <h2 class="sec-title">Letter Grade <span>Conversion Table</span></h2>
+    <p class="sec-sub">Standard US letter grade scale used by most colleges, universities, and high schools. Our calculator uses these exact conversions.</p>
+
+    <!-- IMAGE PLACEHOLDER 1 -->
+    <div class="img-block" style="margin-top:24px;">
+      <div class="img-placeholder">
+        <svg fill="none" viewBox="0 0 48 48"><rect x="4" y="6" width="28" height="36" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 14h16M10 20h16M10 26h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="38" cy="36" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M35 36l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>📌 Suggested Image: Student checking grades or report card<br>Alt text: "Grade calculator showing letter grade A on a student report"</p>
+      </div>
+    </div>
+    <p class="img-caption">Image suggestion: A student reviewing grades on a laptop or report card — place here for visual engagement.</p>
+
+    <div class="grade-ref-table">
+      <table class="ref">
+        <thead>
+          <tr>
+            <th>Letter Grade</th>
+            <th>Percentage Range</th>
+            <th>GPA Points</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="td-letter color-a">A+</span></td><td class="td-range">97 – 100%</td><td>4.3</td><td style="color:var(--green);font-weight:600;">Excellent</td></tr>
+          <tr><td><span class="td-letter color-a">A</span></td><td class="td-range">93 – 96%</td><td>4.0</td><td style="color:var(--green);font-weight:600;">Excellent</td></tr>
+          <tr><td><span class="td-letter color-a">A−</span></td><td class="td-range">90 – 92%</td><td>3.7</td><td style="color:var(--green);font-weight:600;">Excellent</td></tr>
+          <tr><td><span class="td-letter color-b">B+</span></td><td class="td-range">87 – 89%</td><td>3.3</td><td style="color:var(--accent2);font-weight:600;">Good</td></tr>
+          <tr><td><span class="td-letter color-b">B</span></td><td class="td-range">83 – 86%</td><td>3.0</td><td style="color:var(--accent2);font-weight:600;">Good</td></tr>
+          <tr><td><span class="td-letter color-b">B−</span></td><td class="td-range">80 – 82%</td><td>2.7</td><td style="color:var(--accent2);font-weight:600;">Good</td></tr>
+          <tr><td><span class="td-letter color-c">C+</span></td><td class="td-range">77 – 79%</td><td>2.3</td><td style="color:var(--orange);font-weight:600;">Average</td></tr>
+          <tr><td><span class="td-letter color-c">C</span></td><td class="td-range">73 – 76%</td><td>2.0</td><td style="color:var(--orange);font-weight:600;">Average</td></tr>
+          <tr><td><span class="td-letter color-c">C−</span></td><td class="td-range">70 – 72%</td><td>1.7</td><td style="color:var(--orange);font-weight:600;">Average</td></tr>
+          <tr><td><span class="td-letter color-d">D+</span></td><td class="td-range">67 – 69%</td><td>1.3</td><td style="color:#f97316;font-weight:600;">Below Average</td></tr>
+          <tr><td><span class="td-letter color-d">D</span></td><td class="td-range">63 – 66%</td><td>1.0</td><td style="color:#f97316;font-weight:600;">Below Average</td></tr>
+          <tr><td><span class="td-letter color-d">D−</span></td><td class="td-range">60 – 62%</td><td>0.7</td><td style="color:#f97316;font-weight:600;">Below Average</td></tr>
+          <tr><td><span class="td-letter color-f">F</span></td><td class="td-range">0 – 59%</td><td>0.0</td><td style="color:var(--red);font-weight:600;">Failing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== USE CASES ===== -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Who Uses This Tool</div>
+    <h2 class="sec-title">Real-Life <span>Use Cases</span></h2>
+    <p class="sec-sub">From students tracking coursework to parents monitoring progress — our grade calculator helps everyone.</p>
+    <div class="usecase-grid">
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(59,130,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#3b82f6" stroke-width="1.4"><path d="M10 2L2 7l8 5 8-5-8-5zM2 17l8-5 8 5M2 12l8 5 8-5"/></svg>
+        </div>
+        <div class="uc-h">University Students</div>
+        <p class="uc-p">Track weighted grades across quizzes, assignments, midterms, and finals to know your exact standing.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">High School Students</div>
+        <p class="uc-p">Calculate your semester average quickly to see if you qualify for honor roll or scholarship requirements.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(245,158,11,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#f59e0b" stroke-width="1.4"><circle cx="10" cy="8" r="4"/><path d="M4 18c0-3 2.7-5 6-5s6 2 6 5"/></svg>
+        </div>
+        <div class="uc-h">Parents</div>
+        <p class="uc-p">Monitor your child's academic performance and understand their GPA situation clearly and quickly.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(139,92,246,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#8b5cf6" stroke-width="1.4"><path d="M4 19V6l6-4 6 4v13M8 19v-5h4v5"/></svg>
+        </div>
+        <div class="uc-h">Teachers</div>
+        <p class="uc-p">Quickly verify weighted grade calculations for individual students or double-check gradebook entries.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(236,72,153,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#ec4899" stroke-width="1.4"><path d="M9 11l4-7-5 9h8l-4 7 5-9H9z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Exam Planners</div>
+        <p class="uc-p">Use the Final Exam mode to calculate the minimum score you need to pass or achieve your target grade.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon" style="background:rgba(16,185,129,.1);">
+          <svg fill="none" viewBox="0 0 20 20" stroke="#10b981" stroke-width="1.4"><path d="M12 2l3 7h-5v9l-3-7h5V2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="uc-h">Scholarship Applicants</div>
+        <p class="uc-p">Ensure your grade meets the minimum GPA thresholds required by scholarship programs and universities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARTICLE / SEO CONTENT ===== -->
+<div class="container">
+  <div class="article-wrap">
+
+    <h2>What Is a Grade Calculator?</h2>
+    <p>A <strong>grade calculator</strong> is an online tool that helps students find their overall course grade based on individual assignment scores and their respective weights. Instead of doing complex math by hand, you simply enter your grades and weights, and the calculator instantly gives you your final percentage and letter grade.</p>
+    <p>Whether you're a high school student tracking your semester average or a university student trying to figure out what you need on your final exam, a grade calculator removes all the guesswork and manual errors from the process.</p>
+
+    <!-- IMAGE PLACEHOLDER 2 -->
+    <div class="img-block">
+      <div class="img-placeholder">
+        <svg fill="none" viewBox="0 0 48 48"><rect x="6" y="4" width="36" height="40" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M14 14h20M14 21h20M14 28h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="36" cy="36" r="8" fill="rgba(59,130,246,0.1)" stroke="currentColor" stroke-width="1.5"/><path d="M33 36l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>📌 Suggested Image: Calculator with grade sheet or student at a desk<br>Alt text: "Online grade calculator showing weighted average result"</p>
+      </div>
+    </div>
+    <p class="img-caption">Image suggestion: A student using a laptop or calculator to calculate grades — place here for relevance and engagement.</p>
+
+    <h2>How to Calculate a Weighted Average Grade</h2>
+    <p>A <strong>weighted average grade</strong> is not just a simple average — it takes into account how much each assignment is worth in your overall course grade. Most university and school courses use weighted grading, where a final exam may be worth 40% and weekly quizzes only 10%.</p>
+
+    <h3>The Weighted Grade Formula</h3>
+    <p>The formula for calculating a weighted grade is:</p>
+    <p><span class="formula-inline">Weighted Grade = Σ (Grade × Weight) ÷ Σ (Weight)</span></p>
+
+    <div class="example-box">
+      <h4>📘 Real-Life Example — University Semester</h4>
+      <p>
+        • Quizzes: 85% — Weight: 20%<br>
+        • Midterm Exam: 72% — Weight: 30%<br>
+        • Final Project: 90% — Weight: 20%<br>
+        • Final Exam: 78% — Weight: 30%<br><br>
+        <strong>Calculation:</strong> (85×20 + 72×30 + 90×20 + 78×30) ÷ (20+30+20+30) = <strong>79.7% → C+</strong>
+      </p>
+    </div>
+
+    <h2>How to Calculate the Final Exam Grade You Need</h2>
+    <p>This is one of the most searched questions by students before exams: <em>"What score do I need on my final to pass the course?"</em></p>
+    <p>The formula is:</p>
+    <p><span class="formula-inline">Final Needed = (Target − Current × (1 − Final%)) ÷ Final%</span></p>
+
+    <div class="example-box">
+      <h4>📘 Final Exam Planning Example</h4>
+      <p>
+        • Your current grade: <strong>74%</strong><br>
+        • Grade you want: <strong>80% (B)</strong><br>
+        • Final exam is worth: <strong>35%</strong><br><br>
+        <strong>Final Needed</strong> = (0.80 − 0.74 × 0.65) ÷ 0.35 = <strong>91.1%</strong><br>
+        You need a <strong>91%</strong> on your final to achieve a B in the course.
+      </p>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Pro Tip:</strong> If your required final exam score is above 100%, it means your target grade is mathematically impossible based on your current standing. Consider revising your target grade downward.</p>
+    </div>
+
+    <h2>Types of Grading Systems Around the World</h2>
+    <p>Grading systems vary significantly by country and institution. Here are the most common ones:</p>
+    <ul>
+      <li><strong>US System (A–F):</strong> The most widely used system globally. Ranges from A+ (97–100%) to F (below 60%).</li>
+      <li><strong>UK System:</strong> Uses First Class Honours (70%+), Upper Second (60–69%), Lower Second (50–59%), and Third Class (40–49%).</li>
+      <li><strong>Pakistan System (O/A Levels):</strong> Uses A*, A, B, C, D, E grades based on Cambridge International grading standards.</li>
+      <li><strong>GPA System:</strong> Used in the US and adopted widely globally. Ranges from 0.0 to 4.0 (or 4.3 with A+).</li>
+      <li><strong>Percentage System:</strong> Used in Pakistan, India, and many other countries — simply the raw percentage scored.</li>
+    </ul>
+
+    <!-- IMAGE PLACEHOLDER 3 -->
+    <div class="img-block">
+      <div class="img-placeholder">
+        <svg fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M24 6v18l12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 34h32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/></svg>
+        <p>📌 Suggested Image: Global grading system or world map showing education<br>Alt text: "Different grading systems around the world — A to F, GPA, percentage"</p>
+      </div>
+    </div>
+
+    <h2>Tips to Improve Your Grade</h2>
+    <ul>
+      <li>Always check what percentage each assignment is worth before the semester starts</li>
+      <li>Focus extra effort on high-weight assessments like midterms and finals</li>
+      <li>Use the Final Exam Planner above to know exactly what you need — don't guess</li>
+      <li>Attend classes consistently — participation often contributes to your grade</li>
+      <li>Submit assignments on time — late penalties can significantly drop your weighted average</li>
+      <li>Track your grades weekly so you are never surprised at the end of semester</li>
+    </ul>
+
+    <h2>Understanding Weighted vs. Unweighted Grades</h2>
+    <p>Many students confuse weighted and unweighted grades. Here is the simple difference:</p>
+    <p>An <strong>unweighted grade</strong> treats every assignment equally. If you have 5 assignments, each contributes 20% to your final grade regardless of its importance. A <strong>weighted grade</strong> gives each assignment a specific percentage contribution — so your final exam might be worth 40% and a short quiz only 5%.</p>
+    <p>Most universities and colleges use <strong>weighted grading</strong>, which is why our Grade Calculator offers a dedicated weighted mode. Always check your course syllabus to confirm each assignment's weight.</p>
+
+  </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" style="padding-bottom:52px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Grade Calculator <span>FAQ</span></h2>
+    <p class="sec-sub">Quick answers to the most common questions about calculating grades.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How do I calculate my weighted average grade?<svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a"><p>Multiply each assignment grade by its weight, add all the results, then divide by the total weight. Formula: <strong>Weighted Grade = Σ(grade × weight) ÷ Σ(weight)</strong>. For example: 80%×40% + 90%×60% = (32 + 54) ÷ 100 = 86%. Our calculator does this instantly.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What grade do I need on my final exam to pass or get a specific grade?<svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a"><p>Use our <strong>Final Exam Planner tab</strong>. Enter your current grade, your target grade, and how much the final is worth. The formula is: <strong>Final Needed = (Target − Current × (1 − FinalWeight)) ÷ FinalWeight</strong>. If the result is above 100%, your target may not be achievable.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">What is the difference between weighted and unweighted grades?<svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a"><p>An <strong>unweighted grade</strong> treats every assignment equally. A <strong>weighted grade</strong> gives each assignment a different contribution based on its importance. Most university courses use weighted grading — for example, a final exam worth 40% has far more impact on your grade than a 5% quiz.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">How are letter grades converted to percentages?<svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a"><p>Standard US conversions: <strong>A+ = 97–100%, A = 93–96%, A− = 90–92%, B+ = 87–89%, B = 83–86%, B− = 80–82%, C+ = 77–79%, C = 73–76%, C− = 70–72%, D+ = 67–69%, D = 63–66%, D− = 60–62%, F = below 60%.</strong></p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="faq(this)">Is this grade calculator free to use?<svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="faq-a"><p>Yes — <strong>100% free, forever</strong>. No registration, no account, no subscription. SpeedCalculator.net provides all tools completely free to students, teachers, and parents worldwide.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OTHER CALCULATORS ===== -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="other-calcs">
+      <a href="/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#3b82f6" stroke-width="1.4"><path d="M8 3v4l3 2" stroke-linecap="round"/><circle cx="8" cy="8" r="6"/></svg></div>
+        <div class="oc-name">Speed Calculator</div>
+        <div class="oc-desc">Distance, speed & time</div>
+      </a>
+      <a href="/bmi-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#10b981" stroke-width="1.4"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-2 2-4 5-4s5 2 5 4" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">BMI Calculator</div>
+        <div class="oc-desc">Body mass index</div>
+      </a>
+      <a href="/loan-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(245,158,11,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#f59e0b" stroke-width="1.4"><path d="M8 2v2M8 12v2M3 7H1M15 7h-2" stroke-linecap="round"/><circle cx="8" cy="7" r="3"/></svg></div>
+        <div class="oc-name">Loan Calculator</div>
+        <div class="oc-desc">EMI & interest rates</div>
+      </a>
+      <a href="/percentage-calculator/" class="oc-card">
+        <div class="oc-icon" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 16 16" stroke="#8b5cf6" stroke-width="1.4"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="11" r="2"/><path d="M13 3L3 13" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Percentage Calc</div>
+        <div class="oc-desc">Find any percentage</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="../js/shared.js"></script>
+<script>
+// ---- GRADE LOOKUP ----
+function pctToLetter(p){
+  if(p>=97) return {l:'A+',cls:'color-a',bg:'grade-a-plus'};
+  if(p>=93) return {l:'A', cls:'color-a',bg:'grade-a'};
+  if(p>=90) return {l:'A−',cls:'color-a',bg:'grade-a'};
+  if(p>=87) return {l:'B+',cls:'color-b',bg:'grade-b'};
+  if(p>=83) return {l:'B', cls:'color-b',bg:'grade-b'};
+  if(p>=80) return {l:'B−',cls:'color-b',bg:'grade-b'};
+  if(p>=77) return {l:'C+',cls:'color-c',bg:'grade-c'};
+  if(p>=73) return {l:'C', cls:'color-c',bg:'grade-c'};
+  if(p>=70) return {l:'C−',cls:'color-c',bg:'grade-c'};
+  if(p>=67) return {l:'D+',cls:'color-d',bg:'grade-d'};
+  if(p>=63) return {l:'D', cls:'color-d',bg:'grade-d'};
+  if(p>=60) return {l:'D−',cls:'color-d',bg:'grade-d'};
+  return {l:'F',cls:'color-f',bg:'grade-f'};
+}
+function pctToGPA(p){
+  if(p>=97) return 4.3;
+  if(p>=93) return 4.0;
+  if(p>=90) return 3.7;
+  if(p>=87) return 3.3;
+  if(p>=83) return 3.0;
+  if(p>=80) return 2.7;
+  if(p>=77) return 2.3;
+  if(p>=73) return 2.0;
+  if(p>=70) return 1.7;
+  if(p>=67) return 1.3;
+  if(p>=63) return 1.0;
+  if(p>=60) return 0.7;
+  return 0.0;
+}
+
+// ---- TAB SWITCH ----
+let activeTab = 'weighted';
+function switchTab(tab, btn){
+  activeTab = tab;
+  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['weighted','final','simple'].forEach(t=>{
+    document.getElementById('tab-'+t).style.display = t===tab?'block':'none';
+  });
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('err-msg').style.display='none';
+}
+
+// ---- WEIGHTED ROWS ----
+let wRowCount = 0;
+function addWeightedRow(name='', grade='', weight=''){
+  const tbody = document.getElementById('weighted-rows');
+  const id = ++wRowCount;
+  const tr = document.createElement('tr');
+  tr.id = 'wr-'+id;
+  tr.innerHTML = `
+    <td><input class="tbl-input" placeholder="e.g. Midterm" value="${name}"></td>
+    <td><input class="tbl-input" type="number" placeholder="0–100" min="0" max="100" step="any" value="${grade}"></td>
+    <td><input class="tbl-input" type="number" placeholder="%" min="0" max="100" step="any" value="${weight}"></td>
+    <td><button class="del-btn" onclick="removeRow('wr-${id}')"><svg fill="none" viewBox="0 0 13 13"><path d="M2 2l9 9M11 2l-9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></td>
+  `;
+  tbody.appendChild(tr);
+}
+function removeRow(id){
+  const el = document.getElementById(id);
+  if(el) el.remove();
+}
+
+// ---- SIMPLE AVG ROWS ----
+let sRowCount = 0;
+function addSimpleGrade(val=''){
+  const container = document.getElementById('simple-rows');
+  const id = ++sRowCount;
+  const div = document.createElement('div');
+  div.className = 'simple-row';
+  div.id = 'sr-'+id;
+  div.innerHTML = `
+    <input type="number" placeholder="Grade % (e.g. 85)" min="0" max="100" step="any" value="${val}">
+    <button class="del-btn" onclick="removeRow('sr-${id}')"><svg fill="none" viewBox="0 0 13 13"><path d="M2 2l9 9M11 2l-9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+  `;
+  container.appendChild(div);
+}
+
+// ---- INIT DEFAULT ROWS ----
+(function init(){
+  // Weighted: 4 default rows
+  addWeightedRow('Quizzes','','20');
+  addWeightedRow('Midterm Exam','','30');
+  addWeightedRow('Assignment','','20');
+  addWeightedRow('Final Exam','','30');
+  // Simple: 4 default rows
+  for(let i=0;i<4;i++) addSimpleGrade();
+})();
+
+// ---- MAIN CALCULATE ----
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  const panel = document.getElementById('result-panel');
+
+  if(activeTab==='weighted') calcWeighted(panel);
+  else if(activeTab==='final') calcFinal(panel);
+  else calcSimple(panel);
+}
+
+function showResult(panel, pct, extra){
+  if(pct<0||isNaN(pct)){showErr();return;}
+  const clamped = Math.min(Math.max(pct,0),100);
+  const g = pctToLetter(clamped);
+  const gpa = pctToGPA(clamped);
+
+  const main = document.getElementById('result-main');
+  main.className = 'result-main '+g.bg;
+  document.getElementById('result-pct').textContent = clamped.toFixed(2)+'%';
+  document.getElementById('result-pct').className = 'result-grade '+g.cls;
+  document.getElementById('result-letter').textContent = g.l;
+  document.getElementById('result-letter').className = 'result-letter '+g.cls;
+  document.getElementById('result-note').textContent = extra||'';
+
+  document.getElementById('result-chips').innerHTML = [
+    `<span class="chip">GPA <span>${gpa.toFixed(1)}</span></span>`,
+    `<span class="chip">Letter <span>${g.l}</span></span>`,
+    `<span class="chip">${clamped>=60?'✓ Passing':'✗ Failing'}</span>`,
+  ].join('');
+
+  panel.classList.remove('show');
+  void panel.offsetWidth;
+  panel.classList.add('show');
+}
+
+function calcWeighted(panel){
+  const rows = document.querySelectorAll('#weighted-rows tr');
+  let sumWG=0, sumW=0, valid=false;
+  rows.forEach(r=>{
+    const inputs = r.querySelectorAll('input[type="number"]');
+    if(inputs.length<2) return;
+    const g = parseFloat(inputs[0].value);
+    const w = parseFloat(inputs[1].value);
+    if(isNaN(g)||isNaN(w)||g<0||g>100||w<0) return;
+    sumWG += g*w; sumW += w; valid=true;
+  });
+  if(!valid||sumW===0){showErr();return;}
+  const pct = sumWG/sumW;
+  const warnOver = Math.abs(sumW-100)>0.01 && sumW!==0;
+  showResult(panel, pct, warnOver?`Note: Weights total ${sumW.toFixed(1)}% (not 100%). Grade shown as weighted proportion.`:'');
+}
+
+function calcFinal(panel){
+  const cur = parseFloat(document.getElementById('fin-current').value);
+  const tgt = parseFloat(document.getElementById('fin-target').value);
+  const wt  = parseFloat(document.getElementById('fin-weight').value);
+  if(isNaN(cur)||isNaN(tgt)||isNaN(wt)||cur<0||tgt<0||wt<=0||wt>=100){showErr();return;}
+  const w = wt/100;
+  const needed = (tgt/100 - (cur/100)*(1-w)) / w * 100;
+  const g = pctToLetter(Math.min(Math.max(needed,0),100));
+  const main = document.getElementById('result-main');
+  if(needed>100){
+    main.className='result-main grade-f';
+    document.getElementById('result-pct').textContent='> 100%';
+    document.getElementById('result-pct').className='result-grade color-f';
+    document.getElementById('result-letter').textContent='Not Possible';
+    document.getElementById('result-letter').className='result-letter color-f';
+    document.getElementById('result-note').textContent='Target grade is mathematically unachievable. Lower your target.';
+    document.getElementById('result-chips').innerHTML='<span class="chip" style="color:var(--red)">Target not achievable with current standing</span>';
+  } else if(needed<0){
+    showResult(panel, 100, 'You have already secured your target grade! Any score on the final will do.');
+    return;
+  } else {
+    showResult(panel, needed, `Score ${needed.toFixed(1)}% or above on your final to reach ${tgt}%`);
+    document.getElementById('result-lbl') && (document.getElementById('result-lbl').textContent='Final Exam Score Needed');
+  }
+  document.getElementById('result-lbl') && (document.querySelector('.result-lbl').textContent='Final Exam Score Needed');
+  panel.classList.remove('show');void panel.offsetWidth;panel.classList.add('show');
+}
+
+function calcSimple(panel){
+  const inputs = document.querySelectorAll('#simple-rows input[type="number"]');
+  let sum=0,cnt=0;
+  inputs.forEach(inp=>{
+    const v=parseFloat(inp.value);
+    if(!isNaN(v)&&v>=0&&v<=100){sum+=v;cnt++;}
+  });
+  if(cnt===0){showErr();return;}
+  showResult(panel, sum/cnt, `Average of ${cnt} grade${cnt>1?'s':''}`);
+}
+
+function showErr(){document.getElementById('err-msg').style.display='block';}
+
+function faq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+// Make result-lbl accessible
+document.addEventListener('DOMContentLoaded',()=>{
+  const m=document.querySelector('.result-main');
+  if(m && !m.querySelector('.result-lbl')){
+    const lbl=document.createElement('div');
+    lbl.className='result-lbl';lbl.id='result-lbl';lbl.textContent='Your Grade';
+    m.prepend(lbl);
+  }
+});
+</script>
+</body>
+</html>

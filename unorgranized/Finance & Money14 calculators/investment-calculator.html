@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Calculator — Compound Growth, 401k, S&P 500 & Returns | SpeedCalculator.net</title>
+<meta name="description" content="Free investment calculator online. Calculate compound interest, retirement savings, 401k growth, S&P 500 returns, Bitcoin ROI, and monthly investment growth. Works like Dave Ramsey, Bankrate, and NerdWallet investment calculators — with withdrawals support and year-by-year table.">
+<meta name="keywords" content="investment calculator, dave ramsey investment calculator, ramsey investment calculator, return on investment calculator, nerdwallet investment calculator, investment calculator over time, stock investment calculator, bankrate investment calculator, retirement investment calculator, bitcoin investment calculator, compound investment calculator, s&p 500 investment calculator, ramsey solutions investment calculator, investment calculator ramsey, investment calculator with withdrawals, investment calculator s&p 500, 401k investment calculator, investment calculator dave ramsey, monthly investment calculator, real estate investment calculator">
+<link rel="canonical" href="https://www.speedcalculator.net/investment-calculator/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Investment Calculator",
+  "alternateName":["Compound Investment Calculator","Return on Investment Calculator","Dave Ramsey Investment Calculator","Retirement Investment Calculator","401k Investment Calculator","Monthly Investment Calculator","Stock Investment Calculator","Bitcoin Investment Calculator","S&P 500 Investment Calculator","Real Estate Investment Calculator","Investment Calculator with Withdrawals","Bankrate Investment Calculator","NerdWallet Investment Calculator"],
+  "url":"https://www.speedcalculator.net/investment-calculator/",
+  "description":"Free investment calculator — calculate compound growth, retirement savings, 401k, S&P 500 returns, Bitcoin ROI, and monthly investment value over time. Supports withdrawals, inflation adjustment, and year-by-year growth table.",
+  "applicationCategory":"FinanceApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Compound investment calculator","Dave Ramsey investment calculator method","Monthly investment calculator","Retirement investment calculator","401k investment calculator","S&P 500 investment calculator","Bitcoin investment calculator","Investment calculator with withdrawals","Real estate investment calculator","Year-by-year growth table","Inflation-adjusted returns","Multiple compounding frequencies"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"How to Use the Investment Calculator",
+  "description":"Calculate compound investment growth, retirement savings, and return on investment using our free investment calculator",
+  "totalTime":"PT2M",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Enter Initial Investment","text":"Enter your starting investment amount (lump sum). This can be $0 if you are starting from scratch with only monthly contributions. For retirement or 401k, enter your current account balance."},
+    {"@type":"HowToStep","position":2,"name":"Set Monthly Contribution","text":"Enter how much you will add each month. Dave Ramsey recommends investing 15% of gross income. For S&P 500 index fund investing, enter your regular monthly contribution amount."},
+    {"@type":"HowToStep","position":3,"name":"Enter Rate of Return","text":"Enter the expected annual return rate. Use 10–12% for S&P 500 historical average, 7% real return (inflation-adjusted), 4–6% for bonds, or Bitcoin's historical average. The Dave Ramsey investment calculator uses 12%."},
+    {"@type":"HowToStep","position":4,"name":"Set Time Period","text":"Enter the investment period in years. For retirement planning, use years until retirement age. For compound investment calculator, longer periods show exponential growth through compounding."},
+    {"@type":"HowToStep","position":5,"name":"Add Withdrawals (Optional)","text":"Enable monthly withdrawals for retirement income simulation. Enter the amount you plan to withdraw each month during retirement or distribution phase."},
+    {"@type":"HowToStep","position":6,"name":"Review Year-by-Year Results","text":"See total value, total invested, interest earned, year-by-year growth table, and the power-of-compounding chart. Compare different scenarios by adjusting inputs."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is the Dave Ramsey investment calculator rate?","acceptedAnswer":{"@type":"Answer","text":"The Dave Ramsey investment calculator uses a 12% annual return rate, based on the historical average annual return of the S&P 500 index over long periods (before inflation adjustment). Dave Ramsey's investment calculator specifically recommends investing 15% of gross income in growth stock mutual funds. Our investment calculator defaults to 12% to match the Dave Ramsey / Ramsey Solutions investment calculator approach."}},
+    {"@type":"Question","name":"How does the compound investment calculator work?","acceptedAnswer":{"@type":"Answer","text":"Compound investment formula: FV = PV(1+r)^n + PMT × [(1+r)^n - 1] / r. Where FV = future value, PV = initial investment, r = periodic rate, n = periods, PMT = monthly contribution. The key insight is that returns compound on previous returns — this is why the S&P 500 investment calculator shows exponential growth over 20-30 years."}},
+    {"@type":"Question","name":"What is a realistic S&P 500 investment calculator return rate?","acceptedAnswer":{"@type":"Answer","text":"The S&P 500 has historically returned approximately 10–11% annually (nominal) or 7–8% inflation-adjusted since 1957. For an S&P 500 investment calculator: use 10% for conservative long-term projections, 12% for optimistic (Dave Ramsey approach), or 7% for real (inflation-adjusted) returns. Short-term returns vary significantly — the 10% average only holds over 15+ year periods."}},
+    {"@type":"Question","name":"How does the 401k investment calculator work?","acceptedAnswer":{"@type":"Answer","text":"A 401k investment calculator computes pre-tax contributions growing tax-deferred. Enter your current 401k balance, monthly contribution (including employer match), expected return (typically 7–10%), and years until retirement. The 401k contribution limit is $23,000/year ($30,500 if 50+) in 2024. Employer match is free money — always contribute enough to get the full match."}},
+    {"@type":"Question","name":"How do I use the investment calculator with withdrawals?","acceptedAnswer":{"@type":"Answer","text":"Enable the Withdrawals toggle and enter a monthly withdrawal amount. This simulates the decumulation phase — for example, entering a $4,000/month withdrawal shows how long your retirement savings will last. The 4% rule suggests withdrawing 4% of your portfolio annually ($4,000/month on a $1.2M portfolio). Our investment calculator with withdrawals shows the portfolio balance year-by-year with both contributions and withdrawals."}},
+    {"@type":"Question","name":"What is the Bitcoin investment calculator return rate?","acceptedAnswer":{"@type":"Answer","text":"Bitcoin's historical CAGR from 2013-2023 is approximately 100%+ annually in bull markets, but with extreme volatility and significant drawdowns. For a Bitcoin investment calculator, most analysts use 20-50% for optimistic long-term projections, recognizing the high risk. For comparison, the S&P 500 averages 10% with far less volatility. Use our investment calculator's custom rate field and enter your Bitcoin expected return for a projection."}},
+    {"@type":"Question","name":"What return rate should I use for real estate investment calculator?","acceptedAnswer":{"@type":"Answer","text":"For a real estate investment calculator: typical US real estate appreciation is 3-5% annually. Including rental income and leverage, total real estate returns average 8-12% annually. Enter the expected cap rate plus appreciation rate in our investment calculator for real estate projections. For rental properties, use net operating income divided by property value as the base return rate."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--lime:#34d399;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.09),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.022) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero-banner{padding:52px 0 36px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,70px);font-weight:900;line-height:.9;letter-spacing:-2px;text-transform:uppercase;margin-bottom:18px;}
+.hero-h1 em{display:block;color:var(--accent2);font-style:normal;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:22px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-badges{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+.hbadge{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:600;color:var(--text2);}
+.hbadge.g{border-color:rgba(16,185,129,.3);color:var(--green);}
+.hbadge.b{border-color:rgba(59,130,246,.3);color:var(--accent2);}
+.hbadge.p{border-color:rgba(139,92,246,.3);color:var(--purple);}
+.hbadge.o{border-color:rgba(245,158,11,.3);color:var(--orange);}
+.hbadge.t{border-color:rgba(6,182,212,.3);color:var(--teal);}
+
+/* CALC CARD */
+.calc-section{padding:0;}
+.calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;position:relative;max-width:980px;margin:0 auto;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),var(--purple),transparent);}
+.calc-head{padding:16px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--border);}
+.calc-htitle{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:8px;color:var(--text);}
+.calc-htitle em{color:var(--accent2);font-style:normal;}
+.ht-icon{width:30px;height:30px;background:rgba(59,130,246,.12);border:1px solid var(--border2);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.live-pill{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);border-radius:20px;padding:4px 14px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:.08em;text-transform:uppercase;}
+
+/* PRESET PILLS */
+.preset-row{display:flex;gap:5px;flex-wrap:wrap;padding:12px 28px 0;}
+.preset-lbl{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);display:flex;align-items:center;margin-right:2px;}
+.p-pill{background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:4px 12px;font-size:10.5px;font-weight:700;color:var(--text3);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.p-pill:hover{border-color:rgba(59,130,246,.4);color:var(--accent2);}
+.p-pill.on{border-color:var(--accent);background:rgba(59,130,246,.12);color:var(--accent2);}
+
+.calc-body{padding:18px 28px 28px;}
+
+/* TWO-COL */
+.calc-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;}
+@media(max-width:720px){.calc-cols{grid-template-columns:1fr;gap:22px;}}
+
+/* INPUTS */
+.sec-lbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.inp-grp{margin-bottom:13px;}
+.inp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inp-lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.inp-bdg{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--accent2);background:rgba(59,130,246,.1);border:1px solid var(--border2);border-radius:6px;padding:2px 9px;white-space:nowrap;}
+.inp-wrap{display:flex;align-items:stretch;border:2px solid var(--border2);border-radius:var(--radius-sm);overflow:hidden;background:var(--bg3);transition:border-color .2s;margin-bottom:5px;}
+.inp-wrap:focus-within{border-color:var(--accent);}
+.inp-pre{padding:0 11px;font-size:15px;font-weight:700;color:var(--text3);border-right:1px solid var(--border);display:flex;align-items:center;background:rgba(255,255,255,.02);}
+.inp-suf{padding:0 11px;font-size:11px;font-weight:700;color:var(--text3);border-left:1px solid var(--border);display:flex;align-items:center;white-space:nowrap;background:rgba(255,255,255,.02);}
+.inp-wrap input{flex:1;background:transparent;border:none;outline:none;padding:10px 10px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);min-width:0;width:100%;}
+.inp-wrap input::placeholder{color:var(--text3);font-size:14px;font-weight:400;}
+/* SELECT */
+.sel-wrap{position:relative;margin-bottom:5px;}
+.sel-wrap::after{content:'\25BC';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--accent2);pointer-events:none;z-index:1;}
+.sel-wrap select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;padding:12px 40px 12px 14px;background:var(--bg3);color:#f0f4ff;border:2px solid var(--border2);border-radius:var(--radius-sm);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;outline:none;transition:border-color .2s;}
+.sel-wrap select:focus{border-color:var(--accent);}
+.sel-wrap select option{background:#0b1220;color:#f0f4ff;font-size:14px;}
+.sl{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--bg);outline:none;cursor:pointer;display:block;}
+.sl::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);cursor:pointer;box-shadow:0 0 0 3px rgba(59,130,246,.18);}
+.sl::-moz-range-thumb{width:17px;height:17px;border-radius:50%;background:var(--accent);border:2px solid var(--accent2);}
+.sl-row{display:flex;justify-content:space-between;font-size:9.5px;color:var(--text3);margin-top:3px;}
+.inp-note{font-size:10px;color:var(--text3);margin-top:2px;line-height:1.4;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+
+/* TOGGLE */
+.toggle-row{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;user-select:none;margin-bottom:9px;}
+.sw{width:34px;height:19px;background:var(--bg);border:1px solid var(--border2);border-radius:10px;position:relative;flex-shrink:0;transition:background .2s;}
+.sw.on{background:var(--green);border-color:var(--green);}
+.sw-k{position:absolute;top:3px;left:3px;width:11px;height:11px;border-radius:50%;background:#fff;transition:left .2s;}
+.sw.on .sw-k{left:18px;}
+.tog-lbl{font-size:12px;font-weight:600;color:var(--text2);}
+
+/* CALC BTN */
+.calc-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),#1d4ed8);border:none;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(59,130,246,.28);margin-top:12px;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 7px 30px rgba(59,130,246,.4);}
+.err-msg{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:var(--radius-sm);padding:9px 13px;font-size:12px;color:#f87171;margin-top:8px;display:none;}
+
+/* RESULTS */
+.results-col{display:flex;flex-direction:column;}
+.r-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:36px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;min-height:260px;}
+.results-block{display:none;}
+.results-block.show{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* TOTAL VALUE BOX */
+.total-box{background:linear-gradient(135deg,rgba(59,130,246,.13),rgba(6,182,212,.04));border:1px solid var(--border2);border-radius:var(--radius);padding:20px;margin-bottom:10px;position:relative;overflow:hidden;text-align:center;}
+.total-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--teal),var(--green));}
+.tb-badge{display:inline-block;background:rgba(59,130,246,.15);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;}
+.tb-amount{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,9vw,58px);font-weight:900;color:var(--teal);line-height:1;letter-spacing:-2px;}
+.tb-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-top:4px;}
+.tb-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.tbc{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;}
+.tbc.g{color:var(--green);border-color:rgba(16,185,129,.3);}
+.tbc.b{color:var(--accent2);border-color:rgba(59,130,246,.3);}
+.tbc.o{color:var(--orange);border-color:rgba(245,158,11,.3);}
+
+/* METRICS 2×2 */
+.metrics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.metric{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px;text-align:center;}
+.m-lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:4px;}
+.m-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,3.5vw,21px);font-weight:900;line-height:1;}
+.m-val.green{color:var(--green);}
+.m-val.orange{color:var(--orange);}
+.m-val.blue{color:var(--accent2);}
+.m-val.teal{color:var(--teal);}
+.m-sub{font-size:9px;color:var(--text3);margin-top:3px;}
+
+/* DONUT */
+.donut-row{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:16px;margin-bottom:10px;}
+.donut-wrap{position:relative;width:92px;height:92px;flex-shrink:0;}
+.donut-svg{width:92px;height:92px;transform:rotate(-90deg);}
+.d-bg{fill:none;stroke:rgba(255,255,255,.05);stroke-width:13;}
+.d-principal{fill:none;stroke:var(--accent);stroke-width:13;stroke-linecap:butt;transition:stroke-dasharray .7s;}
+.d-interest{fill:none;stroke:var(--green);stroke-width:13;stroke-linecap:butt;transition:stroke-dasharray .7s,stroke-dashoffset .7s;}
+.d-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.dc-pct{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:900;color:var(--text);line-height:1;}
+.dc-lbl{font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
+.legend{flex:1;display:flex;flex-direction:column;gap:6px;}
+.leg{display:flex;align-items:center;gap:7px;}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.leg-lbl{font-size:11px;color:var(--text2);flex:1;}
+.leg-val{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
+
+/* MINI CHART */
+.mini-chart{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:10px;}
+.mc-title{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.chart-bars{display:flex;align-items:flex-end;gap:2px;height:60px;}
+.c-bar{flex:1;border-radius:2px 2px 0 0;transition:height .5s ease;min-width:3px;}
+.chart-labels{display:flex;justify-content:space-between;margin-top:5px;font-size:9px;color:var(--text3);}
+
+/* YEAR TABLE */
+.year-box{border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.year-hd{padding:9px 14px;background:var(--bg3);border-bottom:1px solid var(--border);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
+.year-scroll{max-height:220px;overflow-y:auto;}
+.year-tbl{width:100%;border-collapse:collapse;font-size:11px;}
+.year-tbl th{background:var(--bg);color:var(--text3);font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 10px;text-align:left;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1;}
+.year-tbl td{padding:6.5px 10px;color:var(--text2);border-bottom:1px solid rgba(59,130,246,.05);}
+.year-tbl td:last-child{text-align:right;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--teal);}
+.year-tbl tr:hover td{background:rgba(59,130,246,.04);}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:40px 0;}
+.stat-item{background:var(--bg2);padding:16px;text-align:center;}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--accent2);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;}
+@media(max-width:540px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* SECTIONS */
+.section{padding:56px 0 0;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;line-height:1.05;}
+.sec-title span{color:var(--accent2);}
+.sec-sub{font-size:15px;color:var(--text2);font-weight:300;max-width:640px;line-height:1.75;}
+
+/* USE CASE CARDS */
+.uc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:22px;}
+@media(max-width:720px){.uc-grid{grid-template-columns:repeat(2,1fr);}}
+.uc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all .2s;cursor:pointer;}
+.uc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.uc-ico{font-size:24px;margin-bottom:10px;}
+.uc-h{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.uc-ret{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--accent2);background:rgba(59,130,246,.08);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:7px;}
+.uc-p{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* SVG IMG */
+.img-block{border-radius:var(--radius);overflow:hidden;position:relative;margin:22px 0 8px;background:var(--bg2);border:1px solid var(--border2);}
+.img-block svg{display:block;width:100%;}
+.img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,8,15,.88));padding:14px 18px;}
+.img-overlay span{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.data-table th{background:var(--bg3);color:var(--accent2);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);}
+.data-table td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);line-height:1.6;}
+.data-table tr:last-child td{border:none;}
+.data-table td strong{color:var(--text);}
+.data-table td.good{color:var(--green);}
+.data-table td.warn{color:var(--orange);}
+
+/* ARTICLE */
+.article{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;margin-top:52px;margin-bottom:52px;}
+.article h2{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:40px 0 12px;}
+.article h2:first-child{margin-top:0;}
+.article h3{font-size:15px;font-weight:700;color:var(--accent2);margin:24px 0 8px;line-height:1.4;}
+.article p{font-size:14.5px;color:var(--text2);line-height:1.9;margin-bottom:16px;}
+.article p:last-child{margin-bottom:0;}
+.article ul,.article ol{margin:0 0 18px 22px;}
+.article li{font-size:14.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;padding-left:4px;}
+.article strong{color:var(--text);}
+.fi{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--accent2);margin:2px 1px;}
+.tip{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.tip p{color:var(--text2);font-size:14px;margin:0;line-height:1.75;}
+.tip strong{color:var(--green);}
+.exb{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.14);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;}
+.exb h4{font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em;}
+.exb p{font-size:14px;color:var(--text2);margin:0;line-height:1.8;}
+.how-steps{display:flex;flex-direction:column;gap:14px;margin:20px 0;}
+.how-step{display:flex;gap:14px;align-items:flex-start;}
+.how-num{width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;color:var(--accent2);flex-shrink:0;margin-top:2px;}
+.how-txt strong{display:block;font-size:14.5px;color:var(--text);margin-bottom:4px;font-weight:700;}
+.how-txt span{font-size:13.5px;color:var(--text2);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.faq-q{padding:18px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
+.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .2s;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:13.5px;color:var(--text2);line-height:1.85;padding:4px 0 20px;margin:0;}
+.faq-item.open .faq-a{max-height:380px;}
+.oc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
+@media(max-width:640px){.oc-grid{grid-template-columns:repeat(2,1fr);}}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.oc:hover{border-color:var(--border2);transform:translateY(-2px);}
+.oc-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.oc-ico svg{width:15px;height:15px;}
+.oc-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.oc-desc{font-size:12px;color:var(--text3);line-height:1.4;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/calculators/">Calculators</a><sep>&#8250;</sep>
+    Investment Calculator
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero-banner">
+    <div class="eyebrow"><span class="dot"></span> Compound Growth &middot; 401k &middot; S&amp;P 500 &middot; Retirement &middot; Monthly &middot; Withdrawals</div>
+    <h1 class="hero-h1">Investment<em>Calculator</em></h1>
+    <p class="hero-sub">Free <strong>investment calculator</strong> — calculate compound growth, retirement savings, 401k projections, S&amp;P 500 returns, Bitcoin ROI, and monthly investment growth over time. More complete than the Dave Ramsey investment calculator, Bankrate, or NerdWallet tools — with withdrawals support and year-by-year table.</p>
+    <div class="hero-badges">
+      <span class="hbadge g">&#10003; 100% Free</span>
+      <span class="hbadge b">Compound Growth</span>
+      <span class="hbadge p">401k &amp; Retirement</span>
+      <span class="hbadge o">S&amp;P 500 Presets</span>
+      <span class="hbadge t">Withdrawals</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="calc-section" id="calculator">
+  <div class="container">
+    <div class="calc-card">
+      <div class="calc-head">
+        <div class="calc-htitle">
+          <div class="ht-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 10.5l2-5 2.5 3.5 2.5-4.5L11 8"/><circle cx="11.5" cy="3" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          Investment <em>Calculator</em>
+        </div>
+        <div class="live-pill">&#10022; Compound Growth</div>
+      </div>
+
+      <!-- PRESET PILLS -->
+      <div class="preset-row">
+        <span class="preset-lbl">Quick Presets:</span>
+        <span class="p-pill" onclick="setPreset('sp500')">S&amp;P 500 (10%)</span>
+        <span class="p-pill" onclick="setPreset('ramsey')">Dave Ramsey (12%)</span>
+        <span class="p-pill" onclick="setPreset('bonds')">Bonds (5%)</span>
+        <span class="p-pill" onclick="setPreset('btc')">Bitcoin (20%)</span>
+        <span class="p-pill" onclick="setPreset('401k')">401k (8%)</span>
+        <span class="p-pill" onclick="setPreset('realestate')">Real Estate (9%)</span>
+      </div>
+
+      <div class="calc-body">
+        <div class="calc-cols">
+
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="5.5" r="4.5"/><path d="M5.5 3v2.5l2 1.5" stroke-linecap="round"/></svg>
+              Investment Details
+            </div>
+
+            <!-- INITIAL AMOUNT -->
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Initial Investment</span><span class="inp-bdg" id="bdg-init">$10,000</span></div>
+              <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-init" min="0" step="500" value="10000" placeholder="10,000"></div>
+              <input type="range" class="sl" id="sl-init" min="0" max="500000" step="1000" value="10000">
+              <div class="sl-row"><span>$0</span><span>$500K</span></div>
+            </div>
+
+            <!-- MONTHLY CONTRIBUTION -->
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Monthly Contribution</span><span class="inp-bdg" id="bdg-monthly">$500</span></div>
+              <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-monthly" min="0" step="50" value="500" placeholder="500"></div>
+              <input type="range" class="sl" id="sl-monthly" min="0" max="10000" step="50" value="500">
+              <div class="sl-row"><span>$0</span><span>$10,000/mo</span></div>
+              <div class="inp-note">Dave Ramsey: invest 15% of gross income. $60K salary → $750/month</div>
+            </div>
+
+            <!-- RATE OF RETURN -->
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Annual Return Rate</span><span class="inp-bdg" id="bdg-rate">10% p.a.</span></div>
+              <div class="inp-wrap"><input type="number" id="f-rate" min="0" max="100" step="0.5" value="10" placeholder="10"><span class="inp-suf">% p.a.</span></div>
+              <input type="range" class="sl" id="sl-rate" min="1" max="30" step="0.5" value="10">
+              <div class="sl-row"><span>1%</span><span>30%</span></div>
+            </div>
+
+            <!-- YEARS -->
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Investment Period</span><span class="inp-bdg" id="bdg-yrs">20 years</span></div>
+              <div class="inp-wrap"><input type="number" id="f-yrs" min="1" max="50" step="1" value="20" placeholder="20"><span class="inp-suf">years</span></div>
+              <input type="range" class="sl" id="sl-yrs" min="1" max="50" step="1" value="20">
+              <div class="sl-row"><span>1 yr</span><span>50 yrs</span></div>
+            </div>
+
+            <!-- COMPOUNDING -->
+            <div class="inp-grp">
+              <div class="inp-top"><span class="inp-lbl">Compounding Frequency</span></div>
+              <div class="sel-wrap">
+                <select id="f-compound">
+                  <option value="12" selected>Monthly (12×/year)</option>
+                  <option value="4">Quarterly (4×/year)</option>
+                  <option value="2">Semi-Annual (2×/year)</option>
+                  <option value="1">Annual (1×/year)</option>
+                  <option value="365">Daily (365×/year)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- WITHDRAWALS TOGGLE -->
+            <div class="toggle-row" onclick="toggleWithdrawals()">
+              <div class="sw" id="sw-withdraw"><div class="sw-k"></div></div>
+              <span class="tog-lbl">Monthly Withdrawals (retirement mode)</span>
+            </div>
+            <div id="withdrawal-field" style="display:none;margin-bottom:9px;">
+              <div class="inp-grp" style="margin-bottom:0;">
+                <div class="inp-top"><span class="inp-lbl">Monthly Withdrawal</span><span class="inp-bdg" id="bdg-withdraw">$2,000</span></div>
+                <div class="inp-wrap"><span class="inp-pre">$</span><input type="number" id="f-withdraw" min="0" step="100" value="2000" placeholder="2,000"></div>
+                <div class="inp-note">4% rule: withdraw 4% annually ($3,333/mo on $1M portfolio)</div>
+              </div>
+            </div>
+
+            <!-- INFLATION TOGGLE -->
+            <div class="toggle-row" onclick="toggleInflation()">
+              <div class="sw" id="sw-inflation"><div class="sw-k"></div></div>
+              <span class="tog-lbl">Adjust for Inflation (3%/year)</span>
+            </div>
+
+            <div class="err-msg" id="err-msg">Please enter valid positive values in all required fields.</div>
+            <button class="calc-btn" onclick="calculate()">
+              <svg width="18" height="18" fill="none" viewBox="0 0 18 18" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M6.5 9l2.2 2.2 3.8-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Calculate Investment
+            </button>
+          </div>
+
+          <!-- RIGHT: RESULTS -->
+          <div class="results-col">
+            <div class="sec-lbl">
+              <svg width="11" height="11" fill="none" viewBox="0 0 11 11" stroke="currentColor" stroke-width="1.5"><path d="M1 8l2.5-5 2 3 2-2.5 2 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Results
+            </div>
+            <div class="r-placeholder" id="r-placeholder">
+              <div style="font-size:46px;">&#128200;</div>
+              <div style="font-size:14px;color:var(--text3);line-height:1.8;">Enter your investment details<br>and click <strong style="color:var(--accent2);">Calculate Investment</strong><br>for compound growth analysis,<br>year-by-year table, and more.</div>
+            </div>
+            <div class="results-block" id="results-block">
+
+              <!-- TOTAL VALUE BOX -->
+              <div class="total-box">
+                <div class="tb-badge" id="tb-badge">Future Value — 20 Years</div>
+                <div class="tb-amount" id="tb-amount">$0</div>
+                <div class="tb-lbl">Total Investment Value</div>
+                <div class="tb-chips">
+                  <span class="tbc g" id="chip-gain">Gain: —</span>
+                  <span class="tbc b" id="chip-invested">Invested: —</span>
+                  <span class="tbc o" id="chip-mult">Multiple: —</span>
+                </div>
+              </div>
+
+              <!-- METRICS 2×2 -->
+              <div class="metrics-grid">
+                <div class="metric">
+                  <div class="m-lbl">Total Invested</div>
+                  <div class="m-val blue" id="r-invested">—</div>
+                  <div class="m-sub">your contributions</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Interest Earned</div>
+                  <div class="m-val green" id="r-interest">—</div>
+                  <div class="m-sub">compound gains</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Return Multiple</div>
+                  <div class="m-val orange" id="r-multiple">—</div>
+                  <div class="m-sub">× your money</div>
+                </div>
+                <div class="metric">
+                  <div class="m-lbl">Inflation-Adj. Value</div>
+                  <div class="m-val teal" id="r-real">—</div>
+                  <div class="m-sub">today's dollars</div>
+                </div>
+              </div>
+
+              <!-- DONUT -->
+              <div class="donut-row">
+                <div class="donut-wrap">
+                  <svg class="donut-svg" viewBox="0 0 92 92">
+                    <circle class="d-bg" cx="46" cy="46" r="33"/>
+                    <circle class="d-principal" id="d-p" cx="46" cy="46" r="33" stroke-dasharray="0 207"/>
+                    <circle class="d-interest" id="d-i" cx="46" cy="46" r="33" stroke-dasharray="0 207" stroke-dashoffset="0"/>
+                  </svg>
+                  <div class="d-center">
+                    <div class="dc-pct" id="d-pct">—</div>
+                    <div class="dc-lbl">principal</div>
+                  </div>
+                </div>
+                <div class="legend">
+                  <div class="leg"><div class="leg-dot" style="background:var(--accent);"></div><span class="leg-lbl">Total Invested</span><span class="leg-val" id="lg-p">—</span></div>
+                  <div class="leg"><div class="leg-dot" style="background:var(--green);"></div><span class="leg-lbl">Interest Earned</span><span class="leg-val" id="lg-i">—</span></div>
+                  <div style="border-top:1px solid var(--border);margin:4px 0;"></div>
+                  <div class="leg"><div class="leg-dot" style="background:var(--teal);"></div><span class="leg-lbl">Total Value</span><span class="leg-val" id="lg-t">—</span></div>
+                </div>
+              </div>
+
+              <!-- MINI BAR CHART -->
+              <div class="mini-chart">
+                <div class="mc-title">Growth Over Time</div>
+                <div class="chart-bars" id="chart-bars"></div>
+                <div class="chart-labels" id="chart-labels"></div>
+              </div>
+
+              <!-- YEAR TABLE -->
+              <div class="year-box">
+                <div class="year-hd">Year-by-Year Investment Growth</div>
+                <div class="year-scroll">
+                  <table class="year-tbl">
+                    <thead><tr><th>Year</th><th>Invested</th><th>Interest</th><th>Total Value</th></tr></thead>
+                    <tbody id="year-body"></tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val">6</div><div class="stat-lbl">Rate Presets</div></div>
+      <div class="stat-item"><div class="stat-val">50yr</div><div class="stat-lbl">Max Duration</div></div>
+      <div class="stat-item"><div class="stat-val">Withdraw</div><div class="stat-lbl">Mode Included</div></div>
+      <div class="stat-item"><div class="stat-val">Free</div><div class="stat-lbl">No Signup</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- USE CASES SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="sec-eyebrow">Investment Calculator for Every Goal</div>
+    <h2 class="sec-title">Free <span>Investment Calculator</span> — All Types</h2>
+    <p class="sec-sub">Our free <strong>investment calculator</strong> handles every investment type — from a <strong>compound investment calculator</strong> for stocks to a <strong>retirement investment calculator</strong> for 401k planning. Click any preset to load instantly.</p>
+
+    <!-- SVG IMAGE 1 -->
+    <div class="img-block">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gB" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".9"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#10b981" stop-opacity=".9"/><stop offset="100%" stop-color="#065f46" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gO" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".9"/><stop offset="100%" stop-color="#b45309" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gP" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".9"/><stop offset="100%" stop-color="#6d28d9" stop-opacity=".5"/></linearGradient>
+          <linearGradient id="gT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#06b6d4" stop-opacity=".9"/><stop offset="100%" stop-color="#0e7490" stop-opacity=".5"/></linearGradient>
+          <pattern id="pgr" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0L0 0 0 28" fill="none" stroke="rgba(59,130,246,.05)" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="220" fill="#05080f"/>
+        <rect width="900" height="220" fill="url(#pgr)"/>
+        <text x="450" y="24" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">INVESTMENT CALCULATOR — $10K + $500/MONTH OVER 20 YEARS AT DIFFERENT RATES</text>
+        <line x1="48" y1="182" x2="872" y2="182" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+        <!-- Bonds 5% -->
+        <rect x="55" y="128" width="80" height="54" rx="5" fill="url(#gB)" opacity=".6"/>
+        <text x="95" y="122" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#93c5fd" text-anchor="middle">$246K</text>
+        <text x="95" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Bonds 5%</text>
+        <text x="95" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">401k conservative</text>
+        <!-- RE 9% -->
+        <rect x="195" y="100" width="80" height="82" rx="5" fill="url(#gT)"/>
+        <text x="235" y="94" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#67e8f9" text-anchor="middle">$358K</text>
+        <text x="235" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Real Estate 9%</text>
+        <text x="235" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#06b6d4" text-anchor="middle">rental+appreciation</text>
+        <!-- S&P500 10% -->
+        <rect x="335" y="80" width="80" height="102" rx="5" fill="url(#gB)"/>
+        <text x="375" y="74" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">$411K</text>
+        <text x="375" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">S&amp;P 500 10%</text>
+        <text x="375" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#60a5fa" text-anchor="middle">index fund avg</text>
+        <!-- Ramsey 12% -->
+        <rect x="475" y="50" width="80" height="132" rx="5" fill="url(#gG)"/>
+        <text x="515" y="44" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">$543K</text>
+        <text x="515" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Ramsey 12%</text>
+        <text x="515" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">growth mutual funds</text>
+        <!-- BTC 20% -->
+        <rect x="615" y="22" width="80" height="160" rx="5" fill="url(#gO)"/>
+        <text x="655" y="16" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#fcd34d" text-anchor="middle">$1.38M</text>
+        <text x="655" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Bitcoin 20%</text>
+        <text x="655" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">high risk/reward</text>
+        <!-- BTC 30% -->
+        <rect x="755" y="8" width="80" height="174" rx="5" fill="url(#gP)" opacity=".7"/>
+        <text x="795" y="6" font-family="Barlow Condensed,sans-serif" font-size="9" font-weight="900" fill="#c4b5fd" text-anchor="middle">$4.3M</text>
+        <text x="795" y="196" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Crypto 30%</text>
+        <text x="795" y="208" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">speculative</text>
+      </svg>
+      <div class="img-overlay"><span>Investment calculator — $10,000 initial + $500/month over 20 years: Bonds 5% → $246K · Real Estate 9% → $358K · S&P 500 10% → $411K · Dave Ramsey 12% → $543K · Bitcoin 20% → $1.38M</span></div>
+    </div>
+
+    <div class="uc-grid">
+      <div class="uc" onclick="setPresetAndScroll('sp500')">
+        <div class="uc-ico">&#128200;</div>
+        <div class="uc-h">S&amp;P 500 Investment Calculator</div>
+        <div class="uc-ret">10% historical avg</div>
+        <p class="uc-p">The <strong>S&amp;P 500 investment calculator</strong> uses 10% annual return — the index's historical average since 1957. Best for long-term index fund investing scenarios.</p>
+      </div>
+      <div class="uc" onclick="setPresetAndScroll('ramsey')">
+        <div class="uc-ico">&#127775;</div>
+        <div class="uc-h">Dave Ramsey Investment Calculator</div>
+        <div class="uc-ret">12% annual return</div>
+        <p class="uc-p">The <strong>Dave Ramsey investment calculator</strong> (Ramsey Solutions) uses 12% — his recommended growth stock mutual fund return. Invest 15% of gross income.</p>
+      </div>
+      <div class="uc" onclick="setPresetAndScroll('401k')">
+        <div class="uc-ico">&#127981;</div>
+        <div class="uc-h">401k Investment Calculator</div>
+        <div class="uc-ret">7–10% typical</div>
+        <p class="uc-p">Our <strong>401k investment calculator</strong> models tax-deferred retirement growth. Include employer match in your monthly contribution for accurate retirement projections.</p>
+      </div>
+      <div class="uc" onclick="setPresetAndScroll('btc')">
+        <div class="uc-ico">&#8383;</div>
+        <div class="uc-h">Bitcoin Investment Calculator</div>
+        <div class="uc-ret">20%+ (high risk)</div>
+        <p class="uc-p">Our <strong>Bitcoin investment calculator</strong> models crypto returns at 20% (conservative long-term). High volatility — actual returns vary enormously year to year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="container">
+<div class="article">
+
+  <h2>Investment Calculator — Complete Guide</h2>
+  <p>Our free <strong>investment calculator</strong> is more complete than the <strong>Dave Ramsey investment calculator</strong>, the Bankrate investment calculator, or the NerdWallet investment calculator — because it combines initial lump sum, monthly contributions, multiple compounding frequencies, withdrawal simulation, and inflation adjustment all in one tool. Whether you need a <strong>compound investment calculator</strong> for retirement planning, a <strong>monthly investment calculator</strong> for dollar-cost averaging, a <strong>stock investment calculator</strong> for equity returns, or a <strong>retirement investment calculator</strong> for 401k projections — this is the only tool you need.</p>
+
+  <!-- SVG IMAGE 2 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="11" cy="11" r=".7" fill="rgba(59,130,246,.12)"/></pattern></defs>
+      <rect width="900" height="200" fill="#05080f"/>
+      <rect width="900" height="200" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="14" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">COMPOUND INVESTMENT CALCULATOR — POWER OF STARTING EARLY</text>
+      <!-- Early investor curve -->
+      <path d="M55,165 Q150,160 250,148 Q380,130 480,105 Q600,72 720,42 Q800,25 870,15" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M55,165 Q150,160 250,148 Q380,130 480,105 Q600,72 720,42 Q800,25 870,15 L870,170 L55,170 Z" fill="#10b981" opacity=".07"/>
+      <!-- Late investor curve -->
+      <path d="M55,165 Q150,165 250,165 Q350,165 430,155 Q540,138 640,118 Q750,95 870,68" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 3"/>
+      <!-- Axes -->
+      <line x1="52" y1="170" x2="880" y2="170" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <line x1="52" y1="10" x2="52" y2="170" stroke="rgba(59,130,246,.2)" stroke-width="1"/>
+      <!-- Year labels -->
+      <text x="58" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Age 25</text>
+      <text x="240" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Age 35</text>
+      <text x="476" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Age 45</text>
+      <text x="715" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080">Age 55</text>
+      <text x="868" y="183" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="end">Age 65</text>
+      <!-- Annotations -->
+      <rect x="690" y="18" width="175" height="28" rx="5" fill="rgba(11,18,32,.92)" stroke="rgba(16,185,129,.3)" stroke-width="1"/>
+      <text x="778" y="36" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Start 25: $1.2M at 65</text>
+      <rect x="735" y="52" width="135" height="28" rx="5" fill="rgba(11,18,32,.92)" stroke="rgba(59,130,246,.3)" stroke-width="1"/>
+      <text x="803" y="70" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#60a5fa" text-anchor="middle">Start 35: $433K at 65</text>
+      <!-- Legend -->
+      <line x1="58" y1="14" x2="90" y2="14" stroke="#10b981" stroke-width="2"/><text x="95" y="18" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#10b981">Start at 25 ($500/mo)</text>
+      <line x1="58" y1="28" x2="90" y2="28" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6 3"/><text x="95" y="32" font-family="Barlow Condensed,sans-serif" font-size="10" fill="#60a5fa">Start at 35 ($500/mo)</text>
+    </svg>
+    <div class="img-overlay"><span>Investment calculator over time — $500/month at 10% return: starting at age 25 → $1.2M at 65; starting at age 35 → $433K at 65. 10 fewer years costs nearly $800K in wealth.</span></div>
+  </div>
+
+  <h2>How to Use This Investment Calculator</h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-txt"><strong>Enter initial investment</strong><span>Your starting lump sum — could be $0 if you're starting from scratch, or your current savings/401k balance. For a <strong>retirement investment calculator</strong>, enter your current account balance. The slider makes it easy to visualize different starting amounts.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-txt"><strong>Set monthly contribution</strong><span>The power of a <strong>monthly investment calculator</strong> is showing how consistent contributions compound. Dave Ramsey recommends 15% of gross income. At $60K/year, that's $750/month. Enter $0 for a pure lump-sum <strong>return on investment calculator</strong>.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-txt"><strong>Choose a rate preset or enter custom</strong><span>Use Quick Presets: S&amp;P 500 (10%), Dave Ramsey (12%), 401k (8%), Bitcoin (20%), Bonds (5%), Real Estate (9%). Or enter any custom rate. The <strong>investment calculator over time</strong> shows how dramatically different rates affect 20-30 year outcomes.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-txt"><strong>Enable withdrawals for retirement simulation</strong><span>Toggle "Monthly Withdrawals" for the <strong>investment calculator with withdrawals</strong> mode. Enter your planned monthly withdrawal (use $4,000/month for a $1.2M portfolio under the 4% rule). The year-by-year table shows balance declining as withdrawals continue.</span></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-txt"><strong>Review year-by-year results</strong><span>See total future value, total invested, interest earned, return multiple, inflation-adjusted value, the compounding growth chart, and the complete year-by-year table. Compare scenarios by changing one variable at a time.</span></div></div>
+  </div>
+
+  <h2>Investment Calculator Formula — Compound Interest</h2>
+  <p>The <strong>compound investment calculator</strong> formula combines a lump sum and regular contributions: <span class="fi">FV = PV×(1+r)^n + PMT×[(1+r)^n − 1] / r</span></p>
+  <p>Where FV = future value, PV = initial investment, PMT = monthly contribution, r = periodic rate (annual rate ÷ compounding periods), n = total periods.</p>
+  <div class="exb">
+    <h4>Investment Calculator Example — Dave Ramsey Method</h4>
+    <p>Initial: $10,000 · Monthly: $750 (15% of $60K) · Rate: 12% · Period: 30 years<br>
+    r = 12% ÷ 12 = 1% monthly · n = 360 months<br>
+    Lump sum FV = $10,000 × (1.01)^360 = $10,000 × 35.95 = $359,497<br>
+    Monthly FV = $750 × [(1.01)^360 − 1] / 0.01 = $750 × 3,494.96 = $2,621,220<br>
+    <strong>Total = $2,980,717 · Invested: $280,000 · Gain: $2,700,717</strong></p>
+  </div>
+
+  <h2>Dave Ramsey Investment Calculator — The 12% Rule</h2>
+  <p>The <strong>Dave Ramsey investment calculator</strong> and <strong>Ramsey Solutions investment calculator</strong> use a 12% annual return rate — Dave Ramsey's estimate for growth stock mutual funds over long periods. The <strong>Ramsey investment calculator</strong> approach also recommends investing 15% of gross income, being debt-free before investing, and holding for minimum 5-year periods. Our <strong>investment calculator Dave Ramsey</strong> preset applies 12% instantly — click "Dave Ramsey (12%)" in the quick presets above. The <strong>investment calculator Ramsey</strong> method shows why staying invested for 30+ years creates millionaire-level wealth from average incomes.</p>
+
+  <h2>S&P 500 Investment Calculator — Index Fund Returns</h2>
+  <p>The <strong>S&amp;P 500 investment calculator</strong> and <strong>investment calculator S&amp;P 500</strong> preset uses 10% — the historical average annual return of the S&amp;P 500 index since its inception. Key facts for the <strong>investment calculator S&amp;P 500</strong>:</p>
+  <table class="data-table">
+    <tr><th>Period</th><th>S&P 500 Avg Return</th><th>$500/mo × 30yr Value</th><th>Vs. No Investing</th></tr>
+    <tr><td><strong>Nominal (10%)</strong></td><td class="good">10.13% avg</td><td class="good">$1,130,000</td><td class="good">+$950,000 gain</td></tr>
+    <tr><td><strong>Real / Inflation-adj (7%)</strong></td><td>~7% real</td><td>$605,000</td><td>$425,000 real gain</td></tr>
+    <tr><td><strong>Best 30yr (1970–2000)</strong></td><td class="good">14.5%</td><td class="good">$3.1M</td><td>Exceptional</td></tr>
+    <tr><td><strong>Worst 30yr (1929–1959)</strong></td><td class="warn">5.1%</td><td class="warn">$410,000</td><td>Still positive</td></tr>
+  </table>
+
+  <h2>Investment Calculator with Withdrawals — Retirement Phase</h2>
+  <p>Our <strong>investment calculator with withdrawals</strong> simulates the retirement distribution phase — where you stop contributing and start drawing down. The classic <strong>4% rule</strong>: withdraw 4% of your portfolio annually. On a $1 million portfolio, that's $40,000/year or $3,333/month. Our withdrawal calculator shows how long your portfolio lasts under different withdrawal rates and return assumptions.</p>
+
+  <!-- SVG IMAGE 3 -->
+  <div class="img-block">
+    <svg viewBox="0 0 900 185" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="185" fill="#05080f"/>
+      <rect width="900" height="185" fill="url(#dots)"/>
+      <text x="450" y="22" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#f0f4ff" text-anchor="middle" letter-spacing="2">MONTHLY INVESTMENT CALCULATOR — $500/MONTH AT 10% · POWER OF TIME</text>
+      <!-- Bar chart: 10yr, 20yr, 30yr, 40yr -->
+      <line x1="40" y1="155" x2="870" y2="155" stroke="rgba(59,130,246,.18)" stroke-width="1"/>
+      <rect x="55" y="120" width="90" height="35" rx="5" fill="#3b82f6" opacity=".7"/>
+      <text x="100" y="114" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#60a5fa" text-anchor="middle">$102K</text>
+      <text x="100" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">10 Years</text>
+      <text x="100" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Invested: $60K</text>
+
+      <rect x="215" y="88" width="90" height="67" rx="5" fill="#3b82f6" opacity=".8"/>
+      <text x="260" y="82" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#93c5fd" text-anchor="middle">$378K</text>
+      <text x="260" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">20 Years</text>
+      <text x="260" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Invested: $120K</text>
+
+      <rect x="375" y="50" width="90" height="105" rx="5" fill="#10b981" opacity=".8"/>
+      <text x="420" y="44" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#10b981" text-anchor="middle">$1.13M</text>
+      <text x="420" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">30 Years</text>
+      <text x="420" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">Invested: $180K ✓</text>
+
+      <rect x="535" y="22" width="90" height="133" rx="5" fill="#10b981" opacity=".9"/>
+      <text x="580" y="16" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="900" fill="#34d399" text-anchor="middle">$3.16M</text>
+      <text x="580" y="168" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">40 Years</text>
+      <text x="580" y="179" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#10b981" text-anchor="middle">Invested: $240K</text>
+
+      <!-- Info box -->
+      <rect x="688" y="30" width="195" height="108" rx="10" fill="rgba(11,18,32,.95)" stroke="rgba(59,130,246,.3)" stroke-width="1.5"/>
+      <text x="785" y="52" font-family="Barlow Condensed,sans-serif" font-size="12" font-weight="900" fill="#60a5fa" text-anchor="middle" letter-spacing="1">💡 KEY INSIGHT</text>
+      <text x="785" y="71" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">30yr vs 40yr: 10 extra</text>
+      <text x="785" y="87" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">years adds $2M more</text>
+      <text x="785" y="103" font-family="Barlow Condensed,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">on only $60K more</text>
+      <text x="785" y="128" font-family="Barlow Condensed,sans-serif" font-size="9" fill="#4a6080" text-anchor="middle">Use the calculator above ↑</text>
+    </svg>
+    <div class="img-overlay"><span>Monthly investment calculator — $500/month at 10% S&P 500 rate: 10yr = $102K · 20yr = $378K · 30yr = $1.13M · 40yr = $3.16M. Each decade multiplies wealth exponentially.</span></div>
+  </div>
+
+  <h2>Real Estate Investment Calculator</h2>
+  <p>Our <strong>real estate investment calculator</strong> preset uses 9% annual return — combining typical US real estate appreciation (3–5%) with rental income yield (4–6%). For accurate real estate modeling: enter your down payment as the initial investment, annual net rental income ÷ 12 as monthly contribution (or 0 for appreciation-only), and 9% as the annual return. Real estate investors also benefit from leverage — a 20% down payment on a $400K property controls a $400K asset, amplifying percentage returns on actual cash invested.</p>
+
+  <h2>401k Investment Calculator — Retirement Planning</h2>
+  <p>Our <strong>401k investment calculator</strong> works best with these inputs: Initial = your current 401k balance. Monthly contribution = your monthly contribution PLUS employer match. Rate = 7–10% (conservative to moderate equity allocation). Years = years until planned retirement age. Key facts: 401k contribution limit 2024 = $23,000 ($30,500 if 50+). Always contribute at least enough to get your employer's full match — it's a 50–100% instant return on that contribution amount.</p>
+
+  <div class="tip">
+    <p><strong>Investment rule of thumb (Rule of 72):</strong> Divide 72 by your annual return rate to estimate how long it takes your money to double. At 10% (S&P 500): 72 ÷ 10 = <strong>7.2 years to double</strong>. At 12% (Dave Ramsey): 72 ÷ 12 = <strong>6 years to double</strong>. At 6% (conservative): 72 ÷ 6 = <strong>12 years to double</strong>. This is why starting early matters so much — more doublings occur over longer time horizons.</p>
+  </div>
+
+</div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">Common Questions</div>
+    <h2 class="sec-title">Investment Calculator <span>FAQ</span></h2>
+    <p class="sec-sub" style="margin-bottom:0;">Answers for Dave Ramsey investment calculator, S&P 500, 401k, Bitcoin, compound investment, and investment calculator with withdrawals.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What rate does the Dave Ramsey investment calculator use?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>Dave Ramsey investment calculator</strong> and <strong>Ramsey Solutions investment calculator</strong> use a <strong>12% annual return</strong> — Dave Ramsey's long-term estimate for growth stock mutual funds. The <strong>Ramsey investment calculator</strong> approach recommends: 1) Be debt-free except mortgage first. 2) Build 3–6 month emergency fund. 3) Invest 15% of gross income in growth stock mutual funds using 4 categories: growth, growth &amp; income, aggressive growth, international. Our <strong>investment calculator Ramsey</strong> preset (click "Dave Ramsey 12%") applies this rate instantly to any starting amount and time period.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does the compound investment calculator work?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>compound investment calculator</strong> formula: FV = PV×(1+r)^n + PMT×[(1+r)^n − 1] / r. The key insight of compounding: you earn returns on previous returns, not just your original investment. $10,000 at 10% for 30 years grows to $174,494 — your money compounds 17.4× without adding a single dollar. With $500/month added monthly: total grows to $1.13M. This is the core concept behind the <strong>investment calculator over time</strong> — the longer the period, the more powerful the exponential compounding effect becomes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What S&P 500 return should I use in the investment calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>For the <strong>S&amp;P 500 investment calculator</strong>: Use <strong>10%</strong> for historical nominal average (most common assumption). Use <strong>7%</strong> for inflation-adjusted real returns. Use <strong>12%</strong> for Dave Ramsey's optimistic assumption (active growth funds). Use <strong>8%</strong> for blended 60/40 stock-bond portfolio. The <strong>investment calculator S&amp;P 500</strong> returns vary significantly by decade — 1990s averaged 18%, 2000–2010 was negative, 2010–2020 averaged 13.6%. For 20-30 year projections, 10% is the most widely accepted estimate for US large-cap index funds.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How do I use the investment calculator with withdrawals?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>Toggle "Monthly Withdrawals" to activate the <strong>investment calculator with withdrawals</strong> mode. Enter your monthly withdrawal amount. Classic scenario: accumulate until retirement (contribution phase), then switch to withdrawals. The <strong>4% rule</strong> — withdraw 4% of your portfolio annually: on $1M portfolio = $40,000/year = $3,333/month. With this withdrawal rate and 7% continued growth, the portfolio historically sustains 30+ years. Enter a higher withdrawal to see faster depletion; lower to see the portfolio continue growing.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">What is a realistic Bitcoin investment calculator return?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>The <strong>Bitcoin investment calculator</strong> is challenging because Bitcoin's historical returns are extraordinary but extremely volatile. Historical CAGR 2013–2023: ~80%/year (but includes 70–80% drawdowns in bear markets). More realistic long-term assumptions for a <strong>Bitcoin investment calculator</strong>: 15–25% annualized for a 10-year horizon (reflecting maturation of the asset class). Our preset uses 20% — aggressive but more realistic than historical 80%+. Remember: past Bitcoin returns are not indicative of future performance, and the volatility risk is far higher than the S&amp;P 500 or any other asset class.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="faqT(this)">How does the 401k investment calculator differ from a regular investment calculator?
+          <svg class="faq-arr" fill="none" viewBox="0 0 18 18"><path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="faq-a"><p>A <strong>401k investment calculator</strong> models tax-deferred growth — you don't pay taxes on contributions or growth until withdrawal. This means your full contribution and all gains compound without annual tax drag (unlike taxable accounts where dividends and capital gains are taxed yearly). In a taxable account at 22% tax rate, an effective 10% return is closer to 8% after-tax drag. In a 401k, the full 10% compounds tax-free. Enter current 401k balance as initial investment, your monthly contribution (including employer match) as monthly contribution, and 7–10% as return in our <strong>retirement investment calculator</strong> for accurate 401k projections.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="section" style="padding-bottom:56px;">
+  <div class="container">
+    <div class="sec-eyebrow">More Free Tools</div>
+    <h2 class="sec-title">Related <span>Calculators</span></h2>
+    <div class="oc-grid">
+      <a href="/roi-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(6,182,212,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#06b6d4" stroke-width="1.4"><path d="M2 11l3-5 3 3.5 2-3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">ROI Calculator</div>
+        <div class="oc-desc">Real estate, stocks, marketing</div>
+      </a>
+      <a href="/sip-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(139,92,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#8b5cf6" stroke-width="1.4"><path d="M2 12l2.5-5 2.5 3.5 2-3.5 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">SIP Calculator</div>
+        <div class="oc-desc">India mutual fund SIP growth</div>
+      </a>
+      <a href="/profit-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(16,185,129,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#10b981" stroke-width="1.4"><circle cx="4.5" cy="4.5" r="2"/><circle cx="10.5" cy="10.5" r="2"/><path d="M12 3L3 12" stroke-linecap="round"/></svg></div>
+        <div class="oc-name">Profit Calculator</div>
+        <div class="oc-desc">eBay, Etsy, Amazon, crypto</div>
+      </a>
+      <a href="/mortgage-calculator/" class="oc">
+        <div class="oc-ico" style="background:rgba(59,130,246,.1);"><svg fill="none" viewBox="0 0 15 15" stroke="#3b82f6" stroke-width="1.4"><path d="M7.5 1L2 5v9h4V9h3v5h4V5z" stroke-linejoin="round"/></svg></div>
+        <div class="oc-name">Mortgage Calculator</div>
+        <div class="oc-desc">Home loan PITI with taxes</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+var withdrawalsOn = false;
+var inflationOn = false;
+
+var PRESETS = {
+  sp500:      {rate:10,  label:'S&P 500 (10%) — Historical Index Average'},
+  ramsey:     {rate:12,  label:'Dave Ramsey (12%) — Growth Mutual Funds'},
+  bonds:      {rate:5,   label:'Bonds (5%) — Conservative Fixed Income'},
+  btc:        {rate:20,  label:'Bitcoin (20%) — Speculative / High Risk'},
+  '401k':     {rate:8,   label:'401k (8%) — Blended Retirement Portfolio'},
+  realestate: {rate:9,   label:'Real Estate (9%) — Appreciation + Rent'}
+};
+
+function setPreset(key) {
+  var p = PRESETS[key];
+  if(!p) return;
+  document.getElementById('f-rate').value = p.rate;
+  document.getElementById('sl-rate').value = p.rate;
+  document.getElementById('bdg-rate').textContent = p.rate + '% p.a.';
+  document.querySelectorAll('.p-pill').forEach(function(el){el.classList.remove('on');});
+  event.target.classList.add('on');
+}
+
+function setPresetAndScroll(key) {
+  var p = PRESETS[key];
+  if(!p) return;
+  document.getElementById('f-rate').value = p.rate;
+  document.getElementById('sl-rate').value = p.rate;
+  document.getElementById('bdg-rate').textContent = p.rate + '% p.a.';
+  document.getElementById('calculator').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function toggleWithdrawals() {
+  withdrawalsOn = !withdrawalsOn;
+  var sw = document.getElementById('sw-withdraw'), fld = document.getElementById('withdrawal-field');
+  withdrawalsOn ? (sw.classList.add('on'), fld.style.display='block') : (sw.classList.remove('on'), fld.style.display='none');
+}
+
+function toggleInflation() {
+  inflationOn = !inflationOn;
+  document.getElementById('sw-inflation').classList.toggle('on', inflationOn);
+}
+
+/* SLIDER BINDINGS */
+function bindSl(inpId, slId, bdgId, prefix, suffix, fmtFn) {
+  var inp=document.getElementById(inpId), sl=document.getElementById(slId), bdg=document.getElementById(bdgId);
+  if(!inp||!sl) return;
+  function upd(v){if(bdg)bdg.textContent=(prefix||'')+(fmtFn?fmtFn(v):v)+(suffix||'');}
+  inp.addEventListener('input',function(){sl.value=Math.min(parseFloat(this.value)||0,parseFloat(sl.max));upd(this.value);});
+  sl.addEventListener('input',function(){inp.value=this.value;upd(this.value);});
+}
+function fmtUSD(n){ var v=parseFloat(n)||0; if(v>=1000000)return '$'+(v/1000000).toFixed(1)+'M'; if(v>=1000)return '$'+(v/1000).toFixed(0)+'K'; return '$'+v.toFixed(0); }
+bindSl('f-init','sl-init','bdg-init','$','',fmtUSD);
+bindSl('f-monthly','sl-monthly','bdg-monthly','$','',fmtUSD);
+bindSl('f-rate','sl-rate','bdg-rate','','% p.a.',null);
+bindSl('f-yrs','sl-yrs','bdg-yrs','','  years',null);
+document.getElementById('f-withdraw').addEventListener('input',function(){ document.getElementById('bdg-withdraw').textContent='$'+(parseFloat(this.value)||0).toLocaleString(); });
+
+function resetResult(){
+  document.getElementById('results-block').style.display='none';
+  document.getElementById('results-block').classList.remove('show');
+  document.getElementById('r-placeholder').style.display='flex';
+  document.getElementById('err-msg').style.display='none';
+}
+
+function fmtBig(n){ n=Math.round(n); if(n>=1000000)return '$'+(n/1000000).toFixed(2)+'M'; if(n>=1000)return '$'+(n/1000).toFixed(1)+'K'; return '$'+n.toLocaleString(); }
+function fmtFull(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+
+function calculate(){
+  document.getElementById('err-msg').style.display='none';
+  var PV = parseFloat(document.getElementById('f-init').value)||0;
+  var PMT= parseFloat(document.getElementById('f-monthly').value)||0;
+  var annRate = parseFloat(document.getElementById('f-rate').value)||0;
+  var yrs = parseInt(document.getElementById('f-yrs').value)||0;
+  var compFreq = parseInt(document.getElementById('f-compound').value)||12;
+  var withdrawal = withdrawalsOn ? (parseFloat(document.getElementById('f-withdraw').value)||0) : 0;
+
+  if((!PV && !PMT) || annRate<=0 || yrs<=0){
+    document.getElementById('err-msg').style.display='block'; return;
+  }
+
+  var r = annRate / 100 / compFreq; // periodic rate
+  var n = yrs * compFreq;           // total periods
+  var pmtPerPeriod = PMT * (12/compFreq); // scale monthly to compounding period
+  var wdPerPeriod  = withdrawal * (12/compFreq);
+
+  // Simulate year-by-year
+  var yearData = [];
+  var balance = PV;
+  var totalInvested = PV;
+
+  for(var yr=1; yr<=yrs; yr++){
+    for(var p=0; p<compFreq; p++){
+      balance = balance * (1+r) + pmtPerPeriod - wdPerPeriod;
+      if(balance < 0){ balance=0; break; }
+    }
+    totalInvested += PMT*12 - withdrawal*12;
+    if(totalInvested < PV) totalInvested = PV;
+    yearData.push({yr:yr, inv:Math.max(PV, totalInvested), total:Math.max(0,balance)});
+  }
+
+  var finalValue = balance;
+  var totalContributed = PV + PMT*12*yrs;
+  var interestEarned = Math.max(0, finalValue - totalContributed + withdrawal*12*yrs);
+  var multiple = totalContributed > 0 ? finalValue/totalContributed : 1;
+  var realValue = inflationOn ? finalValue / Math.pow(1.03, yrs) : finalValue;
+
+  // UPDATE UI
+  document.getElementById('tb-badge').textContent = 'Investment Value — ' + yrs + ' Years @ ' + annRate + '%';
+  document.getElementById('tb-amount').textContent = fmtBig(finalValue);
+  document.getElementById('chip-gain').textContent = 'Gain: ' + fmtBig(interestEarned);
+  document.getElementById('chip-invested').textContent = 'Invested: ' + fmtBig(totalContributed);
+  document.getElementById('chip-mult').textContent = multiple.toFixed(2) + '× money';
+  document.getElementById('r-invested').textContent = fmtBig(totalContributed);
+  document.getElementById('r-interest').textContent = fmtBig(interestEarned);
+  document.getElementById('r-multiple').textContent = multiple.toFixed(2) + '×';
+  document.getElementById('r-real').textContent = inflationOn ? fmtBig(realValue) : 'Enable toggle';
+
+  // DONUT
+  var C = 2*Math.PI*33;
+  var pRat = finalValue>0 ? Math.min(totalContributed/finalValue, 1) : 0.5;
+  var iRat = 1-pRat;
+  document.getElementById('d-p').setAttribute('stroke-dasharray', (C*pRat)+' '+C);
+  document.getElementById('d-i').setAttribute('stroke-dasharray', (C*iRat)+' '+C);
+  document.getElementById('d-i').setAttribute('stroke-dashoffset', -(C*pRat));
+  document.getElementById('d-pct').textContent = Math.round(pRat*100)+'%';
+  document.getElementById('lg-p').textContent = fmtBig(totalContributed);
+  document.getElementById('lg-i').textContent = fmtBig(interestEarned);
+  document.getElementById('lg-t').textContent = fmtBig(finalValue);
+
+  // MINI BAR CHART
+  var barsEl = document.getElementById('chart-bars');
+  var labsEl = document.getElementById('chart-labels');
+  barsEl.innerHTML=''; labsEl.innerHTML='';
+  var maxVal = Math.max.apply(null, yearData.map(function(d){return d.total;}));
+  var step = Math.max(1, Math.floor(yrs/10));
+  var displayed = yearData.filter(function(d){ return d.yr%step===0 || d.yr===yrs; });
+  displayed.forEach(function(d){
+    var bar = document.createElement('div');
+    bar.className='c-bar';
+    var h = maxVal>0 ? Math.max(4,(d.total/maxVal)*56) : 4;
+    bar.style.height=h+'px';
+    bar.style.background='linear-gradient(to top, var(--accent), var(--teal))';
+    barsEl.appendChild(bar);
+  });
+  displayed.forEach(function(d){
+    var lbl=document.createElement('span');
+    lbl.textContent='Yr'+d.yr;
+    labsEl.appendChild(lbl);
+  });
+
+  // YEAR TABLE
+  var tbody=document.getElementById('year-body');
+  tbody.innerHTML='';
+  yearData.forEach(function(d){
+    var interest=Math.max(0,d.total-d.inv);
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td>Yr '+d.yr+'</td><td>'+fmtBig(d.inv)+'</td><td style="color:var(--green);">+'+fmtBig(interest)+'</td><td>'+fmtBig(d.total)+'</td>';
+    tbody.appendChild(tr);
+  });
+
+  // SHOW
+  document.getElementById('r-placeholder').style.display='none';
+  var rb=document.getElementById('results-block');
+  rb.style.display='block'; rb.classList.remove('show'); void rb.offsetWidth; rb.classList.add('show');
+}
+
+function faqT(el){
+  var item=el.parentElement, was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!was)item.classList.add('open');
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('input[type=number]').forEach(function(inp){
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')calculate();});
+  });
+});
+</script>
+</body>
+</html>

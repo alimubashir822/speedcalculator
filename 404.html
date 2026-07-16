@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>404 — Page Not Found | SpeedCalculator.net</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;--accent:#3b82f6;--accent2:#60a5fa;--green:#10b981;--orange:#f59e0b;--red:#ef4444;--text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;--border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);--radius:14px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.12),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.wrap{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;z-index:1;}
+.inner{max-width:560px;}
+.err-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(100px,18vw,160px);font-weight:900;line-height:1;letter-spacing:-4px;background:linear-gradient(135deg,rgba(59,130,246,.3),rgba(96,165,250,.1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
+.err-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,5vw,44px);font-weight:900;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px;color:var(--text);}
+.err-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:36px;}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:13px 28px;border-radius:30px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(59,130,246,.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,130,246,.4);}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border2);color:var(--accent2);padding:13px 28px;border-radius:30px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;text-decoration:none;transition:all .2s;}
+.btn-secondary:hover{background:rgba(59,130,246,.08);transform:translateY(-2px);}
+.suggestions{margin-top:52px;}
+.sug-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
+.sug-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+@media(max-width:480px){.sug-grid{grid-template-columns:1fr 1fr;}}
+.sug-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-decoration:none;transition:all .2s;text-align:left;}
+.sug-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.sug-ico{font-size:18px;margin-bottom:7px;}
+.sug-name{font-size:12px;font-weight:700;color:var(--text);line-height:1.3;}
+.sug-desc{font-size:10px;color:var(--text3);margin-top:3px;}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="wrap">
+  <div class="inner">
+    <div class="err-num">404</div>
+    <h1 class="err-title">Page Not Found</h1>
+    <p class="err-sub">The page you're looking for doesn't exist or may have moved. Try one of our free calculators below.</p>
+    <div class="btn-row">
+      <a href="/" class="btn-primary">&#8592; Back to Home</a>
+      <a href="/#all-calculators" class="btn-secondary">All Calculators</a>
+    </div>
+
+    <div class="suggestions">
+      <div class="sug-title">Popular Calculators</div>
+      <div class="sug-grid">
+        <a href="/rpm-to-speed-calculator/" class="sug-card">
+          <div class="sug-ico">&#9881;</div>
+          <div class="sug-name">RPM to Speed</div>
+          <div class="sug-desc">Engine RPM to mph/km/h</div>
+        </a>
+        <a href="/bmi-calculator/" class="sug-card">
+          <div class="sug-ico">&#9878;</div>
+          <div class="sug-name">BMI Calculator</div>
+          <div class="sug-desc">Body mass index</div>
+        </a>
+        <a href="/loan-calculator/" class="sug-card">
+          <div class="sug-ico">&#127968;</div>
+          <div class="sug-name">Loan Calculator</div>
+          <div class="sug-desc">Monthly payment & interest</div>
+        </a>
+        <a href="/percentage-calculator/" class="sug-card">
+          <div class="sug-ico">&#37;</div>
+          <div class="sug-name">Percentage Calc</div>
+          <div class="sug-desc">% of, change, difference</div>
+        </a>
+        <a href="/distance-calculator/" class="sug-card">
+          <div class="sug-ico">&#128205;</div>
+          <div class="sug-name">Distance Calculator</div>
+          <div class="sug-desc">km, miles, coordinates</div>
+        </a>
+        <a href="/blog/" class="sug-card">
+          <div class="sug-ico">&#128203;</div>
+          <div class="sug-name">Blog & Guides</div>
+          <div class="sug-desc">Calculator tutorials</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/js/shared.js"></script>
+</body>
+</html>
