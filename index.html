@@ -97,7 +97,7 @@ body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(r
 /* NAV */
 nav{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(5,8,15,.94);backdrop-filter:blur(14px);z-index:100;}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:.04em;text-decoration:none;color:var(--text);}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:.02em;text-decoration:none;color:var(--text);white-space:nowrap;}
 .logo span{color:var(--accent2);}
 .nav-links{display:flex;gap:22px;list-style:none;}
 .nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;letter-spacing:.03em;transition:color .2s;}
@@ -319,46 +319,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:44px 0 2
 </style>
 </head>
 <body>
-<!-- NAV -->
-<nav>
-  <div class="container">
-    <div class="nav-inner">
-      <a href="/" class="logo">Speed<span>Calculator</span></a>
-      <ul class="nav-links">
-        <li><a href="#calculator">Calculator</a></li>
-        <li><a href="#all-calculators">All Tools</a></li>
-        <li><a href="#formula">Formula</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:14px;">
-        <div class="theme-toggle-wrap" title="Toggle light / dark mode">
-          <span class="theme-icon-label icon-moon" aria-hidden="true">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </span>
-          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode" role="switch">
-            <span class="tt-stars" aria-hidden="true">
-              <span class="tt-star"></span>
-              <span class="tt-star"></span>
-              <span class="tt-star"></span>
-            </span>
-            <span class="tt-clouds" aria-hidden="true">
-              <span class="tt-cloud-dot"></span>
-            </span>
-            <span class="tt-knob" aria-hidden="true">
-              <svg class="tt-moon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-              <svg class="tt-sun" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-            </span>
-          </button>
-          <span class="theme-icon-label icon-sun" aria-hidden="true">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          </span>
-        </div>
-        <a href="#calculator" class="nav-cta">Calculate Now</a>
-      </div>
-
-    </div>
-  </div>
-</nav>
+<div id="site-header"></div>
 
 <!-- HERO -->
 <section class="hero" id="home">

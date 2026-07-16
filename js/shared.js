@@ -39,6 +39,53 @@ const NAV_CSS = `
   }
   nav.sc-nav .nav-links.sc-open a{padding:10px 14px;border-radius:10px;font-size:14px;}
 
+  /* ── Dropdown Menu ── */
+  nav.sc-nav .sc-dropdown{position:relative;}
+  nav.sc-nav .sc-dropdown > a{display:flex;align-items:center;gap:4px;}
+  nav.sc-nav .sc-dropdown > a .sc-chev{
+    width:14px;height:14px;transition:transform .25s;
+    display:inline-block;flex-shrink:0;
+  }
+  nav.sc-nav .sc-dropdown.open > a .sc-chev{transform:rotate(180deg);}
+  .sc-drop-panel{
+    display:none;
+    position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);
+    background:rgba(8,14,28,.97);backdrop-filter:blur(18px);
+    border:1px solid rgba(59,130,246,.18);border-radius:16px;
+    padding:20px;min-width:620px;
+    grid-template-columns:repeat(4,1fr);gap:20px;
+    box-shadow:0 24px 64px rgba(0,0,0,.6),0 0 0 1px rgba(59,130,246,.06);
+    z-index:2000;
+    animation:dropIn .18s ease;
+  }
+  @keyframes dropIn{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  nav.sc-nav .sc-dropdown.open .sc-drop-panel{display:grid;}
+  .sc-drop-col-title{
+    font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:#3b82f6;margin-bottom:10px;padding-bottom:6px;
+    border-bottom:1px solid rgba(59,130,246,.15);
+    display:flex;align-items:center;gap:6px;
+  }
+  .sc-drop-col-title .dc-ico{font-size:13px;}
+  .sc-drop-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+  .sc-drop-col ul a{
+    display:block;padding:5px 8px;border-radius:7px;
+    font-size:12px;font-weight:500;color:#94a3b8;
+    text-decoration:none;transition:all .15s;
+  }
+  .sc-drop-col ul a:hover{color:#60a5fa;background:rgba(59,130,246,.08);padding-left:12px;}
+  /* light mode dropdown */
+  :root.light-mode .sc-drop-panel{background:rgba(255,255,255,.98);border-color:rgba(148,163,184,.2);box-shadow:0 24px 64px rgba(0,0,0,.12);}
+  :root.light-mode .sc-drop-col ul a{color:#475569;}
+  :root.light-mode .sc-drop-col ul a:hover{color:#2563eb;background:rgba(59,130,246,.06);}
+  :root.light-mode .sc-drop-col-title{color:#2563eb;border-bottom-color:rgba(59,130,246,.15);}
+  /* mobile dropdown */
+  @media(max-width:900px){
+    .sc-drop-panel{position:static;transform:none;min-width:0;width:100%;border-radius:10px;margin-top:4px;padding:14px;}
+    @keyframes dropIn{from{opacity:0}to{opacity:1}}
+    nav.sc-nav .sc-dropdown.open .sc-drop-panel{display:flex;flex-direction:column;gap:10px;}
+  }
+
   /* ── Theme Toggle — Premium Pill Switch ── */
   .theme-toggle-wrap{display:flex;align-items:center;gap:7px;flex-shrink:0;}
   .theme-icon-label{display:flex;align-items:center;width:16px;height:16px;flex-shrink:0;transition:opacity .3s;}
@@ -214,16 +261,74 @@ const HEADER_HTML = `
 <nav class="sc-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="logo">Speed<span>Calculator</span></a>
+      <a href="/" class="logo">Speed <span>Calculator</span></a>
       <ul class="nav-links" id="sc-nav-links">
-        <li><a href="/">Speed Calculator</a></li>
-        <li><a href="/bmi-calculator/">Health</a></li>
-        <li><a href="/loan-calculator/">Finance</a></li>
-        <li><a href="/percentage-calculator/">Math</a></li>
+        <li><a href="/" id="sc-home-link">Home</a></li>
+        <li class="sc-dropdown" id="sc-calc-dropdown">
+          <a href="/calculators/" id="sc-calc-trigger">
+            Calculators
+            <svg class="sc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="sc-drop-panel" id="sc-drop-panel">
+            <div class="sc-drop-col">
+              <div class="sc-drop-col-title"><span class="dc-ico">⚡</span>Speed &amp; Travel</div>
+              <ul>
+                <li><a href="/">Speed Calculator</a></li>
+                <li><a href="/travel-time-calculator/">Travel Time</a></li>
+                <li><a href="/distance-calculator/">Distance Calculator</a></li>
+                <li><a href="/fuel-cost-calculator/">Fuel Cost</a></li>
+                <li><a href="/rpm-to-speed-calculator/">RPM to Speed</a></li>
+                <li><a href="/gear-ratio-speed-calculator/">Gear Ratio Speed</a></li>
+                <li><a href="/car-speed-calculator/">Car Speed</a></li>
+                <li><a href="/speed-and-feed-calculator/">Speed &amp; Feed</a></li>
+              </ul>
+            </div>
+            <div class="sc-drop-col">
+              <div class="sc-drop-col-title"><span class="dc-ico">🏥</span>Health &amp; Fitness</div>
+              <ul>
+                <li><a href="/bmi-calculator/">BMI Calculator</a></li>
+                <li><a href="/calorie-calculator/">Calorie Calculator</a></li>
+                <li><a href="/tdee-calculator/">TDEE Calculator</a></li>
+                <li><a href="/age-calculator/">Age Calculator</a></li>
+                <li><a href="/sleep-calculator/">Sleep Calculator</a></li>
+                <li><a href="/body-fat-calculator/">Body Fat</a></li>
+                <li><a href="/ideal-weight-calculator/">Ideal Weight</a></li>
+                <li><a href="/protein-calculator/">Protein Calculator</a></li>
+              </ul>
+            </div>
+            <div class="sc-drop-col">
+              <div class="sc-drop-col-title"><span class="dc-ico">💰</span>Finance</div>
+              <ul>
+                <li><a href="/loan-calculator/">Loan Calculator</a></li>
+                <li><a href="/emi-calculator/">EMI Calculator</a></li>
+                <li><a href="/mortgage-calculator/">Mortgage</a></li>
+                <li><a href="/discount-calculator/">Discount</a></li>
+                <li><a href="/profit-calculator/">Profit Calculator</a></li>
+                <li><a href="/roi-calculator/">ROI Calculator</a></li>
+                <li><a href="/salary-calculator/">Salary Calculator</a></li>
+                <li><a href="/sip-calculator/">SIP Calculator</a></li>
+              </ul>
+            </div>
+            <div class="sc-drop-col">
+              <div class="sc-drop-col-title"><span class="dc-ico">📐</span>Math &amp; More</div>
+              <ul>
+                <li><a href="/percentage-calculator/">Percentage</a></li>
+                <li><a href="/gpa-calculator/">GPA Calculator</a></li>
+                <li><a href="/scientific-calculator/">Scientific Calc</a></li>
+                <li><a href="/fraction-calculator/">Fraction Calc</a></li>
+                <li><a href="/average-calculator/">Average Calc</a></li>
+                <li><a href="/square-root-calculator/">Square Root</a></li>
+                <li><a href="/tip-calculator/">Tip Calculator</a></li>
+                <li><a href="/time-calculator/">Time Calculator</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
         <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQ</a></li>
       </ul>
       <div class="nav-right">
-<div class="theme-toggle-wrap" title="Toggle light / dark mode">
+        <div class="theme-toggle-wrap" title="Toggle light / dark mode">
           <span class="theme-icon-label icon-moon" aria-hidden="true">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
           </span>
@@ -237,9 +342,7 @@ const HEADER_HTML = `
               <span class="tt-cloud-dot"></span>
             </span>
             <span class="tt-knob" aria-hidden="true">
-              <!-- Moon icon inside knob -->
               <svg class="tt-moon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-              <!-- Sun icon inside knob -->
               <svg class="tt-sun" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
             </span>
           </button>
@@ -250,7 +353,7 @@ const HEADER_HTML = `
         <button class="sc-ham" id="sc-ham" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
-        <a href="/" class="nav-cta" id="nav-cta-btn">All Calculators</a>
+        <a href="/calculators/" class="nav-cta" id="nav-cta-btn">All Calculators</a>
       </div>
     </div>
   </div>
@@ -263,8 +366,8 @@ const FOOTER_HTML = `
     <div class="footer-inner" style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:24px;margin-bottom:30px;">
 
       <div class="footer-brand">
-        <a href="/" style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;text-decoration:none;color:#f0f4ff;display:block;margin-bottom:10px;letter-spacing:.04em;">
-          Speed<span style="color:#60a5fa;">Calculator</span>
+        <a href="/" style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;text-decoration:none;color:#f0f4ff;display:block;margin-bottom:10px;letter-spacing:.02em;">
+          Speed <span style="color:#60a5fa;">Calculator</span>
         </a>
         <p style="font-size:13px;color:#4a6080;line-height:1.7;max-width:260px;margin-bottom:14px;">
           Free online calculators for speed, distance, health, finance, and math. Trusted by students, travelers, engineers, and professionals worldwide.
@@ -366,6 +469,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
     fixCtaLink();
     initHamburger();
+    initDropdown();
   }
   initThemeToggle();
 
@@ -412,6 +516,36 @@ function initHamburger() {
   document.addEventListener('click', function () {
     menu.classList.remove('sc-open');
     btn.setAttribute('aria-expanded', 'false');
+  });
+}
+
+/* Calculators dropdown toggle */
+function initDropdown() {
+  const dropdown = document.getElementById('sc-calc-dropdown');
+  const trigger  = document.getElementById('sc-calc-trigger');
+  if (!dropdown || !trigger) return;
+
+  trigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* Close when clicking outside */
+  document.addEventListener('click', function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* Close on Escape key */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
