@@ -39,16 +39,86 @@ const NAV_CSS = `
   }
   nav.sc-nav .nav-links.sc-open a{padding:10px 14px;border-radius:10px;font-size:14px;}
 
-  /* ── Theme Toggle Styles ── */
-  .theme-toggle-btn{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;transition:all .2s;padding:0;flex-shrink:0;}
-  .theme-toggle-btn:hover{color:#60a5fa;background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3);transform:scale(1.05);}
-  .theme-toggle-btn svg{width:18px;height:18px;}
-  .theme-toggle-btn .sun-icon{display:none;}
-  .theme-toggle-btn .moon-icon{display:block;}
-  :root.light-mode .theme-toggle-btn .sun-icon{display:block;}
-  :root.light-mode .theme-toggle-btn .moon-icon{display:none;}
-  :root.light-mode .theme-toggle-btn{color:#475569;background:rgba(59,130,246,.05);border-color:rgba(59,130,246,.15);}
-  :root.light-mode .theme-toggle-btn:hover{color:#2563eb;background:rgba(59,130,246,.1);}
+  /* ── Theme Toggle — Premium Pill Switch ── */
+  .theme-toggle-wrap{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+  .theme-icon-label{display:flex;align-items:center;width:16px;height:16px;flex-shrink:0;transition:opacity .3s;}
+  .theme-icon-label svg{width:14px;height:14px;}
+  .theme-icon-label.icon-moon{color:#94a3b8;opacity:.7;}
+  .theme-icon-label.icon-sun{color:#f59e0b;opacity:.5;}
+  :root.light-mode .theme-icon-label.icon-moon{opacity:.4;}
+  :root.light-mode .theme-icon-label.icon-sun{opacity:1;}
+
+  .theme-toggle-btn{
+    position:relative;
+    width:52px;height:27px;
+    background:linear-gradient(135deg,#1e3a5f,#0f1f3d);
+    border:1.5px solid rgba(59,130,246,.25);
+    border-radius:100px;
+    cursor:pointer;
+    padding:0;
+    transition:background .4s,border-color .4s,box-shadow .4s;
+    flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(59,130,246,0);
+    outline:none;
+  }
+  .theme-toggle-btn:hover{
+    border-color:rgba(59,130,246,.5);
+    box-shadow:0 0 10px rgba(59,130,246,.18);
+  }
+  .theme-toggle-btn:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;}
+
+  /* the sliding knob */
+  .tt-knob{
+    position:absolute;
+    top:3px;left:3px;
+    width:19px;height:19px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#60a5fa,#3b82f6);
+    box-shadow:0 2px 8px rgba(59,130,246,.5),inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .4s,box-shadow .4s;
+    display:flex;align-items:center;justify-content:center;
+    pointer-events:none;
+  }
+  .tt-knob svg{width:11px;height:11px;color:#fff;opacity:.95;transition:opacity .25s;}
+  .tt-knob .tt-sun{display:none;}
+  .tt-knob .tt-moon{display:block;}
+
+  /* stars sparkle inside the track (dark mode) */
+  .tt-stars{
+    position:absolute;inset:0;border-radius:100px;overflow:hidden;pointer-events:none;
+    display:flex;align-items:center;justify-content:flex-end;padding-right:6px;gap:2px;
+  }
+  .tt-star{width:3px;height:3px;border-radius:50%;background:#fff;opacity:.6;animation:tt-twinkle 2s infinite;}
+  .tt-star:nth-child(2){width:2px;height:2px;opacity:.4;animation-delay:.5s;}
+  .tt-star:nth-child(3){width:2px;height:2px;opacity:.5;animation-delay:1s;}
+  @keyframes tt-twinkle{0%,100%{opacity:.6}50%{opacity:.15}}
+
+  /* clouds for light mode */
+  .tt-clouds{
+    position:absolute;inset:0;border-radius:100px;overflow:hidden;pointer-events:none;
+    display:flex;align-items:center;justify-content:flex-end;padding-right:5px;
+    opacity:0;transition:opacity .4s;
+  }
+  .tt-cloud-dot{width:8px;height:5px;background:rgba(255,255,255,.8);border-radius:50px;}
+
+  /* LIGHT MODE state */
+  :root.light-mode .theme-toggle-btn{
+    background:linear-gradient(135deg,#bfdbfe,#7dd3fc);
+    border-color:rgba(59,130,246,.35);
+    box-shadow:0 0 12px rgba(251,191,36,.15);
+  }
+  :root.light-mode .theme-toggle-btn:hover{
+    box-shadow:0 0 16px rgba(251,191,36,.25);
+  }
+  :root.light-mode .tt-knob{
+    transform:translateX(25px);
+    background:linear-gradient(135deg,#fde68a,#fbbf24);
+    box-shadow:0 2px 10px rgba(251,191,36,.55),inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  :root.light-mode .tt-knob .tt-sun{display:block;}
+  :root.light-mode .tt-knob .tt-moon{display:none;}
+  :root.light-mode .tt-stars{opacity:0;}
+  :root.light-mode .tt-clouds{opacity:1;}
 
   /* ── CSS Variable Light Mode Overrides ── */
   :root.light-mode {
@@ -153,14 +223,30 @@ const HEADER_HTML = `
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <div class="nav-right">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
-          </svg>
-          <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-          </svg>
-        </button>
+<div class="theme-toggle-wrap" title="Toggle light / dark mode">
+          <span class="theme-icon-label icon-moon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </span>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode" role="switch">
+            <span class="tt-stars" aria-hidden="true">
+              <span class="tt-star"></span>
+              <span class="tt-star"></span>
+              <span class="tt-star"></span>
+            </span>
+            <span class="tt-clouds" aria-hidden="true">
+              <span class="tt-cloud-dot"></span>
+            </span>
+            <span class="tt-knob" aria-hidden="true">
+              <!-- Moon icon inside knob -->
+              <svg class="tt-moon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              <!-- Sun icon inside knob -->
+              <svg class="tt-sun" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+            </span>
+          </button>
+          <span class="theme-icon-label icon-sun" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </span>
+        </div>
         <button class="sc-ham" id="sc-ham" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -329,12 +415,27 @@ function initHamburger() {
   });
 }
 
-/* Light/Dark mode click listener */
+/* Light/Dark mode — premium pill switch */
 function initThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle');
   if (!toggleBtn) return;
+
+  /* Sync aria state on load */
+  const syncAria = function () {
+    const isLight = document.documentElement.classList.contains('light-mode');
+    toggleBtn.setAttribute('aria-checked', isLight ? 'true' : 'false');
+  };
+  syncAria();
+
   toggleBtn.addEventListener('click', function () {
     const isLight = document.documentElement.classList.toggle('light-mode');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleBtn.setAttribute('aria-checked', isLight ? 'true' : 'false');
+
+    /* micro-bounce on the knob */
+    const knob = toggleBtn.querySelector('.tt-knob');
+    if (knob) {
+      knob.style.transition = 'transform .35s cubic-bezier(.34,1.56,.64,1),background .4s,box-shadow .4s';
+    }
   });
 }
