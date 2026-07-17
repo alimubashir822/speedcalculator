@@ -3,158 +3,779 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQs — Speed Calculator</title>
-<meta name="description" content="Frequently asked questions about Speed Calculator, our free calculation tools, data privacy, accuracy, and usage limits.">
+<title>FAQ — Frequently Asked Questions | SpeedCalculator.net</title>
+<meta name="description" content="Frequently asked questions about SpeedCalculator.net — speed calculator, distance calculator, travel time calculator, RPM to speed, unit conversions, privacy, and more. Get instant answers.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="canonical" href="https://www.speedcalculator.net/faq/">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/main.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate speed?","acceptedAnswer":{"@type":"Answer","text":"To calculate speed, use the formula: Speed = Distance ÷ Time. Enter your distance (in km or miles) and time (in hours, minutes, or seconds) into our Speed Calculator. Select your preferred unit — km/h, mph, m/s, or knots — and click Calculate. The result appears instantly with all unit conversions shown simultaneously. No manual math needed."}},
+    {"@type":"Question","name":"What is the formula for speed, distance, and time?","acceptedAnswer":{"@type":"Answer","text":"The three core formulas are: Speed = Distance ÷ Time, Distance = Speed × Time, Time = Distance ÷ Speed. These form the speed-distance-time triangle. Our calculator handles all three — select which value you want to find, enter the other two, and get your answer instantly in km/h, mph, m/s, knots, and ft/s."}},
+    {"@type":"Question","name":"How do I convert km/h to mph?","acceptedAnswer":{"@type":"Answer","text":"To convert km/h to mph, multiply by 0.62137. Example: 100 km/h × 0.62137 = 62.1 mph. To convert mph to km/h, multiply by 1.60934. Our speed calculator automatically shows results in all 5 units simultaneously — km/h, mph, m/s, knots, and ft/s — so no separate conversion is needed."}},
+    {"@type":"Question","name":"How does the RPM to Speed Calculator work?","acceptedAnswer":{"@type":"Answer","text":"The RPM to Speed Calculator uses the formula: Speed (mph) = (RPM × π × Tire Diameter in inches) ÷ (Gear Ratio × Axle Ratio × 1056). Enter your engine RPM, tire size (or use our tire code converter for formats like 225/45R17), transmission gear ratio, and rear axle ratio. Results show in mph, km/h, and m/s, plus a full all-gear speed chart."}},
+    {"@type":"Question","name":"Are the calculators on SpeedCalculator.net free?","acceptedAnswer":{"@type":"Answer","text":"Yes — every calculator on SpeedCalculator.net is 100% free, forever. No subscription, no registration, no hidden fees. All 60+ calculators including speed, distance, travel time, RPM, health, finance, and math calculators are completely free to use unlimited times on any device."}},
+    {"@type":"Question","name":"Does SpeedCalculator.net store my data?","acceptedAnswer":{"@type":"Answer","text":"No. SpeedCalculator.net does not store, collect, or share any values you enter into the calculators. All calculations run entirely in your browser using JavaScript — no data is sent to our servers. We do not require login or personal information of any kind. Your inputs are private and cleared when you close the tab."}}
+  ]
+}
+</script>
+
 <style>
-/* PAGE HERO */
-.page-hero{padding:56px 0 48px;text-align:center;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1060px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 6px;}
+
+/* HERO */
+.hero{padding:48px 0 40px;text-align:center;animation:fadeInUp .5s ease both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid var(--border2);border-radius:20px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px;}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,6vw,72px);font-weight:900;line-height:.92;letter-spacing:-2px;text-transform:uppercase;margin-bottom:16px;}
-.page-title em{display:block;color:var(--accent2);font-style:normal;}
-.page-sub{font-size:16px;color:var(--text2);font-weight:300;max-width:560px;margin:0 auto;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,7vw,80px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase;color:#60a5fa;margin-bottom:18px;}
+.hero-sub{font-size:16px;color:var(--text2);font-weight:300;max-width:600px;margin:0 auto 32px;line-height:1.75;}
 
-/* FAQ CONTAINER */
-.faq-section{padding:0 0 72px;}
-.faq-wrap{max-width:800px;margin:0 auto;}
-.faq-list{display:flex;flex-direction:column;gap:12px;}
-.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .2s;}
-.faq-item.open{border-color:var(--border2);box-shadow:0 4px 20px rgba(59,130,246,0.05);}
-.faq-q{padding:20px 24px;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;}
+/* SEARCH BAR */
+.faq-search{max-width:520px;margin:0 auto 48px;position:relative;}
+.faq-search input{width:100%;padding:15px 52px 15px 20px;background:var(--bg2);border:2px solid var(--border2);border-radius:30px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;}
+.faq-search input:focus{border-color:var(--accent);}
+.faq-search input::placeholder{color:var(--text3);}
+.faq-search-ico{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--text3);}
+
+/* STATS ROW */
+.stats-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;}
+.stat-chip{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:8px 18px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--text2);}
+.stat-chip strong{color:var(--accent2);}
+
+/* LAYOUT */
+.faq-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start;margin-bottom:72px;}
+@media(max-width:860px){.faq-layout{grid-template-columns:1fr;}}
+
+/* STICKY SIDEBAR NAV */
+.faq-nav{position:sticky;top:24px;}
+.faq-nav-inner{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.fn-head{padding:14px 16px;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);display:flex;align-items:center;gap:6px;}
+.fn-list{list-style:none;padding:6px 0;}
+.fn-item a{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;border-left:2px solid transparent;line-height:1.35;}
+.fn-item a:hover,.fn-item a.active{background:var(--bg3);color:var(--accent2);border-left-color:var(--accent);}
+.fn-item a span{font-size:10px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1px 7px;color:var(--text3);margin-left:auto;flex-shrink:0;}
+.fn-item a.active span{background:rgba(59,130,246,.1);border-color:var(--border2);color:var(--accent2);}
+
+/* FAQ SECTIONS */
+.faq-content{}
+.faq-section{margin-bottom:44px;}
+.faq-sec-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.faq-sec-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.faq-sec-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;color:var(--text);}
+.faq-sec-count{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(59,130,246,.1);border:1px solid var(--border2);color:var(--accent2);}
+
+/* FAQ ITEMS */
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .15s;}
+.faq-item.open{border-color:var(--border2);}
+.faq-q{padding:17px 20px;font-size:14.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;user-select:none;transition:background .15s;line-height:1.5;}
 .faq-q:hover,.faq-item.open .faq-q{background:var(--bg3);}
-.faq-arr{width:18px;height:18px;flex-shrink:0;color:var(--text3);transition:transform .25s;}
-.faq-item.open .faq-arr{transform:rotate(180deg);color:var(--accent2);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 24px;}
-.faq-item.open .faq-a{max-height:300px;padding:4px 24px 22px;}
-.faq-a p{font-size:14px;color:var(--text2);line-height:1.8;margin:0;}
+.q-num{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--border2);flex-shrink:0;line-height:1.3;min-width:28px;}
+.faq-item.open .q-num{color:var(--accent2);}
+.q-text{flex:1;}
+.faq-arr{width:20px;height:20px;flex-shrink:0;color:var(--text3);transition:transform .25s;margin-top:2px;}
+.faq-item.open .faq-arr{transform:rotate(180deg);}
+.faq-a{padding:0 20px 0 48px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s;}
+.faq-a-inner{padding-bottom:18px;font-size:14px;color:var(--text2);line-height:1.8;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a strong{color:var(--text);}
+.faq-a a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);}
+.faq-a a:hover{border-color:var(--accent2);}
+.faq-a .formula{display:inline-block;background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:2px 10px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--accent2);margin:2px;}
 
-/* CTA BANNER */
-.cta-banner{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(96,165,250,0.05));border:1px solid var(--border2);border-radius:20px;padding:44px;text-align:center;margin-bottom:56px;}
-.cta-banner h2{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;text-transform:uppercase;letter-spacing:-.5px;color:var(--text);margin-bottom:10px;}
-.cta-banner p{font-size:15px;color:var(--text2);margin-bottom:24px;}
-.btn-primary{display:inline-block;background:var(--accent);color:#fff;padding:12px 28px;border-radius:25px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
-.btn-primary:hover{background:#2563eb;}
+/* CTA BLOCK */
+.cta-block{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(6,182,212,.05));border:1px solid var(--border2);border-radius:var(--radius);padding:32px;text-align:center;margin-top:48px;position:relative;overflow:hidden;}
+.cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),transparent);}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;color:var(--text);margin-bottom:10px;}
+.cta-sub{font-size:14px;color:var(--text2);margin-bottom:20px;}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.cta-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:11px 22px;border-radius:20px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.25);}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(59,130,246,.35);}
+.cta-btn.ghost{background:transparent;border:1px solid var(--border2);color:var(--accent2);box-shadow:none;}
+.cta-btn.ghost:hover{background:rgba(59,130,246,.08);}
+
+/* NO RESULTS */
+.no-results{text-align:center;padding:40px;color:var(--text3);display:none;}
+.no-results strong{display:block;font-size:18px;margin-bottom:6px;color:var(--text2);}
 </style>
 </head>
 <body>
 
 <div id="site-header"></div>
 
+<!-- BREADCRUMB -->
 <div class="container">
   <div class="breadcrumb">
-    <a href="/">Home</a><span>›</span> FAQs
+    <a href="/">Home</a><sep>&#8250;</sep> FAQ
   </div>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <div class="eyebrow"><span class="dot"></span> Support Center</div>
-    <h1 class="page-title">Frequently Asked<em>Questions</em></h1>
-    <p class="page-sub">Find answers to common questions about our calculators, formulas, privacy policy, and features.</p>
+<!-- HERO -->
+<div class="container">
+  <div class="hero">
+    <div class="eyebrow"><span class="dot"></span> Help Center &middot; Answers &middot; Calculator Guides</div>
+    <h1>Frequently Asked<br>Questions</h1>
+    <p class="hero-sub">Everything you need to know about SpeedCalculator.net — speed formulas, calculator usage, unit conversions, privacy, accuracy, and more. Can't find your answer? <a href="/contact/" style="color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);">Contact us</a>.</p>
+    <!-- SEARCH -->
+    <div class="faq-search">
+      <input type="text" id="faq-search-inp" placeholder="Search questions... e.g. 'how to convert km to mph'" oninput="searchFAQ()">
+      <span class="faq-search-ico">&#128269;</span>
+    </div>
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat-chip"><strong>30</strong> Questions Answered</div>
+      <div class="stat-chip"><strong>11</strong> Categories</div>
+      <div class="stat-chip"><strong>60+</strong> Free Calculators</div>
+      <div class="stat-chip"><strong>100%</strong> Free &amp; Private</div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- FAQ SECTION -->
-<section class="faq-section">
-  <div class="container">
-    <div class="faq-wrap">
+<!-- LAYOUT -->
+<div class="container">
+<div class="faq-layout">
+
+  <!-- SIDEBAR NAV -->
+  <nav class="faq-nav" id="faq-nav">
+    <div class="faq-nav-inner">
+      <div class="fn-head">&#128203; Jump to Section</div>
+      <ul class="fn-list">
+        <li class="fn-item"><a href="#speed" onclick="scrollTo('speed',this)">&#9889; Speed Calculator <span>5</span></a></li>
+        <li class="fn-item"><a href="#distance" onclick="scrollTo('distance',this)">&#128205; Distance Calculator <span>3</span></a></li>
+        <li class="fn-item"><a href="#time" onclick="scrollTo('time',this)">&#9200; Time Calculator <span>3</span></a></li>
+        <li class="fn-item"><a href="#average" onclick="scrollTo('average',this)">&#8644; Average Speed <span>2</span></a></li>
+        <li class="fn-item"><a href="#travel" onclick="scrollTo('travel',this)">&#128664; Travel Time <span>3</span></a></li>
+        <li class="fn-item"><a href="#rpm" onclick="scrollTo('rpm',this)">&#9881; RPM to Speed <span>3</span></a></li>
+        <li class="fn-item"><a href="#units" onclick="scrollTo('units',this)">&#8652; Unit Conversions <span>3</span></a></li>
+        <li class="fn-item"><a href="#accuracy" onclick="scrollTo('accuracy',this)">&#10003; Accuracy <span>2</span></a></li>
+        <li class="fn-item"><a href="#mobile" onclick="scrollTo('mobile',this)">&#128241; Mobile <span>2</span></a></li>
+        <li class="fn-item"><a href="#browser" onclick="scrollTo('browser',this)">&#127760; Browser <span>1</span></a></li>
+        <li class="fn-item"><a href="#privacy" onclick="scrollTo('privacy',this)">&#128274; Privacy <span>3</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FAQ CONTENT -->
+  <div class="faq-content" id="faq-content">
+    <div class="no-results" id="no-results">
+      <strong>No questions found</strong>
+      Try a different keyword or <a href="/contact/" style="color:var(--accent2);">ask us directly</a>.
+    </div>
+
+    <!-- ─── 1. SPEED CALCULATOR ─── -->
+    <div class="faq-section" id="speed">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(59,130,246,.1);">&#9889;</div>
+        <div class="faq-sec-title">Speed Calculator</div>
+        <div class="faq-sec-count">5 Questions</div>
+      </div>
       <div class="faq-list">
 
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            What is Speed Calculator?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <div class="faq-item" data-q="how do i calculate speed speed formula">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">01</span>
+            <span class="q-text">How do I calculate speed using the Speed Calculator?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="faq-a">
-            <p>Speed Calculator is a free web utility suite featuring 40+ highly optimized calculators for speed, distance, travel time, math, finance, academic metrics (GPA and grades), and health/fitness. We aim to replace cluttered, ad-ridden calculation engines with a beautiful, fast, and simple user interface.</p>
-          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Select <strong>"Find Speed"</strong> mode on our <a href="/">Speed Calculator</a>. Enter your distance (in km, miles, or meters) and time (hours, minutes, or seconds). Choose your preferred output unit — km/h, mph, m/s, or knots — then click <strong>Calculate Now</strong>. Results appear instantly showing all 5 units simultaneously. The formula used is <span class="formula">Speed = Distance ÷ Time</span>. No signup or installation needed.
+          </div></div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            Are all these calculators free to use?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <div class="faq-item" data-q="speed formula distance time triangle formula physics">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">02</span>
+            <span class="q-text">What is the formula for speed, distance, and time?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="faq-a">
-            <p>Yes, 100% free. There are no signup gates, premium features, daily limits, or hidden fees. You can use any calculator as many times as you like.</p>
-          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            The three related formulas form the <strong>speed-distance-time triangle</strong>:<br>
+            <span class="formula">Speed = Distance ÷ Time</span><br>
+            <span class="formula">Distance = Speed × Time</span><br>
+            <span class="formula">Time = Distance ÷ Speed</span><br>
+            Our calculator handles all three — just select which value you want to find, enter the other two known values, and get your result with all unit conversions shown at once.
+          </div></div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            Do you save or log my input data?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <div class="faq-item" data-q="speed units km/h mph m/s knots what units does it support">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">03</span>
+            <span class="q-text">What speed units does the calculator support?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="faq-a">
-            <p>No. Speed Calculator is designed with strict data privacy. All mathematical computations run directly in your local web browser using client-side JavaScript. None of your entered values are sent to our servers, keeping your records entirely private and secure.</p>
-          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Our Speed Calculator supports <strong>5 speed units</strong> simultaneously — <strong>km/h</strong> (kilometers per hour), <strong>mph</strong> (miles per hour), <strong>m/s</strong> (meters per second), <strong>knots</strong> (nautical miles per hour), and <strong>ft/s</strong> (feet per second). You enter values in any unit and all 5 conversions are displayed instantly in the results. No separate conversion tool is needed.
+          </div></div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            How accurate are the results?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <div class="faq-item" data-q="find distance find time can it calculate distance and time too">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">04</span>
+            <span class="q-text">Can the Speed Calculator also find distance and time?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="faq-a">
-            <p>Our calculators are built using industry-standard formulas, official standards (such as the Karvonen formula for target heart rate zones, or US Navy methods for body fat estimation), and physics equations. Results are mathematically precise, though they should be verified for academic or engineering use.</p>
-          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes. Our main calculator has <strong>3 modes</strong>: Find Speed (enter distance + time), Find Distance (enter speed + time), and Find Time (enter speed + distance). Switch between modes using the tabs at the top of the calculator. Each mode solves for the unknown variable using the correct physics formula. Results are shown in all relevant units.
+          </div></div>
         </div>
 
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            Does the site support both metric and imperial units?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        <div class="faq-item" data-q="speed of sound speed of light cheetah fastest common speeds reference">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">05</span>
+            <span class="q-text">What are some common real-world speed references?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="faq-a">
-            <p>Yes. Calculators that use units (such as distance, weight, or speed) feature simple dropdown menus that allow you to seamlessly switch between metric (km, meters, kg) and imperial (miles, feet, lbs) systems.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-q" onclick="faqT(this)">
-            Can I suggest a new calculator or feature?
-            <svg class="faq-arr" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
-          </div>
-          <div class="faq-a">
-            <p>Absolutely! We love hearing user feedback. Please navigate to our Contact Us page or email us at info@speedcalculator.net to request a calculator or suggest improvements.</p>
-          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Common speed references: <strong>Walking</strong> ≈ 5 km/h (3.1 mph) · <strong>Cycling</strong> ≈ 20 km/h (12.4 mph) · <strong>Highway driving</strong> ≈ 100–120 km/h (62–75 mph) · <strong>Commercial aircraft</strong> ≈ 900 km/h (560 mph) · <strong>Speed of sound</strong> = 1,235 km/h (767 mph) · <strong>Speed of light</strong> = 1,079,252,848 km/h. Our calculator includes a conversion reference table for all common speeds.
+          </div></div>
         </div>
 
       </div>
     </div>
-  </div>
-</section>
 
-<!-- CONTACT CTA -->
-<div class="container">
-  <div class="cta-banner">
-    <h2>Still Have Questions?</h2>
-    <p>If you couldn't find the answer you were looking for, please feel free to drop us a message.</p>
-    <a href="/contact-us/" class="btn-primary">Contact Us</a>
+    <!-- ─── 2. DISTANCE CALCULATOR ─── -->
+    <div class="faq-section" id="distance">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(6,182,212,.1);">&#128205;</div>
+        <div class="faq-sec-title">Distance Calculator</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="distance calculator how to use latitude longitude coordinates">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">06</span>
+            <span class="q-text">How does the Distance Calculator work with coordinates?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Our <a href="/distance/distance-calculator/">Distance Calculator</a> uses the <strong>Haversine formula</strong> to calculate the straight-line (as the crow flies) distance between two geographic coordinates. Enter the <strong>latitude and longitude</strong> of both points — or select from 8 common city pair presets. Results show in km, miles, meters, and nautical miles. The Haversine formula accounts for Earth's curvature for accurate geographic distances.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="tv viewing distance projector throw distance screen size">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">07</span>
+            <span class="q-text">Can I calculate TV viewing distance and projector throw distance?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes. Our Distance Calculator includes a <strong>TV Viewing Distance</strong> mode (optimal seating distance for 4K, 1080p, and 8K by screen size) and a <strong>Projector Throw Distance</strong> mode (lens placement distance from screen using throw ratio). For a 65-inch 4K TV, the recommended distance is 5.4–8.1 feet. For a 100-inch screen with a 1.5:1 throw ratio, the projector goes 11.4 feet away.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="driving distance vs straight line crow flies difference road distance">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">08</span>
+            <span class="q-text">What is the difference between straight-line distance and driving distance?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>Straight-line distance</strong> (as the crow flies) is the shortest possible path between two points on Earth's surface — calculated using the Haversine formula. <strong>Driving distance</strong> is the actual road distance, which is always longer due to road routes, terrain, and detours — typically 1.2× to 1.5× the straight-line distance. Our Distance Calculator shows both: the exact straight-line distance plus estimated driving, walking, and flight distances.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 3. TIME CALCULATOR ─── -->
+    <div class="faq-section" id="time">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(245,158,11,.1);">&#9200;</div>
+        <div class="faq-sec-title">Time Calculator</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="time calculator add subtract hours minutes seconds how to use">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">09</span>
+            <span class="q-text">How do I add or subtract hours, minutes, and seconds?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Our <a href="/time/time-calculator/">Time Calculator</a> handles sexagesimal (base-60) time arithmetic automatically. In <strong>Time Adder mode</strong>, click "Add row" to enter multiple time values — each with its own + or − toggle. The calculator carries over correctly: 45 minutes + 25 minutes = 1 hour 10 minutes, not "70 minutes." You can also use <strong>Expression mode</strong> and type directly: <em>2h 30m + 45m − 10s</em>.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="elapsed time calculate time between two times work hours duration">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">10</span>
+            <span class="q-text">How do I calculate elapsed time between two clock times?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Use the <strong>Date+Time Offset mode</strong> in our Time Calculator. Enter your start time and toggle Subtract, then enter the end time as the offset. Example: 9:15 AM to 5:45 PM → enter 8h 30m to subtract and get the elapsed duration. For work hours tracking, add each session as a separate row in Time Adder mode and subtract break times. Overnight durations crossing midnight are handled automatically.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="time calculator work hours payroll billable hours freelance">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">11</span>
+            <span class="q-text">Can I use the Time Calculator to track work hours?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — it works perfectly as a <strong>work hours calculator</strong> and <strong>billable time tracker</strong>. Add a row for each work session with a + sign, then add break or lunch time with a − sign. Example: +8h 30m work session, −1h lunch = <strong>7h 30m billable time</strong>. The total updates automatically. This is ideal for freelancers, contractors, and anyone tracking daily or weekly work hours.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 4. AVERAGE SPEED ─── -->
+    <div class="faq-section" id="average">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(16,185,129,.1);">&#8644;</div>
+        <div class="faq-sec-title">Average Speed Calculator</div>
+        <div class="faq-sec-count">2 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="average speed formula how to calculate average speed multi leg trip">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">12</span>
+            <span class="q-text">What is the correct formula for average speed?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Average Speed = <span class="formula">Total Distance ÷ Total Time</span>. This is <strong>not</strong> the arithmetic mean of two speeds. Example: 60 km at 60 km/h (1 hour) then 60 km at 120 km/h (0.5 hours) → Average speed = 120 ÷ 1.5 = <strong>80 km/h</strong>, not (60+120)÷2 = 90 km/h. Total time must include all stops and breaks. Our Average Speed Calculator handles multi-leg trips automatically.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="average speed vs instantaneous speed difference meaning">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">13</span>
+            <span class="q-text">What is the difference between average speed and instantaneous speed?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>Average speed</strong> is the total distance divided by total time for an entire journey — it accounts for slowdowns, stops, and acceleration. <strong>Instantaneous speed</strong> is your speed at any single moment — what your speedometer shows right now. Our Speed Calculator computes average speed from total distance and time. For instantaneous speed, use your vehicle's tachometer with our <a href="/rpm-to-speed-calculator/">RPM to Speed Calculator</a>.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 5. TRAVEL TIME ─── -->
+    <div class="faq-section" id="travel">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(6,182,212,.1);">&#128664;</div>
+        <div class="faq-sec-title">Travel Time Calculator</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="travel time calculator arrival time eta how to use departure time">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">14</span>
+            <span class="q-text">How do I calculate my arrival time with the Travel Time Calculator?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            In our <a href="/time/travel-time-calculator/">Travel Time Calculator</a>, enter your distance and average speed, then <strong>toggle on the Arrival Time Calculator</strong>. Enter your departure date and time, add any planned stop time (fuel breaks, rest stops, meals), and click Calculate. The ETA (estimated time of arrival) is calculated as: <span class="formula">Arrival = Departure + Drive Time + Stop Time</span>. Overnight journeys crossing midnight are handled correctly.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="what average speed should I use road trip driving highway city">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">15</span>
+            <span class="q-text">What average speed should I use for a road trip calculation?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            For realistic road trip estimates use: <strong>US/Canada highway</strong> → 65–75 mph (105–120 km/h) · <strong>European motorway</strong> → 80–90 mph (130–145 km/h) · <strong>Mixed roads</strong> → 55–65 mph (88–105 km/h) · <strong>City driving</strong> → 25–35 mph (40–55 km/h). For a comfortable multi-day road trip plan, use <strong>55 mph (88 km/h)</strong> as your average — this accounts for traffic, slowdowns, and minor stops. Add separate stop time for fuel and rest breaks.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="transport modes walking cycling flight train supported">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">16</span>
+            <span class="q-text">Which transport modes does the Travel Time Calculator support?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Our Travel Time Calculator supports <strong>6 transport modes</strong>, each with pre-set average speeds: <strong>Driving</strong> (100 km/h), <strong>Walking</strong> (5 km/h), <strong>Cycling</strong> (20 km/h), <strong>Flight</strong> (850 km/h), <strong>Train</strong> (120 km/h), and <strong>Custom</strong> (any speed). The results panel shows a <strong>comparison table</strong> of all transport modes for the same distance — so you can compare driving vs. flying at a glance.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 6. RPM TO SPEED ─── -->
+    <div class="faq-section" id="rpm">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(139,92,246,.1);">&#9881;</div>
+        <div class="faq-sec-title">RPM to Speed Calculator</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="rpm to speed formula how does it work engine tachometer">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">17</span>
+            <span class="q-text">How does the RPM to Speed Calculator work?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Our <a href="/rpm-to-speed-calculator/">RPM to Speed Calculator</a> uses the formula: <span class="formula">Speed (mph) = (RPM × π × Tire Diameter) ÷ (Gear Ratio × Axle Ratio × 1056)</span>. Enter your engine RPM (from your tachometer), tire size (diameter in inches or use our tire code converter for codes like 225/45R17), transmission gear ratio, and rear axle ratio. Results show in mph, km/h, and m/s, plus an all-gear speed chart for all 6 gears.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="tire size code 225 45 r17 how to enter tire code calculator">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">18</span>
+            <span class="q-text">How do I enter a tire size code like 225/45R17?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            In the RPM to Speed Calculator, select <strong>"Use tire size code"</strong> from the Tire Size dropdown. Then enter three values: <strong>Width</strong> (225), <strong>Aspect ratio</strong> (45), and <strong>Rim diameter</strong> (17). The calculator automatically computes the overall tire diameter using the formula: Diameter = (2 × Width × Aspect/100 + Rim × 25.4) ÷ 25.4. For 225/45R17 this gives <strong>24.97 inches</strong>, which is used in the speed calculation.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="bicycle rpm cadence speed wheel size cycling">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">19</span>
+            <span class="q-text">Can the RPM Calculator work for bicycles and cycling cadence?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes. Select <strong>Bicycle/Motorcycle mode</strong> in our RPM to Speed Calculator. Enter your pedal cadence (RPM), select your wheel size (700c, 26", 27.5", etc.), and choose your gear ratio (chainring teeth ÷ sprocket teeth). Example: 90 RPM cadence, 50T/15T gear, 700c wheel → Wheel RPM = 90 × (50÷15) = 300 → Speed = 300 × π × 0.622 × 60 ÷ 1000 = <strong>35.2 km/h</strong>.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 7. UNIT CONVERSIONS ─── -->
+    <div class="faq-section" id="units">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(245,158,11,.1);">&#8652;</div>
+        <div class="faq-sec-title">Unit Conversions</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="km/h to mph convert how multiply factor 100 kmh in mph">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">20</span>
+            <span class="q-text">How do I convert km/h to mph and vice versa?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>km/h to mph:</strong> multiply by 0.62137. Example: 100 km/h × 0.62137 = <strong>62.1 mph</strong><br>
+            <strong>mph to km/h:</strong> multiply by 1.60934. Example: 60 mph × 1.60934 = <strong>96.6 km/h</strong><br>
+            Common conversions: 60 km/h = 37.3 mph · 80 km/h = 49.7 mph · 100 km/h = 62.1 mph · 120 km/h = 74.6 mph. Our Speed Calculator shows all 5 unit conversions simultaneously — no separate conversion step needed.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="knots to km/h mph maritime navigation nautical miles">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">21</span>
+            <span class="q-text">What is 1 knot in km/h and mph?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>1 knot = 1.852 km/h = 1.151 mph = 0.514 m/s</strong>. A knot is one nautical mile per hour. It is the standard unit for maritime and aviation speeds. Common conversions: 10 knots = 18.5 km/h · 20 knots = 37.0 km/h · 30 knots (fast ship) = 55.6 km/h · 500 knots (commercial flight) = 926 km/h. Enter any value in knots in our Speed Calculator to see instant conversions to km/h, mph, and m/s.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="Mach number speed of sound mach 1 mach 2 km/h mph">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">22</span>
+            <span class="q-text">What is Mach 1 in km/h and mph?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>Mach 1</strong> (speed of sound at sea level, 20°C) = <strong>1,235 km/h = 767 mph = 343 m/s = 666 knots</strong>. The Mach number varies with altitude and temperature — at cruising altitude (~35,000 ft) Mach 1 ≈ 1,062 km/h. Common references: Mach 2 = 2,470 km/h · Commercial jets cruise at Mach 0.75–0.85 (830–940 km/h). Our speed calculator's unit reference table includes Mach number conversions.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 8. ACCURACY ─── -->
+    <div class="faq-section" id="accuracy">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(16,185,129,.1);">&#10003;</div>
+        <div class="faq-sec-title">Calculator Accuracy</div>
+        <div class="faq-sec-count">2 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="how accurate is speed calculator precision decimal places reliable">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">23</span>
+            <span class="q-text">How accurate are the calculators on SpeedCalculator.net?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            All calculators on SpeedCalculator.net are <strong>mathematically exact</strong> to the values you enter — results are computed to 6+ decimal places internally and displayed to 2–4 decimal places. The formulas used are based on <strong>standard physics and engineering references</strong>. Real-world accuracy depends on the accuracy of your inputs — for example, travel time accuracy depends on how realistic your average speed estimate is. All formulas and constants are verified.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="report wrong answer error feedback incorrect result">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">24</span>
+            <span class="q-text">What should I do if I get an incorrect result?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            First, check that your <strong>input values and units are correct</strong> — a common issue is mixing km and miles or hours and minutes. If you believe there is a genuine calculation error, please <a href="/contact/">contact us</a> with your input values, expected result, and calculator used. We verify all reported issues within 24–48 hours and update the calculator if needed. Accuracy is our top priority.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 9. MOBILE ─── -->
+    <div class="faq-section" id="mobile">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(236,72,153,.1);">&#128241;</div>
+        <div class="faq-sec-title">Mobile Compatibility</div>
+        <div class="faq-sec-count">2 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="works on phone mobile iPhone Android tablet responsive design">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">25</span>
+            <span class="q-text">Do the calculators work on mobile phones and tablets?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — all calculators on SpeedCalculator.net are <strong>fully mobile-responsive</strong> and tested on iPhone, Android phones, iPads, and Android tablets. The layout automatically adjusts for smaller screens — inputs stack vertically, buttons become larger for touch, and results are clearly displayed. No app download is required. Open any calculator in your mobile browser and it works instantly.
+          </div></div>
+        </div>
+
+        <div class="faq-item" data-q="app download iOS Android app store play store install">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">26</span>
+            <span class="q-text">Is there a SpeedCalculator.net app to download?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            Currently, SpeedCalculator.net is a <strong>web-based tool</strong> — no app download is needed. Simply open <strong>speedcalculator.net</strong> in any mobile browser (Chrome, Safari, Firefox) and use any of the 60+ calculators instantly. For quick access, you can <strong>add to home screen</strong>: in Chrome, tap the menu (⋮) → "Add to Home Screen." In Safari, tap the Share icon → "Add to Home Screen." This creates a shortcut that opens like a native app.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 10. BROWSER ─── -->
+    <div class="faq-section" id="browser">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(59,130,246,.1);">&#127760;</div>
+        <div class="faq-sec-title">Browser Compatibility</div>
+        <div class="faq-sec-count">1 Question</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="browser compatibility Chrome Firefox Safari Edge Opera which browsers work">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">27</span>
+            <span class="q-text">Which browsers are supported by SpeedCalculator.net?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            SpeedCalculator.net works on all modern browsers: <strong>Google Chrome</strong> (recommended), <strong>Mozilla Firefox</strong>, <strong>Safari</strong> (Mac/iOS), <strong>Microsoft Edge</strong>, <strong>Opera</strong>, and <strong>Brave</strong>. All calculators use standard HTML5, CSS3, and vanilla JavaScript — no plugins, Flash, or special software required. For the best experience, keep your browser updated to the latest version. Internet Explorer is not supported.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ─── 11. PRIVACY ─── -->
+    <div class="faq-section" id="privacy">
+      <div class="faq-sec-head">
+        <div class="faq-sec-ico" style="background:rgba(16,185,129,.1);">&#128274;</div>
+        <div class="faq-sec-title">Privacy &amp; Data Usage</div>
+        <div class="faq-sec-count">3 Questions</div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item" data-q="does speedcalculator store my data privacy safe secure">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">28</span>
+            <span class="q-text">Does SpeedCalculator.net store or collect the values I enter?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>No.</strong> SpeedCalculator.net does not store, collect, or transmit any values you enter into the calculators. All calculations run <strong>entirely in your browser</strong> using JavaScript — no data is sent to our servers at any point. We do not require login, email, or personal information of any kind. Your inputs are cleared when you close or refresh the tab. Your privacy is fully protected.
+          </div></div>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="faq-item" data-q="cookies does speedcalculator use cookies tracking advertising analytics privacy">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">29</span>
+            <span class="q-text">Does SpeedCalculator.net use cookies or tracking?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            SpeedCalculator.net uses <strong>minimal, anonymous analytics cookies</strong> (such as Google Analytics) to understand which calculators are most popular — this data is aggregated and not tied to any individual. We do <strong>not</strong> use advertising trackers, retargeting pixels, or sell data to third parties. Calculator inputs are <strong>never</strong> processed or sent to any servers, keeping your usage 100% private.
+          </div></div>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="faq-item" data-q="contact privacy GDPR questions data security contact form email help">
+          <div class="faq-q" onclick="toggle(this)">
+            <span class="q-num">30</span>
+            <span class="q-text">How can I contact SpeedCalculator.net about privacy concerns?</span>
+            <svg class="faq-arr" fill="none" viewBox="0 0 20 20"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">
+            You can reach out to us at any time via email at <a href="mailto:info@speedcalculator.net">info@speedcalculator.net</a> or by using our <a href="/contact-us/">Contact Us</a> form. We value your feedback and are committed to ensuring your experience remains private, secure, and transparent.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA BLOCK -->
+    <div class="cta-block">
+      <div class="cta-title">Still have questions?</div>
+      <p class="cta-sub">Can't find the answer you're looking for? Reach out to us directly or try one of our calculators.</p>
+      <div class="cta-btns">
+        <a href="/" class="cta-btn">Go to Calculators</a>
+        <a href="/contact-us/" class="cta-btn ghost">Contact Support</a>
+      </div>
+    </div>
+
   </div>
+</div>
 </div>
 
 <div id="site-footer"></div>
+
 <script src="../js/shared.js"></script>
 <script>
-function faqT(el) {
+// Toggle FAQ item open/close state
+function toggle(el) {
   const item = el.parentElement;
   const wasOpen = item.classList.contains('open');
   
-  // Close other open items
+  // Close other open items in the list
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   
-  // Toggle current
   if (!wasOpen) {
     item.classList.add('open');
   }
 }
+
+// Filter FAQs based on search input keywords
+function searchFAQ() {
+  const query = document.getElementById('faq-search-inp').value.toLowerCase().trim();
+  const sections = document.querySelectorAll('.faq-section');
+  const noResults = document.getElementById('no-results');
+  let totalVisible = 0;
+  
+  sections.forEach(section => {
+    const items = section.querySelectorAll('.faq-item');
+    let sectionVisibleCount = 0;
+    
+    items.forEach(item => {
+      const qKeywords = (item.getAttribute('data-q') || '').toLowerCase();
+      const qText = (item.querySelector('.q-text')?.textContent || '').toLowerCase();
+      const aText = (item.querySelector('.faq-a-inner')?.textContent || '').toLowerCase();
+      
+      if (qKeywords.includes(query) || qText.includes(query) || aText.includes(query)) {
+        item.style.display = 'block';
+        sectionVisibleCount++;
+        totalVisible++;
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('open');
+      }
+    });
+    
+    // Show/hide section based on visibility of items
+    if (sectionVisibleCount > 0) {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  });
+  
+  // Show no-results block if nothing is found
+  if (totalVisible === 0) {
+    noResults.style.display = 'block';
+  } else {
+    noResults.style.display = 'none';
+  }
+}
+
+// Smooth scroll to a section and set active state in sidebar nav
+function scrollTo(id, el) {
+  event.preventDefault();
+  const target = document.getElementById(id);
+  if (target) {
+    const headerOffset = 80;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+  
+  document.querySelectorAll('.fn-item a').forEach(a => a.classList.remove('active'));
+  if (el) {
+    el.classList.add('active');
+  }
+}
+
+// Scroll Spy to highlight the active section in the sidebar nav
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('.faq-section');
+  const scrollPos = window.scrollY || document.documentElement.scrollTop;
+  const headerOffset = 100;
+  
+  sections.forEach(section => {
+    if (section.style.display !== 'none') {
+      const top = section.offsetTop - headerOffset;
+      const bottom = top + section.offsetHeight;
+      
+      if (scrollPos >= top && scrollPos < bottom) {
+        const id = section.getAttribute('id');
+        document.querySelectorAll('.fn-item a').forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + id) {
+            a.classList.add('active');
+          }
+        });
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
