@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<title>How to Find Speed: Easy Math &amp; Physics Calculations | SpeedCalculator.net</title>
+<meta name="description" content="Master the speed formula with mental math shortcuts, unit conversions, and worked physics examples — from a swimmer's pace to two trains meeting.">
+<link rel="canonical" href="https://www.speedcalculator.net/blog/how-to-calculate-speed-in-math-and-physics/">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05080f;--bg2:#0b1220;--bg3:#111b2e;
+  --accent:#3b82f6;--accent2:#60a5fa;
+  --green:#10b981;--orange:#f59e0b;--purple:#8b5cf6;
+  --teal:#06b6d4;--pink:#ec4899;--red:#ef4444;
+  --text:#f0f4ff;--text2:#94a3b8;--text3:#4a6080;
+  --border:rgba(59,130,246,.12);--border2:rgba(59,130,246,.25);
+  --radius:14px;--radius-sm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;outline:none;}
+*:focus{outline:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(59,130,246,.11),transparent);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,.024) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.024) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* BREADCRUMB */
+.breadcrumb{padding:14px 0;font-size:12px;color:var(--text3);display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--accent2);}
+.breadcrumb sep{margin:0 4px;color:var(--text3);}
+
+/* LAYOUT */
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:36px;padding:32px 0 72px;}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;}}
+
+/* HERO BANNER */
+.post-hero{background:var(--bg2);border:1px solid var(--border2);border-radius:20px;overflow:hidden;margin-bottom:32px;position:relative;}
+.post-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),var(--teal),var(--green),transparent);}
+.hero-img{width:100%;display:block;}
+.hero-img svg{display:block;width:100%;}
+.post-hero-body{padding:28px 32px 32px;}
+@media(max-width:560px){.post-hero-body{padding:20px 18px 24px;}}
+
+.post-cat{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid rgba(59,130,246,.3);background:rgba(59,130,246,.08);color:var(--accent2);margin-bottom:14px;}
+.post-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.02;letter-spacing:-.5px;text-transform:uppercase;color:#60a5fa;margin-bottom:16px;}
+.post-excerpt{font-size:16px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:20px;max-width:680px;}
+
+/* META ROW */
+.post-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:32px;}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);}
+.meta-item strong{color:var(--text2);font-weight:600;}
+.author-chip{display:flex;align-items:center;gap:8px;}
+.author-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:#fff;}
+.share-row{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.share-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.share-btn{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;transition:all .2s;border:1px solid var(--border);color:var(--text3);}
+.share-btn:hover{border-color:var(--accent2);color:var(--accent2);background:rgba(59,130,246,.1);}
+
+/* CONTENT */
+.post-content{font-size:15px;color:var(--text2);line-height:1.9;}
+.post-content h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.3px;color:var(--text);margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.post-content h2::before{content:'';width:4px;height:24px;background:linear-gradient(180deg,var(--accent),var(--teal));border-radius:2px;flex-shrink:0;}
+.post-content h3{font-size:17px;font-weight:700;color:var(--accent2);margin:28px 0 10px;}
+.post-content p{margin-bottom:18px;}
+.post-content strong{color:var(--text);font-weight:600;}
+.post-content a{color:var(--accent2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);transition:border-color .2s;}
+.post-content a:hover{border-color:var(--accent2);}
+.post-content ul,.post-content ol{margin:0 0 18px 22px;}
+.post-content li{margin-bottom:7px;line-height:1.75;}
+.post-content li::marker{color:var(--accent2);}
+
+/* FORMULA BOX */
+.formula-box{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:18px 20px;margin:20px 0;}
+.formula-box .f-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:8px;}
+.formula-box .f-eq{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.4;}
+.formula-box .f-note{font-size:12px;color:var(--text3);margin-top:7px;line-height:1.6;}
+
+/* EXAMPLE BOX */
+.example-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;margin:20px 0;}
+.ex-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.ex-step{display:flex;gap:12px;margin-bottom:10px;font-size:14px;}
+.ex-step:last-child{margin-bottom:0;}
+.ex-num{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px;}
+.ex-text{color:var(--text2);line-height:1.65;}
+.ex-text strong{color:var(--accent2);}
+
+/* TIP BOX */
+.tip-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.tip-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.tip-text strong{color:var(--green);}
+
+/* WARNING BOX */
+.warn-box{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:16px 18px;margin:20px 0;display:flex;gap:12px;}
+.warn-ico{font-size:18px;flex-shrink:0;}
+.warn-text{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.warn-text strong{color:var(--orange);}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border);margin:20px 0;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--bg3);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;}
+td{padding:11px 14px;color:var(--text2);border-bottom:1px solid var(--border);font-size:13.5px;}
+tr:last-child td{border:none;}
+td:first-child{font-weight:600;color:var(--text);}
+tr:hover td{background:rgba(59,130,246,.03);}
+
+/* PROGRESS / TOC */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));z-index:999;transition:width .1s;}
+
+/* TAGS */
+.post-tags{display:flex;flex-wrap:wrap;gap:7px;margin:32px 0;}
+.post-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.post-tag:hover{border-color:var(--accent2);color:var(--accent2);}
+
+/* AUTHOR BOX */
+.author-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:18px;align-items:flex-start;margin:36px 0;}
+@media(max-width:480px){.author-box{flex-direction:column;align-items:center;text-align:center;}}
+.author-av-lg{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;flex-shrink:0;}
+.author-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.author-role{font-size:11px;color:var(--accent2);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.author-bio{font-size:13px;color:var(--text2);line-height:1.7;}
+
+/* RELATED POSTS */
+.related-section{margin:36px 0;}
+.rel-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:18px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.rel-title span{color:var(--accent2);}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:560px){.rel-grid{grid-template-columns:1fr;}}
+.rel-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-decoration:none;transition:all .2s;display:block;}
+.rel-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.rel-cat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;}
+.rel-title-sm{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:5px;}
+.rel-date{font-size:10px;color:var(--text3);}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+.sb-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sb-head{padding:14px 18px;border-bottom:1px solid var(--border);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text);display:flex;align-items:center;gap:7px;}
+.sb-head em{color:var(--accent2);font-style:normal;}
+
+/* TOC */
+.toc-list{padding:12px 0;list-style:none;}
+.toc-item{border-bottom:1px solid var(--border);}
+.toc-item:last-child{border:none;}
+.toc-link{display:block;padding:9px 18px;font-size:12.5px;color:var(--text3);text-decoration:none;transition:all .15s;line-height:1.4;}
+.toc-link:hover,.toc-link.active{background:var(--bg3);color:var(--accent2);border-left:2px solid var(--accent);}
+.toc-link.h3{padding-left:30px;font-size:11.5px;}
+
+/* CALC CTA */
+.calc-cta{padding:18px;}
+.calc-cta p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
+.cta-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;padding:12px 18px;border-radius:var(--radius-sm);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,130,246,.25);}
+.cta-btn:hover{opacity:.9;transform:translateY(-1px);}
+
+/* POPULAR POSTS SB */
+.pop-list{list-style:none;padding:8px 0;}
+.pop-item{display:flex;gap:10px;align-items:flex-start;padding:9px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
+.pop-item:last-child{border:none;}
+.pop-item:hover{background:var(--bg3);}
+.pop-num{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--border2);line-height:1;min-width:22px;}
+.pop-item:hover .pop-num{color:var(--accent2);}
+.pop-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:2px;}
+.pop-meta-sm{font-size:10px;color:var(--text3);}
+
+/* TAGS SB */
+.tags-body{padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px;}
+.tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text3);text-decoration:none;transition:all .15s;}
+.tag:hover{border-color:var(--accent2);color:var(--accent2);}
+</style>
+</head>
+<body>
+
+<!-- READING PROGRESS BAR -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<div id="site-header"></div>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><sep>&#8250;</sep>
+    <a href="/blog/">Blog</a><sep>&#8250;</sep>
+    <a href="/blog/category/speed/">Speed</a><sep>&#8250;</sep>
+    How to Calculate Speed in Math &amp; Physics
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+<div class="post-layout">
+
+  <!-- ═══ ARTICLE COLUMN ═══ -->
+  <article class="article-col">
+
+    <!-- HERO BANNER -->
+    <div class="post-hero">
+      <div class="hero-img">
+        <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#05080f"/><stop offset="100%" stop-color="#0b1220"/></linearGradient>
+            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".15"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="860" height="320" fill="url(#bg-grad)"/>
+          <pattern id="pg" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(59,130,246,.04)" stroke-width="1"/></pattern>
+          <rect width="860" height="320" fill="url(#pg)"/>
+          
+          <!-- Visual Glow -->
+          <circle cx="210" cy="160" r="150" fill="url(#glow)"/>
+          
+          <!-- Moving Objects Diagram -->
+          <line x1="60" y1="180" x2="340" y2="180" stroke="rgba(94,109,128,.3)" stroke-width="2" stroke-linecap="round"/>
+          
+          <!-- Train A -->
+          <circle cx="95" cy="180" r="10" fill="#3b82f6"/>
+          <path d="M115 180 L145 180" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <polygon points="140,175 148,180 140,185" fill="#3b82f6"/>
+          <text x="95" y="156" font-family="Barlow" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">Train A (60 km/h)</text>
+          
+          <!-- Train B -->
+          <circle cx="305" cy="180" r="10" fill="#8b5cf6"/>
+          <path d="M285 180 L255 180" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round"/>
+          <polygon points="260,175 252,180 260,185" fill="#8b5cf6"/>
+          <text x="305" y="156" font-family="Barlow" font-size="11" font-weight="700" fill="#a78bfa" text-anchor="middle">Train B (90 km/h)</text>
+          
+          <!-- Info Indicator -->
+          <line x1="210" y1="140" x2="210" y2="220" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="210" y="130" font-family="Barlow Condensed,sans-serif" font-size="11" font-weight="800" fill="#10b981" text-anchor="middle">MEETING POINT</text>
+          <text x="210" y="202" font-family="Barlow" font-size="10" fill="#4a6080" text-anchor="middle">Distance = 300 km</text>
+          <text x="210" y="217" font-family="Barlow" font-size="10" fill="#4a6080" text-anchor="middle">Time to Meet = 2 hrs</text>
+          
+          <!-- Formula info panel on the right -->
+          <rect x="410" y="55" width="410" height="210" rx="14" fill="rgba(11,18,32,.75)" stroke="rgba(59,130,246,.15)" stroke-width="1.5"/>
+          <text x="435" y="90" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="700" fill="#4a6080" letter-spacing="2">PHYSICS SPEED FORMULA</text>
+          <text x="435" y="132" font-family="Barlow Condensed,sans-serif" font-size="24" font-weight="900" fill="#60a5fa">Speed (v) =</text>
+          <text x="435" y="166" font-family="Barlow Condensed,sans-serif" font-size="20" font-weight="800" fill="#f0f4ff">Distance (d) &divide; Time (t)</text>
+          <line x1="435" y1="182" x2="785" y2="182" stroke="rgba(96,165,250,.3)" stroke-width="1.5"/>
+          
+          <text x="435" y="210" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Closing Speed = Sum of speeds (moving towards)</text>
+          <text x="435" y="232" font-family="Barlow Condensed,sans-serif" font-size="13.5" fill="#10b981">✓  Relative Speed = Difference of speeds (same direction)</text>
+        </svg>
+      </div>
+      <div class="post-hero-body">
+        <div class="post-cat">&#9889; Speed &amp; Physics</div>
+        <h1 class="post-title">How to Find Speed: Easy Math &amp; Physics Calculations</h1>
+        <p class="post-excerpt">Master the speed formula with mental math shortcuts, unit conversions, and worked physics examples — from a swimmer's pace to two trains meeting.</p>
+        <!-- META -->
+        <div class="post-meta">
+          <div class="meta-item author-chip">
+            <div class="author-av">SC</div>
+            <strong>SpeedCalc Team</strong>
+          </div>
+          <div class="meta-item">&#128197; <strong>July 18, 2026</strong></div>
+          <div class="meta-item">&#9202; <strong>5 min</strong> read</div>
+          <div class="meta-item">&#128065; <strong>1,050</strong> views</div>
+          <div class="meta-item">&#128172; <strong>0</strong> comments</div>
+          <div class="share-row">
+            <span class="share-lbl">Share:</span>
+            <a class="share-btn" href="#" title="Twitter/X">&#120143;</a>
+            <a class="share-btn" href="#" title="Facebook">f</a>
+            <a class="share-btn" href="#" title="LinkedIn">in</a>
+            <a class="share-btn" href="#" title="Copy link">&#128279;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ POST CONTENT ═══ -->
+    <div class="post-content">
+      <p id="intro">Many people get confused when a word problem includes the word "speed." Fortunately, the math is some of the easiest in all of physics: one division, that's all. The problem is not the math, but knowing which numbers to put in and how to do the more complicated versions of the problem.</p>
+
+      <h2 id="formula">The One Formula You Actually Need</h2>
+      <p>All speed problems, regardless of how they're packaged, boil down to this simple core equation:</p>
+      
+      <div class="formula-box">
+        <div class="f-label">Speed Formula</div>
+        <div class="f-eq">Speed = Distance &divide; Time</div>
+        <div class="f-note">This indicates how much distance is covered over a specific time duration.</div>
+      </div>
+
+      <p>For example, if a cyclist rides 30 km in 2 hours, the speed is 30 &divide; 2, or <strong>15 km/h</strong>. This is the entire calculation. The hard part of most speed problems is not in this formula, but in reading the problem carefully enough to identify the correct distance and time in the wording.</p>
+
+      <h2 id="shortcuts">Mental Math Shortcuts for Speed</h2>
+      <p>A calculator isn't always required. There are some habits that make speed math fast enough to be done in your head:</p>
+      <ul>
+        <li><strong>Round to friendly numbers first:</strong> 118 miles in 1.9 hours is close enough to 120 miles in 2 hours to estimate that it's about 60 miles per hour.</li>
+        <li><strong>Use known benchmarks:</strong> 60 mph equals 1 mile per minute. If you're traveling 90 miles on the highway, where you might be driving a little faster than 60 mph, it will take just under an hour and a half.</li>
+        <li><strong>Break big numbers into easy chunks:</strong> 236 km in 4 hours is not an easy number to divide at first glance, but 240 km in 4 hours is 4 × 60 km/h, which makes it easy to calculate.</li>
+      </ul>
+      <p>These shortcuts will not be used for actual test math, but they are incredibly useful for sanity checking an answer. If your calculator indicates that a car was traveling at 6 mph on the highway, then something is definitely wrong with the setup.</p>
+      
+      <div class="tip-box">
+        <div class="tip-ico">&#128161;</div>
+        <div class="tip-text"><strong>No mental math today?</strong> Our free <a href="/speed-calculator/">Speed Calculator</a> handles the division instantly for any distance and time inputs.</div>
+      </div>
+
+      <h2 id="partial-info">Finding Speed From Partial Information</h2>
+      <p>Many real problems don't present distance and time directly to you. They must be dug out first.</p>
+      <p>For instance, if you left your house at 3:00 PM and arrived at a friend's house 45 miles away at 4:15 PM, how long did your trip take? The time elapsed isn't given as a clean number, you have to calculate it. From 3:00 to 4:15 is 1 hour and 15 minutes, or 1.25 hours. Speed is then 45 &divide; 1.25, which comes out to <strong>36 mph</strong>.</p>
+      <p>This pattern occurs repeatedly: a start time and end time rather than a duration, or a distance in some odd units such as feet when the answer should be in miles per hour. The secret is not new math; it's turning what you're given into a clean distance and a clean time before dividing.</p>
+
+      <h2 id="acceleration">When Speed Isn't Constant</h2>
+      <p>Real motion seldom has a constant speed throughout a journey. A car accelerates, decelerates, and accelerates again. The rate of change in velocity with time is called acceleration in physics, which is a different calculation from speed.</p>
+      <p>In most of the "how fast was it going" questions, however, you're not being asked about the changes along the way; you're being asked for the average. The average speed for a 240-mile trip that took 5 hours with a stop for lunch is 240 miles &divide; 5 hours, or <strong>48 mph</strong>, even if the speedometer fluctuated during the trip.</p>
+
+      <h2 id="two-objects">Solving Problems With Two Moving Objects</h2>
+      <p>This is where many students get confused as it seems like a completely different type of problem. It just provides an additional step before the regular formula.</p>
+      
+      <div class="example-box">
+        <div class="ex-head">&#128646; Case A: Objects Moving Toward Each Other (Opposite Directions)</div>
+        <div class="ex-step"><div class="ex-num">1</div><div class="ex-text">Imagine two trains 300 km apart travelling towards each other. Train A runs at 60 km/h and Train B runs at 90 km/h.</div></div>
+        <div class="ex-step"><div class="ex-num">2</div><div class="ex-text">They are closing the gap from both sides, so add their speeds: <strong>60 + 90 = 150 km/h</strong> closing speed.</div></div>
+        <div class="ex-step"><div class="ex-num">3</div><div class="ex-text">The time to meet is Distance &divide; Closing Speed: 300 &divide; 150 = <strong>2 hours</strong>.</div></div>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-head">&#128663; Case B: One Object Chasing Another (Same Direction)</div>
+        <div class="ex-step"><div class="ex-num">1</div><div class="ex-text">Imagine Car A is traveling at 80 km/h chasing Car B, which is 20 km ahead and traveling at 60 km/h.</div></div>
+        <div class="ex-step"><div class="ex-num">2</div><div class="ex-text">Since they move in the same direction, subtract their speeds to find the closing rate: <strong>80 − 60 = 20 km/h</strong>.</div></div>
+        <div class="ex-step"><div class="ex-num">3</div><div class="ex-text">Car A closes the 20 km gap at 20 km/h, taking 20 &divide; 20 = <strong>1 hour</strong> to catch up.</div></div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-ico">&#9889;</div>
+        <div class="tip-text"><strong>Key Rule:</strong> If objects are moving towards each other, <strong>add</strong> their speeds. If they are moving in the same direction, <strong>subtract</strong> their speeds. Once you do this, these problems become simple.</div>
+      </div>
+
+      <h2 id="conversions">Quick Reference: Converting Between Common Speed Units</h2>
+      <p>Unit mix-ups cause more wrong answers than bad math does. Keep these conversions handy:</p>
+      <ul>
+        <li><strong>Miles per hour to km/h:</strong> multiply by 1.609</li>
+        <li><strong>Km/h to m/s:</strong> divide by 3.6</li>
+        <li><strong>M/s to km/h:</strong> multiply by 3.6</li>
+        <li><strong>Km/h to mph:</strong> divide by 1.609</li>
+      </ul>
+      <p>A speed of 100 km/h, for instance, works out to 100 &divide; 3.6, or about 27.8 m/s. Converting before you calculate, rather than after, saves a lot of second-guessing later in a problem.</p>
+
+      <h2 id="examples">A Few Worked Examples</h2>
+      <div class="example-box">
+        <div class="ex-head">&#127946; Example 1: Swimmer Pace</div>
+        <p class="ex-text" style="margin-left: 10px; margin-bottom: 8px;">A swimmer covers 200 meters in 2 minutes and 30 seconds.</p>
+        <div class="ex-step"><div class="ex-num">1</div><div class="ex-text">Convert time to seconds: 2 min = 120s + 30s = <strong>150 seconds</strong>.</div></div>
+        <div class="ex-step"><div class="ex-num">2</div><div class="ex-text">Calculate speed: 200m &divide; 150s = <strong>1.33 m/s</strong>.</div></div>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-head">&#128666; Example 2: Delivery Van</div>
+        <p class="ex-text" style="margin-left: 10px; margin-bottom: 8px;">A delivery van travels 18 km in 24 minutes.</p>
+        <div class="ex-step"><div class="ex-num">1</div><div class="ex-text">Convert time to hours: 24 &divide; 60 = <strong>0.4 hours</strong>.</div></div>
+        <div class="ex-step"><div class="ex-num">2</div><div class="ex-text">Calculate speed: 18 km &divide; 0.4 hours = <strong>45 km/h</strong>.</div></div>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-head">&#128640; Example 3: Rocket Launch</div>
+        <p class="ex-text" style="margin-left: 10px; margin-bottom: 8px;">A rocket climbs 12 km straight up in 40 seconds during launch.</p>
+        <div class="ex-step"><div class="ex-num">1</div><div class="ex-text">Convert distance to meters: 12 km = <strong>12,000 meters</strong>.</div></div>
+        <div class="ex-step"><div class="ex-num">2</div><div class="ex-text">Calculate speed: 12,000m &divide; 40s = <strong>300 m/s</strong>.</div></div>
+      </div>
+
+      <h2 id="mistakes">Common Mistakes to Avoid</h2>
+      <ul>
+        <li>Forgetting to convert minutes or seconds into hours (or the reverse) before dividing.</li>
+        <li>Adding speeds for objects moving in the same direction instead of subtracting them.</li>
+        <li>Mixing metric and imperial units in the same calculation without converting one of them first.</li>
+      </ul>
+      <p>Catching these three habits early clears up the vast majority of speed problems, whether they show up in a physics class or in everyday planning.</p>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <h3>What is the basic formula for finding speed?</h3>
+      <p>Speed is the ratio of distance to time. This is the only formula you'll need for most basic speed calculations: <strong>Speed = Distance ÷ Time</strong>.</p>
+      
+      <h3>How do I find speed when I only know start and end times?</h3>
+      <p>Calculate the duration by subtracting the start time from the end time, convert that time to hours or seconds as appropriate, and then divide the distance by the duration.</p>
+
+      <h3>Do I add or subtract speeds when two objects are moving?</h3>
+      <p>If they are moving towards each other, <strong>add</strong> their speeds. If they are moving in the same direction, <strong>subtract</strong> their speeds. This is what affects the rate at which the gap narrows between them.</p>
+
+      <h3>Why do unit conversions matter so much in speed problems?</h3>
+      <p>Units do not combine, so if the division is correct but the units are mixed together, the answer will be wrong. This can be avoided by changing all distances and times to the same units before dividing.</p>
+
+      <!-- TAGS -->
+      <div class="post-tags">
+        <a href="/blog/tag/speed/" class="post-tag">speed</a>
+        <a href="/blog/tag/speed-calculator/" class="post-tag">speed calculator</a>
+        <a href="/blog/tag/formula/" class="post-tag">formula</a>
+        <a href="/blog/tag/mph/" class="post-tag">mph</a>
+        <a href="/blog/tag/physics/" class="post-tag">physics</a>
+        <a href="/blog/tag/math/" class="post-tag">math</a>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box">
+        <div class="author-av-lg">SC</div>
+        <div>
+          <div class="author-name">SpeedCalc Editorial Team</div>
+          <div class="author-role">Calculator Experts &amp; Technical Writers</div>
+          <div class="author-bio">The SpeedCalculator.net team creates accurate, easy-to-understand guides on speed, distance, time, RPM, finance, and health calculators. All formulas are verified against engineering references and real-world test data.</div>
+        </div>
+      </div>
+
+      <!-- RELATED POSTS -->
+      <div class="related-section">
+        <div class="rel-title">Related <span>Articles</span></div>
+        <div class="rel-grid">
+          <a href="/blog/what-is-speed-in-physics/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">What Is Speed in Physics? The Scientific Definition</div>
+            <div class="rel-date">&#128197; Jul 14, 2026</div>
+          </a>
+          <a href="/blog/what-is-speed-in-science/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">Speed Definition: What Speed Means in Science</div>
+            <div class="rel-date">&#128197; Jul 16, 2026</div>
+          </a>
+          <a href="/blog/average-speed-formula/" class="rel-card">
+            <div class="rel-cat" style="color:var(--accent2);">&#9889; Speed</div>
+            <div class="rel-title-sm">Average Speed Formula — How to Calculate Correctly</div>
+            <div class="rel-date">&#128197; Jul 16, 2026</div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end post-content -->
+  </article>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128203; Table of <em>Contents</em></div>
+      <ul class="toc-list" id="toc">
+        <li class="toc-item"><a href="#intro" class="toc-link active">Introduction</a></li>
+        <li class="toc-item"><a href="#formula" class="toc-link">The Core Speed Formula</a></li>
+        <li class="toc-item"><a href="#shortcuts" class="toc-link">Mental Math Shortcuts</a></li>
+        <li class="toc-item"><a href="#partial-info" class="toc-link">Partial Information</a></li>
+        <li class="toc-item"><a href="#acceleration" class="toc-link">When Speed Isn't Constant</a></li>
+        <li class="toc-item"><a href="#two-objects" class="toc-link">Two Moving Objects</a></li>
+        <li class="toc-item"><a href="#conversions" class="toc-link">Speed Units conversions</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#mistakes" class="toc-link">Common Mistakes</a></li>
+        <li class="toc-item"><a href="#faq" class="toc-link">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- CALCULATOR CTA -->
+    <div class="sb-card">
+      <div class="sb-head">&#9881; Try the <em>Calculator</em></div>
+      <div class="calc-cta">
+        <p>Use our free Speed Calculator — enter your distance and time for instant speed, distance, or time results in any unit.</p>
+        <a href="/speed-calculator/" class="cta-btn">Open Calculator &#8594;</a>
+      </div>
+    </div>
+
+    <!-- POPULAR POSTS -->
+    <div class="sb-card">
+      <div class="sb-head">&#128293; Popular <em>Articles</em></div>
+      <ul class="pop-list">
+        <a href="/blog/average-speed-formula/" class="pop-item">
+          <span class="pop-num">01</span>
+          <div><div class="pop-title">Average Speed Formula Explained</div><div class="pop-meta-sm">&#128197; Jul 16 &nbsp;·&nbsp; &#128065; 3.1k</div></div>
+        </a>
+        <a href="/blog/rpm-to-speed-calculator-guide/" class="pop-item">
+          <span class="pop-num">02</span>
+          <div><div class="pop-title">RPM to Speed Calculator Guide</div><div class="pop-meta-sm">&#128197; May 20 &nbsp;·&nbsp; &#128065; 4.2k</div></div>
+        </a>
+        <a href="/blog/tdee-calculator-guide/" class="pop-item">
+          <span class="pop-num">03</span>
+          <div><div class="pop-title">TDEE Calculator Guide — What Is TDEE</div><div class="pop-meta-sm">&#128197; May 12 &nbsp;·&nbsp; &#128065; 3.8k</div></div>
+        </a>
+        <a href="/blog/emi-vs-loan-calculator/" class="pop-item">
+          <span class="pop-num">04</span>
+          <div><div class="pop-title">EMI vs Loan Calculator Differences</div><div class="pop-meta-sm">&#128197; May 14 &nbsp;·&nbsp; &#128065; 2.7k</div></div>
+        </a>
+      </ul>
+    </div>
+
+    <!-- TAGS -->
+    <div class="sb-card">
+      <div class="sb-head">&#127991; Popular <em>Tags</em></div>
+      <div class="tags-body">
+        <a href="/blog/tag/speed/" class="tag">speed</a>
+        <a href="/blog/tag/rpm/" class="tag">RPM</a>
+        <a href="/blog/tag/distance/" class="tag">distance</a>
+        <a href="/blog/tag/mph/" class="tag">mph</a>
+        <a href="/blog/tag/formula/" class="tag">formula</a>
+        <a href="/blog/tag/tdee/" class="tag">TDEE</a>
+        <a href="/blog/tag/calorie/" class="tag">calorie</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</div>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var winH = document.documentElement.scrollHeight - window.innerHeight;
+  var pct  = (window.scrollY / winH) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+// Active TOC highlight on scroll
+var sections = document.querySelectorAll('h2[id], p[id]');
+var tocLinks = document.querySelectorAll('.toc-link');
+window.addEventListener('scroll', function() {
+  var current = '';
+  sections.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(function(l) {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+  });
+});
+
+// Copy link share button
+document.querySelectorAll('.share-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    if (this.title === 'Copy link') {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = '✓';
+        setTimeout(function(){ btn.textContent = '🔗'; }, 2000);
+      });
+    }
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="../../js/shared.js"></script>
+</body>
+</html>
